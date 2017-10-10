@@ -1,0 +1,178 @@
+---
+title: Download engine and definition updates
+ms.prod: EXCHANGE
+ms.assetid: 8f2ca383-e463-4df0-aa5d-29afe2f81aaf
+---
+
+
+# Download engine and definition updates
+ **Summary**: Learn how to use Exchange 2016 services to manually download anti-malware engine and definition updates.
+Exchange 2016 administrators can manually download anti-malware engine and definition (signature) updates. We strongly recommend that, prior to placing your Exchange server in production, you download engine and definition updates.
+  
+    
+    
+
+
+## What do you need to know before you begin?
+
+
+- Estimated time to complete: 5 minutes
+    
+  
+- You can only use PowerShell to perform this procedure.
+    
+    To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
+    
+  
+- To download updates, your computer needs to be able to access the Internet and to establish a connection on TCP port 80 (HTTP). If your organization uses a proxy server for Internet access, see the following section in this topic.
+    
+  
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Anti-malware" entry in the  [Antispam and antimalware permissions](antispam-and-antimalware-permissions.md) topic.
+    
+  
+- For information about keyboard shortcuts that may apply to the procedures in this topic, see  [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center.md).
+    
+  
+
+> [!TIP]
+> Having problems? Ask for help in the Exchange forums. Visit the forums at:  [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612),  [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or  [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
+  
+    
+    
+
+
+## Use the Exchange Management Shell to manually download engine and definition updates
+
+To download engine and definition updates, run the following command:
+  
+    
+    
+
+```
+
+&amp; $env:ExchangeInstallPath\\Scripts\\Update-MalwareFilteringServer.ps1 -Identity <FQDN of server>
+```
+
+This example manually downloads the engine and definition updates on the Exchange server named mailbox01.contoso.com:
+  
+    
+    
+
+
+
+```
+&amp; $env:ExchangeInstallPath\\Scripts\\Update-MalwareFilteringServer.ps1 -Identity mailbox01.contoso.com
+```
+
+Optionally, you can use the  _EngineUpdatePath_ parameter to download updates from somewhere other than the default location of `http://forefrontdl.microsoft.com/server/scanengineupdate`. You can use this parameter to specify an alternate HTTP address or a UNC path. If you specify a UNC path, the network service must have access to the path.
+  
+    
+    
+ This example manually downloads engine and definition updates on the Exchange server named mailbox01.contoso.com from the UNC path `\\\\FileServer01\\Data\\MalwareUpdates`:
+  
+    
+    
+
+
+
+```
+&amp; $env:ExchangeInstallPath\\Scripts\\Update-MalwareFilteringServer.ps1 -Identity mailbox01.contoso.com -EngineUpdatePath \\FileServer01\Data\MalwareUpdates
+
+```
+
+
+## How do you know this worked?
+
+In order to verify that updates were downloaded successfully, you need to access Event Viewer and view the event log. We recommend that you filter only FIPFS events, as described in the following procedure.
+  
+    
+    
+
+1. From the **Start** menu, click **All Programs** > **Administrative Tools** > **Event Viewer**.
+    
+  
+2. In Event Viewer, expand the **Windows Logs** folder, and then click **Application**.
+    
+  
+3. In the **Actions** menu, click **Filter Current Log**.
+    
+  
+4. In the **Filter Current Log** dialog box, from the **Event sources** drop-down list, select the **FIPFS** check box, and then click **OK**.
+    
+  
+If engine updates were downloaded successfully, you will see Event ID 6033, which will appear similar to the following:
+  
+    
+    
+ `MS Filtering Engine Update process performed a successful scan engine update.`
+  
+    
+    
+ `Scan Engine: Microsoft`
+  
+    
+    
+ `Update Path: http://forefrontdl.microsoft.com/server/scanengineupdate`
+  
+    
+    
+ `Last Update time: ‎2012‎-‎08‎-‎16T13:22:17.000Z`
+  
+    
+    
+ `Engine Version: 1.1.8601.0`
+  
+    
+    
+ `Signature Version: 1.131.2169.0`
+  
+    
+    
+
+## Use the Exchange Management Shell to configure proxy server settings for anti-malware updates
+<a name="ProxySettings"> </a>
+
+If your organization uses a proxy server to control access to the Internet, you need to identify the proxy server so that you can successfully download anti-malware engine and definition updates. Proxy server settings that are available using the **Netsh.exe** tool, Internet Explorer connection settings, and the _InternetWebProxy_ parameter on the **Set-ExchangeServer** cmdlet don't affect how anti-malware updates are downloaded.
+  
+    
+    
+To configure the proxy server settings for anti-malware updates, perform the following steps.
+  
+    
+    
+
+1. Run the following command:
+    
+  ```
+  
+Add-PsSnapin Microsoft.Forefront.Filtering.Management.Powershell
+  ```
+
+2. Use the **Get-ProxySettings** and **Set-ProxySettings** cmdlets to view and configure the proxy server settings that are used to download anti-malware updates. The **Set-ProxySettings** cmdlet uses the following syntax:
+    
+  ```
+  Set-ProxySettings -Enabled <$true | $false> -Server <Name or IP address of proxy server> -Port <TCP port of proxy server>
+  ```
+
+
+    For example, to configure anti-malware updates to use the proxy server at address 172.17.17.10 on TCP port 80, run the following command.
+    
+
+
+  ```
+  Set-ProxySettings -Enabled $true -Server 172.17.17.10 -Port 80
+  ```
+
+
+    To verify the proxy server settings, run the **Get-ProxySettings** cmdlet.
+    
+  
+
+## For more information
+<a name="ProxySettings"> </a>
+
+ [Configure the Default Anti-Malware Policy](http://technet.microsoft.com/library/e16ac4a2-de5c-4723-8ab6-d9c7ef4ce1b4.aspx)
+  
+    
+    
+

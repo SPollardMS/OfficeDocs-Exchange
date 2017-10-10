@@ -1,0 +1,135 @@
+---
+title: Safelist aggregation
+ms.prod: EXCHANGE
+ms.assetid: f05430a0-0405-4b65-a18d-18c9e86a13c4
+---
+
+
+# Safelist aggregation
+Learn how Exchange 2016 uses sender and recipient information from users' Junk Email configuration in Outlook to help identify messages in antispam filtering.In Exchange Server 2016, safelist aggregation refers to sender and recipient email addresses that are collected from all users' Junk Email options in Microsoft Outlook, Outlook on the web, or the **Set-MailboxJunkEmailConfiguration** cmdlet, and shared with the built-in Exchange antispam agents. Safelist aggregation is basically unchanged from Exchange Server 2010.When you enable and configure safelist aggregation, Exchange can take the following actions based on the safelist aggregation data:
+- Deliver incoming messages from senders that have been identified as safe without additional antispam processing (which could potentially identify the messages as spam).
+    
+  
+- Block incoming messages from senders that have been identified as malicious.
+    
+  
+To configure safelist aggregation, see  [Safelist aggregation procedures](safelist-aggregation-procedures.md).In the context of spam filtering, a false-positive is a legitimate message that's identified as spam. For organizations that filter hundreds of thousands of messages from the Internet every day, even a small percentage of false-positives means that users might not receive many legitimate messages. Safelist aggregation is likely the most effective way to reduce false-positives. **Contents** [Information stored in the user's safelist collection](#Inf) [How Exchange uses the safelist collection](#How) [Hashing of safelist collection entries](#Has) [Enabling safelist aggregation](#Ena)
+## Information stored in the user's safelist collection
+<a name="Inf"> </a>
+
+A safelist collection is the combined data from the user's Safe Senders list, Safe Recipients list, Blocked Senders list, and (optionally) external contacts. This data is stored in Outlook and in the Exchange mailbox. For more information about adding and removing entries from a user's safelist collection, see [Use the Exchange Management Shell to configure the safelist collection on a mailbox](configure-exchange-antispam-settings-on-mailboxes.md#ConfigureSafeListCollection).
+  
+    
+    
+
+  
+    
+    
+The following information is stored in a user's safelist collection:
+  
+    
+    
+
+- **Safe senders** The SMTP email address in the **From:** field.
+    
+  
+- **Safe recipients** The SMTP email address in the **To:** field.
+    
+  
+- **Blocked senders** Just like safe senders, users can block unwanted senders by adding them to their Blocked Senders list.
+    
+  
+- **Safe domain** This is part of the Safe Senders list, but instead of an SMTP email address (masato@contoso.com), the domain of the sender is specified (lcontoso.com).
+    
+    > [!IMPORTANT]
+      > By default, Exchange doesn't include safe domains during safelist aggregation. However, you can configure safelist aggregation to include the safe domain data. For more information, see  [Configure Content Filtering to Use Safe Domain Data](http://technet.microsoft.com/library/1ee2b663-b4f3-4fef-8954-986f2d820924.aspx). 
+- **External contacts** Two types of external contact information can be included in the safelist collection:
+    
+  - **Recipients that the user has sent mail to** These email address are added to the Safe Senders list if the user selects **Automatically add people I e-mail to the Safe Senders list** in the Junk Email options in Outlook.
+    
+  
+  - **Contacts in the user's Contacts folder** These email address are added to the Safe Senders list if the user selects **Also trust e-mail from my Contacts** in the Junk Email options in Outlook, Outlook on the web, or the **Set-MailboxJunkEmailConfiguration** cmdlet.
+    
+  
+ [Return to top](#RTT)
+  
+    
+    
+
+## How Exchange uses the safelist collection
+<a name="How"> </a>
+
+The safelist collection is stored on the user's Mailbox server. A user can have up to 1,024 unique entries in a safelist collection. Exchange has a mailbox assistant, called the Junk Email Options mailbox assistant, that monitors changes to the safelist collection for mailboxes on the server. It then replicates these changes to Active Directory, where the safelist collection is stored on each user object. The safelist collection is optimized for minimized storage and replication. If you have a subscribed Edge Transport server in your perimeter network, the Microsoft Exchange EdgeSync service replicates the safelist collection to the Active Directory Lightweight Directory Services (AD LDS) instance on the Edge Transport server.
+  
+    
+    
+The following Exchange antispam agents use the safelist collection:
+  
+    
+    
+
+- The Content Filter agent uses the Safe Senders list data to deliver messages from those senders without additional (unnecessary) processing.
+    
+  
+- The Sender Filter agent uses the Blocked Senders list data to reject or delete messages from those senders. For more information, see  [Sender filtering procedures](sender-filtering-procedures.md).
+    
+  
+
+> [!IMPORTANT]
+> Although the Safe Recipients list can be included in safelist aggregation, the Content Filter agent doesn't act on safe recipient data. 
+  
+    
+    
+
+ [Return to top](#RTT)
+  
+    
+    
+
+## Hashing of safelist collection entries
+<a name="Has"> </a>
+
+Safelist collection entries are hashed (SHA-256) one way before they are stored as array sets across three user object attributes, **msExchSafeSenderHash**, **msExchSafeRecipientHash**, and **msExchBlockedSendersHash**, as a binary large object. When data is hashed, an output of fixed length is produced, and the output is likely to be unique. For hashing of safelist collection entries, a 4-byte hash is produced. When a message is received from the Internet, Exchange hashes the sender's email address and compares it to the hashes that are stored on behalf of the destination mailbox. If the sender matches the safe senders hash, the message bypasses content filtering. If the sender matches the blocked senders hash, the message is blocked.
+  
+    
+    
+One-way hashing of safelist collection entries performs the following important functions:
+  
+    
+    
+
+- **Minimizes storage and replication space** Most of the time, hashing reduces the size of the data hashed. Therefore, saving and transmitting a hashed version of a safelist collection entry conserves storage space and replication time. For example, a user who has 200 entries in his or her safelist collection would create about 800 bytes of hashed data stored and replicated in Active Directory.
+    
+  
+- **Renders user safelist collections unusable by malicious users** Because one-way hash values are impossible to reverse-engineer into the original SMTP address or domain, the safelist collections don't yield usable email addresses for malicious users who might compromise an Exchange server.
+    
+  
+ [Return to top](#RTT)
+  
+    
+    
+
+## Enabling safelist aggregation
+<a name="Ena"> </a>
+
+Safelist aggregation is enabled by default. The safelist collection data is written to Active Directory by the Junk Email Options mailbox assistant. Unlike previous versions of Exchange, you don't need to manually run the **Update-SafeList** cmdlet to hash and write the safelist collection data to Active Directory.
+  
+    
+    
+You can still manually run safelist aggregation by using the **Update-Safelist** cmdlet. However, you need to be aware of the replication traffic that might be generated when you run this command. Running **Update-Safelist** on multiple mailboxes where safelists are heavily used might generate a significant amount of network traffic. We recommend that if you run the command on multiple mailboxes, you should run the command during off-peak, non-business hours.
+  
+    
+    
+The **Update-SafeList** cmdlet reads the safelist collection from the user's mailbox, hashes each entry, sorts the entries for easy search, and then converts the hash to a binary attribute. Finally, the **Update-SafeList** cmdlet compares the binary attribute that was created to any value stored on the attribute. If the two values are identical, the **Update-SafeList** cmdlet doesn't update the user attribute value with the safelist aggregation data. If the two attribute values are different, the **Update-SafeList** cmdlet updates the safelist aggregation value.
+  
+    
+    
+For more information about using **Update-SafeList**, see [Safelist aggregation procedures](safelist-aggregation-procedures.md).
+  
+    
+    
+ [Return to top](#RTT)
+  
+    
+    
+

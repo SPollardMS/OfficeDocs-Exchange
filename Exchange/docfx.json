@@ -29,8 +29,20 @@
     ],
     "overwrite": [],
     "externalReference": [],
-    "globalMetadata": {},
-    "fileMetadata": {},
+    "globalMetadata": {
+        "Manager": "serdars",
+        "ms.prod": "exchange",
+        "ms.technology": "",
+        "ms.devlang": "powershell",
+        "ROBOTS": "INDEX,FOLLOW"
+    },
+    "fileMetadata": {
+        "max.topictype": {
+            "*configure*.md": "procedural",
+            "*learn-more*.md": "csh",
+            "*readiness*.md": "setupreadiness"
+        }
+    },
     "template": [],
     "dest": "OfficeDocs-Exchange"
   }

@@ -1,0 +1,146 @@
+---
+title: Attachment filtering on Edge Transport servers
+ms.prod: EXCHANGE
+ms.assetid: be39a181-c82e-41f5-8846-085bf1f84164
+---
+
+
+# Attachment filtering on Edge Transport servers
+Learn how attachment filtering in Exchange 2016 evaluates attachments in email messages, and what you can do.
+In Exchange Server 2016, you can use attachment filtering on Edge Transport servers to control the attachments that users receive in email messages. Attachment filtering is performed by the Attachment Filtering agent, which is available only on Edge Transport servers, and is basically unchanged from Exchange Server 2010.
+  
+    
+    
+
+To configure the attachment filtering options, see  [Attachment filtering procedures on Edge Transport servers](attachment-filtering-procedures-on-edge-transport-servers.md).
+## Types of attachment filtering
+
+You can use the following types of attachment filtering to control attachments that enter or leave your organization through an Edge Transport server:
+  
+    
+    
+
+- **Filtering based on file name or file name extension** You specify the exact file name or file name extension that you want to filter. For example, `BadFileName.exe` or `*.exe`.
+    
+  
+- **Filtering based on file MIME content type** You specify the MIME content type value that you want to filter. The MIME content type value indicates what the attachment is—for example, a JPEG image, an executable file, or a Microsoft Excel file. Content types are expressed as _<type>_/ _<subtype>_. For example, a JPEG image file is expressed as  `image/jpeg`.
+    
+    To view a complete list of file name extensions and content types that attachment filtering can detect, run the following command in the Exchange Management Shell on the Edge Transport server:
+    
+
+
+  ```
+  
+Get-AttachmentFilterEntry | Format-Table -Auto Type,Name
+  ```
+
+After you define the files to look for, you can configure the action to take on messages that contain these attachments. You can't specify different actions for different types of attachments. You configure one of the following actions for all the messages that match any of the attachment filters:
+  
+    
+    
+
+- **Reject (block) the message** The message is blocked. The sender receives a non-delivery report (also known as an NDR, delivery status notification, DSN, or bounce message) that explains that the message wasn't delivered because it contained an unacceptable attachment. You can customize the text in the NDR. The default text is: `Message rejected due to unacceptable attachments`.
+    
+  
+- **Strip the attachment but allow the message through** The attachment is removed from the message. However, the message itself and any other attachments that don't match the filter are allowed through. If an attachment is stripped, it's replaced with a text file that explains why the attachment was removed. This is the default action.
+    
+  
+- **Silently delete the message** The message is deleted. Neither the sender nor the recipient receives notification.
+    
+  
+For more information, see  [Attachment filtering procedures on Edge Transport servers](attachment-filtering-procedures-on-edge-transport-servers.md).
+  
+    
+    
+
+> [!NOTE]
+> You can't retrieve messages that have been blocked or attachments that have been stripped. When you configure attachment filters, carefully examine all possible file name matches and verify that legitimate attachments won't be affected by the filter. > If you remove attachments from digitally signed, encrypted, or rights-protected messages, you invalidate the digital signature, which makes encrypted and rights-protected messages unreadable. A way to avoid this problem for outbound messages is to sign or encrypt the messages after they've been processed by the Attachment Filtering agent. 
+  
+    
+    
+
+
+## Default attachments in attachment filtering
+
+The default attachments that are defined in attachment filtering are described in the following table.
+  
+    
+    
+
+****
+
+
+|**Type**|**Name**|
+|:-----|:-----|
+| `ContentType` <br/> | `application/hta` <br/> |
+| `ContentType` <br/> | `application/javascript` <br/> |
+| `ContentType` <br/> | `application/msaccess` <br/> |
+| `ContentType` <br/> | `application/prg` <br/> |
+| `ContentType` <br/> | `application/x-javascript` <br/> |
+| `ContentType` <br/> | `application/x-msdownload` <br/> |
+| `ContentType` <br/>  `ContentType` <br/> | `message/partial` <br/> |
+| `ContentType` <br/> | `text/javascript` <br/> |
+| `ContentType` <br/> | `text/scriptlet` <br/> |
+| `ContentType` <br/> | `x-internet-signup` <br/> |
+| `FileName` <br/> | `*.ade` <br/> |
+| `FileName` <br/> | `*.adp` <br/> |
+| `FileName` <br/> | `*.app` <br/> |
+| `FileName` <br/> | `*.asx` <br/> |
+| `FileName` <br/> | `*.bas` <br/> |
+| `FileName` <br/> | `*.bat` <br/> |
+| `FileName` <br/> | `*.chm` <br/> |
+| `FileName` <br/> | `*.cmd` <br/> |
+| `FileName` <br/> | `*.com` <br/> |
+| `FileName` <br/> | `*.cpl` <br/> |
+| `FileName` <br/> | `*.crt` <br/> |
+| `FileName` <br/> | `*.csh` <br/> |
+| `FileName` <br/> | `*.exe` <br/> |
+| `FileName` <br/> | `*.fxp` <br/> |
+| `FileName` <br/> | `*.hlp` <br/> |
+| `FileName` <br/> | `*.hta` <br/> |
+| `FileName` <br/> | `*.inf` <br/> |
+| `FileName` <br/> | `*.ins` <br/> |
+| `FileName` <br/> | `*.isp` <br/> |
+| `FileName` <br/> | `*.js` <br/> |
+| `FileName` <br/> | `*.jse` <br/> |
+| `FileName` <br/> | `*.ksh` <br/> |
+| `FileName` <br/> | `*.lnk` <br/> |
+| `FileName` <br/> | `*.mda` <br/> |
+| `FileName` <br/> | `*.mdb` <br/> |
+| `FileName` <br/> | `*.mde` <br/> |
+| `FileName` <br/> | `*.mdt` <br/> |
+| `FileName` <br/> | `*.mdw` <br/> |
+| `FileName` <br/> | `*.mdz` <br/> |
+| `FileName` <br/> | `*.msc` <br/> |
+| `FileName` <br/> | `*.msi` <br/> |
+| `FileName` <br/> | `*.msp` <br/> |
+| `FileName` <br/> | `*.mst` <br/> |
+| `FileName` <br/> | `*.ops` <br/> |
+| `FileName` <br/> | `*.pcd` <br/> |
+| `FileName` <br/> | `*.pif` <br/> |
+| `FileName` <br/> | `*.prf` <br/> |
+| `FileName` <br/> | `*.prg` <br/> |
+| `FileName` <br/> | `*.ps1` <br/> |
+| `FileName` <br/> | `*.ps1xml` <br/> |
+| `FileName` <br/> | `*.ps11` <br/> |
+| `FileName` <br/> | `*.ps11xml` <br/> |
+| `FileName` <br/> | `*.ps2` <br/> |
+| `FileName` <br/> | `*.ps2xml` <br/> |
+| `FileName` <br/> | `*.psc1` <br/> |
+| `FileName` <br/> | `*.psc2` <br/> |
+| `FileName` <br/> | `*.reg` <br/> |
+| `FileName` <br/> | `*.scf` <br/> |
+| `FileName` <br/> | `*.scr` <br/> |
+| `FileName` <br/> | `*.sct` <br/> |
+| `FileName` <br/> | `*.shb` <br/> |
+| `FileName` <br/> | `*.shs` <br/> |
+| `FileName` <br/> | `*.url` <br/> |
+| `FileName` <br/> | `*.vb` <br/> |
+| `FileName` <br/> | `*.vbe` <br/> |
+| `FileName` <br/> | `*.vbs` <br/> |
+| `FileName` <br/> | `*.wsc` <br/> |
+| `FileName` <br/> | `*.wsf` <br/> |
+| `FileName` <br/> | `*.wsh` <br/> |
+| `FileName` <br/> | `*.xnk` <br/> |
+   
+

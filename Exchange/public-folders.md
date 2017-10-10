@@ -1,0 +1,260 @@
+---
+title: Public Folders
+ms.prod: EXCHANGE
+ms.assetid: 9ca7a32d-2436-462f-b71a-94129d05b6fa
+---
+
+
+# Public Folders
+ **Summary**: Learn about public folders and how they work in Exchange 2016.
+Public folders are designed for shared access and provide an easy and effective way to collect, organize, and share information with other people in your workgroup or organization. Public folders help make content in a deep hierarchy easier to browse. Users will see the full hierarchy in Outlook, which makes it easy for them to find the content they're interested in.
+  
+    
+    
+
+
+> [!NOTE]
+> Public folders are available in the following Outlook clients: Outlook on the web for Exchange 2016, Outlook 2007 or later, and Outlook for Mac. 
+  
+    
+    
+
+
+Public folders can also be used as an archiving method for distribution groups. When you mail-enable a public folder and add it as a member of the distribution group, email sent to the group is automatically added to the public folder for later reference.
+  
+    
+    
+
+
+> [!NOTE]
+> You must use Outlook 2007 or later to access public folders on Exchange 2016 servers. 
+  
+    
+    
+
+Public folders aren't designed to do the following:
+- **Data archiving** Users who have mailbox limits sometimes use public folders instead of mailboxes to archive data. This practice isn't recommended because it affects storage in public folders and undermines the goal of mailbox limits. Instead, we recommend that you use [In-Place Archiving in Exchange 2016](in-place-archiving-in-exchange-2016.md) as your archiving solution.
+    
+  
+- **Document sharing and collaboration** Public folders don't provide versioning or other document management features, such as controlled check-in and check-out functionality and automatic notifications of content changes. Instead, we recommend that you use [SharePoint](https://go.microsoft.com/fwlink/?LinkId=282474) as your documentation sharing solution.
+    
+  
+To learn more about public folders and other collaboration methods in Exchange 2016, see  [Collaboration](collaboration.md).To browse some frequently asked questions about public folders in Exchange 2016, see  [FAQ: Public folders](faq-public-folders.md).For more information about the limits and quotas for public folders, see  [Limits for public folders](limits-for-public-folders.md). **Contents** [Public folder architecture](public-folders.md#PFArchitecture) [Migrate public folders](public-folders.md#MigratePFs) [Public folder moves](public-folders.md#Moves) [Public folder quotas](public-folders.md#Quotas) [Disaster recovery](public-folders.md#DR)
+## Public folder architecture
+<a name="PFArchitecture"> </a>
+
+In Exchange 2016, public folders use a mailbox infrastructure to take advantage of the existing high availability and storage technologies of the mailbox database. Public folder architecture uses specially designed mailboxes to store both the public folder hierarchy and the content. This also means that there's no longer a public folder database as there was in earlier version of Exchange. High availability for the public folder mailboxes is provided by a database availability group (DAG). To learn more about DAGs, see  [Database Availability Groups](http://technet.microsoft.com/library/ab9b88ce-2f44-4334-96ad-a666b95888a0.aspx).
+  
+    
+    
+The main architectural components of public folders are the public folder mailboxes, which can reside in one or more mailbox databases.
+  
+    
+    
+
+### Public folder mailboxes
+<a name="PFMailboxes"> </a>
+
+There are two types of public folder mailboxes: the primary hierarchy mailbox andsecondary hierarchy mailboxes. Both types of mailboxes can contain content: 
+  
+    
+    
+
+- **Primary hierarchy mailbox** The primary hierarchy mailbox is the one writable copy of the public folder hierarchy. The public folder hierarchy is copied to all other public folder mailboxes, but these will be read-only copies.
+    
+  
+- **Secondary hierarchy mailboxes** Secondary hierarchy mailboxes contain public folder content as well and a read-only copy of the public folder hierarchy.
+    
+  
+
+> [!NOTE]
+> Retention policies aren't supported for public folder mailboxes. 
+  
+    
+    
+
+There are two ways you can manage public folder mailboxes:
+  
+    
+    
+
+- In the Exchange admin center (EAC), navigate to **Public folders** > **Public folder mailboxes**.
+    
+  
+- In the Exchange Management Shell, use the ***-Mailbox** set of cmdlets. The following parameters have been added to the [new-Mailbox](http://technet.microsoft.com/library/42dbb25a-0b23-4775-ae15-7af62c089565.aspx) cmdlet to support public folder mailboxes:
+    
+  -  _PublicFolder_ This parameter is used with the **New-Mailbox** cmdlet to create a public folder mailbox. When you create a public folder mailbox, a new mailbox is created with the mailbox type of `PublicFolder`. For more information, see  [Create a public folder mailbox](create-a-public-folder-mailbox.md).
+    
+  
+  -  _HoldForMigration_ This parameter is used only if you are migrating public folders from a previous version to Exchange 2016. For more information, see [Migrate public folders](public-folders.md#MigratePFs) later in this topic.
+    
+  
+  -  _IsHierarchyReady_ This parameter indicates whether the public folder mailbox is ready to serve the public folder hierarchy to users. It's set to `$True` only after the entire hierarchy has been synced to the public folder mailbox. If the parameter is set to $False, users won't use it to access the hierarchy. However, if you set the _DefaultPublicFolderMailbox_ property on a user mailbox to a specific public folder mailbox, the user will still access the specified public folder mailbox even if the _IsHierarchyReady_ parameter is set to `$False`.
+    
+  
+  -  _IsExcludedFromServingHierarchy_ This parameter prevents users from accessing the public folder hierarchy on the specified public folder mailbox. For load-balancing purposes, users are equally distributed across public folder mailboxes by default. When this parameter is set on a public folder mailbox, that mailbox isn't included in this automatic load balancing and won't be accessed by users to retrieve the public folder hierarchy. However, if you set the _DefaultPublicFolderMailbox_ property on a user mailbox to a specific public folder mailbox, the user will still access the specified public folder mailbox even if the _IsExcludedFromServingHierarchy_ parameter is set for that public folder mailbox.
+    
+  
+A secondary hierarchy mailbox will serve only public folder hierarchy information to users if it's specified explicitly on the users' mailboxes using the  _DefaultPublicFolderMailbox_ property, or if the following conditions are met:
+  
+    
+    
+
+- The  _IsHierarchyReady_ property on the public folder mailbox is set to `$True`.
+    
+  
+- The  _IsExcludedFromServingHierarchy_ property on the public folder mailbox is set to `$False`.
+    
+  
+
+### Public folder hierarchy
+<a name="PFHierarchy"> </a>
+
+The public folder hierarchy contains the folders' properties and organizational information, including tree structure. Each public folder mailbox contains a copy of the public folder hierarchy. There's only one writeable copy of the hierarchy, which is in the primary public folder mailbox. For a specific folder, the hierarchy information is used to identify the following:
+  
+    
+    
+
+- Permissions on the folder
+    
+  
+- The folder's position in the public folder tree, including its parent and child folders
+    
+  
+
+> [!NOTE]
+> The hierarchy doesn't store information about email addresses for mail-enabled public folders. The email addresses are stored on the directory object in Active Directory. 
+  
+    
+    
+
+
+#### Hierarchy synchronization
+
+The public folder hierarchy synchronization process uses Incremental Change Synchronization (ICS), which provides a mechanism to monitor and synchronize changes to an Exchange store hierarchy or content. The changes include creating, modifying, and deleting folders and messages. When users are connected to and using content mailboxes, synchronization occurs every 15 minutes. If no users are connected to content mailbox, synchronization will be triggered less often (every 24 hours).If a write operation such as a creating a folder is performed on the primary hierarchy, synchronization is triggered immediately (synchronously) to the content mailbox. 
+  
+    
+    
+
+> [!IMPORTANT]
+> Because there's only one writeable copy of the hierarchy, folder creation is proxied to the hierarchy mailbox by the content mailbox users are connected to. 
+  
+    
+    
+
+In a large organization, when you create a new public folder mailbox, the hierarchy must synchronize to that public folder before users can connect to it. Otherwise, users may see an incomplete public folder structure when connecting with Outlook. To allow time for this synchronization to occur without users attempting to connect to the new public folder mailbox, set the  _IsExcludedFromServingHierarchy_ parameter on the **New-Mailbox** cmdlet when creating the public folder mailbox. This parameter prevents users from connecting to the newly created public folder mailbox. When synchronization is complete, run the [Set-Mailbox](http://technet.microsoft.com/library/a0d413b9-d949-4df6-ba96-ac0906dedae2.aspx) cmdlet with the _IsExcludedFromServingHierarchy_ parameter set to `false`, indicating that the public folder mailbox is ready to be connected to. You can use also the  [Get-PublicFolderMailboxDiagnostics](http://technet.microsoft.com/library/e780d809-a408-4799-8175-46946835bee4.aspx) cmdlet to view the sync status by the _SyncInfo_ and the _AssistantInfo_ properties.
+  
+    
+    
+For more information, see  [Create a public folder](create-a-public-folder.md).
+  
+    
+    
+
+### Public folder content
+<a name="PFHierarchy"> </a>
+
+Public folder content can include email messages, posts, documents, and eForms. The content is stored in the public folder mailbox but isn't replicated across multiple public folders mailboxes. All users access the same public folder mailbox for the same set of content. Although a full text search of public folder content is available, public folder content isn't searchable across public folders and the content isn't indexed by Exchange Search. 
+  
+    
+    
+
+> [!NOTE]
+> Outlook on the web is supported, but with limitations. You can add and remove public folders to your Favorites through Outlook, and then perform item-level operations such as creating, editing, deleting posts, and replying to posts through Outlook on the web. However, you can't create or delete public folders from Outlook on the web. Also, only Mail, Post, Calendar, and Contact public folders can be added to the Favorites list in Outlook on the web. 
+  
+    
+    
+
+
+## Migrate public folders
+<a name="MigratePFs"> </a>
+
+You can migrate public folders from Exchange 2010 to Exchange 2016, or from Exchange 2010 to Exchange Online. You can also migrate public folders from Exchange 2016 to Exchange Online.
+  
+    
+    
+If you already have Exchange 2010 SP3 public folders in your organization prior to installing Exchange 2016, you must migrate those public folders to Exchange 2016. To do this, use the **PublicFolderMigrationRequst** cmdlets. For more information, see [Use batch migration to migrate public folders to Exchange 2016 from previous versions](use-batch-migration-to-migrate-public-folders-to-exchange-2016-from-previous-ver.md). If your organization is moving to Exchange Online, you can migrate your public folders to the cloud and upgrade them at the same time. For details, see  [Use batch migration to migrate legacy public folders to Office 365 and Exchange Online](http://technet.microsoft.com/library/e8ab9309-7d12-4f02-bfc4-14e61a373958.aspx) and [Use batch migration to migrate Exchange 2016 public folders to Exchange Online](use-batch-migration-to-migrate-exchange-2016-public-folders-to-exchange-online.md).
+  
+    
+    
+Due to the changes in how public folders are stored, legacy Exchange mailboxes are unable to access the public folder hierarchy on Exchange 2013 or Exchange 2016 servers or on Exchange Online. However, user mailboxes on Exchange 2016 servers can connect to legacy public folders. Exchange 2016 public folders and legacy public folders can't exist in your Exchange organization simultaneously. This effectively means that there's no coexistence between versions. Migrating public folders to Exchange Server 2016 or Exchange Online is currently a one-time cutover process.
+  
+    
+    
+For this reason, it's recommended that prior to migrating your public folders, you should first migrate your legacy mailboxes to Exchange 2016 or Exchange Online. For more information about migrating mailboxes, see  [Mailbox moves in Exchange 2016](mailbox-moves-in-exchange-2016.md),  [Perform a cutover migration of email to Office 365](https://go.microsoft.com/fwlink/p/?LinkID=536689), and  [Perform a staged migration of email to Office 365](https://go.microsoft.com/fwlink/p/?LinkID=536687).
+  
+    
+    
+
+## Public folder moves
+<a name="Moves"> </a>
+
+You can move public folders to a different public folder mailbox, and you can move public folder mailboxes to different mailbox databases. To move public folders to different public folder mailboxes, use the **PublicFolderMoveRequest** set of cmdlets. Subfolders under the public folder that's being moved won't be moved by default. If you want to move a branch of public folders, you can use the `Move-PublicFolderBranch.ps1` script that's installed by default with Exchange 2016. For more information, see [Move a Public Folder to a different Public Folder Mailbox](http://technet.microsoft.com/library/b8744934-a3cb-443e-acce-a9a6ca5d88f6.aspx).
+  
+    
+    
+In addition to moving public folders, you can move public folder mailboxes to different mailbox databases by using the **MoveRequest** set of cmdlets. This is the same set of cmdlets that are used for moving regular mailboxes. For more information, see [Move a public folder mailbox to a different mailbox database](http://technet.microsoft.com/library/67601d45-4824-4ae6-9a7e-b645ec3af4d3.aspx).
+  
+    
+    
+ **PublicFolderMoveRequest** cmdlets and the **MoveRequest** cmdlets use the Mailbox Replication Service to move public folders asynchronously. That means that the cmdlet doesn't do the actual work and, during most of the move, the public folder and public folder mailboxes will still be available to users. Because the Mailbox Replication Service performs mailbox moves, import and export requests, and public folder move requests, it's important to consider throttling and workload management.
+  
+    
+    
+
+## Public folder quotas
+<a name="Quotas"> </a>
+
+When created, public folder mailboxes automatically inherit the size limits of the mailbox database defaults. As a result, to accurately evaluate the current storage quota status when using the  [Get-Mailbox](http://technet.microsoft.com/library/8a5a6eb9-4a75-47f9-ae3b-a3ba251cf9a8.aspx) cmdlet, you must review at the _UseDatabaseQuotaDefaults_ property in addition to the _ProhibitSendQuota_,  _ProhibitSendReceiveQuota_, and  _IssueWarningQuota_ properties. If the _UseDatabaseQuotaDefaults_ property is set to `true`, the per-mailbox settings are ignored and the mailbox database limits are used. If this property is set to  `true` and the _ProhibitSendQuota_,  _ProhibitSendReceiveQuota_, and  _IssueWarningQuota_ properties are set to `unlimited`, the mailbox size isn't really unlimited. Instead, you must use the **Get-MailboxDatabase** cmdlet and review the mailbox database storage limits to find out what the limits for the mailbox are. If the _UseDatabaseQuotaDefaults_ property is set to `false`, the per-mailbox settings are used. In Exchange 2016, the default mailbox database quota limits are as follows:
+  
+    
+    
+
+- Issue warning quota: 1.9 GB
+    
+  
+- Prohibit send quota: 2 GB
+    
+  
+- Prohibit receive quota: 2.3 GB
+    
+  
+To find the mailbox database quotas, run the  [Get-MailboxDatabase](http://technet.microsoft.com/library/e12bd6d3-3793-49cb-9ab6-948d42dd409e.aspx) cmdlet.
+  
+    
+    
+To set the quotas on a public folder mailbox, use the  [Set-OrganizationConfig](http://technet.microsoft.com/library/3b6df0fe-27c8-415f-ad0c-8b265f234c1a.aspx) cmdlet.
+  
+    
+    
+
+## Disaster recovery
+<a name="DR"> </a>
+
+Exchange 2016 public folders are built on mailbox infrastructure and use the same mechanisms for availability and redundancy. Every public folder mailbox can have multiple redundant copies with automatic failover, just like regular mailboxes. To learn more, see  [Planning for high availability and site resilience](planning-for-high-availability-and-site-resilience.md).
+  
+    
+    
+In addition to the overall disaster recovery scenario, you can also restore public folders in the following situations:
+  
+    
+    
+
+- **Soft-deleted public folder restore** The public folder was deleted but is still within the retention period.
+    
+  
+- **Soft-deleted public folder mailbox restore** The public folder mailbox was deleted and is still within the mailbox retention period.
+    
+  
+- **Public folder mailbox restore from a recovery database** You can recover an individual public folder mailbox from backup when the deleted mailbox retention period has elapsed. You then extract data from the restored mailbox and copy it to a target folder or merge it with another mailbox.
+    
+  
+In all of these situations, the public folder or public folder mailbox is recoverable by using the **MailboxRestoreRequest** cmdlets.
+  
+    
+    
+For more information, see  [Restore public folders and public folder mailboxes from failed moves](http://technet.microsoft.com/library/2ade83c9-5f9b-4945-bf32-48fa8185b515.aspx).
+  
+    
+    
+

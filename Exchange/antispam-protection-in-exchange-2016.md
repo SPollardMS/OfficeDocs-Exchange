@@ -1,0 +1,146 @@
+---
+title: Antispam protection in Exchange 2016
+ms.prod: EXCHANGE
+ms.assetid: 6af88a08-687d-40b1-8b22-80704184403d
+---
+
+
+# Antispam protection in Exchange 2016
+Learn about the built-in antispam features in Exchange 2016 to reduce unwanted (or junk) email sent to your organization.Spammers, or malicious senders, use a variety of techniques to send unwanted email into your organization. No single tool or process can eliminate all spam. However, Microsoft Exchange provides a layered, multifaceted approach to reducing these unwanted messages. Exchange uses transport agents to provide antispam protection, and the built-in agents that are available in Exchange Server 2016 are relatively unchanged from Exchange Server 2010. In Exchange 2016, configuration and management of these agents is available only in the Exchange Management Shell.For more antispam features and easier management, you can purchase Exchange Online Protection (EOP) that's part of Microsoft Office 365. To learn more about Office 365 antispam protection, see  [Office 365 Email antispam Protection](https://go.microsoft.com/fwlink/p/?LinkId=271754). **Contents** [Antispam agents on Mailbox servers](antispam-protection-in-exchange-2016.md#Mailbox) [Antispam agents on Edge Transport servers](antispam-protection-in-exchange-2016.md#Edge) [Antispam stamps](antispam-protection-in-exchange-2016.md#Stamps) [Strategy for antispam approach](antispam-protection-in-exchange-2016.md#Strategy)
+## Antispam agents on Mailbox servers
+<a name="Mailbox"> </a>
+
+Typically, you enable the antispam agents on a Mailbox server if your organization doesn't have an Edge Transport server, or if it doesn't do other antispam filtering on incoming messages. For more information, see  [Enable antispam functionality on Mailbox servers](enable-antispam-functionality-on-mailbox-servers.md).
+  
+    
+    
+Like all transport agents, each antispam agent is assigned a priority value. A lower value indicates a higher priority, so typically, an antispam agent with priority 1 acts on a message before an antispam agent with priority 9. However, the SMTP event in the transport pipeline where the antispam agent is registered is also very important in determining the order that antispam agent acts on messages. A low priority antispam agent that's registered early in the transport pipeline acts on messages before a high priority antispam agent that's registered later in the transport pipeline.
+  
+    
+    
+Based on the default priority value of the agent and the SMTP event where the agent is registered, this is the order that the antispam agents are applied to messages on Mailbox servers:
+  
+    
+    
+
+1. **Sender Filter agent** Sender filtering compares the sending server to a list of senders or sender domains that are prohibited from sending messages to your organization. For more information, see [Sender filtering](sender-filtering.md).
+    
+  
+2. **Sender ID agent** Sender ID relies on the IP address of the sending server and the Purported Responsible Address (PRA) of the sender to determine whether the sending email address is spoofed. For more information, see [Sender ID](sender-id.md).
+    
+  
+3. **Content Filter agent** Content filtering agent assigns a spam confidence level (SCL) to each message based on data from legitimate and spam messages. For more information, see [Content filtering](content-filtering.md).
+    
+    Spam quarantine is a component of the Content Filter agent that reduces the risk of losing legitimate messages that are incorrectly classified as spam. Spam quarantine provides a temporary storage location for suspicious messages so an administrator can review the messages. For more information, see  [Spam quarantine in Exchange 2016](spam-quarantine-in-exchange-2016.md).
+    
+    Content filtering also uses the safelist aggregation feature. Safelist aggregation collects safe list data that users configure in Microsoft, Outlook, and Outlook on the web and makes this information available to the Content Filter agent. For more information, see  [Safelist aggregation](safelist-aggregation.md).
+    
+  
+4. **Protocol Analysis agent (sender reputation)** The Protocol Analysis agent is the agent that provides sender reputation. Sender reputation uses several tests to calculate a sender reputation level (SRL) on incoming messages that determines the action to take on those messages. For more information, see [Sender reputation and the Protocol Analysis agent](sender-reputation-and-the-protocol-analysis-agent.md).
+    
+  
+ [Return to top](antispam-protection-in-exchange-2016.md#RTT)
+  
+    
+    
+
+## Antispam agents on Edge Transport servers
+<a name="Edge"> </a>
+
+If your organization has an Edge Transport server installed in the perimeter network, all of the antispam agents that are available on a Mailbox server are installed and enabled by default on the Edge Transport server. However, the following antispam agents are available only on Edge Transport servers:
+  
+    
+    
+
+- **Connection Filtering agent** Connection filtering uses an IP block list, IP allow list, IP block list providers, and IP allow list providers to determine whether a connection should be blocked or allowed. For more information, see [Connection filtering on Edge Transport servers](connection-filtering-on-edge-transport-servers.md).
+    
+  
+- **Recipient Filter agent** Recipient filtering uses a recipient block list to identify messages that aren't allowed to enter the organization. The recipient filter also uses the local recipient directory to reject messages sent to invalid recipients. For more information, see [Recipient filtering on Edge Transport servers](recipient-filtering-on-edge-transport-servers.md).
+    
+    > [!NOTE]
+      > Although the Recipient Filter agent is available on Mailbox servers, you shouldn't configure it. When recipient filtering on a Mailbox server detects one invalid or blocked recipient in a message that contains other valid recipients, the message is rejected. The Recipient Filter agent is enabled when you install the antispam agents on a Mailbox server, but it isn't configured to block any recipients. 
+- **Attachment Filtering agent** Attachment filtering blocks messages or attachments based on the attachment file name, extension, or MIME content type. For more information, see [Attachment filtering on Edge Transport servers](attachment-filtering-on-edge-transport-servers.md).
+    
+  
+Based on the default priority value of the antispam agent, and the SMTP event in the transport pipeline where the agent is registered, this is the order that the antispam agents are applied to messages on Edge Transport servers:
+  
+    
+    
+
+1. Connection Filtering agent
+    
+  
+2. Sender Filter agent
+    
+  
+3. Recipient Filter agent
+    
+  
+4. Sender ID agent
+    
+  
+5. Content Filter agent
+    
+  
+6. Protocol Analysis agent (sender reputation)
+    
+  
+7. Attachment Filtering agent
+    
+  
+ [Return to top](antispam-protection-in-exchange-2016.md#RTT)
+  
+    
+    
+
+## Antispam stamps
+<a name="Stamps"> </a>
+
+Antispam stamps are applied to messages and are used by the antispam agents. You can view the antispam stamps to help you diagnose spam-related problems. For more information, see  [Antispam stamps](antispam-stamps.md).
+  
+    
+    
+ [Return to top](antispam-protection-in-exchange-2016.md#RTT)
+  
+    
+    
+
+## Strategy for antispam approach
+<a name="Strategy"> </a>
+
+Antispam is a balancing act between blocking unwanted messages and allowing legitimate messages. If you configure the antispam features too aggressively, you'll likely block too many legitimate messages (false positives). If you configure the antispam features too loosely, you likely allow too much spam into your organization.
+  
+    
+    
+These are some best practices to consider when configuring the built-in antispam features in Exchange:
+  
+    
+    
+
+- Reject messages that are identified by the Connection Filtering agent, Recipient Filter agent, and Sender Filter agent rather than quarantining the messages or applying antispam stamps. This approach is recommended for these reasons:
+    
+  - Messages that are identified by the default settings of the connection filtering, recipient filtering, or sender filtering typically don't require further tests to determine if they're unwanted. For example, if you configured sender filtering to block specific senders, there's no reason to continue to process messages from those senders. (If you didn't want the messages rejected, you wouldn't have put them on the blocked senders list.)
+    
+  
+  - Configuring a more aggressive level for the the antispam agents that encounter messages early in the transport pipeline saves processing, bandwidth, and disk resources. The farther in transport pipeline a message travels, the greater number of variables that the remaining antispam features need to evaluate to successfully identify the message as spam. Reject obvious messages early so you can process ambiguous messages later.
+    
+  
+- You need to monitor the effectiveness of the antispam features at their current configuration levels. Monitoring allows you to react to trends and increase or decrease the aggressiveness of the settings. You should start with the default settings to minimize the number of false positives. As you monitor the amount of spam and false positives, you can increase the aggressiveness of the settings based on the type of spam and spam attacks that your organization experiences.
+    
+  
+ [Return to top](antispam-protection-in-exchange-2016.md#RTT)
+  
+    
+    
+
+## See also
+<a name="Strategy"> </a>
+
+
+#### 
+
+
+  
+    
+    
+ [Office 365 Email antispam Protection](https://go.microsoft.com/fwlink/p/?LinkId=271754)
