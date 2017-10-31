@@ -3,7 +3,7 @@ title: Access to Active Directory
 ms.prod: EXCHANGE
 ms.assetid: 61080b45-8bce-4c23-b744-ed264d5f0b7d
 ---
-
+test
 
 # Access to Active Directory
  **Summary**: How Exchange 2016 retrieves data from Active Directory, and how to recover deleted objects.
