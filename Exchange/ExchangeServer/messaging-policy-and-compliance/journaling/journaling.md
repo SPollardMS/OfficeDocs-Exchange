@@ -143,11 +143,11 @@ The journaling mailbox is where the journaled messages are delivered. How you co
     
 - An Office 365 mailbox can't be used as a journaling mailbox. If you're running a hybrid deployment between on-premises Exchange and Office 365, you can designate on-premises journaling mailboxes for your Office 365 and on-premises organizations. You can also deliver journaled messages to an on-premises email archiving system or a third-party email archiving service.
     
-- Journaling mailboxes need to accept messages that are at least as large as the maximum message size that's available in your organization. Be sure to account for any custom maximum message sizes that you've configured on individual mailboxes. For more information, see [Configure message size limits for a mailbox](../../recipients-0/manage-user-mailboxes/configure-mailbox-message-size-limits.md).
+- Journaling mailboxes need to accept messages that are at least as large as the maximum message size that's available in your organization. Be sure to account for any custom maximum message sizes that you've configured on individual mailboxes. For more information, see [Configure message size limits for a mailbox](../../recipients/user-mailboxes/message-size-limits.md).
     
-- We recommend that you configure the journaling mailbox to only accept messages from the Microsoft Exchange recipient (the only sender of journal reports). Note that you can only do this in the Exchange Management Shell. For more information, see [Configure message delivery restrictions for a mailbox](../../recipients-0/manage-user-mailboxes/configure-message-delivery-restrictions.md).
+- We recommend that you configure the journaling mailbox to only accept messages from the Microsoft Exchange recipient (the only sender of journal reports). Note that you can only do this in the Exchange Management Shell. For more information, see [Configure message delivery restrictions for a mailbox](../../recipients/user-mailboxes/message-delivery-restrictions.md).
     
-- We recommend that you disable the storage quota limits for the journaling mailbox. For more information, see [Configure storage quotas for a mailbox](../../recipients-0/manage-user-mailboxes/configure-storage-quotas.md).
+- We recommend that you disable the storage quota limits for the journaling mailbox. For more information, see [Configure storage quotas for a mailbox](../../recipients/user-mailboxes/storage-quotas.md).
     
 #### Alternate journaling mailbox
 <a name="alternate"> </a>

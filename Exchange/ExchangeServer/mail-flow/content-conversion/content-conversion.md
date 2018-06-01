@@ -86,7 +86,7 @@ You can specify the content conversion at various levels of the Exchange organiz
   
 - **Remote domain settings** Remote domains define the settings for outgoing message transfers between the Exchange organization and external domains.. Even if you don't create remote domain entries for specific domains, there's a predefined remote domain named Default that applies to all remote address spaces (*). For more information about remote domains, see [Remote Domains](http://technet.microsoft.com/library/10fb7d62-4d78-40a3-82db-d62bcd27ba42.aspx).
     
-- **Mail user and mail contact settings** Mail users and mail contacts are similar because both have external email addresses and contain information about people outside the Exchange organization. The main difference is mail users have accounts that they can use to log on to Active Directory and access resources in the organization. For more information, see [Recipients](../../recipients-0/recipients-0.md).
+- **Mail user and mail contact settings** Mail users and mail contacts are similar because both have external email addresses and contain information about people outside the Exchange organization. The main difference is mail users have accounts that they can use to log on to Active Directory and access resources in the organization. For more information, see [Recipients](../../recipients/recipients.md).
     
 - **Outlook settings** You can set these message formatting and encoding options in Outlook: 
     
@@ -100,7 +100,7 @@ You can specify the content conversion at various levels of the Exchange organiz
     
   - **International options** You can control the character sets used in messages. 
     
-    For more information about these settings, see [TNEF conversion options](tnef-conversion-options.md) and [Message encoding options in Exchange 2016](message-encoding-options.md).
+    For more information about these settings, see [TNEF conversion options](tnef-conversion.md) and [Message encoding options in Exchange 2016](message-encoding.md).
     
 ## Understanding the structure of email messages
 <a name="Understanding"> </a>

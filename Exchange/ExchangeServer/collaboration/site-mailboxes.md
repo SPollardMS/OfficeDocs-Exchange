@@ -24,7 +24,7 @@ Site mailboxes require Exchange 2016 and SharePoint Server 2013 integration and 
   
 - [Configure site mailboxes in SharePoint Server 2013](https://go.microsoft.com/fwlink/p/?LinkId=258264).
     
-- [Plan Exchange 2016 integration with SharePoint and Skype for Business](../plan-and-deploy/plan-integration-with-sharepoint-and-skype/plan-integration-with-sharepoint-and-skype.md)
+- [Plan Exchange 2016 integration with SharePoint and Skype for Business](../plan-deploy/integration-with-sharepoint-and-skype/integration-with-sharepoint-and-skype.md)
     
 For more information about collaboration features in Exchange Server 2016, see [Collaboration](collaboration.md).
   
@@ -74,7 +74,7 @@ Site mailboxes don't support retention at the item-level. Retention works on a p
 ## Compliance
 <a name="policies"> </a>
 
-Using the eDiscovery Console in SharePoint, site mailboxes can be part of the In-Place eDiscovery scope as you can do keyword searches against user mailboxes or site mailboxes. In addition, you can put a site mailbox on legal hold. For more info, see [In-Place eDiscovery in Exchange 2016](../messaging-policy-and-compliance/in-place-ediscovery/in-place-ediscovery.md).
+Using the eDiscovery Console in SharePoint, site mailboxes can be part of the In-Place eDiscovery scope as you can do keyword searches against user mailboxes or site mailboxes. In addition, you can put a site mailbox on legal hold. For more info, see [In-Place eDiscovery in Exchange 2016](../messaging-policy-and-compliance/ediscovery/ediscovery.md).
   
 [Return to top](http://technet.microsoft.com/library/2c4393f4-d274-4e6c-bd09-9577e68c5a33.aspx#howwork)
   

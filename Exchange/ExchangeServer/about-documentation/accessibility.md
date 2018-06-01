@@ -28,7 +28,7 @@ Microsoft is committed to making its products and services easier for everyone t
 
 The following features help make Microsoft Exchange more accessible for people with disabilities:
   
-- [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-eac.md)
+- [Keyboard shortcuts in the Exchange admin center](eac-keyboard-shortcuts.md)
     
 - [Keyboard Shortcuts in Outlook on the web](https://go.microsoft.com/fwlink/p/?LinkId=268079)
     

@@ -24,12 +24,12 @@ For more information about Exchange mailbox servers and how they complement othe
 
 The following articles contain procedures for common Mailbox server management tasks:
   
-- [Manage mailbox databases in Exchange 2016](manage-db.md)
+- [Manage mailbox databases in Exchange 2016](manage-dbs.md)
     
-- [Manage on-premises mailbox moves in Exchange 2016](manage-on-premises-mailbox-moves.md)
+- [Manage on-premises mailbox moves in Exchange 2016](manage-mailbox-moves.md)
     
-- [Prepare mailboxes for cross-forest move requests](prepare-mailboxes-for-cross-forest-move.md)
+- [Prepare mailboxes for cross-forest move requests](prep-mailboxes-for-cross-forest-moves.md)
     
-- [Enable the MRS Proxy endpoint for remote moves](mrs-proxy-endpoint-for-remote-moves.md)
+- [Enable the MRS Proxy endpoint for remote moves](mrs-proxy-endpoint.md)
     
 

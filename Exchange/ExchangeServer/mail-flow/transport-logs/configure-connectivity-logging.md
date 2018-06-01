@@ -22,7 +22,7 @@ Connectivity logging records outbound connection activity (source, destination, 
 
 - Estimated time to complete: 15 minutes
     
-- You can use the Exchange admin center (EAC) to enable or disable connectivity logging and set the log path for the Transport service on Mailbox servers only. For all other connectivity logging options in the other transport services, you need to use the Exchange Management Shell. For more information about the EAC, see [Exchange admin center in Exchange 2016](../../architecture/client-access-services/eac.md). To learn how to use Windows PowerShell to connect to Exchange Online Protection, see **Connect to Exchange Online Protection PowerShell**.
+- You can use the Exchange admin center (EAC) to enable or disable connectivity logging and set the log path for the Transport service on Mailbox servers only. For all other connectivity logging options in the other transport services, you need to use the Exchange Management Shell. For more information about the EAC, see [Exchange admin center in Exchange 2016](../../architecture/cas/eac.md). To learn how to use Windows PowerShell to connect to Exchange Online Protection, see **Connect to Exchange Online Protection PowerShell**.
     
 - The folder for connectivity logging needs the following permissions:
     
@@ -34,9 +34,9 @@ Connectivity logging records outbound connection activity (source, destination, 
     
     If the folder doesn't exist, but the parent folder has these permissions, the new folder is created automatically.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Transport service", "Front End Transport service", and "Mailbox Transport service" entries in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Transport service", "Front End Transport service", and "Mailbox Transport service" entries in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-perms.md) topic. 
     
-- For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/keyboard-shortcuts-in-eac.md).
+- For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/eac-keyboard-shortcuts.md).
     
 > [!TIP]
 > Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 

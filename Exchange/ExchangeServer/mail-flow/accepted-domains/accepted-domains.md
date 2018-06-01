@@ -26,7 +26,7 @@ Accepted domains in Exchange 2016 are basically unchanged from Exchange Server 2
     
 An accepted domain can be a single domain (contoso.com) or a domain with subdomains (\*.contoso.com). Accepted domains are a global setting for the Exchange organization, and you can have multiple accepted domains of the same or different types.
   
-To configure accepted domains, see [Procedures for accepted domains in Exchange 2016](accepted-domains-procedures.md).
+To configure accepted domains, see [Procedures for accepted domains in Exchange 2016](accepted-domain-procedures.md).
   
 > [!NOTE]
 > If you have a subscribed Edge Transport server in your perimeter network, you configure accepted domains on a Mailbox server in your Exchange organization. The accepted domains configuration is replicated to the Edge Transport server during EdgeSync synchronization. For more information, see [Edge Subscriptions](../../architecture/edge-transport-servers/edge-subscriptions.md). 
@@ -48,14 +48,14 @@ To configure accepted domains, see [Procedures for accepted domains in Exchange 
 
 You configure an accepted domain as an authoritative domain when all recipients in that domain exist in your Exchange organization.
   
-By default, when you install the first Exchange 2016 Mailbox server, the fully qualified domain name (FQDN) of your forest root domain in Active Directory is configured as an authoritative domain. If you don't want to use this domain for email, you need to add another authoritative domain. For instructions, see [Create accepted domains](accepted-domains-procedures.md#CreateAcceptedDomain).
+By default, when you install the first Exchange 2016 Mailbox server, the fully qualified domain name (FQDN) of your forest root domain in Active Directory is configured as an authoritative domain. If you don't want to use this domain for email, you need to add another authoritative domain. For instructions, see [Create accepted domains](accepted-domain-procedures.md#CreateAcceptedDomain).
   
 An organization can be configured with multiple authoritative domains. The set of email domains for an organization are the authoritative domains. You can use authoritative domains in email address policies, and Exchange is responsible for generating NDRs for non-existent recipients in authoritative domains.
   
 ## Relay domains
 <a name="BKMK_RelayDomains"> </a>
 
-You configure an accepted domain as a relay domain (also known as non-authoritative domain) when some or none of the recipients in that domain exist in your Exchange organization (for example, partners or subsidiaries). Exchange isn't responsible for generating NDRs for non-existent recipients in a relay domain. Instead, you configure a Send connector with the address space of the relay domain, and you configure this Send connector to use smart host routing to relay messages to their destination (directly or to the next hop). For more information about creating Send connectors that use smart host routing, see [Create a Send connector to route outbound mail through a smart host](../../mail-flow/connectors/route-outbound-mail-through-smart-hosts.md).
+You configure an accepted domain as a relay domain (also known as non-authoritative domain) when some or none of the recipients in that domain exist in your Exchange organization (for example, partners or subsidiaries). Exchange isn't responsible for generating NDRs for non-existent recipients in a relay domain. Instead, you configure a Send connector with the address space of the relay domain, and you configure this Send connector to use smart host routing to relay messages to their destination (directly or to the next hop). For more information about creating Send connectors that use smart host routing, see [Create a Send connector to route outbound mail through a smart host](../../mail-flow/connectors/outbound-smart-host-routing.md).
   
 You configure a relay domain as an internal relay domain or as an external relay domain. The differences are described in the following list:
   
@@ -91,7 +91,7 @@ Email address policies assign email addresses to recipients. You need to add an 
 ## Recipient Lookup in accepted domains
 <a name="RecipientLookup"> </a>
 
-Recipient filtering on a subscribed Edge Transport server can block messages that are addressed to non-existent recipients in your Exchange organization. This feature is known as Recipient Lookup. For more information about recipient filtering, see [Recipient filtering on Edge Transport servers](../../antispam-and-antimalware-protection/antispam-protection/recipient-filtering.md).
+Recipient filtering on a subscribed Edge Transport server can block messages that are addressed to non-existent recipients in your Exchange organization. This feature is known as Recipient Lookup. For more information about recipient filtering, see [Recipient filtering on Edge Transport servers](../../spam-and-malware/antispam/recipient-filtering.md).
   
 You can enable or disable Recipient Lookup for an accepted domain by using the  _AddressBookEnabled_ parameter on the **Set-AcceptedDomain** cmdlet. The default value for each accepted domain type is described in the following table: 
   
@@ -103,7 +103,7 @@ You can enable or disable Recipient Lookup for an accepted domain by using the  
 |Internal relay domain  <br/> |Disabled ( `$false`)  <br/> |If all recipients in the internal relay domain exist in the Exchange organization (including mail contacts and mail users), you can enable Recipient Lookup for the domain.  <br/> If some or none of the recipients in the internal relay domain exist in the Exchange organization, you shouldn't enable Recipient Lookup for the domain.  <br/> |
 |External relay domain  <br/> |Disabled ( `$false`)  <br/> |No recipients in the authoritative domain exist in the Exchange organization, so you shouldn't enable Recipient Lookup for the domain.  <br/> |
    
-For configuration instructions, see [Modify accepted domains](accepted-domains-procedures.md#ModifyAcceptedDomain).
+For configuration instructions, see [Modify accepted domains](accepted-domain-procedures.md#ModifyAcceptedDomain).
   
 ## Default domain
 <a name="DefaultDomain"> </a>

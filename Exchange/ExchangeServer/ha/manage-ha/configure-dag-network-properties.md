@@ -1,0 +1,83 @@
+---
+title: "Configure database availability group network properties"
+ms.author: dmaguire
+author: msdmaguire
+manager: serdars
+ms.date: 4/19/2018
+ms.audience: ITPro
+ms.topic: article
+ms.prod: office-online-server
+localization_priority: Normal
+ms.assetid: 41197639-988f-476c-9788-51d5191a7dce
+description: "Summary: Each database availability group (DAG) network has several properties that you can configure."
+---
+
+# Configure database availability group network properties
+
+ **Summary**: Each database availability group (DAG) network has several properties that you can configure.
+  
+Configurable properties include the name of the DAG network, a description field for the DAG network, a list of subnets that are used by the DAG network, and whether the DAG network is enabled for replication.
+  
+Looking for other management tasks related to DAGs? Check out [Managing database availability groups](http://technet.microsoft.com/library/4abde67b-4995-4a57-894f-ba76aa72341c.aspx).
+  
+## What do you need to know before you begin?
+
+- Estimated time to complete: 1 minute
+    
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Database availability groups" entry in the [High availability and site resilience permissions](../../permissions/feature-permissions/ha-perms.md) topic. 
+    
+- You can configure a DAG network only when automatic network configuration has been disabled for a DAG. For detailed steps about how to disable automatic network configuration for a DAG, see [Configure database availability group properties](configure-dag-properties.md).
+    
+- For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/eac-keyboard-shortcuts.md).
+    
+> [!TIP]
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).. 
+  
+## Use the EAC to configure database availability group network properties
+<a name="UseEMC"> </a>
+
+1. In the EAC, go to **Servers** > **Database Availability Groups**.
+    
+2. Select the DAG you want to configure, and in the Details pane, under the DAG network you want to configure, choose from the following configuration options.
+    
+    > [!NOTE]
+    > These options will only be visible if you have selected **Configure database availability group networks manually** on the DAG properties page. 
+  
+  - **Disable Replication** or **Enable Replication** Configures the replication settings for the DAG network. 
+    
+  - **Remove** Removes a DAG network. Before you can remove a DAG network, you must first remove all associated subnets from the DAG network. 
+    
+  - **View details** Configures DAG network properties, such as the name, description, and associated subnets for the DAG network. You can also view the network interfaces associated with those subnets, and enable or disable replication for the DAG network. 
+    
+## Use the Exchange Management Shell to configure database availability group network properties
+<a name="UseShell"> </a>
+
+This example adds a subnet of 10.0.0.0 and subnet mask of 255.0.0.0 to the DAG network MapiDagNetwork in the DAG DAG1.
+  
+```
+Set-DatabaseAvailabilityGroupNetwork -Subnets 10.0.0.0/8 -Identity DAG1\MapiDagNetwork
+```
+
+## How do you know this worked?
+<a name="UseShell"> </a>
+
+To verify that you've successfully configured the DAG network, do the following:
+  
+- In the Exchange Management Shell, run the following command to display DAG network configuration settings and verify the DAG network was configured successfully.
+    
+  ```
+  Get-DatabaseAvailabilityGroupNetwork <DAGNetworkName> | Format-List
+  ```
+
+## For more information
+<a name="UseShell"> </a>
+
+[Set-DatabaseAvailabilityGroupNetwork](http://technet.microsoft.com/library/5c6add57-eef9-4af5-9cf3-54fd910dfe93.aspx)
+  
+[Get-DatabaseAvailabilityGroupNetwork](http://technet.microsoft.com/library/43f57126-a685-4208-ac63-4e3aba4a3e00.aspx)
+  
+[New-DatabaseAvailabilityGroupNetwork](http://technet.microsoft.com/library/3ef8d42f-9da0-456a-b4e8-6f7d99a1fa0f.aspx)
+  
+[Remove-DatabaseAvailabilityGroupNetwork](http://technet.microsoft.com/library/8da3ddc3-72e0-4c1b-8d3f-848c3ab5584e.aspx)
+  
+

@@ -18,7 +18,7 @@ Learn about message tracking and the message tracking log in Exchange 2016.
   
 The message tracking log is a detailed record of all activity as mail flows through the transport pipeline on Mailbox servers and Edge Transport servers. You can use message tracking for message forensics, mail flow analysis, reporting, and troubleshooting.
   
-By default, Exchange uses circular logging to limit the message tracking log based on file size and file age to help control the hard disk space that's used by the log files. To configure the message tracking log, see [Configure message tracking](configure.md).
+By default, Exchange uses circular logging to limit the message tracking log based on file size and file age to help control the hard disk space that's used by the log files. To configure the message tracking log, see [Configure message tracking](configure-message-tracking.md).
   
  **Contents**
   
@@ -43,7 +43,7 @@ Message tracking logs contain vast amounts of data as messages move through a Ma
   
 - **Get-MessageTrackingLog** Administrators can use this Exchange Management Shell cmdlet to search the message tracking log for information about messages using a wide range of filter criteria. For more information, see [Search message tracking logs](search-message-tracking-logs.md).
     
-- **Delivery reports for administrators** Administrators can use the **Delivery reports** tab in the Exchange admin center or the underlying **Search-MessageTrackingReport** and **Get-MessageTrackingReport** cmdlets in the Exchange Management Shell to search the message tracking logs for information about messages sent by or received by a specific mailbox in the organization. For more information, see [Delivery reports for administrators](delivery-reports-for-administrators.md).
+- **Delivery reports for administrators** Administrators can use the **Delivery reports** tab in the Exchange admin center or the underlying **Search-MessageTrackingReport** and **Get-MessageTrackingReport** cmdlets in the Exchange Management Shell to search the message tracking logs for information about messages sent by or received by a specific mailbox in the organization. For more information, see [Delivery reports for administrators](delivery-reports.md).
     
 - **Delivery reports for users** Users can use the **Delivery reports** tab in Outlook on the web to search the message tracking logs for information about messages sent to or sent by their own mailbox. For more information, see [Delivery Reports for Users](https://go.microsoft.com/fwlink/p/?LinkId=279920).
     
@@ -201,7 +201,7 @@ The values in the **source** field in the message tracking log indicate the tran
 |**MEETINGMESSAGEPROCESSOR** <br/> |The event source was the meeting message processor, which updates calendars based on meeting updates.  <br/> |
 |**ORAR** <br/> |The event source was an Originator Requested Alternate Recipient (ORAR). You can enable or disable support for ORAR on Receive connectors using the  _OrarEnabled_ parameter on the **New-ReceiveConnector** or **Set-ReceiveConnector** cmdlets.  <br/> |
 |**PICKUP** <br/> |The event source was the Pickup directory. For more information, see [Pickup Directory and Replay Directory](http://technet.microsoft.com/library/ae191700-953f-411c-906f-dc90feec3d5a.aspx).  <br/> |
-|**POISONMESSAGE** <br/> |The event source was the poison message identifier. For more information about poison messages and the poison message queue, see [Queues and messages in queues](../../mail-flow/queues-and-messages-in-queues/queues-and-messages-in-queues.md) <br/> |
+|**POISONMESSAGE** <br/> |The event source was the poison message identifier. For more information about poison messages and the poison message queue, see [Queues and messages in queues](../../mail-flow/queues/queues.md) <br/> |
 |**PUBLICFOLDER** <br/> |The event source was a mail-enabled public folder.  <br/> |
 |**QUEUE** <br/> |The event source was a queue.  <br/> |
 |**REDUNDANCY** <br/> |The event source was Shadow Redundancy. For more information, see [Shadow redundancy in Exchange 2016](../../mail-flow/transport-ha/shadow-redundancy.md).  <br/> |
@@ -237,7 +237,7 @@ DELIVER    STOREDRIVER chris@contoso.com {michelle@contoso.com} test
 ## Security concerns for the message tracking log
 <a name="Security"> </a>
 
-No message content is stored in the message tracking log. By default, the subject line of an email message is stored in the message tracking log. You might need to disable subject logging to comply with increased security or privacy requirements. For instructions on how to disable subject logging, see [Configure message tracking](configure.md).
+No message content is stored in the message tracking log. By default, the subject line of an email message is stored in the message tracking log. You might need to disable subject logging to comply with increased security or privacy requirements. For instructions on how to disable subject logging, see [Configure message tracking](configure-message-tracking.md).
   
 [Return to top](message-tracking.md#RTT)
   

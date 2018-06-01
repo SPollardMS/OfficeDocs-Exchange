@@ -21,7 +21,7 @@ An address list is a collection of mail-enabled recipient objects from Active Di
     
 - **Address lists** Address lists are subsets of recipients that are grouped together in one list, which makes them easier to find by users. Exchange comes with several built-in address lists, and you can create more based on you organization's needs. 
     
-- **Offline address books (OABs)** OABs contain address lists and GALs. OABs are used by Outlook clients in cached Exchange mode to provide local access to address lists and GALs for recipient look-ups. For more information, see [Offline address books in Exchange 2016](../../email-addresses-and-address-books/offline-address-books/offline-address-books.md).
+- **Offline address books (OABs)** OABs contain address lists and GALs. OABs are used by Outlook clients in cached Exchange mode to provide local access to address lists and GALs for recipient look-ups. For more information, see [Offline address books in Exchange 2016](../../email-addresses-and-address-books/oabs/oabs.md).
     
 Users in your organization use address lists and the GAL to find recipients for email messages. Here's an example of what address lists look like in Outlook 2016:
   
@@ -65,7 +65,7 @@ By default, a new installation of Exchange 2016 creates an GAL named Default Glo
     
   - If a user is still eligible to see multiple GALs, only the largest GAL is used (the GAL that contains the most recipients).
     
-- Each GAL needs a corresponding offline address book (OAB) that includes the GAL. To create OABs, see [Use the Exchange Management Shell to create offline address books](../../email-addresses-and-address-books/offline-address-books/offline-address-book-procedures.md#CreateOAB).
+- Each GAL needs a corresponding offline address book (OAB) that includes the GAL. To create OABs, see [Use the Exchange Management Shell to create offline address books](../../email-addresses-and-address-books/oabs/oab-procedures.md#CreateOAB).
     
 ## Default address lists
 <a name="DALists"> </a>
@@ -74,10 +74,10 @@ By default, Exchange comes with five built-in address lists and one GAL. These a
   
 |**Name**|**Type**|**Description**|**Recipient filter used**|
 |:-----|:-----|:-----|:-----|
-|All Contacts  <br/> |Address list  <br/> |Includes all mail contacts in the organization. To learn more about mail contacts, see [Recipients](../../recipients-0/recipients-0.md).  <br/> | `{Alias -ne $null -and (ObjectCategory -like 'person' -and ObjectClass -eq 'contact')}` <br/> |
-|All Distribution Lists  <br/> |Address list  <br/> |Includes all distribution groups, mail-enabled security groups, and dynamic distribution groups in the organization. To learn more about mail-enabled groups, see [Recipients](../../recipients-0/recipients-0.md).  <br/> | `{Alias -ne $null -and ObjectCategory -like 'group'}` <br/> |
-|All Rooms  <br/> |Address list  <br/> |Includes all room mailboxes. Equipment mailboxes aren't included. To learn more about room and equipment (resource) mailboxes, see [Recipients](../../recipients-0/recipients-0.md).  <br/> | `{Alias -ne $null -and (RecipientDisplayType -eq 'ConferenceRoomMailbox' -or RecipientDisplayType -eq 'SyncedConferenceRoomMailbox')}` <br/> |
-|All Users  <br/> |Address list  <br/> |Includes all user mailboxes, linked mailboxes, remote mailboxes (Office 365 mailboxes), shared mailboxes, room mailboxes, equipment mailboxes, and mail users in the organization. To learn more about these recipient types, see [Recipients](../../recipients-0/recipients-0.md).  <br/> | `{((Alias -ne $null) -and (((((((ObjectCategory -like 'person') -and (ObjectClass -eq 'user') -and (-not(Database -ne $null)) -and (-not(ServerLegacyDN -ne $null)))) -or (((ObjectCategory -like 'person') -and (ObjectClass -eq 'user') -and (((Database -ne $null) -or (ServerLegacyDN -ne $null))))))) -and (-not(RecipientTypeDetailsValue -eq 'GroupMailbox')))))}` <br/> |
+|All Contacts  <br/> |Address list  <br/> |Includes all mail contacts in the organization. To learn more about mail contacts, see [Recipients](../../recipients/recipients.md).  <br/> | `{Alias -ne $null -and (ObjectCategory -like 'person' -and ObjectClass -eq 'contact')}` <br/> |
+|All Distribution Lists  <br/> |Address list  <br/> |Includes all distribution groups, mail-enabled security groups, and dynamic distribution groups in the organization. To learn more about mail-enabled groups, see [Recipients](../../recipients/recipients.md).  <br/> | `{Alias -ne $null -and ObjectCategory -like 'group'}` <br/> |
+|All Rooms  <br/> |Address list  <br/> |Includes all room mailboxes. Equipment mailboxes aren't included. To learn more about room and equipment (resource) mailboxes, see [Recipients](../../recipients/recipients.md).  <br/> | `{Alias -ne $null -and (RecipientDisplayType -eq 'ConferenceRoomMailbox' -or RecipientDisplayType -eq 'SyncedConferenceRoomMailbox')}` <br/> |
+|All Users  <br/> |Address list  <br/> |Includes all user mailboxes, linked mailboxes, remote mailboxes (Office 365 mailboxes), shared mailboxes, room mailboxes, equipment mailboxes, and mail users in the organization. To learn more about these recipient types, see [Recipients](../../recipients/recipients.md).  <br/> | `{((Alias -ne $null) -and (((((((ObjectCategory -like 'person') -and (ObjectClass -eq 'user') -and (-not(Database -ne $null)) -and (-not(ServerLegacyDN -ne $null)))) -or (((ObjectCategory -like 'person') -and (ObjectClass -eq 'user') -and (((Database -ne $null) -or (ServerLegacyDN -ne $null))))))) -and (-not(RecipientTypeDetailsValue -eq 'GroupMailbox')))))}` <br/> |
 |Default Global Address List  <br/> |GAL  <br/> |Includes all mail-enabled recipient objects in the organization (users, contacts, groups, dynamic distribution groups, and public folders.  <br/> | `{((Alias -ne $null) -and (((ObjectClass -eq 'user') -or (ObjectClass -eq 'contact') -or (ObjectClass -eq 'msExchSystemMailbox') -or (ObjectClass -eq 'msExchDynamicDistributionList') -or (ObjectClass -eq 'group') -or (ObjectClass -eq 'publicFolder'))))}` <br/> |
 |Public Folders  <br/> |Address list  <br/> |Includes all mail-enabled public folders in your organization. Access permissions determine who can view and use public folders. For more information about public folders, see [Public Folders](http://technet.microsoft.com/library/94c4fb69-9234-4b34-8c1c-da2a0a11da65.aspx).  <br/> | `{Alias -ne $null -and ObjectCategory -like 'publicFolder'}` <br/> |
    

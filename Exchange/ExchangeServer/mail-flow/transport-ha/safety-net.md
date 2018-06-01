@@ -59,7 +59,7 @@ This table describes the parameters that are used by Safety Net.
 ## Message resubmission from Safety Net
 <a name="PrimaryResubmit"> </a>
 
-The Active Manager component of the Microsoft Exchange Replication service (MRS) manages DAGs and mailbox database copies. Message resubmissions from Safety Net require no manual actions, and are initiated by the Active Manager. For more information about Active Manager, see [Active Manager](../../ha-and-site-resilience/dags/active-manager.md).
+The Active Manager component of the Microsoft Exchange Replication service (MRS) manages DAGs and mailbox database copies. Message resubmissions from Safety Net require no manual actions, and are initiated by the Active Manager. For more information about Active Manager, see [Active Manager](../../ha/dags/active-manager.md).
   
 There are two basic Safety Net message resubmission scenarios:
   
@@ -67,7 +67,7 @@ There are two basic Safety Net message resubmission scenarios:
     
 - After you activate a lagged copy of a mailbox database.
     
-A lagged mailbox database copy or lagged copy is a passive copy of a mailbox database where updates to the database are intentionally delayed to protect against logical corruption of the mailbox database. For more information, see [Manage mailbox database copies](../../ha-and-site-resilience/manage-ha/manage-db-copies.md).
+A lagged mailbox database copy or lagged copy is a passive copy of a mailbox database where updates to the database are intentionally delayed to protect against logical corruption of the mailbox database. For more information, see [Manage mailbox database copies](../../ha/manage-ha/manage-db-copies.md).
   
 The only significant difference between the two scenarios is how far back in time to go to resubmit messages from Safety Net. Typically, for database failover in a DAG, the new active copy of the mailbox database is anywhere from several minutes to several hours behind the old active copy. A lagged copy of a mailbox database is typically several days behind the old active copy.
   

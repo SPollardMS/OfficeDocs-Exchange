@@ -26,7 +26,7 @@ You can use the Exchange admin center (EAC) or the Exchange Management Shell to 
   
 For steps to implement specific messaging policies, see the following topics:
   
-- [Organization-wide disclaimers, signatures, footers, or headers in Exchange 2016](disclaimers-signatures-footers-or-headers.md)
+- [Organization-wide disclaimers, signatures, footers, or headers in Exchange 2016](signatures.md)
     
 - [Common message approval scenarios](http://technet.microsoft.com/library/5c13a07e-c21d-4502-a9f9-fb801197e1dd.aspx)
     
@@ -39,13 +39,13 @@ A rule is made of conditions, exceptions, actions, and properties:
   
 - **Conditions** Identify the messages that you want to apply the actions to. Some conditions examine message header fields (for example, the To, From, or Cc fields). Other conditions examine message properties (for example, the message subject, body, attachments, message size, or message classification). Most conditions require you to specify a comparison operator (for example, equals, doesn't equal, or contains) and a value to match. If there are no conditions or exceptions, the rule is applied to all messages. 
     
-    For a complete list of mail flow rule conditions, see [Mail flow rule conditions and exceptions (predicates) in Exchange 2016](mail-flow-rule-conditions-and-exceptions.md).
+    For a complete list of mail flow rule conditions, see [Mail flow rule conditions and exceptions (predicates) in Exchange 2016](conditions-and-exceptions.md).
     
 - **Exceptions** Optionally identify the messages that the actions shouldn't apply to. The same message identifiers that are available in conditions are also available in exceptions. Exceptions override conditions and prevent the rule actions from being applied to a message, even if the message matches all of the configured conditions. 
     
 - **Actions** Specify what to do to messages that match the conditions in the rule, and don't match any of the exceptions. There are many actions available, such as rejecting, deleting, or redirecting messages, adding additional recipients, adding prefixes in the message subject, or inserting disclaimers in the message body. 
     
-    For a complete list of mail flow rule actions available, see [Mail flow rule actions in Exchange 2016](mail-flow-rule-actions.md).
+    For a complete list of mail flow rule actions available, see [Mail flow rule actions in Exchange 2016](actions.md).
     
 - **Properties** Specify other rules settings that aren't conditions, exceptions or actions. For example, when the rule should be applied, whether to enforce or test the rule, and the time period when the rule is active. For more information, see the [Mail flow rule properties](mail-flow-rules.md#Properties) section in this topic. 
     
@@ -75,7 +75,7 @@ The following table describes the rule properties that are available in mail flo
 |**Activate this rule on the following date** <br/> **Deactivate this rule on the following date** <br/> | _ActivationDate_ <br/>  _ExpiryDate_ <br/> | Specifies the date range when the rule is active.  <br/> |
 |**On** check box selected or not selected  <br/> |New rules:  _Enabled_ parameter on the **New-TransportRule** cmdlet.  <br/> Existing rules: Use the **Enable-TransportRule** or **Disable-TransportRule** cmdlets.  <br/> The value is displayed in the **State** property of the rule.  <br/> |You can create a disabled rule, and enable it when you're ready to test it. Or, you can disable a rule without deleting it to preserve the settings. For instructions, see [Enable or disable mail flow rules](mail-flow-rule-procedures.md#enable).  <br/> |
 |**Defer the message if rule processing doesn't complete** <br/> | _RuleErrorAction_ <br/> |You can specify how the message should be handled if the rule processing can't be completed. By default, the rule will be ignored, but you can choose to resubmit the message for processing.  <br/> |
-|**Match sender address in message** <br/> | _SenderAddressLocation_ <br/> |If the rule uses conditions or exceptions that examine the sender's email address, you can look for the value in the message header, the message envelope, or both. For more information, see [Senders](mail-flow-rule-conditions-and-exceptions.md#Senders).  <br/> |
+|**Match sender address in message** <br/> | _SenderAddressLocation_ <br/> |If the rule uses conditions or exceptions that examine the sender's email address, you can look for the value in the message header, the message envelope, or both. For more information, see [Senders](conditions-and-exceptions.md#Senders).  <br/> |
 |**Stop processing more rules** <br/> | _SenderAddressLocation_ <br/> |This is an action for the rule, but it looks like a property in the EAC. You can choose to stop applying additional rules to a message after a rule processes a message.  <br/> |
 |**Comments** <br/> | _Comments_ <br/> |**Comments** You can enter descriptive comments about the rule.  <br/> |
    

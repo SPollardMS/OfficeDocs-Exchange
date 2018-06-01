@@ -206,7 +206,7 @@ The available authentication mechanisms are described in the following table.
 |**Authentication mechanism**|**Description**|
 |:-----|:-----|
 |None selected ( `None`)  <br/> |No authentication.  <br/> |
-|**Transport Layer Security (TLS)** (  `TLS`)  <br/> |Advertise **STARTTLS** in the EHLO response. TLS encrypted connections require a server certificate that includes the name that the Receive connector advertises in the EHLO response. For more information, see [Modify the SMTP banner on Receive connectors](modify-smtp-banner.md). Other Exchange servers in your organization trust the server's self-signed certificate, but clients and external servers typically use a trusted third-party certificate.  <br/> |
+|**Transport Layer Security (TLS)** (  `TLS`)  <br/> |Advertise **STARTTLS** in the EHLO response. TLS encrypted connections require a server certificate that includes the name that the Receive connector advertises in the EHLO response. For more information, see [Modify the SMTP banner on Receive connectors](modify-smtp-banners.md). Other Exchange servers in your organization trust the server's self-signed certificate, but clients and external servers typically use a trusted third-party certificate.  <br/> |
 |**Basic authentication** (  `BasicAuth`)  <br/> |Basic authentication (clear text).  <br/> |
 |**Offer basic authentication only after starting TLS** (  `BasicAuthRequireTLS`)  <br/> |Basic authentication that's encrypted with TLS.  <br/> |
 |**Integrated Windows authentication** (  `Integrated`)  <br/> |NTLM and Kerberos authentication.  <br/> |

@@ -40,7 +40,7 @@ By default, protocol logging is enabled on the following connectors:
     
 By default, protocol logging is disabled on all other connectors. You need to enable or disable protocol logging on each individual connector. You configure other protocol logging options for all Receive connectors or all Send connectors that exist in each individual transport service on the Exchange server. All Receive connectors in a transport service share the same protocol log files and protocol log options. These files and options are separate from the Send connector protocol log files and protocol log options in the same transport service on the Exchange server.
   
-By default, Exchange uses circular logging to limit the protocol log based on file size and file age to help control the hard disk space that's used by the log files. To configure protocol logging, see [Configure protocol logging](configure-0.md).
+By default, Exchange uses circular logging to limit the protocol log based on file size and file age to help control the hard disk space that's used by the log files. To configure protocol logging, see [Configure protocol logging](configure-protocol-logging.md).
   
  **Contents**
   

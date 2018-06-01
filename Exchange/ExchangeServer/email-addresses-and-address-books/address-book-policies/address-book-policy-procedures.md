@@ -32,17 +32,17 @@ This topic describes how to perform the following procedures on ABPs:
     
 - [Use the Exchange Management Shell to install and configure the Address Book Policy Routing Agent](address-book-policy-procedures.md#InstallABPRouting)
     
- **Note**: Implementing an ABP is a multi-step process that requires planning. For more information, see [Scenario: Deploying address book policies in Exchange 2016](deploy-address-book-policies-scenario.md).
+ **Note**: Implementing an ABP is a multi-step process that requires planning. For more information, see [Scenario: Deploying address book policies in Exchange 2016](address-book-policy-scenarios.md).
   
 ## What do you need to know before you begin?
 
 - Estimated time to complete each procedure: Less than 5 minutes.
     
-- You can assign ABPs to mailboxes in the Exchange admin center (EAC), but all other ABP procedures require the Exchange Management Shell. For more information about accessing and using the EAC, see [Exchange admin center in Exchange 2016](../../architecture/client-access-services/eac.md). To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
+- You can assign ABPs to mailboxes in the Exchange admin center (EAC), but all other ABP procedures require the Exchange Management Shell. For more information about accessing and using the EAC, see [Exchange admin center in Exchange 2016](../../architecture/cas/eac.md). To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Address book policies" entry in the [Email address and address book permissions](../../permissions/feature-permissions/email-address-and-address-book-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Address book policies" entry in the [Email address and address book permissions](../../permissions/feature-permissions/address-book-perms.md) topic. 
     
-- For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/keyboard-shortcuts-in-eac.md).
+- For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/eac-keyboard-shortcuts.md).
     
 - Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
     
@@ -209,7 +209,7 @@ To verify that you've successfully removed an ABP, use either of these procedure
 
 - Users aren't automatically assigned an ABP when you create mailboxes. If you don't assign an ABP to a mailbox, the GAL for your entire organization is visible to the user in Outlook and Outlook on the web.
     
-- To identify your virtual organizations for ABPs, we recommend that you use the CustomAttribute1-15 attributes on mailboxes, contacts, and groups, because these attributes are the most widely available and manageable for all recipient types. For more information, see [Scenario: Deploying address book policies in Exchange 2016](deploy-address-book-policies-scenario.md).
+- To identify your virtual organizations for ABPs, we recommend that you use the CustomAttribute1-15 attributes on mailboxes, contacts, and groups, because these attributes are the most widely available and manageable for all recipient types. For more information, see [Scenario: Deploying address book policies in Exchange 2016](address-book-policy-scenarios.md).
     
 - The procedures to assign ABPs to mailboxes or remove the ABP assignments from mailboxes are the same:
     
@@ -357,7 +357,7 @@ Address Book Policy routing (ABP routing) controls how recipients are resolved i
   
 ABP routing requires that you install and enable the Address Book Policy Routing Agent (ABP Routing Agent) on all Mailbox servers in your organization, and enable ABP routing globally in your organization. After you do this, it might take up to 30 minutes for messages to be processed by the ABP Routing Agent.
   
-You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Transport Agents" entry in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic. 
+You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Transport Agents" entry in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-perms.md) topic. 
   
 ### Step 1: Install the ABP Routing agent
 

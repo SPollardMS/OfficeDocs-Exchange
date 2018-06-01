@@ -28,7 +28,7 @@ You can also force the MFA to immediately process a specified mailbox.
     
 - Although the  _ManagedFolderAssistantSchedule_ parameter is available in Exchange 2016, it doesn't work on Exchange 2016 servers. It's only used for coexistence with previous versions of Exchange. 
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Messaging records management" entry in the [Messaging policy and compliance permissions in Exchange 2016](../../permissions/feature-permissions/messaging-policy-and-compliance-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Messaging records management" entry in the [Messaging policy and compliance permissions in Exchange 2016](../../permissions/feature-permissions/policy-and-compliance-perms.md) topic. 
     
 ## Configure the Managed Folder Assistant
 

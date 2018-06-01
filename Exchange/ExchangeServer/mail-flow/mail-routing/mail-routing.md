@@ -109,7 +109,7 @@ The different types of delivery groups that exist in Exchange 2016 are summarize
 
 From the perspective of the sending transport server, each message delivery queue represents the destination for a particular message. When the Transport service selects the destination for a message, the destination is stamped on the recipient as the **NextHopSolutionKey** attribute. If a single message is sent to more than one recipient, each recipient has the **NextHopSolutionKey** attribute. The receiving transport server also performs message categorization and queues the message for delivery. After a message is queued, you can examine the delivery type for a particular queue to determine whether a message will be relayed again when it reaches the next hop destination. Every unique value of the **NextHopSolutionKey** attribute corresponds to a separate message delivery queue. 
   
-For more information, see [NextHopSolutionKey](../../mail-flow/queues-and-messages-in-queues/queues-and-messages-in-queues.md#NextHopSolutionKey).
+For more information, see [NextHopSolutionKey](../../mail-flow/queues/queues.md#NextHopSolutionKey).
   
 [Return to top](mail-routing.md#RTT)
   
@@ -120,7 +120,7 @@ When a message needs to be delivered to a remote delivery group, a routing path 
   
 1. Calculate the least-cost routing path by adding the cost of the IP site links that must be traversed to reach the destination. If the destination is a connector, the cost assigned to the address space is added to the cost to reach the selected connector. If multiple routing paths are possible, the routing path with the lowest aggregate cost is used.
     
-    **Note**: Size limits on connectors are a factor here. Connectors that are configured with message sizes limits smaller than the size of the message are eliminated from consideration. For more information, see [Connector selection in external message routing](connector-selection-in-external-message-routing.md).
+    **Note**: Size limits on connectors are a factor here. Connectors that are configured with message sizes limits smaller than the size of the message are eliminated from consideration. For more information, see [Connector selection in external message routing](connector-selection.md).
     
 2. If more than one routing path has the same aggregate cost, the number of hops in each path is evaluated and the routing path with the least number of hops is used.
     
@@ -224,7 +224,7 @@ When the Mailbox Transport Delivery service receives a message from the Transpor
 ### Routing in the Transport service on Edge Transport servers
 <a name="EdgeTransport"> </a>
 
-The Transport service on Edge Transport servers provides SMTP relay and smart host services for all Internet mail flow. Messages that come and go from the Internet are stored in message delivery queues on the Edge Transport server. The queues correspond to external domains or Send connectors. For more information, see [NextHopSolutionKey](../../mail-flow/queues-and-messages-in-queues/queues-and-messages-in-queues.md#NextHopSolutionKey).
+The Transport service on Edge Transport servers provides SMTP relay and smart host services for all Internet mail flow. Messages that come and go from the Internet are stored in message delivery queues on the Edge Transport server. The queues correspond to external domains or Send connectors. For more information, see [NextHopSolutionKey](../../mail-flow/queues/queues.md#NextHopSolutionKey).
   
 Typically, when you install an Edge Transport server in your perimeter network, you subscribe the Edge Transport server to an Active Directory site. The Active Directory site contains the Mailbox servers that relay messages to and from the Edge Transport server. The Edge Subscription process creates an Active Directory site membership affiliation for the Edge Transport server. The site affiliation enables the Mailbox servers in the Active Directory site to relay messages to the Edge Transport server without having to configure explicit Send connectors.
   

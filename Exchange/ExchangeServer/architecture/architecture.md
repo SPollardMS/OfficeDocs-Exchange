@@ -68,7 +68,7 @@ Exchange 2016 uses Mailbox servers and Edge Transport servers. These server role
     
 - Mailbox servers contain the Unified Messaging (UM) services that provide voice mail and other telephony features to mailboxes.
     
-- You manage Mailbox servers by using the Exchange admin center (EAC) and the Exchange Management Shell. For more information, see [Exchange admin center in Exchange 2016](client-access-services/eac.md) and [Using PowerShell with Exchange 2016 (Exchange Management Shell)](http://technet.microsoft.com/library/925ad66f-2f05-4269-9923-c353d9c19312.aspx).
+- You manage Mailbox servers by using the Exchange admin center (EAC) and the Exchange Management Shell. For more information, see [Exchange admin center in Exchange 2016](cas/eac.md) and [Using PowerShell with Exchange 2016 (Exchange Management Shell)](http://technet.microsoft.com/library/925ad66f-2f05-4269-9923-c353d9c19312.aspx).
     
 ### Edge Transport servers
 
@@ -76,7 +76,7 @@ Exchange 2016 uses Mailbox servers and Edge Transport servers. These server role
     
 - Edge Transport servers are typically installed in the perimeter network, and are subscribed to the internal Exchange organization. The EdgeSync synchronization process makes recipient and other configuration information available to the Edge Transport server as mail enters and leaves the Exchange organization.
     
-- Edge Transport servers provide antispam and mail flow rules as mail enters and leaves your Exchange organization. For more information, see [Antispam protection in Exchange 2016](../antispam-and-antimalware-protection/antispam-protection/antispam-protection.md)
+- Edge Transport servers provide antispam and mail flow rules as mail enters and leaves your Exchange organization. For more information, see [Antispam protection in Exchange 2016](../spam-and-malware/antispam/antispam.md)
     
 - You manage Edge Transport servers by using the Exchange Management Shell. For more information, see [Using PowerShell with Exchange 2016 (Exchange Management Shell)](http://technet.microsoft.com/library/925ad66f-2f05-4269-9923-c353d9c19312.aspx).
     
@@ -131,7 +131,7 @@ Telephony requests are different than other client connections. Instead of proxy
     
 - **Search improvements** The local search instance is now able to read data from the local mailbox database copy. As a result, passive search instances no longer need to coordinate with their active counterparts to perform index updates, and bandwidth requirements between the active copy and a passive copy have been reduced by 40% compared to previous versions of Exchange. Also, search is now able to perform multiple asynchronous disk reads prior to a user completing a search term. This populates the cache with relevant information, and provides sub-second search query latency for online clients like Outlook on the web. 
     
-- **Office Online Server Preview for Outlook on the web document preview** In previous versions of Exchange, Outlook Web App included WebReady Document Viewing for the built-in preview of Office and PDF documents. In Exchange 2016, Outlook on the web uses Office Online Server Preview to provide rich preview and editing capabilities for documents. While this provides a consistent document experience with other products like SharePoint and Skype for Business, it does require you to deploy Office Online Server Preview in your on-premises environment if you don't already have it. For more information, see [Install Office Online Server in an Exchange 2016 organization](../plan-and-deploy/install-office-online-server-in-an-exchange-organization.md).
+- **Office Online Server Preview for Outlook on the web document preview** In previous versions of Exchange, Outlook Web App included WebReady Document Viewing for the built-in preview of Office and PDF documents. In Exchange 2016, Outlook on the web uses Office Online Server Preview to provide rich preview and editing capabilities for documents. While this provides a consistent document experience with other products like SharePoint and Skype for Business, it does require you to deploy Office Online Server Preview in your on-premises environment if you don't already have it. For more information, see [Install Office Online Server in an Exchange 2016 organization](../plan-deploy/install-office-online-server.md).
     
 - **MAPI over HTTP is the default for Outlook connections** MAPI over HTTP was introduced in Exchange 2013 Service Pack 1, and offers improvements over the traditional Outlook Anywhere (RPC over HTTP) connection method. In Exchange 2016, MAPI over HTTP is enabled by default, and offers additional controls, such as the ability to enable or disable MAPI over HTTP per user, and whether to advertise it to external clients. 
     

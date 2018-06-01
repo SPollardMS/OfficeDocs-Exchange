@@ -21,7 +21,7 @@ Exchange 2016 uses Send connectors for outbound SMTP connections from source Exc
 You can create Send connectors in the Transport service on Mailbox servers, and on Edge Transport servers. Send connectors are stored in Active Directory and are visible to all Mailbox and servers in the organization.
   
 > [!IMPORTANT]
->  By default, no Send connectors exist for external mail flow when you install Exchange. To enable outbound Internet mail flow, you need to create a Send connector, or subscribe an Edge Transport server to your Exchange organization. For more information, see the following topics: > [Create a Send connector to send mail to the Internet](send-mail-to-internet.md)> [Edge Transport servers](../../architecture/edge-transport-servers/edge-transport-servers.md)
+>  By default, no Send connectors exist for external mail flow when you install Exchange. To enable outbound Internet mail flow, you need to create a Send connector, or subscribe an Edge Transport server to your Exchange organization. For more information, see the following topics: > [Create a Send connector to send mail to the Internet](internet-mail-send-connectors.md)> [Edge Transport servers](../../architecture/edge-transport-servers/edge-transport-servers.md)
   
 You don't need to configure Send connectors to send mail between Exchange servers in the same Active Directory forest. Implicit and invisible Send connectors that are fully aware of the Exchange server topology are available for sending mail to internal Exchange servers. These connectors are described in the [Implicit Send connectors](send-connectors.md#ImplicitSendConnectors) section. 
   

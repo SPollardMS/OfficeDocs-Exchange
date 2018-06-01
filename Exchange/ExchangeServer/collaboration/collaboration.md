@@ -54,7 +54,7 @@ To learn more, see [Shared mailboxes](shared-mailboxes/shared-mailboxes.md).
 
 Groups (also called distribution groups) are a collection of two or more recipients that appears in the shared address book. When an email message is sent to a group, it's received by all members of the group. Distribution groups can be organized by a particular discussion subject (such as "Dog Lovers") or by users who share a common work structure that requires them to communicate frequently.
   
-To learn more, see [Recipients](../recipients-0/recipients-0.md).
+To learn more, see [Recipients](../recipients/recipients.md).
   
 ## Which one to use?
 

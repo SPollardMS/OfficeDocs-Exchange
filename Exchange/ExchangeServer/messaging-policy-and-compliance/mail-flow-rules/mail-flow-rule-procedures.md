@@ -27,11 +27,11 @@ On Mailbox servers, you can manage mail flow rules in the Exchange admin center 
 
 - Estimated time to complete each procedure: 5 minutes.
     
-- For more information about the EAC, see [Exchange admin center in Exchange 2016](../../architecture/client-access-services/eac.md). To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
+- For more information about the EAC, see [Exchange admin center in Exchange 2016](../../architecture/cas/eac.md). To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Transport rules" entry in [Messaging policy and compliance permissions in Exchange 2016](../../permissions/feature-permissions/messaging-policy-and-compliance-permissions.md) (Exchange Server), or in [Feature Permissions in Exchange Online](http://technet.microsoft.com/library/15073ce1-0917-403b-8839-02a2ebc96e16.aspx).
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Transport rules" entry in [Messaging policy and compliance permissions in Exchange 2016](../../permissions/feature-permissions/policy-and-compliance-perms.md) (Exchange Server), or in [Feature Permissions in Exchange Online](http://technet.microsoft.com/library/15073ce1-0917-403b-8839-02a2ebc96e16.aspx).
     
-- For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/keyboard-shortcuts-in-eac.md).
+- For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/eac-keyboard-shortcuts.md).
     
 > [!TIP]
 > Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
@@ -66,9 +66,9 @@ The EAC allows you to create mail flow rules by using a template (a filtered lis
     
   - **Name**: Enter a unique, descriptive name for the rule.
     
-  - **Apply this rule if**: Select a condition for the rule. If you want the rule to apply to all messages, select **[Apply to all messages]**. For an explanation of the available conditions, see [Mail flow rule conditions and exceptions (predicates) in Exchange 2016](mail-flow-rule-conditions-and-exceptions.md).
+  - **Apply this rule if**: Select a condition for the rule. If you want the rule to apply to all messages, select **[Apply to all messages]**. For an explanation of the available conditions, see [Mail flow rule conditions and exceptions (predicates) in Exchange 2016](conditions-and-exceptions.md).
     
-  - **Do the following**: Select an action for the rule. The action is applied to messages that match the conditions. For an explanation of the available conditions, see [Mail flow rule actions in Exchange 2016](mail-flow-rule-actions.md).
+  - **Do the following**: Select an action for the rule. The action is applied to messages that match the conditions. For an explanation of the available conditions, see [Mail flow rule actions in Exchange 2016](actions.md).
     
     Optional properties:
     
@@ -98,7 +98,7 @@ The EAC allows you to create mail flow rules by using a template (a filtered lis
     
   - **Defer the message if rule processing doesn't complete**: Select this check box to resubmit the message for processing. By default, the rule will be ignored, and delivery of the message will continue as normal.
     
-  - **Match sender address in message**: For conditions and exceptions that examine the sender's address, you can specify where the rule looks for the sender's address: in the message header (default), the message envelope, or the header and envelope. For more information, see [Senders](mail-flow-rule-conditions-and-exceptions.md#Senders).
+  - **Match sender address in message**: For conditions and exceptions that examine the sender's address, you can specify where the rule looks for the sender's address: in the message header (default), the message envelope, or the header and envelope. For more information, see [Senders](conditions-and-exceptions.md#Senders).
     
   - **Comments**: Specify a descriptive comment for the rule.
     
@@ -220,7 +220,7 @@ For detailed syntax and parameter information, see [Get-TransportRulePredicate](
   
 - Exceptions aren't distinguished from conditions.
     
-- The predicates that are available on Edge Transport servers are a small subset of those available on Mailbox servers. For more information, see [Mail flow rule conditions and exceptions (predicates) in Exchange 2016](mail-flow-rule-conditions-and-exceptions.md).
+- The predicates that are available on Edge Transport servers are a small subset of those available on Mailbox servers. For more information, see [Mail flow rule conditions and exceptions (predicates) in Exchange 2016](conditions-and-exceptions.md).
     
 - Some of the predicate names are different than the corresponding condition and exception parameter names on the **New-TransportRule** and **Set-TransportRule** cmdlets. And, some predicates require multiple parameters. 
     
@@ -238,7 +238,7 @@ For detailed syntax and parameter information, see [Get-TransportRuleAction](htt
   
  **Notes**:
   
-- A small subset of actions that are available on Mailbox servers are also available on Edge Transport servers, but some actions are only available on Edge Transport servers. For more information, see [Mail flow rule actions in Exchange 2016](mail-flow-rule-actions.md).
+- A small subset of actions that are available on Mailbox servers are also available on Edge Transport servers, but some actions are only available on Edge Transport servers. For more information, see [Mail flow rule actions in Exchange 2016](actions.md).
     
 - Some of the action names are different than the corresponding action parameter names on the **New-TransportRule** and **Set-TransportRule** cmdlets. And, some actions require multiple parameters. 
     
@@ -498,9 +498,9 @@ For detailed syntax and parameter information, see [Import-TransportRuleCollecti
     
   - [Mail flow rules in Exchange 2016](mail-flow-rules.md)
     
-  - [Mail flow rule conditions and exceptions (predicates) in Exchange 2016](mail-flow-rule-conditions-and-exceptions.md)
+  - [Mail flow rule conditions and exceptions (predicates) in Exchange 2016](conditions-and-exceptions.md)
     
-  - [Mail flow rule actions in Exchange 2016](mail-flow-rule-actions.md)
+  - [Mail flow rule actions in Exchange 2016](actions.md)
     
 - Resources for Exchange Online:
     

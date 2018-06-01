@@ -22,7 +22,7 @@ Have questions about public folders that aren't answered here? Send us an email 
   
 ## FAQ about public folder migration
 
-This section contains frequently asked questions about public folder migration. For more information, see [Use batch migration to migrate public folders to Exchange 2016 from previous versions](migrate-public-folders-from-previous-versions.md), [Use batch migration to migrate legacy public folders to Office 365 and Exchange Online](http://technet.microsoft.com/library/e8ab9309-7d12-4f02-bfc4-14e61a373958.aspx), or [Use batch migration to migrate Exchange 2016 public folders to Exchange Online](migrate-public-folders-to-exchange-online.md).
+This section contains frequently asked questions about public folder migration. For more information, see [Use batch migration to migrate public folders to Exchange 2016 from previous versions](batch-migration-from-previous-versions.md), [Use batch migration to migrate legacy public folders to Office 365 and Exchange Online](http://technet.microsoft.com/library/e8ab9309-7d12-4f02-bfc4-14e61a373958.aspx), or [Use batch migration to migrate Exchange 2016 public folders to Exchange Online](migrate-to-exchange-online.md).
   
 ### What are the supported public folder migration scenarios?
 
@@ -98,7 +98,7 @@ In a hybrid scenario, Outlook on the web and Outlook 2011 for Mac aren't support
   
 ## How can I store a very large hierarchy in a public folder mailbox?
 
-For more information about public folder storage limits, see [Limits for public folders](public-folder-limits.md).
+For more information about public folder storage limits, see [Limits for public folders](limits.md).
   
 ## How can I view the hierarchy public folder mailbox?
 
@@ -118,7 +118,7 @@ Run the following command to create the first master hierarchy public folder mai
 New-Mailbox -PublicFolder -Name <name of public folder>
 ```
 
-For more detail, see [Create a public folder](create-public-folder.md).
+For more detail, see [Create a public folder](create-public-folders.md).
   
 ## In previous versions of Exchange, for each mailbox database there was an option to specify its public folder database. How will this work in Exchange 2016?
 
@@ -138,7 +138,7 @@ No. Not at this time.
   
 ## What are the limits on public folders? What are the recommendations?
 
-For more information about public folder limits, see [Limits for public folders](public-folder-limits.md).
+For more information about public folder limits, see [Limits for public folders](limits.md).
   
 ## What are the recommendations for splitting public folder mailboxes? Should they stay on the same database?
 
@@ -146,7 +146,7 @@ In previous versions of Exchange, you could split public folders across public f
   
 ## Can you set retention policies on public folders?
 
-Just like in previous versions of Exchange, you can set retention limits on items. For details, see [Limits for public folders](public-folder-limits.md).
+Just like in previous versions of Exchange, you can set retention limits on items. For details, see [Limits for public folders](limits.md).
   
 ## Can you specify which users can use a specific public folder mailbox?
 

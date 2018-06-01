@@ -60,7 +60,7 @@ There are several ways to move messages from a user's primary mailbox to their a
     
 - **Move messages using retention policies** You can use retention policies to automatically move messages to the archive mailbox. Users can also apply personal tags to move messages to their archive mailbox. For details about archive and retention policies, see [Archiving and retention policies](in-place-archiving.md#RetPolicies) later in this topic. 
     
-- **Import messages from .pst files** In Exchange 2016, you can use a mailbox import request to import messages from a .pst file to a user's archive or primary mailbox. For details, see [Mailbox imports and exports in Exchange 2016](../../recipients-0/mailbox-imports-and-exports/mailbox-imports-and-exports.md).
+- **Import messages from .pst files** In Exchange 2016, you can use a mailbox import request to import messages from a .pst file to a user's archive or primary mailbox. For details, see [Mailbox imports and exports in Exchange 2016](../../recipients/mailbox-import-export/mailbox-import-export.md).
     
 [Return to top](#toc.md)
   
@@ -128,9 +128,9 @@ This section explains the functionality between In-Place Archiving and various E
   
 - **Exchange Search** The ability to quickly search messages becomes even more critical with archive mailboxes. For Exchange Search, there's no difference between the primary and archive mailbox. Content in both mailboxes is indexed. Because the archive mailbox isn't cached on a user's computer (even when using Outlook in Cached Exchange Mode), search results for the archive are always provided by Exchange Search. When searching the entire mailbox in Outlook and later and Outlook on the web, search results include the users' primary and archive mailbox. 
     
-- **In-Place eDiscovery** When a discovery manager performs an In-Place eDiscovery search, users' archive mailboxes are also searched. There's no option to exclude archive mailboxes when creating a discovery search from the Exchange admin center (EAC). When using the Exchange Management Shell to create a discovery search, you can exclude the archive by using the  _DoNotIncludeArchive_ switch. For details, see [New-MailboxSearch](http://technet.microsoft.com/library/74303b47-bb49-407c-a43b-590356eae35c.aspx). To learn more, see [In-Place eDiscovery in Exchange 2016](../../messaging-policy-and-compliance/in-place-ediscovery/in-place-ediscovery.md).
+- **In-Place eDiscovery** When a discovery manager performs an In-Place eDiscovery search, users' archive mailboxes are also searched. There's no option to exclude archive mailboxes when creating a discovery search from the Exchange admin center (EAC). When using the Exchange Management Shell to create a discovery search, you can exclude the archive by using the  _DoNotIncludeArchive_ switch. For details, see [New-MailboxSearch](http://technet.microsoft.com/library/74303b47-bb49-407c-a43b-590356eae35c.aspx). To learn more, see [In-Place eDiscovery in Exchange 2016](../../messaging-policy-and-compliance/ediscovery/ediscovery.md).
     
-- **In-Place Hold and Litigation Hold** When you put a mailbox on In-Place Hold or Litigation Hold, the hold is placed on both the primary and the archive mailbox. To learn more, see [In-Place Hold and Litigation Hold in Exchange 2016](../../messaging-policy-and-compliance/in-place-hold-and-litigation-hold/in-place-hold-and-litigation-hold.md).
+- **In-Place Hold and Litigation Hold** When you put a mailbox on In-Place Hold or Litigation Hold, the hold is placed on both the primary and the archive mailbox. To learn more, see [In-Place Hold and Litigation Hold in Exchange 2016](../../messaging-policy-and-compliance/holds/holds.md).
     
 - **Recoverable Items folder** The archive mailbox contains its own Recoverable Items folder and is subject to the same Recoverable Items folder quotas as the primary mailbox. To learn more about recoverable items, see [Recoverable Items folder in Exchange 2016](../../messaging-policy-and-compliance/recoverable-items-folder/recoverable-items-folder.md).
     
@@ -141,11 +141,11 @@ This section explains the functionality between In-Place Archiving and various E
 ## Managing archive mailboxes
 <a name="mbxs"> </a>
 
-In Exchange 2016, creating and managing archive mailboxes is integrated with common mailbox management tasks. For step by step procedures, see [Manage In-Place Archives in Exchange 2016](manage-in-place-archives.md).
+In Exchange 2016, creating and managing archive mailboxes is integrated with common mailbox management tasks. For step by step procedures, see [Manage In-Place Archives in Exchange 2016](manage-archives.md).
   
 - **Creating an archive mailbox** You can enable an archive mailbox for an existing mailbox or you can create an archive mailbox when creating a new mailbox. . 
     
-- **Moving an archive mailbox** You can move a user's archive mailbox to another mailbox database on the same Mailbox server or to another server, independent of the primary mailbox. To move a user's archive mailbox, you must create a mailbox move request. For details, see [Manage on-premises mailbox moves in Exchange 2016](../../architecture/mailbox-servers/manage-on-premises-mailbox-moves.md).
+- **Moving an archive mailbox** You can move a user's archive mailbox to another mailbox database on the same Mailbox server or to another server, independent of the primary mailbox. To move a user's archive mailbox, you must create a mailbox move request. For details, see [Manage on-premises mailbox moves in Exchange 2016](../../architecture/mailbox-servers/manage-mailbox-moves.md).
     
     > [!IMPORTANT]
     > Locating a user's mailbox and archive on different versions of Exchange Server isn't supported. 

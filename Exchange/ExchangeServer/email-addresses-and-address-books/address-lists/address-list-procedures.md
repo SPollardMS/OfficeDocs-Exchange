@@ -56,11 +56,11 @@ These are the address list and GAL procedures that you'll find in this topic:
 
 - Estimated time to complete each procedure: 5 minutes.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Address lists" entry in the [Email address and address book permissions](../../permissions/feature-permissions/email-address-and-address-book-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Address lists" entry in the [Email address and address book permissions](../../permissions/feature-permissions/address-book-perms.md) topic. 
     
-- You can do some of the procedures in this topic by using the EAC. For more information about the EAC, see [Exchange admin center in Exchange 2016](../../architecture/client-access-services/eac.md). Some procedures require the Exchange Management Shell. To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
+- You can do some of the procedures in this topic by using the EAC. For more information about the EAC, see [Exchange admin center in Exchange 2016](../../architecture/cas/eac.md). Some procedures require the Exchange Management Shell. To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
     
-- For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/keyboard-shortcuts-in-eac.md).
+- For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/eac-keyboard-shortcuts.md).
     
 > [!TIP]
 > Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
@@ -135,7 +135,7 @@ $GAL = Get-GlobalAddressList -Identity "Humongous Insurance"; Get-Recipient -Res
 
 For more information about the requirements and implications of having multiple GALs in your organization, see [Global address lists](address-lists.md#GALs).
   
-For details about recipient filters in the Exchange Management Shell, see the [Recipient filters in the Exchange Management Shell](../../email-addresses-and-address-books/email-address-policies/email-address-policy-procedures.md#Shell_RecipientFilters) section in this topic. 
+For details about recipient filters in the Exchange Management Shell, see the [Recipient filters in the Exchange Management Shell](../../email-addresses-and-address-books/email-address-policies/eap-procedures.md#Shell_RecipientFilters) section in this topic. 
   
 To create a GAL, use the following syntax:
   
@@ -223,7 +223,7 @@ To verify that you've successfully modified a GAL, use either of the following p
 
 - You can't remove the GAL named Default Offline Address Book, the GAL that's automatically created by Exchange, and the only GAL that has the **IsDefaultGlobalAddressList** property value  `True`.
     
-- You can't remove a GAL that's defined in an offline address book (OAB). To modify the address lists that are defined in an OAB, see [Use the Exchange Management Shell to add and remove address lists from offline address books](../../email-addresses-and-address-books/offline-address-books/offline-address-book-procedures.md#OABAddRemoveAddressLists).
+- You can't remove a GAL that's defined in an offline address book (OAB). To modify the address lists that are defined in an OAB, see [Use the Exchange Management Shell to add and remove address lists from offline address books](../../email-addresses-and-address-books/oabs/oab-procedures.md#OABAddRemoveAddressLists).
     
 To remove a GAL, use the following syntax:
   
@@ -366,14 +366,14 @@ You can create address lists by using the EAC or the Exchange Management Shell. 
     
   - **Address list path** You can create the address list in the root (" **\**", also known as All Address Lists), or you can create the address list under an existing address list. To create the address list under an existing address list, click **Browse**, select the address list in the picker window, and then click **OK**.
     
-  - For details about the recipient filters and preview options that are available here, see the [Recipient filters in the EAC](../../email-addresses-and-address-books/email-address-policies/email-address-policy-procedures.md#EAC_RecipientFilters) section in this topic. 
+  - For details about the recipient filters and preview options that are available here, see the [Recipient filters in the EAC](../../email-addresses-and-address-books/email-address-policies/eap-procedures.md#EAC_RecipientFilters) section in this topic. 
     
 3. When you're finished, click **Save**. You'll receive a warning message that tells you to click **Update** in the details pane to update the membership of the address list. For more information, see the [Update address lists](address-list-procedures.md#UpdateAddressList) section in this topic. 
     
 #### Use the Exchange Management Shell to create address lists
 <a name="Shell_CreateAddressList"> </a>
 
- You can create address lists with or without recipient filters. For details about recipient filters in the Exchange Management Shell, see the [Recipient filters in the Exchange Management Shell](../../email-addresses-and-address-books/email-address-policies/email-address-policy-procedures.md#Shell_RecipientFilters) section in this topic. 
+ You can create address lists with or without recipient filters. For details about recipient filters in the Exchange Management Shell, see the [Recipient filters in the Exchange Management Shell](../../email-addresses-and-address-books/email-address-policies/eap-procedures.md#Shell_RecipientFilters) section in this topic. 
   
 To create an address list, use the following syntax:
   
@@ -441,7 +441,7 @@ To verify that you've successfully created an address list, use either of the fo
     
   - **Display name** Enter a unique, descriptive name for the address list. 
     
-  - For details about the recipient filters and preview options that are available here, see the [Recipient filters in the EAC](../../email-addresses-and-address-books/email-address-policies/email-address-policy-procedures.md#EAC_RecipientFilters) section in this topic. 
+  - For details about the recipient filters and preview options that are available here, see the [Recipient filters in the EAC](../../email-addresses-and-address-books/email-address-policies/eap-procedures.md#EAC_RecipientFilters) section in this topic. 
     
 3. When you're finished, click **Save**. You'll receive a warning message that tells you to click **Update** in the details pane to update the membership of the address list. For more information, see the [Update address lists](address-list-procedures.md#UpdateAddressList) section in this topic. 
     
@@ -521,7 +521,7 @@ To verify that you've successfully modified an address list, use either of the f
 
 If the address list contains more than 3000 recipients, we recommend that you use the Exchange Management Shell to remove the address list. Removing the address list will take a long time, and will prevent you from using the EAC session until the address list is fully removed. If the address list contains less than 3000 recipients, it's OK to use the EAC to remove the address list.
   
-- You can't remove an address list that's defined in an offline address book (OAB). To modify the address lists that are defined in an OAB, see [Use the Exchange Management Shell to add and remove address lists from offline address books](../../email-addresses-and-address-books/offline-address-books/offline-address-book-procedures.md#OABAddRemoveAddressLists).
+- You can't remove an address list that's defined in an offline address book (OAB). To modify the address lists that are defined in an OAB, see [Use the Exchange Management Shell to add and remove address lists from offline address books](../../email-addresses-and-address-books/oabs/oab-procedures.md#OABAddRemoveAddressLists).
     
 - You can't remove an address list that contains child address lists (you'll receive an error). You first need to do one of the following steps:
     

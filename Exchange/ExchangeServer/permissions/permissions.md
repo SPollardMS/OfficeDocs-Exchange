@@ -184,7 +184,7 @@ If you want to assign different end-user permissions to the various types of use
 If you want to change which role assignment policy is the default, you needs to use the Exchange Management Shell. When you change the default role assignment policy, any mailboxes that are created will be associated with the new default role assignment policy if one wasn't explicitly specified. The role assignment policy associated with existing mailboxes doesn't change when you select a new default role assignment policy.
   
 > [!NOTE]
->  If you select a check box for a role that has child roles, the check boxes for the child roles are also selected. If you clear the check box for a role with child roles, the check boxes for the child roles are also cleared. >  For detailed steps about how to create role assignment policies or make changes to existing role assignment policies, see the following topics: > [Manage role assignment policies](manage-role-assignment-policies.md)> [Change the assignment policy on a mailbox](change-mailbox-assignment-policy.md)
+>  If you select a check box for a role that has child roles, the check boxes for the child roles are also selected. If you clear the check box for a role with child roles, the check boxes for the child roles are also cleared. >  For detailed steps about how to create role assignment policies or make changes to existing role assignment policies, see the following topics: > [Manage role assignment policies](role-assignment-policies.md)> [Change the assignment policy on a mailbox](policy-assignments-for-mailboxes.md)
   
 [Role-based permissions](permissions.md#RoleBased)
   

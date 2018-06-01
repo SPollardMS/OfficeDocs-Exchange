@@ -22,9 +22,9 @@ Address book policies (ABPs) lets administrators segment users into specific gro
   
 - One GAL. For more information about GALs, see [Global address lists](../../email-addresses-and-address-books/address-lists/address-lists.md#GALs).
     
-- One offline address book (OAB). For more information about OABs, see [Offline address books in Exchange 2016](../../email-addresses-and-address-books/offline-address-books/offline-address-books.md).
+- One offline address book (OAB). For more information about OABs, see [Offline address books in Exchange 2016](../../email-addresses-and-address-books/oabs/oabs.md).
     
-- One room list. Note that this room list is a custom address list that specifies rooms (contains the filter  `RecipientDisplayType -eq 'ConferenceRoomMailbox'`). It's not a room finder that you create with the  _RoomList_ switch on the **New-DistributionGroup** or **Set-DistributionGroup** cmdlet. For more information, see [Create and manage room mailboxes](../../recipients-0/create-and-manage-room-mailboxes.md).
+- One room list. Note that this room list is a custom address list that specifies rooms (contains the filter  `RecipientDisplayType -eq 'ConferenceRoomMailbox'`). It's not a room finder that you create with the  _RoomList_ switch on the **New-DistributionGroup** or **Set-DistributionGroup** cmdlet. For more information, see [Create and manage room mailboxes](../../recipients/room-mailboxes.md).
     
 - One or more address lists. For more information about address lists, see [Custom address lists](../../email-addresses-and-address-books/address-lists/address-lists.md#CALists).
     
@@ -34,7 +34,7 @@ For procedures involving ABPs, see [Procedures for address book policies in Exch
   
 - ABPs create only a virtual separation of users from a directory perspective, not a legal separation.
     
-- Implementing an ABP is a multi-step process that requires planning. For more information, see [Scenario: Deploying address book policies in Exchange 2016](deploy-address-book-policies-scenario.md).
+- Implementing an ABP is a multi-step process that requires planning. For more information, see [Scenario: Deploying address book policies in Exchange 2016](address-book-policy-scenarios.md).
     
 ## How ABPs work
 <a name="How"> </a>

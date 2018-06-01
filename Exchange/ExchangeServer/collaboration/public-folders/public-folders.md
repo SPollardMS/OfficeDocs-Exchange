@@ -36,7 +36,7 @@ To learn more about public folders and other collaboration methods in Exchange 2
   
 To browse some frequently asked questions about public folders in Exchange 2016, see [FAQ: Public folders](faq.md).
   
-For more information about the limits and quotas for public folders, see [Limits for public folders](public-folder-limits.md).
+For more information about the limits and quotas for public folders, see [Limits for public folders](limits.md).
   
  **Contents**
   
@@ -75,7 +75,7 @@ There are two ways you can manage public folder mailboxes:
     
 - In the Exchange Management Shell, use the **\*-Mailbox** set of cmdlets. The following parameters have been added to the [new-Mailbox](http://technet.microsoft.com/library/42dbb25a-0b23-4775-ae15-7af62c089565.aspx) cmdlet to support public folder mailboxes: 
     
-  -  _PublicFolder_ This parameter is used with the **New-Mailbox** cmdlet to create a public folder mailbox. When you create a public folder mailbox, a new mailbox is created with the mailbox type of  `PublicFolder`. For more information, see [Create a public folder mailbox](create-public-folder-mailbox.md).
+  -  _PublicFolder_ This parameter is used with the **New-Mailbox** cmdlet to create a public folder mailbox. When you create a public folder mailbox, a new mailbox is created with the mailbox type of  `PublicFolder`. For more information, see [Create a public folder mailbox](create-public-folder-mailboxes.md).
     
   -  _HoldForMigration_ This parameter is used only if you are migrating public folders from a previous version to Exchange 2016. For more information, see [Migrate public folders](public-folders.md#MigratePFs) later in this topic. 
     
@@ -110,7 +110,7 @@ The public folder hierarchy synchronization process uses Incremental Change Sync
   
 In a large organization, when you create a new public folder mailbox, the hierarchy must synchronize to that public folder before users can connect to it. Otherwise, users may see an incomplete public folder structure when connecting with Outlook. To allow time for this synchronization to occur without users attempting to connect to the new public folder mailbox, set the  _IsExcludedFromServingHierarchy_ parameter on the **New-Mailbox** cmdlet when creating the public folder mailbox. This parameter prevents users from connecting to the newly created public folder mailbox. When synchronization is complete, run the [Set-Mailbox](http://technet.microsoft.com/library/a0d413b9-d949-4df6-ba96-ac0906dedae2.aspx) cmdlet with the  _IsExcludedFromServingHierarchy_ parameter set to  `false`, indicating that the public folder mailbox is ready to be connected to. You can use also the [Get-PublicFolderMailboxDiagnostics](http://technet.microsoft.com/library/e780d809-a408-4799-8175-46946835bee4.aspx) cmdlet to view the sync status by the  _SyncInfo_ and the  _AssistantInfo_ properties. 
   
-For more information, see [Create a public folder](create-public-folder.md).
+For more information, see [Create a public folder](create-public-folders.md).
   
 ### Public folder content
 <a name="PFHierarchy"> </a>
@@ -125,11 +125,11 @@ Public folder content can include email messages, posts, documents, and eForms. 
 
 You can migrate public folders from Exchange 2010 to Exchange 2016, or from Exchange 2010 to Exchange Online. You can also migrate public folders from Exchange 2016 to Exchange Online.
   
-If you already have Exchange 2010 SP3 public folders in your organization prior to installing Exchange 2016, you must migrate those public folders to Exchange 2016. To do this, use the **PublicFolderMigrationRequst** cmdlets. For more information, see [Use batch migration to migrate public folders to Exchange 2016 from previous versions](migrate-public-folders-from-previous-versions.md). If your organization is moving to Exchange Online, you can migrate your public folders to the cloud and upgrade them at the same time. For details, see [Use batch migration to migrate legacy public folders to Office 365 and Exchange Online](http://technet.microsoft.com/library/e8ab9309-7d12-4f02-bfc4-14e61a373958.aspx) and [Use batch migration to migrate Exchange 2016 public folders to Exchange Online](migrate-public-folders-to-exchange-online.md).
+If you already have Exchange 2010 SP3 public folders in your organization prior to installing Exchange 2016, you must migrate those public folders to Exchange 2016. To do this, use the **PublicFolderMigrationRequst** cmdlets. For more information, see [Use batch migration to migrate public folders to Exchange 2016 from previous versions](batch-migration-from-previous-versions.md). If your organization is moving to Exchange Online, you can migrate your public folders to the cloud and upgrade them at the same time. For details, see [Use batch migration to migrate legacy public folders to Office 365 and Exchange Online](http://technet.microsoft.com/library/e8ab9309-7d12-4f02-bfc4-14e61a373958.aspx) and [Use batch migration to migrate Exchange 2016 public folders to Exchange Online](migrate-to-exchange-online.md).
   
 Due to the changes in how public folders are stored, legacy Exchange mailboxes are unable to access the public folder hierarchy on Exchange 2013 or Exchange 2016 servers or on Exchange Online. However, user mailboxes on Exchange 2016 servers can connect to legacy public folders. Exchange 2016 public folders and legacy public folders can't exist in your Exchange organization simultaneously. This effectively means that there's no coexistence between versions. Migrating public folders to Exchange Server 2016 or Exchange Online is currently a one-time cutover process.
   
-For this reason, it's recommended that prior to migrating your public folders, you should first migrate your legacy mailboxes to Exchange 2016 or Exchange Online. For more information about migrating mailboxes, see [Mailbox moves in Exchange 2016](../../recipients-0/mailbox-moves.md), [Perform a cutover migration of email to Office 365](https://go.microsoft.com/fwlink/p/?LinkID=536689), and [Perform a staged migration of email to Office 365](https://go.microsoft.com/fwlink/p/?LinkID=536687).
+For this reason, it's recommended that prior to migrating your public folders, you should first migrate your legacy mailboxes to Exchange 2016 or Exchange Online. For more information about migrating mailboxes, see [Mailbox moves in Exchange 2016](../../recipients/mailbox-moves.md), [Perform a cutover migration of email to Office 365](https://go.microsoft.com/fwlink/p/?LinkID=536689), and [Perform a staged migration of email to Office 365](https://go.microsoft.com/fwlink/p/?LinkID=536687).
   
 ## Public folder moves
 <a name="Moves"> </a>
@@ -158,7 +158,7 @@ To set the quotas on a public folder mailbox, use the [Set-OrganizationConfig](h
 ## Disaster recovery
 <a name="DR"> </a>
 
-Exchange 2016 public folders are built on mailbox infrastructure and use the same mechanisms for availability and redundancy. Every public folder mailbox can have multiple redundant copies with automatic failover, just like regular mailboxes. To learn more, see [Plan for high availability and site resilience](../../ha-and-site-resilience/plan-for-ha.md).
+Exchange 2016 public folders are built on mailbox infrastructure and use the same mechanisms for availability and redundancy. Every public folder mailbox can have multiple redundant copies with automatic failover, just like regular mailboxes. To learn more, see [Plan for high availability and site resilience](../../ha/plan-ha.md).
   
 In addition to the overall disaster recovery scenario, you can also restore public folders in the following situations:
   

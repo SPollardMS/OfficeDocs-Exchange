@@ -114,7 +114,7 @@ The following prerequisites are required in your Exchange environment before you
   
 Click one of the links below for step-by-step instructions on running a batch migration.
   
-- [Use batch migration to migrate Exchange 2016 public folders to Office 365 Groups](migrate-public-folders-to-office-365-groups.md)
+- [Use batch migration to migrate Exchange 2016 public folders to Office 365 Groups](batch-migration-to-office-365-groups.md)
     
 - [Use batch migration to migrate your Exchange Online public folders to Office 365 Groups](https://go.microsoft.com/fwlink/p/?linkid=859168)
     

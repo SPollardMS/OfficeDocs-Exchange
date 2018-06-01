@@ -65,7 +65,7 @@ The following sections explain how Exchange handles the situation when a specifi
   
  **Description** Monitors the percentage of total drive space that's consumed by all files on the drive that holds the message queue database. Note that the message queue database file contains unused space, so an accurate description of the total drive space that's consumed by all files is drive size - free disk space - free space in the database. 
   
-To change the default location of the message queue database, see [Change the location of the queue database](queues-and-messages-in-queues/change-queue-db-location.md).
+To change the default location of the message queue database, see [Change the location of the queue database](queues/change-db-location.md).
   
  **Pressure transitions (%)**:
   
@@ -165,7 +165,7 @@ When the server reaches the high level of memory utilization, message dehydratio
 
  **Resource** **UsedDiskSpace[%ExchangeInstallPath%TransportRoles\data\Queue]**
   
- **Description** Monitors the percentage of total drive space that's consumed by all files on the drive that holds the message queue database transaction logs. To change the default location, see [Change the location of the queue database](queues-and-messages-in-queues/change-queue-db-location.md).
+ **Description** Monitors the percentage of total drive space that's consumed by all files on the drive that holds the message queue database transaction logs. To change the default location, see [Change the location of the queue database](queues/change-db-location.md).
   
  **Pressure transitions (%)**:
   

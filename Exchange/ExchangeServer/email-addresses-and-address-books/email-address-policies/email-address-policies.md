@@ -28,7 +28,7 @@ The basic components of an email address policy are:
     
 - **Priority** Specifies the order to apply the email address policies (important if a recipient is identified by more than one policy). 
     
-To configure email address policies, see [Procedures for email address policies in Exchange 2016](email-address-policy-procedures.md).
+To configure email address policies, see [Procedures for email address policies in Exchange 2016](eap-procedures.md).
   
 ## Email address templates
 
@@ -148,12 +148,12 @@ You can't delete the default email address policy, and you can't designate anoth
     
 - You can't change the name or priority of the policy.
     
-- You can fully customize the email address templates in the policy (modify, add, or remove templates). For more information, see [Modify email address policies](email-address-policy-procedures.md#ModifyEAP).
+- You can fully customize the email address templates in the policy (modify, add, or remove templates). For more information, see [Modify email address policies](eap-procedures.md#ModifyEAP).
     
 ## Apply email address policies
 
 After you create or modify an email address policy in the EAC or the Exchange Management Shell, the policy needs to be applied to the affected recipients.
   
-If the updates affect a large number of recipients (our recommendation is more than 3000), you should use the Exchange Management Shell to apply the updates to the affected recipients. For more information, see [Apply email address policies to recipients](email-address-policy-procedures.md#ApplyEAP).
+If the updates affect a large number of recipients (our recommendation is more than 3000), you should use the Exchange Management Shell to apply the updates to the affected recipients. For more information, see [Apply email address policies to recipients](eap-procedures.md#ApplyEAP).
   
 

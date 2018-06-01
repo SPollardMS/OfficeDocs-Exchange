@@ -82,7 +82,7 @@ The Active Directory recipient objects that are used by Exchange are described i
 |**Active Directory recipient type**|**Description**|
 |:-----|:-----|
 |DistributionGroup  <br/> | Any mail-enabled group object. The distribution group object types are:  <br/> **MailUniversalDistributionGroup** A universal distribution group object  <br/> **MailUniversalSecurityGroup** A universal security group (USG) object that has an email address  <br/> |
-|DynamicDistributionGroup  <br/> |An object that has the Active Directory class **msExchDynamicDistributionList**. For more information, see [Manage dynamic distribution groups](../../recipients-0/manage-dynamic-distribution-groups/manage-dynamic-distribution-groups.md).  <br/> |
+|DynamicDistributionGroup  <br/> |An object that has the Active Directory class **msExchDynamicDistributionList**. For more information, see [Manage dynamic distribution groups](../../recipients/ddgs/ddgs.md).  <br/> |
 |Mailbox  <br/> |An object that has an email address and a defined  _Database_ parameter.  <br/> |
 |MailUser  <br/> |A user object that has an email address without a defined  _Database_ parameter. For more information, see [Create a Mail User](http://technet.microsoft.com/library/bb8b8804-f730-4ad7-9173-896a4965b90f.aspx).  <br/> |
 |MailContact  <br/> |A contact object that has an email address. Typically, a mail contact is used for recipients outside the Exchange organization. A mail contact is also used in cross-forest Exchange environments. For more information, see [Create a Mail Contact](http://technet.microsoft.com/library/74c72aed-e9ff-4927-8eb7-c08a86e79ae0.aspx).  <br/> |
@@ -123,7 +123,7 @@ The types of recipients that require expansion are described in this list:
     
 - **Alternative recipients** You can configure mailboxes and mail-enabled public folders to forward messages to other recipients: 
     
-  - **Mailboxes** You can configure forwarding to another recipient in the Exchange organization, or to an external email address. For more information, see [Configure email forwarding for a mailbox](../../recipients-0/manage-user-mailboxes/configure-email-forwarding.md).
+  - **Mailboxes** You can configure forwarding to another recipient in the Exchange organization, or to an external email address. For more information, see [Configure email forwarding for a mailbox](../../recipients/user-mailboxes/email-forwarding.md).
     
   - **Mail-enabled public folders** You can configure forwarding to another recipient in the Exchange organization. 
     
@@ -171,7 +171,7 @@ The different types of delivery report messages that can be affected by delivery
   
 - **Delivery receipt (DR)** Confirms that a message was delivered to its intended recipient. 
     
-- **Delivery status notification (DSN)** Describes the result of an attempt to deliver a message that didn't result in the message being returned to the sender in an non-delivery report (NDR). For more information about DSN messages, see [DSNs and NDRs in Exchange 2016](../../mail-flow/dsns-and-ndrs/dsns-and-ndrs.md).
+- **Delivery status notification (DSN)** Describes the result of an attempt to deliver a message that didn't result in the message being returned to the sender in an non-delivery report (NDR). For more information about DSN messages, see [DSNs and NDRs in Exchange 2016](../../mail-flow/ndrs/ndrs.md).
     
 - **Message disposition notification (MDN)** Describes the status of a message after it has been successfully delivered to a recipient. Read notifications (RNs) and non-read notification (NRNs) are both examples of MDN messages. MDN messages are defined in RFC 2298 and are controlled by the **Disposition-Notification-To:** header field in the message header. MDN settings that use this header field are compatible with many different kinds of messaging servers. MDN settings can also be defined by using MAPI properties in Outlook and Exchange. 
     

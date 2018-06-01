@@ -18,7 +18,7 @@ Learn how administrators can apply limits to messages in an Exchange 2016 organi
   
 You can apply limits to messages that move through your organization. You can set the maximum size of an entire message as a whole, or the size of individual parts of a message, or both. For example, you could restrict the maximum size of the message header or attachments, or set a maximum number of recipients that can be added to the message. You can apply these limits to your entire Exchange organization, to specific mail transport connectors, specific servers, and to individual mailboxes.
   
-This topic only talks about message and recipient size limits. If you want to know more about how to control how many messages are sent over time, how many connections are allowed over time, and how long Exchange will wait before closing a connection, see [Message rate limits and throttling](message-rate-limits-and-throttling.md).
+This topic only talks about message and recipient size limits. If you want to know more about how to control how many messages are sent over time, how many connections are allowed over time, and how long Exchange will wait before closing a connection, see [Message rate limits and throttling](message-rate-limits.md).
   
 As you plan the message size limits for your Exchange organization, consider the following questions:
   
@@ -135,9 +135,9 @@ Server limits apply to specific Mailbox servers or Edge Transport servers. You c
   
 |**Size limit**|**Default value**|**EAC configuration**|**Exchange Management Shell configuration**|
 |:-----|:-----|:-----|:-----|
-|Maximum size for a message sent by Outlook on the web clients  <br/> |35 MB  <br/> |Not available  <br/> |You configure this value in web.config XML application configuration files on the Mailbox server. For more information, see [Configure client-specific message size limits](../architecture/client-access-services/configure-client-message-size-limits.md).  <br/> |
-|Maximum size for a message sent by Exchange ActiveSync clients  <br/> |10 MB  <br/> |Not available  <br/> |You configure this value in web.config XML application configuration files on the Mailbox server. For more information, see [Configure client-specific message size limits](../architecture/client-access-services/configure-client-message-size-limits.md).  <br/> |
-|Maximum size for a message sent by Exchange Web Services clients  <br/> |64 MB  <br/> |Not available  <br/> |You configure this value in web.config XML application configuration files on the Mailbox server. For more information, see [Configure client-specific message size limits](../architecture/client-access-services/configure-client-message-size-limits.md).  <br/> |
+|Maximum size for a message sent by Outlook on the web clients  <br/> |35 MB  <br/> |Not available  <br/> |You configure this value in web.config XML application configuration files on the Mailbox server. For more information, see [Configure client-specific message size limits](../architecture/cas/client-message-size-limits.md).  <br/> |
+|Maximum size for a message sent by Exchange ActiveSync clients  <br/> |10 MB  <br/> |Not available  <br/> |You configure this value in web.config XML application configuration files on the Mailbox server. For more information, see [Configure client-specific message size limits](../architecture/cas/client-message-size-limits.md).  <br/> |
+|Maximum size for a message sent by Exchange Web Services clients  <br/> |64 MB  <br/> |Not available  <br/> |You configure this value in web.config XML application configuration files on the Mailbox server. For more information, see [Configure client-specific message size limits](../architecture/cas/client-message-size-limits.md).  <br/> |
    
 The pickup directory that's available on Edge Transport servers and Mailbox servers also has messages size limits that you can configure. Typically, the pickup directory isn't used in everyday mail flow. It's is used by administrators for mail flow testing, or by applications that need to create and submit their own messages files. For more information, see [Configure the Pickup Directory and the Replay Directory](http://technet.microsoft.com/library/c9ca7358-9a08-4f57-89d0-910e4438df8a.aspx).
   
