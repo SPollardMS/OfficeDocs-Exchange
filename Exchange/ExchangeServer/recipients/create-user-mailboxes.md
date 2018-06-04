@@ -33,9 +33,9 @@ You can create user mailboxes in Exchange Server 2016 by using the Exchange admi
 
 - Estimated time to complete each user mailbox task: 2 to 5 minutes.
     
-- For more information about the EAC, see [Exchange admin center in Exchange 2016](../architecture/cas/eac.md). To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
+- For more information about the EAC, see [Exchange admin center in Exchange 2016](../architecture/client-access/exchange-admin-center.md). To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" section in the [Recipients Permissions](../permissions/feature-permissions/recipient-perms.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" section in the [Recipients Permissions](../permissions/feature-permissions/recipient-permissions.md) topic. 
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../about-documentation/eac-keyboard-shortcuts.md).
     
@@ -92,7 +92,7 @@ The procedures in this section describe how to create a new mailbox and the asso
     
   - **Mailbox database** Click **Browse** to select the mailbox database that holds the mailbox. 
     
-  - **Create an on-premises archive mailbox for this user** Select this check box to create an archive mailbox for the mailbox, and then click **Browse** to select the mailbox database that holds the archive mailbox. Items are automatically moved from the primary mailbox to the archive based on the retention policy settings. For more information, see [In-Place Archiving in Exchange 2016](../messaging-policy-and-compliance/in-place-archiving/in-place-archiving.md).
+  - **Create an on-premises archive mailbox for this user** Select this check box to create an archive mailbox for the mailbox, and then click **Browse** to select the mailbox database that holds the archive mailbox. Items are automatically moved from the primary mailbox to the archive based on the retention policy settings. For more information, see [In-Place Archiving in Exchange 2016](../policy-and-compliance/in-place-archiving/in-place-archiving.md).
     
   - **Address book policy** ABPs define a global address list (GAL), an offline address book (OAB), a room list, and a set of address lists. An ABP gives the user access to a customized GAL in Outlook and Outlook on the web. For more information, see [Address book policies in Exchange 2016](../email-addresses-and-address-books/address-book-policies/address-book-policies.md).
     
@@ -172,7 +172,7 @@ When you mailbox-enable a user account, you can only select existing Active Dire
     
   - **Mailbox database** Click **Browse** to select the mailbox database that holds the mailbox. 
     
-  - **Create an on-premises archive mailbox for this user** Select this check box to create an archive mailbox for the mailbox, and then click **Browse** to select the mailbox database that holds the archive mailbox. Items are automatically moved from the primary mailbox to the archive based on the retention policy settings. For more information, see [In-Place Archiving in Exchange 2016](../messaging-policy-and-compliance/in-place-archiving/in-place-archiving.md).
+  - **Create an on-premises archive mailbox for this user** Select this check box to create an archive mailbox for the mailbox, and then click **Browse** to select the mailbox database that holds the archive mailbox. Items are automatically moved from the primary mailbox to the archive based on the retention policy settings. For more information, see [In-Place Archiving in Exchange 2016](../policy-and-compliance/in-place-archiving/in-place-archiving.md).
     
   - **Address book policy** ABPs define a global address list (GAL), an offline address book (OAB), a room list, and a set of address lists. An ABP gives the user access to a customized GAL in Outlook and Outlook on the web. For more information, see [Address book policies in Exchange 2016](../email-addresses-and-address-books/address-book-policies/address-book-policies.md).
     

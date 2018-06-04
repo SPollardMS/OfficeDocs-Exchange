@@ -56,9 +56,9 @@ These are the address list and GAL procedures that you'll find in this topic:
 
 - Estimated time to complete each procedure: 5 minutes.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Address lists" entry in the [Email address and address book permissions](../../permissions/feature-permissions/address-book-perms.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Address lists" entry in the [Email address and address book permissions](../../permissions/feature-permissions/address-book-permissions.md) topic. 
     
-- You can do some of the procedures in this topic by using the EAC. For more information about the EAC, see [Exchange admin center in Exchange 2016](../../architecture/cas/eac.md). Some procedures require the Exchange Management Shell. To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
+- You can do some of the procedures in this topic by using the EAC. For more information about the EAC, see [Exchange admin center in Exchange 2016](../../architecture/client-access/exchange-admin-center.md). Some procedures require the Exchange Management Shell. To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/eac-keyboard-shortcuts.md).
     
@@ -223,7 +223,7 @@ To verify that you've successfully modified a GAL, use either of the following p
 
 - You can't remove the GAL named Default Offline Address Book, the GAL that's automatically created by Exchange, and the only GAL that has the **IsDefaultGlobalAddressList** property value  `True`.
     
-- You can't remove a GAL that's defined in an offline address book (OAB). To modify the address lists that are defined in an OAB, see [Use the Exchange Management Shell to add and remove address lists from offline address books](../../email-addresses-and-address-books/oabs/oab-procedures.md#OABAddRemoveAddressLists).
+- You can't remove a GAL that's defined in an offline address book (OAB). To modify the address lists that are defined in an OAB, see [Use the Exchange Management Shell to add and remove address lists from offline address books](../../email-addresses-and-address-books/offline-address-books/oab-procedures.md#OABAddRemoveAddressLists).
     
 To remove a GAL, use the following syntax:
   
@@ -521,7 +521,7 @@ To verify that you've successfully modified an address list, use either of the f
 
 If the address list contains more than 3000 recipients, we recommend that you use the Exchange Management Shell to remove the address list. Removing the address list will take a long time, and will prevent you from using the EAC session until the address list is fully removed. If the address list contains less than 3000 recipients, it's OK to use the EAC to remove the address list.
   
-- You can't remove an address list that's defined in an offline address book (OAB). To modify the address lists that are defined in an OAB, see [Use the Exchange Management Shell to add and remove address lists from offline address books](../../email-addresses-and-address-books/oabs/oab-procedures.md#OABAddRemoveAddressLists).
+- You can't remove an address list that's defined in an offline address book (OAB). To modify the address lists that are defined in an OAB, see [Use the Exchange Management Shell to add and remove address lists from offline address books](../../email-addresses-and-address-books/offline-address-books/oab-procedures.md#OABAddRemoveAddressLists).
     
 - You can't remove an address list that contains child address lists (you'll receive an error). You first need to do one of the following steps:
     

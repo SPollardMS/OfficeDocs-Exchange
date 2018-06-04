@@ -24,13 +24,13 @@ You can use the default NDRs that are included in Exchange, or you can use the E
 
 - Estimated time to complete each procedure: less than 10 minutes.
     
-- The main focus of this topic is custom NDR text that replaces the text of default NDRs that are used by Exchange. You can create new NDRs for other enhanced status code values (for example, 5.999.999), but no one will see these NDRs if the enhanced status code isn't used by Exchange. You can use a range of custom enhanced status codes as part of an action for a transport rule. For more information, see [Mail flow rule actions in Exchange 2016](../../messaging-policy-and-compliance/mail-flow-rules/actions.md).
+- The main focus of this topic is custom NDR text that replaces the text of default NDRs that are used by Exchange. You can create new NDRs for other enhanced status code values (for example, 5.999.999), but no one will see these NDRs if the enhanced status code isn't used by Exchange. You can use a range of custom enhanced status codes as part of an action for a transport rule. For more information, see [Mail flow rule actions in Exchange 2016](../../policy-and-compliance/mail-flow-rules/actions.md).
     
 - The procedures in this topic are available on Mailbox servers and Edge Transport servers.
     
 - You can't use the Exchange admin center (EAC) for most of the procedures in this topic. You need to use the Exchange Management Shell. To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "DSNs" entry in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-perms.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "DSNs" entry in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic. 
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/eac-keyboard-shortcuts.md).
     
@@ -275,7 +275,7 @@ Set-OrganizationConfig -MicrosoftExchangeRecipientReplyRecipient "Contoso System
     
 #### Use the EAC to specify the enhanced status codes to monitor
 
-For more information about the EAC, see [Exchange admin center in Exchange 2016](../../architecture/cas/eac.md).
+For more information about the EAC, see [Exchange admin center in Exchange 2016](../../architecture/client-access/exchange-admin-center.md).
   
 1. In the EAC, go to **Mail flow** > **Receive connectors**.
     

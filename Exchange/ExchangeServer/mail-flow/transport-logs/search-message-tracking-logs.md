@@ -31,7 +31,7 @@ Message tracking records the message activity as mail flows through the transpor
 
 - Estimated time to complete: 10 minutes
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Message tracking" entry in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-perms.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Message tracking" entry in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic. 
     
 - Searching the message tracking logs requires that the Microsoft Exchange Transport Log Search service is running. If you disable or stop this service, you can't search the message tracking logs or run delivery reports. However, stopping this service does not affect other features in Exchange.
     

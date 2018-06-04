@@ -20,7 +20,7 @@ After you've subscribed an Edge Transport server to an Active Directory site in 
 
 - Estimated time to complete each procedure: 10 minutes.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "EdgeSync" entry and the "Edge Transport servers" section in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-perms.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "EdgeSync" entry and the "Edge Transport servers" section in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic. 
     
 > [!TIP]
 > Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 

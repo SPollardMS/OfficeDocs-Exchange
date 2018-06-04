@@ -31,7 +31,7 @@ For additional management tasks related to public folders in Exchange 2016, see 
     
     Before you can create public folders in Exchange 2016, you need to migrate your legacy public folders to Exchange 2016. To do this, follow the steps in [Use batch migration to migrate public folders to Exchange 2016 from previous versions](batch-migration-from-previous-versions.md) if you currently have Exchange 2010 public folders, or [Migrate public folders from Exchange 2013 to Exchange 2016](migrate-from-exchange-2013.md) if you currently have Exchange 2013 public folders. 
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Public folders" entry in the [Sharing and collaboration permissions](../../permissions/feature-permissions/sharing-and-collaboration-perms.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Public folders" entry in the [Sharing and collaboration permissions](../../permissions/feature-permissions/sharing-and-collaboration-permissions.md) topic. 
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/eac-keyboard-shortcuts.md).
     

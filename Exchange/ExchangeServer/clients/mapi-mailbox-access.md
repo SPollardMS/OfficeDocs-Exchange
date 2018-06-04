@@ -22,9 +22,9 @@ Administrators can use the Exchange admin center (EAC) or the Exchange Managemen
   
 For additional management tasks related to user access to mailboxes, see these topics:
   
-- [Enable or disable Outlook on the web access to mailboxes in Exchange 2016](owa/owa-mailbox-access.md)
+- [Enable or disable Outlook on the web access to mailboxes in Exchange 2016](outlook-on-the-web/owa-mailbox-access.md)
     
-- [Enable or disable Exchange ActiveSync access to mailboxes in Exchange 2016](activesync/activesync-mailbox-access.md)
+- [Enable or disable Exchange ActiveSync access to mailboxes in Exchange 2016](exchange-activesync/activesync-mailbox-access.md)
     
 - [Enable or disable POP3 or IMAP4 access to mailboxes in Exchange 2016](pop3-and-imap4/configure-mailbox-access.md)
     
@@ -32,11 +32,11 @@ For additional management tasks related to user access to mailboxes, see these t
 
 - Estimated time to complete: 5 minutes.
     
-- For more information about accessing and using the EAC, see [Exchange admin center in Exchange 2016](../architecture/cas/eac.md).
+- For more information about accessing and using the EAC, see [Exchange admin center in Exchange 2016](../architecture/client-access/exchange-admin-center.md).
     
 - To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Client Access user settings" entry in the [Clients and mobile devices permissions](../permissions/feature-permissions/client-and-mobile-device-perms.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Client Access user settings" entry in the [Clients and mobile devices permissions](../permissions/feature-permissions/client-and-mobile-device-permissions.md) topic. 
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../about-documentation/eac-keyboard-shortcuts.md).
     

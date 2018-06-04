@@ -24,7 +24,7 @@ Looking for other management tasks related to managing permissions? Check out [P
 
 - Estimated time to complete each procedure: 5 minutes
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Assignment policies" entry in the [Role management permissions](feature-permissions/rbac-perms.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Assignment policies" entry in the [Role management permissions](feature-permissions/rbac-permissions.md) topic. 
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../about-documentation/eac-keyboard-shortcuts.md).
     

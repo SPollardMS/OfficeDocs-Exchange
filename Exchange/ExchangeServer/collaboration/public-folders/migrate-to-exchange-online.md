@@ -23,7 +23,7 @@ Migrating your Exchange 2016 public folders to Exchange Online requires Exchange
   
 ## What do you need to know before you begin?
 
-- When you upgrade to Exchange Server 2016 CU4 or later, you must also prepare Active Directory or your public folder migration will fail. This Active Directory preparation ensures that all relevant PowerShell cmdlets and parameters are available to you for preparing for and running the migration. See [Prepare Active Directory and domains](../../plan-deploy/prepare-ad-and-domains.md) for more information. 
+- When you upgrade to Exchange Server 2016 CU4 or later, you must also prepare Active Directory or your public folder migration will fail. This Active Directory preparation ensures that all relevant PowerShell cmdlets and parameters are available to you for preparing for and running the migration. See [Prepare Active Directory and domains](../../plan-and-deploy/prepare-ad-and-domains.md) for more information. 
     
 - In Exchange Online, you need to be a member of the Organization Management role group. This role group is different from the permissions assigned to you when you subscribe to Office 365 or Exchange Online. For details about how to enable the Organization Management role group, see [Manage role groups](../../permissions/role-groups.md).
     
@@ -424,7 +424,7 @@ Set-OrganizationConfig -PublicFolderMailboxesLockedForNewConnections $true
 ```
 
 > [!NOTE]
-> If you are not able to access the  `-PublicFolderMailboxesLockedForNewConnections` parameter, it could be because your Active Directory was not prepared during the CU upgrade, as we advised above in  *What do you need to know before you begin?*  See [Prepare Active Directory and domains](../../plan-deploy/prepare-ad-and-domains.md) for more information. > Also note that any users who need access to public folders should be migrated first, **before** you migrate the public folders themselves. 
+> If you are not able to access the  `-PublicFolderMailboxesLockedForNewConnections` parameter, it could be because your Active Directory was not prepared during the CU upgrade, as we advised above in  *What do you need to know before you begin?*  See [Prepare Active Directory and domains](../../plan-and-deploy/prepare-ad-and-domains.md) for more information. > Also note that any users who need access to public folders should be migrated first, **before** you migrate the public folders themselves. 
   
 If your organization has public folder mailboxes on multiple Exchange 2016 servers, you'll need to wait until AD replication is complete. Once complete, you can confirm that all public folder mailboxes have picked up the  `PublicFolderMailboxesLockedForNewConnections` flag, and that any pending changes users recently made to their public folders have converged across the organization. All of this could take several hours. 
   

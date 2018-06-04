@@ -22,9 +22,9 @@ In Exchange 2016, you can configure message retry, resubmit, and expiration inte
 
 - Estimated time to complete each procedure: less than 5 minutes
     
-- You can only use the Exchange admin center (EAC) on Mailbox servers. For more information about the EAC, see [Exchange admin center in Exchange 2016](../../architecture/cas/eac.md). To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
+- You can only use the Exchange admin center (EAC) on Mailbox servers. For more information about the EAC, see [Exchange admin center in Exchange 2016](../../architecture/client-access/exchange-admin-center.md). To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Transport service" and "Edge Transport severs" entries in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-perms.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Transport service" and "Edge Transport severs" entries in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic. 
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/eac-keyboard-shortcuts.md).
     

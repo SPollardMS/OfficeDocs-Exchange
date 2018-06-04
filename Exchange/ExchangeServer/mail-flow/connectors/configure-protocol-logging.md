@@ -58,7 +58,7 @@ The following options are available for the protocol logs of all Send connectors
 
 - Estimated time to complete: 5 minutes
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Transport Service", "Front End Transport service", "Mailbox Transport service", "Receive connectors" and "Send connectors" entries in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-perms.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Transport Service", "Front End Transport service", "Mailbox Transport service", "Receive connectors" and "Send connectors" entries in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic. 
     
 - You can use the Exchange admin center (EAC) to enable or disable protocol logging for Receive connectors and Send connectors on Mailbox servers. You can also use the EAC to configure the protocol log paths for the Transport service only. For all other protocol logging options, you need to use the Exchange Management Shell. To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
     

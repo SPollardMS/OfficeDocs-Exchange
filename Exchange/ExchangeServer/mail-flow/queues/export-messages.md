@@ -22,7 +22,7 @@ On Mailbox servers and Edge Transport servers in Exchange Server 2016, you can e
 
 - Estimated time to complete each procedure: 5 minutes
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Queues" entry in [Mail flow permissions](../../permissions/feature-permissions/mail-flow-perms.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Queues" entry in [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic. 
     
 - To export messages from a delivery queue, the Submission queue, or the Unreachable queue, the messages need to be in the Suspended state. For active, healthy queues, you first suspend the queue so you can then suspend the messages. Messages in the poison message queue are already in the Suspended state. For more information, see [Suspend queues](queue-procedures.md#Suspend) and [Suspend messages in queues](message-procedures.md#Suspend).
     

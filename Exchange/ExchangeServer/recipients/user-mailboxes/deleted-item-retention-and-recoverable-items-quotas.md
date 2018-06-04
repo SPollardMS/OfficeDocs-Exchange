@@ -23,13 +23,13 @@ When a user deletes items from the Deleted Items default folder by using the Del
   
 You can use the Exchange Management Shell to configure deleted item retention settings and recoverable items quotas for a mailbox or mailbox database. Deleted item retention settings are ignored when a mailbox is placed on In-Place Hold or litigation hold.
   
-To learn more about deleted item retention, the Recoverable Items folder, In-Place Hold, and litigation hold, see [Recoverable Items folder in Exchange 2016](../../messaging-policy-and-compliance/recoverable-items-folder/recoverable-items-folder.md).
+To learn more about deleted item retention, the Recoverable Items folder, In-Place Hold, and litigation hold, see [Recoverable Items folder in Exchange 2016](../../policy-and-compliance/recoverable-items-folder/recoverable-items-folder.md).
   
 ## What do you need to know before you begin?
 
 - Estimated time to completion: 5 minutes.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Messaging records management" entry in the [Messaging policy and compliance permissions in Exchange 2016](../../permissions/feature-permissions/policy-and-compliance-perms.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Messaging records management" entry in the [Messaging policy and compliance permissions in Exchange 2016](../../permissions/feature-permissions/policy-and-compliance-permissions.md) topic. 
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/eac-keyboard-shortcuts.md).
     

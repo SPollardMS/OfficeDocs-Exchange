@@ -22,11 +22,11 @@ Instead of routing all outbound messages directly to the Internet, you may need 
 
 - Estimated time to complete: 5 minutes
     
-- See [Deploy a new installation of Exchange 2016](../../plan-deploy/deploy-new-installations/deploy-new-installations.md) if you are beginning your installation. After the installation you can use the steps in this topic to create your outbound connector. 
+- See [Deploy a new installation of Exchange 2016](../../plan-and-deploy/deploy-new-installations/deploy-new-installations.md) if you are beginning your installation. After the installation you can use the steps in this topic to create your outbound connector. 
     
 - The smart host described in this topic needs to use SMTP to transmit messages. If it doesn't, you need to use a Delivery Agent connector or a Foreign connector. For more information, see[Delivery Agents and Delivery Agent Connectors](http://technet.microsoft.com/library/38c942ee-b59d-47ec-87eb-bebad441ada5.aspx) and [Foreign Connectors](http://technet.microsoft.com/library/21c6a7a9-f4d2-4359-9ac9-930701b63a4e.aspx).
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Send connectors" entry in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-perms.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Send connectors" entry in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic. 
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/eac-keyboard-shortcuts.md).
     

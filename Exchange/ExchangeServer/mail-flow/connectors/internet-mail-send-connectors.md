@@ -22,9 +22,9 @@ When install your first Exchange Server 2016 server, the server isn't able to se
 
 - Estimated time to complete: 5 minutes
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Send connectors" entry in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-perms.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Send connectors" entry in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic. 
     
-- See [Deploy a new installation of Exchange 2016](../../plan-deploy/deploy-new-installations/deploy-new-installations.md) if you are beginning your installation. After the installation, you can use the steps in this topic to create an internet Send connector. 
+- See [Deploy a new installation of Exchange 2016](../../plan-and-deploy/deploy-new-installations/deploy-new-installations.md) if you are beginning your installation. After the installation, you can use the steps in this topic to create an internet Send connector. 
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/eac-keyboard-shortcuts.md).
     

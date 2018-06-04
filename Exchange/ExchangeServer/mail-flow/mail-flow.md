@@ -18,7 +18,7 @@ Learn about mail flow and the transport pipeline in Exchange 2016.
   
 In Exchange Server 2016, mail flow occurs through the transport pipeline. The transport pipeline is a collection of services, connections, components, and queues that work together to route all messages to the categorizer in the Transport service on an Exchange 2016 Mailbox server inside the organization. 
   
-For information about how to configure mail flow in a new Exchange 2016 organization, see [Configure mail flow and client access](../plan-deploy/post-installation-tasks/configure-mail-flow-and-client-access.md).
+For information about how to configure mail flow in a new Exchange 2016 organization, see [Configure mail flow and client access](../plan-and-deploy/post-installation-tasks/configure-mail-flow-and-client-access.md).
   
  **Contents**
   

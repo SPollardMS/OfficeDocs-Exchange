@@ -42,7 +42,7 @@ For more information about accepted domains, see [Accepted domains in Exchange 2
 
 - Estimated time to complete each task: 5 minutes.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Accepted domains" entry in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-perms.md) topic and the "Email address policies" entry in the [Recipients Permissions](../../permissions/feature-permissions/recipient-perms.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Accepted domains" entry in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic and the "Email address policies" entry in the [Recipients Permissions](../../permissions/feature-permissions/recipient-permissions.md) topic. 
     
 - If you have a subscribed Edge Transport server in your perimeter network, you configure accepted domains on a Mailbox server in your Exchange organization. The accepted domains configuration is replicated to the Edge Transport server during EdgeSync synchronization. For more information, see [Edge Subscriptions](../../architecture/edge-transport-servers/edge-subscriptions.md).
     

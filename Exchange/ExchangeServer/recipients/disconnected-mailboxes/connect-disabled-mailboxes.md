@@ -34,7 +34,7 @@ To learn more about disconnected mailboxes and perform other related management 
 
 - Estimated time to complete: 2 minutes.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" section in the [Recipients Permissions](../../permissions/feature-permissions/recipient-perms.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" section in the [Recipients Permissions](../../permissions/feature-permissions/recipient-permissions.md) topic. 
     
 - Run the **Get-User** cmdlet in theExchange Management Shell to verify that the Active Directoryuser account that you want to connect the disabled mailbox to exists and that it isn't already associated with another mailbox. To connect a disabled mailbox to a user account, the account must exist and the value for the  _RecipientType_ property has to be  `User`, which indicates that the account isn't already mailbox-enabled.
     

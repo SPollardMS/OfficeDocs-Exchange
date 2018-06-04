@@ -23,9 +23,9 @@ In Exchange 2016, you can use the Exchange admin center (EAC) or the Exchange Ma
 
 - Estimated time to complete each procedure: 2 minutes.
     
-- For more information about accessing and using the EAC, see [Exchange admin center in Exchange 2016](../../architecture/cas/eac.md). To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
+- For more information about accessing and using the EAC, see [Exchange admin center in Exchange 2016](../../architecture/client-access/exchange-admin-center.md). To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" section in the [Recipients Permissions](../../permissions/feature-permissions/recipient-perms.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" section in the [Recipients Permissions](../../permissions/feature-permissions/recipient-permissions.md) topic. 
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/eac-keyboard-shortcuts.md).
     
@@ -36,7 +36,7 @@ In Exchange 2016, you can use the Exchange admin center (EAC) or the Exchange Ma
 
 When you disable a mailbox, all Exchange attributes are removed from the associated user account in Active Directory. The disconnected mailbox is hidden and marked for removal. The disconnected mailbox is permanently deleted (purged) based on the **MailboxRetention** property value for the mailbox database (the default value is 30 days). Before the mailbox is purged, you can reconnect it to a new or existing user account that doesn't already have an associated mailbox. For more information, see [Connect a disabled mailbox](connect-disabled-mailboxes.md).
   
- **Note**: Disabling a mailbox that has an associated archive marks both the primary and archive mailboxes for removal. To only mark the archive mailbox for removal without affecting the primary mailbox, see [Disable an archive mailbox](../../messaging-policy-and-compliance/in-place-archiving/manage-archives.md#disable).
+ **Note**: Disabling a mailbox that has an associated archive marks both the primary and archive mailboxes for removal. To only mark the archive mailbox for removal without affecting the primary mailbox, see [Disable an archive mailbox](../../policy-and-compliance/in-place-archiving/manage-archives.md#disable).
   
 ### Use the EAC to disable a mailbox
 
@@ -122,7 +122,7 @@ To verify that you've successfully disabled a mailbox, do any of these steps:
 
 When you delete a mailbox, the mailbox is disconnected from the associated user account, and the account is removed from Active Directory. The disconnected mailbox is hidden and marked for removal. The disconnected mailbox is permanently deleted (purged) based on the **MailboxRetention** property value for the mailbox database (the default value is 30 days). Before the mailbox is purged, you can reconnect it to a new or existing user account that doesn't already have an associated mailbox. For more information, see [Connect or restore a deleted mailbox](restore-deleted-mailboxes.md).
   
- **Note**: Deleting a mailbox that has an associated archive marks both the primary and archive mailboxes for removal. To only mark the archive mailbox for removal without affecting the primary mailbox, see [Disable an archive mailbox](../../messaging-policy-and-compliance/in-place-archiving/manage-archives.md#disable).
+ **Note**: Deleting a mailbox that has an associated archive marks both the primary and archive mailboxes for removal. To only mark the archive mailbox for removal without affecting the primary mailbox, see [Disable an archive mailbox](../../policy-and-compliance/in-place-archiving/manage-archives.md#disable).
   
 ### Use the EAC to delete a mailbox
 
@@ -218,6 +218,6 @@ When you delete the Active Directory user account that's associated with a mailb
     
 - Retain the mailbox until all data has been expunged, or until preserving the data is no longer required.
     
-For more information, see [In-Place Hold and Litigation Hold in Exchange 2016](../../messaging-policy-and-compliance/holds/holds.md).
+For more information, see [In-Place Hold and Litigation Hold in Exchange 2016](../../policy-and-compliance/holds/holds.md).
   
 

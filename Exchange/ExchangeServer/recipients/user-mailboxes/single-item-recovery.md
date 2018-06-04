@@ -20,7 +20,7 @@ You can use the Exchange Management Shell to enable or disable single item recov
   
 ## What do you need to know before you begin?
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Retention and legal holds" entry in the [Recipients Permissions](../../permissions/feature-permissions/recipient-perms.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Retention and legal holds" entry in the [Recipients Permissions](../../permissions/feature-permissions/recipient-permissions.md) topic. 
     
 - You can't use the Exchange admin center (EAC) to enable or disable single item recovery.
     
@@ -56,7 +56,7 @@ For detailed syntax and parameter information, see [Set-Mailbox](http://technet.
   
 ## Disable single item recovery
 
-You might need to disable single item recovery for a user's mailbox. For example, before you can use **Search-Mailbox -DeleteContent** to permanently delete content from a mailbox, you have to disable single item recovery. For more information, see [Search for and delete messages in Exchange 2016](../../messaging-policy-and-compliance/ediscovery/delete-messages.md).
+You might need to disable single item recovery for a user's mailbox. For example, before you can use **Search-Mailbox -DeleteContent** to permanently delete content from a mailbox, you have to disable single item recovery. For more information, see [Search for and delete messages in Exchange 2016](../../policy-and-compliance/ediscovery/delete-messages.md).
   
 This example disables single item recovery for the mailbox of Ayla Kol.
   
@@ -76,7 +76,7 @@ You can use this same command to verify that single item recovery is disabled fo
   
 ## More information
 
-- To learn more about single item recovery, see [Recoverable Items folder in Exchange 2016](../../messaging-policy-and-compliance/recoverable-items-folder/recoverable-items-folder.md). To recover messages purged by the user before the deleted item retention period expires, see [Recover deleted messages in a user's mailbox](recover-deleted-messages.md) . 
+- To learn more about single item recovery, see [Recoverable Items folder in Exchange 2016](../../policy-and-compliance/recoverable-items-folder/recoverable-items-folder.md). To recover messages purged by the user before the deleted item retention period expires, see [Recover deleted messages in a user's mailbox](recover-deleted-messages.md) . 
     
 - If a mailbox is placed on In-Place Hold or Litigation Hold, messages in the Recoverable Items folder are retained until the hold duration expires. If the hold duration is unlimited, then items are retained until the hold is removed or the hold duration is changed.
     

@@ -18,28 +18,28 @@ See a list of management role groups for managing Exchange 2016 features.
   
 Permissions in Microsoft Exchange Server 2016 are managed using the Role Based Access Control (RBAC) permissions model. The following topics identify the management role groups required to administer the features associated with each functional area in Exchange 2016.
   
-- [Role management permissions](rbac-perms.md)
+- [Role management permissions](rbac-permissions.md)
     
-- [Messaging policy and compliance permissions in Exchange 2016](policy-and-compliance-perms.md)
+- [Messaging policy and compliance permissions in Exchange 2016](policy-and-compliance-permissions.md)
     
-- [Antispam and antimalware permissions](antispam-and-antimalware-perms.md)
+- [Antispam and antimalware permissions](antispam-and-antimalware-permissions.md)
     
-- [Mail flow permissions](mail-flow-perms.md)
+- [Mail flow permissions](mail-flow-permissions.md)
     
-- [Recipients Permissions](recipient-perms.md)
+- [Recipients Permissions](recipient-permissions.md)
     
-- [Email address and address book permissions](address-book-perms.md)
+- [Email address and address book permissions](address-book-permissions.md)
     
-- [Sharing and collaboration permissions](sharing-and-collaboration-perms.md)
+- [Sharing and collaboration permissions](sharing-and-collaboration-permissions.md)
     
-- [Clients and mobile devices permissions](client-and-mobile-device-perms.md)
+- [Clients and mobile devices permissions](client-and-mobile-device-permissions.md)
     
-- [Unified Messaging permissions](um-perms.md)
+- [Unified Messaging permissions](um-permissions.md)
     
-- [High availability and site resilience permissions](ha-perms.md)
+- [High availability and site resilience permissions](ha-permissions.md)
     
-- [Exchange infrastructure and PowerShell permissions](infrastructure-perms.md)
+- [Exchange infrastructure and PowerShell permissions](infrastructure-permissions.md)
     
-- [Server health and performance permissions](server-health-perms.md)
+- [Server health and performance permissions](server-health-permissions.md)
     
 

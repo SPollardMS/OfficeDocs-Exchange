@@ -3,7 +3,7 @@ title: "Receive connectors"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/1/2018
 ms.audience: ITPro
 ms.topic: overview
 ms.prod: office-online-server
@@ -50,24 +50,6 @@ Although the default Receive connectors are adequate in most cases, you can crea
     
 On Mailbox servers, you can create and manage Receive connectors in the Exchange admin center (EAC) or in the Exchange Management Shell. On Edge Transport servers, you can only use the Exchange Management Shell.
   
- **Contents**
-  
-[Receive connector changes in Exchange 2016](receive-connectors.md#WhatsNew)
-  
-[Default Receive connectors created during setup](receive-connectors.md#DefaultConnectors)
-  
-[Receive connector local address bindings](receive-connectors.md#Bindings)
-  
-[Receive connector remote addresses](receive-connectors.md#RemoteAddresses)
-  
-[Receive connector authentication mechanisms](receive-connectors.md#AuthMechanisms)
-  
-[Receive connector usage types](receive-connectors.md#UsageTypes)
-  
-[Receive connector permission groups](receive-connectors.md#PermissionGroups)
-  
-[Receive connector permissions](receive-connectors.md#Permissions)
-  
 ## Receive connector changes in Exchange 2016
 <a name="WhatsNew"> </a>
 
@@ -77,8 +59,6 @@ These are the notable changes to Receive connectors in Exchange 2016 compared to
     
 - The  _TransportRole_ parameter allows you to distinguish between frontend (Client Access) and backend connectors on Mailbox servers. 
     
-[Return to top](receive-connectors.md#RTT)
-  
 ## Default Receive connectors created during setup
 <a name="DefaultConnectors"> </a>
 
@@ -128,8 +108,6 @@ The implicit Receive connector that exists in the Mailbox Transport Delivery ser
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 |Mailbox delivery Receive connector  <br/> |Accepts authenticated connections from the Transport service on the local or remote Mailbox servers.  <br/> |None  <br/> |475  <br/> |All available IPv4 and IPv6 addresses ( `0.0.0.0` and  `[::]:`)  <br/> | `{::-ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff, 0.0.0.0-255.255.255.255}` (all IPv4 and IPv6 addresses)  <br/> | ` ExchangeServer ` <br/> | `ExchangeServers` <br/> |
    
-[Return to top](receive-connectors.md#RTT)
-  
 ## Receive connector local address bindings
 <a name="Bindings"> </a>
 
@@ -194,8 +172,6 @@ The available usage types are described in the following table.
 |Internet  <br/> |**Anonymous users** (  `AnonymousUsers`)  <br/> |**Transport Layer Security** (  `TLS`)  <br/> |Used to receive mail from the Internet.  <br/>  When you create a Receive connector of this usage type in the EAC or in the Exchange Management Shell, you can't select the remote IP addresses. By default, the connector accepts remote connections from all IPv4 addresses (0.0.0.0-255.255.255.255). You can change these bindings after you create the connector.  <br/> |
 |Partner  <br/> |**Partners** (  `Partners`)  <br/> |**Transport Layer Security** (  `TLS`)  <br/> |Used to configure secure communication with an external partner (mutual TLS authentication, also known as domain secure).  <br/> |
    
-[Return to top](receive-connectors.md#RTT)
-  
 ## Receive connector authentication mechanisms
 <a name="AuthMechanisms"> </a>
 
@@ -213,8 +189,6 @@ The available authentication mechanisms are described in the following table.
 |**Exchange Server authentication** (  `ExchangeServer`)  <br/> |Generic Security Services application programming interface (GSSAPI) and Mutual GSSAPI authentication.  <br/> |
 |**Externally secured** (  `ExternalAuthoritative`)  <br/> |The connection is presumed to be secured by using a security mechanism that's external to Exchange. The connection may be an Internet Protocol security (IPsec) association or a virtual private network (VPN). Alternatively, the servers may reside in a trusted, physically controlled network.  <br/> This authentication mechanism requires the  `ExchangeServers` permission group. This combination of authentication mechanism and security group permits the resolution of anonymous sender email addresses for messages that are received through the connector.  <br/> |
    
-[Return to top](receive-connectors.md#RTT)
-  
 ## Receive connector permission groups
 <a name="PermissionGroups"> </a>
 
@@ -234,8 +208,6 @@ The available permission groups are described in the following table.
 |**Partners** (  `Partner`)  <br/> | `MS Exchange\Partner Servers` <br/> | `ms-Exch-Accept-Headers-Routing` <br/>  `ms-Exch-SMTP-Submit` <br/> |
    
 The permissions are explained in the [Receive connector permissions](receive-connectors.md#Permissions) section later in this topic. 
-  
-[Return to top](receive-connectors.md#RTT)
   
 ## Receive connector permissions
 <a name="Permissions"> </a>
@@ -280,10 +252,8 @@ The available Receive connector permissions are described in the following table
     
   -  `ms-Exch-SMTP-Send-XMessageContext-FastIndex`
     
-- Permissions names that contain  `ms-Exch-Accept-Headers-` are part of the header firewall feature. For more information, see [Header Firewall](http://technet.microsoft.com/library/9b148f7b-47a9-4379-a55b-8d5310c1772f.aspx).
+- Permissions names that contain  `ms-Exch-Accept-Headers-` are part of the header firewall feature. For more information, see [Header firewall](https://technet.microsoft.com/library/bb232136.aspx).
     
-[Return to top](receive-connectors.md#RTT)
-  
 ### Receive connector permission procedures
 
 To see the permissions that are assigned to security principals on a Receive connector, use the following syntax in the Exchange Management Shell:
@@ -315,7 +285,4 @@ To remove permissions from a security principal on a Receive connector, use the 
 ```
 Remove-ADPermission -Identity <ReceiveConnector> -User <SecurityPrincipal> -ExtendedRights "<Permission1>","<Permission2>"...
 ```
-
-[Return to top](receive-connectors.md#RTT)
-  
 

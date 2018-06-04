@@ -2,7 +2,7 @@
 title: "Manage on-premises mailbox moves in Exchange 2016"
 ms.author: chrisda
 author: chrisda
-ms.date: 4/19/2018
+ms.date: 6/1/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
@@ -25,15 +25,15 @@ The following two services process your move request to move mailboxes:
     
 The procedures in this topic will help you with on-premises mailbox moves. You can use theExchange Management Shell and the Exchange admin center (EAC) to move mailboxes in your on-premises organization.
   
-For more information about the Mailbox replication service and proxy, see [Learn more about MRS Proxy](learn-more-about-mrs-proxy.md). For more information about mailbox moves, see [Mailbox moves in Exchange 2016](../../recipients/mailbox-moves.md).
+For more information about the Mailbox replication service and proxy, see [Learn more about MRS Proxy](https://technet.microsoft.com/library/jj156451.aspx). For more information about mailbox moves, see [Mailbox moves in Exchange 2016](../../recipients/mailbox-moves.md).
   
 ## What do you need to know before you begin?
 
 - Estimated time to complete each procedure: 20 minutes
     
-- For more information about accessing and using the EAC, see [Exchange admin center in Exchange 2016](../../architecture/cas/eac.md). To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
+- For more information about accessing and using the EAC, see [Exchange admin center in Exchange 2016](../../architecture/client-access/exchange-admin-center.md). To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Mailbox Move and Migration Permissions " entry in [Recipients Permissions](../../permissions/feature-permissions/recipient-perms.md).
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Mailbox Move and Migration Permissions " entry in [Recipients Permissions](../../permissions/feature-permissions/recipient-permissions.md).
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/eac-keyboard-shortcuts.md).
     

@@ -65,7 +65,7 @@ The following sections explain how Exchange handles the situation when a specifi
   
  **Description** Monitors the percentage of total drive space that's consumed by all files on the drive that holds the message queue database. Note that the message queue database file contains unused space, so an accurate description of the total drive space that's consumed by all files is drive size - free disk space - free space in the database. 
   
-To change the default location of the message queue database, see [Change the location of the queue database](queues/change-db-location.md).
+To change the default location of the message queue database, see [Change the location of the queue database](queues/relocate-queue-database.md).
   
  **Pressure transitions (%)**:
   
@@ -165,7 +165,7 @@ When the server reaches the high level of memory utilization, message dehydratio
 
  **Resource** **UsedDiskSpace[%ExchangeInstallPath%TransportRoles\data\Queue]**
   
- **Description** Monitors the percentage of total drive space that's consumed by all files on the drive that holds the message queue database transaction logs. To change the default location, see [Change the location of the queue database](queues/change-db-location.md).
+ **Description** Monitors the percentage of total drive space that's consumed by all files on the drive that holds the message queue database transaction logs. To change the default location, see [Change the location of the queue database](queues/relocate-queue-database.md).
   
  **Pressure transitions (%)**:
   
@@ -261,7 +261,7 @@ The following table summarizes the actions taken by back pressure when a monitor
   
 |**Resource under pressure**|**Utilization level**|**Actions taken**|
 |:-----|:-----|:-----|
-|**DatabaseUsedSpace** <br/> |Medium  <br/> | Reject incoming messages from non-Exchange servers.  <br/>  Reject message submissions from the Pickup directory and the Replay directory.  <br/>  Message resubmission is paused.  <br/>  Shadow Redundancy rejects messages. For more information about Shadow Redundancy, see [Shadow redundancy in Exchange 2016](transport-ha/shadow-redundancy.md).  <br/> |
+|**DatabaseUsedSpace** <br/> |Medium  <br/> | Reject incoming messages from non-Exchange servers.  <br/>  Reject message submissions from the Pickup directory and the Replay directory.  <br/>  Message resubmission is paused.  <br/>  Shadow Redundancy rejects messages. For more information about Shadow Redundancy, see [Shadow redundancy in Exchange 2016](transport-high-availability/shadow-redundancy.md).  <br/> |
 |**DatabaseUsedSpace** <br/> |High  <br/> | All actions taken at the medium utilization level.  <br/>  Reject incoming messages from other Exchange servers.  <br/>  Reject message submissions from mailbox databases by the Microsoft Exchange Mailbox Transport Submission service on Mailbox servers.  <br/> |
 |**PrivateBytes** <br/> |Medium  <br/> | Reject incoming messages from non-Exchange servers.  <br/>  Reject message submissions from the Pickup directory and the Replay directory.  <br/>  Message resubmission is paused.  <br/>  Shadow Redundancy rejects messages.  <br/>  Processing messages after a server or Transport service restart (also known as boot scanning) is paused.  <br/>  Start message dehydration.  <br/> |
 |**PrivateBytes** <br/> |High  <br/> | All actions taken at the medium utilization level.  <br/>  Reject incoming messages from other Exchange servers.  <br/>  Reject message submissions from mailbox databases by the Microsoft Exchange Mailbox Transport Submission service on Mailbox servers.  <br/> |

@@ -19,7 +19,7 @@ description: "Summary: How to set storage quotas on Exchange mailboxes."
   
 You can use the Exchange admin center (EAC) or the Exchange Management Shell to customize the mailbox storage quotas for specific mailboxes. Storage quotas let you control the size of mailboxes and manage the growth of mailbox databases. When a mailbox reaches or exceeds a specified storage quota, Exchange sends a descriptive notification to the mailbox owner.
   
-Storage quotas are typically configured on a per-database basis. This means that the quotas configured for a mailbox database apply to all mailboxes in that database. For more information about managing per-database mailbox settings, see [Manage mailbox databases in Exchange 2016](../../architecture/mailbox-servers/manage-dbs.md).
+Storage quotas are typically configured on a per-database basis. This means that the quotas configured for a mailbox database apply to all mailboxes in that database. For more information about managing per-database mailbox settings, see [Manage mailbox databases in Exchange 2016](../../architecture/mailbox-servers/manage-databases.md).
   
 This topic shows you how to customize storage settings for a specific mailbox instead of using the storage settings from the mailbox database. For additional management tasks related to user mailboxes, see [Manage user mailboxes](user-mailboxes.md).
   
@@ -27,7 +27,7 @@ This topic shows you how to customize storage settings for a specific mailbox in
 
 - Estimated time to complete: 2 minutes.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" section in the [Recipients Permissions](../../permissions/feature-permissions/recipient-perms.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" section in the [Recipients Permissions](../../permissions/feature-permissions/recipient-permissions.md) topic. 
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/eac-keyboard-shortcuts.md).
     

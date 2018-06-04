@@ -41,10 +41,10 @@ Administrators can search for items that are purged (hard-deleted) by a user by 
     
 ## Step 1: Search for and recover missing items
 
-You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "In-Place eDiscovery" entry in the [Messaging policy and compliance permissions in Exchange 2016](../../permissions/feature-permissions/policy-and-compliance-perms.md) topic. 
+You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "In-Place eDiscovery" entry in the [Messaging policy and compliance permissions in Exchange 2016](../../permissions/feature-permissions/policy-and-compliance-permissions.md) topic. 
   
 > [!NOTE]
-> You can use In-Place eDiscovery in the Exchange admin center (EAC) to search for missing items. However, when using the EAC, you can't restrict the search to the Recoverable Items folder. All messages matching your search parameters will be returned even if they're not deleted. After they're recovered to the specified discovery mailbox, you may need to review the search results and remove unnecessary messages before recovering the remaining messages to the user's mailbox or exporting them to a .pst file. > For details about how to use the EAC to perform an In-Place eDiscovery search, see [Create an In-Place eDiscovery search in Exchange 2016](../../messaging-policy-and-compliance/ediscovery/create-searches.md). 
+> You can use In-Place eDiscovery in the Exchange admin center (EAC) to search for missing items. However, when using the EAC, you can't restrict the search to the Recoverable Items folder. All messages matching your search parameters will be returned even if they're not deleted. After they're recovered to the specified discovery mailbox, you may need to review the search results and remove unnecessary messages before recovering the remaining messages to the user's mailbox or exporting them to a .pst file. > For details about how to use the EAC to perform an In-Place eDiscovery search, see [Create an In-Place eDiscovery search in Exchange 2016](../../policy-and-compliance/ediscovery/create-searches.md). 
   
 The first step in the recovery process is to search for messages in the source mailbox. Use one of the following methods to search a user mailbox and copy messages to a discovery mailbox.
   
@@ -71,7 +71,7 @@ To verify that you have successfully searched the messages you want to recover, 
   
 ## Step 2: Restore recovered items
 
-You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "In-Place eDiscovery" entry in the [Messaging policy and compliance permissions in Exchange 2016](../../permissions/feature-permissions/policy-and-compliance-perms.md) topic. 
+You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "In-Place eDiscovery" entry in the [Messaging policy and compliance permissions in Exchange 2016](../../permissions/feature-permissions/policy-and-compliance-permissions.md) topic. 
   
 > [!NOTE]
 > You can't use the EAC to restore recovered items. 
@@ -94,7 +94,7 @@ To verify that you have successfully recovered messages to the user's mailbox, h
   
 ### Use the Exchange Management Shell to export and import messages from a .pst file
 
-In Exchange 2016, you can export contents from a mailbox to a .pst file and import the contents of a .pst file to a mailbox. To learn more about mailbox import and export, see [Mailbox imports and exports in Exchange 2016](../../recipients/mailbox-import-export/mailbox-import-export.md). You can't perform this task in Exchange Online.
+In Exchange 2016, you can export contents from a mailbox to a .pst file and import the contents of a .pst file to a mailbox. To learn more about mailbox import and export, see [Mailbox imports and exports in Exchange 2016](../../recipients/mailbox-import-and-export/mailbox-import-and-export.md). You can't perform this task in Exchange Online.
   
 This example uses the following settings to export messages from the folder April Stewart Recovery in the Discovery Search Mailbox to a .pst file:
   
@@ -132,7 +132,7 @@ To verify that you have successfully exported messages to a .pst file, use Outlo
   
 ## More information
 
-- The ability to recover deleted items is enabled by single item recovery, which lets an administrator recover a message that's been purged by a user or by retention policy as long as the deleted item retention period hasn't expired for that item. To learn more about single item recovery, see [Recoverable Items folder in Exchange 2016](../../messaging-policy-and-compliance/recoverable-items-folder/recoverable-items-folder.md).
+- The ability to recover deleted items is enabled by single item recovery, which lets an administrator recover a message that's been purged by a user or by retention policy as long as the deleted item retention period hasn't expired for that item. To learn more about single item recovery, see [Recoverable Items folder in Exchange 2016](../../policy-and-compliance/recoverable-items-folder/recoverable-items-folder.md).
     
 - In Exchange 2016, a mailbox database is configured to retain deleted items for 14 days, by default. You can configure deleted item retention settings for a mailbox or mailbox database. For more information, see:
     
@@ -146,8 +146,8 @@ To verify that you have successfully exported messages to a .pst file, use Outlo
     
   - [Recover deleted items or email in Outlook on the web](https://go.microsoft.com/fwlink/p/?LinkId=524924)
     
-- This topic shows you how to use the **Search-Mailbox** cmdlet to search for and recover missing items. If you use this cmdlet, you can search only one mailbox at a time. If you want to search multiple mailboxes at the same time, you can use [In-Place eDiscovery in Exchange 2016](../../messaging-policy-and-compliance/ediscovery/ediscovery.md) in the Exchange admin center (EAC) or the [New-ComplianceSearch](http://technet.microsoft.com/library/433d1602-a026-4d63-be5e-605dd6b7b0d0.aspx) cmdlet in Windows PowerShell. 
+- This topic shows you how to use the **Search-Mailbox** cmdlet to search for and recover missing items. If you use this cmdlet, you can search only one mailbox at a time. If you want to search multiple mailboxes at the same time, you can use [In-Place eDiscovery in Exchange 2016](../../policy-and-compliance/ediscovery/ediscovery.md) in the Exchange admin center (EAC) or the [New-ComplianceSearch](http://technet.microsoft.com/library/433d1602-a026-4d63-be5e-605dd6b7b0d0.aspx) cmdlet in Windows PowerShell. 
     
-- In addition to using this procedure to search for and recover deleted items, you can also use a similar procedure to search for items in user mailboxes and then delete those items from the source mailbox. For more information, see [Search for and delete messages in Exchange 2016](../../messaging-policy-and-compliance/ediscovery/delete-messages.md).
+- In addition to using this procedure to search for and recover deleted items, you can also use a similar procedure to search for items in user mailboxes and then delete those items from the source mailbox. For more information, see [Search for and delete messages in Exchange 2016](../../policy-and-compliance/ediscovery/delete-messages.md).
     
 

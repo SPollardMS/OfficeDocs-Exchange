@@ -49,7 +49,7 @@ For more information about IMAP4, see [POP3 and IMAP4 in Exchange 2016](pop3-and
     
 - To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "POP3 and IMAP4 Permissions" section in the [Clients and mobile devices permissions](../../permissions/feature-permissions/client-and-mobile-device-perms.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "POP3 and IMAP4 Permissions" section in the [Clients and mobile devices permissions](../../permissions/feature-permissions/client-and-mobile-device-permissions.md) topic. 
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/eac-keyboard-shortcuts.md).
     
@@ -150,9 +150,9 @@ Set-ImapSettings -ExternalConnectionSettings "mail.contoso.com:993:SSL","mail.co
     
 - The combination of encryption methods and TCP ports that you use for the  _ExternalConnectionSettings_ parameter need to match the corresponding TCP ports and encryption methods that you use for the  _SSLBindings_ or  _UnencryptedOrTLSBindings_ parameters. 
     
-- Although you can use a separate certificate for IMAP4, we recommend that you use the same certificate as the other Exchange IIS (HTTP) services, which is likely a wildcard certificate or a subject alternative name (SAN) certificate from a commercial certification authority that's automatically trusted by all clients. For more information, see [Certificate requirements for Exchange services](../../architecture/cas/certificates.md#CertRequirements).
+- Although you can use a separate certificate for IMAP4, we recommend that you use the same certificate as the other Exchange IIS (HTTP) services, which is likely a wildcard certificate or a subject alternative name (SAN) certificate from a commercial certification authority that's automatically trusted by all clients. For more information, see [Certificate requirements for Exchange services](../../architecture/client-access/certificates.md#CertRequirements).
     
-- If you use a single subject certificate, or a SAN certificate, you also need to assign the certificate to the Exchange IMAP service. You don't need to assign a wildcard certificate to the Exchange IMAP service. For more information, see [Assign certificates to Exchange 2016 services](../../architecture/cas/assign-certificates-to-services.md).
+- If you use a single subject certificate, or a SAN certificate, you also need to assign the certificate to the Exchange IMAP service. You don't need to assign a wildcard certificate to the Exchange IMAP service. For more information, see [Assign certificates to Exchange 2016 services](../../architecture/client-access/assign-certificates-to-services.md).
     
 #### How you do know this step worked?
 

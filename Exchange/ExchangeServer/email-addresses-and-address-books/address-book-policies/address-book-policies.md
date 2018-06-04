@@ -22,19 +22,19 @@ Address book policies (ABPs) lets administrators segment users into specific gro
   
 - One GAL. For more information about GALs, see [Global address lists](../../email-addresses-and-address-books/address-lists/address-lists.md#GALs).
     
-- One offline address book (OAB). For more information about OABs, see [Offline address books in Exchange 2016](../../email-addresses-and-address-books/oabs/oabs.md).
+- One offline address book (OAB). For more information about OABs, see [Offline address books in Exchange 2016](../../email-addresses-and-address-books/offline-address-books/offline-address-books.md).
     
 - One room list. Note that this room list is a custom address list that specifies rooms (contains the filter  `RecipientDisplayType -eq 'ConferenceRoomMailbox'`). It's not a room finder that you create with the  _RoomList_ switch on the **New-DistributionGroup** or **Set-DistributionGroup** cmdlet. For more information, see [Create and manage room mailboxes](../../recipients/room-mailboxes.md).
     
 - One or more address lists. For more information about address lists, see [Custom address lists](../../email-addresses-and-address-books/address-lists/address-lists.md#CALists).
     
-For procedures involving ABPs, see [Procedures for address book policies in Exchange 2016](address-book-policy-procedures.md).
+For procedures involving ABPs, see [Procedures for address book policies in Exchange 2016](abp-procedures.md).
   
  **Notes**:
   
 - ABPs create only a virtual separation of users from a directory perspective, not a legal separation.
     
-- Implementing an ABP is a multi-step process that requires planning. For more information, see [Scenario: Deploying address book policies in Exchange 2016](address-book-policy-scenarios.md).
+- Implementing an ABP is a multi-step process that requires planning. For more information, see [Scenario: Deploying address book policies in Exchange 2016](abp-scenarios.md).
     
 ## How ABPs work
 <a name="How"> </a>
@@ -56,7 +56,7 @@ In an Exchange organization that doesn't use ABPs, the following things occur wh
     
 If you're using ABPs, and you don't want the users in the ABPs to view each other's potentially private information, you can turn on the Address Book Policy Routing agent. The ABP Routing agent is a Transport agent that controls how recipients are resolved in your organization. When the ABP Routing agent is installed and configured, users that are assigned to different GALs by different ABPs can't view each other's contact cards (they appear as external recipients to each other).
   
-For details about how to turn on the ABP Routing agent, see [Use the Exchange Management Shell to install and configure the Address Book Policy Routing Agent](address-book-policy-procedures.md#InstallABPRouting).
+For details about how to turn on the ABP Routing agent, see [Use the Exchange Management Shell to install and configure the Address Book Policy Routing Agent](abp-procedures.md#InstallABPRouting).
   
 ## ABP example
 <a name="example"> </a>

@@ -28,7 +28,7 @@ For additional management tasks related to public folders, see [Public folder pr
 
 - Estimated time to complete: 5 minutes.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Public folders" entry in the [Sharing and collaboration permissions](../../permissions/feature-permissions/sharing-and-collaboration-perms.md)topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Public folders" entry in the [Sharing and collaboration permissions](../../permissions/feature-permissions/sharing-and-collaboration-permissions.md)topic.
     
 - You can't create a public folder unless you've first created a public folder mailbox. For more information about how to create a public folder mailbox, see [Create a public folder mailbox](create-public-folder-mailboxes.md).
     

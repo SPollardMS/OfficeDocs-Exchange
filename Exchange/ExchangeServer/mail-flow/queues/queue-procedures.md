@@ -56,7 +56,7 @@ For procedures on messages in queues, see [Procedures for messages in queues](me
     
 - For more information about using filters and identity values in the Exchange Management Shell, see [Find queues and messages in queues in the Exchange Management Shell](queues-and-messages-in-powershell.md).
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Queues" entry in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-perms.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Queues" entry in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic. 
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/eac-keyboard-shortcuts.md).
     

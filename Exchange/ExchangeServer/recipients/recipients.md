@@ -115,7 +115,7 @@ If you want to decommission the last Mailbox server in your Exchange organizatio
   
 #### Planning for mailboxes
 
-Mailboxes are created in mailbox databases on Exchange servers that have the Mailbox server role installed. To help provide a reliable and effective platform for your mailbox users, detailed planning for the deployment of Mailbox servers and databases is essential. To learn more about planning for Mailbox servers and databases, see [Planning and deployment](../plan-deploy/plan-deploy.md).
+Mailboxes are created in mailbox databases on Exchange servers that have the Mailbox server role installed. To help provide a reliable and effective platform for your mailbox users, detailed planning for the deployment of Mailbox servers and databases is essential. To learn more about planning for Mailbox servers and databases, see [Planning and deployment](../plan-and-deploy/plan-and-deploy.md).
   
 ### Distribution groups
 
@@ -156,7 +156,7 @@ To help you create recipient filters for dynamic distribution groups, you can us
     
 - Recipient container
     
-You can also specify conditions based on recipient properties other than those previously listed. To do this, you must use the Exchange Management Shell to create a custom query for the dynamic distribution group. Remember that the filter and condition settings for dynamic distribution groups that have custom recipient filters can be managed only by using the Exchange Management Shell. For an example of how to create a dynamic distribution group by using a custom query, see [Manage dynamic distribution groups](ddgs/ddgs.md).
+You can also specify conditions based on recipient properties other than those previously listed. To do this, you must use the Exchange Management Shell to create a custom query for the dynamic distribution group. Remember that the filter and condition settings for dynamic distribution groups that have custom recipient filters can be managed only by using the Exchange Management Shell. For an example of how to create a dynamic distribution group by using a custom query, see [Manage dynamic distribution groups](dynamic-distribution-groups/dynamic-distribution-groups.md).
   
 ### Mail contacts
 
@@ -202,7 +202,7 @@ The following table contains links to topics that will help you learn about and 
 |[Create user mailboxes in Exchange 2016](create-user-mailboxes.md) <br/> |Learn how to create user mailboxes using the Exchange admin center or the Exchange Management Shell.  <br/> |
 |[Manage user mailboxes](user-mailboxes/user-mailboxes.md) <br/> |Learn how to create user mailboxes, change mailbox properties, and bulk-edit selected properties for multiple mailboxes.  <br/> |
 |[Manage distribution groups](distribution-groups.md) <br/> |Learn how to create and manage distribution groups, and create a group naming policy for your organization.  <br/> |
-|[Manage dynamic distribution groups](ddgs/ddgs.md) <br/> |Learn how to create dynamic distribution groups and manage dynamic distribution group properties, such as using custom attributes and other properties to determine group membership.  <br/> |
+|[Manage dynamic distribution groups](dynamic-distribution-groups/dynamic-distribution-groups.md) <br/> |Learn how to create dynamic distribution groups and manage dynamic distribution group properties, such as using custom attributes and other properties to determine group membership.  <br/> |
 |[Manage mail contacts](mail-contacts.md) <br/> |Learn how to create and manage mail contacts.  <br/> |
 |[Manage mail users](mail-users.md) <br/> |Learn how to create and manage mail users.  <br/> |
 |[Create and manage room mailboxes](room-mailboxes.md) <br/> |Learn how to create room mailboxes and manage room mailbox properties, such as enabling recurring meetings and configuring booking and scheduling options.  <br/> |

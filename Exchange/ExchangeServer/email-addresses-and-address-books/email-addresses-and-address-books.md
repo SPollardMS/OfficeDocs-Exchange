@@ -25,7 +25,7 @@ Exchange uses address books to organize and store email address information for 
 |**Details templates** <br/> |Details templates control the appearance of recipient properties that are displayed in address lists in Outlook.  <br/> |[Details Templates](http://technet.microsoft.com/library/26f02e47-1540-4840-afe0-600c97368cac.aspx) <br/> |
 |**Email address policies** <br/> |Email address policies are the rules that create email addresses for Exchange recipients.  <br/> |[Email address policies in Exchange 2016](email-address-policies/email-address-policies.md) <br/> |
 |**Hierarchical address books** <br/> |The hierarchical address book (HAB) presents recipients in the GAL by using your organization's unique business structure (for example, seniority or management hierarchy), which provides an efficient method for locating internal recipients.  <br/> |[Hierarchical Address Books](http://technet.microsoft.com/library/a1d277a0-5437-40af-aade-e4730a0d1308.aspx) <br/> |
-|**Offline address books** <br/> |An offline address book (OAB) is a collection of address lists that can be downloaded and used in Outlook by users that are disconnected from the Exchange organization.  <br/> |[Offline address books in Exchange 2016](oabs/oabs.md) <br/> |
+|**Offline address books** <br/> |An offline address book (OAB) is a collection of address lists that can be downloaded and used in Outlook by users that are disconnected from the Exchange organization.  <br/> |[Offline address books in Exchange 2016](offline-address-books/offline-address-books.md) <br/> |
    
 ## Email address and address book documentation
 

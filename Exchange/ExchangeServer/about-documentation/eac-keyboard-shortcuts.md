@@ -20,7 +20,7 @@ Microsoft is committed to making its products and services easier for everyone t
   
 ## Keyboard shortcuts in the Exchange admin center in Exchange 2016
 
-By using keyboard shortcuts in the Exchange admin center (EAC), you can quickly accomplish the common tasks that are described in the following table. To learn more about the EAC, see [Exchange admin center in Exchange 2016](../architecture/cas/eac.md).
+By using keyboard shortcuts in the Exchange admin center (EAC), you can quickly accomplish the common tasks that are described in the following table. To learn more about the EAC, see [Exchange admin center in Exchange 2016](../architecture/client-access/exchange-admin-center.md).
   
 **Keyboard shortcuts in the EAC**
 

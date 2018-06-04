@@ -22,7 +22,7 @@ You can use mail-enabled security groups to distribute messages as well as grant
 
 - Estimated time to complete each procedure: 5 minutes.
     
-- For more information about accessing and using the EAC, see [Exchange admin center in Exchange 2016](../architecture/cas/eac.md).
+- For more information about accessing and using the EAC, see [Exchange admin center in Exchange 2016](../architecture/client-access/exchange-admin-center.md).
     
 - To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
     
@@ -30,7 +30,7 @@ You can use mail-enabled security groups to distribute messages as well as grant
     
 - For mail-enabled security groups, users can't add or remove themselves from the group, nor can they send requests to the group owners to join or leave the group. A group owner needs to manually add and remove group members from a mail-enabled security group.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Distribution groups" entry in the [Recipients Permissions](../permissions/feature-permissions/recipient-perms.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Distribution groups" entry in the [Recipients Permissions](../permissions/feature-permissions/recipient-permissions.md) topic. 
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../about-documentation/eac-keyboard-shortcuts.md).
     

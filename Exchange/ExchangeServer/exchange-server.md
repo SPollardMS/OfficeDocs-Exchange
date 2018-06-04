@@ -23,35 +23,35 @@ Welcome to Microsoft Exchange Server 2016! Here's some fundamental and essential
   
 - For information on buying Exchange 2016 or downloading a free trial version, [go here](https://go.microsoft.com/fwlink/?linkid=836306).
     
-- To download full versions of Exchange 2016, including the latest Cumulative Updates (CUs), use the information provided in [Updates for Exchange 2016](new/updates.md).
+- To download full versions of Exchange 2016, including the latest Cumulative Updates (CUs), use the information provided in [Updates for Exchange 2016](new-features/updated-features.md).
     
 - For information about setting up Outlook with Exchange, or using Outlook on a mobile device, you can [start here](https://go.microsoft.com/fwlink/?linkid=836274).
     
-- If you want a quick overview of what's new in Exchange 2016, check out [What's new in Exchange 2016](new/new.md).
+- If you want a quick overview of what's new in Exchange 2016, check out [What's new in Exchange 2016](new-features/new-features.md).
     
 - If you want to learn more about Exchange 2016, check out the [Exchange Server TechCenter](https://go.microsoft.com/fwlink/?LinkId=266622).
     
-- If you want to learn about deploying Exchange 2016 in a virtualized environment, see [Exchange 2016 virtualization](plan-deploy/virtualization.md).
+- If you want to learn about deploying Exchange 2016 in a virtualized environment, see [Exchange 2016 virtualization](plan-and-deploy/virtualization.md).
     
 - If you need more help or want to share ideas, the [Exchange Server forums](https://go.microsoft.com/fwlink/p/?linkId=60612) are a great place to start. 
     
-- To get started with Exchange 2016, head for [Planning and deployment](plan-deploy/plan-deploy.md). It lays out the recommended sequence for preparing for and then installing Exchange 2016 and includes the following important topics:
+- To get started with Exchange 2016, head for [Planning and deployment](plan-and-deploy/plan-and-deploy.md). It lays out the recommended sequence for preparing for and then installing Exchange 2016 and includes the following important topics:
     
-  - [Exchange 2016 system requirements](plan-deploy/system-requirements.md)
+  - [Exchange 2016 system requirements](plan-and-deploy/system-requirements.md)
     
-  - [Exchange 2016 prerequisites](plan-deploy/prerequisites.md)
+  - [Exchange 2016 prerequisites](plan-and-deploy/prerequisites.md)
     
-  - [Prepare Active Directory and domains](plan-deploy/prepare-ad-and-domains.md)
+  - [Prepare Active Directory and domains](plan-and-deploy/prepare-ad-and-domains.md)
     
-  - [Install the Exchange 2016 Mailbox role using the Setup wizard](plan-deploy/deploy-new-installations/install-mailbox-role.md)
+  - [Install the Exchange 2016 Mailbox role using the Setup wizard](plan-and-deploy/deploy-new-installations/install-mailbox-role.md)
     
-  - [Install Exchange 2016 using unattended mode](plan-deploy/deploy-new-installations/unattended-installs.md)
+  - [Install Exchange 2016 using unattended mode](plan-and-deploy/deploy-new-installations/unattended-installs.md)
     
-  - [Install the Exchange 2016 Edge Transport role using the Setup wizard](plan-deploy/deploy-new-installations/install-edge-transport-role.md)
+  - [Install the Exchange 2016 Edge Transport role using the Setup wizard](plan-and-deploy/deploy-new-installations/install-edge-transport-role.md)
     
-  - [Upgrade Exchange 2016 to the latest cumulative update](plan-deploy/install-cus.md)
+  - [Upgrade Exchange 2016 to the latest cumulative update](plan-and-deploy/install-cumulative-updates.md)
     
-  - [Exchange 2016 post-installation tasks](plan-deploy/post-installation-tasks/post-installation-tasks.md)
+  - [Exchange 2016 post-installation tasks](plan-and-deploy/post-installation-tasks/post-installation-tasks.md)
     
     > [!IMPORTANT]
     > Make sure you read [Release notes for Exchange 2016](release-notes.md) before you begin your deployment. The release notes contain important information about issues you might run into during and after your deployment. 

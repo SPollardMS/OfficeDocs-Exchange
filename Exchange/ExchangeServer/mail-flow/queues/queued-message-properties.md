@@ -26,7 +26,7 @@ For more information about queues, see [Queues and messages in queues](queues.md
 
 - Estimated time to complete: 5 minutes
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Queues" entry in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-perms.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Queues" entry in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic. 
     
 - To find and open the Exchange Toolbox, use one of the following procedures:
     
@@ -75,7 +75,7 @@ For more information about queues, see [Queues and messages in queues](queues.md
     
   - **Size (KB)**: The size of the message rounded up to the nearest kilobyte (KB).
     
-  - **SCL**: The spam confidence level (SCL) rating of the message. Valid SCL entries are integers 0 through 9, or -1 for internal (authenticated) messages. For more information, see [Exchange spam confidence level (SCL) thresholds](../../spam-and-malware/antispam/scl.md).
+  - **SCL**: The spam confidence level (SCL) rating of the message. Valid SCL entries are integers 0 through 9, or -1 for internal (authenticated) messages. For more information, see [Exchange spam confidence level (SCL) thresholds](../../antispam-and-antimalware/antispam/scl.md).
     
   - **Queue ID**: The queue that holds the message. The queue identity uses the syntax  _\<Server\>_\ _\<Queue\>_, where  _\<Queue\>_ is one of the following values: 
     

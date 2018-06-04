@@ -117,7 +117,7 @@ Each mailbox has a  _ThrottlingPolicy_ setting. The default value for this setti
   
 For more information, see the following topics:
   
-- [User workload management in Exchange 2016](../server-health-and-performance/wlm.md)
+- [User workload management in Exchange 2016](../server-health/workload-management.md)
     
 - [Change User Throttling Settings for Specific Users](http://technet.microsoft.com/library/c5f834d6-189d-485e-9800-5e0066815ecf.aspx)
     

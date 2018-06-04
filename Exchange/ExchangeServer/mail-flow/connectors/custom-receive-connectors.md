@@ -46,11 +46,11 @@ Read more about Receive connectors in Exchange 2016 see, [Receive connectors](re
 
 - Estimated time to complete each procedure: 10 minutes
     
-- The Exchange admin center (EAC) procedures are only available on Mailbox servers. For more information about the EAC, see [Exchange admin center in Exchange 2016](../../architecture/cas/eac.md).
+- The Exchange admin center (EAC) procedures are only available on Mailbox servers. For more information about the EAC, see [Exchange admin center in Exchange 2016](../../architecture/client-access/exchange-admin-center.md).
     
 - The Exchange Management Shell procedures are available on Mailbox servers and Edge Transport servers. To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Receive connectors" entry in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-perms.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Receive connectors" entry in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic. 
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/eac-keyboard-shortcuts.md).
     

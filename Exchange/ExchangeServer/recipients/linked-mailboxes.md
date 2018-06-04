@@ -3,7 +3,7 @@ title: "Manage linked mailboxes"
 ms.author: serdars
 author: SerdarSoysal
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/1/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
@@ -25,13 +25,13 @@ The following figure illustrates the relationship between the linked user accoun
 ![Trust relationship between forests with linked mailboxes](../media/66033cd3-9501-45f6-bfaa-823f7f25d687.png)
   
 > [!NOTE]
-> A trust between the Exchange forest and at least one account forest must be set up before you can create linked mailboxes. At a minimum, you must set up a one-way, outgoing trust so that the Exchange forest trusts the account forest. For more information, see [Learn more about setting up a forest trust to support linked mailboxes](learn-more-about-setting-up-a-forest-trust-to-support-linked-mailboxes.md). 
+> A trust between the Exchange forest and at least one account forest must be set up before you can create linked mailboxes. At a minimum, you must set up a one-way, outgoing trust so that the Exchange forest trusts the account forest. For more information, see [Learn more about setting up a forest trust to support linked mailboxes](https://technet.microsoft.com/library/jj156983.aspx). 
   
 ## What do you need to know before you begin?
 
 - Estimated time to complete: 2 to 5 minutes.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" section in the [Recipients Permissions](../permissions/feature-permissions/recipient-perms.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" section in the [Recipients Permissions](../permissions/feature-permissions/recipient-permissions.md) topic. 
     
 - A user account (called the linked master account) must exist in the account forest before you can create a linked mailbox. This is because the linked mailbox is associated with a user in the account forest.
     

@@ -110,7 +110,7 @@ You can perform two operations on a disconnected archive mailbox:
     > [!NOTE]
     > If you disable an archive mailbox for a user mailbox and then enable an archive mailbox for that same user, that user mailbox will get a new archive mailbox. While you can use the **Connect-Mailbox** cmdlet to connect a primary mailbox to a user, you must use the **Enable-Mailbox** cmdlet to connect a disabled archive mailbox to an existing mailbox. 
   
-    For more information, see [Manage In-Place Archives in Exchange 2016](../../messaging-policy-and-compliance/in-place-archiving/manage-archives.md).
+    For more information, see [Manage In-Place Archives in Exchange 2016](../../policy-and-compliance/in-place-archiving/manage-archives.md).
     
 - ** **Permanently delete it from the Exchange mailbox database**** Exchange retains disconnected archive mailboxes based on the deleted mailbox retention settings configured for the mailbox database. The default retention period is 30 days. After the specified mailbox retention period, a disconnected archive mailbox is purged from the Exchange mailbox database. 
     

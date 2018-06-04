@@ -91,7 +91,7 @@ Email address policies assign email addresses to recipients. You need to add an 
 ## Recipient Lookup in accepted domains
 <a name="RecipientLookup"> </a>
 
-Recipient filtering on a subscribed Edge Transport server can block messages that are addressed to non-existent recipients in your Exchange organization. This feature is known as Recipient Lookup. For more information about recipient filtering, see [Recipient filtering on Edge Transport servers](../../spam-and-malware/antispam/recipient-filtering.md).
+Recipient filtering on a subscribed Edge Transport server can block messages that are addressed to non-existent recipients in your Exchange organization. This feature is known as Recipient Lookup. For more information about recipient filtering, see [Recipient filtering on Edge Transport servers](../../antispam-and-antimalware/antispam/recipient-filtering.md).
   
 You can enable or disable Recipient Lookup for an accepted domain by using the  _AddressBookEnabled_ parameter on the **Set-AcceptedDomain** cmdlet. The default value for each accepted domain type is described in the following table: 
   

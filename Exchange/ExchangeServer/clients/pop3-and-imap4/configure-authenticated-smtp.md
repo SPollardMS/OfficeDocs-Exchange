@@ -47,7 +47,7 @@ For more information about POP3 and IMAP4, see [POP3 and IMAP4 in Exchange 2016]
     
 - If you have POP3 or IMAP4 clients that can only send SMTP email on port 25, you can configure port 25 on the "Client Frontend  _\<Server name\>_" Receive connector to allow clients to send authenticated SMTP email. However, because port 25 is also configured on the "Client Frontend  _\<Server name\>_" Receive connector for email from external SMTP servers, you'll need to modify the local IP addresses that are used to listen on port 25 on one or both of the connectors. For more information, see [Receive connector local address bindings](../../mail-flow/connectors/receive-connectors.md#Bindings).
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Receive connectors" entry in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-perms.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Receive connectors" entry in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic. 
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/eac-keyboard-shortcuts.md).
     
@@ -104,9 +104,9 @@ To verify that you've successfully the FQDN on the "Client Frontend  *\<Server n
 
 ### Step 2: Use the Exchange Management Shell to specify the certificate that's used to encrypt authenticated SMTP client connections
 
-The certificate needs to match or contain the FQDN value that you specified in the previous step, and the POP3 and SMTP clients need to trust the certificate, which likely means a certificate from a commercial certification authority. For more information, see [Certificate requirements for Exchange services](../../architecture/cas/certificates.md#CertRequirements).
+The certificate needs to match or contain the FQDN value that you specified in the previous step, and the POP3 and SMTP clients need to trust the certificate, which likely means a certificate from a commercial certification authority. For more information, see [Certificate requirements for Exchange services](../../architecture/client-access/certificates.md#CertRequirements).
   
-Also, you need to assign the certificate to the Exchange SMTP service. For more information, see [Assign certificates to Exchange 2016 services](../../architecture/cas/assign-certificates-to-services.md).
+Also, you need to assign the certificate to the Exchange SMTP service. For more information, see [Assign certificates to Exchange 2016 services](../../architecture/client-access/assign-certificates-to-services.md).
   
 To specify the certificate that's used for authenticated SMTP client connections, use the following syntax:
   

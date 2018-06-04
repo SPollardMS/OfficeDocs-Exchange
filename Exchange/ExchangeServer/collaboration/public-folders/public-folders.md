@@ -28,7 +28,7 @@ Public folders can also be used as an archiving method for distribution groups. 
   
 Public folders aren't designed to do the following:
   
-- **Data archiving** Users who have mailbox limits sometimes use public folders instead of mailboxes to archive data. This practice isn't recommended because it affects storage in public folders and undermines the goal of mailbox limits. Instead, we recommend that you use [In-Place Archiving in Exchange 2016](../../messaging-policy-and-compliance/in-place-archiving/in-place-archiving.md) as your archiving solution. 
+- **Data archiving** Users who have mailbox limits sometimes use public folders instead of mailboxes to archive data. This practice isn't recommended because it affects storage in public folders and undermines the goal of mailbox limits. Instead, we recommend that you use [In-Place Archiving in Exchange 2016](../../policy-and-compliance/in-place-archiving/in-place-archiving.md) as your archiving solution. 
     
 - **Document sharing and collaboration** Public folders don't provide versioning or other document management features, such as controlled check-in and check-out functionality and automatic notifications of content changes. Instead, we recommend that you use [SharePoint](https://go.microsoft.com/fwlink/?LinkId=282474) as your documentation sharing solution. 
     
@@ -158,7 +158,7 @@ To set the quotas on a public folder mailbox, use the [Set-OrganizationConfig](h
 ## Disaster recovery
 <a name="DR"> </a>
 
-Exchange 2016 public folders are built on mailbox infrastructure and use the same mechanisms for availability and redundancy. Every public folder mailbox can have multiple redundant copies with automatic failover, just like regular mailboxes. To learn more, see [Plan for high availability and site resilience](../../ha/plan-ha.md).
+Exchange 2016 public folders are built on mailbox infrastructure and use the same mechanisms for availability and redundancy. Every public folder mailbox can have multiple redundant copies with automatic failover, just like regular mailboxes. To learn more, see [Plan for high availability and site resilience](../../high-availability/plan-ha.md).
   
 In addition to the overall disaster recovery scenario, you can also restore public folders in the following situations:
   

@@ -24,7 +24,7 @@ For more information about Exchange mailbox servers and how they complement othe
 
 The following articles contain procedures for common Mailbox server management tasks:
   
-- [Manage mailbox databases in Exchange 2016](manage-dbs.md)
+- [Manage mailbox databases in Exchange 2016](manage-databases.md)
     
 - [Manage on-premises mailbox moves in Exchange 2016](manage-mailbox-moves.md)
     

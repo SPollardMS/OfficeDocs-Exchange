@@ -82,7 +82,7 @@ The Active Directory recipient objects that are used by Exchange are described i
 |**Active Directory recipient type**|**Description**|
 |:-----|:-----|
 |DistributionGroup  <br/> | Any mail-enabled group object. The distribution group object types are:  <br/> **MailUniversalDistributionGroup** A universal distribution group object  <br/> **MailUniversalSecurityGroup** A universal security group (USG) object that has an email address  <br/> |
-|DynamicDistributionGroup  <br/> |An object that has the Active Directory class **msExchDynamicDistributionList**. For more information, see [Manage dynamic distribution groups](../../recipients/ddgs/ddgs.md).  <br/> |
+|DynamicDistributionGroup  <br/> |An object that has the Active Directory class **msExchDynamicDistributionList**. For more information, see [Manage dynamic distribution groups](../../recipients/dynamic-distribution-groups/dynamic-distribution-groups.md).  <br/> |
 |Mailbox  <br/> |An object that has an email address and a defined  _Database_ parameter.  <br/> |
 |MailUser  <br/> |A user object that has an email address without a defined  _Database_ parameter. For more information, see [Create a Mail User](http://technet.microsoft.com/library/bb8b8804-f730-4ad7-9173-896a4965b90f.aspx).  <br/> |
 |MailContact  <br/> |A contact object that has an email address. Typically, a mail contact is used for recipients outside the Exchange organization. A mail contact is also used in cross-forest Exchange environments. For more information, see [Create a Mail Contact](http://technet.microsoft.com/library/74c72aed-e9ff-4927-8eb7-c08a86e79ae0.aspx).  <br/> |

@@ -3,7 +3,7 @@ title: "Send connectors"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/1/2018
 ms.audience: ITPro
 ms.topic: overview
 ms.prod: office-online-server
@@ -39,22 +39,6 @@ These are the important settings on Send connectors:
     
 On Mailbox servers, you can create and manage Send connectors in the Exchange admin center or in the Exchange Management Shell. On Edge Transport servers, you can only use the Exchange Management Shell.
   
- **Contents**
-  
-[Send connector changes in Exchange 2016](send-connectors.md#WhatsNew)
-  
-[Implicit Send connectors](send-connectors.md#ImplicitSendConnectors)
-  
-[Send connector usage types](send-connectors.md#UsageTypes)
-  
-[Send connector network settings](send-connectors.md#NetworkSettings)
-  
-[Send connector address spaces](send-connectors.md#AddressSpaces)
-  
-[Send connector scope](send-connectors.md#Scope)
-  
-[Send connector permissions](send-connectors.md#Permissions)
-  
 ## Send connector changes in Exchange 2016
 <a name="WhatsNew"> </a>
 
@@ -70,8 +54,6 @@ These are the notable changes to Send connectors in Exchange 2016 compared to Ex
     
 - The  _TlsCertificateName_ parameter allows you to specify the certificate issuer and the certificate subject. This helps minimize the risk of fraudulent certificates. 
     
-[Return to top](send-connectors.md#RTT)
-  
 ## Implicit Send connectors
 <a name="ImplicitSendConnectors"> </a>
 
@@ -88,8 +70,6 @@ Although no Send connectors are created during the installation of Exchange 2016
 - Mailbox Transport Submission service to the Transport service.
     
 For more information, see [Mail flow and the transport pipeline](../../mail-flow/mail-flow.md).
-  
-[Return to top](send-connectors.md#RTT)
   
 ## Send connector usage types
 <a name="UsageTypes"> </a>
@@ -109,8 +89,6 @@ The available usage type values are described in the following table.
 |Internet  <br/> |35 MB  <br/> |None  <br/> |
 |Partner  <br/> |35 MB  <br/> |When you create a Send connector of this usage type in the EAC, you can't select **Route mail through smart hosts** or a smart host authentication mechanism. After you create the connector, you can go to the **Delivery** tab in the properties of the Send connector and select **Route mail through smart hosts** and the smart host authentication mechanism.  <br/> This same restriction doesn't exist in the Exchange Management Shell. You can use the  _Partner_ switch and set the  _DNSRoutingEnabled_ to  `$false` and use the  _SmartHosts_ and  _SmartHostAuthMechanism_ parameters on the **New-SendConnector** cmdlet.  <br/> |
    
-[Return to top](send-connectors.md#RTT)
-  
 ## Send connector network settings
 <a name="NetworkSettings"> </a>
 
@@ -134,8 +112,6 @@ If you've already configured the Exchange server with separate DNS settings to u
     
 - In the Exchange Management Shell, use the  _UseExternalDNSServersEnabled_ parameter on the **New-SendConnector** and **Set-SendConnector** cmdlets. 
     
-[Return to top](send-connectors.md#RTT)
-  
 ### Use smart hosts to route mail
 
 When you route mail through a smart host, the Send connector forwards mail to the smart host, and the smart host is responsible for routing mail to next hop on its way to the ultimate destination. A common use for smart host routing is to send outgoing mail through an antispam service or device.
@@ -152,8 +128,6 @@ An important part of smart host routing is the authentication mechanism that the
 |**Exchange Server authentication** (  `ExchangeServer`)  <br/> |Generic Security Services application programming interface (GSSAPI) and Mutual GSSAPI authentication.  <br/> |
 |**Externally secured** (  `ExternalAuthoritative`)  <br/> |The connection is presumed to be secured by using a security mechanism that's external to Exchange. The connection may be an Internet Protocol security (IPsec) association or a virtual private network (VPN). Alternatively, the servers may reside in a trusted, physically controlled network.  <br/> |
    
-[Return to top](send-connectors.md#RTT)
-  
 ## Send connector address spaces
 <a name="AddressSpaces"> </a>
 
@@ -178,8 +152,6 @@ The Send connector that's used to route messages to a recipient is selected duri
   
 For example, suppose the recipient is julia@marketing.contoso.com. If a Send connector is configured for \*.contoso.com, the message is routed through that connector. If no Send connector is configured for \*.contoso.com, the message is routed through the connector that's configured for \*. If multiple Send connectors in the same Active Directory site are configured for \*.contoso.com, the connector with the lower priority value is selected.
   
-[Return to top](send-connectors.md#RTT)
-  
 ## Send connector scope
 <a name="Scope"> </a>
 
@@ -188,8 +160,6 @@ The source servers for a Send connector determine the destination Exchange serve
  By default, Send connectors are visible to all the Exchange servers in the entire Active Directory forest, and are used in routing decisions. However, you can limit the scope of a Send connector so that it's only visible to other Exchange servers in the same Active Directory site. The Send connector is invisible to Exchange servers in other Active Directory sites, and isn't used in their routing decisions. A Send connector that's restricted in this way is said to be scoped.
   
 To configure scoped Send connectors in the EAC, you select **Scoped send connector** in the **Address space** section of the new Send connector wizard, or on the **Scoping** tab in the properties of existing Send connectors. In the Exchange Management Shell, you use the  _IsScopedConnector_ parameter on the **New-SendConnector** and **Set-SendConnector** cmdlets. 
-  
-[Return to top](send-connectors.md#RTT)
   
 ## Send connector permissions
 <a name="Permissions"> </a>
@@ -212,9 +182,7 @@ The available Send connector permissions are described in the following table.
    
  **Note**:
   
-Permissions names that contain  `ms-Exch-Send-Headers-` are part of the header firewall feature. For more information, see [Header Firewall](http://technet.microsoft.com/library/9b148f7b-47a9-4379-a55b-8d5310c1772f.aspx).
-  
-[Return to top](send-connectors.md#RTT)
+Permissions names that contain  `ms-Exch-Send-Headers-` are part of the header firewall feature. For more information, see [Header firewall](https://technet.microsoft.com/library/bb232136.aspx).
   
 ### Send connector permission procedures
 
@@ -248,6 +216,4 @@ To remove permissions from a security principal on a Send connector, use the fol
 Remove-ADPermission -Identity <SendConnector> -User <SecurityPrincipal> -ExtendedRights "<Permission1>","<Permission2>"...
 ```
 
-[](receive-connectors.md#RTT)
-  
 

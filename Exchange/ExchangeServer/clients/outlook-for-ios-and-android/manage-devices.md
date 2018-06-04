@@ -18,7 +18,7 @@ description: "Summary: This article describes how to manage mobile devices with 
   
 Microsoft recommends Exchange ActiveSync for managing the mobile devices that are used to access Exchange mailboxes in your on-premises environment. Exchange ActiveSync is a Microsoft Exchange synchronization protocol that lets mobile phones access an organization's information on a server that's running Microsoft Exchange.
   
-This article focuses on specific Exchange ActiveSync features and scenarios for mobile devices running Outlook for Android and iOS when authenticating with Basic authentication. Complete information about the Microsoft Exchange synchronization protocol is available in [Exchange ActiveSync](../../clients/activesync/activesync.md). In addition, there is information on [the Office Blog](https://go.microsoft.com/fwlink/p/?LinkId=623922) detailing password enforcement and other benefits of using Exchange ActiveSync with devices running Outlook for iOS and Android. 
+This article focuses on specific Exchange ActiveSync features and scenarios for mobile devices running Outlook for Android and iOS when authenticating with Basic authentication. Complete information about the Microsoft Exchange synchronization protocol is available in [Exchange ActiveSync](../../clients/exchange-activesync/exchange-activesync.md). In addition, there is information on [the Office Blog](https://go.microsoft.com/fwlink/p/?LinkId=623922) detailing password enforcement and other benefits of using Exchange ActiveSync with devices running Outlook for iOS and Android. 
   
 ## PIN lock and device encryption
 

@@ -3,7 +3,7 @@ title: "Release notes for Exchange 2016"
 ms.author: dstrome
 author: dstrome
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/2/2018
 ms.audience: ITPro
 ms.topic: get-started-article
 ms.prod: office-online-server

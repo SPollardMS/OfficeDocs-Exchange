@@ -22,7 +22,7 @@ Email forwarding lets you to set up a mailbox to forward email messages sent to 
 
 You can use either the Exchange Admin Center (EAC) or Exchange Management Shell to set up email forwarding.
   
-You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" entry in the [Recipients Permissions](../../permissions/feature-permissions/recipient-perms.md) topic. 
+You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" entry in the [Recipients Permissions](../../permissions/feature-permissions/recipient-permissions.md) topic. 
   
 ### Use the Exchange Admin Center to set up email forwarding
 
