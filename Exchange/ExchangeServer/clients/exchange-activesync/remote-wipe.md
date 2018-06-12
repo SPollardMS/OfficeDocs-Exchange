@@ -38,7 +38,7 @@ Your users carry sensitive corporate information in their pockets every day. If 
 
 You can use the EAC to wipe a user's phone or cancel a remote wipe that has not yet completed.
   
-1. In the EAC, navigate to **Recipients** > **Mailboxes**.
+1. In the EAC, navigate to **Recipients** \> **Mailboxes**.
     
 2. Select the user, and under **Mobile Devices**, choose **View details**.
     

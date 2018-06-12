@@ -3,7 +3,7 @@ title: "Backup, restore, and disaster recovery"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/12/2018
 ms.audience: ITPro
 ms.topic: overview
 ms.prod: office-online-server
@@ -20,36 +20,20 @@ Data protection planning is a complex process that relies on many decisions that
   
 Traditionally, backups have been used for the following scenarios:
   
-- **Disaster recovery** In the event of a hardware or software failure, multiple database copies in a DAG enable high availability with fast failover and little or no data loss. This eliminates downtime and the resulting lost productivity that's a significant cost of recovering from a past point-in-time backup to disk or tape. DAGs can be extended to multiple sites and can provide resilience against disk, server, network, and datacenter failures. 
+- **Disaster recovery**: In the event of a hardware or software failure, multiple database copies in a DAG enable high availability with fast failover and little or no data loss. This eliminates downtime and the resulting lost productivity that's a significant cost of recovering from a past point-in-time backup to disk or tape. DAGs can be extended to multiple sites and can provide resilience against disk, server, network, and datacenter failures.
     
-- **Recovery of accidentally deleted items** Historically, in a situation where a user deleted items that later needed to be recovered, it involved finding the backup media on which the data that needed to be recovered was stored, and then somehow obtaining the desired items and providing them to the user. With the new Recoverable Items folder in Exchange 2016 and the Hold Policy that can be applied to it, it's possible to retain all deleted and modified data for a specified period of time, so recovery of these items is easier and faster. This reduces the burden on Exchange administrators and the IT help desk by enabling end users to recover accidentally deleted items themselves, thereby reducing the complexity and administrative costs associated with single item recovery. For more information, see [Messaging policy and compliance in Exchange 2016](../../policy-and-compliance/policy-and-compliance.md) and [Data loss prevention in Exchange 2016](../../policy-and-compliance/dlp/dlp.md).
+- **Recovery of accidentally deleted items**: Historically, in a situation where a user deleted items that later needed to be recovered, it involved finding the backup media on which the data that needed to be recovered was stored, and then somehow obtaining the desired items and providing them to the user. With the new Recoverable Items folder in Exchange 2016 and the Hold Policy that can be applied to it, it's possible to retain all deleted and modified data for a specified period of time, so recovery of these items is easier and faster. This reduces the burden on Exchange administrators and the IT help desk by enabling end users to recover accidentally deleted items themselves, thereby reducing the complexity and administrative costs associated with single item recovery. For more information, see [Messaging policy and compliance in Exchange 2016](../../policy-and-compliance/policy-and-compliance.md) and [Data loss prevention in Exchange 2016](../../policy-and-compliance/dlp/dlp.md).
     
-- **Long-term data storage** Backups have also been used as an archive, and typically tape is used to preserve point-in-time snapshots of data for extended periods of time as governed by compliance requirements. The new archiving, multiple-mailbox search, and message retention features in Exchange 2016 provide a mechanism to efficiently preserve data in an end-user accessible manner for extended periods of time. This eliminates expensive restores from tape, and increases productivity. For more information, see [In-Place Archiving in Exchange 2016](../../policy-and-compliance/in-place-archiving/in-place-archiving.md), [In-Place eDiscovery in Exchange 2016](../../policy-and-compliance/ediscovery/ediscovery.md), and [In-Place Hold and Litigation Hold in Exchange 2016](../../policy-and-compliance/holds/holds.md).
+- **Long-term data storage**: Backups have also been used as an archive, and typically tape is used to preserve point-in-time snapshots of data for extended periods of time as governed by compliance requirements. The new archiving, multiple-mailbox search, and message retention features in Exchange 2016 provide a mechanism to efficiently preserve data in an end-user accessible manner for extended periods of time. This eliminates expensive restores from tape, and increases productivity. For more information, see [In-Place Archiving in Exchange 2016](../../policy-and-compliance/in-place-archiving/in-place-archiving.md), [In-Place eDiscovery in Exchange 2016](../../policy-and-compliance/ediscovery/ediscovery.md), and [In-Place Hold and Litigation Hold in Exchange 2016](../../policy-and-compliance/holds/holds.md).
     
-- **Point-in-time database snapshot** If a past point-in-time copy of mailbox data is a requirement for your organization, Exchange provides the ability to create a lagged database copy in a DAG environment. This can be useful in the rare event that store logical corruption replicates to multiple database copies in the DAG, resulting in a need to return to a previous point in time. It may also be useful if an administrator accidentally deletes mailboxes or user data. Recovery from a lagged copy can be faster than restoring from a backup because lagged copies don't require a time-consuming copy process from the backup server to the Exchange server. This can significantly lower total cost of ownership by reducing downtime. 
+- **Point-in-time database snapshot**: If a past point-in-time copy of mailbox data is a requirement for your organization, Exchange provides the ability to create a lagged database copy in a DAG environment. This can be useful in the rare event that store logical corruption replicates to multiple database copies in the DAG, resulting in a need to return to a previous point in time. It may also be useful if an administrator accidentally deletes mailboxes or user data. Recovery from a lagged copy can be faster than restoring from a backup because lagged copies don't require a time-consuming copy process from the backup server to the Exchange server. This can significantly lower total cost of ownership by reducing downtime.
     
 Because there are native Exchange 2016 features that meet each of these scenarios in an efficient and cost effective manner, you may be able to reduce or eliminate the use of traditional backups in your environment.
-  
-[Exchange Native Data Protection](disaster-recovery.md#ENDP)
-  
-[Supported Backup Technologies](#SupBacTech.md)
-  
-[Exchange 2016 VSS Writer](http://technet.microsoft.com/library/394fc4ed-fa02-41fa-9159-cc2754ff8875.aspx#VSS)
-  
-[Exchange Server Recovery](#SerRec.md)
-  
-[Unified Contact Store Recovery](#Ucsr.md)
-  
-[Recovery Database](#RecDat.md)
-  
-[Database Portability](http://technet.microsoft.com/library/394fc4ed-fa02-41fa-9159-cc2754ff8875.aspx#DBPort)
-  
-[Dial Tone Portability](http://technet.microsoft.com/library/394fc4ed-fa02-41fa-9159-cc2754ff8875.aspx#DTPort)
   
 ## Exchange Native Data Protection
 <a name="ENDP"> </a>
 
-Microsoft's [preferred architecture](https://blogs.technet.com/b/exchange/archive/2014/04/21/the-preferred-architecture.aspx) for Exchange Server 2016 leverages a concept known as Exchange Native Data Protection. Exchange Native Data Protection relies on built-in Exchange features to protect your mailbox data, without the use of backups (although you can still use those features and make backups). Exchange 2016 includes several features that, when deployed and configured correctly, can provide native data protection that eliminates the need to make traditional backups of your data. Using the high availability features built into Exchange 2016 to minimize downtime and data loss in the event of a disaster can also reduce the total cost of ownership of the messaging system. By combining these features with other built-in features, such as Legal Hold, you can reduce or eliminate your use of traditional point-in-time backups and reduce the associated costs. 
+Microsoft's [preferred architecture](https://blogs.technet.microsoft.com/exchange/2015/10/12/the-exchange-2016-preferred-architecture/) for Exchange Server 2016 leverages a concept known as Exchange Native Data Protection. Exchange Native Data Protection relies on built-in Exchange features to protect your mailbox data, without the use of backups (although you can still use those features and make backups). Exchange 2016 includes several features that, when deployed and configured correctly, can provide native data protection that eliminates the need to make traditional backups of your data. Using the high availability features built into Exchange 2016 to minimize downtime and data loss in the event of a disaster can also reduce the total cost of ownership of the messaging system. By combining these features with other built-in features, such as Legal Hold, you can reduce or eliminate your use of traditional point-in-time backups and reduce the associated costs. 
   
 In addition to determining whether Exchange 2016 enables you to move away from traditional point-in-time backups, we recommend that you evaluate the cost of your current backup infrastructure. Consider the cost of end-user downtime and data loss when attempting to recover from a disaster using your existing backup infrastructure. Also, include hardware, installation, and license costs, as well as the management cost associated with recovering data and maintaining the backups. Depending on the requirements of your organization, it's quite likely that a pure Exchange 2016 environment with at least three mailbox database copies will provide lower total cost of ownership than one with backups.
   
@@ -91,8 +75,6 @@ For truncation to occur on lagged database copies, the following must be true:
     
 - The log file is deleted on the active copy of the database.
     
-[Return to top](http://technet.microsoft.com/library/394fc4ed-fa02-41fa-9159-cc2754ff8875.aspx#ENDP)
-  
 ## Supported Backup Technologies
 <a name="SupBacTech"> </a>
 
@@ -100,14 +82,10 @@ Exchange 2016 supports only Exchange-aware, VSS-based backups. Exchange 2016 inc
   
 For detailed steps about how to back up and restore Exchange data using Windows Server Backup, see [Using Windows Server Backup to back up and restore Exchange data](windows-server-backup.md).
   
-[Return to top](http://technet.microsoft.com/library/394fc4ed-fa02-41fa-9159-cc2754ff8875.aspx#ENDP)
-  
 ## Exchange 2016 VSS Writer
 <a name="VSS"> </a>
 
 Earlier versions of Exchange included two VSS writers: one inside the Microsoft Exchange Information Store service (store.exe) and one inside the Microsoft Exchange Replication service (msexchangerepl.exe). Back in Exchange 2013, the VSS writer functionality previously found in the Microsoft Exchange Information Store service was moved to the Microsoft Exchange Replication service. This architecture remains the same in Exchange 2016. This writer, named Microsoft Exchange Writer, is used by Exchange-aware VSS-based applications to back up active and passive database copies, and to restore backed up database copies. Although the writer runs in the Microsoft Exchange Replication service, it requires the Microsoft Exchange Information Store service to be running for the writer to be advertised. As a result, both services are required to back up or restore Exchange databases.
-  
-[Return to top](http://technet.microsoft.com/library/394fc4ed-fa02-41fa-9159-cc2754ff8875.aspx#ENDP)
   
 ## Exchange Server Recovery
 <a name="SerRec"> </a>
@@ -116,14 +94,10 @@ Almost all of the configuration settings for Mailbox servers and Client Access s
   
 For detailed steps about how to perform a server recovery of a lost Exchange 2016 server, see [Recover an Exchange Server](recover-exchange-servers.md). For detailed steps about how to recover a lost server that's a member of a database availability group (DAG), see [Recover a database availability group member server](recover-dag-member-servers.md).
   
-[Return to top](http://technet.microsoft.com/library/394fc4ed-fa02-41fa-9159-cc2754ff8875.aspx#ENDP)
-  
 ## Unified Contact Store Recovery
 <a name="Ucsr"> </a>
 
 When Microsoft Lync Server 2013 or Skype for Business Server 2015 is used in an Exchange 2016 environment, the user's Lync/Skype for Business contact information is stored in a special contact folder in the user's mailbox. This is referred to as the unified contact store (UCS). If you restore a UCS-migrated mailbox, the instant messaging contact list for the target user may be affected. If the user was migrated after the last backup, restoring the mailbox will result in a complete loss of the user's contact list. In less severe cases, modifications to the contact list made by the user since the last backup will be lost. To mitigate this potential data loss, ensure the user is migrated back to the instant messaging server prior to restoring the mailbox.
-  
-[Return to top](http://technet.microsoft.com/library/394fc4ed-fa02-41fa-9159-cc2754ff8875.aspx#ENDP)
   
 ## Recovery Database
 <a name="RecDat"> </a>
@@ -134,8 +108,6 @@ Using a recovery database for a Mailbox database from any previous version of Ex
   
 For more information, see [Recovery databases](recovery-databases.md). For detailed steps about how to create a recovery database, see [Create a recovery database](create-recovery-dbs.md). For detailed steps about how to use a recovery database, see [Restore data using a recovery database](restore-data-using-recovery-dbs.md).
   
-[Return to top](http://technet.microsoft.com/library/394fc4ed-fa02-41fa-9159-cc2754ff8875.aspx#ENDP)
-  
 ## Database Portability
 <a name="DBPort"> </a>
 
@@ -143,17 +115,13 @@ Database portability is a feature that enables an Exchange 2016 mailbox database
   
 For more information, see [Database Portability](http://technet.microsoft.com/library/387b727a-ce51-4910-b5c4-613c693fa5bd.aspx). For detailed steps to use database portability, see [Move a mailbox database using database portability](database-portability.md).
   
-[Return to top](http://technet.microsoft.com/library/394fc4ed-fa02-41fa-9159-cc2754ff8875.aspx#ENDP)
-  
 ## Dial Tone Portability
 <a name="DTPort"> </a>
 
 Dial tone portability is a feature that provides a limited business continuity solution for failures that affect a mailbox database, a server, or an entire site. Dial tone portability enables a user to have a temporary mailbox for sending and receiving e-mail while the original mailbox is being restored or repaired. The temporary mailbox can be on the same Exchange 2016 Mailbox server or on any other Exchange 2016 Mailbox server in your organization. This allows an alternative server to host the mailboxes of users who were previously on a server that's no longer available. Clients that support Autodiscover, such as Microsoft Outlook, are automatically redirected to the new server without having to manually update the user's desktop profile. After the user's original mailbox data has been restored, an administrator can merge a user's recovered mailbox and the user's dial tone mailbox into a single, up-to-date mailbox.
   
-The process for using dial tone portability is called a dial tone recovery. A dial tone recovery involves creating an empty database on a Mailbox server to replace a failed database. This empty database, referred to as a dial tone database, allows users to send and receive e-mail while the failed database is recovered. After the failed database is recovered, the dial done database and the recovered database are swapped, and then the data from the dial tone database is merged into the recovered database.
+The process for using dial tone portability is called a  *dial tone recovery*  . A dial tone recovery involves creating an empty database on a Mailbox server to replace a failed database. This empty database, referred to as a  *dial tone database*  , allows users to send and receive e-mail while the failed database is recovered. After the failed database is recovered, the dial done database and the recovered database are swapped, and then the data from the dial tone database is merged into the recovered database. 
   
 For more information, see [Dial tone portability](dial-tone-portability.md). For detailed steps to perform a dial tone recovery, see [Perform a dial tone recovery](dial-tone-recovery.md).
-  
-[Return to top](http://technet.microsoft.com/library/394fc4ed-fa02-41fa-9159-cc2754ff8875.aspx#ENDP)
   
 

@@ -3,7 +3,7 @@ title: "Track messages with delivery reports"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 4/20/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
@@ -34,7 +34,7 @@ Delivery Reports is a message tracking tool in the Exchange admin center (EAC) t
 ## Use the EAC to track messages
 <a name="trackmessages"> </a>
 
-1. In the EAC, navigate to **Mail Flow** > **Delivery Reports**.
+1. In the EAC, navigate to **Mail Flow** \> **Delivery Reports**.
     
 2. Enter the following information:
     
@@ -50,8 +50,6 @@ Delivery Reports is a message tracking tool in the Exchange admin center (EAC) t
     
 3. When you are finished, click **Search**. If you want to start over, click **Clear**.
     
-[Return to top](track-messages-with-delivery-reports.md#top)
-  
 ## Use the EAC to review a delivery report
 <a name="viewreport"> </a>
 
@@ -67,8 +65,6 @@ The delivery report shows delivery status and detailed delivery information for 
     
 - **Sent**: Date and time the message was sent.
     
-[Return to top](track-messages-with-delivery-reports.md#top)
-  
 ### Summary to date section
 
 This section appears in the delivery report if a message was sent to more than one recipient. The top of this section tells you the total number of recipients that the message was sent to and gives brief delivery information for each recipient.
@@ -81,8 +77,6 @@ This section appears in the delivery report if a message was sent to more than o
     
 - **Status**: This column displays the status of the message for each recipient.
     
-[Return to top](track-messages-with-delivery-reports.md#top)
-  
 ### Detailed report information
 
 This section contains detailed delivery information for a message sent to the recipient you select in the **Summary to date** section. 
@@ -107,13 +101,9 @@ Depending on the delivery status of the message, you may see a variety of status
     
 When you're done reviewing the report, click **Close**. Delivery reports aren't saved, but you can re-run a report at any time. Remember there is a two-week search window.
   
-[Return to top](track-messages-with-delivery-reports.md#top)
-  
 ## How do you know this worked?
 <a name="viewreport"> </a>
 
 If your search was successful, messages that fit the search criteria are listed in the **Search results** pane. To view the delivery information for a specific message, select it and then click **Details**![Edit icon](../../media/ITPro_EAC_EditIcon.png). If no messages are displayed in the **Search results** pane, change the search criteria and then re-run the search. 
-  
-[Return to top](track-messages-with-delivery-reports.md#top)
   
 

@@ -3,18 +3,18 @@ title: "In-Place Hold and Litigation Hold in Exchange 2016"
 ms.author: serdars
 author: SerdarSoysal
 manager: serdars
-ms.date: 5/15/2018
+ms.date: 6/8/2018
 ms.audience: End User
 ms.topic: overview
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 71031c06-852d-44d8-b558-dff444eaef8c
-description: "Learn about In-Place Hold and Litigation Hold in Exchange 2016."
+description: "Summary: Learn about In-Place Hold and Litigation Hold in Exchange 2016."
 ---
 
 # In-Place Hold and Litigation Hold in Exchange 2016
 
-Learn about In-Place Hold and Litigation Hold in Exchange 2016.
+ **Summary**: Learn about In-Place Hold and Litigation Hold in Exchange 2016.
   
 When a reasonable expectation of litigation exists, organizations are required to preserve electronically stored information (ESI), including email that's relevant to the case. This expectation often exists before the specifics of the case are known, and preservation is often broad. Organizations may need to preserve all email related to a specific topic or all email for certain individuals. Depending on the organization's electronic discovery (eDiscovery) practices, the following measures can be adopted to preserve email:
   
@@ -25,26 +25,6 @@ When a reasonable expectation of litigation exists, organizations are required t
 - Some organizations copy or move email to an archive to make sure it isn't deleted, altered, or tampered with. This increases costs due to the manual efforts required to copy or move messages to an archive, or third-party products used to collect and store email outside Exchange.
     
 Failure to preserve email can expose an organization to legal and financial risks such as scrutiny of the organization's records retention and discovery processes, adverse legal judgments, sanctions, or fines.
-  
- **Contents**
-  
-[Litigation Hold and In-Place Hold](holds.md#lithold)
-  
-[Hold goals and features](holds.md#scenarios)
-  
-[Placing a mailbox on hold](holds.md#MBX)
-  
-[Holds and the Recoverable Items folder](holds.md#RIF)
-  
-[Holds and mailbox quotas](holds.md#quotas)
-  
-[Holds and email forwarding](#emailforwarding.md)
-  
-[Preserving archived Skype for Business content](holds.md#lync)
-  
-[Deleting a mailbox on hold](#deletehold.md)
-  
-[Migrating mailboxes on hold from Exchange 2016 to Office 365](#migration.md)
   
 ## Litigation Hold and In-Place Hold
 <a name="lithold"> </a>
@@ -59,8 +39,6 @@ When you move a mailbox that's on Litigation Hold in Exchange 2010 or Exchange 2
 > When you put a mailbox on Litigation Hold or In-Place Hold, the hold is placed on both the primary and the archive mailbox. 
   
 For more information when to use each type of hold, see [Place all mailboxes on hold](place-all-mailboxes-on-hold.md).
-  
-[Return to top](#TOC.md)
   
 ## Hold goals and features
 <a name="scenarios"> </a>
@@ -85,14 +63,12 @@ You can use Litigation Hold and In-Place Hold to accomplish the following goals:
     
 If you're upgrading from Exchange Server 2010, the notion of legal hold is to hold all mailbox data for a user indefinitely or until when hold is removed. In Exchange 2016, In-Place Hold introduces a different model that allows you to specify the following parameters:
   
-- **Query-based hold** With Litigation Hold, all items in a mailbox are preserved. However, an In-Place Hold allows you to specify which items to hold by using search query parameters such as keywords, senders and recipients, start and end dates, and also specify the message types such as email messages, calendar items, and Skype for Business conversations that you want to place on hold. After you create a query-based In-Place Hold, all existing and future mailbox items (including messages received at a later date) that match the query parameters are preserved. Litigation Hold doesn't support query-based holds. 
+- **Query-based hold**: With Litigation Hold, all items in a mailbox are preserved. However, an In-Place Hold allows you to specify which items to hold by using search query parameters such as keywords, senders and recipients, start and end dates, and also specify the message types such as email messages, calendar items, and Skype for Business conversations that you want to place on hold. After you create a query-based In-Place Hold, all existing and future mailbox items (including messages received at a later date) that match the query parameters are preserved. Litigation Hold doesn't support query-based holds.
     
-- **Hold duration** In both Litigation Hold and In-Place Hold, you can specify how long to hold items. You can either specify an infinite hold duration or a time-based hold duration. The duration is calculated from the date a mailbox item is received or created. For example, if your organization requires that all mailbox items be preserved for 7 years, you can create a time-based hold. So if a mailbox is placed on hold and the hold duration is set to 7 years, and an item in the mailbox is permanently deleted after 2 years from the date it was received, it's held for an 5 years before being purged from the mailbox database. 
+- **Hold duration**: In both Litigation Hold and In-Place Hold, you can specify how long to hold items. You can either specify an infinite hold duration or a time-based hold duration. The duration is calculated from the date a mailbox item is received or created. For example, if your organization requires that all mailbox items be preserved for 7 years, you can create a time-based hold. So if a mailbox is placed on hold and the hold duration is set to 7 years, and an item in the mailbox is permanently deleted after 2 years from the date it was received, it's held for an 5 years before being purged from the mailbox database.
     
     > [!TIP]
     > You can use a time-based hold together with a retention policy to make sure items are preserved for a specified duration and then permanently removed from Exchange after the retention age and the hold duration expire. 
-  
-[Return to top](#TOC.md)
   
 ## Placing a mailbox on hold
 <a name="MBX"> </a>
@@ -112,33 +88,31 @@ The In-Place Hold functionality is integrated with In-Place eDiscovery searches.
   
 Many organizations require that users be informed when they're placed on hold. Additionally, when a mailbox is on hold, any retention policies applicable to the mailbox user don't need to be suspended. Because messages continue to be deleted as expected, users may not notice they're on hold. If your organization requires that users on hold be informed, you can add a notification message to the mailbox user's by populating the **Retention Comment** property and using the **RetentionUrl** property to link to a web page for more information. Outlook 2010 and later versions display the retention comment and URL in the backstage area, which is located on the **Files** ribbon. You can use the **Set-Mailbox** cmdlet to add these properties. 
   
-[Return to top](#TOC.md)
-  
 ## Holds and the Recoverable Items folder
 <a name="RIF"> </a>
 
 Litigation Hold and In-Place Hold use the Recoverable Items folder to preserve items. The Recoverable Items folder is hidden from the default view of Outlook, Outlook on the web, and other email clients. To learn more about the Recoverable Items folder, see [Recoverable Items folder in Exchange 2016](../../policy-and-compliance/recoverable-items-folder/recoverable-items-folder.md).
   
-By default, when a user deletes a message from a folder other than the Deleted Items folder, the message is moved to the Deleted Items folder. When a user soft deletes an item (by pressing SHIFT+DELETE) or deletes an item from the Deleted Items folder, the message is moved to the Recoverable Items folder, thereby disappearing from the user's view. 
+By default, when a user deletes a message from a folder other than the Deleted Items folder, the message is moved to the Deleted Items folder. When a user  *soft deletes*  an item (by pressing SHIFT+DELETE) or deletes an item from the Deleted Items folder, the message is moved to the Recoverable Items folder, thereby disappearing from the user's view. 
   
 Items in the Recoverable Items folder are retained for the deleted item retention period configured on the user's mailbox database. By default, the deleted item retention period is set to 14 days for mailbox databases.
   
 The Recoverable Items folder contains the following subfolders used to store deleted items in various sites and facilitate Litigation Hold and In-Place Hold:
   
-- **Deletions** Items removed from the Deleted Items folder or soft-deleted from other folders are moved to the Deletions subfolder and are visible to the user when using the Recover Deleted Items feature in Outlook and Outlook on the web. By default, items reside in this folder until the deleted item retention period configured for the mailbox database or the mailbox expires. 
+- **Deletions**: Items removed from the Deleted Items folder or soft-deleted from other folders are moved to the Deletions subfolder and are visible to the user when using the Recover Deleted Items feature in Outlook and Outlook on the web. By default, items reside in this folder until the deleted item retention period configured for the mailbox database or the mailbox expires.
     
-- **Purges** When a user deletes an item from the Recoverable Items folder (by using the Recover Deleted Items tool in Outlook and Outlook on the web, the item is moved to the Purges folder. Items that exceed the deleted item retention period configured on the mailbox database or the mailbox are also moved to the Purges folder. Items in this folder aren't visible to users if they use the Recover Deleted Items tool. When the mailbox assistant processes the mailbox, items in the Purges folder are purged from the mailbox database. When you place the mailbox user on Litigation Hold, the mailbox assistant doesn't purge items in this folder. 
+- **Purges**: When a user deletes an item from the Recoverable Items folder (by using the Recover Deleted Items tool in Outlook and Outlook on the web, the item is moved to the Purges folder. Items that exceed the deleted item retention period configured on the mailbox database or the mailbox are also moved to the Purges folder. Items in this folder aren't visible to users if they use the Recover Deleted Items tool. When the mailbox assistant processes the mailbox, items in the Purges folder are purged from the mailbox database. When you place the mailbox user on Litigation Hold, the mailbox assistant doesn't purge items in this folder.
     
-- **DiscoveryHolds** If a user is put on an In-Place Hold, deleted items are moved to this folder. When the mailbox assistant processes the mailbox, it evaluates messages in this folder. Items that match the In-Place Hold query are retained until the hold period specified in the query. If no hold period is specified, items are held indefinitely or until the user is removed from the hold. However, if you put a user who was already on an In-Place Hold on Litigation Hold, the Litigation Hold takes preference. Therefore, deleted items are moved to the Purges folder instead. 
+- **DiscoveryHolds**: If a user is put on an In-Place Hold, deleted items are moved to this folder. When the mailbox assistant processes the mailbox, it evaluates messages in this folder. Items that match the In-Place Hold query are retained until the hold period specified in the query. If no hold period is specified, items are held indefinitely or until the user is removed from the hold. However, if you put a user who was already on an In-Place Hold on Litigation Hold, the Litigation Hold takes preference. Therefore, deleted items are moved to the Purges folder instead.
     
-- **Versions** When a user is put on In-Place Hold or Litigation Hold, mailbox items must be protected from tampering or modification by the user or a process. This is done by using a copy-on-write process. When a user or a process changes specific properties of a mailbox item, a copy of the original item is saved in the Versions folder before the change is committed. This process is repeated for subsequent changes. Items captured in the Versions folder are also indexed and returned in In-Place eDiscovery searches. After the hold is removed, copies in the Versions folder are removed by the Managed Folder Assistant. 
+- **Versions**: When a user is put on In-Place Hold or Litigation Hold, mailbox items must be protected from tampering or modification by the user or a process. This is done by using a  *copy-on-write*  process. When a user or a process changes specific properties of a mailbox item, a copy of the original item is saved in the Versions folder before the change is committed. This process is repeated for subsequent changes. Items captured in the Versions folder are also indexed and returned in In-Place eDiscovery searches. After the hold is removed, copies in the Versions folder are removed by the Managed Folder Assistant. 
     
 **Properties that trigger copy-on-write**
 
 |**Item type**|**Properties that trigger copy-on-write**|
 |:-----|:-----|
-|Messages (IPM.Note\*)  <br/> Posts (IPM.Post\*)  <br/> | Subject  <br/>  Body  <br/>  Attachments  <br/>  Senders/Recipients  <br/>  Sent/Received Dates  <br/> |
-|Items other than messages and posts  <br/> | Any change to a visible property, except the following:  <br/>  Item location (when an item is moved between folders)  <br/>  Item status change (read or unread)  <br/>  Changes to retention tag applied to an item  <br/> |
+|Messages (IPM.Note\*)  <br/> Posts (IPM.Post\*)  <br/> |Subject  <br/> Body  <br/> Attachments  <br/> Senders/Recipients  <br/> Sent/Received Dates  <br/> |
+|Items other than messages and posts  <br/> |Any change to a visible property, except the following:  <br/> • Item location (when an item is moved between folders)  <br/> • Item status change (read or unread)  <br/> • Changes to retention tag applied to an item  <br/> |
 |Items in the default folder Drafts  <br/> |None (items in the Drafts folder are exempt from copy on write)  <br/> |
    
 > [!IMPORTANT]
@@ -147,8 +121,6 @@ The Recoverable Items folder contains the following subfolders used to store del
 Although the DiscoveryHolds, Purges, and Versions folders aren't visible to the user, all items in the Recoverable Items folder are discoverable by using In-Place eDiscovery. After a mailbox user is removed from In-Place Hold or Litigation Hold, items in the DiscoveryHolds, Purges, and Versions folders are purged by the Managed Folder Assistant.
   
 If a mailbox isn't placed on Litigation Hold or In-Place Hold, items in the Purges folder are permanently deleted from the Recoverable Items folder on a first in, first out basis when the item has resided in the folder for longer than the deleted item retention period.
-  
-[Return to top](#TOC.md)
   
 ## Holds and mailbox quotas
 <a name="quotas"> </a>
@@ -164,8 +136,6 @@ Users with mailboxes on Exchange 2016 can use Outlook and Outlook on the web to 
   
 If email forwarding is set up for a mailbox and message aren't copied, what happens if the mailbox is on hold? During the delivery process, the hold settings for the mailbox are checked. If the message meets the hold criteria for the mailbox, a copy of the message is saved to the Recoverable Items folder. That means you can use In-Place eDiscovery to search the original mailbox to find messages that were forwarded to another mailbox.
   
-[Return to top](#TOC.md)
-  
 ## Preserving archived Skype for Business content
 <a name="lync"> </a>
 
@@ -175,12 +145,10 @@ When you place an Exchange 2016 mailbox on In-Place Hold or Litigation Hold, Sky
   
 To enable archiving of Skype for Business content in Exchange 2016 mailboxes, you must configure Skype for Business Server 2015 integration with Exchange 2016. For details, see the following topics:
   
-- [Planning for Archiving](https://technet.microsoft.com/en-us/library/jj205069%28v=ocs.15%29)
+- [Planning for Archiving](https://technet.microsoft.com/library/jj205069%28v=ocs.15%29)
     
-- [Deploying Archiving](https://technet.microsoft.com/en-us/library/jj205147%28v=ocs.15%29)
+- [Deploying Archiving](https://technet.microsoft.com/library/jj205147%28v=ocs.15%29)
     
-[Return to top](#TOC.md)
-  
 ## Deleting a mailbox on hold
 <a name="deletehold"> </a>
 
@@ -192,8 +160,6 @@ If you delete a user account that has a mailbox, the Exchange Information store 
     
 3. Retain the mailbox until all data has been removed or until preserving the data is no longer required.
     
-[Return to top](#TOC.md)
-  
 ## Migrating mailboxes on hold from Exchange 2016 to Office 365
 <a name="migration"> </a>
 
@@ -207,7 +173,5 @@ Hold settings and content in the Recoverable Items folder are also preserved whe
   
 > [!TIP]
 > For Exchange 2016, an Exchange hybrid deployment is the recommended way to migrate on-premises mailboxes to Office 365. 
-  
-[Return to top](#TOC.md)
   
 

@@ -3,7 +3,7 @@ title: "Install the Exchange 2016 management tools"
 ms.author: dstrome
 author: dstrome
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: get-started-article
 ms.prod: office-online-server
@@ -35,7 +35,7 @@ For more information about the Exchange Management Shell and the Exchange Toolbo
   
 ## Use the Exchange 2016 Setup wizard to install the management tools
 
-1. Use the information in [Updates for Exchange 2016](../../new-features/updated-features.md) to download the latest version of Exchange 2016. You can download the ISO image file locally on the computer where you want to install the management tools, or to a central network location. 
+1. Use the information in [Updates for Exchange 2016](../../new-features/updates.md) to download the latest version of Exchange 2016. You can download the ISO image file locally on the computer where you want to install the management tools, or to a central network location. 
     
 2. On the computer where you want to install the management tools:
     
@@ -45,7 +45,7 @@ For more information about the Exchange Management Shell and the Exchange Toolbo
     
 3. The Exchange Server 2016 Setup wizard opens. On the **Check for Updates?** page, choose one of the following options, and then click **Next** to continue: 
     
-  - **Connect to the Internet and check for updates** We recommend this option, which searches for updates to the version of Exchange 2016 that you're installing (it doesn't detect newer Exchange 2016 Cumulative Updates). This option takes you to the **Downloading Updates** page that searches for updates. 
+  - **Connect to the Internet and check for updates**: We recommend this option, which searches for updates to the version of Exchange 2016 that you're installing (it doesn't detect newer Exchange 2016 Cumulative Updates). This option takes you to the **Downloading Updates** page that searches for updates. 
     
   - **Don't check for updates right now**
     
@@ -62,9 +62,9 @@ For more information about the Exchange Management Shell and the Exchange Toolbo
   
 7. On the **Recommended Settings** page, choose one of the following settings: 
     
-  - **Use recommended settings** Exchange automatically sends error reports and information about your computer hardware and how you use Exchange to Microsoft. For information about what's sent to Microsoft and how it's used, click **?** or the help links on the page. 
+  - **Use recommended settings**: Exchange automatically sends error reports and information about your computer hardware and how you use Exchange to Microsoft. For information about what's sent to Microsoft and how it's used, click **?** or the help links on the page. 
     
-  - **Don't use recommended settings** These settings are disabled, but you can enable them at any time after Setup completes. 
+  - **Don't use recommended settings**: These settings are disabled, but you can enable them at any time after Setup completes.
     
     Click **Next** to continue. 
     ![Exchange 2016 Setup, Recommended Settings page](../../media/26af58f0-52ab-4482-8710-9a7cd2e7a6c3.png)
@@ -73,7 +73,7 @@ For more information about the Exchange Management Shell and the Exchange Toolbo
     
   - Select **Management tools**.
     
-  - **Automatically install Windows Server roles and features that are required to install Exchange** Select this option to have the Setup wizard install the required Windows prerequisites. You might need to reboot the computer to complete the installation of some Windows features. If you don't select this option, you need to install the Windows features manually. 
+  - **Automatically install Windows Server roles and features that are required to install Exchange**: Select this option to have the Setup wizard install the required Windows prerequisites. You might need to reboot the computer to complete the installation of some Windows features. If you don't select this option, you need to install the Windows features manually.
     
     **Note**: Selecting this option installs only the Windows features that are required by Exchange. You need to install other prerequisites manually. For more information, see [Exchange 2016 prerequisites](../../plan-and-deploy/prerequisites.md).
     
@@ -85,7 +85,7 @@ For more information about the Exchange Management Shell and the Exchange Toolbo
   
 10. If this is the first installation of Exchange in your organization (Exchange server or the management tools), you arrive on the **Exchange Organization** page. On this page, configure the following settings: 
     
-  - **Specify the name for this Exchange organization** The default value is **First Organization**, but you typically use the company name for this value. The organization name is used internally by Exchange, isn't typically seen by users, doesn't affect the functionality of Exchange, and doesn't determine what you can use for email addresses.
+  - **Specify the name for this Exchange organization**: The default value is **First Organization**, but you typically use the company name for this value. The organization name is used internally by Exchange, isn't typically seen by users, doesn't affect the functionality of Exchange, and doesn't determine what you can use for email addresses.
     
   - The organization name can't contain more than 64 characters, and can't be blank.
     
@@ -93,7 +93,7 @@ For more information about the Exchange Management Shell and the Exchange Toolbo
     
   - You can't change the organization name after it's set.
     
-  - **Apply Active Directory split permission security model to the Exchange organization** Most organizations don't need to select this option. If you need to separate management of Active Directory security principals and the Exchange configuration, split permissions might work for you. For more information, click **?**.
+  - **Apply Active Directory split permission security model to the Exchange organization**: Most organizations don't need to select this option. If you need to separate management of Active Directory security principals and the Exchange configuration, split permissions might work for you. For more information, click **?**.
     
     Click **Next** to continue. 
     ![Exchange 2016 Setup, Exchange Organization page](../../media/acdba072-f4bb-4fb8-acae-c6b43cb32044.png)
@@ -111,7 +111,7 @@ For more information about the Exchange Management Shell and the Exchange Toolbo
   
 ## Use Exchange 2016 unattended Setup mode to install the management tools
 
-1. Use the information in [Updates for Exchange 2016](../../new-features/updated-features.md) to download the latest version of Exchange 2016. You can download the ISO image file locally on the computer where you want to install the management tools, or to a central network location. 
+1. Use the information in [Updates for Exchange 2016](../../new-features/updates.md) to download the latest version of Exchange 2016. You can download the ISO image file locally on the computer where you want to install the management tools, or to a central network location. 
     
 2. On the computer where you want to install the management tools:
     

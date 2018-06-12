@@ -3,7 +3,7 @@ title: "Use Windows Server Backup to back up Exchange"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/4/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
@@ -78,7 +78,7 @@ To verify that you've successfully backed up the data, do any of the following:
 - Run the following command in the Exchange Management Shell to verify that each database on the selected volume(s) was backed up successfully:
     
   ```
-  Get-MailboxDatabase -Server <ServerName> -Status | fl Name,*FullBackup
+  Get-MailboxDatabase -Server <ServerName> -Status | Format-List Name,*FullBackup
   ```
 
     The  _SnapshotLastFullBackup_ and  _LastFullBackup_ properties of the database indicate when the last successful backup was taken, and if it was a VSS full backup. 

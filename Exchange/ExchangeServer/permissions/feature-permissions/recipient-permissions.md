@@ -3,19 +3,18 @@ title: "Recipients Permissions"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/12/2018
 ms.audience: ITPro
 ms.topic: reference
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 5b690bcb-c6df-4511-90e1-08ca91f43b37
-
-description: "Learn about permissions that are required to manage recipients in Exchange Server 2016."
+description: "Summary: Learn about permissions that are required to manage recipients in Exchange Server 2016."
 ---
 
 # Recipients Permissions
 
-Learn about permissions that are required to manage recipients in Exchange Server 2016.
+ **Summary**: Learn about permissions that are required to manage recipients in Exchange Server 2016.
   
 The permissions required to perform tasks to manage recipients vary depending on the procedure being performed or the cmdlet you want to run.
   
@@ -42,9 +41,9 @@ Users who are assigned the View-Only Management role group can view the configur
 |Delegating Mailbox servers  <br/> |[Organization Management](http://technet.microsoft.com/library/0bfd21c1-86ac-4369-86b7-aeba386741c8.aspx) <br/> |
 |Email address policies  <br/> |[Organization Management](http://technet.microsoft.com/library/0bfd21c1-86ac-4369-86b7-aeba386741c8.aspx) <br/> [Server Management](http://technet.microsoft.com/library/30cbc4de-adb3-42e8-922f-7661095bdb8c.aspx) <br/> |
 |Exchange Search  <br/> |[Organization Management](http://technet.microsoft.com/library/0bfd21c1-86ac-4369-86b7-aeba386741c8.aspx) <br/> [View-Only Organization Management](http://technet.microsoft.com/library/c514c6d0-0157-4c52-9ec6-441d9a30f3df.aspx) <br/> [Server Management](http://technet.microsoft.com/library/30cbc4de-adb3-42e8-922f-7661095bdb8c.aspx) <br/> |
-|Exchange Search - diagnostics  <br/> |[Organization Management](http://technet.microsoft.com/library/0bfd21c1-86ac-4369-86b7-aeba386741c8.aspx) <br/> [View-Only Organization Management](http://technet.microsoft.com/library/c514c6d0-0157-4c52-9ec6-441d9a30f3df.aspx) <br/> Support Diagnostics role  <br/> > [!NOTE]> The Support Diagnostics role isn't assigned to a role group. For more information, see [Add a Role to a User or USG](http://technet.microsoft.com/library/ae5608de-a141-4714-8876-bce7d2a22cb5.aspx).           |
+|Exchange Search - diagnostics  <br/> |[Organization Management](http://technet.microsoft.com/library/0bfd21c1-86ac-4369-86b7-aeba386741c8.aspx) <br/> [View-Only Organization Management](http://technet.microsoft.com/library/c514c6d0-0157-4c52-9ec6-441d9a30f3df.aspx) <br/> Support Diagnostics role  <br/> **Note:**: The Support Diagnostics role isn't assigned to a role group. For more information, see [Add a Role to a User or USG](http://technet.microsoft.com/library/ae5608de-a141-4714-8876-bce7d2a22cb5.aspx).  <br/> |
 |Group metrics  <br/> |[Organization Management](http://technet.microsoft.com/library/0bfd21c1-86ac-4369-86b7-aeba386741c8.aspx) <br/> [Server Management](http://technet.microsoft.com/library/30cbc4de-adb3-42e8-922f-7661095bdb8c.aspx) <br/> |
-|Import Export  <br/> |Mailbox Import Export role  <br/> > [!NOTE]> The Mailbox Import Export role isn't assigned to a role group. For more information, see [Mailbox Import Export Role](http://technet.microsoft.com/library/d7cdce7a-6c46-4750-b237-d1c1773e8d28.aspx).           |
+|Import Export  <br/> |Mailbox Import Export role  <br/> **Note:**: The Mailbox Import Export role isn't assigned to a role group. For more information, see [Mailbox Import Export Role](http://technet.microsoft.com/library/d7cdce7a-6c46-4750-b237-d1c1773e8d28.aspx).  <br/> |
 |Mailbox Assistants  <br/> |[Organization Management](http://technet.microsoft.com/library/0bfd21c1-86ac-4369-86b7-aeba386741c8.aspx) <br/> [Server Management](http://technet.microsoft.com/library/30cbc4de-adb3-42e8-922f-7661095bdb8c.aspx) <br/> |
 |Mailbox moves  <br/> |[Organization Management](http://technet.microsoft.com/library/0bfd21c1-86ac-4369-86b7-aeba386741c8.aspx) <br/> [Recipient Management](http://technet.microsoft.com/library/669d602e-68e3-41f9-a455-b942d212d130.aspx) <br/> |
 |Mailbox recovery  <br/> |[Organization Management](http://technet.microsoft.com/library/0bfd21c1-86ac-4369-86b7-aeba386741c8.aspx) <br/> |
@@ -100,7 +99,7 @@ Users who are assigned the View-Only Management role group can view the configur
 |**Feature**|**Permissions required**|
 |:-----|:-----|
 |Address list, GAL  <br/> |[Organization Management](http://technet.microsoft.com/library/0bfd21c1-86ac-4369-86b7-aeba386741c8.aspx) <br/> |
-|Anti-spam  <br/> |[Organization Management](http://technet.microsoft.com/library/0bfd21c1-86ac-4369-86b7-aeba386741c8.aspx) <br/> [Recipient Management](http://technet.microsoft.com/library/669d602e-68e3-41f9-a455-b942d212d130.aspx) <br/> |
+|Antispam  <br/> |[Organization Management](http://technet.microsoft.com/library/0bfd21c1-86ac-4369-86b7-aeba386741c8.aspx) <br/> [Recipient Management](http://technet.microsoft.com/library/669d602e-68e3-41f9-a455-b942d212d130.aspx) <br/> |
 |Apps for Outlook  <br/> |[Organization Management](http://technet.microsoft.com/library/0bfd21c1-86ac-4369-86b7-aeba386741c8.aspx) <br/> [View-Only Organization Management](http://technet.microsoft.com/library/c514c6d0-0157-4c52-9ec6-441d9a30f3df.aspx) <br/> [Help Desk](http://technet.microsoft.com/library/e7958752-22e4-4155-a2fc-948099dec6f7.aspx) <br/> |
 |Applying sharing policies  <br/> |[Organization Management](http://technet.microsoft.com/library/0bfd21c1-86ac-4369-86b7-aeba386741c8.aspx) <br/> [Recipient Management](http://technet.microsoft.com/library/669d602e-68e3-41f9-a455-b942d212d130.aspx) <br/> |
 |Arbitration  <br/> |[Organization Management](http://technet.microsoft.com/library/0bfd21c1-86ac-4369-86b7-aeba386741c8.aspx) <br/> |

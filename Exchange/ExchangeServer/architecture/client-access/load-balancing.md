@@ -3,7 +3,7 @@ title: "Load balancing in Exchange 2016"
 ms.author: chrisda
 author: chrisda
 manager: scotv
-ms.date: 5/23/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
@@ -51,8 +51,8 @@ Read more about the server role changes in Exchange 2016 in the topic, [Exchange
 |
 |**Server Role**|**Services**|
 |:-----|:-----|
-|Mailbox server  <br/> |Uses EdgeSync to manage one-way replication of receipt and configuration info from Active Directory to the AD LDS instance on the Edge Transport server.  <br/> Copies only information needed to let Edge Transport perform anti-spam and enable end-to-end mail flow.  <br/> |
-|Edge Transport  <br/> |Manages all inbound and outbound Internet mail flow using:  <br/> • mail relay  <br/> • smart hosting  <br/> • agents that provide additional anti-spam service  <br/> • agents that apply transport to control mail flow  <br/> Not a member of the Active Directory forest  <br/> |
+|Mailbox server  <br/> |Uses EdgeSync to manage one-way replication of receipt and configuration info from Active Directory to the AD LDS instance on the Edge Transport server.  <br/> Copies only information needed to let Edge Transport perform antispam and enable end-to-end mail flow.  <br/> |
+|Edge Transport  <br/> |Manages all inbound and outbound Internet mail flow using:  <br/> • mail relay  <br/> • smart hosting  <br/> • agents that provide additional antispam service  <br/> • agents that apply transport to control mail flow  <br/> Not a member of the Active Directory forest  <br/> |
    
 Although not required, the Edge Transport server sits in the perimeter network , just as in earlier Exchange versions, to provide secure inbound and outbound mail flow for your Exchange organization.
   

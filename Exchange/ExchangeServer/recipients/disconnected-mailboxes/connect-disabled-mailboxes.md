@@ -3,7 +3,7 @@ title: "Connect a disabled mailbox"
 ms.author: serdars
 author: SerdarSoysal
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/12/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
@@ -16,13 +16,13 @@ description: "Summary: Learn how you can use the Exchange admin center(EAC) or t
 
  **Summary**: Learn how you can use the Exchange admin center(EAC) or the Exchange Management Shell in Exchange to connect a disabled mailbox to an Active Directory user account.
   
- When you disable a mailbox, Exchange retains the mailbox in the mailbox database and switches the mailbox to a disabled state. The Exchange attributes are also removed from the corresponding Active Directory user account, but the user account is retained. The mailbox is retained until the deleted mailbox retention period expires, which is 30 days by default, before it's then deleted permanently (or purged) from the mailbox database.
+ When you disable a mailbox, Exchange retains the mailbox in the mailbox database and switches the mailbox to a disabled state. The Exchange attributes are also removed from the corresponding Active Directory user account, but the user account is retained. The mailbox is retained until the deleted mailbox retention period expires, which is 30 days by default, before it's then deleted permanently (or  *purged*  ) from the mailbox database. 
   
 Until a disabled mailbox is permanently deleted from the Exchange mailbox database, you can use the EAC or the Exchange Management Shell to reconnect it to the original Active Directory user account.
   
 To learn more about disconnected mailboxes and perform other related management tasks, see the following topics:
   
-- [Understanding Disconnected Mailboxes](http://technet.microsoft.com/library/508ebe2b-387d-4867-bdb0-028ef351ce56.aspx)
+- [Disconnected mailboxes](disconnected-mailboxes.md)
     
 - [Disable or delete a mailbox in Exchange 2016](disable-or-delete-mailboxes.md)
     
@@ -34,7 +34,7 @@ To learn more about disconnected mailboxes and perform other related management 
 
 - Estimated time to complete: 2 minutes.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" section in the [Recipients Permissions](../../permissions/feature-permissions/recipient-permissions.md) topic. 
+- To open the EAC, see [Exchange admin center in Exchange 2016](../../architecture/client-access/exchange-admin-center.md). To open the Exchange Management Shell, see [Open the Exchange Management Shell](http://technet.microsoft.com/library/63976059-25f8-4b4f-b597-633e78b803c0.aspx).
     
 - Run the **Get-User** cmdlet in theExchange Management Shell to verify that the Active Directoryuser account that you want to connect the disabled mailbox to exists and that it isn't already associated with another mailbox. To connect a disabled mailbox to a user account, the account must exist and the value for the  _RecipientType_ property has to be  `User`, which indicates that the account isn't already mailbox-enabled.
     
@@ -43,23 +43,23 @@ To learn more about disconnected mailboxes and perform other related management 
 - Run the following command to verify that the disabled mailbox that you want to connect a user account to exists in the mailbox database and isn't a soft-deleted mailbox.
     
   ```
-  Get-MailboxDatabase | Get-MailboxStatistics | Where { $_.DisplayName -eq "<display name>" } | fl DisplayName,Database,DisconnectReason
+  Get-MailboxDatabase | Get-MailboxStatistics | Where { $_.DisplayName -eq "<display name>" } | Format-List DisplayName,Database,DisconnectReason
   ```
 
     To be able to connect a disabled mailbox, the mailbox has to exist in the mailbox database and the value for the  _DisconnectReason_ property has to be  `Disabled`. If the mailbox has been purged from the database, the command won't return any results.
+    
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" section in the [Recipients Permissions](../../permissions/feature-permissions/recipient-permissions.md) topic. 
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/eac-keyboard-shortcuts.md).
     
 > [!TIP]
 > Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).. 
   
-## What do you want to do?
-
-### Use the EAC to connect a disabled mailbox
+## Use the EAC to connect a disabled mailbox
 
 The following procedure shows how to connect a disabled user mailbox. You can also reconnect disabled linked mailboxes and disabled shared mailboxes to the corresponding user account.
   
-1. In the EAC, navigate to **Recipients** > **Mailboxes**.
+1. In the EAC, navigate to **Recipients** \> **Mailboxes**.
     
 2. Click **More**![More Options icon](../../media/ITPro_EAC_MoreOptionsIcon.png), and then click **Connect a mailbox**.
     
@@ -74,7 +74,7 @@ The following procedure shows how to connect a disabled user mailbox. You can al
     
     Exchange will reconnect the disabled mailbox to the corresponding user account.
     
-### Use the Exchange Management Shell to connect a disabled mailbox
+## Use the Exchange Management Shell to connect a disabled mailbox
 
 Use the **Connect-Mailbox** cmdlet in the Exchange Management Shell to connect a user account to a disabled mailbox. You have to specify the type of mailbox that you're connecting. The following examples show the syntax for reconnecting user, linked, and shared mailboxes. 
   
@@ -109,10 +109,10 @@ To verify that you've successfully connected a disabled mailbox to a user accoun
     
 - In Active Directory Users and Computers, right-click the user account whose mailbox you disabled, and then click **Properties**. On the **General** tab, notice that the **E-mail** box is populated with the email address for the reconnected mailbox. 
     
-- In theExchange Management Shell, run the following command.
+- In theExchange Management Shell,replace \<Identity\> with the name of the user account and run the following command:
     
   ```
-  Get-User <identity>
+  Get-User "<Identity>"
   ```
 
     The **UserMailbox** value for the  _RecipientType_ property indicates that the user account and the mailbox are connected. You can also run the **Get-Mailbox** cmdlet to verify that the mailbox exists. 

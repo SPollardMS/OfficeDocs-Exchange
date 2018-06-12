@@ -3,7 +3,7 @@ title: "Configure MAPI over HTTP"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: get-started-article
 ms.prod: office-online-server
@@ -21,7 +21,7 @@ In Exchange 2016, MAPI over HTTP can be set at the organization level or at the 
 > [!NOTE]
 > When MAPI over HTTP is enabled at the organization level, the  `MapiHttpEnabled` parameter of the  `Get-OrganizationConfig` cmdlet is set to **True**. 
   
- This article describes how to configure and then enable MAPI over HTTP for Exchange 2016 organizations that contain Exchange 2013 servers, or for any topology where MAPI over HTTP has been previously disabled. You can also use the procedures in this article to disable MAPI over HTTP at the organization level. 
+This article describes how to configure and then enable MAPI over HTTP for Exchange 2016 organizations that contain Exchange 2013 servers, or for any topology where MAPI over HTTP has been previously disabled. You can also use the procedures in this article to disable MAPI over HTTP at the organization level.
   
  This article also describes how to enable or disable MAPI over HTTP for an individual mailbox. At the mailbox level, you have the ability to allow or block MAPI over HTTP connections internally, externally, or both. In all cases, when MAPI over HTTP is disabled, connections will be made with Outlook Anywhere. 
   
@@ -29,7 +29,7 @@ In Exchange 2016, MAPI over HTTP can be set at the organization level or at the 
 
 Complete the following steps to configure MAPI over HTTP for your organization. These steps assume you have already configured the prerequisites described in [MAPI over HTTP in Exchange 2016](mapi-over-http.md). Once configured (steps 1-3), use step 4 to enable or disable specific permission scenarios at the organization level, at the mailbox level, or both.
   
-1. **Virtual directory configuration** By default, Exchange 2016 creates a virtual directory for MAPI over HTTP. You use the **Set-MapiVirtualDirectory** cmdlet to configure the virtual directory. You must configure an internal URL, an external URL, or both. For more information see, [Set-MapiVirtualDirectory](http://technet.microsoft.com/library/c9308fe6-3b61-4d99-a5f2-ef47abbc7656.aspx).
+1. **Virtual directory configuration**: By default, Exchange 2016 creates a virtual directory for MAPI over HTTP. You use the **Set-MapiVirtualDirectory** cmdlet to configure the virtual directory. You must configure an internal URL, an external URL, or both. For more information see, [Set-MapiVirtualDirectory](http://technet.microsoft.com/library/c9308fe6-3b61-4d99-a5f2-ef47abbc7656.aspx).
     
     For example, to configure the default MAPI virtual directory on the local Exchange server by setting the internal URL value to https://contoso.com/mapi, and the authentication method to  `Negotiate`, run the following command:
     
@@ -37,9 +37,9 @@ Complete the following steps to configure MAPI over HTTP for your organization. 
   Set-MapiVirtualDirectory -Identity "Contoso\mapi (Default Web Site)" -InternalUrl https://Contoso.com/mapi -IISAuthenticationMethods Negotiate
   ```
 
-2. **Certificate configuration** The digital certificate used by your Exchange environment must include the same  _InternalURL_ and  _ExternalURL_ values that are defined on the MAPI virtual directory. For more information on Exchange 2016 certificate management, see [Digital certificates and encryption in Exchange 2016](../../architecture/client-access/certificates.md). Make sure the Exchange certificate is trusted on the Outlook client workstation and that there are no certificate errors, especially when you access the URLs configured on the MAPI virtual directory.
+2. **Certificate configuration**: The digital certificate used by your Exchange environment must include the same  _InternalURL_ and  _ExternalURL_ values that are defined on the MAPI virtual directory. For more information on Exchange 2016 certificate management, see [Digital certificates and encryption in Exchange 2016](../../architecture/client-access/certificates.md). Make sure the Exchange certificate is trusted on the Outlook client workstation and that there are no certificate errors, especially when you access the URLs configured on the MAPI virtual directory.
     
-3. **Update server rules** Verify that your load balancers, reverse proxies, and firewalls are configured to allow access to the MAPI over HTTP virtual directory. 
+3. **Update server rules**: Verify that your load balancers, reverse proxies, and firewalls are configured to allow access to the MAPI over HTTP virtual directory.
     
 4. Use the following steps to enable MAPI over HTTP in your entire Exchange organization, or enable MAPI over HTTP for one or more individual mailboxes.
     

@@ -3,38 +3,22 @@ title: "Manage administrator audit logging"
 ms.author: serdars
 author: SerdarSoysal
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 15c284c0-b8e6-42ca-9913-7c59fdb6885d
-description: "Learn how to configure, enable, and disable administrator audit logging in Exchange 2016, and how to view the admit audit log settings."
+description: "Summary: Learn how to configure, enable, and disable administrator audit logging in Exchange 2016, and how to view the admit audit log settings."
 ---
 
 # Manage administrator audit logging
 
-Learn how to configure, enable, and disable administrator audit logging in Exchange 2016, and how to view the admit audit log settings.
+ **Summary**: Learn how to configure, enable, and disable administrator audit logging in Exchange 2016, and how to view the admit audit log settings.
   
 Administrator audit logging in Exchange Server 2016 enables you to create a log entry each time a specified cmdlet is run. Log entries provide you with information about what cmdlet was run, which parameters were used, who ran the cmdlet, and what objects were affected. For more information about administrator audit logging, see [Administrator audit logging in Exchange 2016](admin-audit-logging.md).
   
- **Admin audit logging tasks**
-  
-[Specify the cmdlets to be audited](manage-admin-audit-logging.md#cmdlets)
-  
-[Specify the parameters to be audited](manage-admin-audit-logging.md#parameters)
-  
-[Specify the admin audit log age limit](manage-admin-audit-logging.md#agelimit)
-  
-[Enable or disable logging of Test cmdlets](manage-admin-audit-logging.md#testcmdlets)
-  
-[Disable admin audit logging](manage-admin-audit-logging.md#disable)
-  
-[Enable admin audit logging](manage-admin-audit-logging.md#enable)
-  
-[View admin audit logging settings](manage-admin-audit-logging.md#viewauditlog)
-  
-## Before you begin
+## What do you need to know before you begin?
 
 - Estimated time to complete each procedure: less than 5 minutes
     
@@ -51,13 +35,13 @@ Administrator audit logging in Exchange Server 2016 enables you to create a log 
 ## Specify the cmdlets to be audited
 <a name="cmdlets"> </a>
 
-By default, audit logging creates a log entry for every cmdlet that's run. If you're enabling audit logging for the first time and want this behavior, you don't have to change the cmdlet audit list. If you've previously specified cmdlets to audit and now want to audit all cmdlets, you can audit all cmdlets by specifying the asterisk (*) wildcard character with the  _AdminAuditLogCmdlets_ parameter on the **Set-AdminAuditLogConfig** cmdlet, as shown in the following command. 
+By default, audit logging creates a log entry for every cmdlet that's run. If you're enabling audit logging for the first time and want this behavior, you don't have to change the cmdlet audit list. If you've previously specified cmdlets to audit and now want to audit all cmdlets, you can audit all cmdlets by specifying the asterisk (\*) wildcard character with the  _AdminAuditLogCmdlets_ parameter on the **Set-AdminAuditLogConfig** cmdlet, as shown in the following command. 
   
 ```
 Set-AdminAuditLogConfig -AdminAuditLogCmdlets *
 ```
 
-You can specify which cmdlets to audit by providing a list of cmdlets using the  _AdminAuditLogCmdlets_ parameter. When you provide the list of cmdlets to audit, you can provide single cmdlets, cmdlets with the asterisk (*) wildcard characters, or a mix of both. Each entry in the list is separated by commas. The following values are all valid: 
+You can specify which cmdlets to audit by providing a list of cmdlets using the  _AdminAuditLogCmdlets_ parameter. When you provide the list of cmdlets to audit, you can provide single cmdlets, cmdlets with the asterisk (\*) wildcard characters, or a mix of both. Each entry in the list is separated by commas. The following values are all valid: 
   
 -  `New-Mailbox`
     
@@ -75,18 +59,16 @@ Set-AdminAuditLogConfig -AdminAuditLogCmdlets New-Mailbox, *TransportRule, *Mana
 
 For detailed syntax and parameter information, see [Set-AdminAuditLogConfig](http://technet.microsoft.com/library/9d77294d-a501-4af6-8c3b-753235c741a7.aspx).
   
-[Return to top](manage-admin-audit-logging.md#top)
-  
 ## Specify the parameters to be audited
 <a name="parameters"> </a>
 
-By default, audit logging creates a log entry for every cmdlet that's run, regardless of the parameters specified. If you're enabling audit logging for the first time and want this behavior, you don't have to change the parameter audit list. If you've previously specified parameters to audit and now want to audit all parameters, you can do so by specifying the asterisk (*) wildcard character with the  _AdminAuditLogParameters_ parameter on the **Set-AdminAuditLogConfig** cmdlet, as shown in the following command. 
+By default, audit logging creates a log entry for every cmdlet that's run, regardless of the parameters specified. If you're enabling audit logging for the first time and want this behavior, you don't have to change the parameter audit list. If you've previously specified parameters to audit and now want to audit all parameters, you can do so by specifying the asterisk (\*) wildcard character with the  _AdminAuditLogParameters_ parameter on the **Set-AdminAuditLogConfig** cmdlet, as shown in the following command. 
   
 ```
 Set-AdminAuditLogConfig -AdminAuditLogParameters *
 ```
 
-You can specify which parameters you want to audit by using the  _AdminAuditLogParameters_ parameter. When you provide the list of parameters to audit, you can provide single parameters, parameters with the asterisk (*) wildcard characters, or a mix of both. Each entry in the list is separated by commas. The following values are all valid: 
+You can specify which parameters you want to audit by using the  _AdminAuditLogParameters_ parameter. When you provide the list of parameters to audit, you can provide single parameters, parameters with the asterisk (\*) wildcard characters, or a mix of both. Each entry in the list is separated by commas. The following values are all valid: 
   
 -  `Database`
     
@@ -107,8 +89,6 @@ Set-AdminAuditLogConfig -AdminAuditLogParameters Database, *Address*, Custom*, *
 
 For detailed syntax and parameter information, see [Set-AdminAuditLogConfig](http://technet.microsoft.com/library/9d77294d-a501-4af6-8c3b-753235c741a7.aspx).
   
-[Return to top](manage-admin-audit-logging.md#top)
-  
 ## Specify the admin audit log age limit
 <a name="agelimit"> </a>
 
@@ -116,13 +96,13 @@ The audit log age limit determines how long audit log entries will be retained. 
   
 You can specifiy the age limit in days. Or you can specify the number of days, hours, minutes, and seconds that audit log entries should be kept. To specify a value more specific than days, use the format dd.hh.mm:ss where the following applies:
   
-- **dd** Number of days to keep the audit log entry 
+- **dd**: Number of days to keep the audit log entry
     
-- **hh** Number of hours to keep the audit log entry 
+- **hh**: Number of hours to keep the audit log entry
     
-- **mm** Number of minutes to keep the audit log entry 
+- **mm**: Number of minutes to keep the audit log entry
     
-- **ss** Number of seconds to keep the audit log entry 
+- **ss**: Number of seconds to keep the audit log entry
     
 > [!CAUTION]
 > You can set the audit log age limit to a value that's less than the current age limit. If you do this, any audit log entry whose age exceeds the new age limit will be deleted. > If you set the age limit to 0, Exchange deletes all the entries in the audit log. > We recommend that you assign permissions to configure the audit log age limit only to highly trusted users. 
@@ -134,8 +114,6 @@ Set-AdminAuditLogConfig -AdminAuditLogAgeLimit 913
 ```
 
 For detailed syntax and parameter information, see [Set-AdminAuditLogConfig](http://technet.microsoft.com/library/9d77294d-a501-4af6-8c3b-753235c741a7.aspx).
-  
-[Return to top](manage-admin-audit-logging.md#top)
   
 ## Enable or disable logging of Test cmdlets
 <a name="testcmdlets"> </a>
@@ -183,6 +161,4 @@ To view the admin audit logging settings that you've configured for your organiz
 Get-AdminAuditLogConfig
 ```
 
-[Return to top](manage-admin-audit-logging.md#top)
-  
 

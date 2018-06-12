@@ -3,7 +3,7 @@ title: "Configure database availability group network properties"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
@@ -36,18 +36,18 @@ Looking for other management tasks related to DAGs? Check out [Managing database
 ## Use the EAC to configure database availability group network properties
 <a name="UseEMC"> </a>
 
-1. In the EAC, go to **Servers** > **Database Availability Groups**.
+1. In the EAC, go to **Servers** \> **Database Availability Groups**.
     
 2. Select the DAG you want to configure, and in the Details pane, under the DAG network you want to configure, choose from the following configuration options.
     
     > [!NOTE]
     > These options will only be visible if you have selected **Configure database availability group networks manually** on the DAG properties page. 
   
-  - **Disable Replication** or **Enable Replication** Configures the replication settings for the DAG network. 
+  - **Disable Replication** or **Enable Replication**: Configures the replication settings for the DAG network.
     
-  - **Remove** Removes a DAG network. Before you can remove a DAG network, you must first remove all associated subnets from the DAG network. 
+  - **Remove**: Removes a DAG network. Before you can remove a DAG network, you must first remove all associated subnets from the DAG network.
     
-  - **View details** Configures DAG network properties, such as the name, description, and associated subnets for the DAG network. You can also view the network interfaces associated with those subnets, and enable or disable replication for the DAG network. 
+  - **View details**: Configures DAG network properties, such as the name, description, and associated subnets for the DAG network. You can also view the network interfaces associated with those subnets, and enable or disable replication for the DAG network.
     
 ## Use the Exchange Management Shell to configure database availability group network properties
 <a name="UseShell"> </a>

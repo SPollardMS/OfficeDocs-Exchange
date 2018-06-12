@@ -3,26 +3,26 @@ title: "Accepted domains in Exchange 2016"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: End User
 ms.topic: overview
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: c1839a5b-49f9-4c53-b247-f4e5d78efc45
-description: "Learn about the three types of accepted domains in Exchange 2016: authoritative, internal relay, and external relay."
+description: "Summary: Learn about the three types of accepted domains in Exchange 2016: authoritative, internal relay, and external relay."
 ---
 
 # Accepted domains in Exchange 2016
 
-Learn about the three types of accepted domains in Exchange 2016: authoritative, internal relay, and external relay.
+ **Summary**: Learn about the three types of accepted domains in Exchange 2016: authoritative, internal relay, and external relay.
   
-Accepted domains are the SMTP name spaces (also known as address spaces) that you configure in an Exchange Server 2016 organization to receive email messages. For example, if your company registered the domain contoso.com, and you configured a mail exchanger (MX) record in your Internet DNS for contoso.com, you need to configure contoso.com as an accepted domain in your Exchange organization to accept messages that are addressed to @contoso.com recipients. 
+ *Accepted domains*  are the SMTP name spaces (also known as address spaces) that you configure in an Exchange Server 2016 organization to receive email messages. For example, if your company registered the domain contoso.com, and you configured a mail exchanger (MX) record in your Internet DNS for contoso.com, you need to configure contoso.com as an accepted domain in your Exchange organization to accept messages that are addressed to @contoso.com recipients. 
   
 Accepted domains in Exchange 2016 are basically unchanged from Exchange Server 2010, and consist of the following types:
   
-- **Authoritative domains** Recipients (in particular, mailboxes) are configured with email addresses in these domains. Exchange accepts messages that are addressed to recipients in these domains, and is responsible for generating non-delivery reports (also known as NDRs or bounce messages) for non-existent recipients. 
+- **Authoritative domains**: Recipients (in particular, mailboxes) are configured with email addresses in these domains. Exchange accepts messages that are addressed to recipients in these domains, and is responsible for generating non-delivery reports (also known as NDRs or bounce messages) for non-existent recipients.
     
-- **Relay domains** Exchange accepts messages that are addressed to recipients in relay domains, but isn't responsible for generating NDRs for non-existent recipients. Instead, Exchange (with additional configuration) relays the messages to messaging servers that are external to the Exchange organization. Relay domains can be **internal** (for domains that you control) or **external** (for domains that you don't control). 
+- **Relay domains**: Exchange accepts messages that are addressed to recipients in relay domains, but isn't responsible for generating NDRs for non-existent recipients. Instead, Exchange (with additional configuration) relays the messages to messaging servers that are external to the Exchange organization. Relay domains can be **internal** (for domains that you control) or **external** (for domains that you don't control). 
     
 An accepted domain can be a single domain (contoso.com) or a domain with subdomains (\*.contoso.com). Accepted domains are a global setting for the Exchange organization, and you can have multiple accepted domains of the same or different types.
   
@@ -30,18 +30,6 @@ To configure accepted domains, see [Procedures for accepted domains in Exchange 
   
 > [!NOTE]
 > If you have a subscribed Edge Transport server in your perimeter network, you configure accepted domains on a Mailbox server in your Exchange organization. The accepted domains configuration is replicated to the Edge Transport server during EdgeSync synchronization. For more information, see [Edge Subscriptions](../../architecture/edge-transport-servers/edge-subscriptions.md). 
-  
- **Contents**
-  
-[Authoritative domains](accepted-domains.md#BKMK_AuthoritativeDomains)
-  
-[Relay domains](accepted-domains.md#BKMK_RelayDomains)
-  
-[Accepted domains and email address policies](accepted-domains.md#BKMK_ADaEPolicies)
-  
-[Recipient Lookup in accepted domains](accepted-domains.md#RecipientLookup)
-  
-[Default domain](accepted-domains.md#DefaultDomain)
   
 ## Authoritative domains
 <a name="BKMK_AuthoritativeDomains"> </a>
@@ -91,7 +79,7 @@ Email address policies assign email addresses to recipients. You need to add an 
 ## Recipient Lookup in accepted domains
 <a name="RecipientLookup"> </a>
 
-Recipient filtering on a subscribed Edge Transport server can block messages that are addressed to non-existent recipients in your Exchange organization. This feature is known as Recipient Lookup. For more information about recipient filtering, see [Recipient filtering on Edge Transport servers](../../antispam-and-antimalware/antispam/recipient-filtering.md).
+Recipient filtering on a subscribed Edge Transport server can block messages that are addressed to non-existent recipients in your Exchange organization. This feature is known as  *Recipient Lookup*  . For more information about recipient filtering, see [Recipient filtering on Edge Transport servers](../../antispam-and-antimalware/antispam/recipient-filtering.md).
   
 You can enable or disable Recipient Lookup for an accepted domain by using the  _AddressBookEnabled_ parameter on the **Set-AcceptedDomain** cmdlet. The default value for each accepted domain type is described in the following table: 
   
@@ -108,7 +96,7 @@ For configuration instructions, see [Modify accepted domains](accepted-domain-pr
 ## Default domain
 <a name="DefaultDomain"> </a>
 
-Because the forest root FQDN is automatically configured as the first accepted domain in your organization, that accepted domain is also configured as the default domain. However, after you add additional accepted domains, you can configure one of them as the default domain. Here's some information about the default domain:
+Because the forest root FQDN is automatically configured as the first accepted domain in your organization, that accepted domain is also configured as the  *default domain*  . However, after you add additional accepted domains, you can configure one of them as the default domain. Here's some information about the default domain: 
   
 - You can't delete the default domain. You need to configure another accepted domain as the default domain (one accepted domain is always configured as the default domain).
     

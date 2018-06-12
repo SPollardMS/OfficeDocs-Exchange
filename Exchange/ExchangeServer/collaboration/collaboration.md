@@ -3,7 +3,7 @@ title: "Collaboration"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: overview
 ms.prod: office-online-server
@@ -26,7 +26,7 @@ Exchange 2016 provides the following rich features that can help your end users 
     
 - Distribution groups
     
-Each of these features has a different user experience and feature set and should be used based on what the user needs to accomplish and what your organization can provide. For example, site mailboxes provide great documentation collaboration features. However site mailboxes rely on SharePoint Server, so if you aren't planning on deploying SharePoint, you should use public folders to share documents. 
+Each of these features has a different user experience and feature set and should be used based on what the user needs to accomplish and what your organization can provide. For example, site mailboxes provide great documentation collaboration features. However site mailboxes rely on SharePoint Server, so if you aren't planning on deploying SharePoint, you should use public folders to share documents.
   
 This topic compares these collaboration features to help you decide which features to offer your users.
   
@@ -67,6 +67,6 @@ The following table gives you a quick glance at each of the collaboration featur
 |**Access** <br/> |Site mailbox owners and members.  <br/> |Accessible by anyone in your organization.  <br/> |Users can be granted Full Access and/or Send As permissions. If granted Full Access permissions, users must also add the shared mailbox to their Outlook profile to access the shared mailbox.  <br/> |For distribution groups, members, must be manually added. For dynamic distribution groups, members are added based on filtering criteria.  <br/> |
 |**Shared calendar?** <br/> |No  <br/> |Yes  <br/> |Yes  <br/> |No  <br/> |
 |**Email arrives in user's personal Inbox?** <br/> |No. Email arrives in the site mailbox.  <br/> |No. Email arrives in the public folder.  <br/> |No. Email arrives in the Inbox of the shared mailbox.  <br/> |Yes. Email arrives in the Inbox of a distribution group member.  <br/> |
-|**Supported clients** <br/> | Outlook 2013 or later  <br/>  SharePoint 2013  <br/> | Outlook 2007 or later  <br/> | Outlook 2007 or later  <br/>  Outlook Web App  <br/> | Outlook 2007 or later  <br/>  Outlook Web App  <br/> |
+|**Supported clients** <br/> |Outlook 2013 or later  <br/> SharePoint 2013  <br/> |Outlook 2007 or later  <br/> |Outlook 2007 or later  <br/> Outlook Web App  <br/> |Outlook 2007 or later  <br/> Outlook Web App  <br/> |
    
 

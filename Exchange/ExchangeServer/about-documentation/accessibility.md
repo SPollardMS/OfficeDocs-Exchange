@@ -3,7 +3,7 @@ title: "Accessibility for people with disabilities"
 ms.author: serdars
 author: SerdarSoysal
 manager: scotv
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: reference
 ms.prod: office-online-server
@@ -51,11 +51,11 @@ The following sections provide information about the features, products, and ser
 
 The Windows operating system has many built-in accessibility features that are useful for individuals who have difficulty typing or using a mouse, are blind or have low vision, or who are deaf or hard-of-hearing. The features are installed during Setup. For more information about these features, see Help in Windows and [Microsoft Accessibility](https://go.microsoft.com/fwlink/p/?linkId=18139).
   
-- **Free step-by-step tutorials** Microsoft offers a series of step-by-step tutorials that provide detailed procedures for adjusting the accessibility options and settings on your computer. This information is presented in a side-by-side format so that you can learn how to use the mouse, the keyboard, or a combination of both. 
+- **Free step-by-step tutorials**: Microsoft offers a series of step-by-step tutorials that provide detailed procedures for adjusting the accessibility options and settings on your computer. This information is presented in a side-by-side format so that you can learn how to use the mouse, the keyboard, or a combination of both.
     
     To find step-by-step tutorials for Microsoft products, see [Microsoft Accessibility](https://go.microsoft.com/fwlink/p/?linkId=18139).
     
-- **Assistive technology products for Windows** A wide variety of assistive technology products are available to make computers easier to use for people with disabilities. You can search a catalog of assistive technology products that run on Windows at Microsoft Accessibility. 
+- **Assistive technology products for Windows**: A wide variety of assistive technology products are available to make computers easier to use for people with disabilities. You can search a catalog of assistive technology products that run on Windows at Microsoft Accessibility.
     
     If you use assistive technology, be sure to contact your assistive technology vendor before you upgrade your software or hardware to check for possible compatibility issues.
     
@@ -65,10 +65,16 @@ If you have difficulty reading or handling printed materials, you can obtain the
   
 In addition, you can obtain additional Microsoft publications from Learning Ally. Learning Ally distributes these documents to registered, eligible members of their distribution service. For information about the availability of Microsoft product documentation and books from Microsoft Press, contact Learning Ally.
   
-||
-|:-----|
-|Learning Ally  <br/> 20 Roszel Road  <br/> Princeton, NJ 08540  <br/> Telephone number from within the United States: (800) 221-4792  <br/> Web site: [Learning Ally](https://www.learningally.org/) <br/> |
-   
+Learning Ally
+  
+20 Roszel Road
+  
+Princeton, NJ 08540
+  
+Telephone number from within the United States: (800) 221-4792
+  
+Web site: [Learning Ally](https://www.learningally.org/)
+  
 ### Customer service for people with hearing impairments
 
 If you're deaf or hard-of-hearing, complete access to Microsoft product and customer services is available through a text telephone (TTY/TDD) service:

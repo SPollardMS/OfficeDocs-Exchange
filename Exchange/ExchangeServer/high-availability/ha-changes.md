@@ -3,7 +3,7 @@ title: "Changes to high availability and site resilience over previous versions"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: overview
 ms.prod: office-online-server
@@ -18,23 +18,23 @@ description: "Summary: An overview of enhancements and additions to high availab
   
 Exchange Server 2016 uses DAGs and mailbox database copies, along with other features such as single item recovery, retention policies, and lagged database copies, to provide high availability, site resilience, and Exchange native data protection. The high availability platform, Exchange Information Store and Extensible Storage Engine (ESE) have all been enhanced to provide availability and less complex management, and to reduce costs. These enhancements include:
   
-- **Reduction in IOPS** This enables you to leverage larger disks in terms of capacity and IOPS as efficiently as possible. 
+- **Reduction in IOPS**: This enables you to leverage larger disks in terms of capacity and IOPS as efficiently as possible.
     
-- **Managed availability** With managed availability, internal monitoring and recovery-oriented features are tightly integrated to help prevent failures, proactively restore services, and initiate server failovers automatically or alert administrators to take action. The focus is on monitoring and managing the end-user experience rather than just server and component uptime to help keep the service continuously available. 
+- **Managed availability**: With managed availability, internal monitoring and recovery-oriented features are tightly integrated to help prevent failures, proactively restore services, and initiate server failovers automatically or alert administrators to take action. The focus is on monitoring and managing the end-user experience rather than just server and component uptime to help keep the service continuously available.
     
-- **Managed Store** The Managed Store is the name of the newly rewritten Information Store processes in Exchange 2016. The new Managed Store is written in C# and tightly integrated with the Microsoft Exchange Replication service (MSExchangeRepl.exe) to provide higher availability through improved resiliency. 
+- **Managed Store**: The Managed Store is the name of the newly rewritten Information Store processes in Exchange 2016. The new Managed Store is written in C# and tightly integrated with the Microsoft Exchange Replication service (MSExchangeRepl.exe) to provide higher availability through improved resiliency.
     
-- **Support for multiple databases per disk** Exchange 2016 includes enhancements that enable you to support multiple databases (mixtures of active and passive copies) on the same disk, thereby leveraging larger disks in terms of capacity and IOPS as efficiently as possible. 
+- **Support for multiple databases per disk**: Exchange 2016 includes enhancements that enable you to support multiple databases (mixtures of active and passive copies) on the same disk, thereby leveraging larger disks in terms of capacity and IOPS as efficiently as possible.
     
-- **AutoReseed** Automatic reseeding capability enables you to quickly restore database redundancy after disk failure. If a disk fails, the database copy stored on that disk is copied from the active database copy to a spare disk on the same server. If multiple database copies were stored on the failed disk, they can all be automatically reseeded on a spare disk. This enables faster reseeds, as the active databases are likely to be on multiple servers and the data is copied in parallel. 
+- **AutoReseed**: Automatic reseeding capability enables you to quickly restore database redundancy after disk failure. If a disk fails, the database copy stored on that disk is copied from the active database copy to a spare disk on the same server. If multiple database copies were stored on the failed disk, they can all be automatically reseeded on a spare disk. This enables faster reseeds, as the active databases are likely to be on multiple servers and the data is copied in parallel.
     
-- **Automatic recovery from storage failures** This feature continues the innovation introduced in Exchange 2010 to allow the system to recover from failures that affect resiliency or redundancy. Exchange 2016 now includes additional recovery behaviors for long I/O times, excessive memory consumption by MSExchangeRepl.exe, and severe cases where the system is in such a bad state that threads can't be scheduled. 
+- **Automatic recovery from storage failures**: This feature continues the innovation introduced in Exchange 2010 to allow the system to recover from failures that affect resiliency or redundancy. Exchange 2016 now includes additional recovery behaviors for long I/O times, excessive memory consumption by MSExchangeRepl.exe, and severe cases where the system is in such a bad state that threads can't be scheduled.
     
-- **Lagged copy enhancements** Lagged copies can now care for themselves to a certain extent using automatic log play down. Lagged copies will automatically play down log files in a variety of situations, such as page patching and low disk space scenarios. If the system detects that page patching is required for a lagged copy, the logs will be automatically replayed into the lagged copy to perform page patching. Lagged copies will also invoke this auto replay feature when a low disk space threshold has been reached, and when the lagged copy has been detected as the only available copy for a specific period of time. In addition, lagged copies can leverage Safety Net, making recovery or activation much easier. 
+- **Lagged copy enhancements**: Lagged copies can now care for themselves to a certain extent using automatic log play down. Lagged copies will automatically play down log files in a variety of situations, such as page patching and low disk space scenarios. If the system detects that page patching is required for a lagged copy, the logs will be automatically replayed into the lagged copy to perform page patching. Lagged copies will also invoke this auto replay feature when a low disk space threshold has been reached, and when the lagged copy has been detected as the only available copy for a specific period of time. In addition, lagged copies can leverage Safety Net, making recovery or activation much easier.
     
-- **Single copy alert enhancements** The single copy alert first introduced in Exchange 2010 is no longer a separate scheduled script. It's now integrated into the managed availability components within the system and is a native function within Exchange. 
+- **Single copy alert enhancements**: The single copy alert first introduced in Exchange 2010 is no longer a separate scheduled script. It's now integrated into the managed availability components within the system and is a native function within Exchange.
     
-- **DAG network auto-configuration** DAG networks can be automatically configured by the system based on configuration settings. In addition to manual configuration options, DAGs can also distinguish between MAPI and replication networks and configure DAG networks automatically. 
+- **DAG network auto-configuration**: DAG networks can be automatically configured by the system based on configuration settings. In addition to manual configuration options, DAGs can also distinguish between MAPI and replication networks and configure DAG networks automatically.
     
 ## Reduction in IOPS
 
@@ -54,9 +54,9 @@ Managed Availability is the integration of built-in, active monitoring and the E
   
 Managed availability is implemented in the form of two services:
   
-- **Exchange Health Manager Service (MSExchangeHMHost.exe)** This is a controller process that's used to manage worker processes. It's used to build, execute, and start and stop the worker process as needed. It's also used to recover the worker process in case that process crashes, to prevent the worker process from being a single point of failure. 
+- **Exchange Health Manager Service (MSExchangeHMHost.exe)**: This is a controller process that's used to manage worker processes. It's used to build, execute, and start and stop the worker process as needed. It's also used to recover the worker process in case that process crashes, to prevent the worker process from being a single point of failure.
     
-- **Exchange Health Manager Worker process (MSExchangeHMWorker.exe)** This is the worker process that's responsible for performing the runtime tasks. 
+- **Exchange Health Manager Worker process (MSExchangeHMWorker.exe)**: This is the worker process that's responsible for performing the runtime tasks.
     
 Managed availability uses persistent storage to perform its functions:
   
@@ -148,7 +148,7 @@ Exchange 2016 enhances server and storage resilience by including behaviors for 
 |:-----|:-----|:-----|:-----|
 |System bad state  <br/> |No threads, including non-managed threads, can be scheduled  <br/> |Restart the server  <br/> |302 seconds  <br/> |
 |Long I/O times  <br/> |I/O operation latency measurements  <br/> |Restart the server  <br/> |41 seconds  <br/> |
-|Replication service memory use  <br/> |Measure the working set of MSExchangeRepl.exe  <br/> | Log event 4395 in the crimson channel with a service termination request  <br/>  Initiate termination of MSExchangeRepl.exe  <br/>  If service termination fails, restart the server  <br/> |4 gigabyte (GB)  <br/> |
+|Replication service memory use  <br/> |Measure the working set of MSExchangeRepl.exe  <br/> |1: Log event 4395 in the crimson channel with a service termination request  <br/> 2: Initiate termination of MSExchangeRepl.exe  <br/> 3: If service termination fails, restart the server  <br/> |4 gigabyte (GB)  <br/> |
 |System Event 129 (Bus reset)  <br/> |Check for Event 129 in System event log  <br/> |Restart the server  <br/> |When event occurs  <br/> |
 |Cluster database hang  <br/> |Global Update Manager updates are blocked  <br/> |Restart the server  <br/> |When event occurs  <br/> |
    
@@ -236,13 +236,13 @@ In Exchange 2016, Active Manager performs the same BCS checks and phases to dete
   
 BCSS includes several new health checks that are part of the built in managed availability monitoring components in Exchange 2016. There are four additional checks performed by Active Manager (listed in the order in which they're performed):
   
-1. **All Healthy** Checks for a server hosting a copy of the affected database that has all monitoring components in a healthy state. 
+1. **All Healthy**: Checks for a server hosting a copy of the affected database that has all monitoring components in a healthy state.
     
-2. **Up to Normal Healthy** Checks for a server hosting a copy of the affected database that has all monitoring components with Normal priority in a healthy state. 
+2. **Up to Normal Healthy**: Checks for a server hosting a copy of the affected database that has all monitoring components with Normal priority in a healthy state.
     
-3. **All Better than Source** Checks for a server hosting a copy of the affected database that has monitoring components in a state that's better than the current server hosting the affected copy. 
+3. **All Better than Source**: Checks for a server hosting a copy of the affected database that has monitoring components in a state that's better than the current server hosting the affected copy.
     
-4. **Same as Source** Checks for a server hosting a copy of the affected database that has monitoring components in a state that's the same as the current server hosting the affected copy. 
+4. **Same as Source**: Checks for a server hosting a copy of the affected database that has monitoring components in a state that's the same as the current server hosting the affected copy.
     
 If BCSS is invoked as a result of a failover that's triggered by a managed availability monitoring component (for example, via a Failover responder), an additional mandatory constraint is enforced where the target server's component health must be better than the server on which the failover occurred. For example, if a failure of Microsoft Office Outlook Web App triggers a managed availability failover via a Failover responder, BCSS must select a server hosting a copy of the affected database on which Outlook Web App is healthy.
   
@@ -264,6 +264,6 @@ All DAGs running Windows Server 2008 R2 or Windows Server 2012 require at least 
     
 - The Windows failover cluster cannot be managed using the Failover Cluster Management tool. It must be managed using Windows PowerShell, and the PowerShell cmdlets must be run against individual cluster members.
     
-When running on Windows Server 2012 R2 or later, Exchange 2016 enables you to create a DAG without a cluster administrative access point. You can create a DAG without an administrative access point using the Exchange Admin Center or by using the Exchange Management Shell. For more information, see [Creating DAGs](manage-ha/manage-dags.md#Cr) and [Create a database availability group](manage-ha/create-dags.md).
+When running on Windows Server 2012 R2 or later, Exchange 2016 enables you to create a DAG without a cluster administrative access point. You can create a DAG without an administrative access point using the Exchange admin center or by using the Exchange Management Shell. For more information, see [Creating DAGs](manage-ha/manage-dags.md#Cr) and [Create a database availability group](manage-ha/create-dags.md).
   
 

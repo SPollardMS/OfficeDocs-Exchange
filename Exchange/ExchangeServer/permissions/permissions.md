@@ -3,31 +3,20 @@ title: "Permissions"
 ms.author: dstrome
 author: dstrome
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: overview
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: d8dd605e-0af1-4e18-9ce6-e51d04e161ba
-
-description: "Learn about Role Based Access Control in Exchange Server 2016."
+description: "Summary: Learn about Role Based Access Control in Exchange Server 2016."
 ---
 
 # Permissions
 
-Learn about Role Based Access Control in Exchange Server 2016.
+ **Summary**: Learn about Role Based Access Control in Exchange Server 2016.
   
 Microsoft Exchange Server 2016 includes a large set of predefined permissions, based on the Role Based Access Control (RBAC) permissions model, which you can use right away to easily grant permissions to your administrators and users. You can use the permissions features in Exchange 2016 so that you can get your new organization up and running quickly.
-  
- **Contents**
-  
-[Role-based permissions](permissions.md#RoleBased)
-  
-[Role groups and role assignment policies](permissions.md#RoleGroups)
-  
-[Work with role groups](permissions.md#CustomRoleGroup)
-  
-[Work with role assignment policies](permissions.md#CustomRAP)
   
 ## Role-based permissions
 <a name="RoleBased"> </a>
@@ -36,22 +25,20 @@ In Exchange 2016, the permissions that you grant to administrators and users are
   
 There are two types of roles, administrative roles and end-user roles:
   
-- **Administrative roles** These roles contain permissions that can be assigned to administrators or specialist users using role groups that manage a part of the Exchange organization, such as recipients, servers, or databases. 
+- **Administrative roles**: These roles contain permissions that can be assigned to administrators or specialist users using role groups that manage a part of the Exchange organization, such as recipients, servers, or databases.
     
-- **End-user roles** These roles, assigned using role assignment policies, enable users to manage aspects of their own mailbox and distribution groups that they own. End-user roles begin with the prefix  `My`.
+- **End-user roles**: These roles, assigned using role assignment policies, enable users to manage aspects of their own mailbox and distribution groups that they own. End-user roles begin with the prefix  `My`.
     
 Roles give permissions to perform tasks to administrators and users by making cmdlets available to those who are assigned the roles. Because the Exchange Administration Center (EAC) and the Exchange Management Shell use cmdlets to manage Exchange, granting access to a cmdlet gives the administrator or user permission to perform the task in each of the Exchange management interfaces.
-  
-[Role-based permissions](permissions.md#RoleBased)
   
 ## Role groups and role assignment policies
 <a name="RoleGroups"> </a>
 
 Roles grant permissions to perform tasks in Exchange 2016, but you need an easy way to assign them to administrators and users. Exchange 2016 provides you with the following to help you do that:
   
-- **Role groups** Role groups enable you to grant permissions to administrators and specialist users. 
+- **Role groups**: Role groups enable you to grant permissions to administrators and specialist users.
     
-- **Role assignment policies** Role assignment policies enable you to grant permissions to end users to change settings on their own mailbox or distribution groups that they own. 
+- **Role assignment policies**: Role assignment policies enable you to grant permissions to end users to change settings on their own mailbox or distribution groups that they own.
     
 For more information about role groups and role assignment policies, see the following sections.
   
@@ -79,12 +66,12 @@ Exchange 2016 includes several built-in role groups, each one providing permissi
 
 |**Role group**|**Description**|
 |:-----|:-----|
-|[Organization Management](http://technet.microsoft.com/library/0bfd21c1-86ac-4369-86b7-aeba386741c8.aspx) <br/> |Administrators who are members of the Organization Management role group have administrative access to the entire Exchange 2016 organization and can perform almost any task against any Exchange 2016 object, with some exceptions, such as the  `Discovery Management` role.  <br/> > [!IMPORTANT]> Because the Organization Management role group is a powerful role, only users or USGs that perform organizational-level administrative tasks that can potentially impact the entire Exchange organization should be members of this role group.           |
+|[Organization Management](http://technet.microsoft.com/library/0bfd21c1-86ac-4369-86b7-aeba386741c8.aspx) <br/> |Administrators who are members of the Organization Management role group have administrative access to the entire Exchange 2016 organization and can perform almost any task against any Exchange 2016 object, with some exceptions, such as the  `Discovery Management` role.  <br/> **Important**: Because the Organization Management role group is a powerful role, only users or USGs that perform organizational-level administrative tasks that can potentially impact the entire Exchange organization should be members of this role group.  <br/> |
 |[View-Only Organization Management](http://technet.microsoft.com/library/c514c6d0-0157-4c52-9ec6-441d9a30f3df.aspx) <br/> |Administrators who are members of the View Only Organization Management role group can view the properties of any object in the Exchange organization.  <br/> |
 |[Recipient Management](http://technet.microsoft.com/library/669d602e-68e3-41f9-a455-b942d212d130.aspx) <br/> |Administrators who are members of the Recipient Management role group have administrative access to create or modify Exchange 2016 recipients within the Exchange 2016 organization.  <br/> |
 |[UM Management](http://technet.microsoft.com/library/c91f0387-615c-4a1d-87d4-133ddac1e407.aspx) <br/> |Administrators who are members of the UM Management role group can manage features in the Exchange organization such as Unified Messaging (UM) service configuration, UM properties on mailboxes, UM prompts, and UM auto attendant configuration.  <br/> |
 |[Help Desk](http://technet.microsoft.com/library/e7958752-22e4-4155-a2fc-948099dec6f7.aspx) <br/> |The Help Desk role group, by default, enables members to view and modify the Microsoft Office Outlook Web App options of any user in the organization. These options might include modifying the user's display name, address, and phone number. They don't include options that aren't available in Outlook Web App options, such as modifying the size of a mailbox or configuring the mailbox database on which a mailbox is located.  <br/> |
-|[Hygiene Management](http://technet.microsoft.com/library/fc0a9ec2-9c3d-42f6-8442-8603fb29d464.aspx) <br/> |Administrators who are members of the Hygiene Management role group can configure the antivirus and anti-spam features of Exchange 2016. Third-party programs that integrate with Exchange 2016 can add service accounts to this role group to grant those programs access to the cmdlets required to retrieve and configure the Exchange configuration.  <br/> |
+|[Hygiene Management](http://technet.microsoft.com/library/fc0a9ec2-9c3d-42f6-8442-8603fb29d464.aspx) <br/> |Administrators who are members of the Hygiene Management role group can configure the antivirus and antispam features of Exchange 2016. Third-party programs that integrate with Exchange 2016 can add service accounts to this role group to grant those programs access to the cmdlets required to retrieve and configure the Exchange configuration.  <br/> |
 |[Records Management](http://technet.microsoft.com/library/0e0c95ce-6109-4591-b86d-c6cfd44d21f5.aspx) <br/> |Users who are members of the Records Management role group can configure compliance features, such as retention policy tags, message classifications, and transport rules.  <br/> |
 |[Discovery Management](http://technet.microsoft.com/library/b8bc5922-a8c9-4707-906d-fa38bb87da8f.aspx) <br/> |Administrators or users who are members of the Discovery Management role group can perform searches of mailboxes in the Exchange organization for data that meets specific criteria and can also configure legal holds on mailboxes.  <br/> |
 |[Public Folder Management](http://technet.microsoft.com/library/e167d95e-bb39-43fd-b960-204ab0de27da.aspx) <br/> |Administrators who are members of the Public Folder Management role group can manage public folders on servers running Exchange 2016.  <br/> |
@@ -95,8 +82,6 @@ Exchange 2016 includes several built-in role groups, each one providing permissi
 If you work in a small organization that has only a few administrators, you might only ever use the Organization Management role group, and none of the others. If you work in a larger organization, you might have administrators who perform specific tasks administering Exchange, such as recipient or server management. In those cases, you might add one administrator to the Recipient Management role group, and another administrator to the Server Management role group. Those administrators can then manage their specific areas of Exchange 2016 but won't have permissions to manage areas they're not responsible for.
   
 If you can't find a built-in role group that fits the jobs your administrators need to do, you can create role groups and add roles to them. For more information, see [Work with role groups](#CustomRoleGroup.md) later in this topic. 
-  
-[Role-based permissions](permissions.md#RoleBased)
   
 ### Role assignment policies
 
@@ -145,12 +130,10 @@ After you create the role group, you manage it like any other role group.
   
 If there's an existing role group that has some, but not all, of the permissions you need, you can copy it and then make changes to create a role group. Copying an existing role group lets you make changes to it without affecting the original role group. As part of copying the role group, you can add a new name and description, add and remove roles to and from the new role group, and add new members. When you create or copy a role group, you use the same dialog box that's shown in the preceding figure.
   
-Existing role groups can also be modified. You can add and remove roles from existing role groups, and add and remove members from it at the same time, using an EAC dialog box similar to the one in the preceding figure. By adding and removing roles to and from role groups, you turn on and off administrative features for members of that role group. 
+Existing role groups can also be modified. You can add and remove roles from existing role groups, and add and remove members from it at the same time, using an EAC dialog box similar to the one in the preceding figure. By adding and removing roles to and from role groups, you turn on and off administrative features for members of that role group.
   
 > [!NOTE]
 > Although you can change which roles are assigned to built-in role groups, we recommend that you copy built-in role groups, modify the role group copy, and then add members to the role group copy. 
-  
-[Role-based permissions](permissions.md#RoleBased)
   
 ## Work with role assignment policies
 <a name="CustomRAP"> </a>
@@ -183,9 +166,14 @@ If you want to assign different end-user permissions to the various types of use
   
 If you want to change which role assignment policy is the default, you needs to use the Exchange Management Shell. When you change the default role assignment policy, any mailboxes that are created will be associated with the new default role assignment policy if one wasn't explicitly specified. The role assignment policy associated with existing mailboxes doesn't change when you select a new default role assignment policy.
   
-> [!NOTE]
->  If you select a check box for a role that has child roles, the check boxes for the child roles are also selected. If you clear the check box for a role with child roles, the check boxes for the child roles are also cleared. >  For detailed steps about how to create role assignment policies or make changes to existing role assignment policies, see the following topics: > [Manage role assignment policies](role-assignment-policies.md)> [Change the assignment policy on a mailbox](policy-assignments-for-mailboxes.md)
+ **Notes**:
   
-[Role-based permissions](permissions.md#RoleBased)
-  
+- If you select a check box for a role that has child roles, the check boxes for the child roles are also selected. If you clear the check box for a role with child roles, the check boxes for the child roles are also cleared.
+    
+- For detailed steps about how to create role assignment policies or make changes to existing role assignment policies, see the following topics:
+    
+  - [Manage role assignment policies](role-assignment-policies.md)
+    
+  - [Change the assignment policy on a mailbox](policy-assignments-for-mailboxes.md)
+    
 

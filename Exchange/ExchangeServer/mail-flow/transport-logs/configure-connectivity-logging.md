@@ -3,18 +3,18 @@ title: "Configure connectivity logging in Exchange 2016"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 24e46a79-33ea-44e9-b03c-549db1c86a6f
-description: "Learn how to configure connectivity logging for transport services in Exchange 2016."
+description: "Summary: Learn how to configure connectivity logging for transport services in Exchange 2016."
 ---
 
 # Configure connectivity logging in Exchange 2016
 
-Learn how to configure connectivity logging for transport services in Exchange 2016.
+ **Summary**: Learn how to configure connectivity logging for transport services in Exchange 2016.
   
 Connectivity logging records outbound connection activity (source, destination, number and size of messages, and connection information) for the transport services on Exchange servers. For more information about connectivity logging, see [Connectivity logging in Exchange 2016](connectivity-logging.md).
   
@@ -43,7 +43,7 @@ Connectivity logging records outbound connection activity (source, destination, 
   
 ## Use the EAC to configure connectivity logging in the Transport service on Mailbox servers
 
-1. In the EAC, go to **Servers** > **Servers**.
+1. In the EAC, go to **Servers** \> **Servers**.
     
 2. Select the Mailbox server you want to configure, and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
@@ -51,9 +51,9 @@ Connectivity logging records outbound connection activity (source, destination, 
     
 4. In the **Connectivity log** section, change any of these settings: 
     
-  - **Enable connectivity log** To disable connectivity logging for the Transport service on the server, clear the check box. To enable connectivity logging for the Transport service on the server, select the check box. 
+  - **Enable connectivity log**: To disable connectivity logging for the Transport service on the server, clear the check box. To enable connectivity logging for the Transport service on the server, select the check box.
     
-  - **Connectivity log path** The value you specify must be on the local Exchange server. If the folder doesn't exist, it will be created for if the parent folder has the required permissions. 
+  - **Connectivity log path**: The value you specify must be on the local Exchange server. If the folder doesn't exist, it will be created for if the parent folder has the required permissions.
     
     When you're finished, click **Save**.
     
@@ -77,13 +77,13 @@ To configure connectivity logging, use the following syntax:
 
 This example sets the following connectivity log settings in the Transport service on the Mailbox server named Mailbox01:
   
-> **Location of the connectivity log** D:\Connectivity Log\Hub. Note that if the folder doesn't exist, it will be created for you if the parent folder has the required permissions. 
+> **Location of the connectivity log**: D:\Connectivity Log\Hub. Note that if the folder doesn't exist, it will be created for you if the parent folder has the required permissions.
     
-> **Maximum size of a connectivity log file** Sets the maximum size of a connectivity log file to 20 MB. 
+> **Maximum size of a connectivity log file**: Sets the maximum size of a connectivity log file to 20 MB.
     
-> **Maximum size of the connectivity log folder** Sets the maximum size of the connectivity log directory to 1.5 GB. 
+> **Maximum size of the connectivity log folder**: Sets the maximum size of the connectivity log directory to 1.5 GB.
     
-> **Maximum age of a connectivity log file** Sets the maximum age of a connectivity log file to 45 days. 
+> **Maximum age of a connectivity log file**: Sets the maximum age of a connectivity log file to 45 days.
     
 ```
 Set-TransportService -Identity Mailbox01 -ConnectivityLogPath "D:\Connectivity Log\Hub" -ConnectivityLogMaxFileSize 20MB -ConnectivityLogMaxDirectorySize 1.5GB -ConnectivityLogMaxAge 45.00:00:00

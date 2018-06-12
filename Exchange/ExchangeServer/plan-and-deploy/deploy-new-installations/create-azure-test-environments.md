@@ -3,7 +3,7 @@ title: "Exchange 2016 dev/test environment in Azure"
 ms.author: josephd
 author: JoeDavies-MSFT
 manager: serdars
-ms.date: 4/30/2018
+ms.date: 6/12/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
@@ -57,7 +57,7 @@ Get your subscription name using the following command.
 Get-AzureRMSubscription | Sort SubscriptionName | Select SubscriptionName
 ```
 
-Set your Azure subscription with the following commands. Set the **$subscr** variable by replacing everything within the quotes, including the < and > characters, with the correct name. 
+Set your Azure subscription with the following commands. Set the **$subscr** variable by replacing everything within the quotes, including the \< and \> characters, with the correct name. 
   
 ```
 $subscr="<subscription name>"
@@ -141,18 +141,25 @@ New-AzureRMVM -ResourceGroupName $rgName -Location $locName -VM $vm
 
 You will be prompted for a user name and password. This article will refer to this user name as ADMIN_NAME. Use a strong password and record both in a secure location.
   
-> [!NOTE]
->  The password that you specify cannot be "pass@word1". It must be between 8-123 characters long and must satisfy at least 3 of the following password complexity requirements: >  Contains an uppercase letter >  Contains an lowercase letter >  Contains a numeric digit >  Contains a special character 
+ **Note**: The password that you specify cannot be "pass@word1". It must be between 8-123 characters long and must satisfy at least 3 of the following password complexity requirements:
   
+- Contains an uppercase letter
+    
+- Contains an lowercase letter
+    
+- Contains a numeric digit
+    
+- Contains a special character
+    
 It can take a few minutes for Azure to build the virtual machine.
   
 ### Connect to the domain controller virtual machine using local administrator account credentials
 
-1. In the [Azure portal](https://portal.azure.com), click **Resource Groups \>** <your resource group name> **\> adVM \> Connect**.
+1. In the [Azure portal](https://portal.azure.com), click **Resource Groups \>** \<your resource group name\> **\> adVM \> Connect**.
     
 2. Run the adVM.rdp file that is downloaded, and then click **Connect**.
     
-3. In **Windows Security**, click **Use another account**. In **User name**, type **adVM\**<ADMIN_NAME>.
+3. In **Windows Security**, click **Use another account**. In **User name**, type **adVM\**\<ADMIN_NAME\>.
     
 4. In **Password**, type the password of the ADMIN_NAME account, and then click **OK**.
     
@@ -182,11 +189,11 @@ After adVM restarts, reconnect to the adVM virtual machine.
   
 ### Connect to the domain controller virtual machine using domain credentials
 
-1. In the [Azure portal](https://portal.azure.com), click **Resource Groups \>** <the name of your new resource group> **\> adVM \> Connect**.
+1. In the [Azure portal](https://portal.azure.com), click **Resource Groups \>** \<the name of your new resource group\> **\> adVM \> Connect**.
     
 2. Run the adVM.rdp file that is downloaded, and then click **Connect**.
     
-3. In **Windows Security**, click **Use another account**. In **User name**, type **CORP\**<ADMIN_NAME>.
+3. In **Windows Security**, click **Use another account**. In **User name**, type **CORP\**\<ADMIN_NAME\>.
     
 4. In **Password**, type the password of the ADMIN_NAME account, and then click **OK**.
     
@@ -271,7 +278,7 @@ Add-Computer -DomainName "corp.contoso.com"
 Restart-Computer
 ```
 
-Note that you must supply domain account credentials after entering the **Add-Computer** command. Use the CORP\<ADMIN_NAME> account and password. 
+Note that you must supply domain account credentials after entering the **Add-Computer** command. Use the CORP\\<ADMIN_NAME\> account and password. 
   
 Here is the result of Phase 2.
   
@@ -323,7 +330,7 @@ In this phase, you configure Exchange 2016 on exVM and test mail delivery betwee
     
 7. Click **I have read and accept the license terms**, and then click **Install**. On the **Installation is Complete** page, click **Finish**.
     
-8. From Internet Explorer, download the latest version of Exchange 2016 at [Updates for Exchange 2016](../../new-features/updated-features.md).
+8. From Internet Explorer, download the latest version of Exchange 2016 at [Updates for Exchange 2016](../../new-features/updates.md).
     
 9. Click **Save** to store the ISO file in the Downloads folder. 
     
@@ -365,7 +372,7 @@ Wait until Exchange setup completes, which can take some time, and exVM restarts
 
 ### Test email delivery between mailboxes
 
-1. From the browser on your local computer, access the web site **https://**<Internet DNS name of the exVM virtual machine> **/owa**. When prompted with an error page for the website's security certificate, click **Continue to this website**. On the Outlook sign-in page, use the corp\chris account name with its password.
+1. From the browser on your local computer, access the web site **https://**\<Internet DNS name of the exVM virtual machine\> **/owa**. When prompted with an error page for the website's security certificate, click **Continue to this website**. On the Outlook sign-in page, use the corp\chris account name with its password.
     
 2. When prompted to specify the language and time zone, select the appropriate value for each, and then click **Save**.
     

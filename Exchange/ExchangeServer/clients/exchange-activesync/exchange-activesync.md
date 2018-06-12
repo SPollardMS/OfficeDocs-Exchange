@@ -3,7 +3,7 @@ title: "Exchange ActiveSync"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
@@ -87,33 +87,33 @@ You can control which mobile devices can synchronize with Exchange Server. You d
 
 In addition to the ability to configure security options for communications between the Exchange server and your mobile devices, Exchange ActiveSync offers the following features to enhance the security of mobile devices:
   
-- **Remote wipe** If a mobile device is lost, stolen, or otherwise compromised, you can issue a remote wipe command from the Exchange Server computer or from any Web browser by using Outlook Web App. This command erases all data from the mobile device. 
+- **Remote wipe**: If a mobile device is lost, stolen, or otherwise compromised, you can issue a remote wipe command from the Exchange Server computer or from any Web browser by using Outlook Web App. This command erases all data from the mobile device.
     
-- **Device password policies** Exchange ActiveSync lets you configure several options for device passwords. 
+- **Device password policies**: Exchange ActiveSync lets you configure several options for device passwords.
     
     > [!CAUTION]
     > The iOS fingerprint reader technology cannot be used as a device password. If you choose to use the iOS fingerprint reader, you'll still need to create and enter a device password if the mobile device mailbox policy for your organization requires a device password. 
   
     The device password options include the following:
     
-  - **Minimum password length (characters)** This option specifies the length of the password for the mobile device. The default length is 4 characters, but as many as 18 can be included. 
+  - **Minimum password length (characters)**: This option specifies the length of the password for the mobile device. The default length is 4 characters, but as many as 18 can be included.
     
-  - **Minimum number of character sets** Use this text box to specify the complexity of the alphanumeric password and force users to use a number of different sets of characters from among the following: lowercase letters, uppercase letters, symbols, and numbers. 
+  - **Minimum number of character sets**: Use this text box to specify the complexity of the alphanumeric password and force users to use a number of different sets of characters from among the following: lowercase letters, uppercase letters, symbols, and numbers.
     
-  - **Require alphanumeric password** This option determines password strength. You can enforce the usage of a character or symbol in the password in addition to numbers. 
+  - **Require alphanumeric password**: This option determines password strength. You can enforce the usage of a character or symbol in the password in addition to numbers.
     
-  - **Inactivity time (seconds)** This option determines how long the mobile device must be inactive before the user is prompted for a password to unlock the mobile device. 
+  - **Inactivity time (seconds)**: This option determines how long the mobile device must be inactive before the user is prompted for a password to unlock the mobile device.
     
-  - **Enforce password history** Select this check box to force the mobile phone to prevent the user from reusing their previous passwords. The number that you set determines the number of past passwords that the user won't be allowed to reuse. 
+  - **Enforce password history**: Select this check box to force the mobile phone to prevent the user from reusing their previous passwords. The number that you set determines the number of past passwords that the user won't be allowed to reuse.
     
-  - **Enable password recovery** Select this check box to enable password recovery for the mobile device. Administrators can use the **Get-ActiveSyncDeviceStatistics** cmdlet to look up the user's recovery password. 
+  - **Enable password recovery**: Select this check box to enable password recovery for the mobile device. Administrators can use the **Get-ActiveSyncDeviceStatistics** cmdlet to look up the user's recovery password. 
     
-  - **Wipe device after failed (attempts)** This option lets you specify whether you want the phone's memory to be wiped after multiple failed password attempts. 
+  - **Wipe device after failed (attempts)**: This option lets you specify whether you want the phone's memory to be wiped after multiple failed password attempts.
     
-- **Device encryption policies** There are a number of mobile device encryption policies that you can enforce for a group of users. These policies include the following: 
+- **Device encryption policies**: There are a number of mobile device encryption policies that you can enforce for a group of users. These policies include the following:
     
-  - **Require encryption on device** Select this check box to require encryption on the mobile device. This increases security by encrypting all information on the mobile device. 
+  - **Require encryption on device**: Select this check box to require encryption on the mobile device. This increases security by encrypting all information on the mobile device.
     
-  - **Require encryption on storage cards** Select this check box to require encryption on the mobile device's removable storage card. This increases security by encrypting all information on the storage cards for the mobile device. 
+  - **Require encryption on storage cards**: Select this check box to require encryption on the mobile device's removable storage card. This increases security by encrypting all information on the storage cards for the mobile device.
     
 

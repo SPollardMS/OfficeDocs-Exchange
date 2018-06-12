@@ -3,18 +3,18 @@ title: "Create a Send connector to send mail to the Internet"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 6deaefa8-1152-40d9-b1ba-9c19bdf8a928
-description: "Create the Send connector that's required to send mail to the internet."
+description: "Summary: Create the Send connector that's required to send mail to the internet."
 ---
 
 # Create a Send connector to send mail to the Internet
 
-Create the Send connector that's required to send mail to the internet.
+ **Summary**: Create the Send connector that's required to send mail to the internet.
   
 When install your first Exchange Server 2016 server, the server isn't able to send mail outside of your Exchange organization. To send mail outside your Exchange organization, you need to create a Send connector.
   
@@ -39,7 +39,7 @@ See also [Send connectors](send-connectors.md) for more information about connec
   
 ### Use the EAC to create an internet Send connector
 
-1. In the EAC, navigate to **Mail flow** > **Send connectors**, and then click **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png). This starts the **New Send connector** wizard. 
+1. In the EAC, navigate to **Mail flow** \> **Send connectors**, and then click **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png). This starts the **New Send connector** wizard. 
     
 2. On the first page, enter the following information:
     

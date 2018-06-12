@@ -3,18 +3,18 @@ title: "Change the location of the queue database"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 5/5/2017
+ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: f170cb0c-04a9-4fa7-b594-206e3a787e14
-description: "Learn how to move or recreate the message queue database in Exchange 2016."
+description: "Summary: Learn how to move or recreate the message queue database in Exchange 2016."
 ---
 
 # Change the location of the queue database
 
-Learn how to move or recreate the message queue database in Exchange 2016.
+ **Summary**: Learn how to move or recreate the message queue database in Exchange 2016.
   
 Like previous versions of Exchange, Exchange 2016 uses an Extensible Storage Engine (ESE) database for queue message storage. All the different queues are stored in a single ESE database. Queues exist on Exchange 2016 Mailbox servers and Edge Transport servers. For more information about queues, see [Queues and messages in queues](queues.md).
   
@@ -22,8 +22,8 @@ The location of the queue database and the queue database transaction logs is co
   
 |**Key**|**Description**|
 |:-----|:-----|
-| _QueueDatabasePath_ <br/> | Specifies the location of the queue database files. The files are:  <br/>  Mail.que  <br/>  Trn.chk  <br/>  The default location is  `%ExchangeInstallPath%TransportRoles\data\Queue`.  <br/> |
-| _QueueDatabaseLoggingPath_ <br/> | Specifies the location of the queue database transaction log files. The files are:  <br/>  Trn.log  <br/>  Trntmp.log  <br/>  Trn  _nnn_.log  <br/>  Trnres00001.jrs  <br/>  Trnres00002.jrs  <br/>  Temp.edb  <br/>  Note that Temp.edb is used to verify the queue database schema when the Exchange Transport service starts. Although Temp.edb isn't a transaction log file, it's kept in the same location as the transaction log files.  <br/>  The default location is  `%ExchangeInstallPath%TransportRoles\data\Queue`.  <br/> |
+| _QueueDatabasePath_ <br/> |Specifies the location of the queue database files. The files are:  <br/> • Mail.que  <br/> • Trn.chk  <br/> The default location is  `%ExchangeInstallPath%TransportRoles\data\Queue`.  <br/> |
+| _QueueDatabaseLoggingPath_ <br/> |Specifies the location of the queue database transaction log files. The files are:  <br/> • Trn.log  <br/> • Trntmp.log  <br/> • Trn _nnn_.log  <br/> • Trnres00001.jrs  <br/> • Trnres00002.jrs  <br/> • Temp.edb  <br/> Note that Temp.edb is used to verify the queue database schema when the Exchange Transport service starts. Although Temp.edb isn't a transaction log file, it's kept in the same location as the transaction log files.  <br/> The default location is  `%ExchangeInstallPath%TransportRoles\data\Queue`.  <br/> |
    
 ## What do you need to know before you begin?
 

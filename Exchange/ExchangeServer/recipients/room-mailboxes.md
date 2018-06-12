@@ -3,7 +3,7 @@ title: "Create and manage room mailboxes"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
@@ -32,6 +32,8 @@ If you want to learn about the types of recipients that are available in Exchang
 
 - Estimated time to complete: 5 minutes.
     
+- To open the Exchange admin center (EAC), see [Exchange admin center in Exchange 2016](../architecture/client-access/exchange-admin-center.md). To open the Exchange Management Shell, see [Open the Exchange Management Shell](http://technet.microsoft.com/library/63976059-25f8-4b4f-b597-633e78b803c0.aspx).
+    
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the"Recipient Provisioning Permissions" section in the [Recipients Permissions](../permissions/feature-permissions/recipient-permissions.md) topic. 
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../about-documentation/eac-keyboard-shortcuts.md).
@@ -41,24 +43,22 @@ If you want to learn about the types of recipients that are available in Exchang
 > [!IMPORTANT]
 > If you're running Exchange 2013 in a hybrid scenario, make sure you create the room mailboxes in the appropriate place. Create your room mailboxes for your on-premises organization on-premises, and room mailboxes for Exchange Online should be created in the cloud. > Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
   
-## What do you want to do?
+## Create a room mailbox
 
-### Create a room mailbox
-
-1. In the Exchange Admin Center, navigate to **Recipients** > **Resources**.
+1. In the Exchange admin center, navigate to **Recipients** \> **Resources**.
     
-2. To create a room mailbox, click **New**![Add icon](../media/ITPro_EAC_AddIcon.png) > **Room mailbox**.
+2. To create a room mailbox, click **New**![Add icon](../media/ITPro_EAC_AddIcon.png) \> **Room mailbox**.
     
 3. Use the options on the page to specify the settings for the new resource mailbox.
     
-  - **\* Room name** Use this box to type a name for the room mailbox. This is the name that's listed in the resource mailbox list in the Exchange Admin Center and in your organization's address book. This name is required and it can't exceed 64 characters. 
+  - **\* Room name**: Use this box to type a name for the room mailbox. This is the name that's listed in the resource mailbox list in the Exchange admin center and in your organization's address book. This name is required and it can't exceed 64 characters.
     
     > [!TIP]
-    > Although there are other fields that describe the details of the room, for example, Location and Capacity, consider summarizing the most important details in the room name using a consistent naming convention. Why? So users can easily see the details when they select the room from the address book in the meeting request. 
+    > Although there are other fields that describe the details of the room (for example, Location and Capacity) consider summarizing the most important details in the room name using a consistent naming convention. Why? So users can easily see the details when they select the room from the address book in the meeting request. 
   
-  - **\* Alias** A room mailbox has an email address so it can receive booking requests. The email address consists of an alias on the left side of the @ symbol, which must be unique in the forest, and your domain name on the right. The alias is required. 
+  - **\* Alias**: A room mailbox has an email address so it can receive booking requests. The email address consists of an alias on the left side of the @ symbol, which must be unique in the forest, and your domain name on the right. The alias is required.
     
-  - **Location**, **Phone**, **Capacity** You can use these fields to enter details about the room. However, as explained earlier, you can include some or all of this information in the room name so users can see it. 
+  - **Location**, **Phone**, **Capacity**: You can use these fields to enter details about the room. However, as explained earlier, you can include some or all of this information in the room name so users can see it.
     
 4. When you're finished, click **Save** to create the room mailbox. 
     
@@ -66,10 +66,10 @@ After you've created a room mailbox, you can [Change how a room mailbox handles 
   
 For information on how to create a room mailbox using the Exchange Management shell, see Examples 2 and 3 in [New-Mailbox](http://technet.microsoft.com/library/42dbb25a-0b23-4775-ae15-7af62c089565.aspx).
   
-### Change how a room mailbox handles meeting requests
+## Change how a room mailbox handles meeting requests
 <a name="BookingOptions"> </a>
 
-1. In the Exchange Admin Center, navigate to **Recipients** > **Resources**.
+1. In the Exchange admin center, navigate to **Recipients** \> **Resources**.
     
 2. In the list of resource mailboxes, click the room mailbox that you want to change the properties for, and then click **Edit**![Edit icon](../media/ITPro_EAC_EditIcon.png).
     
@@ -79,38 +79,38 @@ Use the **Booking Delegates** section to view or change how the room mailbox han
   
 - Select one of the following options to handle meeting requests.
     
-  - **Accept or decline booking requests automatically** If this is selected, the meeting request will automatically be declined if there's a scheduling conflict with an existing reservation, or if the booking request violates the scheduling limits of the resource, for example, the reservation duration is too long. 
+  - **Accept or decline booking requests automatically**: If this is selected, the meeting request will automatically be declined if there's a scheduling conflict with an existing reservation, or if the booking request violates the scheduling limits of the resource, for example, the reservation duration is too long.
     
-  - **Select delegates who can accept or decline booking requests** If this is selected, one of the people you added to the **Delegates** list below will be responsible for accepting or declining meeting requests that are sent to the room mailbox. If you assign more than one resource delegate, only one of them has to act on a specific meeting request. 
+  - **Select delegates who can accept or decline booking requests**: If this is selected, one of the people you added to the **Delegates** list below will be responsible for accepting or declining meeting requests that are sent to the room mailbox. If you assign more than one resource delegate, only one of them has to act on a specific meeting request. 
     
 Use the **Booking Options** section to view or change the settings for the booking policy that defines when the room can be scheduled, how long it can be reserved, and how far in advance it can be reserved. 
   
-- **Allow repeating meetings** This setting allows or prevents repeating meetings for the room. 
+- **Allow repeating meetings**: This setting allows or prevents repeating meetings for the room.
     
-- **Allow scheduling only during working hours** This setting accepts or declines meeting requests that aren't during the working hours defined for the room, which are, by default, 8:00 A.M. to 5:00 P.M. Monday through Friday. You can configure the working hours of the room mailbox either by logging into the mailbox using Outlook on the web and going to the **Options** > **Calendar** > **Calendar appearance** page, or by using [Set-MailboxCalendarConfiguration](http://technet.microsoft.com/library/092aa4db-3f0f-4b17-b7b1-1987a8268760.aspx).
+- **Allow scheduling only during working hours**: This setting accepts or declines meeting requests that aren't during the working hours defined for the room, which are, by default, 8:00 A.M. to 5:00 P.M. Monday through Friday. You can configure the working hours of the room mailbox either by logging into the mailbox using Outlook on the web and going to the **Options** \> **Calendar** \> **Calendar appearance** page, or by using [Set-MailboxCalendarConfiguration](http://technet.microsoft.com/library/092aa4db-3f0f-4b17-b7b1-1987a8268760.aspx).
     
-- **Always decline if the end date is beyond this limit** This setting controls the behavior of repeating meetings that extend beyond the date specified by the maximum booking lead time setting. 
+- **Always decline if the end date is beyond this limit**: This setting controls the behavior of repeating meetings that extend beyond the date specified by the maximum booking lead time setting.
     
   - If you enable this setting, a repeating booking request is automatically declined if the bookings start on or before the date specified by the value in the **Maximum booking lead time** box, and they extend beyond the specified date. This is the default setting. 
     
   - If you disable this setting, a repeating booking request is automatically accepted if booking requests start on or before the date specified by the value in the **Maximum booking lead time** box, and they extend beyond the specified date. However, the number of bookings is reduced so bookings won't occur after the specified date. 
     
-- **Maximum booking lead time (days)** This setting specifies the maximum number of days in advance that the room can be booked. Valid input is an integer between 0 and 1080. The default value is 180 days. 
+- **Maximum booking lead time (days)**: This setting specifies the maximum number of days in advance that the room can be booked. Valid input is an integer between 0 and 1080. The default value is 180 days.
     
-- **Maximum duration (hours)** This setting specifies the maximum duration that the room can be reserved in a booking request. The default value is 24 hours. 
+- **Maximum duration (hours)**: This setting specifies the maximum duration that the room can be reserved in a booking request. The default value is 24 hours.
     
     For repeating booking requests, the maximum booking duration applies to the length of each instance of the repeating booking request.
     
 There's also a box on this page that you can use to write a message that will be sent to users who send booking requests to reserve the room.
   
-### Change other room mailbox properties
+## Change other room mailbox properties
 <a name="RoomMbxProps"> </a>
 
-After you create a room mailbox, you can make changes and set additional properties by using the Exchange Admin Center or Exchange PowerShell.
+After you create a room mailbox, you can make changes and set additional properties by using the Exchange admin center or the Exchange Management Shell.
   
-#### Use the Exchange Admin Center to change room mailbox properties
+### Use the Exchange admin center to change room mailbox properties
 
-1. In the Exchange Admin Center, navigate to **Recipients** > **Resources**.
+1. In the Exchange admin center, navigate to **Recipients** \> **Resources**.
     
 2. In the list of resource mailboxes, click the room mailbox that you want to change the properties for, and then click **Edit**![Edit icon](../media/ITPro_EAC_EditIcon.png).
     
@@ -129,31 +129,31 @@ After you create a room mailbox, you can make changes and set additional propert
 
 Use the **General** section to view or change basic information about the resource. 
   
-- **\* Room name** This name appears in the resource mailbox list in the Exchange Admin CenterExchange Admin Center and in your organization's address book. It can't exceed 64 characters if you change it. 
+- **\* Room name**: This name appears in the resource mailbox list in the Exchange admin centerExchange admin center and in your organization's address book. It can't exceed 64 characters if you change it.
     
-- **\* Email address** This read-only box displays the email address for the room mailbox. You can change it in the [Email Address](#EmailAddress.md) section. 
+- **\* Email address**: This read-only box displays the email address for the room mailbox. You can change it in the [Email Address](#EmailAddress.md) section. 
     
-- **Capacity** Use this box to enter the maximum number of people who can safely occupy the room. 
+- **Capacity**: Use this box to enter the maximum number of people who can safely occupy the room.
     
 Click **More options** to view or change these additional properties: 
   
-- **Organizational unit** This read-only box displays the organizational unit (OU) that contains the account for the room mailbox. You have to use Active Directory Users and Computers to move the account to a different OU. 
+- **Organizational unit**: This read-only box displays the organizational unit (OU) that contains the account for the room mailbox. You have to use Active Directory Users and Computers to move the account to a different OU.
     
-- **Mailbox database** This read-only box displays the name of the mailbox database that hosts the room mailbox. Use the **Migration** page in the Exchange Admin Center to move the mailbox to a different database. 
+- **Mailbox database**: This read-only box displays the name of the mailbox database that hosts the room mailbox. Use the **Migration** page in the Exchange admin center to move the mailbox to a different database. 
     
 - **\* Alias** Use this box to change the alias for the room mailbox. 
     
-- **Hide from address lists** Select this check box to prevent the room mailbox from appearing in the address book and other address lists that are defined in your Exchange organization. After you select this check box, users can still send booking messages to the room mailbox by using the email address. 
+- **Hide from address lists**: Select this check box to prevent the room mailbox from appearing in the address book and other address lists that are defined in your Exchange organization. After you select this check box, users can still send booking messages to the room mailbox by using the email address.
     
-- **Department** Use this box to specify a department name that the room is associated with. You can use this property to create recipient conditions for dynamic distribution groups and address lists. 
+- **Department**: Use this box to specify a department name that the room is associated with. You can use this property to create recipient conditions for dynamic distribution groups and address lists.
     
-- **Company** Use this box to specify a company that the room is associated with, if applicable. Like the Department property, you can use this property to create recipient conditions for dynamic distribution groups and address lists. 
+- **Company**: Use this box to specify a company that the room is associated with, if applicable. Like the Department property, you can use this property to create recipient conditions for dynamic distribution groups and address lists.
     
-- **Address book policy** Use this option to specify an address book policy (ABP) for the room mailbox. ABPs contain a global address list (GAL), an offline address book (OAB), a room list, and a set of address lists. To learn more, see [Address book policies in Exchange 2016](../email-addresses-and-address-books/address-book-policies/address-book-policies.md).
+- **Address book policy**: Use this option to specify an address book policy (ABP) for the room mailbox. ABPs contain a global address list (GAL), an offline address book (OAB), a room list, and a set of address lists. To learn more, see [Address book policies in Exchange 2016](../email-addresses-and-address-books/address-book-policies/address-book-policies.md).
     
     In the drop-down list, select the policy that you want associated with this mailbox.
     
-- **Custom attributes** This section displays the custom attributes defined for the room mailbox. To specify custom attribute values, click **Edit**![Edit icon](../media/ITPro_EAC_EditIcon.png). You can specify up to 15 custom attributes for the recipient.
+- **Custom attributes**: This section displays the custom attributes defined for the room mailbox. To specify custom attribute values, click **Edit**![Edit icon](../media/ITPro_EAC_EditIcon.png). You can specify up to 15 custom attributes for the recipient.
     
 #### Contact Information
 <a name="ContactInformation"> </a>
@@ -166,15 +166,15 @@ Use the **Contact Information** section to view or change the contact informatio
 #### Email Address
 <a name="EmailAddress"> </a>
 
-Use the **Email Address** section to view or change the email addresses associated with the room mailbox. This includes the mailbox's primary SMTP address and any associated proxy addresses. The primary SMTP address (also known as the reply address) is displayed in bold text in the address list, with the uppercase **SMTP** value in the **Type** column. 
+Use the **Email Address** section to view or change the email addresses associated with the room mailbox. This includes the mailbox's primary SMTP address and any associated proxy addresses. The primary SMTP address (also known as the  *reply address*  ) is displayed in bold text in the address list, with the uppercase **SMTP** value in the **Type** column. 
   
-- **Add** Click ** Add **![Add icon](../media/ITPro_EAC_AddIcon.png) to add a new email address for this mailbox. Select one of following address types: 
+- **Add**: Click ** Add **![Add icon](../media/ITPro_EAC_AddIcon.png) to add a new email address for this mailbox. Select one of following address types: 
     
-  - **SMTP** This is the default address type. Click this button and then type the new SMTP address in the **\* Email address** box. 
+  - **SMTP**: This is the default address type. Click this button and then type the new SMTP address in the **\* Email address** box. 
     
-  - **EUM** An EUM (Exchange Unified Messaging) address is used by the Microsoft Exchange Unified Messaging service to locate UM-enabled recipients within an Exchange organization. EUM addresses consist of the extension number and the UM dial plan for the UM-enabled user. Click this button and type the extension number in the **Address/Extension** box. Then click **Browse** and select a dial plan for the mailbox. 
+  - **EUM**: An EUM (Exchange Unified Messaging) address is used by the Microsoft Exchange Unified Messaging service to locate UM-enabled recipients within an Exchange organization. EUM addresses consist of the extension number and the UM dial plan for the UM-enabled user. Click this button and type the extension number in the **Address/Extension** box. Then click **Browse** and select a dial plan for the mailbox. 
     
-  - **Custom address type** Click this button and type one of the supported non-SMTP email address types in the **\* Email address** box. 
+  - **Custom address type**: Click this button and type one of the supported non-SMTP email address types in the **\* Email address** box. 
     
     > [!NOTE]
     > With the exception of X.400 addresses, Exchange doesn't validate custom addresses for correct formatting. You must make sure that the custom address you specify complies with the format requirements for that address type. 
@@ -182,7 +182,7 @@ Use the **Email Address** section to view or change the email addresses associat
     > [!NOTE]
     > When you add a new email address, you have the option to make it the primary SMTP address. 
   
-- **Automatically update email addresses based on the email address policy applied to this recipient** Select this check box to have the recipient's email addresses automatically updated based on changes made to email address policies in your organization. 
+- **Automatically update email addresses based on the email address policy applied to this recipient**: Select this check box to have the recipient's email addresses automatically updated based on changes made to email address policies in your organization.
     
 #### MailTip
 <a name="MailTip"> </a>
@@ -192,15 +192,15 @@ Use the **MailTip** section to add a MailTip to alert users of potential issues 
 > [!NOTE]
 >  MailTips can include HTML tags, but scripts aren't allowed. The length of a custom MailTip can't exceed 175 displayed characters. HTML tags aren't counted in the limit. 
   
-#### Use Exchange PowerShell to change room mailbox properties
+### Use the Exchange Management Shell to change room mailbox properties
 
 Use the following sets of cmdlets to view and change room mailbox properties: **Get-Mailbox** and **Set-Mailbox** cmdlets to view and change general properties and email addresses for room mailboxes. Use the **Get-CalendarProcessing** and **Set-CalendarProcessing** cmdlets to view and change delegates and booking options. 
   
-- **Get-User** and **Set-User** Use these cmdlets to view and set general properties such as location, department, and company names. 
+- **Get-User** and **Set-User**: Use these cmdlets to view and set general properties such as location, department, and company names. 
     
-- **Get-Mailbox** and **Set-Mailbox** Use these cmdlets to view and set mailbox properties, such as email addresses and the mailbox database. 
+- **Get-Mailbox** and **Set-Mailbox**: Use these cmdlets to view and set mailbox properties, such as email addresses and the mailbox database. 
     
-- **Get-CalendarProcessing** and **Set-CalendarProcessing** Use these cmdlets to view and set booking options and delegates. 
+- **Get-CalendarProcessing** and **Set-CalendarProcessing**: Use these cmdlets to view and set booking options and delegates. 
     
 For information about these cmdlets, see the following topics:
   
@@ -216,7 +216,7 @@ For information about these cmdlets, see the following topics:
     
 - [Set-CalendarProcessing](http://technet.microsoft.com/library/000bc90f-1d00-4384-ab59-d6cf6f674825.aspx)
     
-Here are some examples of using Exchange PowerShell to change room mailbox properties.
+Here are some examples of using the Exchange Management Shell to change room mailbox properties.
   
 This example changes the display name, the primary SMTP address (called the default reply address), and the room capacity. Also, the previous reply address is kept as a proxy address.
   
@@ -236,12 +236,12 @@ This example uses the **Get-User** cmdlet to find all room mailboxes that corres
 Get-User -ResultSize unlimited -Filter {(RecipientTypeDetails -eq 'RoomMailbox') -and (DisplayName -like 'Private*')} | Set-CalendarProcessing -AllBookInPolicy $false -AllRequestInPolicy $true -ResourceDelegates "Robin Wood"
 ```
 
-### Create a room list
+## Create a room list
 <a name="RoomMbxProps"> </a>
 
 If you're planning to have more than a hundred rooms, or already have more than a hundred rooms created, use a room list to help you organize your rooms. If your company has several buildings with rooms that can be booked for meetings, it might help to create room lists for each building. Room lists are specially marked distribution groups that you can use the same way you use distribution groups. However, you can only create room lists using the Exchange Management Shell.
   
-#### Use Exchange PowerShell to create a room list
+### Use the Exchange Management Shell to create a room list
 
 This example creates a room list for building 32.
   
@@ -249,7 +249,7 @@ This example creates a room list for building 32.
 New-DistributionGroup -Name "Building 32 Conference Rooms" -OrganizationalUnit "contoso.com/rooms" -RoomList
 ```
 
-#### Use Exchange PowerShell to add a room to a room list
+### Use the Exchange Management Shell to add a room to a room list
 
 This example adds confroom3223 to the building 32 room list.
   
@@ -257,7 +257,7 @@ This example adds confroom3223 to the building 32 room list.
 Add-DistributionGroupMember -Identity "Building 32 Conference Rooms" -Member confroom3223@contoso.com
 ```
 
-#### Use Exchange PowerShell to convert a distribution group to a room list
+### Use the Exchange Management Shell to convert a distribution group to a room list
 
 You may already have created distribution groups in the past that contain your conference rooms. You don't need to recreate them; we can convert them quickly into a room list.
   
@@ -268,15 +268,16 @@ Set-DistributionGroup -Identity "Building 34 Conference Rooms" -RoomList
 ```
 
 ## How do you know this worked?
+<a name="RoomMbxProps"> </a>
 
 To verify that you've successfully changed properties for a room mailbox, do the following:
   
-- In the Exchange Admin Center, select the mailbox and then click **Edit**![Edit icon](../media/ITPro_EAC_EditIcon.png) to view the property or feature that you changed. Depending on the property that you changed, it might be displayed in the Details pane for the selected mailbox. 
+- In the Exchange admin center, select the mailbox and then click **Edit**![Edit icon](../media/ITPro_EAC_EditIcon.png) to view the property or feature that you changed. Depending on the property that you changed, it might be displayed in the Details pane for the selected mailbox. 
     
-- In Exchange PowerShell, use the **Get-Mailbox** cmdlet to verify the changes. One advantage of using Exchange PowerShell is that you can view multiple properties for multiple mailboxes. In the example above where booking requests could be scheduled only during working hours and have a maximum duration of 9 hours, run the following command to verify the new values. 
+- In the Exchange Management Shell, use the **Get-Mailbox** cmdlet to verify the changes. One advantage of using the Exchange Management Shell is that you can view multiple properties for multiple mailboxes. In the example above where booking requests could be scheduled only during working hours and have a maximum duration of 9 hours, run the following command to verify the new values. 
     
   ```
-  Get-Mailbox -ResultSize unlimited -Filter {(RecipientTypeDetails -eq 'RoomMailbox')} | Get-CalendarProcessing | fl Identity,ScheduleOnlyDuringWorkHours,MaximumDurationInMinutes
+  Get-Mailbox -ResultSize unlimited -Filter {(RecipientTypeDetails -eq 'RoomMailbox')} | Get-CalendarProcessing | Format-List Identity,ScheduleOnlyDuringWorkHours,MaximumDurationInMinutes
   ```
 
 

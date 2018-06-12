@@ -3,19 +3,19 @@ title: "Create a new Exchange 2016 self-signed certificate"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 4/20/2018
+ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.collection: Strat_EX_Admin
 ms.assetid: ae826efe-7558-4007-b255-7dfe5933bbbf
-description: "Learn how to create a new self-signed certificate in Exchange 2016."
+description: "Summary: Learn how to create a new self-signed certificate in Exchange 2016."
 ---
 
 # Create a new Exchange 2016 self-signed certificate
 
-Learn how to create a new self-signed certificate in Exchange 2016.
+ **Summary**: Learn how to create a new self-signed certificate in Exchange 2016.
   
 When you install Exchange 2016, a self-signed certificate that's created and signed by the Exchange server itself is automatically installed on the server. However, you can also create additional self-signed certificates that you can use.
   
@@ -40,7 +40,7 @@ You can create self-signed certificates certificate in the Exchange admin center
   
 ## Use the EAC to create a new Exchange self-signed certificate
 
-1. Open the EAC and navigate to **Servers** > **Certificates**.
+1. Open the EAC and navigate to **Servers** \> **Certificates**.
     
 2. In the **Select server** list, select the Exchange server where you want to install the certificate, and then click **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png).
     
@@ -104,7 +104,7 @@ This example creates a self-signed certificate on the local Exchange server with
   
 - **Subject**:  _\<ServerName\>_. For example, if you run the command on the server named Mailbox01, the value is  `Mailbox01`.
     
-- **Subject alternative names**:  _\<ServerName\>_, <Server FQDN>. For example,  `Mailbox01, Mailbox01.contoso.com`.
+- **Subject alternative names**:  _\<ServerName\>_, \<Server FQDN\>. For example,  `Mailbox01, Mailbox01.contoso.com`.
     
 - **Friendly name**: Microsoft Exchange
     
@@ -150,7 +150,7 @@ New-ExchangeCertificate -FriendlyName "Contoso Exchange Certificate" -SubjectNam
 
 To verify that you have successfully created an Exchange self-signed certificate, perform either of the following steps:
   
-- In the EAC at **Servers** > **Certificates**, verify the server where you created the self-signed certificate is selected. The certificate should be in the list of certificates with the **Status** value **Valid**.
+- In the EAC at **Servers** \> **Certificates**, verify the server where you created the self-signed certificate is selected. The certificate should be in the list of certificates with the **Status** value **Valid**.
     
 - In the Exchange Management Shell on the server where you created the self-signed certificate, run the following command and verify the properties:
     

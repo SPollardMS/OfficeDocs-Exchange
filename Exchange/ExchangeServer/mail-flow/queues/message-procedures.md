@@ -3,18 +3,18 @@ title: "Procedures for messages in queues"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 83358884-6036-4e91-87a8-35200541874d
-description: "Learn how to remove, suspend, resume, and redirect messages in queues in Exchange 2016."
+description: "Summary: Learn how to remove, suspend, resume, and redirect messages in queues in Exchange 2016."
 ---
 
 # Procedures for messages in queues
 
-Learn how to remove, suspend, resume, and redirect messages in queues in Exchange 2016.
+ **Summary**: Learn how to remove, suspend, resume, and redirect messages in queues in Exchange 2016.
   
 In Exchange Server 2016, you can use the Queue Viewer in the Exchange Toolbox or the Exchange Management Shell to manage messages in queues. For more information about messages in queues, see [Message properties](queues.md#MessageProperties).
   
@@ -36,7 +36,7 @@ For information about exporting messages from queues, see [Export messages from 
     
 - To find and open the Exchange Toolbox, use one of the following procedures:
     
-  - **Windows 10 **: Click **Start** > **All Apps** > **MicrosoftExchange Server 2016 \>** **Exchange Toolbox**.
+  - **Windows 10 **: Click **Start** \> **All Apps** \> **MicrosoftExchange Server 2016 \>** **Exchange Toolbox**.
     
   - **Windows Server 2012 R2 or Windows 8.1**: On the Start screen, open the Apps view by clicking the down arrow near the lower-left corner or swiping up from the middle of the screen. The **Exchange Toolbox** shortcut is in a group named **MicrosoftExchange Server 2016**.
     

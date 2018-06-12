@@ -3,7 +3,7 @@ title: "Plan Exchange 2016 integration with SharePoint and Skype for Business"
 ms.author: dmaguire
 author: msdmaguire
 manager: scotv
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: End User
 ms.topic: article
 ms.prod: office-online-server
@@ -58,7 +58,7 @@ For more details on eDiscovery see the following topics:
     
 - [Configure eDiscovery in SharePoint 2013](https://go.microsoft.com/fwlink/p/?linkid=257727)
     
-- [What's new in eDiscovery in SharePoint Server 2013](https://go.microsoft.com/fwlink/?LinkId=275091)
+- [What's new in eDiscovery in SharePoint Server 2013](https://go.microsoft.com/fwlink/p/?linkId=275091)
     
 - [Configure Exchange for SharePoint eDiscovery Center](http://technet.microsoft.com/library/795c1a3b-295c-4ee5-ade9-52cf3fda3f19.aspx)
     
@@ -85,11 +85,11 @@ The OAuth protocol is used by many web sites and web services to let clients acc
   
 There are two configuration objects used for OAuth andExchange 2016 partner applications: AuthConfig and the partner application configuration.
   
-- **AuthConfig** Exchange 2016 Setup creates AuthConfig to publish the auth metadata. You only need to manage AuthConfig to provision a new certificate when the existing certificate is close to expiration. When this happens, you can renew the existing certificate and configure the new certificate as the next certificate in the AuthConfig along with its effective date. 
+- **AuthConfig**: Exchange 2016 Setup creates AuthConfig to publish the auth metadata. You only need to manage AuthConfig to provision a new certificate when the existing certificate is close to expiration. When this happens, you can renew the existing certificate and configure the new certificate as the next certificate in the AuthConfig along with its effective date.
     
     Exchange 2016 Setup creates a self-signed certificate with the friendly name Microsoft Exchange Server Auth Certificate and replicates the certificate to all front-end servers in the Exchange organization. The certificate's thumbprint is specified in the authorization configuration for Exchange 2016, along with its service name, which is a well-known GUID that represents on-premises Exchange 2016. Exchange uses the authorization configuration to publish its auth metadata document.
     
-- **Partner applications** You enable partner applications by creating a partner application configuration to request access tokens from Exchange. Exchange 2016 provides the  `Configure-EnterprisePartnerApplication.ps1` script that lets you quickly and easily create partner application configurations and minimize configuration errors. 
+- **Partner applications**: You enable partner applications by creating a partner application configuration to request access tokens from Exchange. Exchange 2016 provides the  `Configure-EnterprisePartnerApplication.ps1` script that lets you quickly and easily create partner application configurations and minimize configuration errors. 
     
     When Exchange 2016 receives an access request from a partner application via Exchange Web Services (EWS), the following events take place.
     
@@ -101,7 +101,7 @@ There are two configuration objects used for OAuth andExchange 2016 partner appl
     
     For example, if a user performs an eDiscovery search using the eDiscovery Center in SharePoint 2016, Exchange checks whether the user is a member of the Discovery Management role group or has the Mailbox Search role assigned and the mailboxes being searched are within the scope of the RBAC role assignment. For more details, see [Permissions](../../permissions/permissions.md).
     
-In on-premises deployments, Exchange 2016, SharePoint Server 2016, and Skype for Business Server 2015 do not require an authorization server to issue tokens. Each application issues self-signed tokens to access the resources provided by other applications. The application that provides access to resources, for example Exchange 2016, trusts the self-signed tokens presented by the calling application. Trust is established by creating a partner application configuration for the calling application, which includes the calling application's ApplicationID, certificate, and AuthMetadataUrl. Exchange 2016, SharePoint 2016, and Skype for Business publish their auth metadata document in a well-known URL. 
+In on-premises deployments, Exchange 2016, SharePoint Server 2016, and Skype for Business Server 2015 do not require an authorization server to issue tokens. Each application issues self-signed tokens to access the resources provided by other applications. The application that provides access to resources, for example Exchange 2016, trusts the self-signed tokens presented by the calling application. Trust is established by creating a  *partner application*  configuration for the calling application, which includes the calling application's ApplicationID, certificate, and AuthMetadataUrl. Exchange 2016, SharePoint 2016, and Skype for Business publish their auth metadata document in a well-known URL. 
   
 **Auth metadata URLs**
 
@@ -117,7 +117,7 @@ In hybrid deployments, you need to configure OAuth authorization protocol betwee
   
 Certain Exchange 2016 features are only fully available across your organization by using the new OAuth protocol. For example, before you can use In-Place eDiscovery to search on-premises and cloud-based mailboxes in an Exchange hybrid organization, you need to configure OAuth authentication between your Exchange on-premises and Exchange Online organizations. The Hybrid Configuration Wizard doesn't manage the OAuth authorization connection. For more information, see [Configure OAuth Authentication Between Exchange and Exchange Online Organizations](http://technet.microsoft.com/library/f703e153-98e2-4268-8a6e-07a86b0a1d22.aspx).
   
-In online deployments, Exchange Online, SharePoint Online and Skype for Business Online need to be configured for a modern authentication connection. Modern authentication brings Active Directory Authentication Library (ADAL)-based sign in to Office 2013 Windows clients. Office 2013 client applications sign in to the Office 365 service to gain access to Exchange Online, SharePoint Online and Skype for Business Online. We recommend that you enable Exchange Online for modern authentication when enabling modern authentication for Skype for Business. Modern authentication is enabled by default in SharePoint Online. For more information, see [Enable Exchange Online for modern authentication](https://go.microsoft.com/fwlink/?linkid=846120).
+In online deployments, Exchange Online, SharePoint Online and Skype for Business Online need to be configured for a modern authentication connection. Modern authentication brings Active Directory Authentication Library (ADAL)-based sign in to Office 2013 Windows clients. Office 2013 client applications sign in to the Office 365 service to gain access to Exchange Online, SharePoint Online and Skype for Business Online. We recommend that you enable Exchange Online for modern authentication when enabling modern authentication for Skype for Business. Modern authentication is enabled by default in SharePoint Online. For more information, see [Enable Exchange Online for modern authentication](https://go.microsoft.com/fwlink/p/?linkId=846120).
   
 The per service default state of modern authentication is:
   
@@ -141,12 +141,12 @@ You can provision and manage site mailboxes from SharePoint Server 2016UNRESOLVE
   
 - [Site Mailboxes](http://technet.microsoft.com/library/2c4393f4-d274-4e6c-bd09-9577e68c5a33.aspx)
     
-- [Configure email integration for a SharePoint Server 2016 farm](https://technet.microsoft.com/EN-US/library/ee956941%28v=office.16%29.aspx)
+- [Configure email integration for a SharePoint Server 2016 farm](https://technet.microsoft.com/library/ee956941%28v=office.16%29.aspx)
     
 ## Manage access to unified contact store
 <a name="BKMK_OAuth"> </a>
 
-The unified contact store (UCS) feature provides a consistent contact experience across Office products. This feature lets users store all contact information in their Exchange 2016 mailbox so that the same contact information is available globally across Skype for Business, SharePoint, Exchange, Outlook and Outlook on the web. When you deploy aSkype for Business Server and publish the topology, UCS is enabled for all users by default and no additional action is needed. For more information, see [Configure Skype for Business Server 2015 to use the unified contact store](https://technet.microsoft.com/en-us/library/jj688083.aspx).
+The unified contact store (UCS) feature provides a consistent contact experience across Office products. This feature lets users store all contact information in their Exchange 2016 mailbox so that the same contact information is available globally across Skype for Business, SharePoint, Exchange, Outlook and Outlook on the web. When you deploy aSkype for Business Server and publish the topology, UCS is enabled for all users by default and no additional action is needed. For more information, see [Configure Skype for Business Server 2015 to use the unified contact store](https://technet.microsoft.com/library/jj688083.aspx).
   
 A user's contacts are automatically migrated to the Exchange 2016 server when the user:
   

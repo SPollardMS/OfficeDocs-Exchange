@@ -3,20 +3,20 @@ title: "Customize the Outlook on the web sign-in, language selection, and error 
 ms.author: chrisda
 author: chrisda
 manager: scotv
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: d8d9f735-7181-428f-9049-b9886dce5159
-description: "Learn how to customize the color and images of the sign-in, language selection, and error pages for Outlook on the web in Exchange 2016."
+description: "Summary: Learn how to customize the color and images of the sign-in, language selection, and error pages for Outlook on the web in Exchange 2016."
 ---
 
 # Customize the Outlook on the web sign-in, language selection, and error pages in Exchange 2016
 
-Learn how to customize the color and images of the sign-in, language selection, and error pages for Outlook on the web in Exchange 2016.
+ **Summary**: Learn how to customize the color and images of the sign-in, language selection, and error pages for Outlook on the web in Exchange 2016.
   
-The Outlook on the web sign-in, language selection, and error pages are based on image and content style sheet (CSS) files in the themes resources folder in the Client Access (front end) services on an Exchange Server 2016 server. Outlook on the web uses only one set of sign-in, language selection, and error pages for all themes. Any modifications to those pages will be seen by all users who connect to the Exchange server for Outlook on the web.
+The Outlook on the web (formerly known as Outlook Web App) sign-in, language selection, and error pages are based on image and content style sheet (CSS) files in the themes resources folder in the Client Access (front end) services on an Exchange Server 2016 server. Outlook on the web uses only one set of sign-in, language selection, and error pages for all themes. Any modifications to those pages will be seen by all users who connect to the Exchange server for Outlook on the web.
   
  **Notes**:
   
@@ -34,7 +34,7 @@ For more information about Outlook on the web, see [Outlook on the web in Exchan
     
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Graphics editor" entry under "Outlook on the web Permissions" in the [Clients and mobile devices permissions](../../permissions/feature-permissions/client-and-mobile-device-permissions.md) topic. 
     
-- To replace the existing color with a new color, you need the HTML RGB value of the new color. You can find HTML RGB values in the topic [Color Table](http://go.microsoft.com/fwlink/p/?LinkId=280679). If you can't find the color there, you can use an image editing tool to sample a color and determine its HTML RGB value.
+- To replace the existing color with a new color, you need the HTML RGB value of the new color. You can find HTML RGB values in the topic [Color Table](https://go.microsoft.com/fwlink/p/?LinkId=280679). If you can't find the color there, you can use an image editing tool to sample a color and determine its HTML RGB value.
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/eac-keyboard-shortcuts.md).
     

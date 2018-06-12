@@ -3,7 +3,7 @@ title: "Messaging policy and compliance in Exchange 2016"
 ms.author: serdars
 author: SerdarSoysal
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: hub-page
 ms.prod: office-online-server
@@ -24,7 +24,7 @@ The following table provides an overview of the messaging policy and compliance 
   
 |**Feature**|**Description**|**Resources**|
 |:-----|:-----|:-----|
-|In-Place Archiving  <br/> |In-Place Archiving helps you regain control of your organization's messaging data by eliminating the need for personal store (.pst) files and allowing users to store messages in an archive mailbox accessible in Outlook 2010 and later and Outlook on the web.  <br/> |[In-Place Archiving in Exchange 2016](in-place-archiving/in-place-archiving.md) <br/> |
+|In-Place Archiving  <br/> | *In-Place Archiving*  helps you regain control of your organization's messaging data by eliminating the need for personal store (.pst) files and allowing users to store messages in an  *archive mailbox*  accessible in Outlook 2010 and later and Outlook on the web.  <br/> |[In-Place Archiving in Exchange 2016](in-place-archiving/in-place-archiving.md) <br/> |
 |In-Place Hold and Litigation Hold  <br/> |When a reasonable expectation of litigation exists, organizations are required to preserve electronically stored information, including email that's relevant to the case. In-Place Hold allows you to search and preserve messages matching query parameters. Litigation Hold only allows you to place all items in a mailbox on hold. For both types of holds, messages are protected from permanent deletion, modification, and tampering and can be preserved indefinitely or for a specified period.  <br/> |[In-Place Hold and Litigation Hold in Exchange 2016](holds/holds.md) <br/> |
 |In-Place eDiscovery  <br/> |In-Place eDiscovery allows you to search mailbox data across your Exchange organization, preview search results, copy search results to a Discovery mailbox, or export the results to a PST file  <br/> |[In-Place eDiscovery in Exchange 2016](ediscovery/ediscovery.md) <br/> |
 |Administrator audit logging  <br/> |Administrator audit logs enable you to keep a log of changes made by administrators to Exchange server and organization configuration and to Exchange recipients. You might use administrator audit logging as part of your change control process or to track changes and access to configuration and recipients for compliance purposes.  <br/> |[Administrator audit logging in Exchange 2016](admin-audit-logging/admin-audit-logging.md) <br/> |

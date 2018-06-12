@@ -3,18 +3,18 @@ title: "Address rewriting procedures on Edge Transport servers"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 323a0b55-f921-425d-b1b0-18ad0fac315c
-description: "Learn how to configure address rewriting on an Edge Transport server in Exchange 2016, and how to verify the address rewriting configuration."
+description: "Summary: Learn how to configure address rewriting on an Edge Transport server in Exchange 2016, and how to verify the address rewriting configuration."
 ---
 
 # Address rewriting procedures on Edge Transport servers
 
-Learn how to configure address rewriting on an Edge Transport server in Exchange 2016, and how to verify the address rewriting configuration.
+ **Summary**: Learn how to configure address rewriting on an Edge Transport server in Exchange 2016, and how to verify the address rewriting configuration.
   
 You can create address rewrite entries on Edge Transport servers that apply to a single recipient, a specific domain or subdomain, or multiple subdomains. Address rewriting can be outbound only, or inbound and outbound (bidirectional). When you create address rewrite entries, remember the following:
   
@@ -22,7 +22,7 @@ You can create address rewrite entries on Edge Transport servers that apply to a
     
 - Only literal strings are supported in the email address values.
     
-- The wildcard character (*) is supported only in the internal address (the addresses you want to change). Valid syntax for using the wildcard character is **\*.contoso.com**. The values **\*contoso.com** or **sales.\*.com** are not allowed. 
+- The wildcard character (\*) is supported only in the internal address (the addresses you want to change). Valid syntax for using the wildcard character is **\*.contoso.com**. The values **\*contoso.com** or **sales.\*.com** are not allowed. 
     
 - When you use the wildcard character, you need to configure the address rewriting as outbound only (you need to set the  _OutboundOnly_ parameter to the value  `$true`), and outbound only address rewriting requires that you configure the rewritten email address as a proxy address on the affected recipients.
     

@@ -3,19 +3,19 @@ title: "Configure certificate based authentication in Exchange 2016"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 4/11/2017
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.collection: Strat_EX_Admin
 ms.assetid: 158fb77e-e238-4c22-9d85-a8c3109f78ec
-description: "Learn how to configure Exchange 2016 CU1 or later to use certificate based authentication for Outlook on the web and ActiveSync."
+description: "Summary: Learn how to configure Exchange 2016 CU1 or later to use certificate based authentication for Outlook on the web and ActiveSync."
 ---
 
 # Configure certificate based authentication in Exchange 2016
 
-Learn how to configure Exchange 2016 CU1 or later to use certificate based authentication for Outlook on the web and ActiveSync.
+ **Summary**: Learn how to configure Exchange 2016 CU1 or later to use certificate based authentication for Outlook on the web and ActiveSync.
   
 Certificate based authentication (CBA) in Exchange allows Outlook on the web (formerly known as Outlook Web App) and Exchange ActiveSync clients to be authenticated by client certificates instead of entering a user name and password.
   
@@ -134,7 +134,7 @@ After you require client certificates for authentication, you need to disable al
     
 3.  In the **Management** section, double-click **Configuration Editor**.
     
-4. On the **Configuration Editor** page, click the drop down on **Section**, and navigate to **system.webServer** > **security** > **authentication** > **clientCertificateMappingAuthentication**.
+4. On the **Configuration Editor** page, click the drop down on **Section**, and navigate to **system.webServer** \> **security** \> **authentication** \> **clientCertificateMappingAuthentication**.
     ![Select clientCertificateMappingAuthentication in Configuration Manager in IIS for the owa virtual directory](../../media/fc0266d4-fe7b-4415-9880-733603190b09.png)
   
 5. Set the **enabled** value to **True**, and in the **Actions** pane, click **Apply**.
@@ -144,7 +144,7 @@ After you require client certificates for authentication, you need to disable al
     
 7.  In the **Management** section, double-click **Configuration Editor**.
     
-8. On the **Configuration Editor** page, click the drop down on **Section**, and navigate to **system.webServer** > **security** > **authentication** > **clientCertificateMappingAuthentication**.
+8. On the **Configuration Editor** page, click the drop down on **Section**, and navigate to **system.webServer** \> **security** \> **authentication** \> **clientCertificateMappingAuthentication**.
     
 9. Set the **enabled** value to **True**, and in the **Actions** pane, click **Apply**.
     
@@ -182,7 +182,7 @@ If your clients receive errors, you might need to increase the **uploadReadAhead
     
 3.  In the **Management** section, double-click **Configuration Editor**.
     
-4. On the **Configuration Editor** page, click the drop down on **Section**, and navigate to **systemwebServer** > **serverRuntime**.
+4. On the **Configuration Editor** page, click the drop down on **Section**, and navigate to **systemwebServer** \> **serverRuntime**.
     ![Select serverRuntime in Configuration Editor in IIS for the owa virtual directory](../../media/3db4cef0-ae03-4c14-ad7e-4269ace1bdec.png)
   
 5. Set the **uploadReadAheadSize** value to 49152, and in the **Actions** pane, click **Apply**.
@@ -192,7 +192,7 @@ If your clients receive errors, you might need to increase the **uploadReadAhead
     
 7.  In the **Management** section, double-click **Configuration Editor**.
     
-8. On the **Configuration Editor** page, click the drop down on **Section**, and navigate to **systemwebServer** > **serverRuntime**.
+8. On the **Configuration Editor** page, click the drop down on **Section**, and navigate to **systemwebServer** \> **serverRuntime**.
     
 9. Set the **uploadReadAheadSize** value to 49152, and in the **Actions** pane, click **Apply**.
     

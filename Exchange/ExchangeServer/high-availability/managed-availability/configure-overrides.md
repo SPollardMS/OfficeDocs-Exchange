@@ -3,7 +3,7 @@ title: "Configure managed availability overrides"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 8/30/2016
+ms.date: 6/4/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
@@ -23,11 +23,13 @@ There are two types of overrides: local and global. As their names imply, a loca
 > [!NOTE]
 > When you create an override, it doesn't take effect immediately. The Microsoft Exchange Health Management service checks for configuration changes every 10 minutes and loads any detected configuration changes. If you don't want to wait, you can restart the service. 
   
-For additional management tasks related to managed availability, see [Manage health sets and server health](health-sets.md).
+To learn more about managed availability, see [Managed availability](managed-availability.md). For additional management tasks related to managed availability, see [Manage health sets and server health](health-sets.md).
   
 ## What do you need to know before you begin?
 
 - Estimated time to complete each procedure: 5 minutes
+    
+- The procedures in this topic require the Exchange Management Shell. To open the Exchange Management Shell, see [Open the Exchange Management Shell](http://technet.microsoft.com/library/63976059-25f8-4b4f-b597-633e78b803c0.aspx).
     
 - You can only use PowerShell to perform this procedure. To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
     
@@ -36,11 +38,9 @@ For additional management tasks related to managed availability, see [Manage hea
 > [!TIP]
 > Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
   
-## What do you want to do?
+## Use the Exchange Management Shell to create local overrides
 
-### Use the Exchange Management Shell to create local overrides
-
-To create a local override for a specific duration, use the following syntax.
+To create a local override for a specific duration, use the following syntax:
   
 ```
 Add-ServerMonitoringOverride -Server <ServerName> -Identity <HealthSetName>\<MonitoringItemName>[\<TargetResource>] -ItemType <Probe | Monitor | Responder | Maintenance> -PropertyName <PropertyName> -PropertyValue <Value> -Duration <dd.hh:mm:ss>
@@ -61,7 +61,7 @@ This example adds a local override that disables the responder  `ActiveDirectory
 Add-ServerMonitoringOverride -Server EXCH03 -Identity "AD\ActiveDirectoryConnectivityConfigDCServerReboot" -ItemType Responder -PropertyName Enabled -PropertyValue 0 -Duration 20.00:00:00
 ```
 
-#### How do you know this worked?
+### How do you know this worked?
 
 To verify that you have successfully created a local override, use the **Get-ServerMonitoringOverride** cmdlet to view the list of local overrides: 
   
@@ -71,7 +71,7 @@ Get-ServerMonitoringOverride  -Server <ServerIdentity> | Format-List
 
 The override should appear in the list.
   
-### Use the Exchange Management Shell to remove local overrides
+## Use the Exchange Management Shell to remove local overrides
 
 To remove a local override, use the following syntax.
   
@@ -85,7 +85,7 @@ This example removes the existing local override of the  `ActiveDirectoryConnect
 Remove-ServerMonitoringOverride -Server EXCH01 -Identity Exchange\ActiveDirectoryConnectivityConfigDCServerReboot -ItemType Responder -PropertyName Enabled
 ```
 
-#### How do you know this worked?
+### How do you know this worked?
 
 To verify that you have successfully removed a local override, use the **Get-ServerMonitoringOverride** cmdlet to view the list of local overrides: 
   
@@ -95,7 +95,7 @@ Get-ServerMonitoringOverride  -Server <ServerIdentity> | Format-List
 
 The removed override should not appear in the list.
   
-### Use the Exchange Management Shell to create global overrides
+## Use the Exchange Management Shell to create global overrides
 
 To create a global override for a specific duration, use the following syntax.
   
@@ -122,10 +122,9 @@ This example adds a global override that disables the  `StorageLogicalDriveSpace
   
 ```
 Add-GlobalMonitoringOverride -Identity "MailboxSpace\StorageLogicalDriveSpaceEscalate" -PropertyName Enabled -PropertyValue 0 -ItemType Responder -ApplyVersion "15.01.0225.042"
-
 ```
 
-#### How do you know this worked?
+### How do you know this worked?
 
 To verify that you have successfully created a global override, use the **Get-GlobalMonitoringOverride** cmdlet to view the list of global overrides: 
   
@@ -135,7 +134,7 @@ Get-GlobalMonitoringOverride
 
 The override should appear in the list.
   
-### Use the Exchange Management Shell to remove global overrides
+## Use the Exchange Management Shell to remove global overrides
 
 To remove a global override, use the following syntax.
   
@@ -147,10 +146,9 @@ This example removes the existing global override of the  `ExtensionAttributes` 
   
 ```
 Remove-GlobalMonitoringOverride -Identity FrontEndTransport\OnPremisesInboundProxy -ItemType Probe -PropertyName ExtensionAttributes
-
 ```
 
-#### How do you know this worked?
+### How do you know this worked?
 
 To verify that you have successfully removed a global override, use the **Get-GlobalMonitoringOverride** cmdlet to view the list of global overrides: 
   

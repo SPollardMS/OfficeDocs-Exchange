@@ -3,19 +3,19 @@ title: "Install Exchange 2016 using unattended mode"
 ms.author: dstrome
 author: dstrome
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: get-started-article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.collection: Strat_EX_Admin
 ms.assetid: 386465e9-41da-4e26-9816-b3b69be1f8bf
-description: "How to perform an unattended setup of Exchange Server 2016 from the command line."
+description: "Summary: Learn how to perform an unattended setup of Exchange Server 2016 from the command line."
 ---
 
 # Install Exchange 2016 using unattended mode
 
-How to perform an unattended setup of Exchange Server 2016 from the command line.
+ **Summary**: Learn how to perform an unattended setup of Exchange Server 2016 from the command line.
   
 For more information about planning for Exchange 2016, see [Planning and deployment](../../plan-and-deploy/plan-and-deploy.md).
   

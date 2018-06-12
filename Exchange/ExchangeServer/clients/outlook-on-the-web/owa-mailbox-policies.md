@@ -3,7 +3,7 @@ title: "View or configure Outlook on the web mailbox policy properties"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
@@ -22,6 +22,8 @@ You can configure mailbox policies in Exchange 2016 for Outlook on the web throu
 
 - Estimated time to complete each procedure: 3 minutes.
     
+- To open the EAC, see [Exchange admin center in Exchange 2016](../../architecture/client-access/exchange-admin-center.md). To open the Exchange Management Shell, see [Open the Exchange Management Shell](http://technet.microsoft.com/library/63976059-25f8-4b4f-b597-633e78b803c0.aspx).
+    
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Outlook on the web mailbox policies" entry in the [Clients and mobile devices permissions](../../permissions/feature-permissions/client-and-mobile-device-permissions.md) topic. 
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/eac-keyboard-shortcuts.md).
@@ -29,11 +31,9 @@ You can configure mailbox policies in Exchange 2016 for Outlook on the web throu
 > [!TIP]
 > Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).. 
   
-## What do you want to do?
+## Use the EAC to view or configure Outlook on the web mailbox policies
 
-### Use the EAC to view or configure Outlook on the web mailbox policies
-
-1. In the EAC, click **Permissions** > **Outlook Web App policies**.
+1. In the EAC, click **Permissions** \> **Outlook Web App policies**.
     
 2. In the result pane, click to select the mailbox policy you want to view or configure.
     
@@ -53,27 +53,17 @@ You can configure mailbox policies in Exchange 2016 for Outlook on the web throu
     
     File access can be controlled based on whether a user has signed in on a public or private computer. The option for users to select private computer access or public computer access is available only when you're using forms-based authentication. All other forms of authentication default to private computer access.
     
-  - **Direct file access** Select this check box if you want to enable direct file access. Direct file access lets users open files attached to email messages. 
+  - **Direct file access**: Select this check box if you want to enable direct file access. Direct file access lets users open files attached to email messages.
     
-  - ** WebReady Document Viewing ** Select this check box if you want to enable supported documents to be converted to HTML and displayed in a web browser. 
+  - ** WebReady Document Viewing **: Select this check box if you want to enable supported documents to be converted to HTML and displayed in a web browser.
     
-  - **Force WebReady Document Viewing when a converter is available** Select this check box if you want to force documents to be converted to HTML and displayed in a web browser before users can open them in the viewing application. Documents can be opened in the viewing application only if direct file access has been enabled. 
+  - **Force WebReady Document Viewing when a converter is available**: Select this check box if you want to force documents to be converted to HTML and displayed in a web browser before users can open them in the viewing application. Documents can be opened in the viewing application only if direct file access has been enabled.
     
 7. On the **Offline access** tab, use the option buttons to configure offline access availability. 
     
 8. Click **Save** to update the policy. 
     
-### Use the Exchange Management Shell to configure Outlook on the web mailbox policies
-
-This example enables calendar access in the default mailbox policy.
-  
-```
-Set-OwaMailboxPolicy -Identity Default -CalendarEnabled $true
-```
-
-For more information about syntax and parameters, see [Set-OwaMailboxPolicy](http://technet.microsoft.com/library/530166f7-ab42-4609-ba73-9b5a39b567be.aspx).
-  
-### Use the Exchange Management Shell to view Outlook on the web mailbox policies
+## Use the Exchange Management Shell to view Outlook on the web mailbox policies
 
 This example retrieves the properties of the Outlook on the web mailbox policy  `Executives` in the organization  `Fabrikam`.
   
@@ -83,11 +73,21 @@ Get-OwaMailboxPolicy -Identity Fabrikam\Executives
 
 For more information about syntax and parameters, see [Get-OwaMailboxPolicy](http://technet.microsoft.com/library/bdd580d3-8812-4b4a-93e8-c6401b0d2f0f.aspx).
   
-## How do you know this worked?
+## Use the Exchange Management Shell to configure Outlook on the web mailbox policies
+
+This example enables calendar access in the default mailbox policy.
+  
+```
+Set-OwaMailboxPolicy -Identity Default -CalendarEnabled $true
+```
+
+For more information about syntax and parameters, see [Set-OwaMailboxPolicy](http://technet.microsoft.com/library/530166f7-ab42-4609-ba73-9b5a39b567be.aspx).
+  
+### How do you know this worked?
 
 To verify that you've successfully edited an Outlook on the web mailbox policy:
   
-1. In the EAC, click **Permissions** > **Outlook Web App Policies**, and then choose a specific Outlook on the web mailbox policy.
+1. In the EAC, click **Permissions** \> **Outlook Web App Policies**, and then choose a specific Outlook on the web mailbox policy.
     
 2. Click **Edit** to view the properties of the mailbox policy. 
     

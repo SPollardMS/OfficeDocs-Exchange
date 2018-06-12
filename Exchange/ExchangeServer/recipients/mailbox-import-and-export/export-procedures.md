@@ -2,18 +2,18 @@
 title: "Procedures for mailbox exports to .pst files in Exchange 2016"
 ms.author: chrisda
 author: chrisda
-ms.date: 6/20/2017
+ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 8c578226-ce38-4f33-846a-9f47c0177def
-description: "Learn how administrators can view, create, modify, delete, suspend and resume requests to export mailboxes to .pst files in Exchange 2016."
+description: "Summary: Learn how administrators can view, create, modify, delete, suspend and resume requests to export mailboxes to .pst files in Exchange 2016."
 ---
 
 # Procedures for mailbox exports to .pst files in Exchange 2016
 
-Learn how administrators can view, create, modify, delete, suspend and resume requests to export mailboxes to .pst files in Exchange 2016.
+ **Summary**: Learn how administrators can view, create, modify, delete, suspend and resume requests to export mailboxes to .pst files in Exchange 2016.
   
 Mailbox export requests use the Microsoft Exchange Mailbox Replication service (MRS) to export the contents of mailboxes to .pst files. For more information, see [Mailbox imports and exports in Exchange 2016](mailbox-import-and-export.md).
   
@@ -51,7 +51,7 @@ This topic shows you how to:
 
 ### Use the EAC to create a mailbox export request
 
-1. In the EAC, go to **Recipients** > **Mailboxes** > click **More options**![More Options icon](../../media/ITPro_EAC_MoreOptionsIcon.png), and select **Export to a PST file**.
+1. In the EAC, go to **Recipients** \> **Mailboxes** \> click **More options**![More Options icon](../../media/ITPro_EAC_MoreOptionsIcon.png), and select **Export to a PST file**.
     ![In the EAC, select Recipients, Mailboxes, and then select More Options.](../../media/59554fa9-92e2-46c0-a171-f57927eac3c7.png)
   
 2. The **Export to a .pst file** wizard opens. On the first page, select the source mailbox, and then select one of these options: 
@@ -89,15 +89,15 @@ New-MailboxExportRequest  [-Name <UniqueName>] -Mailbox <TargetMailboxIdentity> 
 
 This example creates a new mailbox export request with these settings:
   
-- **Mailbox export request name** The default value  `MailboxExport` is used, because we aren't using the  _Name_ parameter. The unique identity of the mailbox export request is  `<MailboxIdentity>\MailboxExportX` (  _X_ is either not present, or has the value 0 to 9). 
+- **Mailbox export request name**: The default value  `MailboxExport` is used, because we aren't using the  _Name_ parameter. The unique identity of the mailbox export request is  `<MailboxIdentity>\MailboxExportX` (  _X_ is either not present, or has the value 0 to 9). 
     
-- **Source mailbox** Valeria Barrios 
+- **Source mailbox**: Valeria Barrios
     
-- **Target .pst file** \\SERVER01\PSTFiles\Vbarrios.pst 
+- **Target .pst file**: \\SERVER01\PSTFiles\Vbarrios.pst
     
-- **Content and folders** Content in all folder paths in the source mailbox is replicated in the target .pst file. 
+- **Content and folders**: Content in all folder paths in the source mailbox is replicated in the target .pst file.
     
-- **Priority** `Normal`, because we aren't using the  _Priority_ parameter. 
+- **Priority**:  `Normal`, because we aren't using the  _Priority_ parameter. 
     
 ```
 New-MailboxExportRequest -Mailbox "Valeria Barrios" -FilePath \\SERVER01\PSTFiles\Vbarrios.pst
@@ -105,15 +105,15 @@ New-MailboxExportRequest -Mailbox "Valeria Barrios" -FilePath \\SERVER01\PSTFile
 
 This example creates a new mailbox export request with these settings:
   
-- **Mailbox export request name** The custom name Kathleen Reiter Export is specified by the  _Name_ parameter. Specifying a custom name allows more than 10 mailbox export requests for the mailbox. The unique identity value of the mailbox export request is  `<MailboxIdentity>\<MailboxExportRequestName>` (for example,  `kreiter\Kathleen Reiter Export`).
+- **Mailbox export request name**: The custom name Kathleen Reiter Export is specified by the  _Name_ parameter. Specifying a custom name allows more than 10 mailbox export requests for the mailbox. The unique identity value of the mailbox export request is  `<MailboxIdentity>\<MailboxExportRequestName>` (for example,  `kreiter\Kathleen Reiter Export`).
     
-- **Source mailbox** The archive mailbox for Kathleen Reiter (Kathleen's primary mailbox alias is kreiter). 
+- **Source mailbox**: The archive mailbox for Kathleen Reiter (Kathleen's primary mailbox alias is kreiter).
     
-- **Target .pst file** \\SERVER01\PSTFiles\Archives\Kathleen Reiter.pst 
+- **Target .pst file**: \\SERVER01\PSTFiles\Archives\Kathleen Reiter.pst
     
-- **Content and folders** Only content in the Inbox folder of the mailbox is exported (regardless of the localized name of the folder). 
+- **Content and folders**: Only content in the Inbox folder of the mailbox is exported (regardless of the localized name of the folder).
     
-- **Priority** `High`
+- **Priority**:  `High`
     
 ```
 New-MailboxExportRequest -Name "Kathleen Reiter Export" -Mailbox kreiter -FilePath "\\SERVER01\PSTFiles\Kathleen Reiter.pst" -IsArchive -IncludeFolders "#Inbox#" -Priority Hight
@@ -145,15 +145,15 @@ To verify that you've successfully created a mailbox export request, do any of t
 
 By default, the **Get-MailboxExportRequest** cmdlet returns the name, source mailbox, and status of mailbox export requests. If you pipeline the command to the **Format-List** cmdlet, you'll only get a limited number of additional useful details: 
   
-- **FilePath** The target .pst file. 
+- **FilePath**: The target .pst file. 
     
-- **RequestGUID** The unique GUID value of the mailbox export request. 
+- **RequestGUID**: The unique GUID value of the mailbox export request. 
     
-- **RequestQueue** The mailbox database that the export request is being run on. 
+- **RequestQueue**: The mailbox database that the export request is being run on. 
     
-- **BatchName** The optional batch name for the mailbox export request. 
+- **BatchName**: The optional batch name for the mailbox export request. 
     
-- **Identity** The unique identity value of the mailbox export request (  _\<MailboxIdentity\>_\ _\<MailboxExportRequestName\>_).
+- **Identity**: The unique identity value of the mailbox export request (  _\<MailboxIdentity\>_\ _\<MailboxExportRequestName\>_).
     
 By default, the **Get-MailboxExportRequestStatistics** cmdlet returns the name, status, alias of the source mailbox, and the completion percentage of mailbox export requests. If you pipeline the command to the **Format-List** cmdlet, you'll see detailed information about the mailbox export request. 
   
@@ -313,9 +313,9 @@ You can remove fully or partially completed mailbox export requests.
     
 - By default, completed mailbox export request are removed after 30 days (you can override this value with the  _CompletedRequestAgeLimit_ parameter), and failed requests aren't automatically removed. But, if you use the  _RequestExpiryInterval_ parameter when you create or modify a mailbox export request, these results are available: 
     
-  - ** _RequestExpiryInterval_ with a timespan value ** Completed and failed requests are automatically removed after the specified timespan. 
+  - ** _RequestExpiryInterval_ with a timespan value **: Completed and failed requests are automatically removed after the specified timespan.
     
-  - ** _RequestExpiryInterval_ with the value  `unlimited`** Completed and failed requests aren't automatically removed. 
+  - ** _RequestExpiryInterval_ with the value  `unlimited`**: Completed and failed requests aren't automatically removed.
     
 This example removes the mailbox export request named MailboxExport for Akia Al-Zuhairi's mailbox.
   

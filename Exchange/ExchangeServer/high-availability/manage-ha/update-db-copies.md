@@ -3,20 +3,20 @@ title: "Update a mailbox database copy"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: bead3cc5-7d50-446f-95b7-e432bcb7968e
-description: "Summary: How to update, or seed, a mailbox database copy in Exchange 2016."
+description: "Summary: How to update, or seed , a mailbox database copy in Exchange 2016."
 ---
 
 # Update a mailbox database copy
 
- **Summary**: How to update, or seed, a mailbox database copy in Exchange 2016.
+ **Summary**: How to update, or  *seed*  , a mailbox database copy in Exchange 2016. 
   
-Updating, also known as seeding, is the process in which a copy of a mailbox database is added to another Mailbox server in a database availability group (DAG). The newly added copy becomes the baseline database for the passive copy into which log files copied from the active copy are replayed. Seeding is required under the following conditions:
+Updating, also known as  *seeding*  , is the process in which a copy of a mailbox database is added to another Mailbox server in a database availability group (DAG). The newly added copy becomes the baseline database for the passive copy into which log files copied from the active copy are replayed. Seeding is required under the following conditions: 
   
 - When a new passive copy of a database is created. Seeding can be postponed for a new mailbox database copy, but eventually each passive database copy must be seeded to function as a redundant database copy.
     
@@ -30,13 +30,13 @@ Updating, also known as seeding, is the process in which a copy of a mailbox dat
     
 You can perform seeding by using the following methods:
   
-- **Automatic seeding** An automatic seed produces a passive copy of the active database on the target Mailbox server. Automatic seeding occurs during the creation of a database. 
+- **Automatic seeding**: An automatic seed produces a passive copy of the active database on the target Mailbox server. Automatic seeding occurs during the creation of a database.
     
-- **Seeding using the Update-MailboxDatabaseCopy cmdlet** You can use the [Update-MailboxDatabaseCopy](http://technet.microsoft.com/library/37ebb66a-382e-4fd9-81f8-795f776a87b1.aspx) cmdlet in the Exchange Management Shell to seed a database copy at any time. 
+- **Seeding using the Update-MailboxDatabaseCopy cmdlet**: You can use the [Update-MailboxDatabaseCopy](http://technet.microsoft.com/library/37ebb66a-382e-4fd9-81f8-795f776a87b1.aspx) cmdlet in the Exchange Management Shell to seed a database copy at any time. 
     
-- **Seeding using the Update Mailbox Database Copy wizard** You can use the Update Mailbox Database Copy wizard in the EAC to seed a database copy at any time. 
+- **Seeding using the Update Mailbox Database Copy wizard**: You can use the Update Mailbox Database Copy wizard in the EAC to seed a database copy at any time.
     
-- **Manually copying the offline database** You can dismount the active copy of the database and copy the database file to the same location on another Mailbox server in the same DAG. If you use this method, there will be an interruption in service because the process requires you to dismount the database. 
+- **Manually copying the offline database**: You can dismount the active copy of the database and copy the database file to the same location on another Mailbox server in the same DAG. If you use this method, there will be an interruption in service because the process requires you to dismount the database.
     
 Updating a database copy can take a long time, especially if the database being copied is large, or if there is high network latency or low network bandwidth. After the seeding process has started, don't close the EAC or the Exchange Management Shell until the process has completed. If you do, the seeding operation will be terminated.
   
@@ -49,13 +49,15 @@ A database copy can be seeded using either the active copy or an up-to-date pass
 Multiple database copies can be seeded simultaneously. However, when seeding multiple copies simultaneously, you must seed only the database file, and omit the content index catalog. You can do this by using the  _DatabaseOnly_ parameter with the [Update-MailboxDatabaseCopy](http://technet.microsoft.com/library/37ebb66a-382e-4fd9-81f8-795f776a87b1.aspx) cmdlet. 
   
 > [!NOTE]
-> If you don't use the  _DatabaseOnly_ parameter when seeding multiple targets from the same source, the task will fail with SeedInProgressException error FE1C6491. 
+> If you don't use the  _DatabaseOnly_ parameter when seeding multiple targets from the same source, the task will fail with  `SeedInProgressException` error  `FE1C6491`. 
   
 Looking for other management tasks related to mailbox database copies? Check out [Managing mailbox database copies](http://technet.microsoft.com/library/06df16b4-f209-4d3a-8c68-0805c745f9b2.aspx).
   
 ## What do you need to know before you begin?
 
 - Estimated time to complete this task: 2 minutes, plus the time to seed the database copy, which depends on a variety of factors, such as the size of the database, the speed, available bandwidth and latency of the network, and storage speeds.
+    
+- To open the EAC, see [Exchange admin center in Exchange 2016](../../architecture/client-access/exchange-admin-center.md). To open the Exchange Management Shell, see [Open the Exchange Management Shell](http://technet.microsoft.com/library/63976059-25f8-4b4f-b597-633e78b803c0.aspx).
     
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Mailbox database copies" entry in the [High availability and site resilience permissions](../../permissions/feature-permissions/ha-permissions.md) topic. 
     
@@ -68,12 +70,12 @@ Looking for other management tasks related to mailbox database copies? Check out
 > [!TIP]
 > Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).. 
   
-## What do you want to do?
+## Update a mailbox database copy
 
 ### Use the EAC to update a mailbox database copy
 <a name="UseEMC"> </a>
 
-1. In the EAC, go to **Servers** > **Databases**.
+1. In the EAC, go to **Servers** \> **Databases**.
     
 2. Select the mailbox database whose passive copy you want to update.
     
@@ -112,7 +114,7 @@ This example shows how to seed the content index catalog for the copy of the dat
 Update-MailboxDatabaseCopy -Identity DB1\MBX1 -CatalogOnly
 ```
 
-### Manually copy an offline database
+## Manually copy an offline database
 <a name="Offline"> </a>
 
 1. If circular logging is enabled for the database, it must be disabled before proceeding. You can disable circular logging for a mailbox database by using the [Set-MailboxDatabase](http://technet.microsoft.com/library/a01edc66-bc10-4f65-9df4-432cb9e88f58.aspx) cmdlet, as shown in this example. 
@@ -150,10 +152,11 @@ Update-MailboxDatabaseCopy -Identity DB1\MBX1 -CatalogOnly
   ```
 
 ## How do you know this worked?
+<a name="Offline"> </a>
 
 To verify that you've successfully seeded a mailbox database copy, do one of the following:
   
-- In the EAC, navigate to **Servers** > **Databases**. Select the database that was seeded. In the Details pane, the status of the database copy and its content index are displayed, along with the current copy queue length.
+- In the EAC, navigate to **Servers** \> **Databases**. Select the database that was seeded. In the Details pane, the status of the database copy and its content index are displayed, along with the current copy queue length.
     
 - In the Exchange Management Shell, run the following command to verify the mailbox database copy was seeded successfully and is healthy.
     

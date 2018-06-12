@@ -3,18 +3,18 @@ title: "Message encoding options in Exchange 2016"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: c1d9edbb-d87c-41e5-881b-cd612d83d7e4
-description: "Learn about the options that are available for message encoding in Exchange 2016."
+description: "Summary: Learn about the options that are available for message encoding in Exchange 2016."
 ---
 
 # Message encoding options in Exchange 2016
 
-Learn about the options that are available for message encoding in Exchange 2016.
+ **Summary**: Learn about the options that are available for message encoding in Exchange 2016.
   
 The message encoding options in Exchange 2016 let you specify message characteristics such as MIME and non-MIME character sets, binary encoding, and attachment formats. You can specify message encoding options in the following locations:
   
@@ -48,9 +48,9 @@ When you configure message encoding options for a remote domain, the settings ar
 ||||
 |:-----|:-----|:-----|
 |**Setting** <br/> |**EAC configuration** <br/> |**Exchange Management Shell configuration** <br/> |
-|**MIME character set** The specified character set is only used for MIME messages that don't contain a character set. This setting won't overwrite character sets that are already specified in outgoing messages.  <br/> **Non-MIME character set** This setting is used if either of these conditions are true:  <br/>  Incoming messages from a remote domain are missing the value of the  _charset=_ setting in the MIME **Content-Type:** header field.  <br/>  Outgoing messages to a remote domain are missing the value of the MIME character set.  <br/> |**Mail flow** > **Remote domains** > **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png), or select an existing remote domain, and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png) > **Supported character set** section.  <br/> |Cmdlet: **Set-RemoteDomain** <br/> Parameters:  _CharacterSet_ and  _NonMimeCharacterSet_ <br/> |
-|**Content type** Valid values are:  <br/>  `MimeHtmlText` All messages are converted to MIME messages that use HTML formatting, unless the original message is a text message. If the original message is a text message, the outgoing message will be a MIME message that uses text formatting. This is the default value.  <br/>  `MimeText` All messages are converted to MIME messages that use text formatting.  <br/>  `MimeHtml` All messages are converted to MIME messages that use HTML formatting.  <br/> |n/a  <br/> |Cmdlet: **Set-RemoteDomain** <br/> Parameter:  _ContentType_ <br/> |
-|**Line wrap size** You can specify the maximum number of characters that can exist on a single line of text in the body of the email message. Older email clients might prefer 78 characters per line.  <br/> |n/a  <br/> |Cmdlet: **Set-RemoteDomain** <br/> Parameter:  _LineWrapSize_ <br/>  The default value is  `Unlimited`, which means the email client is responsible for setting the line wrap size in new messages.  <br/> |
+|**MIME character set**: The specified character set is only used for MIME messages that don't contain a character set. This setting won't overwrite character sets that are already specified in outgoing messages.  <br/> **Non-MIME character set**: This setting is used if either of these conditions are true:  <br/> • Incoming messages from a remote domain are missing the value of the  _charset=_ setting in the MIME **Content-Type:** header field.  <br/> • Outgoing messages to a remote domain are missing the value of the MIME character set.  <br/> |**Mail flow** \> **Remote domains** \> **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png), or select an existing remote domain, and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png) \> **Supported character set** section.  <br/> |Cmdlet: **Set-RemoteDomain** <br/> Parameters:  _CharacterSet_ and  _NonMimeCharacterSet_ <br/> |
+|**Content type**: Valid values are:  <br/>  `MimeHtmlText`: All messages are converted to MIME messages that use HTML formatting, unless the original message is a text message. If the original message is a text message, the outgoing message will be a MIME message that uses text formatting. This is the default value.  <br/>  `MimeText`: All messages are converted to MIME messages that use text formatting.  <br/>  `MimeHtml`: All messages are converted to MIME messages that use HTML formatting.  <br/> |n/a  <br/> |Cmdlet: **Set-RemoteDomain** <br/> Parameter:  _ContentType_ <br/> |
+|**Line wrap size**: You can specify the maximum number of characters that can exist on a single line of text in the body of the email message. Older email clients might prefer 78 characters per line.  <br/> |n/a  <br/> |Cmdlet: **Set-RemoteDomain** <br/> Parameter:  _LineWrapSize_ <br/>  The default value is  `Unlimited`, which means the email client is responsible for setting the line wrap size in new messages.  <br/> |
    
 ## Mail contact and mail user settings
 <a name="Contacts"> </a>
@@ -65,15 +65,15 @@ When you configure message encoding options for a mail contact or a mail user, t
     
 The message encoding settings for mail contacts and mail users are described in this list:
   
-- ** *UsePreferMessageFormat*  parameter ** Specifies whether the message format settings for the mail contact or mail user override the corresponding settings for the remote domain. Valid values are: 
+- ** *UsePreferMessageFormat*  parameter **: Specifies whether the message format settings for the mail contact or mail user override the corresponding settings for the remote domain. Valid values are:
     
-  -  `$true` Messages sent to the Mail contact or mail user use the message format that's configured for the Mail contact or mail user. 
+  -  `$true`: Messages sent to the Mail contact or mail user use the message format that's configured for the Mail contact or mail user.
     
-  -  `$false` Messages sent to the Mail contact or mail user use the message format that's configured for the remote domain (the default remote domain or a specific remote domain) or configured by the message sender. This is the default value. 
+  -  `$false`: Messages sent to the Mail contact or mail user use the message format that's configured for the remote domain (the default remote domain or a specific remote domain) or configured by the message sender. This is the default value.
     
-- ** *MessageFormat*  parameter ** This parameter specifies the message format for messages sent to the mail contact or mail user. Valid values are  `Text` or  `Mime`, and the default value is  `Mime`.
+- ** *MessageFormat*  parameter **: This parameter specifies the message format for messages sent to the mail contact or mail user. Valid values are  `Text` or  `Mime`, and the default value is  `Mime`.
     
-- ** *MessageBodyFormat*  parameter ** This parameter specifies the message body format for messages sent to the mail contact or mail user. Valid values are  `Text`,  `Html`, or  `TextAndHtml`, and the default value is  `TextAndHtml`.
+- ** *MessageBodyFormat*  parameter **: This parameter specifies the message body format for messages sent to the mail contact or mail user. Valid values are  `Text`,  `Html`, or  `TextAndHtml`, and the default value is  `TextAndHtml`.
     
     The  _MessageFormat_ and  _MessageBodyFormat_ parameters are interdependent: 
     
@@ -81,7 +81,7 @@ The message encoding settings for mail contacts and mail users are described in 
     
   - If the  _MessageFormat_ value is  `Text`, the  _MessageBodyFormat_ value can only be  `Text`.
     
-- ** *MacAttachmentFormat*  parameter ** Specifies the message attachment format for Apple Macintosh operating system clients. Valid values are  `BinHex`,  `UuEncode`,  `AppleSingle`, or  `AppleDouble`, and the default value is  `BinHex`.
+- ** *MacAttachmentFormat*  parameter **: Specifies the message attachment format for Apple Macintosh operating system clients. Valid values are  `BinHex`,  `UuEncode`,  `AppleSingle`, or  `AppleDouble`, and the default value is  `BinHex`.
     
     The  _MessageFormat_ and  _MacAttachmentFormat_ parameters are interdependent: 
     
@@ -98,20 +98,20 @@ As a sender, you can specify the message encoding in Outlook by using any of the
     
 - Configure the message format to plain text or HTML as you're composing the message by using the **Format** area in the **Format Text** tab. 
     
-- Configure the message encoding options for messages sent to all external recipients. These options are called Internet message format options, and they only apply to remote recipients (not to recipients in the Exchange organization). 
+- Configure the message encoding options for messages sent to all external recipients. These options are called  *Internet message format*  options, and they only apply to remote recipients (not to recipients in the Exchange organization). 
     
-- Configure the message encoding options for messages sent to specific external recipients (Outlook 2010 or earlier). These options are called Internet recipient message format options, and they only apply to remote recipients in your Contacts folder (not to recipients in the Exchange organization). 
+- Configure the message encoding options for messages sent to specific external recipients (Outlook 2010 or earlier). These options are called  *Internet recipient message format*  options, and they only apply to remote recipients in your Contacts folder (not to recipients in the Exchange organization). 
     
 For instructions on configuring these settings in Outlook, see [Change the message format to HTML, Rich Text Format, or plain text](https://go.microsoft.com/fwlink/p/?linkid=397890).
   
-By default, Outlook uses automatic character set message encoding by scanning the whole text of the outgoing message to determine the appropriate encoding to use for the message. This setting applies to internal and external recipients. However, you can bypass the automatic selection and specify a preferred encoding for outgoing messages at **File** > **Options** > **Advanced** > **International options**.
+By default, Outlook uses automatic character set message encoding by scanning the whole text of the outgoing message to determine the appropriate encoding to use for the message. This setting applies to internal and external recipients. However, you can bypass the automatic selection and specify a preferred encoding for outgoing messages at **File** \> **Options** \> **Advanced** \> **International options**.
   
 ## Outlook on the web settings
 <a name="OutlookWebApp"> </a>
 
 As a sender, you can specify message encoding options in Outlook on the web by using either of these methods:
   
-- Configure the default message format as plain text or HTML in the **Message format** section at **Settings** > **Options** > **Mail** > **Layout**.
+- Configure the default message format as plain text or HTML in the **Message format** section at **Settings** \> **Options** \> **Mail** \> **Layout**.
     ![Options menu location in Outlook on the web](../../media/f1227a01-7f83-4af9-abf5-2c3dec6cf3d0.png)
   
 - Configure the message format to plain text or HTML as you're composing the message by clicking **More options**![More Options icon](../../media/ITPro_EAC_MoreOptionsIcon.png), and selecting **Switch to plain text** (if the current format is HTML) or **Switch to HTML** (if the current format is plain text). 
@@ -164,8 +164,8 @@ The following table describes the order of precedence from highest priority to l
 |Mail contact or mail user  <br/> |Message format  <br/> |Text  <br/> |
 |Mail contact or mail user  <br/> |Message body format  <br/> |Text  <br/> |
 |Mail contact or mail user  <br/> |Mac attachment format  <br/> | `BinHex` or UUEncode  <br/> |
-|Outlook 2010 or earlier  <br/> |Internet recipient message format (settings on a specific contact)  <br/> |Send plain text only  <br/> Open a contact in the Contacts folder > double-click the email address > click **View more options for interacting with this person** > select **Outlook properties**, In the **E-mail Properties** dialog that opens, select **Send Plain Text only** in the **Internet format** field.  <br/> |
-|Outlook  <br/> |Internet message format  <br/> | Plain text options for external messages at **File** > **Options** > **Mail** > **Message format**:  <br/> **Encode attachments in UUENCODE format when sending plain-text messages** (not selected by default)  <br/> **Automatically wrap text at nn characters** (the default value is 76).  <br/> |
+|Outlook 2010 or earlier  <br/> |Internet recipient message format (settings on a specific contact)  <br/> |Send plain text only  <br/> Open a contact in the Contacts folder \> double-click the email address \> click **View more options for interacting with this person** \> select **Outlook properties**, In the **E-mail Properties** dialog that opens, select **Send Plain Text only** in the **Internet format** field.  <br/> |
+|Outlook  <br/> |Internet message format  <br/> |Plain text options for external messages at **File** \> **Options** \> **Mail** \> **Message format**:  <br/> **Encode attachments in UUENCODE format when sending plain-text messages** (not selected by default)  <br/> **Automatically wrap text at nn characters** (the default value is 76).  <br/> |
 |Remote domain  <br/> |Line wrap size  <br/> |132 characters or less, or the value  `Unlimited`. The default value is  `Unlimited`.  <br/> |
    
 ### Order of precedence for MIME message encoding options

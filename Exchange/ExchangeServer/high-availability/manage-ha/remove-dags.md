@@ -3,7 +3,7 @@ title: "Remove a database availability group"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
@@ -35,7 +35,7 @@ Looking for other management tasks related to DAGs? Check out [Managing database
   
 ## Use the EAC to remove a database availability group
 
-1. Navigate to **Servers** > **Database availability groups**.
+1. Navigate to **Servers** \> **Database availability groups**.
     
 2. Select the DAG you want to remove and click **Delete**![Delete icon](../../media/ITPro_EAC_DeleteIcon.png).
     
@@ -53,7 +53,7 @@ Remove-DatabaseAvailabilityGroup -Identity DAG1
 
 To verify that you've successfully removed the DAG, do one of the following:
   
-- In the EAC, go to **Servers** > **Database Availability Groups**, and see if the DAG is still displayed.
+- In the EAC, go to **Servers** \> **Database Availability Groups**, and see if the DAG is still displayed.
     
 - In the Exchange Management Shell, run the following command to see if the DAG still exists:
     

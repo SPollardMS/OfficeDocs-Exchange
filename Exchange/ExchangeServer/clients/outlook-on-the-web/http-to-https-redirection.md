@@ -3,18 +3,18 @@ title: "Configure http to https redirection for Outlook on the web in Exchange 2
 ms.author: chrisda
 author: chrisda
 manager: scotv
-ms.date: 11/22/2016
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 5fb6a873-f3cf-4f82-87d1-2ff6e47a0080
-description: "Learn how to configure redirection for Outlook on the web in Exchange 2016 so http requests are automatically redirected to https."
+description: "Summary: Learn how to configure redirection for Outlook on the web in Exchange 2016 so http requests are automatically redirected to https."
 ---
 
 # Configure http to https redirection for Outlook on the web in Exchange 2016
 
-Learn how to configure redirection for Outlook on the web in Exchange 2016 so http requests are automatically redirected to https.
+ **Summary**: Learn how to configure redirection for Outlook on the web in Exchange 2016 so http requests are automatically redirected to https.
   
 By default in Exchange Server 2016, the URL https:// _\<ServerName\>_ redirects users to https://  _\<ServerName\>_/owa. But, if anyone tries to access Outlook on the web (formerly known as Outlook Web App) by using http:// _\<ServerName\>_ or http://  _\<ServerName\>_/owa, they'll get an error.
   
@@ -190,7 +190,7 @@ The default **Require SSL** and **HTTP Redirect** settings for the default websi
 |Default Web Site  <br/> |mapi  <br/> |yes  <br/> |none  <br/> |
 |Default Web Site  <br/> |Microsoft-Server-ActiveSync  <br/> |yes  <br/> |none  <br/> |
 |Default Web Site  <br/> |OAB  <br/> |yes  <br/> |none  <br/> |
-|Default Web Site  <br/> |owa  <br/> | yes  <br/>  Subdirectories:  <br/>  auth: yes  <br/>  Calendar: no  <br/>  Integrated: yes  <br/>  oma: yes  <br/> |none  <br/> |
+|Default Web Site  <br/> |owa  <br/> |yes  <br/> Subdirectories:  <br/> • auth: yes  <br/> • Calendar: no  <br/> • Integrated: yes  <br/> • oma: yes  <br/> |none  <br/> |
 |Default Web Site  <br/> |PowerShell  <br/> |no  <br/> |none  <br/> |
 |Default Web Site  <br/> |Rpc  <br/> |no  <br/> |none  <br/> |
    

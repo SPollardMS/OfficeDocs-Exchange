@@ -3,7 +3,7 @@ title: "Configure AutoReseed for a database availability group"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/4/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
@@ -27,6 +27,8 @@ For additional management tasks related to DAGs, see [Managing database availabi
 
 - Estimated time to complete this task: 10 minutes.
     
+- To open the Exchange Management Shell, see [Open the Exchange Management Shell](http://technet.microsoft.com/library/63976059-25f8-4b4f-b597-633e78b803c0.aspx).
+    
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Database availability groups" entry in the [High availability and site resilience permissions](../../permissions/feature-permissions/ha-permissions.md) topic. 
     
 - A single logical disk/partition per physical disk must be created.
@@ -38,9 +40,7 @@ For additional management tasks related to DAGs, see [Managing database availabi
 > [!TIP]
 > Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).. 
   
-## How do you do this?
-
-### Step 1: Configure the root paths for databases and volumes
+## Step 1: Configure the root paths for databases and volumes
 
 The first step involves configuring the root directories for the databases ( _AutoDagDatabasesRootFolderPath_) and volumes ( _AutoDagVolumesRootFolderPath_) used by the DAG. The defaults are C:\ExchangeDatabases, and C:\ExchangeVolumes, respectively. You can omit this step if you're using the default paths.
   
@@ -56,7 +56,7 @@ This example illustrates how to configure the root path for the storage volumes.
 Set-DatabaseAvailabilityGroup DAG1 -AutoDagVolumesRootFolderPath "C:\ExchVols"
 ```
 
-#### How do you know this step worked?
+### How do you know this step worked?
 
 To verify that you've successfully configured the root paths for databases and volumes, run the following command.
   
@@ -66,7 +66,7 @@ Get-DatabaseAvailabilityGroup DAG1 | Format-List *auto*
 
 The output for  _AutoDagDatabasesRootFolderPath_ and  _AutoDagVolumesRootFolderPath_ should reflect the configured paths. 
   
-### Step 2: Configure the number of databases per volume
+## Step 2: Configure the number of databases per volume
 
 Next, configure the number of databases per volume ( _AutoDagDatabaseCopiesPerVolume_) for the DAG.
   
@@ -76,7 +76,7 @@ This example illustrates how to configure this AutoReseed setting for a DAG conf
 Set-DatabaseAvailabilityGroup DAG1 -AutoDagDatabaseCopiesPerVolume 4
 ```
 
-#### How do you know this step worked?
+### How do you know this step worked?
 
 To verify that you've successfully configured the number of databases per volume, run the following command.
   
@@ -86,7 +86,7 @@ Get-DatabaseAvailabilityGroup DAG1 | Format-List *auto*
 
 The output for  _AutoDagDatabaseCopiesPerVolume_ should reflect the configured value. 
   
-### Step 3: Create the root directories for databases and volumes
+## Step 3: Create the root directories for databases and volumes
 
 Next, create the directories that correspond to the root directories you configured in Step 1. This example shows how to create the default directories using the command prompt.
   
@@ -95,7 +95,7 @@ md C:\ExchangeDatabases
 md C:\ExchangeVolumes
 ```
 
-#### How do you know this step worked?
+### How do you know this step worked?
 
 To verify that you've successfully configured the root directories for databases and volumes, run the following command.
   
@@ -105,7 +105,7 @@ Dir C:\
 
 The created directories should appear in the output list.
   
-### Step 4: Mount the volume folders
+## Step 4: Mount the volume folders
 
 For every volume that will be used for databases (including spare volumes), use the Windows Disk Management application (diskmgmt.msc) to mount each volume in a mounted folder under C:\ExchangeVolumes\. For example, if there are 2 volumes with databases and 1 spare volume, mount the volumes to the following mounted folders:
   
@@ -117,7 +117,7 @@ For every volume that will be used for databases (including spare volumes), use 
     
 The names of the mounted folders can be any folder name, as long as the folders are mounted under the root volume's path.
   
-#### How do you know this step worked?
+### How do you know this step worked?
 
 To verify that you've successfully mounted the volume folders, run the following command.
   
@@ -127,7 +127,7 @@ Dir C:\
 
 The mounted volumes should appear in the output list.
   
-### Step 5: Create the database folders
+## Step 5: Create the database folders
 
 Next, create the database directories under the root path C:\ExchangeDatabases. This example illustrates how to create directories for a storage configuration with 4 databases on each volume.
   
@@ -147,7 +147,7 @@ md c:\ExchangeDatabases\db003
 md c:\ExchangeDatabases\db004
 ```
 
-#### How do you know this step worked?
+### How do you know this step worked?
 
 To verify that you've successfully mounted the database folders, run the following command.
   
@@ -157,7 +157,7 @@ Dir C:\ExchangeDatabases
 
 The created directories should appear in the output list.
   
-### Step 6: Create the mount points for the databases
+## Step 6: Create the mount points for the databases
 
 Create the mount points for each database and link the mount point to the correct volume. For example, the mounted folder for db001 should be at C:\ExchangeDatabases\db001. You can use diskmgmt.msc or mountvol.exe to do this. This example illustrates how to mount db001 to C:\ExchangeDatabases\db001 using mountvol.exe.
   
@@ -165,7 +165,7 @@ Create the mount points for each database and link the mount point to the correc
 Mountvol.exe c:\ExchangeDatabases\db001 \\?\Volume (GUID)
 ```
 
-#### How do you know this step worked?
+### How do you know this step worked?
 
 To verify that you've successfully created the mount points for the database, run the following command.
   
@@ -175,13 +175,13 @@ Mountvol.exe C:\ExchangeDatabases\db001 /L
 
 The mounted volume should appear in the mount point list.
   
-### Step 7: Create the database directory structure
+## Step 7: Create the database directory structure
 
 Next, create two directories underneath the folders you created in Step 5, one for each database and one for each of the database's log stream that will be stored on the same volume. You must use the following format for your directory structure:
   
-C:\<  *DatabaseFolderName*  >\  *DatabaseName*  \<  *DatabaseName*  >.db 
+C:\\<  *DatabaseFolderName*  \>\  *DatabaseName*  \\<  *DatabaseName*  \>.db 
   
-C:\<  *DatabaseFolderName*  >\  *DatabaseName*  \<  *DatabaseName*  >.log 
+C:\\<  *DatabaseFolderName*  \>\  *DatabaseName*  \\<  *DatabaseName*  \>.log 
   
 This example illustrates how to create directories for 4 databases that will be stored on Volume 1:
   
@@ -219,7 +219,7 @@ md c:\ExchangeDatabases\db004\db004.log
 
 Repeat the preceding commands for databases on every volume.
   
-#### How do you know this step worked?
+### How do you know this step worked?
 
 To verify that you've successfully created the database directory structure, run the following command.
   
@@ -229,7 +229,7 @@ Dir C:\ExchangeDatabases /s
 
 The created directories should appear in the output list.
   
-### Step 8: Create databases
+## Step 8: Create databases
 
 Create databases with log and database paths configured with the appropriate folders. This example illustrates how to create a database that's stored in the newly created directory and mount point structure.
   
@@ -237,7 +237,7 @@ Create databases with log and database paths configured with the appropriate fol
 New-MailboxDatabase -Name db001 -Server MBX1 -LogFolderPath C:\ExchangeDatabases\db001\db001.log -EdbFilePath C:\ExchangeDatabases\db001\db001.db\db001.edb
 ```
 
-#### How do you know this step worked?
+### How do you know this step worked?
 
 To verify that you've successfully created databases in the appropriate folder, run the following command.
   

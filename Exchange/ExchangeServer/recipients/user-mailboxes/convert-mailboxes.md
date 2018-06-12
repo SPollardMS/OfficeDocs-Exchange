@@ -2,18 +2,18 @@
 title: "Convert a mailbox in Exchange 2016"
 ms.author: chrisda
 author: chrisda
-ms.date: 6/30/2017
+ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: dfed045e-a740-4a90-aff9-c58d53592f79
-description: "Learn about changing a mailbox from one type to another in Exchange 2016."
+description: "Summary: Learn about changing a mailbox from one type to another in Exchange 2016."
 ---
 
 # Convert a mailbox in Exchange 2016
 
-Learn about changing a mailbox from one type to another in Exchange 2016.
+ **Summary**: Learn about changing a mailbox from one type to another in Exchange 2016.
   
 In Exchange 2016, converting a mailbox from one type of mailbox to another is mostly unchanged from the experience in Exchange 2010. You still need to use the **Set-Mailbox** cmdlet in the Exchange Management Shell to do the conversion. 
   

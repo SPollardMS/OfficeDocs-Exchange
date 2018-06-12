@@ -3,18 +3,18 @@ title: "Delivery reports for administrators"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: overview
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: d98623d3-e0b7-4cb9-93fb-6351b4a06137
-description: "Learn how administrators can track delivery information about messages sent or received from any mailbox in the organization."
+description: "Summary: Learn how administrators can track delivery information about messages sent or received from any mailbox in the organization."
 ---
 
 # Delivery reports for administrators
 
-Learn how administrators can track delivery information about messages sent or received from any mailbox in the organization. 
+ **Summary**: Learn how administrators can track delivery information about messages sent or received from any mailbox in the organization.
   
 With delivery reports for administrators, you can track delivery information about messages sent by or received from any specific mailbox in your organization. Specifically, delivery reports for administrators uses the Exchange admin center (EAC) to perform a targeted search of the message tracking logs. The search is always scoped to a specific mailbox. You can search for messages sent by the mailbox, or sent to the mailbox, and you can filter the search results by the message subject.
   
@@ -34,7 +34,7 @@ After you create a delivery report search, the resulting delivery report will sh
 
 - Here's how administrators in on-premises Exchange organizations create delivery reports: [Track messages with delivery reports](track-messages-with-delivery-reports.md).
     
-- Ordinary users can use a targeted version of delivery reports to track their own messages. For more information, see [Delivery Reports for Users](http://go.microsoft.com/fwlink/p/?LinkId=279920).
+- Ordinary users can use a targeted version of delivery reports to track their own messages. For more information, see [Delivery Reports for Users](https://go.microsoft.com/fwlink/p/?LinkId=279920).
     
 - A more powerful option for administrators in on-premises Exchange organizations is to use the Exchange Management Shell to query the message tracking logs directly. For more information, see [Search message tracking logs](search-message-tracking-logs.md).
     

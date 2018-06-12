@@ -3,35 +3,21 @@ title: "Procedures for address book policies in Exchange 2016"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 6359abaf-e6f6-4667-8c2b-3860728b39a9
-description: "Learn how to manage address book policies, how to assign address book policies to users, and how to install and enable the Address Book Policy Routing Agent in Exchange 2016."
+description: "Summary: Learn how to manage address book policies, how to assign address book policies to users, and how to install and enable the Address Book Policy Routing Agent in Exchange 2016."
 ---
 
 # Procedures for address book policies in Exchange 2016
 
-Learn how to manage address book policies, how to assign address book policies to users, and how to install and enable the Address Book Policy Routing Agent in Exchange 2016.
+ **Summary**: Learn how to manage address book policies, how to assign address book policies to users, and how to install and enable the Address Book Policy Routing Agent in Exchange 2016.
   
 Address book policies (ABPs) allow you to segment users into specific groups to give them customized global address lists (GALs) in Outlook and Outlook on the web (formerly known as Outlook Web App). For more information about ABPs, see [Address book policies in Exchange 2016](address-book-policies.md).
   
-This topic describes how to perform the following procedures on ABPs:
-  
-- [Use the Exchange Management Shell to view address book policies](abp-procedures.md#ViewABP)
-    
-- [Use the Exchange Management Shell to create address book policies](abp-procedures.md#CreateABP)
-    
-- [Use the Exchange Management Shell to modify address book policies](abp-procedures.md#ModifyABP)
-    
-- [Use the Exchange Management Shell to remove address book policies](abp-procedures.md#RemoveABP)
-    
-- [Assign address book policies to mailboxes](abp-procedures.md#AssignABP)
-    
-- [Use the Exchange Management Shell to install and configure the Address Book Policy Routing Agent](abp-procedures.md#InstallABPRouting)
-    
  **Note**: Implementing an ABP is a multi-step process that requires planning. For more information, see [Scenario: Deploying address book policies in Exchange 2016](abp-scenarios.md).
   
 ## What do you need to know before you begin?
@@ -219,7 +205,7 @@ To verify that you've successfully removed an ABP, use either of these procedure
     
 ### Use the Exchange admin center (EAC) to assign an ABP to a single mailbox
 
-1. In the EAC, go to **Recipients** > **Mailboxes**.
+1. In the EAC, go to **Recipients** \> **Mailboxes**.
     
 2. In the list of mailboxes, find the mailbox that you want to modify. You can:
     
@@ -227,14 +213,14 @@ To verify that you've successfully removed an ABP, use either of these procedure
     
   - Click **Search**![Search icon](../../media/ITPro_EAC_.png) and enter part of the user's name, email address, or alias. 
     
-  - Click **More options**![More Options icon](../../media/ITPro_EAC_MoreOptionsIcon.png) > **Advanced search** to find the mailbox. 
+  - Click **More options**![More Options icon](../../media/ITPro_EAC_MoreOptionsIcon.png) \> **Advanced search** to find the mailbox. 
     
     Once you've found the mailbox that you want to modify, select it, and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
 3. On the mailbox properties page that opens, click **Mailbox features**.
     
 4. Click the drop down arrow in **Address book policy**, and select the ADP that you want to apply.
-    ![Address book policy settings for a mailbox in the EAC at Recipients > select mailbox > Edit > Mailbox features](../../media/2b219961-4664-40b3-873c-5892f1fcf2b6.png)
+    ![Address book policy settings for a mailbox in the EAC at Recipients \> select mailbox \> Edit \> Mailbox features](../../media/2b219961-4664-40b3-873c-5892f1fcf2b6.png)
   
     When you're finished, click **Save**.
     
@@ -260,11 +246,11 @@ For detailed syntax and parameter information, see [Set-Mailbox](http://technet.
   
 ### Use the EAC to assign an address book policy to multiple mailboxes
 
-1. In the EAC, go to **Recipients** > **Mailboxes**.
+1. In the EAC, go to **Recipients** \> **Mailboxes**.
     
 2. In the list of mailboxes, find the mailboxes that you want to modify. For example:
     
-1. Click **More options**![More Options icon](../../media/ITPro_EAC_MoreOptionsIcon.png) > **Advanced search**.
+1. Click **More options**![More Options icon](../../media/ITPro_EAC_MoreOptionsIcon.png) \> **Advanced search**.
     
 2.  In the **Advanced search** window that opens, select **Recipient types** and verify the default value **User mailbox**.
     
@@ -275,7 +261,7 @@ For detailed syntax and parameter information, see [Set-Mailbox](http://technet.
 5. In the **Specify words or phrases** dialog that appears, enter the value that you want to search for, and then click **OK**.
     
 6. Back on the **Advanced search** window, click **OK**.
-    ![In the EAC at Recipients > Mailboxes, click More Options > Advanced search to find user mailboxes](../../media/b4677167-ffb1-4224-b7e8-db4e11d61072.png)
+    ![In the EAC at Recipients \> Mailboxes, click More Options \> Advanced search to find user mailboxes](../../media/b4677167-ffb1-4224-b7e8-db4e11d61072.png)
   
 3. In the list of mailboxes, select multiple mailboxes of the same type (for example, **User**) from the list. For example:
     
@@ -323,8 +309,8 @@ For detailed syntax and parameter information, see [Get-Mailbox](http://technet.
 
 To verify that you've successfully assigned an ABP to a mailbox, do any of these steps:
   
-- In the EAC, go to **Recipients** > **Mailboxes** > select the mailbox > click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png) > **Mailbox features** and verify the **Address Book Policy** value. 
-    ![Address book policy settings for a mailbox in the EAC at Recipients > select mailbox > Edit > Mailbox features](../../media/2b219961-4664-40b3-873c-5892f1fcf2b6.png)
+- In the EAC, go to **Recipients** \> **Mailboxes** \> select the mailbox \> click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png) \> **Mailbox features** and verify the **Address Book Policy** value. 
+    ![Address book policy settings for a mailbox in the EAC at Recipients \> select mailbox \> Edit \> Mailbox features](../../media/2b219961-4664-40b3-873c-5892f1fcf2b6.png)
   
 - In the Exchange Management Shell, replace  _\<MailboxIdentity\>_ with the identity of the mailbox (for example, name, alias, or email address), and run this command: 
     

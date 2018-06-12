@@ -3,7 +3,7 @@ title: "Enable or disable MAPI access to mailboxes in Exchange 2016"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 5/26/2017
+ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
@@ -47,7 +47,7 @@ For additional management tasks related to user access to mailboxes, see these t
 
 ### Use the EAC to Enable or disable MAPI access to a single mailbox
 
-1. In the EAC, go to **Recipients** > **Mailboxes**.
+1. In the EAC, go to **Recipients** \> **Mailboxes**.
     
 2. In the list of mailboxes, find the mailbox that you want to modify. You can:
     
@@ -55,7 +55,7 @@ For additional management tasks related to user access to mailboxes, see these t
     
   - Click **Search**![Search icon](../media/ITPro_EAC_.png) and enter part of the user's name, email address, or alias. 
     
-  - Click **More options**![More Options icon](../media/ITPro_EAC_MoreOptionsIcon.png) > **Advanced search** to find the mailbox. 
+  - Click **More options**![More Options icon](../media/ITPro_EAC_MoreOptionsIcon.png) \> **Advanced search** to find the mailbox. 
     
     Once you've found the mailbox that you want to modify, select it, and then click **Edit**![Edit icon](../media/ITPro_EAC_EditIcon.png).
     
@@ -67,7 +67,7 @@ For additional management tasks related to user access to mailboxes, see these t
     
   - If you see **MAPI: Disabled**, click **Enable** to enable it. 
     
-![Protocol access settings for a mailbox in the EAC at Recipients > select mailbox > Edit > Mailbox features > Email connectivity](../media/8c2d9cda-aa53-4b6e-b83a-0f55b4b3fd3d.png)
+![Protocol access settings for a mailbox in the EAC at Recipients \> select mailbox \> Edit \> Mailbox features \> Email connectivity](../media/8c2d9cda-aa53-4b6e-b83a-0f55b4b3fd3d.png)
   
     When you're finished, click **Save**.
     
@@ -97,7 +97,7 @@ For detailed syntax and parameter information, see [Set-CASMailbox](http://techn
 
 ### Use the EAC to enable or disable MAPI access to multiple mailboxes
 
-1. In the EAC, go to **Recipients** > **Mailboxes**.
+1. In the EAC, go to **Recipients** \> **Mailboxes**.
     
 2. In the list of mailboxes, find the mailboxes that you want to modify. You can:
     
@@ -105,7 +105,7 @@ For detailed syntax and parameter information, see [Set-CASMailbox](http://techn
     
   - Click **Search**![Search icon](../media/ITPro_EAC_.png) and enter part of the user's name, email address, or alias. 
     
-  - Click **More options**![More Options icon](../media/ITPro_EAC_MoreOptionsIcon.png) > **Advanced search** to find the mailbox. 
+  - Click **More options**![More Options icon](../media/ITPro_EAC_MoreOptionsIcon.png) \> **Advanced search** to find the mailbox. 
     
 3. In the list of mailboxes, select multiple mailboxes of the same type (for example, **User**) from the list. For example:
     
@@ -159,8 +159,8 @@ For detailed syntax and parameter information, see [Get-Mailbox](http://technet.
 
 To verify that you've successfully enabled or disabled MAPI access to a mailbox, do any of these steps:
   
-- In the EAC, go to **Recipients** > **Mailboxes** > select the mailbox > click **Edit**![Edit icon](../media/ITPro_EAC_EditIcon.png) > **Mailbox features** and verify the **MAPI** value in the **Email Connectivity** section. 
-    ![Protocol access settings for a mailbox in the EAC at Recipients > select mailbox > Edit > Mailbox features > Email connectivity](../media/8c2d9cda-aa53-4b6e-b83a-0f55b4b3fd3d.png)
+- In the EAC, go to **Recipients** \> **Mailboxes** \> select the mailbox \> click **Edit**![Edit icon](../media/ITPro_EAC_EditIcon.png) \> **Mailbox features** and verify the **MAPI** value in the **Email Connectivity** section. 
+    ![Protocol access settings for a mailbox in the EAC at Recipients \> select mailbox \> Edit \> Mailbox features \> Email connectivity](../media/8c2d9cda-aa53-4b6e-b83a-0f55b4b3fd3d.png)
   
 - In the Exchange Management Shell, replace  _\<MailboxIdentity\>_ with the identity of the mailbox (for example, name, alias, or email address), and run this command: 
     

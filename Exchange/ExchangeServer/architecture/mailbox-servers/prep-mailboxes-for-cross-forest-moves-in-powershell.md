@@ -3,7 +3,7 @@ title: "Prepare mailboxes for cross-forest moves using the Exchange Management S
 ms.author: serdars
 author: SerdarSoysal
 manager: serdars
-ms.date: 5/23/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
@@ -130,14 +130,13 @@ You can generate a .csv file containing a list of mailbox identities from the so
   
 For example, the content of the .csv file can be:
   
+```
 Identity
-  
 Ian@contoso.com
-  
 John@contoso.com
-  
 Cindy@contoso.com
-  
+```
+
 This example calls a .csv file to bulk create the target mail-enabled users.
   
 1. Run the following command to get the remote forest credentials.

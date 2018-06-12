@@ -3,7 +3,7 @@ title: "Configure activation policy for a mailbox database copy"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
@@ -16,7 +16,7 @@ description: "Summary: About activation policies in Exchange 2016, and how to co
 
  **Summary**: About activation policies in Exchange 2016, and how to configure them on mailbox database copies.
   
-Activation is the process of changing a mailbox database copy from a passive copy to an active copy. Activation can occur automatically (by the system as part of a database or server failover operation) or it can be performed manually (by an administrator as part of a database or server switchover operation). Blocking a database for activation prevents it from becoming the active copy during a database or server failover. 
+ *Activation*  is the process of changing a mailbox database copy from a passive copy to an active copy. Activation can occur automatically (by the system as part of a database or server failover operation) or it can be performed manually (by an administrator as part of a database or server switchover operation). Blocking a database for activation prevents it from becoming the active copy during a database or server failover. 
   
 Looking for other management tasks related to mailbox database copies? Check out [Managing mailbox database copies](http://technet.microsoft.com/library/06df16b4-f209-4d3a-8c68-0805c745f9b2.aspx).
   
@@ -34,7 +34,7 @@ Looking for other management tasks related to mailbox database copies? Check out
 ## Use the EAC to configure the activation policy for a mailbox database copy
 <a name="UseEMC"> </a>
 
-1. In the EAC, go to **Servers** > **Databases**.
+1. In the EAC, go to **Servers** \> **Databases**.
     
 2. Select the database that you want to configure.
     

@@ -3,132 +3,112 @@ title: "High availability and site resilience"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: overview
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: b1704c87-5f5c-464e-9dc5-1bb1bdf9ac2a
-description: "Summary: About the high availability and site resilience capabilities available in Exchange 2016."
+description: "Summary: Learn about the high availability and site resilience capabilities available in Exchange 2016."
 ---
 
 # High availability and site resilience
 
- **Summary**: About the high availability and site resilience capabilities available in Exchange 2016.
+ **Summary**: Learn about the high availability and site resilience capabilities available in Exchange 2016.
   
 You can protect your Exchange Server 2016 mailbox databases and the data they contain by configuring your Exchange 2016 servers and databases for high availability and site resilience. Exchange 2016 minimizes the cost and complexity of deploying a highly available and resilient messaging solution while providing high levels of service and data availability and support for very large mailboxes.
   
-Exchange 2016 enables customers of all sizes and in all segments to economically deploy a messaging continuity service in their organization by building on the native replication capabilities and high availability architecture first introduced in Exchange 2010. For a list of changes since Exchange 2010, see [Changes to high availability and site resilience over previous versions](ha-changes.md).
-  
- **Contents**
-  
-[Key terminology](high-availability.md#KT)
-  
-[Database availability groups](high-availability.md#DA)
-  
-[Mailbox database copies](high-availability.md#MD)
-  
-[Active Manager](high-availability.md#AM)
-  
-[Site resilience](high-availability.md#Site)
-  
-[Third-party replication API](high-availability.md#API)
-  
-[High availability and site resilience documentation](high-availability.md#docs)
+Exchange 2016 enables customers of all sizes and in all segments to economically deploy a messaging continuity service in their organization by building on the native replication capabilities and high availability architecture introduced in Exchange 2010. For a list of changes since Exchange 2010, see [Changes to high availability and site resilience over previous versions](ha-changes.md).
   
 ## Key terminology
 <a name="KT"> </a>
 
 The following key terms are important to understand high availability or site resilience:
   
-Active Manager
+ *Active Manager* 
   
 > An internal Exchange component which runs inside the Microsoft Exchange Replication service that's responsible for failure monitoring and corrective action through failover within a database availability group (DAG).
     
-AutoDatabaseMountDial
+ *AutoDatabaseMountDial* 
   
 > A property setting of a Mailbox server that determines whether a passive database copy will automatically mount as the new active copy, based on the number of log files missing by the copy being mounted.
     
-Continuous replication - block mode
+ *Continuous replication - block mode* 
   
 > In block mode, as each update is written to the active database copy's active log buffer, it's also shipped to a log buffer on each of the passive mailbox copies in block mode. When the log buffer is full, each database copy builds, inspects, and creates the next log file in the generation sequence.
     
-Continuous replication - file mode
+ *Continuous replication - file mode* 
   
 > In file mode, closed transaction log files are pushed from the active database copy to one or more passive database copies.
     
-Database availability group
+ *Database availability group* 
   
 > A group of up to 16 Exchange 2016 servers that hosts a set of replicated databases.
     
-Database mobility
+ *Database mobility* 
   
 > The ability of an Exchange 2016 mailbox database to be replicated to and mounted on other Exchange 2016 servers.
     
-Datacenter
+ *Datacenter* 
   
 > Typically this refers to an Active Directory site; however, it can also refer to a physical site. In the context of this documentation, datacenter equals Active Directory site.
     
-Datacenter Activation Coordination mode
+ *Datacenter Activation Coordination mode* 
   
 > A property of the DAG setting that, when enabled, forces the Microsoft Exchange Replication service to acquire permission to mount databases at startup.
     
-Disaster recovery
+ *Disaster recovery* 
   
 > Any process used to manually recover from a failure. This can be a failure that affects a single item, or it can be a failure that affects an entire physical location.
     
-Exchange third-party replication API
+ *Exchange third-party replication API* 
   
 > An Exchange-provided API that enables use of third-party synchronous replication for a DAG instead of continuous replication.
     
-High availability
+ *High availability* 
   
 > A solution that provides service availability, data availability, and automatic recovery from failures that affect the service or data (such as a network, storage, or server failure).
     
-Incremental deployment
+ *Incremental deployment* 
   
 > The ability to deploy high availability and site resilience after Exchange 2016 is installed.
     
-Lagged mailbox database copy
+ *Lagged mailbox database copy* 
   
 > A passive mailbox database copy that has a log replay lag time greater than zero.
     
-Mailbox database copy
+ *Mailbox database copy* 
   
 > A mailbox database (.edb file and logs), which is either active or passive.
     
-Mailbox resiliency
+ *Mailbox resiliency* 
   
 > The name of a unified high availability and site resilience solution in Exchange 2016.
     
-Managed availability
+ *Managed availability* 
   
 > A set of internal processes made up of probes, monitors, and responders that incorporate monitoring and high availability across all server roles and all protocols.
     
-\*over (pronounced "star over") 
+ *\*over*  (pronounced "star over") 
   
-> Short for switchovers and failovers. A switchover is a manual activation of one or more database copies. A failover is an automatic activation of one or more database copies after a failure.
+> Short for  *switchovers*  and  *failovers*  . A switchover is a manual activation of one or more database copies. A failover is an automatic activation of one or more database copies after a failure. 
     
-Safety Net
+ *Safety Net* 
   
 > Formerly known as transport dumpster, this is a feature of the transport service that stores a copy of all messages for  _X_ days. The default setting is 2 days. 
     
-Shadow redundancy
+ *Shadow redundancy* 
   
 > A transport server feature that provides redundancy for messages for the entire time they're in transit.
     
-Site resilience
+ *Site resilience* 
   
 > A configuration that extends the messaging infrastructure to multiple Active Directory sites to provide operational continuity for the messaging system in the event of a failure affecting one of the sites.
     
-[Return to top](http://technet.microsoft.com/library/6628285e-d07c-443d-866b-be784ad1ed1e.aspx#KT)
-  
 ## Database availability groups
 <a name="DA"> </a>
 
 A DAG is the base component of the high availability and site resilience framework built into Exchange 2016. A DAG is a group of up to 16 Exchange 2016 servers that host a set of databases and provides automatic, database-level recovery from failures that affect individual databases, networks, or servers. Any server in a DAG can host a copy of a mailbox database from any other server in the DAG. When a server is added to a DAG, it works with the other servers in the DAG to provide automatic recovery from failures that affect mailbox databases, such as a disk failure or server failure. For more information about DAGs, see [Database availability groups](dags/dags.md).
-  
-[Return to top](http://technet.microsoft.com/library/6628285e-d07c-443d-866b-be784ad1ed1e.aspx#KT)
   
 ## Mailbox database copies
 <a name="MD"> </a>
@@ -137,20 +117,16 @@ The high availability and site resilience features used first introduced in Exch
   
 Database mobility disconnects databases from servers and adds support for up to 16 copies of a single database. It also provides a native experience for creating copies of a database.
   
-Setting a database copy as the active mailbox database is known as a switchover. When a failure affecting a database or access to a database occurs and a new database becomes the active copy, this process is known as a failover. This process also refers to a server failure in which one or more servers bring online the databases previously online on the failed server. When either a switchover or failover occurs, other Exchange 2016 servers become aware of the switchover almost immediately and redirect client and messaging traffic to the new active database.
+Setting a database copy as the active mailbox database is known as a  *switchover*  . When a failure affecting a database or access to a database occurs and a new database becomes the active copy, this process is known as a  *failover*  . This process also refers to a server failure in which one or more servers bring online the databases previously online on the failed server. When either a switchover or failover occurs, other Exchange 2016 servers become aware of the switchover almost immediately and redirect client and messaging traffic to the new active database. 
   
 For example, if an active database in a DAG fails because of an underlying storage failure, Active Manager will automatically recover by failing over to a database copy on another server in the DAG. In Exchange 2016, managed availability provides behaviors to recover from loss of protocol access to a database, including recycling application worker pools, restarting services and servers, and initiating database failovers.
   
 For more information about mailbox database copies, see [Mailbox database copies](dags/database-copies.md).
   
-[Return to top](http://technet.microsoft.com/library/6628285e-d07c-443d-866b-be784ad1ed1e.aspx#KT)
-  
 ## Active Manager
 <a name="AM"> </a>
 
 Exchange 2016 leverages Active Manager to manage the database and database copy health, status, continuous replication, and other aspects of high availability. For more information about Active Manager, see [Active Manager](dags/active-manager.md).
-  
-[Return to top](http://technet.microsoft.com/library/6628285e-d07c-443d-866b-be784ad1ed1e.aspx#KT)
   
 ## Site resilience
 <a name="Site"> </a>
@@ -177,20 +153,16 @@ Exchange 2016 also provides functionality that enables administrators to deal wi
   
 For details about planning and deploying site resilience, see [Plan for high availability and site resilience](plan-ha.md) and [Deploying high availability and site resilience](deploy-ha.md).
   
-[Return to top](http://technet.microsoft.com/library/6628285e-d07c-443d-866b-be784ad1ed1e.aspx#KT)
-  
 ## Third-party replication API
 <a name="API"> </a>
 
 Exchange 2016 includes a third-party replication API that enables organizations to use third-party synchronous replication solutions instead of the built-in continuous replication feature. Microsoft supports third-party solutions that use this API, provided that the solution provides the necessary functionality to replace all native continuous replication functionality that's disabled as a result of using the API. Solutions are supported only when the API is used within a DAG to manage and activate mailbox database copies. Use of the API outside of these boundaries isn't supported. In addition, the solution must meet the applicable Windows hardware support requirements. (Test validation isn't required for support.)
   
-When deploying a solution that uses the built-in third-party replication API, be aware that the solution vendor is responsible for primary support of the solution. Microsoft supports Exchange data for both replicated and non-replicated solutions. Solutions that use data replication must adhere to the Microsoft support policy for data replication, as described in Microsoft Knowledge Base article 895847, [Multi-site data replication support for Exchange Server](http://go.microsoft.com/fwlink/p/?linkid=3052&amp;kbid=895847). In addition, solutions that utilize the Windows Failover Cluster resource model must meet Windows cluster supportability requirements as described in Microsoft Knowledge Base article 943984, [The Microsoft Support Policy for Windows Server 2008 or Windows Server 2008 R2 Failover Clusters](http://go.microsoft.com/fwlink/p/?linkid=3052&amp;kbid=943984) or [The Microsoft Support Policy for Windows Server 2012 Failover Clusters](http://go.microsoft.com/fwlink/p/?linkid=3052&amp;kbid=2775067).
+When deploying a solution that uses the built-in third-party replication API, be aware that the solution vendor is responsible for primary support of the solution. Microsoft supports Exchange data for both replicated and non-replicated solutions. Solutions that use data replication must adhere to the Microsoft support policy for data replication, as described in Microsoft Knowledge Base article 895847, [Multi-site data replication support for Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=3052&amp;kbid=895847). In addition, solutions that utilize the Windows Failover Cluster resource model must meet Windows cluster supportability requirements as described in Microsoft Knowledge Base article 943984, [The Microsoft Support Policy for Windows Server 2008 or Windows Server 2008 R2 Failover Clusters](https://go.microsoft.com/fwlink/p/?linkid=3052&amp;kbid=943984) or [The Microsoft Support Policy for Windows Server 2012 Failover Clusters](https://go.microsoft.com/fwlink/p/?linkid=3052&amp;kbid=2775067).
   
 Microsoft's backup and restore support policy for deployments that use third-party replication API-based solutions is the same as for native continuous replication deployments.
   
 If you're a partner seeking information about the third-party API, contact your Microsoft representative.
-  
-[Return to top](http://technet.microsoft.com/library/6628285e-d07c-443d-866b-be784ad1ed1e.aspx#KT)
   
 ## High availability and site resilience documentation
 <a name="docs"> </a>
@@ -206,6 +178,4 @@ The following table contains links to topics that will help you learn about and 
 |[Monitor database availability groups](manage-ha/monitor-dags.md) <br/> |Learn about the built-in cmdlets and scripts for monitoring DAGs and database copies.  <br/> |
 |[Backup, restore, and disaster recovery](disaster-recovery/disaster-recovery.md) <br/> |Learn about backing up and restoring Exchange databases, recovery databases, and server recovery.  <br/> |
    
-[Return to top](http://technet.microsoft.com/library/6628285e-d07c-443d-866b-be784ad1ed1e.aspx#KT)
-  
 

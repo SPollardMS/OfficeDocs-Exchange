@@ -3,18 +3,18 @@ title: "Scenario Deploying address book policies in Exchange 2016"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 6ac3c87d-161f-447b-afb2-149ae7e3f1dc
-description: "Learn how to use address book polices to split single Exchange 2016 organizations into separate virtual organizations based on different requirements and scenarios."
+description: "Summary: Learn how to use address book polices to split single Exchange 2016 organizations into separate virtual organizations based on different requirements and scenarios."
 ---
 
 # Scenario: Deploying address book policies in Exchange 2016
 
-Learn how to use address book polices to split single Exchange 2016 organizations into separate virtual organizations based on different requirements and scenarios.
+ **Summary**: Learn how to use address book polices to split single Exchange 2016 organizations into separate virtual organizations based on different requirements and scenarios.
   
 The scenarios in this topic describe the deployment solutions for address book policies (ABPs) in three of the most common organization types where multiple entities (companies, government agencies, school classrooms, etc.) share a common Exchange environment. In all scenarios, a recipient filter divides recipients into separate virtual organizations, which then defines the ABPs that are applied to users in those virtual organizations. For more information recipient filters and virtual organizations, see the [Considerations and best practices for address book policies](abp-scenarios.md#BKMK_bestpractices) section later in this topic. 
   

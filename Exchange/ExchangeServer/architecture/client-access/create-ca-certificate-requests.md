@@ -3,19 +3,19 @@ title: "Create an Exchange 2016 certificate request for a certification authorit
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 4/20/2018
+ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.collection: Strat_EX_Admin
 ms.assetid: efb00de7-070b-46bf-a2fc-00d07ae085c1
-description: "Learn how to create a certificate request in Exchange 2016 that you provide to a certification authority."
+description: "Summary: Learn how to create a certificate request in Exchange 2016 that you provide to a certification authority."
 ---
 
 # Create an Exchange 2016 certificate request for a certification authority
 
-Learn how to create a certificate request in Exchange 2016 that you provide to a certification authority.
+ **Summary**: Learn how to create a certificate request in Exchange 2016 that you provide to a certification authority.
   
 Creating a certificate request is the first step in installing a new certificate on an Exchange Server 2016 server to configure Transport Layer Security (TLS) encryption for one or more Exchange services. You use a certificate request (also known as a certificate signing request or CSR) to obtain a certificate from a certification authority (CA). The procedures are the same for obtaining certificates from an internal CA (for example, Active Directory Certificate Services), or from a commercial CA. After you create the certificate request, you send the results to the CA, and the CA uses the information to issue the actual certificate, which you install later.
   
@@ -42,7 +42,7 @@ You can create certificate requests in the Exchange admin center (EAC) or in the
   
 ## Use the EAC to create a new certificate request
 
-1. Open the EAC and navigate to **Servers** > **Certificates**.
+1. Open the EAC and navigate to **Servers** \> **Certificates**.
     
 2. In the **Select server** list, select the Exchange server where you want to install the certificate, and then click **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png).
     
@@ -54,11 +54,11 @@ You can create certificate requests in the Exchange admin center (EAC) or in the
     
 5. On the **Request a wildcard certificate** page, make one of the following choices: 
     
-  - **If you want a wildcard certificate** Select **Request a wildcard certificate**, and enter the wildcard character (*) and the domain in the **Root domain** field. For example, *.contoso.com or *.eu.contoso.com. When you are finished, click **Next**.
+  - **If you want a wildcard certificate**: Select **Request a wildcard certificate**, and enter the wildcard character (\*) and the domain in the **Root domain** field. For example, \*.contoso.com or \*.eu.contoso.com. When you are finished, click **Next**.
     
-  - **If you want a subject alternative name (SAN) certificate** Make no selections on this page, and click **Next**.
+  - **If you want a subject alternative name (SAN) certificate**: Make no selections on this page, and click **Next**.
     
-  - **If you want a certificate for a single host** Make no selections on this page, and click **Next**.
+  - **If you want a certificate for a single host**: Make no selections on this page, and click **Next**.
     
 6. In the **Store certificate request on this server** page, click **Browse** and select the Exchange server where you want to store the certificate request (where you want to install the certificate), click **OK**, and then click **Next**.
     
@@ -128,11 +128,11 @@ New-ExchangeCertificate -GenerateRequest -RequestFile <FilePathOrUNCPath>\<FileN
 
 This example creates a certificate request on the local Exchange server for a wildcard certificate with the following properties:
   
-- **SubjectName** *.contoso.com in the United States, which requires the value  `C=US,CN=*.contoso.com`.
+- **SubjectName**: \*.contoso.com in the United States, which requires the value  `C=US,CN=*.contoso.com`.
     
-- **RequestFile** `\\FileServer01\Data\Contoso Wildcard Cert.req`
+- **RequestFile**:  `\\FileServer01\Data\Contoso Wildcard Cert.req`
     
-- **FriendlyName** Contoso.com Wildcard Cert 
+- **FriendlyName**: Contoso.com Wildcard Cert 
     
 ```
 New-ExchangeCertificate -GenerateRequest -RequestFile "\\FileServer01\Data\Contoso Wildcard Cert.req" -FriendlyName "Contoso.com Wildcard Cert" -SubjectName C=US,CN=*.contoso.com
@@ -140,7 +140,7 @@ New-ExchangeCertificate -GenerateRequest -RequestFile "\\FileServer01\Data\Conto
 
 This example creates a certificate request on the local Exchange server for a SAN certificate with the following properties:
   
-- **SubjectName** mail.contoso.com in the United States, which requires the value  `C=US,CN=mail.contoso.com`. Note that this CN value is automatically included in the  _DomainName_ parameter (the **Subject Alternative Name** field). 
+- **SubjectName**: mail.contoso.com in the United States, which requires the value  `C=US,CN=mail.contoso.com`. Note that this CN value is automatically included in the  _DomainName_ parameter (the **Subject Alternative Name** field). 
     
 - Additional **Subject Alternative Name** field values: 
     
@@ -154,9 +154,9 @@ This example creates a certificate request on the local Exchange server for a SA
     
   - legacy.contoso.net
     
-- **RequestFile** `\\FileServer01\Data\Contoso SAN Cert.req`
+- **RequestFile**:  `\\FileServer01\Data\Contoso SAN Cert.req`
     
-- **FriendlyName** Contoso.com SAN Cert 
+- **FriendlyName**: Contoso.com SAN Cert 
     
 ```
 New-ExchangeCertificate -GenerateRequest -RequestFile "\\FileServer01\Data\Contoso SAN Cert.req" -FriendlyName "Contoso.com SAN Cert" -SubjectName C=US,CN=mail.contoso.com -DomainName autodiscover.contoso.com,legacy.contoso.com,mail.contoso.net,autodiscover.contoso.net,legacy.contoso.net
@@ -164,11 +164,11 @@ New-ExchangeCertificate -GenerateRequest -RequestFile "\\FileServer01\Data\Conto
 
 This example creates a request for a single subject certificate with the following properties:
   
-- **SubjectName** mail.contoso.com in the United States, which requires the value  `C=US,CN=mail.contoso.com`.
+- **SubjectName**: mail.contoso.com in the United States, which requires the value  `C=US,CN=mail.contoso.com`.
     
-- **RequestFile** `\\FileServer01\Data\Mail.contoso.com Cert.req`
+- **RequestFile**:  `\\FileServer01\Data\Mail.contoso.com Cert.req`
     
-- **FriendlyName** Mail.contoso.com Cert 
+- **FriendlyName**: Mail.contoso.com Cert 
     
 ```
 New-ExchangeCertificate -GenerateRequest -RequestFile "\\FileServer01\Data\Mail.contoso.com Cert.req" -FriendlyName "Mail.contoso.com Cert" -SubjectName C=US,CN=mail.contoso.com
@@ -190,7 +190,7 @@ New-ExchangeCertificate -GenerateRequest -RequestFile "\\FileServer01\Data\Mail.
 
 To verify that you have successfully created a new certificate request, perform either of the following steps:
   
-- In the EAC at **Servers** > **Certificates**, verify the server where you stored the certificate request is selected. The request should be in the list of certificates with the **Status** value **Pending request**.
+- In the EAC at **Servers** \> **Certificates**, verify the server where you stored the certificate request is selected. The request should be in the list of certificates with the **Status** value **Pending request**.
     
 - In the Exchange Management Shell on the server where you stored the certificate request, run the following command:
     

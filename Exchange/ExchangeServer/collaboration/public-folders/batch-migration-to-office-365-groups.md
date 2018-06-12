@@ -3,7 +3,7 @@ title: "Use batch migration to migrate Exchange 2016 public folders to Office 36
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/12/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
@@ -17,7 +17,7 @@ description: "Summary: How to move your Exchange 2016 public folders to Office 3
 
  **Summary**: How to move your Exchange 2016 public folders to Office 365 Groups.
   
-Through a process known as batch migration, you can move some or all of your Exchange 2016 public folders to Office 365 Groups. Groups is a new collaboration offering from Microsoft that offers certain advantages over public folders. See [Migrate your public folders to Office 365 Groups](migrate-to-office-365-groups.md) for an overview of the differences between public folders and Groups, and reasons why your organization may or may not benefit from switching to Groups. 
+Through a process known as  *batch migration*  , you can move some or all of your Exchange 2016 public folders to Office 365 Groups. Groups is a new collaboration offering from Microsoft that offers certain advantages over public folders. See [Migrate your public folders to Office 365 Groups](migrate-to-office-365-groups.md) for an overview of the differences between public folders and Groups, and reasons why your organization may or may not benefit from switching to Groups. 
   
 This article contains the step-by-step procedures for performing the actual batch migration of your Exchange 2016 public folders.
   
@@ -29,9 +29,9 @@ Ensure that all of the following conditions are met before you begin preparing y
     
 - In Exchange Online, you need to be a member of the Organization Management role group. This role group is different from the permissions assigned to you when you subscribe to Office 365 or Exchange Online. For details about how to enable the Organization Management role group, see [Manage role groups](../../permissions/role-groups.md).
     
-- In Exchange 2016, you need to be a member of the Organization Management or Server Management RBAC role groups. For details, see [Add Members to a Role Group](https://go.microsoft.com/fwlink/?LinkID=299212).
+- In Exchange 2016, you need to be a member of the Organization Management or Server Management RBAC role groups. For details, see [Add Members to a Role Group](https://go.microsoft.com/fwlink/p/?linkId=299212).
     
-- Before you migrate your public folders to Office 365 Groups, we recommend that you first move user mailboxes to Office365 for those users who need access to Office 365 Groups after migration. For more information, see [Ways to migrate multiple email accounts to Office 365](https://support.office.com/article/Ways-to-migrate-multiple-email-accounts-to-Office-365-0a4913fe-60fb-498f-9155-a86516418842).
+- Before you migrate your public folders to Office 365 Groups, we recommend that you first move user mailboxes to Office365 for those users who need access to Office 365 Groups after migration. For more information, see [Ways to migrate multiple email accounts to Office 365](https://support.office.com/article/0a4913fe-60fb-498f-9155-a86516418842).
     
 - MRS Proxy needs to be enabled on at least one Exchange server, and that server must also be hosting public folder mailboxes. See [Enable the MRS Proxy endpoint for remote moves](../../architecture/mailbox-servers/mrs-proxy-endpoint.md) for details. 
     
@@ -53,7 +53,7 @@ Ensure that all of the following conditions are met before you begin preparing y
     
 ## Step 1: Get the scripts
 
-The batch migration to Office 365 Groups requires running a number of scripts at different points in the migration, as described below in this article. Download the scripts and their supporting files [from this location](https://www.microsoft.com/en-us/download/details.aspx?id=55985). After all the scripts and files are downloaded, save them to the same location, such as  `c:\PFtoGroups\Scripts`.
+The batch migration to Office 365 Groups requires running a number of scripts at different points in the migration, as described below in this article. Download the scripts and their supporting files [from this location](https://www.microsoft.com/download/details.aspx?id=55985). After all the scripts and files are downloaded, save them to the same location, such as  `c:\PFtoGroups\Scripts`.
   
 Before proceeding, verify you have downloaded and saved all of the following scripts and files:
   
@@ -267,7 +267,7 @@ The following known issues can occur during a typical public folders to Office 3
 ## Migration scripts
 <a name="scripts"> </a>
 
-For your reference, this section provides in-depth descriptions for three of the migration scripts and the tasks they execute in your Exchange environment. You can download all scripts and supporting files [from this location](https://www.microsoft.com/en-us/download/details.aspx?id=55985).
+For your reference, this section provides in-depth descriptions for three of the migration scripts and the tasks they execute in your Exchange environment. You can download all scripts and supporting files [from this location](https://www.microsoft.com/download/details.aspx?id=55985).
   
 ### AddMembersToGroups.ps1
 
@@ -341,8 +341,6 @@ Only the following access rights will be allowed for users to ensure that the pu
     
 The permission entries will be modified as follows:
   
-1. 
-
 |**Before lock down**|**After lock down**|
 |:-----|:-----|
 |None  <br/> |None  <br/> |
@@ -357,9 +355,9 @@ The permission entries will be modified as follows:
 |PublishingEditor  <br/> |ReadItems, CreateSubfolders, FolderVisible  <br/> |
 |Owner  <br/> |ReadItems, CreateSubfolders, FolderContact, FolderVisible  <br/> |
    
-2. Access rights for users without read permissions will be left untouched, and they will continue to be blocked from read rights.
+- Access rights for users without read permissions will be left untouched, and they will continue to be blocked from read rights.
     
-3. For users with custom roles, all the access rights that are not in **ListOfAccessRightsAllowed** will be removed. In the event that the users don't have any access rights from the allowed list after filtering, these users' access right will be set to 'None'. 
+- For users with custom roles, all the access rights that are not in **ListOfAccessRightsAllowed** will be removed. In the event that the users don't have any access rights from the allowed list after filtering, these users' access right will be set to 'None'. 
     
 There might be an interruption in sending emails to mail-enabled public folders during the time between when the folders are mail-disabled and their SMTP addresses are added to Office 365 Groups.
   

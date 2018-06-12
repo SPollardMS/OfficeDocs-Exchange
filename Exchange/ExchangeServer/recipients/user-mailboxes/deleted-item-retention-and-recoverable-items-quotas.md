@@ -3,18 +3,18 @@ title: "Configure Deleted Item retention and Recoverable Items quotas"
 ms.author: chrisda
 author: chrisda
 manager: scotv
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: de7d667a-1c93-4364-a4f9-2aa5e3678b12
-description: "Learn how to configure the deleted item retention period for a mailbox or mailbox database in Exchange 2016."
+description: "Summary: Learn how to configure the deleted item retention period for a mailbox or mailbox database in Exchange 2016."
 ---
 
 # Configure Deleted Item retention and Recoverable Items quotas
 
-Learn how to configure the deleted item retention period for a mailbox or mailbox database in Exchange 2016.
+ **Summary**: Learn how to configure the deleted item retention period for a mailbox or mailbox database in Exchange 2016.
   
 When a user deletes items from the Deleted Items default folder by using the Delete, Shift+Delete, or **Empty Deleted Items Folder** actions, the items are moved to the **Recoverable Items\Deletions** folder. The duration that deleted items remain in this folder is based on the deleted item retention settings configured for the mailbox database or the mailbox. By default, a mailbox database is configured to retain deleted items for 14 days, and the recoverable items warning quota and recoverable items quota are set to 20 gigabytes (GB) and 30 GB respectively. 
   
@@ -40,19 +40,19 @@ To learn more about deleted item retention, the Recoverable Items folder, In-Pla
 
  **Use the Exchange admin center (EAC) to configure deleted item retention for a mailbox**
   
-1. Navigate to **Recipients** > **Mailboxes**.
+1. Navigate to **Recipients** \> **Mailboxes**.
     
 2. In the list view, select a mailbox, and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
 3. On the mailbox property page, click **Mailbox usage**, click **More options**, and then select one of the following:
     
-  - **Use the default retention settings from the mailbox database** Use the deleted item retention setting that's configured for the mailbox database. 
+  - **Use the default retention settings from the mailbox database**: Use the deleted item retention setting that's configured for the mailbox database.
     
-  - **Customize the settings for this mailbox** Configure deleted item retention settings for the mailbox. 
+  - **Customize the settings for this mailbox**: Configure deleted item retention settings for the mailbox.
     
-    **\*Keep deleted items for (days)** Displays the length of time that deleted items are retained before they're permanently deleted and can't be recovered by the user. When the mailbox is created, this value is based on the deleted item retention settings configured for the mailbox database. By default, a mailbox database is configured to retain deleted items for 14 days. The value range for this property is from 0 through 24,855 days. 
+    **\*Keep deleted items for (days)**: Displays the length of time that deleted items are retained before they're permanently deleted and can't be recovered by the user. When the mailbox is created, this value is based on the deleted item retention settings configured for the mailbox database. By default, a mailbox database is configured to retain deleted items for 14 days. The value range for this property is from 0 through 24,855 days.
     
-  - **Don't permanently delete items until the database is backed up** Check this box to prevent mailboxes and email messages from being deleted until after the mailbox database on which the mailbox is located has been backed up. 
+  - **Don't permanently delete items until the database is backed up**: Check this box to prevent mailboxes and email messages from being deleted until after the mailbox database on which the mailbox is located has been backed up.
     
 ![default retention settings](../../media/f91ba717-276d-4b2b-87c4-036b92db1e85.jpg)
   

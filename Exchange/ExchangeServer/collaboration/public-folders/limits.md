@@ -3,18 +3,18 @@ title: "Limits for public folders"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: reference
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 709b075e-9584-484b-bcaa-e781c26497b4
-description: "Learn about supported limits for public folders in Exchange 2016."
+description: "Summary: Learn about supported limits for public folders in Exchange 2016."
 ---
 
 # Limits for public folders
 
-Learn about supported limits for public folders in Exchange 2016.
+ **Summary**: Learn about supported limits for public folders in Exchange 2016.
   
 In Exchange 2016, public folders are based on a mailbox architecture that allows public folders to benefit from things such as the resiliency of a Database Availability Group (DAG) and other mailbox enhancements. However, there are limits and performance considerations that should be taken into account.
   
@@ -36,8 +36,8 @@ The following table lists the limits for public folders in on-premises Exchange 
 |Public folder mailbox size  <br/> |100 GB  <br/> |[Configure storage quotas for a mailbox](../../recipients/user-mailboxes/storage-quotas.md) <br/> |
 |Number of user logons per public folder mailbox  <br/> |2,000 concurrent user logons  <br/> |We recommend that you configure your hierarchy so that you have no more than 2,000 users per public folder mailbox. For example, if you have 20,000 users, you should have 10 public folder mailboxes.  <br/> |
 |Moved item retention  <br/> |14 days recommended  <br/> |Use the  _DefaultPublicFolderMovedItemRetention_ parameter on the **Set-OrganizationConfig** cmdlet.  <br/> |
-|Age limit  <br/> |We recommend that you set this as the same default that you use for regular mailboxes.  <br/> | These settings can be set at the following levels:  <br/> **Organizational level:** _DefaultPublicFolderAgeLimit_ parameter on the **Set-OrganizationConfig** cmdlet.  <br/> **Mailbox level:** _AgeLimit_ parameter on the **Set-Mailbox** cmdlet.  <br/> **Folder level:** _AgeLimit_ parameter on the **Set-PublicFolder** cmdlet.  <br/> |
-|Deleted item retention  <br/> |We recommend that you set this as the same default that you use for regular mailboxes.  <br/> | These settings can be set at the following levels:  <br/> **Organizational level:** _DefaultPublicFolderMovedItemRetention_ parameter on the **Set-OrganizationConfig** cmdlet.  <br/> **Mailbox level:** _RetainDeletedItemsFor_ on the **Set-Mailbox** cmdlet.  <br/> **Folder level:** _RetainDeleteItemsFor_ parameter on the **Set-PublicFolder** cmdlet.  <br/> |
+|Age limit  <br/> |We recommend that you set this as the same default that you use for regular mailboxes.  <br/> |These settings can be set at the following levels:  <br/> **Organizational level**: The  _DefaultPublicFolderAgeLimit_ parameter on the **Set-OrganizationConfig** cmdlet.  <br/> **Mailbox level**: The  _AgeLimit_ parameter on the **Set-Mailbox** cmdlet.  <br/> **Folder level**: The  _AgeLimit_ parameter on the **Set-PublicFolder** cmdlet.  <br/> |
+|Deleted item retention  <br/> |We recommend that you set this as the same default that you use for regular mailboxes.  <br/> |These settings can be set at the following levels:  <br/> **Organizational level**: The  _DefaultPublicFolderMovedItemRetention_ parameter on the **Set-OrganizationConfig** cmdlet.  <br/> **Mailbox level**: The  _RetainDeletedItemsFor_ on the **Set-Mailbox** cmdlet.  <br/> **Folder level:**: The  _RetainDeleteItemsFor_ parameter on the **Set-PublicFolder** cmdlet.  <br/> |
 |Maximum number of public folders that can be migrated to Exchange 2016  <br/> |500,000  <br/> |This is the maximum number of public folders you can move to Exchange 2016 from a legacy version of Exchange in a single migration. For details on migrating public folders, see [Use batch migration to migrate public folders to Exchange 2016 from previous versions](batch-migration-from-previous-versions.md).  <br/> |
    
 

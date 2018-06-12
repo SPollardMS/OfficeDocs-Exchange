@@ -3,18 +3,18 @@ title: "Configure message tracking"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 3/28/2016
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 50eb5213-cf27-4179-b427-38d751ee4a70
-description: "Learn how to configure message tracking in Exchange 2016."
+description: "Summary: Learn how to configure message tracking in Exchange 2016."
 ---
 
 # Configure message tracking
 
-Learn how to configure message tracking in Exchange 2016.
+ **Summary**: Learn how to configure message tracking in Exchange 2016.
   
 Message tracking records the message activity as mail flows through the transport pipeline on Mailbox servers and Edge Transport servers. You can use message tracking logs for message forensics, mail flow analysis, reporting, and troubleshooting.
   
@@ -50,13 +50,13 @@ You use the **Set-TransportService** cmdlet in the Exchange Management Shell on 
   
 ## Use the EAC to configure message tracking on Mailbox servers
 
-1. Open the EAC and navigate to **Servers** > **Servers** > select the Mailbox server that you want to configure > and click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
+1. Open the EAC and navigate to **Servers** \> **Servers** \> select the Mailbox server that you want to configure \> and click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
 2. On the server properties page, click **Transport Logs**. In the **Message tracking log** section, change any of the following settings: 
     
-  - **Enable message tracking log** To disable message tracking on the server, clear the check box. To enable message tracking on the server, select the check box. 
+  - **Enable message tracking log**: To disable message tracking on the server, clear the check box. To enable message tracking on the server, select the check box.
     
-  - **Message tracking log path** The value you specify must be on the local Exchange server. If the folder doesn't exist, it's created for you when you click **Save**.
+  - **Message tracking log path**: The value you specify must be on the local Exchange server. If the folder doesn't exist, it's created for you when you click **Save**.
     
 3. When you are finished, click **Save**.
     

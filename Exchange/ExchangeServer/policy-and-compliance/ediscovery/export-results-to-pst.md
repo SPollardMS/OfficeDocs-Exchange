@@ -3,28 +3,28 @@ title: "Export eDiscovery search results to a PST file"
 ms.author: serdars
 author: SerdarSoysal
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: bc47f5f9-d056-4b69-b669-ae65fad541c8
-description: "Learn how to export the results of In-Place eDiscovery searches to .PST files in Exchange 2016."
+description: "Summary: Learn how to export the results of In-Place eDiscovery searches to .PST files in Exchange 2016."
 ---
 
 # Export eDiscovery search results to a PST file
 
-Learn how to export the results of In-Place eDiscovery searches to .PST files in Exchange 2016.
+ **Summary**: Learn how to export the results of In-Place eDiscovery searches to .PST files in Exchange 2016.
   
 You can use the eDiscovery Export tool in the Exchange admin center (EAC) to export the results of an In-Place eDiscovery search to an Outlook Data File, which is also called a PST file. Search results will contain items from mailboxes and public folders, depending on the content sources from the eDiscovery search. This lets you distribute search results to other people within your organization, such as a human resources manager or records manager, or to opposing counsel in a legal case. After search results are exported to a PST file, you or other users can open them in Outlook to review or print messages returned in the search results. PST files can also be opened in third-party eDiscovery and reporting applications.
   
-## Before you begin
+## What do you need to know before you begin?
 
 - The amount of time it takes to export search results will vary based on the amount and size of the search results that will be exported.
     
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "In-Place eDiscovery" entry in the [Messaging policy and compliance permissions in Exchange 2016](../../permissions/feature-permissions/policy-and-compliance-permissions.md) topic. 
     
-- You'll need an active mail account attached to the account you wish to export. 
+- You'll need an active mail account attached to the account you wish to export.
     
 - The computer you use to export search results to a PST file needs to meet the following system requirements:
     
@@ -42,7 +42,7 @@ You can use the eDiscovery Export tool in the Exchange admin center (EAC) to exp
     
 ## Use the EAC to export In-Place eDiscovery search results to a PST file
 
-1. In the EAC, go to **Compliance management** > **In-Place eDiscovery &amp; Hold**.
+1. In the EAC, go to **Compliance management** \> **In-Place eDiscovery &amp; Hold**.
     
 2. In the list view, select the eDiscovery search you want to export the results of, and then click **Export to a PST file**.
     ![Export to a PST File](../../media/ExportToPSTFile.gif)
@@ -55,9 +55,14 @@ You can use the eDiscovery Export tool in the Exchange admin center (EAC) to exp
     
   - Click the **Include unsearchable items** checkbox to include items that couldn't be searched (for example, messages with attachments of file types that couldn't be indexed by Exchange Search). Unsearchable items are exported to a separate PST file. 
     
-    > [!IMPORTANT]
-    >  Including unsearchable items when you export eDiscovery search results takes longer when mailboxes or public folders contain a lot of unsearchable items. To reduce the time it takes to export search results and prevent large PST export files, consider the following recommendations: >  Create multiple eDiscovery searches that each search a fewer number of source mailboxes. >  Create an eDiscovery search that only includes public folders. >  If you're exporting all mailbox or public folder content within a specific date range (by not specifying any keywords in the search criteria), then all unsearchable items within that date range will be automatically included in the search results. Therefore, don't select the **Include unsearchable items** checkbox. 
-  
+    **Note**: Including unsearchable items when you export eDiscovery search results takes longer when mailboxes or public folders contain a lot of unsearchable items. To reduce the time it takes to export search results and prevent large PST export files, consider the following recommendations:
+    
+  - Create multiple eDiscovery searches that each search a fewer number of source mailboxes.
+    
+  - Create an eDiscovery search that only includes public folders.
+    
+  - If you're exporting all mailbox or public folder content within a specific date range (by not specifying any keywords in the search criteria), then all unsearchable items within that date range will be automatically included in the search results. Therefore, don't select the **Include unsearchable items** checkbox. 
+    
 4. Click **Start** to export the search results to a PST file. 
     
     A window is displayed that contains status information about the export process.

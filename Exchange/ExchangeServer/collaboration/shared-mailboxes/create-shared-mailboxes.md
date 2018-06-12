@@ -3,7 +3,7 @@ title: "Create shared mailboxes in the Exchange admin center"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
@@ -18,11 +18,11 @@ If your organization uses a hybrid Exchange environment, you should use the on-p
   
 ## Use the EAC to create a shared mailbox
 
-For information on limitations, automapping, and getting your users set up, see [Create a shared mailbox](https://support.office.com/en-US/article/Create-shared-mailboxes-in-Office-365-871a246d-3acd-4bba-948e-5de8be0544c9).
+For information on limitations, automapping, and getting your users set up, see [Create a shared mailbox](https://support.office.com/article/871a246d-3acd-4bba-948e-5de8be0544c9).
   
 You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "User mailboxes" entry in the [Recipients Permissions](../../permissions/feature-permissions/recipient-permissions.md) topic. 
   
-1. Go to **Recipients** > **Shared** > **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png).
+1. Go to **Recipients** \> **Shared** \> **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png).
     
 2. Fill-in the required fields:
     
@@ -39,7 +39,7 @@ You need to be assigned permissions before you can perform this procedure or pro
     
 ### Use the EAC to edit shared mailbox delegation
 
-1. Go to **Recipients** > **Shared** > **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
+1. Go to **Recipients** \> **Shared** \> **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
 2. Click **Mailbox delegation**
     

@@ -25,10 +25,10 @@ Microsoft Exchange Server 2016 Setup can't continue because it detected an incom
   
 |**Component**|**Requirement**|
 |:-----|:-----|
-|Mailbox and Edge Transport server roles  <br/> | Windows Server 2016 Standard or Datacenter <sup>\*</sup> <br/>  Windows Server 2012 R2 Standard or Datacenter  <br/>  Windows Server 2012 Standard or Datacenter  <br/> |
-|Management tools  <br/> | One of the following:  <br/>  Windows Server 2016 Standard or Datacenter <sup>\*</sup> <br/>  Windows Server 2012 R2 Standard or Datacenter  <br/>  Windows Server 2012 Standard or Datacenter  <br/>  64-bit edition of Windows 10  <br/>  64-bit edition of Windows 8.1  <br/> |
+|Mailbox and Edge Transport server roles  <br/> |Windows Server 2016 Standard or Datacenter<sup>\*</sup> <br/> Windows Server 2012 R2 Standard or Datacenter  <br/> Windows Server 2012 Standard or Datacenter  <br/> |
+|Management tools  <br/> |One of the following:  <br/> Windows Server 2016 Standard or Datacenter<sup>\*</sup> <br/> Windows Server 2012 R2 Standard or Datacenter  <br/> Windows Server 2012 Standard or Datacenter  <br/> 64-bit edition of Windows 10  <br/> 64-bit edition of Windows 8.1  <br/> |
    
-<sup>\*</sup>Requires Exchange Server 2016 Cumulative Update 3 or later.
+<sup>\*</sup> Requires Exchange Server 2016 Cumulative Update 3 or later. 
   
 For more information, see [Exchange 2016 system requirements](../../plan-and-deploy/system-requirements.md).
   

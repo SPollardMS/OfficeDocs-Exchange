@@ -3,7 +3,7 @@ title: "Deploying high availability and site resilience"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
@@ -16,7 +16,7 @@ description: "Summary: How to deploy Exchange Server 2016 with high availability
 
  **Summary**: How to deploy Exchange Server 2016 with high availability and site resilience.
   
-Microsoft Exchange Server 2016 uses the concept known as incremental deployment for both high availability and site resilience. You simply install two or more Exchange 2016 Mailbox servers as stand-alone servers, and then incrementally configure them and mailbox databases for high availability and site resilience, as needed. 
+Microsoft Exchange Server 2016 uses the concept known as  *incremental deployment*  for both high availability and site resilience. You simply install two or more Exchange 2016 Mailbox servers as stand-alone servers, and then incrementally configure them and mailbox databases for high availability and site resilience, as needed. 
   
 ## Overview of the deployment process
 

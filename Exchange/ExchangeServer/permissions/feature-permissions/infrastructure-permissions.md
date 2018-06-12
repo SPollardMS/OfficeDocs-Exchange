@@ -3,19 +3,18 @@ title: "Exchange infrastructure and PowerShell permissions"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: reference
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 3646a4e8-36b2-41fb-89a4-79b0963fcb11
-
-description: "Learn about permissions that are required to perform tasks to configure various components of Microsoft Exchange Server 2016."
+description: "Summary: Learn about permissions that are required to perform tasks to configure various components of Microsoft Exchange Server 2016."
 ---
 
 # Exchange infrastructure and PowerShell permissions
 
-Learn about permissions that are required to perform tasks to configure various components of Microsoft Exchange Server 2016.
+ **Summary**: Learn about permissions that are required to perform tasks to configure various components of Microsoft Exchange Server 2016.
   
 The permissions required to perform tasks to configure various components of Microsoft Exchange Server 2016 depend on the procedure being performed or the cmdlet you want to run. See each of the sections in this topic for more information about their respective features.
   
@@ -51,7 +50,7 @@ Users who are assigned the View-Only Management role group can view the configur
 |Message categories  <br/> |[Organization Management](http://technet.microsoft.com/library/0bfd21c1-86ac-4369-86b7-aeba386741c8.aspx) <br/> [Hygiene Management](http://technet.microsoft.com/library/fc0a9ec2-9c3d-42f6-8442-8603fb29d464.aspx) <br/> [Recipient Management](http://technet.microsoft.com/library/669d602e-68e3-41f9-a455-b942d212d130.aspx) <br/> [Help Desk](http://technet.microsoft.com/library/e7958752-22e4-4155-a2fc-948099dec6f7.aspx) <br/> |
 |Product key  <br/> |[Organization Management](http://technet.microsoft.com/library/0bfd21c1-86ac-4369-86b7-aeba386741c8.aspx) <br/> |
 |Test system health  <br/> |[Organization Management](http://technet.microsoft.com/library/0bfd21c1-86ac-4369-86b7-aeba386741c8.aspx) <br/> [Server Management](http://technet.microsoft.com/library/30cbc4de-adb3-42e8-922f-7661095bdb8c.aspx) <br/> |
-|View-only administrator audit logging  <br/> |[Organization Management](http://technet.microsoft.com/library/0bfd21c1-86ac-4369-86b7-aeba386741c8.aspx) <br/> [Records Management](http://technet.microsoft.com/library/0e0c95ce-6109-4591-b86d-c6cfd44d21f5.aspx) <br/> > [!NOTE]> You can also manually assign the View-Only Audit Logs management role to a management role group. For more information, see [View-Only Audit Logs](http://technet.microsoft.com/library/9298fe59-0a16-4a09-bdb8-514d1cea6e2f.aspx).           |
+|View-only administrator audit logging  <br/> |[Organization Management](http://technet.microsoft.com/library/0bfd21c1-86ac-4369-86b7-aeba386741c8.aspx) <br/> [Records Management](http://technet.microsoft.com/library/0e0c95ce-6109-4591-b86d-c6cfd44d21f5.aspx) <br/> **Note**: You can also manually assign the View-Only Audit Logs management role to a management role group. For more information, see [View-Only Audit Logs](http://technet.microsoft.com/library/9298fe59-0a16-4a09-bdb8-514d1cea6e2f.aspx).  <br/> |
 |Write to audit log  <br/> |Users that are members of any role group or assigned any management role can write to the administrator audit log.  <br/> |
    
 ## Exchange PowerShell infrastructure permissions

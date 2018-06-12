@@ -3,7 +3,7 @@ title: "Exchange admin center in Exchange 2016"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 5/23/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: overview
 ms.prod: office-online-server
@@ -11,12 +11,12 @@ localization_priority: Normal
 ms.collection: Strat_EX_Admin
 ms.assetid: a9aea11a-6ba3-4f4a-a76e-79072e7cfc7d
 
-description: "Learn about the Exchange admin center, the web-based management console that's available in Exchange 2016."
+description: "Summary: Learn about the Exchange admin center, the web-based management console that's available in Exchange 2016."
 ---
 
 # Exchange admin center in Exchange 2016
 
-Learn about the Exchange admin center, the web-based management console that's available in Exchange 2016.
+ **Summary**: Learn about the Exchange admin center, the web-based management console that's available in Exchange 2016.
   
 The Exchange admin center (EAC) is the web-based management console in Exchange Server 2016 that's optimized for on-premises, online, and hybrid Exchange deployments. The EAC was introduced in Exchange Server 2013, and replaces the Exchange Management Console (EMC) and the Exchange Control Panel (ECP), which were the two management interfaces in Exchange Server 2010.
   
@@ -29,9 +29,9 @@ Looking for the Exchange Online Protection version of this topic? See [Exchange 
 
 The URL of the EAC is controlled by the Internet Information Services (IIS) virtual directory named ECP in the Client Access (frontend) services on the Mailbox server. Yes, the virtual directory is named ECP, not EAC.
   
-- **Internal URL** By default, this value contains the fully-qualified domain name (FQDN) of the Exchange server in the format  `https://<ServerFQDN>/ecp`. For example,  `https://mailbox01.contoso.com/ecp`. To access the EAC in a web browser on the Exchange server itself, you can use the value  `https://localhost/ecp`.
+- **Internal URL**: By default, this value contains the fully-qualified domain name (FQDN) of the Exchange server in the format  `https://<ServerFQDN>/ecp`. For example,  `https://mailbox01.contoso.com/ecp`. To access the EAC in a web browser on the Exchange server itself, you can use the value  `https://localhost/ecp`.
     
-- **External URL** By default, this value is unconfigured. Before you can connect to the EAC from the Internet, you need to configure the following settings: 
+- **External URL**: By default, this value is unconfigured. Before you can connect to the EAC from the Internet, you need to configure the following settings:
     
   - The external URL value on the ECP virtual directory. For more information, see [Step 4: Configure external URLs](../../plan-and-deploy/post-installation-tasks/configure-mail-flow-and-client-access.md#ConfigExternalURL).
     
@@ -41,9 +41,9 @@ The URL of the EAC is controlled by the Internet Information Services (IIS) virt
     
     After you configure the settings, a common external URL value for the EAC would resemble  `https://mail.contoso.com/ecp`.
     
-    **Note**: External users who connect to Outlook on the web (formerly known as Outlook Web App) also need access to the EAC to access their own **Options** page. You can disable external administrator access to the EAC while still allowing users to access their **Options** page in Outlook on the web. For more information, see [Turn off access to the Exchange admin center](eac-access.md).
+    **Note**: External users who connect to Outlook on the web (formerly known as Outlook Web App) also need access to the EAC to access their own **Options** page. You can disable external administrator access to the EAC while still allowing users to access their **Options** page in Outlook on the web. For more information, see [Turn off access to the Exchange admin center](disable-eac-access.md).
     
-The easiest way to find the internal and external URL values for the EAC (without using **Servers** > **Virtual directories** in the EAC itself) is by using the **Get-EcpVirtualDirectory** cmdlet in the Exchange Management Shell. To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
+The easiest way to find the internal and external URL values for the EAC (without using **Servers** \> **Virtual directories** in the EAC itself) is by using the **Get-EcpVirtualDirectory** cmdlet in the Exchange Management Shell. To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
   
 These examples show you how to find the internal and external URL values for the EAC virtual directories in your organization:
   
@@ -88,7 +88,7 @@ The cross-premises navigation allows you to easily switch between your Exchange 
 
 The feature pane is the first level of navigation for most of the tasks that you'll perform in the EAC, and is organized by the following feature areas:
   
-- **Recipients** Manage mailboxes, groups, resource mailboxes (room and equipment mailboxes), contacts, shared mailboxes, and mailbox migrations and moves. For more information, see the following topics: 
+- **Recipients**: Manage mailboxes, groups, resource mailboxes (room and equipment mailboxes), contacts, shared mailboxes, and mailbox migrations and moves. For more information, see the following topics:
     
   - [Create user mailboxes in Exchange 2016](../../recipients/create-user-mailboxes.md) and [Manage user mailboxes](../../recipients/user-mailboxes/user-mailboxes.md)
     
@@ -100,13 +100,13 @@ The feature pane is the first level of navigation for most of the tasks that you
     
   - [Create shared mailboxes in the Exchange admin center](../../collaboration/shared-mailboxes/create-shared-mailboxes.md)
     
-- **Permissions** Manage role-based access control (RBAC) administrator roles, user roles, and Outlook on the web policies. For more information, see the following topics. 
+- **Permissions**: Manage role-based access control (RBAC) administrator roles, user roles, and Outlook on the web policies. For more information, see the following topics.
     
   - [Manage role groups](../../permissions/role-groups.md) , [Manage role group members](../../permissions/role-group-members.md), and [Manage role assignment policies](../../permissions/role-assignment-policies.md).
     
   - [Outlook on the web mailbox policies](http://technet.microsoft.com/library/213b8b7a-1c29-49ee-8c98-d0364ddf4f9d.aspx)
     
-- **Compliance management** This is where you'll manage In-Place eDiscovery, In-Place Hold, auditing (mailbox audit logging and administrator audit logging), data loss prevention (DLP), retention policies, retention tags, and journal rules. For more information, see the following topics: 
+- **Compliance management**: This is where you'll manage In-Place eDiscovery, In-Place Hold, auditing (mailbox audit logging and administrator audit logging), data loss prevention (DLP), retention policies, retention tags, and journal rules. For more information, see the following topics:
     
   - [In-Place eDiscovery in Exchange 2016](../../policy-and-compliance/ediscovery/ediscovery.md) and [In-Place Hold and Litigation Hold in Exchange 2016](../../policy-and-compliance/holds/holds.md)
     
@@ -118,7 +118,7 @@ The feature pane is the first level of navigation for most of the tasks that you
     
   - [Journaling in Exchange 2016](../../policy-and-compliance/journaling/journaling.md)
     
-- **Organization** Manage federated sharing, Outlook Apps, and address lists. For more information, see the following topics: 
+- **Organization**: Manage federated sharing, Outlook Apps, and address lists. For more information, see the following topics:
     
   - [Sharing](http://technet.microsoft.com/library/09e6732a-4e99-44d0-801d-9463fdc57a9b.aspx)
     
@@ -126,9 +126,9 @@ The feature pane is the first level of navigation for most of the tasks that you
     
   - [Address lists in Exchange 2016](../../email-addresses-and-address-books/address-lists/address-lists.md)
     
-- **Protection** Manage antimalware protection for your organization. For more information, see [Antimalware protection in Exchange 2016](../../antispam-and-antimalware/antimalware/antimalware.md).
+- **Protection**: Manage antimalware protection for your organization. For more information, see [Antimalware protection in Exchange 2016](../../antispam-and-antimalware/antimalware/antimalware.md).
     
-- **Mail flow** Manage mail flow rules (also known as transport rules), delivery reports, accepted domains, remote domains, email address policies, Receive connectors, and Send connectors. For more information, see the following topics: 
+- **Mail flow**: Manage mail flow rules (also known as transport rules), delivery reports, accepted domains, remote domains, email address policies, Receive connectors, and Send connectors. For more information, see the following topics:
     
   - [Mail flow rules in Exchange 2016](../../policy-and-compliance/mail-flow-rules/mail-flow-rules.md)
     
@@ -146,21 +146,21 @@ The feature pane is the first level of navigation for most of the tasks that you
     
   - [Send connectors](../../mail-flow/connectors/send-connectors.md)
     
-- **Mobile** Manage the mobile devices that you allow to connect to your organization. You can manage mobile device access and mobile device mailbox policies. For more information, see the following topics: 
+- **Mobile**: Manage the mobile devices that you allow to connect to your organization. You can manage mobile device access and mobile device mailbox policies. For more information, see the following topics:
     
   - [Mobile devices](../../clients/exchange-activesync/mobile-devices.md)
     
   - [Mobile device mailbox policies](../../clients/exchange-activesync/mobile-device-mailbox-policies.md)
     
-- **Public folders** Manage public folders and public folder mailboxes. For more information, see [Public folders](../../collaboration/public-folders/public-folders.md).
+- **Public folders**: Manage public folders and public folder mailboxes. For more information, see [Public folders](../../collaboration/public-folders/public-folders.md).
     
-- **Unified Messaging** Manage UM dial plans and UM IP gateways. For more information, see the following topics: 
+- **Unified Messaging**: Manage UM dial plans and UM IP gateways. For more information, see the following topics:
     
   - [UM Dial Plans](http://technet.microsoft.com/library/ed7afc03-94af-4b23-8745-6a61f203c149.aspx)
     
   - [UM IP Gateways](http://technet.microsoft.com/library/991d77e0-3995-44ab-bedf-52ff7a0301ab.aspx)
     
-- **Servers** View and manage server-specific settings, databases, database availability groups (DAGs), virtual directories, and certificates. For more information, see the following topics: 
+- **Servers**: View and manage server-specific settings, databases, database availability groups (DAGs), virtual directories, and certificates. For more information, see the following topics:
     
   - [POP3 and IMAP4 in Exchange 2016](../../clients/pop3-and-imap4/pop3-and-imap4.md)
     
@@ -180,9 +180,9 @@ The feature pane is the first level of navigation for most of the tasks that you
     
   - [Certificate procedures in Exchange 2016](certificate-procedures.md)
     
-- **Hybrid** Set up and configure a Hybrid organization. 
+- **Hybrid**: Set up and configure a Hybrid organization.
     
-- **Tools** Check your Exchange server with the Office 365 Best Practices Analyzer. For more information, see [About the Office 365 Best Practices Analyzer for Exchange Server](https://go.microsoft.com/p/?linkid=9839202).
+- **Tools**: Check your Exchange server with the Office 365 Best Practices Analyzer. For more information, see [About the Office 365 Best Practices Analyzer for Exchange Server](https://go.microsoft.com/p/?linkid=9839202).
     
 ### 3: Tabs
 
@@ -194,14 +194,14 @@ When you click most tabs, you'll see a toolbar. The toolbar has icons that perfo
   
 |**Icon**|**Name**|**Action**|
 |:-----|:-----|:-----|
-|![Add icon](../../media/ITPro_EAC_AddIcon.png)           <br/> |Add, New  <br/> |Create a new object.  <br/>  Some of these icons have an associated down arrow you can click to show additional objects you can create. For example, in **Recipients** > **Mailboxes**, clicking the down arrow displays **User mailbox** and **Linked mailbox** as additional options.  <br/> |
+|![Add icon](../../media/ITPro_EAC_AddIcon.png)           <br/> |Add, New  <br/> |Create a new object.  <br/>  Some of these icons have an associated down arrow you can click to show additional objects you can create. For example, in **Recipients** \> **Mailboxes**, clicking the down arrow displays **User mailbox** and **Linked mailbox** as additional options.  <br/> |
 |![Edit icon](../../media/ITPro_EAC_EditIcon.png)           <br/> |Edit  <br/> |Edit an object.  <br/> |
 |![Delete icon](../../media/ITPro_EAC_DeleteIcon.png)           <br/> |Delete  <br/> |Delete an object. Some delete icons have a down arrow you can click to show additional options.  <br/> |
 |![Search icon](../../media/ITPro_EAC_.png)           <br/> |Search  <br/> |Open a search box so you can enter text for an object that you want to find you want to find in a long list of objects. Check out [Advanced search](http://technet.microsoft.com/library/cf4251f9-e4ec-44d7-97c2-c5cdd67ce60c.aspx) for more search options.  <br/> |
 |![Refresh icon](../../media/ITPro_EAC_RefreshIcon.png)           <br/> |Refresh  <br/> |Refresh the list view.  <br/> |
-|![More Options icon](../../media/ITPro_EAC_MoreOptionsIcon.png)           <br/> |More options  <br/> |View more actions you can perform for that tab's objects.  <br/> For example, in **Recipients** > **Mailboxes** clicking this icon shows the following options: **Disable**, **Add/Remove columns**, **Export data to a CSV file**, **Connect a mailbox**, and **Advanced search**.  <br/> |
-|![Up Arrow Icon](../../media/ITPro_EAC_UpArrowIcon.png)![Down Arrow Icon](../../media/ITPro_EAC_DownArrowIcon.png)           <br/> |Up arrow and down arrow  <br/> |Move an object up or down in the list, when the order is important.  <br/> For example, in **Mail flow** > **Email address policies** click the up arrow to move the policy higher in the list, which increases the priority of the policy by specifying which policy is applied first.  <br/> You can also use these arrows to navigate the public folder hierarchy and to move rules up or down in the list view.  <br/> |
-|![Copy icon](../../media/ITPro_EAC_CopyIcon.png)           <br/> |Copy  <br/> |Copy an object so you can make changes to it without changing the original object.  <br/> For example, in **Permissions** > **Admin roles**, select a role from the list view, and then click this icon to create a new role group based on an existing one.  <br/> |
+|![More Options icon](../../media/ITPro_EAC_MoreOptionsIcon.png)           <br/> |More options  <br/> |View more actions you can perform for that tab's objects.  <br/> For example, in **Recipients** \> **Mailboxes** clicking this icon shows the following options: **Disable**, **Add/Remove columns**, **Export data to a CSV file**, **Connect a mailbox**, and **Advanced search**.  <br/> |
+|![Up Arrow Icon](../../media/ITPro_EAC_UpArrowIcon.png)           <br/> ![Down Arrow Icon](../../media/ITPro_EAC_DownArrowIcon.png)           <br/> |Up arrow and down arrow  <br/> |Move an object up or down in the list, when the order is important.  <br/> For example, in **Mail flow** \> **Email address policies** click the up arrow to move the policy higher in the list, which increases the priority of the policy by specifying which policy is applied first.  <br/> You can also use these arrows to navigate the public folder hierarchy and to move rules up or down in the list view.  <br/> |
+|![Copy icon](../../media/ITPro_EAC_CopyIcon.png)           <br/> |Copy  <br/> |Copy an object so you can make changes to it without changing the original object.  <br/> For example, in **Permissions** \> **Admin roles**, select a role from the list view, and then click this icon to create a new role group based on an existing one.  <br/> |
 |![Remove icon](../../media/ITPro_EAC_RemoveIcon.png)           <br/> |Remove  <br/> |Remove an item from a list.  <br/>  For example, in the **Public Folder Permissions** dialog box, you can remove users from the list of users allowed to access the public folder by selecting the user and clicking this icon.  <br/> |
    
 ### 5: List view
@@ -210,9 +210,9 @@ Tabs that contain many objects display those objects in a list view. The viewabl
   
 ### 6: Details pane
 
-When you select an object from the list view, more information about that object is displayed in the details pane. For some object types, the details pane includes quick management tasks. For example, if you navigate to **Recipients** > **Mailboxes** and select a mailbox from the list view, the details pane (among other options) displays an option to enable or disable the archive for that mailbox. 
+When you select an object from the list view, more information about that object is displayed in the details pane. For some object types, the details pane includes quick management tasks. For example, if you navigate to **Recipients** \> **Mailboxes** and select a mailbox from the list view, the details pane (among other options) displays an option to enable or disable the archive for that mailbox. 
   
-Some object types also allow you to bulk edit multiple objects in the details pane. You can select multiple objects in the list view by selecting an object, holding the Shift key, and selecting an object farther down in the list, or by holding down the CTRL key as you select each object. If bulk edit is available for the object types that you selected, you'll see the available options in the details pane. For example, at **Recipients** > **Mailboxes**, when you select multiple mailboxes of the same type, the title of the details pane changes to **Bulk Edit**, and you can update contact and organization information, custom attributes, mailbox quotas, Outlook on the web settings, and more.
+Some object types also allow you to bulk edit multiple objects in the details pane. You can select multiple objects in the list view by selecting an object, holding the Shift key, and selecting an object farther down in the list, or by holding down the CTRL key as you select each object. If bulk edit is available for the object types that you selected, you'll see the available options in the details pane. For example, at **Recipients** \> **Mailboxes**, when you select multiple mailboxes of the same type, the title of the details pane changes to **Bulk Edit**, and you can update contact and organization information, custom attributes, mailbox quotas, Outlook on the web settings, and more.
   
 ![Bulk select mailboxes in the EAC](../../media/ee6acd85-a6b8-44f4-8eb1-a6e84e4dfff1.png)
   
@@ -234,15 +234,15 @@ You can also use the **Get-Notification** cmdlet in the Exchange Management Shel
   
 ### 8: Me tile and Help
 
-The Me tile allows you to sign out of the EAC and sign in as a different user by clicking on the drop-down menu that's next to your account name. 
+The  *Me tile*  allows you to sign out of the EAC and sign in as a different user by clicking on the drop-down menu that's next to your account name. 
   
 Click the help icon (![Help icon](../../media/ITPro_EAC_HelpIcon.png)) to view the help content for the tab that you're currently on. If you click on the drop-down menu that's next to the help icon, you can perform the following additional actions:
   
-- **Disable Help bubble** The Help bubble displays contextual help for fields when you create or edit objects in the EAC. From here, you can globally turn off or turn on the Help bubble for all fields in the EAC. 
+- **Disable Help bubble**: The Help bubble displays contextual help for fields when you create or edit objects in the EAC. From here, you can globally turn off or turn on the Help bubble for all fields in the EAC.
     
-- **Performance console** The Performance console displays many counters that relate to the performance of the EAC. 
+- **Performance console**: The Performance console displays many counters that relate to the performance of the EAC.
     
-- **Copyright** and **Privacy** Click these links to read the copyright and privacy information for Exchange 2016. 
+- **Copyright** and **Privacy**: Click these links to read the copyright and privacy information for Exchange 2016.
     
 ## Supported browsers
 <a name="SB"> </a>
@@ -265,24 +265,24 @@ The levels of support for operating system and browser combinations that you can
     
 **Client operating systems**
 
-||||||||
-|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-|Web browser  <br/> |Windows Vista  <br/> |Windows 7  <br/> |Windows 8.1  <br/> |Windows 10  <br/> |Mac OS X  <br/> |Linux  <br/> |
-|Internet Explorer 9  <br/> |Unsupported  <br/> |Unsupported  <br/> |n/a  <br/> |n/a  <br/> |n/a  <br/> |n/a  <br/> |
-|Internet Explorer 10  <br/> |n/a  <br/> |Unsupported  <br/> |n/a  <br/> |n/a  <br/> |n/a  <br/> |n/a  <br/> |
-|Internet Explorer 11  <br/> |n/a  <br/> |Supported  <br/> |Supported  <br/> |Supported  <br/> |n/a  <br/> |n/a  <br/> |
-|Microsoft Edge  <br/> |n/a  <br/> |n/a  <br/> |n/a  <br/> |Supported  <br/> |n/a  <br/> |n/a  <br/> |
-|Mozilla Firefox latest version or one previous  <br/> |Supported  <br/> |Supported  <br/> |Supported  <br/> |Supported  <br/> |Supported  <br/> |Supported  <br/> |
-|Apple Safari 6 or later versions  <br/> |n/a  <br/> |n/a  <br/> |n/a  <br/> |n/a  <br/> |Supported  <br/> |n/a  <br/> |
-|Google Chrome latest version or one previous  <br/> |n/a  <br/> |Supported  <br/> |Supported  <br/> |Supported  <br/> |Supported  <br/> |Supported  <br/> |
+|||||||
+|:-----|:-----|:-----|:-----|:-----|:-----|
+|Web browser  <br/> |Windows 7  <br/> |Windows 8.1  <br/> |Windows 10  <br/> |Mac OS X  <br/> |Linux  <br/> |
+|Internet Explorer 9  <br/> |Unsupported  <br/> |n/a  <br/> |n/a  <br/> |n/a  <br/> |n/a  <br/> |
+|Internet Explorer 10  <br/> |Unsupported  <br/> |n/a  <br/> |n/a  <br/> |n/a  <br/> |n/a  <br/> |
+|Internet Explorer 11  <br/> |Supported  <br/> |Supported  <br/> |Supported  <br/> |n/a  <br/> |n/a  <br/> |
+|Microsoft Edge  <br/> |n/a  <br/> |n/a  <br/> |Supported  <br/> |n/a  <br/> |n/a  <br/> |
+|Mozilla Firefox latest version or one previous  <br/> |Supported  <br/> |Supported  <br/> |Supported  <br/> |Supported  <br/> |Supported  <br/> |
+|Apple Safari 6 or later versions  <br/> |n/a  <br/> |n/a  <br/> |n/a  <br/> |Supported  <br/> |n/a  <br/> |
+|Google Chrome latest version or one previous  <br/> |Supported  <br/> |Supported  <br/> |Supported  <br/> |Supported  <br/> |Supported  <br/> |
    
 **Windows Server operating systems**
 
 ||||||
 |:-----|:-----|:-----|:-----|:-----|
-|Web browser  <br/> |Windows Server 2008  <br/> |Windows Server 2008 R2  <br/> |Windows Server 2012  <br/> |Windows Server 2012 R2  <br/> |
-|Internet Explorer 9  <br/> |Unsupported  <br/> |Unsupported  <br/> |n/a  <br/> |n/a  <br/> |
-|Internet Explorer 10  <br/> |n/a  <br/> |Unsupported  <br/> |Supported  <br/> |n/a  <br/> |
-|Internet Explorer 11  <br/> |n/a  <br/> |Supported  <br/> |n/a  <br/> |Supported  <br/> |
+|Web browser  <br/> |Windows Server 2008 R2  <br/> |Windows Server 2012  <br/> |Windows Server 2012 R2  <br/> |Windows Server 2016  <br/> |
+|Internet Explorer 9  <br/> |Unsupported  <br/> |n/a  <br/> |n/a  <br/> |n/a  <br/> |
+|Internet Explorer 10  <br/> |Unsupported  <br/> |Supported  <br/> |n/a  <br/> |n/a  <br/> |
+|Internet Explorer 11  <br/> |Supported  <br/> |n/a  <br/> |Supported  <br/> |Supported  <br/> |
    
 

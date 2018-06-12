@@ -37,7 +37,7 @@ For additional management tasks related to managing public folders, see [Public 
   
 ## Use the EAC to mail-enable or mail-disable a public folder
 
-1. Navigate to **Public folders** > **Public folders**.
+1. Navigate to **Public folders** \> **Public folders**.
     
 2. In the list view, select the public folder that you want to mail-enable or mail-disable.
     

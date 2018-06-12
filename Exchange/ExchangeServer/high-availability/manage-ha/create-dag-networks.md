@@ -38,7 +38,7 @@ Looking for other management tasks related to DAGs? Check out [Managing database
 ## Use the EAC to create a database availability group network
 <a name="UseEMC"> </a>
 
-1. In the EAC, go to **Servers** > **Database Availability Groups**.
+1. In the EAC, go to **Servers** \> **Database Availability Groups**.
     
 2. Select the DAG you want to configure, and then click ![Add DAG network](../../media/ITPro_EAC_AddDagNetwork.png).
     
@@ -66,7 +66,7 @@ New-DatabaseAvailabilityGroupNetwork -DatabaseAvailabilityGroup DAG1 -Name Repli
 
 To verify that you've successfully created a DAG network, do one of the following:
   
-- In the EAC, navigate to **Servers** > **Database Availability Groups**. Select the appropriate DAG, and the newly created DAG network is displayed in the details pane.
+- In the EAC, navigate to **Servers** \> **Database Availability Groups**. Select the appropriate DAG, and the newly created DAG network is displayed in the details pane.
     
 - In the Exchange Management Shell, run the following command to verify the DAG network was created and to display DAG network configuration information.
     

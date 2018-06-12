@@ -3,7 +3,7 @@ title: "Configure instant messaging integration with Outlook on the web in Excha
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 1/5/2018
+ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: get-started-article
 ms.prod: office-online-server
@@ -23,11 +23,11 @@ To configure instant messaging (IM) integration between Skype for Business Serve
   
 Also, the following health set errors are generated on the Exchange server:
   
-- **HealthSet** `OWA.Protocol.Dep`
+- **HealthSet**:  `OWA.Protocol.Dep`
     
-- **Subject** `OWA.Protocol.Dep health set unhealthy (OwaIMinitializationFialiedMonitor/OWA.Protocol.Dep) - Owa InstantMessaging provider failed to intialize`
+- **Subject**:  `OWA.Protocol.Dep health set unhealthy (OwaIMinitializationFialiedMonitor/OWA.Protocol.Dep) - Owa InstantMessaging provider failed to intialize`
     
-- **Message** `Owa InstantMessaging provider failed to initialize due to incorrect IM configuration on the server. Signin attempts to OWA IM will fail. Error Message: {Instant Messaging Certificate Thumbprint is null or empty on web.config).`
+- **Message**:  `Owa InstantMessaging provider failed to initialize due to incorrect IM configuration on the server. Signin attempts to OWA IM will fail. Error Message: {Instant Messaging Certificate Thumbprint is null or empty on web.config).`
     
 Use the procedures in this topic to fix these errors and configure IM integration between Skype for Business Server and Exchange 2016. IM integration between Lync Server 2013 and Exchange 2016 isn't supported.
   
@@ -64,13 +64,13 @@ New-SettingOverride -Name "<UniqueOverrideName>" -Component OwaServer -Section I
     
 This example specifies the IM server and IM certificate thumbprint on all Exchange 2016 servers in the organization.
   
-- **Setting override name** "IM Override" (must be unique) 
+- **Setting override name**: "IM Override" (must be unique)
     
-- **Skype for Business server name** skype01.contoso.com 
+- **Skype for Business server name**: skype01.contoso.com
     
-- **Certificate thumbprint** CDF34A740E9D225A1A06193A9D44B2CE22775308 
+- **Certificate thumbprint**: CDF34A740E9D225A1A06193A9D44B2CE22775308
     
-- **Override reason** Configure IM 
+- **Override reason**: Configure IM
     
 ```
 New-SettingOverride -Name "IM Override"  -Component OwaServer -Section IMSettings -Parameters @("IMServerName=skype01.contoso.com","IMCertificateThumbprint=CDF34A740E9D225A1A06193A9D44B2CE22775308") -Reason "Configure IM"
@@ -116,8 +116,8 @@ To verify the values of the **IMServerName** and **IMCertificateThumbprint** pro
 
  **Note**: In Exchange 2016 CU3 or earlier, you need to use different values for some of the parameters:
   
--  _Process_ `Microsoft.Exchange.Directory.TopologyService` (instead of  `MSExchangeMailboxAssistants`).
+-  _Process_:  `Microsoft.Exchange.Directory.TopologyService` (instead of  `MSExchangeMailboxAssistants`).
     
--  _Argument_ `Config` (instead of  `"Config,Component=OwaServer"`).
+-  _Argument_:  `Config` (instead of  `"Config,Component=OwaServer"`).
     
 

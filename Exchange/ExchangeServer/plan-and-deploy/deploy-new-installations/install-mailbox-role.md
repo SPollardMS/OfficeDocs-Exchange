@@ -3,7 +3,7 @@ title: "Install the Exchange 2016 Mailbox role using the Setup wizard"
 ms.author: dstrome
 author: dstrome
 manager: serdars
-ms.date: 8/8/2016
+ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: get-started-article
 f1_keywords:
@@ -12,12 +12,12 @@ ms.prod: office-online-server
 localization_priority: Normal
 ms.collection: Strat_EX_Admin
 ms.assetid: da690d47-3384-4430-a69e-0cd4d3bf80a7
-description: "How to use the Exchange Server 2016 Setup wizard to install the Exchange 2016 Mailbox role on a computer"
+description: "Summary: How to use the Exchange Server 2016 Setup wizard to install the Exchange 2016 Mailbox role on a computer"
 ---
 
 # Install the Exchange 2016 Mailbox role using the Setup wizard
 
-How to use the Exchange Server 2016 Setup wizard to install the Exchange 2016 Mailbox role on a computer
+ **Summary**: How to use the Exchange Server 2016 Setup wizard to install the Exchange 2016 Mailbox role on a computer
   
 Before you install the Exchange Server 2016 Mailbox role, verify the following prerequisites:
   
@@ -25,11 +25,11 @@ Before you install the Exchange Server 2016 Mailbox role, verify the following p
     
 - Verify the following permissions for the account that you're using to install Exchange 2016:
     
-  - **Enterprise Admins group membership** Required if this is the first Exchange 2016 server in the organization. 
+  - **Enterprise Admins group membership**: Required if this is the first Exchange 2016 server in the organization.
     
-  - **Schema Admins group membership** Required if you haven't previously prepared the Active Directory schema. 
+  - **Schema Admins group membership**: Required if you haven't previously prepared the Active Directory schema.
     
-  - **Exchange Organization role group membership** Required if you've already prepared the Active Directory schema, or if other Exchange 2016 servers already exist in the organization. 
+  - **Exchange Organization role group membership**: Required if you've already prepared the Active Directory schema, or if other Exchange 2016 servers already exist in the organization.
     
     Note that members of the Delegated Setup role group can also deploy Exchange 2016 servers that have already been provisioned by members of the Organization Management role group.
     
@@ -52,13 +52,13 @@ For information about tasks to do after you've installed Exchange 2016, see [Exc
   
 ## Install Exchange Server 2016
 
-1. Use the information in [Updates for Exchange 2016](../../new-features/updated-features.md) to download the latest version of Exchange 2016 on the computer where you want to install Exchange. 
+1. Use the information in [Updates for Exchange 2016](../../new-features/updates.md) to download the latest version of Exchange 2016 on the computer where you want to install Exchange. 
     
 2. In File Explorer, right-click on the Exchange ISO image file that you downloaded, and then select **Mount**. In the resulting virtual DVD drive that appears, start Exchange 2016 Setup by double-clicking  `Setup.exe`.
     
 3. The Exchange Server 2016 Setup wizard opens. On the **Check for Updates?** page, choose one of the following options, and then click **Next** to continue: 
     
-  - **Connect to the Internet and check for updates** We recommend this option, which searches for updates to the version of Exchange 2016 that you're installing (it doesn't detect newer Exchange 2016 Cumulative Updates). This option takes you to the **Downloading Updates** page that searches for updates. Click **Next** to continue. 
+  - **Connect to the Internet and check for updates**: We recommend this option, which searches for updates to the version of Exchange 2016 that you're installing (it doesn't detect newer Exchange 2016 Cumulative Updates). This option takes you to the **Downloading Updates** page that searches for updates. Click **Next** to continue. 
     
   - **Don't check for updates right now**
     
@@ -75,18 +75,18 @@ For information about tasks to do after you've installed Exchange 2016, see [Exc
   
 7. On the **Recommended Settings** page, choose one of the following settings: 
     
-  - **Use recommended settings** Exchange automatically sends error reports and information about your computer hardware and how you use Exchange to Microsoft. For information about what's sent to Microsoft and how it's used, click **?** or the help links on the page. 
+  - **Use recommended settings**: Exchange automatically sends error reports and information about your computer hardware and how you use Exchange to Microsoft. For information about what's sent to Microsoft and how it's used, click **?** or the help links on the page. 
     
-  - **Don't use recommended settings** These settings are disabled, but you can enable them at any time after Setup completes. 
+  - **Don't use recommended settings**: These settings are disabled, but you can enable them at any time after Setup completes.
     
     Click **Next** to continue. 
     ![Exchange 2016 Setup, Recommended Settings page](../../media/26af58f0-52ab-4482-8710-9a7cd2e7a6c3.png)
   
 8. On the **Server Role Selection** page, configure the following options: 
     
-  - **Mailbox role** Select this option, which also automatically installs the **Management Tools**.
+  - **Mailbox role**: Select this option, which also automatically installs the **Management Tools**.
     
-  - **Automatically install Windows Server roles and features that are required to install Exchange** Select this option to have the Setup wizard install the required Windows prerequisites. You might need to reboot the computer to complete the installation of some Windows features. If you don't select this option, you need to install the Windows features manually. 
+  - **Automatically install Windows Server roles and features that are required to install Exchange**: Select this option to have the Setup wizard install the required Windows prerequisites. You might need to reboot the computer to complete the installation of some Windows features. If you don't select this option, you need to install the Windows features manually.
     
     **Note**: Selecting this option installs only the Windows features that are required by Exchange. You need to install other prerequisites manually. For more information, see [Exchange 2016 prerequisites](../../plan-and-deploy/prerequisites.md).
     
@@ -98,7 +98,7 @@ For information about tasks to do after you've installed Exchange 2016, see [Exc
   
 10. If this is the first Exchange server in your organization, you arrive on the **Exchange Organization** page. On this page, configure the following settings: 
     
-  - **Specify the name for this Exchange organization** The default value is **First Organization**, but you typically use the company name for this value. The organization name is used internally by Exchange, isn't typically seen by users, doesn't affect the functionality of Exchange, and doesn't determine what you can use for email addresses.
+  - **Specify the name for this Exchange organization**: The default value is **First Organization**, but you typically use the company name for this value. The organization name is used internally by Exchange, isn't typically seen by users, doesn't affect the functionality of Exchange, and doesn't determine what you can use for email addresses.
     
   - The organization name can't contain more than 64 characters, and can't be blank.
     
@@ -106,7 +106,7 @@ For information about tasks to do after you've installed Exchange 2016, see [Exc
     
   - You can't change the organization name after it's set.
     
-  - **Apply Active Directory split permission security model to the Exchange organization** Most organizations don't need to select this option. If you need to separate management of Active Directory security principals and the Exchange configuration, split permissions might work for you. For more information, click **?**.
+  - **Apply Active Directory split permission security model to the Exchange organization**: Most organizations don't need to select this option. If you need to separate management of Active Directory security principals and the Exchange configuration, split permissions might work for you. For more information, click **?**.
     
     Click **Next** to continue. 
     ![Exchange 2016 Setup, Exchange Organization page](../../media/acdba072-f4bb-4fb8-acae-c6b43cb32044.png)

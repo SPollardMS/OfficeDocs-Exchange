@@ -3,7 +3,7 @@ title: "Restore data using a recovery database"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/4/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
@@ -77,7 +77,7 @@ For additional management tasks related to RDBs, see [Recovery databases](recove
 6. Verify that the mounted database contains the mailbox(es) you want to restore:
     
   ```
-  Get-MailboxStatistics -Database <RDBName> | ft -auto
+  Get-MailboxStatistics -Database <RDBName> | Format-Table -auto
   ```
 
 7. Use the New-MailboxRestoreRequest cmdlet to restore a mailbox or items from the recovery database to a production mailbox.

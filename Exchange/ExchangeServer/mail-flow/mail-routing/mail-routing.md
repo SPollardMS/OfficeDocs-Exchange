@@ -3,18 +3,18 @@ title: "Mail routing"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: overview
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 6fd39079-9655-4fd9-9269-c7462c76e0a7
-description: "Learn how mail is routed between Exchange servers in an Exchange 2016 organization."
+description: "Summary: Learn how mail is routed between Exchange servers in an Exchange 2016 organization."
 ---
 
 # Mail routing
 
-Learn how mail is routed between Exchange servers in an Exchange 2016 organization.
+ **Summary**: Learn how mail is routed between Exchange servers in an Exchange 2016 organization.
   
 The primary task of the Transport service that exists on Mailbox servers in your Exchange organization is to route messages received from users and external sources to their ultimate destinations. Routing decisions are made during message categorization. The categorizer is a component of the Transport service that processes all incoming messages and determines what to do with the message based on information about their destinations.
   
@@ -30,50 +30,28 @@ Routing in Exchange 2016 is virtually unchanged from Exchange 2013. These are th
     
 - Linked connectors are no longer available. A linked connector was a Receive connector that was linked to a Send connector. All messages received by the Receive connector were automatically forwarded to the Send connector.
     
- **Contents**
-  
-[Routing components](mail-routing.md#Components)
-  
-- [Routing destinations](mail-routing.md#RoutingDest)
-    
-- [Delivery groups](mail-routing.md#DeliveryGroups)
-    
-- [Queues](mail-routing.md#Queues)
-    
-[Routing messages](mail-routing.md#Routing)
-  
-- [Routing messages between Active Directory sites](mail-routing.md#ActiveDirectory)
-    
-- [Routing in the Front End Transport service on Mailbox servers](mail-routing.md#FrontEndTransport)
-    
-- [Routing in the Mailbox Transport service on Mailbox servers](mail-routing.md#MailboxTransport)
-    
-- [Routing in the Transport service on Edge Transport servers](mail-routing.md#EdgeTransport)
-    
 ## Routing components
 <a name="Components"> </a>
 
-When a message is received by the Transport service on a Mailbox server, the message must be categorized. The first phase of message categorization is recipient resolution. After the recipient has been resolved, the ultimate destination can be determined. The next phase, routing, determines how to best reach that destination. Routing in Exchange 2016 is generalized for increased flexibility and decreased complexity by using the concepts of routing destinations and delivery groups.
+When a message is received by the Transport service on a Mailbox server, the message must be categorized. The first phase of message categorization is recipient resolution. After the recipient has been resolved, the ultimate destination can be determined. The next phase, routing, determines how to best reach that destination. Routing in Exchange 2016 is generalized for increased flexibility and decreased complexity by using the concepts of  *routing destinations*  and  *delivery groups*  . 
   
 ### Routing destinations
 <a name="RoutingDest"> </a>
 
-The ultimate destination for a message is called a routing destination. Regardless of the complexity of an Exchange organization, there are surprisingly few routing destinations. They are:
+The ultimate destination for a message is called a  *routing destination*  . Regardless of the complexity of an Exchange organization, there are surprisingly few routing destinations. They are: 
   
-- **A mailbox database** This is the routing destination for any recipient with a mailbox in the Exchange organization. In Exchange 2016 and Exchange 2013, public folders are a type of mailbox, so routing messages to public folder recipients is the same as routing messages to mailbox recipients. 
+- **A mailbox database**: This is the routing destination for any recipient with a mailbox in the Exchange organization. In Exchange 2016 and Exchange 2013, public folders are a type of mailbox, so routing messages to public folder recipients is the same as routing messages to mailbox recipients.
     
-- **A connector** A Send connector is used as a routing destination for SMTP messages based on the configuration of the Send connector (address spaces, scoped or not, etc.). Similarly, a Delivery Agent connector or Foreign connector is used as a routing destination for non-SMTP messages. 
+- **A connector**: A Send connector is used as a routing destination for SMTP messages based on the configuration of the Send connector (address spaces, scoped or not, etc.). Similarly, a Delivery Agent connector or Foreign connector is used as a routing destination for non-SMTP messages.
     
-- **A distribution group expansion server** This is the routing destination when a distribution group has a designated expansion server (a server that's responsible for expanding the membership list of the group). A distribution group expansion server is an Exchange 2016 Mailbox server, an Exchange 2013 Mailbox server, or an Exchange 2010 Hub Transport server. 
+- **A distribution group expansion server**: This is the routing destination when a distribution group has a designated expansion server (a server that's responsible for expanding the membership list of the group). A distribution group expansion server is an Exchange 2016 Mailbox server, an Exchange 2013 Mailbox server, or an Exchange 2010 Hub Transport server.
     
 Note that these routing destinations existed in previous versions of Exchange, but they weren't called routing destinations.
-  
-[Return to top](mail-routing.md#RTT)
   
 ### Delivery groups
 <a name="DeliveryGroups"> </a>
 
-A collection of one or more transport servers is responsible for delivering mail to each routing destination. This collection of transport servers is called a delivery group. The term transport servers is used because the servers could be a mixture of Exchange 2016 Mailbox servers (the Transport service), Exchange 2013 Mailbox servers (the Transport service), or Exchange 2010 Hub Transport servers. The relationship between routing destinations and delivery groups is explained in the following table: 
+A collection of one or more transport servers is responsible for delivering mail to each routing destination. This collection of transport servers is called a  *delivery group*  . The term  *transport servers*  is used because the servers could be a mixture of Exchange 2016 Mailbox servers (the Transport service), Exchange 2013 Mailbox servers (the Transport service), or Exchange 2010 Hub Transport servers. The relationship between routing destinations and delivery groups is explained in the following table: 
   
 |**Routing destination**|**Delivery group**|
 |:-----|:-----|
@@ -93,16 +71,14 @@ The different types of delivery groups that exist in Exchange 2016 are summarize
 |**Delivery group type**|**Delivery group**|**Routing destination**|**Comments**|
 |:-----|:-----|:-----|:-----|
 |Routable DAG  <br/> |Exchange 2016 Mailbox servers that belong to the Exchange 2016 DAG.  <br/> Exchange 2013 Mailbox servers that belong to the Exchange 2013 DAG.  <br/> |Mailbox databases in the DAG  <br/> |After the message arrives at a Mailbox server in the DAG, the Transport service routes the message to the Mailbox Transport Delivery service on the DAG member that holds the active copy of the destination mailbox database. The Mailbox Transport Delivery service then delivers the message to the local mailbox database. Although a DAG might contain Mailbox servers located in different Active Directory sites, the DAG defines the delivery group, not the Active Directory site.  <br/> |
-|Mailbox delivery group (Exchange 2016 and Exchange 2013)  <br/> |Exchange 2016 Mailbox servers and Exchange 2013 Mailbox servers in the Active Directory site.  <br/> |Mailbox databases on Exchange 2016 Mailbox servers or Exchange 2013 Mailbox servers in the Active Directory site that don't belong to a DAG.  <br/> | Mailbox databases located on Exchange 2016 Mailbox servers and Exchange 2013 Mailbox servers that don't belong to a DAG are serviced by the Transport service on Exchange 2016 Mailbox servers and Exchange 2013 Mailbox servers in the same Active Directory site.  <br/>  After the message arrives on an Exchange 2016 or Exchange 2013 Mailbox server in the Active Directory site, the Transport service uses SMTP to transfer the message to the Mailbox Transport Delivery service on the Mailbox server that holds the mailbox database. The Mailbox Transport Delivery service then delivers the message to the local mailbox database using RPC.  <br/>  In other words, the following mail delivery paths are supported between the different versions of Exchange:  <br/>  Exchange 2016 Transport service to Exchange 2013 Mailbox Transport Delivery service to Exchange 2013 mailbox database.  <br/>  Exchange 2013 Transport service to Exchange 2016 Mailbox Transport Delivery service to Exchange 2016 mailbox database.  <br/> |
+|Mailbox delivery group (Exchange 2016 and Exchange 2013)  <br/> |Exchange 2016 Mailbox servers and Exchange 2013 Mailbox servers in the Active Directory site.  <br/> |Mailbox databases on Exchange 2016 Mailbox servers or Exchange 2013 Mailbox servers in the Active Directory site that don't belong to a DAG.  <br/> |Mailbox databases located on Exchange 2016 Mailbox servers and Exchange 2013 Mailbox servers that don't belong to a DAG are serviced by the Transport service on Exchange 2016 Mailbox servers and Exchange 2013 Mailbox servers in the same Active Directory site.  <br/> After the message arrives on an Exchange 2016 or Exchange 2013 Mailbox server in the Active Directory site, the Transport service uses SMTP to transfer the message to the Mailbox Transport Delivery service on the Mailbox server that holds the mailbox database. The Mailbox Transport Delivery service then delivers the message to the local mailbox database using RPC.  <br/> In other words, the following mail delivery paths are supported between the different versions of Exchange:  <br/> • Exchange 2016 Transport service to Exchange 2013 Mailbox Transport Delivery service to Exchange 2013 mailbox database.  <br/> • Exchange 2013 Transport service to Exchange 2016 Mailbox Transport Delivery service to Exchange 2016 mailbox database.  <br/> |
 |Mailbox delivery group (Exchange 2010)  <br/> |Exchange 2010 Hub Transport servers in the Active Directory site.  <br/> |Mailbox databases on Exchange 2010 Mailbox servers in the Active Directory site.  <br/> |Mailbox databases located on Exchange 2010 Mailbox servers are serviced by the Exchange 2010 Hub Transport servers in the same Active Directory site.  <br/> After the message arrives at a random Exchange 2010 Hub Transport server in the Active Directory site, the store driver on the Hub Transport server uses RPC to write the message to the mailbox database.  <br/> |
 |Connector source server  <br/> |A mixture of any Exchange 2016 Mailbox servers, Exchange 2013 Mailbox servers, or Exchange 2010 Hub Transport servers that are defined as source transport servers for the connector.  <br/> |A Send connector, Delivery Agent connector or Foreign connector.  <br/> |If the connector is scoped (that is, restricted to transport servers in the same Active Directory site), then only other transport servers in that site are aware of the connector, and can use the connector to route mail.  <br/> If the connector isn't scoped, then all transport servers in the entire Active Directory forest are aware of the connector, and can use the connector to route mail.  <br/> |
 |Server list  <br/> |The Exchange 2016 Mailbox server, Exchange 2013 Mailbox server, or Exchange 2010 Hub Transport server that's defined as the expansion server for the distribution group.  <br/> |The distribution group expansion server.  <br/> |none  <br/> |
-|AD site  <br/> | Any mixture of Exchange 2016 Mailbox servers, Exchange 2013 Mailbox servers, or Exchange 2010 Hub Transport servers that exist in:  <br/>  Active Directory sites that are configured as hub sites.  <br/>  Active Directory sites that have subscribed Edge Transport servers.  <br/> |None. The message must travel through the Active Directory site on the way to the actual routing destination.  <br/> |This delivery group type is the only routing scenario in Exchange 2016 where delayed fan-out is still used. Delayed fan-out attempts to reduce the number of message transmissions when multiple routing destinations share part of the least-cost routing path.  <br/> Hub sites are used only if the Active Directory site exists along the least-cost routing path for the message.  <br/> For Edge Transport servers, the Transport service on any Mailbox server in the subscribed Active Directory site is able to send messages to the Edge Transport server, regardless of whether that server participates in EdgeSync synchronization. For more information, see [Edge Transport servers](../../architecture/edge-transport-servers/edge-transport-servers.md).  <br/> |
+|AD site  <br/> | Any mixture of Exchange 2016 Mailbox servers, Exchange 2013 Mailbox servers, or Exchange 2010 Hub Transport servers that exist in:  <br/>  Active Directory sites that are configured as hub sites.  <br/>  Active Directory sites that have subscribed Edge Transport servers.  <br/> |None. The message must travel through the Active Directory site on the way to the actual routing destination.  <br/> |This delivery group type is the only routing scenario in Exchange 2016 where  *delayed fan-out*  is still used. Delayed fan-out attempts to reduce the number of message transmissions when multiple routing destinations share part of the least-cost routing path.  <br/> Hub sites are used only if the Active Directory site exists along the least-cost routing path for the message.  <br/> For Edge Transport servers, the Transport service on any Mailbox server in the subscribed Active Directory site is able to send messages to the Edge Transport server, regardless of whether that server participates in EdgeSync synchronization. For more information, see [Edge Transport servers](../../architecture/edge-transport-servers/edge-transport-servers.md).  <br/> |
    
 > [!NOTE]
 > Delivery group membership isn't mutually exclusive. For example, an Exchange 2016 Mailbox server that's a member of a DAG can also be the source transport server of a Send connector. The Mailbox server belongs to the routable DAG delivery group for the mailbox databases in the DAG, and the connector source server delivery group for the Send connector. 
-  
-[Return to top](mail-routing.md#RTT)
   
 ### Queues
 <a name="Queues"> </a>
@@ -110,8 +86,6 @@ The different types of delivery groups that exist in Exchange 2016 are summarize
 From the perspective of the sending transport server, each message delivery queue represents the destination for a particular message. When the Transport service selects the destination for a message, the destination is stamped on the recipient as the **NextHopSolutionKey** attribute. If a single message is sent to more than one recipient, each recipient has the **NextHopSolutionKey** attribute. The receiving transport server also performs message categorization and queues the message for delivery. After a message is queued, you can examine the delivery type for a particular queue to determine whether a message will be relayed again when it reaches the next hop destination. Every unique value of the **NextHopSolutionKey** attribute corresponds to a separate message delivery queue. 
   
 For more information, see [NextHopSolutionKey](../../mail-flow/queues/queues.md#NextHopSolutionKey).
-  
-[Return to top](mail-routing.md#RTT)
   
 ## Routing messages
 <a name="Routing"> </a>
@@ -126,9 +100,9 @@ When a message needs to be delivered to a remote delivery group, a routing path 
     
 3. If more than one routing path is still available, the name assigned to the Active Directory sites before the destination is considered. The routing path where the Active Directory site nearest the destination is lowest in alphanumeric order is used. If the site nearest the destination is the same for all routing paths being evaluated, an earlier site name is considered.
     
-In Exchange 2010, each message recipient is associated with only one Active Directory site, and there is only one least cost routing from the source Active Directory site to the destination site. In Exchange 2016, a delivery group might span multiple Active Directory sites, and there might be multiple least-cost routing paths to those sites. Exchange 2016 designates a single Active Directory site in the destination delivery group as the primary site. The primary site is closest Active Directory site based on the routing logic described earlier. To successfully route messages between delivery groups, Exchange 2016 takes the following issues into consideration:
+In Exchange 2010, each message recipient is associated with only one Active Directory site, and there is only one least cost routing from the source Active Directory site to the destination site. In Exchange 2016, a delivery group might span multiple Active Directory sites, and there might be multiple least-cost routing paths to those sites. Exchange 2016 designates a single Active Directory site in the destination delivery group as the  *primary site*  . The primary site is closest Active Directory site based on the routing logic described earlier. To successfully route messages between delivery groups, Exchange 2016 takes the following issues into consideration: 
   
-- **The presence of one or more hub sites along the least-cost routing path** If the least-cost routing path to the primary site contains any hub sites, the message must be routed through the hub sites. The closest hub site along the least-cost routing path is selected as a new delivery group of the type **AD site**, which includes all transport servers in the hub site. After the message traverses the hub site, routing of the message along the least-cost routing path continues. If the primary site happens to be a hub site, the primary site is still considered a hub site for the following reasons: 
+- **The presence of one or more hub sites along the least-cost routing path**: If the least-cost routing path to the primary site contains any hub sites, the message must be routed through the hub sites. The closest hub site along the least-cost routing path is selected as a new delivery group of the type **AD site**, which includes all transport servers in the hub site. After the message traverses the hub site, routing of the message along the least-cost routing path continues. If the primary site happens to be a hub site, the primary site is still considered a hub site for the following reasons: 
     
   - If the destination delivery group spans multiple Active Directory sites, the source server should only attempt to connect to the servers in the hub site.
     
@@ -136,18 +110,14 @@ In Exchange 2010, each message recipient is associated with only one Active Dire
     
     As in previous version of Exchange, hub sites that aren't in the least-cost routing path to the primary site are ignored.
     
-- **The target Exchange server to select in the destination routing group** When the destination delivery group spans multiple Active Directory sites, the routing path to specific servers within the delivery group might have different costs. Servers located in the closest Active Directory site are selected as the target servers for the delivery group based on the least-cost routing path, and the Active Directory site those servers are in is selected as the primary site. 
+- **The target Exchange server to select in the destination routing group**: When the destination delivery group spans multiple Active Directory sites, the routing path to specific servers within the delivery group might have different costs. Servers located in the closest Active Directory site are selected as the target servers for the delivery group based on the least-cost routing path, and the Active Directory site those servers are in is selected as the primary site.
     
-- **Fallback options when connection attempts to all servers in the destination routing group fail** If the destination delivery group spans multiple Active Directory sites, the first fallback option is all other servers in the destination delivery group in other Active Directory sites that aren't selected as target servers. Server selection is based on the least-cost routing path to the other Active Directory sites. If the destination delivery group has any servers in the local Active Directory site, there are no other fallback options because the message is already as close to the target routing destination as possible. If the destination delivery group has servers in remote Active Directory sites, the option is to try to connect to all other servers in the primary site. If that fails, a backoff path in the least-cost routing path to the primary site is used. Exchange 2016 tries to deliver the message as close to the destination as possible by backing off, hop by hop, along the least-cost routing path until a connection is made. 
+- **Fallback options when connection attempts to all servers in the destination routing group fail**: If the destination delivery group spans multiple Active Directory sites, the first fallback option is all other servers in the destination delivery group in other Active Directory sites that aren't selected as target servers. Server selection is based on the least-cost routing path to the other Active Directory sites. If the destination delivery group has any servers in the local Active Directory site, there are no other fallback options because the message is already as close to the target routing destination as possible. If the destination delivery group has servers in remote Active Directory sites, the option is to try to connect to all other servers in the primary site. If that fails, a backoff path in the least-cost routing path to the primary site is used. Exchange 2016 tries to deliver the message as close to the destination as possible by backing off, hop by hop, along the least-cost routing path until a connection is made.
     
-[Return to top](mail-routing.md#RTT)
-  
 ### Routing messages between Active Directory sites
 <a name="ActiveDirectory"> </a>
 
 The way that Exchange 2016 routes messages between Active Directory sites is virtually the same as Exchange 2010. For more information, see [Route Mail Between Active Directory Sites](http://technet.microsoft.com/library/86b423e3-7bec-4430-9a5a-4f84ce9d82ea.aspx).
-  
-[Return to top](mail-routing.md#RTT)
   
 ### Routing in the Front End Transport service on Mailbox servers
 <a name="FrontEndTransport"> </a>
@@ -178,8 +148,6 @@ Depending on the number and type of recipients, the Front End Transport service 
     
 - If the message has no mailbox recipients, select a random Mailbox server in the local Active Directory site.
     
-[Return to top](mail-routing.md#RTT)
-  
 ### Routing in the Mailbox Transport service on Mailbox servers
 <a name="MailboxTransport"> </a>
 
@@ -187,7 +155,7 @@ The Mailbox Transport service consists of two separate services: the Mailbox Tra
   
 Like the Transport service, the Mailbox Transport service loads routing tables based on information from Active Directory, and uses delivery groups to determine how to route messages. However, there are routing aspects that are unique to the Mailbox Transport service:
   
-- Because the Transport service and the Mailbox Transport service exist on the same Mailbox server, the Mailbox Transport service always belongs to the same delivery group as the Mailbox server. This delivery group is referred to as the local delivery group.
+- Because the Transport service and the Mailbox Transport service exist on the same Mailbox server, the Mailbox Transport service always belongs to the same delivery group as the Mailbox server. This delivery group is referred to as the  *local delivery group*  . 
     
 - The Mailbox Transport Submission service doesn't automatically send messages to the Transport service on the local Mailbox server or on other Mailbox servers in its own local delivery group. The Mailbox Transport Submission service has access to the same routing topology information as the Transport service, so the Mailbox Transport submission service can send messages to the Transport service on Mailbox servers outside the delivery group. The Mailbox servers in the local delivery group are used as fallback options, and for delivery to non-mailbox recipients.
     
@@ -219,8 +187,6 @@ When the Mailbox Transport Delivery service receives a message from the Transpor
     
 - Reroute the message
     
-[Return to top](mail-routing.md#RTT)
-  
 ### Routing in the Transport service on Edge Transport servers
 <a name="EdgeTransport"> </a>
 
@@ -228,10 +194,8 @@ The Transport service on Edge Transport servers provides SMTP relay and smart ho
   
 Typically, when you install an Edge Transport server in your perimeter network, you subscribe the Edge Transport server to an Active Directory site. The Active Directory site contains the Mailbox servers that relay messages to and from the Edge Transport server. The Edge Subscription process creates an Active Directory site membership affiliation for the Edge Transport server. The site affiliation enables the Mailbox servers in the Active Directory site to relay messages to the Edge Transport server without having to configure explicit Send connectors.
   
-In organizations that have Exchange servers in multiple Active Directory sites, outbound mail from internal recipients to external recipients is first routed to the subscribed Active Directory site. Transport servers in the target Active Directory site are the delivery group. The routing destination is the intra-organization Send connector in the Transport service on any of the Mailbox servers in the subscribed Active Directory site. The intra-organization Send connector is special Send connector that exists in the Transport service on every Mailbox server. This Send connector is implicitly created, invisible, requires no management, and is used to relay messages between Exchange servers. 
+In organizations that have Exchange servers in multiple Active Directory sites, outbound mail from internal recipients to external recipients is first routed to the subscribed Active Directory site. Transport servers in the target Active Directory site are the delivery group. The routing destination is the intra-organization Send connector in the Transport service on any of the Mailbox servers in the subscribed Active Directory site. The  *intra-organization Send connector*  is special Send connector that exists in the Transport service on every Mailbox server. This Send connector is implicitly created, invisible, requires no management, and is used to relay messages between Exchange servers. 
   
 For more information about how mail is routed to and from Edge Transport servers, see [Mail flow and the transport pipeline](../../mail-flow/mail-flow.md).
-  
-[Return to top](mail-routing.md#RTT)
   
 

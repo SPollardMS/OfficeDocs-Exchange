@@ -3,7 +3,7 @@ title: "Managing devices for Outlook for iOS and Android for Exchange Server"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: overview
 ms.prod: office-online-server
@@ -65,7 +65,7 @@ Every Exchange organization has different policies regarding security and device
   
 Exchange users in your organization can continue using Outlook on the web for iPhone/iPad/Android apps, or the built-in mail apps on iOS and Android, to access their Exchange mailboxes.
   
-The following is an example of what a device rule looks like in PowerShell after it's created in the Exchange Admin Center.
+The following is an example of what a device rule looks like in PowerShell after it's created in the Exchange admin center.
   
 ![Example of device rule in PowerShell](../../media/6a4a8415-d844-476a-a6dc-e28d31bfe94c.png)
   

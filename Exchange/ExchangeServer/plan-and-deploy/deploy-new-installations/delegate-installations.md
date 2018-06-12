@@ -3,7 +3,7 @@ title: "Delegate the installation of an Exchange 2016 server"
 ms.author: dstrome
 author: dstrome
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: get-started-article
 ms.prod: office-online-server
@@ -40,7 +40,7 @@ Normally, when Exchange is installed, the people installing it need to be member
     
 - The server is added as a provisioned server in the Exchange Admin Center.
     
-In large companies, the people who install and set up new servers often aren't Exchange administrators. To enable them to install Exchange, an Exchange administrator can provision the server in Active Directory. When a server is provisioned, all of the changes needed for the new Exchange server to function are made to Active Directory separately from the actual installation of Exchange on a computer. An Exchange administrator can provision a new server in Active Directory hours or even days before Exchange is installed on the new computer. After a server has been provisioned, the person doing the installation needs only to be a member of the [Delegated Setup](http://technet.microsoft.com/library/49362059-e53f-4135-ad2b-9edfbfff9a1e.aspx) role group to install Exchange. The Delegated Setup role group only allows members to install provisioned servers. 
+In large companies, the people who install and set up new servers often aren't Exchange administrators. To enable them to install Exchange, an Exchange administrator can  *provision*  the server in Active Directory. When a server is provisioned, all of the changes needed for the new Exchange server to function are made to Active Directory separately from the actual installation of Exchange on a computer. An Exchange administrator can provision a new server in Active Directory hours or even days before Exchange is installed on the new computer. After a server has been provisioned, the person doing the installation needs only to be a member of the [Delegated Setup](http://technet.microsoft.com/library/49362059-e53f-4135-ad2b-9edfbfff9a1e.aspx) role group to install Exchange. The Delegated Setup role group only allows members to install provisioned servers. 
   
 Keep the following in mind when thinking about using delegated setup:
   
@@ -90,7 +90,7 @@ When you're done with these steps, the computer will be ready for Exchange to be
 
 To make sure the server was properly provisioned for Exchange, you can do the following:
   
-1. Go to **Start** > **Administrative Tools**, and then open **Active Directory Users and Computers**.
+1. Go to **Start** \> **Administrative Tools**, and then open **Active Directory Users and Computers**.
     
 2. Select **Microsoft Exchange Security Groups**, double-click **Exchange Servers**, and then select the **Members** tab. 
     

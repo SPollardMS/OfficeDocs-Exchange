@@ -3,21 +3,21 @@ title: "Add or remove email addresses for a mailbox"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.collection: Strat_EX_Admin
 ms.assetid: 93e2d9a4-7558-4509-8641-8381a7eb674f
-description: "Learn how to add or remove email addresses using the Exchange admin center (EAC) or by using the Exchange Management Shell."
+description: "Summary: Learn how to add or remove email addresses using the Exchange admin center (EAC) or by using the Exchange Management Shell."
 ---
 
 # Add or remove email addresses for a mailbox
 
-Learn how to add or remove email addresses using the Exchange admin center (EAC) or by using the Exchange Management Shell.
+ **Summary**: Learn how to add or remove email addresses using the Exchange admin center (EAC) or by using the Exchange Management Shell.
   
-You can use the EAC or the Exchange Management Shell to add or remove an email address for a user mailbox. You can configure more than one email address for the same mailbox. The additional addresses are called proxy addresses. A proxy address lets a user receive email that's sent to a different email address. Any email message sent to the user's proxy address is delivered to their primary email address, which is also known as the primary SMTP address or the default reply address.
+You can use the EAC or the Exchange Management Shell to add or remove an email address for a user mailbox. You can configure more than one email address for the same mailbox. The additional addresses are called  *proxy addresses*  . A proxy address lets a user receive email that's sent to a different email address. Any email message sent to the user's proxy address is delivered to their primary email address, which is also known as the  *primary SMTP address*  or the  *default reply address*  . 
   
 > [!NOTE]
 > The procedures in this topic show how to add or remove email addresses for a user mailbox. You can use similar procedures to add or remove email addresses for other recipient types. 
@@ -28,6 +28,8 @@ For additional management tasks related to managing recipients, see the "Recipie
 
 - Estimated time to complete each procedure: 2 minutes.
     
+- To open the EAC, see [Exchange admin center in Exchange 2016](../../architecture/client-access/exchange-admin-center.md). To open the Exchange Management Shell, see [Open the Exchange Management Shell](http://technet.microsoft.com/library/63976059-25f8-4b4f-b597-633e78b803c0.aspx).
+    
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" section in the [Recipients Permissions](../../permissions/feature-permissions/recipient-permissions.md) topic. 
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/eac-keyboard-shortcuts.md).
@@ -35,13 +37,11 @@ For additional management tasks related to managing recipients, see the "Recipie
 > [!TIP]
 > Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).. 
   
-## What do you want to do?
+## Add an email address to a user mailbox
 
-### Add an email address to a user mailbox
+### Use the EAC to add an email address
 
-#### Use the EAC to add an email address
-
-1. In the EAC, navigate to **Recipients** > **Mailboxes**.
+1. In the EAC, navigate to **Recipients** \> **Mailboxes**.
     
 2. In the list of user mailboxes, click the mailbox that you want to add an email address to, and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
@@ -61,9 +61,9 @@ For additional management tasks related to managing recipients, see the "Recipie
     
 6. Click **Save** to save the change. 
     
-#### Use the Exchange Management Shell to add an email address
+### Use the Exchange Management Shell to add an email address
 
-The email addresses associated with a mailbox are contained in the  _EmailAddresses_ property for the mailbox. Because it can contain more than one email address, the  _EmailAddresses_ property is known as a multivalued property. The following examples show different ways to modify a multivalued property. 
+The email addresses associated with a mailbox are contained in the  _EmailAddresses_ property for the mailbox. Because it can contain more than one email address, the  _EmailAddresses_ property is known as a  *multivalued*  property. The following examples show different ways to modify a multivalued property. 
   
 This example shows how to add an SMTP address to the mailbox of Dan Jump.
   
@@ -87,11 +87,11 @@ Set-Mailbox "Dan Jump" -EmailAddresses "SMTP:dan.jump@contoso.com","dan.jump@nor
 
 For detailed syntax and parameter information, see [Set-Mailbox](http://technet.microsoft.com/library/a0d413b9-d949-4df6-ba96-ac0906dedae2.aspx).
   
-#### How do you know this worked?
+### How do you know this worked?
 
 To verify that you've successfully added an email address to a mailbox, do one of the following:
   
-- In the EAC, navigate to **Recipients** > **Mailboxes**, click the mailbox, and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
+- In the EAC, navigate to **Recipients** \> **Mailboxes**, click the mailbox, and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
 - On the mailbox properties page, click **Email Address**.
     
@@ -102,16 +102,16 @@ Or
 - Run the following command in the Exchange Management Shell.
     
   ```
-  Get-Mailbox <identity> | fl EmailAddresses
+  Get-Mailbox <identity> | Format-List EmailAddresses
   ```
 
 - Verify that the new email address is included in the results.
     
-### Remove an email address from a user mailbox
+## Remove an email address from a user mailbox
 
-#### Use the EAC to remove an email address
+### Use the EAC to remove an email address
 
-1. In the EAC, navigate to **Recipients** > **Mailboxes**.
+1. In the EAC, navigate to **Recipients** \> **Mailboxes**.
     
 2. In the list of user mailboxes, click the mailbox that you want to remove an email address from, and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
@@ -121,7 +121,7 @@ Or
     
 5. Click **Save** to save the change. 
     
-#### Use the Exchange Management Shell to remove an email address
+### Use the Exchange Management Shell to remove an email address
 
 This example shows how to remove an email address from the mailbox of Janet Schorr.
   
@@ -147,11 +147,11 @@ Because janets@corp.contoso.com was omitted in the previous command, it's remove
   
 For detailed syntax and parameter information, see [Set-Mailbox](http://technet.microsoft.com/library/a0d413b9-d949-4df6-ba96-ac0906dedae2.aspx).
   
-#### How do you know this worked?
+### How do you know this worked?
 
 To verify that you've successfully removed an email address from a mailbox, do one of the following:
   
-- In the EAC, navigate to **Recipients** > **Mailboxes**, click the mailbox, and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
+- In the EAC, navigate to **Recipients** \> **Mailboxes**, click the mailbox, and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
 - On the mailbox properties page, click **Email Address**.
     
@@ -162,12 +162,12 @@ Or
 - Run the following command in the Exchange Management Shell.
     
   ```
-  Get-Mailbox <identity> | fl EmailAddresses
+  Get-Mailbox <identity> | Format-List EmailAddresses
   ```
 
 - Verify that the email address isn't included in the results.
     
-### Use the Exchange Management Shell to add email addresses to multiple mailboxes
+## Use the Exchange Management Shell to add email addresses to multiple mailboxes
 
 You can add a new email address to multiple mailboxes at one time by using the Exchange Management Shell and a comma separated values (CSV) file.
   
@@ -183,23 +183,22 @@ Jeffrey Zeng,jeffreyz@northamerica.contoso.com
 Spencer Low,spencerl@northamerica.contoso.com
 Toni Poe,tonip@northamerica.contoso.com
 ...
-
 ```
 
 Run the following command to use the data in the CSV file to add the email address to each mailbox specified in the CSV file.
   
 ```
-Import-CSV "C:\Users\Administrator\Desktop\AddEmailAddress.csv" | ForEach {Set-Mailbox $_.Mailbox -EmailAddresses @{add=$_.NewEmailAddress}}
+Import-CSV "C:\Users\Administrator\Desktop\AddEmailAddress.csv" | foreach {Set-Mailbox $_.Mailbox -EmailAddresses @{add=$_.NewEmailAddress}}
 ```
 
 > [!NOTE]
 > The column names in the first row of this CSV file ( `Mailbox,NewEmailAddress`) are arbitrary. Whatever you use for column names, make sure you use the same column names in the Exchange Management Shell command. 
   
-#### How do you know this worked?
+### How do you know this worked?
 
 To verify that you've successfully added an email address to multiple mailboxes, do one of the following:
   
-- In the EAC, navigate to **Recipients** > **Mailboxes**, click a mailbox that you added the address to, and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
+- In the EAC, navigate to **Recipients** \> **Mailboxes**, click a mailbox that you added the address to, and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
 - On the mailbox properties page, click **Email Address**.
     
@@ -210,7 +209,7 @@ Or
 - Run the following command in the Exchange Management Shell, using the same CSV file that you used to add the new email address.
     
   ```
-  Import-CSV "C:\Users\Administrator\Desktop\AddEmailAddress.csv" | ForEach {Get-Mailbox $_.Mailbox | fl Name,EmailAddresses}
+  Import-CSV "C:\Users\Administrator\Desktop\AddEmailAddress.csv" | foreach {Get-Mailbox $_.Mailbox | Format-List Name,EmailAddresses}
   ```
 
 - Verify that the new email address is included in the results for each mailbox.

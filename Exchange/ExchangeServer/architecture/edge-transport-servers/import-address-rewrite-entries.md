@@ -3,18 +3,18 @@ title: "Import address rewrite entries on Edge Transport servers"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 5/23/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: bd0942c6-9c66-4b4c-b9bc-2f5f783def76
-description: "Learn how to create or import email address rewriting in bulk in Exchange 2016."
+description: "Summary: Learn how to create or import email address rewriting in bulk in Exchange 2016."
 ---
 
 # Import address rewrite entries on Edge Transport servers
 
-Learn how to create or import email address rewriting in bulk in Exchange 2016.
+ **Summary**: Learn how to create or import email address rewriting in bulk in Exchange 2016.
   
 You can bulk-create or import address rewriting information into an Edge Transport server by using a comma-separated value (CSV) file. The following list describes common scenarios that require you to do this:
   
@@ -26,15 +26,15 @@ You can bulk-create or import address rewriting information into an Edge Transpo
     
 You can use a spreadsheet application like Microsoft Excel to create the CSV file. Format the file as described in this topic and save it as a .csv file.
   
-The first row, or header row, of the CSV file lists the names of the parameters. Each parameter is separated by a comma. The required and optional parameters are described in the following table.
+The first row, or  *header row*  , of the CSV file lists the names of the parameters. Each parameter is separated by a comma. The required and optional parameters are described in the following table. 
   
 |**Parameter**|**Required or optional**|**Description**|
 |:-----|:-----|:-----|
 | _Name_ <br/> |Required  <br/> |A unique, descriptive name for the address rewrites entry.  <br/> |
 | _InternalAddress_ <br/> |Required  <br/> |The address you want to change. You can use the following values:  <br/> • A single email address (chris@contoso.com)  <br/> • A single domain or subdomain (contoso.com or sales.contoso.com)  <br/> • A domain and all subdomains (\*.contoso.com)  <br/> |
 | _ExternalAddress_ <br/> |Required  <br/> |The final email address you want. You can use the following values:  <br/> • A single email address if you specified a single email address for  _InternalAddress_ <br/> • A single domain or subdomain for all other values of  _InternalAddress_ <br/> |
-| _ExceptionList_ <br/> |Optional  <br/> |Available only when you are rewriting email addresses in a domain and all subdomains (*.contoso.com). Specifies one or more subdomains you want to exclude from address rewriting. Enclose the value in double quotation marks, and separate multiple values by commas. For example,  `"marketing.contoso.com"` or  `"marketing.contoso.com,legal.contoso.com"`.  <br/> |
-| _OutboundOnly_ <br/> |Optional  <br/> | `False` means that addresses are written on inbound and outbound mail.  `True` means that addresses are rewritten on outbound mail only, and you need to manually configure the rewritten email address as a proxy address on the affected recipients.  <br/> The default value is  `False`, but you need to set it to  `True` if  _InternalAddress_ contains the wildcard character (*.contoso.com).  <br/> The  _OutboundOnly_ parameter value in the CSV file is  `True` or  `False`, not  `$True` or  `$False`.  <br/> |
+| _ExceptionList_ <br/> |Optional  <br/> |Available only when you are rewriting email addresses in a domain and all subdomains (\*.contoso.com). Specifies one or more subdomains you want to exclude from address rewriting. Enclose the value in double quotation marks, and separate multiple values by commas. For example,  `"marketing.contoso.com"` or  `"marketing.contoso.com,legal.contoso.com"`.  <br/> |
+| _OutboundOnly_ <br/> |Optional  <br/> | `False` means that addresses are written on inbound and outbound mail.  `True` means that addresses are rewritten on outbound mail only, and you need to manually configure the rewritten email address as a proxy address on the affected recipients.  <br/> The default value is  `False`, but you need to set it to  `True` if  _InternalAddress_ contains the wildcard character (\*.contoso.com).  <br/> The  _OutboundOnly_ parameter value in the CSV file is  `True` or  `False`, not  `$True` or  `$False`.  <br/> |
    
 Each row under the header row represents an individual address rewrite entry. The values in each row need to be in the same order as the parameter names in the header row. Each value is separated by a comma.
   
@@ -53,9 +53,7 @@ Each row under the header row represents an individual address rewrite entry. Th
 > [!TIP]
 > Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
   
-## How do you do this?
-
-### Step 1: Create the CSV file
+## Step 1: Create the CSV file
 
 When you create the CSV file, consider the following items:
   
@@ -72,7 +70,7 @@ Name,InternalAddress,ExternalAddress,ExceptionList,OutboundOnly
 "Wingtip Canada",*.wingtiptoys.ca,tailspintoys.com,"legal.wingtiptoys.ca,finance.wingtiptoys.ca,support.wingtiptoys.ca",True
 ```
 
-### Step 2: Import the CSV file
+## Step 2: Import the CSV file
 
 To import the CSV file, use the following syntax:
   
@@ -86,7 +84,7 @@ This example imports the address rewrite entries from C:\My Documents\ImportAddr
 Import-Csv "C:\My Documents\ImportAddressRewriteEntries.csv" | ForEach {New-AddressRewriteEntry -Name $_.Name -InternalAddress $_.InternalAddress -ExternalAddress $_.ExternalAddress -OutboundOnly ([Bool]::Parse($_.OutboundOnly)) -ExceptionList $_.ExceptionList}
 ```
 
-#### How do you know this step worked?
+### How do you know this step worked?
 
 To verify that you have successfully imported address rewrite entries from a CSV file, use either of the following procedures:
   

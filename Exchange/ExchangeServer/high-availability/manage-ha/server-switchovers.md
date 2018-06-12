@@ -3,7 +3,7 @@ title: "Perform a server switchover"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
@@ -31,7 +31,7 @@ A server switchover is part of preparing for a scheduled outage for the current 
 
 You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the"Mailbox database copies" entry in the [High availability and site resilience permissions](../../permissions/feature-permissions/ha-permissions.md) topic. 
   
-1. In the EAC, go to **Servers** > **servers**.
+1. In the EAC, go to **Servers** \> **servers**.
     
 2. Select the Mailbox server you want to switchover.
     

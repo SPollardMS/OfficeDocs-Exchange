@@ -3,18 +3,18 @@ title: "Feature permissions"
 ms.author: dstrome
 author: dstrome
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: hub-page
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 48d06fa6-e4a2-4d5c-bdbd-718eeaade4be
-description: "See a list of management role groups for managing Exchange 2016 features."
+description: "Summary: See a list of management role groups for managing Exchange 2016 features."
 ---
 
 # Feature permissions
 
-See a list of management role groups for managing Exchange 2016 features.
+ **Summary**: See a list of management role groups for managing Exchange 2016 features.
   
 Permissions in Microsoft Exchange Server 2016 are managed using the Role Based Access Control (RBAC) permissions model. The following topics identify the management role groups required to administer the features associated with each functional area in Exchange 2016.
   

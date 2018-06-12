@@ -3,7 +3,7 @@ title: "Install Office Online Server in an Exchange 2016 organization"
 ms.author: dstrome
 author: dstrome
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: get-started-article
 ms.prod: office-online-server
@@ -24,19 +24,19 @@ An optional prerequisite for Exchange 2016 Cumulative Update 1 (CU1) or later is
   
 You can configure an Office Online Server endpoint in two places in Exchange 2016: at the organization level, and at the Mailbox server level. Where you configure the endpoint depends on the size of your organization and the location of your servers and users.
   
-- **Organization** There are a couple of reasons why you might configure the Office Online Server endpoint at the organization level: 
+- **Organization**: There are a couple of reasons why you might configure the Office Online Server endpoint at the organization level:
     
-  - **Single-server or single-location deployment** You can configure the endpoint at the organization level if all of your Exchange 2016 Mailbox servers are in the same location and you don't plan on having geographically distributed Office Online Server servers. 
+  - **Single-server or single-location deployment**: You can configure the endpoint at the organization level if all of your Exchange 2016 Mailbox servers are in the same location and you don't plan on having geographically distributed Office Online Server servers.
     
-  - **Fallback for large deployments** You can configure endpoint at the organization level as a fallback if the endpoint configured on a Mailbox server isn't available. If an Office Web Apps server isn't available, the client will try to connect to the endpoint configured at the organization level. 
+  - **Fallback for large deployments**: You can configure endpoint at the organization level as a fallback if the endpoint configured on a Mailbox server isn't available. If an Office Web Apps server isn't available, the client will try to connect to the endpoint configured at the organization level.
     
-    > [!IMPORTANT]
-    > If you have Exchange 2013 servers in your organization, don't configure an endpoint at the organization level. Doing so will direct Exchange 2013 servers to use the Office Online Server server. This isn't supported. 
-  
-    > [!NOTE]
-    > Previewing attachments on S/MIME messages in Outlook on the web isn't supported by Office Online Server. 
-  
-- **Mailbox server** If you want to distribute client requests between two or more Office Online Server servers, if you want to geographically distribute Office Online Server servers, or if you have Exchange 2013 in your organization, configure the endpoints at the Exchange 2016 Mailbox server level. When you configure an endpoint at the server level, mailboxes located on that server will send requests to the configured Office Online Server server. 
+    **Notes**:
+    
+  - If you have Exchange 2013 servers in your organization, don't configure an endpoint at the organization level. Doing so will direct Exchange 2013 servers to use the Office Online Server server. This isn't supported.
+    
+  - Previewing attachments on S/MIME messages in Outlook on the web isn't supported by Office Online Server.
+    
+- **Mailbox server**: If you want to distribute client requests between two or more Office Online Server servers, if you want to geographically distribute Office Online Server servers, or if you have Exchange 2013 in your organization, configure the endpoints at the Exchange 2016 Mailbox server level. When you configure an endpoint at the server level, mailboxes located on that server will send requests to the configured Office Online Server server.
     
 If you want users outside of your network to view supported file attachments in Outlook, Office Online Server needs to be accessible from the Internet. TCP port 443 needs to be opened on your firewall and forwarded to the Office Online Server server. If you deploy more than one Office Online Server server, each server needs its own fully qualified domain name (FQDN). Each server also needs to be accessible from the Internet via TCP port 443.
   
@@ -51,9 +51,9 @@ Office Online Server requires the following to install:
     > [!NOTE]
     > If you are running Windows Server 2016, you will need Exchange 2016 CU3 or later, as detailed in [Exchange 2016 prerequisites](prerequisites.md). 
   
-- [Microsoft .NET Framework 4.5.2](https://go.microsoft.com/fwlink/?LinkId=616890)
+- [Microsoft .NET Framework 4.5.2](https://go.microsoft.com/fwlink/p/?linkId=616890)
     
-- [Visual C++ Redistributable for Visual Studio 2015](https://go.microsoft.com/fwlink/?LinkId=616889)
+- [Visual C++ Redistributable for Visual Studio 2015](https://go.microsoft.com/fwlink/p/?linkId=616889)
     
 - All available Windows updates installed
     
@@ -77,7 +77,7 @@ To install Office Online Server prerequisites, do the following:
 
 To install Office Online Server, do the following on the computer where you want to install it:
   
-1. Download Office Online Server from the [Volume License Service Center](https://go.microsoft.com/fwlink/?LinkID=195442).
+1. Download Office Online Server from the [Volume License Service Center](https://go.microsoft.com/fwlink/p/?linkId=195442).
     
 2. Navigate to the location where you downloaded Office Online Server and run setup.exe.
     
@@ -91,11 +91,11 @@ To install Office Online Server, do the following on the computer where you want
     
 7. Open Windows PowerShell and run the following commands. When you run the commands, replace the example FQDNs and certificate friendly name with your own.
     
-  - **Same internal and external FQDN** ` New-OfficeWebAppsFarm -InternalURL "https://oos.contoso.com" -ExternalURL "https://oos.contoso.com" -CertificateName "Office Online Server Preview Certificate" `
+  - **Same internal and external FQDN**:  `New-OfficeWebAppsFarm -InternalURL "https://oos.contoso.com" -ExternalURL "https://oos.contoso.com" -CertificateName "Office Online Server Preview Certificate"`
     
-  - **Different internal and external FQDNs** ` New-OfficeWebAppsFarm -InternalURL "https://oos.internal.contoso.com" -ExternalURL "https://oos.contoso.com" -CertificateName "Office Online Server Preview Certificate" `
+  - **Different internal and external FQDNs**:  `New-OfficeWebAppsFarm -InternalURL "https://oos.internal.contoso.com" -ExternalURL "https://oos.contoso.com" -CertificateName "Office Online Server Preview Certificate"`
     
-## Configure the Office Online Serverendpoint at the Mailbox server level
+## Configure the Office Online Server endpoint at the Mailbox server level
 
 After you've configured the Office Online Server server, do the following on your Exchange 2016 server. This will allow Outlook to send requests to the Office Online Server server.
   

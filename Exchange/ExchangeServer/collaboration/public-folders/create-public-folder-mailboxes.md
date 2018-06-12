@@ -39,7 +39,7 @@ For additional management tasks related to public folders in Exchange 2016, see 
 
 In the Exchange admin center (EAC):
   
-1. Navigate to **Public folders** > **Public folder mailboxes**, and then click **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png).
+1. Navigate to **Public folders** \> **Public folder mailboxes**, and then click **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png).
     
 2. In **Public Folder Mailbox**, provide a name for the public folder mailbox.
     

@@ -2,7 +2,7 @@
 title: "Manage on-premises mailbox moves in Exchange 2016"
 ms.author: chrisda
 author: chrisda
-ms.date: 6/1/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
@@ -15,7 +15,7 @@ description: "Summary: Learn how to move the primary mailbox and the associated 
 
  **Summary**: Learn how to move the primary mailbox and the associated archive to the same database or to separate ones in Exchange 2016.
   
-In Exchange 2016, users' primary mailboxes and archive mailboxes can reside on different databases. A move request is the process of moving a mailbox from one mailbox database to another. A local move request is a mailbox move that occurs within a single Active Directory forest (as opposed to a remote move request that occurs between Active Directory forests). You use the procedures in this topic for local move requests of primary mailboxes, archive mailboxes, or both in on-premises. Using the move request functionality, you can move the primary mailbox and the associated archive to the same database or to separate ones. 
+In Exchange 2016, users' primary mailboxes and archive mailboxes can reside on different databases. A  *move request*  is the process of moving a mailbox from one mailbox database to another. A  *local move request*  is a mailbox move that occurs within a single Active Directory forest (as opposed to a remote move request that occurs between Active Directory forests). You use the procedures in this topic for local move requests of primary mailboxes, archive mailboxes, or both in on-premises. Using the move request functionality, you can move the primary mailbox and the associated archive to the same database or to separate ones. 
   
 The following two services process your move request to move mailboxes:
   
@@ -46,7 +46,7 @@ You can create local move requests for:
   
 - A single mailbox.
     
-- Multiple mailboxes (also known as a batch move request).
+- Multiple mailboxes (also known as a  *batch move request*  ). 
     
 - Multiple mailboxes that you specify in a comma-separated value (CSV) file (also known as a  _migration batch_).
     
@@ -56,11 +56,11 @@ To create new local move requests in the Exchange Management Shell, you only use
   
 ### Use the EAC to create a local move request
 
-1. In the EAC, go to **Recipients** > **Migration** > click **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png), and then select **Move to a different database**.
+1. In the EAC, go to **Recipients** \> **Migration** \> click **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png), and then select **Move to a different database**.
     
 2. The **New local mailbox move** wizard opens. On the **Select users** page, configure one of these options: 
     
-  - **Select the users that you want to move** Select one or more users: 
+  - **Select the users that you want to move**: Select one or more users:
     
     **Note**: Even if you're only interested in moving a user's archive mailbox, you select the user's primary mailbox.
     
@@ -68,7 +68,7 @@ To create new local move requests in the Exchange Management Shell, you only use
     
   - To remove mailboxes from the list, select the mailbox, and then click **Remove**![Remove icon](../../media/ITPro_EAC_RemoveIcon.png).
     
-  - **Specify the users with a CSV file** Click **Browse** and go to the location of the comma-separated value (CSV) file that specifies the mailboxes to move. For more information about the CSV file requirements for local move requests, see [CSV Files for Mailbox Migration](http://technet.microsoft.com/library/e67b3455-3946-4335-b80c-97823c76ac54.aspx).
+  - **Specify the users with a CSV file**: Click **Browse** and go to the location of the comma-separated value (CSV) file that specifies the mailboxes to move. For more information about the CSV file requirements for local move requests, see [CSV Files for Mailbox Migration](http://technet.microsoft.com/library/e67b3455-3946-4335-b80c-97823c76ac54.aspx).
     
     **Allow unknown columns in the CSV file**
     
@@ -80,9 +80,9 @@ To create new local move requests in the Exchange Management Shell, you only use
     
 3. On the **Move configuration** page, configure these settings: 
     
-  - **New migration batch name** Enter a descriptive name for the mailbox move operation. 
+  - **New migration batch name**: Enter a descriptive name for the mailbox move operation.
     
-  - **Archive** Select one of these options: 
+  - **Archive**: Select one of these options:
     
   - **Move the primary mailbox and the archive mailbox if one exists**
     
@@ -90,43 +90,43 @@ To create new local move requests in the Exchange Management Shell, you only use
     
   - **Move archive mailbox only, without moving primary mailbox**
     
-  - **Target database** This setting affects moves for primary mailboxes. 
+  - **Target database**: This setting affects moves for primary mailboxes.
     
   - To specify the database for the primary mailbox, click **Browse**. In the **Select Mailbox Database** dialog box that appears, select the database. 
     
   - If you don't specify a database, the automatic distribution logic in Exchange will randomly select a database in the Active Directory site.
     
-  - **Target archive database** This setting affects moves for archive mailboxes. 
+  - **Target archive database**: This setting affects moves for archive mailboxes.
     
   - To specify the database for the archive mailbox, click **Browse**. In the **Select Mailbox Database** dialog box that appears, select the database. 
     
   - If you don't specify a database, the archive mailbox is moved to the same location as the primary mailbox.
     
-  - **Bad item limit** Specifies the maximum number of corrupted items that are allowed in the mailbox before the request fails. The default value in the EAC is 10. Don't specify a value greater than 50 here. If you want to set the limit to 51 or higher, use the  _BadItemLimit_ parameter and the  _AcceptLargeDataLoss_ switch in the Exchange Management Shell. 
+  - **Bad item limit**: Specifies the maximum number of corrupted items that are allowed in the mailbox before the request fails. The default value in the EAC is 10. Don't specify a value greater than 50 here. If you want to set the limit to 51 or higher, use the  _BadItemLimit_ parameter and the  _AcceptLargeDataLoss_ switch in the Exchange Management Shell. 
     
     When you're finished, click **Next**.
     
 4. On the **Start the batch** page, configure these settings: 
     
-  - **After the batch is complete, a report will be sent to the following recipients.** The default value is the account that you're using to move the mailboxes. Click **Browse** to add or remove recipients. When you're finished, click **OK**.
+  - **After the batch is complete, a report will be sent to the following recipients.**: The default value is the account that you're using to move the mailboxes. Click **Browse** to add or remove recipients. When you're finished, click **OK**.
     
-  - **Please select the preferred option to start the batch** Select one of these options: 
+  - **Please select the preferred option to start the batch**: Select one of these options:
     
   - **Manually start the batch later**
     
-  - **Automatically start the batch** This is the default value. 
+  - **Automatically start the batch**: This is the default value.
     
-  - **Please select the preferred option to complete the batch** Select one of these options: 
+  - **Please select the preferred option to complete the batch**: Select one of these options:
     
   - **Manually complete the batch**
     
-  - **Automatically complete the migration batch** This is the default value. 
+  - **Automatically complete the migration batch**: This is the default value.
     
     When you're finished, click **New**.
     
 ### Use the Exchange Management Shell to create a local move request for individual or multiple mailboxes
 
-A local move request for an individual mailbox uses the **New-MailboxMove** cmdlet. But, a local move request for multiple mailboxes that doesn't specify the mailboxes in a CSV file also uses the **New-MailboxMove** cmdlet. A local move request for multiple mailboxes that doesn't use a CSV file is also known as a batch move request.
+A local move request for an individual mailbox uses the **New-MailboxMove** cmdlet. But, a local move request for multiple mailboxes that doesn't specify the mailboxes in a CSV file also uses the **New-MailboxMove** cmdlet. A local move request for multiple mailboxes that doesn't use a CSV file is also known as a  *batch move request*  . 
   
 To create a local move request for an individual mailbox, use this syntax:
   
@@ -136,17 +136,17 @@ New-MoveRequest "<DescriptiveName>"] -Identity <MailboxIdentity> [<-ArchiveOnly 
 
 This example creates a new local move request with these settings:
   
-- **Mailbox** The primary mailbox and archive mailbox (if it exists) for Angela Gruber (agruber@contoso.com). If you only want to move the primary mailbox, use the  _PrimaryOnly_ switch. If you only want to move the archive mailbox, use the  _ArchiveOnly_ switch. 
+- **Mailbox**: The primary mailbox and archive mailbox (if it exists) for Angela Gruber (agruber@contoso.com). If you only want to move the primary mailbox, use the  _PrimaryOnly_ switch. If you only want to move the archive mailbox, use the  _ArchiveOnly_ switch. 
     
-- **Target database for the primary mailbox** MBX DB02. If we don't use the  _TargetDatabase_ parameter, the automatic distribution logic in Exchange will randomly select a database in the Active Directory site. 
+- **Target database for the primary mailbox**: MBX DB02. If we don't use the  _TargetDatabase_ parameter, the automatic distribution logic in Exchange will randomly select a database in the Active Directory site. 
     
-- **Target database for the archive mailbox** MBX DB03. If we don't use the  _ArchiveTargetDatabase_ parameter or the  _PrimaryOnly_ switch, the archive mailbox database will be moved to the same database as the primary mailbox. 
+- **Target database for the archive mailbox**: MBX DB03. If we don't use the  _ArchiveTargetDatabase_ parameter or the  _PrimaryOnly_ switch, the archive mailbox database will be moved to the same database as the primary mailbox. 
     
     If we use the  _ArchiveOnly_ switch without using the  _ArchiveTargetDatabase_ parameter, the automatic distribution logic in Exchange will randomly select a database in the Active Directory site. 
     
-- **Priority** `Normal`, because we aren't using the  _Priority_ parameter. 
+- **Priority**:  `Normal`, because we aren't using the  _Priority_ parameter. 
     
-- **Bad item limit** 10 (the default value in the Exchange Management Shell is 0). Because the value is less than 51, we don't need to use the  `AcceptLargeDataLoss` switch. 
+- **Bad item limit**: 10 (the default value in the Exchange Management Shell is 0). Because the value is less than 51, we don't need to use the  `AcceptLargeDataLoss` switch. 
     
 ```
 New-MoveRequest -Identity agruber@contoso.com -TargetDatabase "MBX 02" -ArchiveTargetDatabase "MBX 03" -BadItemLimit 10
@@ -174,19 +174,19 @@ A batch move request uses virtually the same syntax as a move request for an ind
     
 This example creates a batch move request with these settings:
   
-- **Mailboxes to move** All mailbox on the database named MBX DB01. 
+- **Mailboxes to move**: All mailbox on the database named MBX DB01.
     
-- **Batch name** MBX DB01 to MBX DB02. 
+- **Batch name**: MBX DB01 to MBX DB02.
     
-- **Target database** MBX DB02. If we didn't use the  _TargetDatabase_ parameter, the automatic distribution logic in Exchange would randomly select databases in the Active Directory site. 
+- **Target database**: MBX DB02. If we didn't use the  _TargetDatabase_ parameter, the automatic distribution logic in Exchange would randomly select databases in the Active Directory site. 
     
-- **Target database for archive mailboxes** MBX DB02. Because we aren't using the  _ArchiveTargetDatabase_ parameter or the  _PrimaryOnly_ switch, the archive mailbox database is moved to the same database as the primary mailbox. 
+- **Target database for archive mailboxes**: MBX DB02. Because we aren't using the  _ArchiveTargetDatabase_ parameter or the  _PrimaryOnly_ switch, the archive mailbox database is moved to the same database as the primary mailbox. 
     
     If we use the  _ArchiveOnly_ switch without using the  _ArchiveTargetDatabase_ parameter, the automatic distribution logic in Exchange will randomly select databases in the Active Directory site. 
     
-- **Priority** `High`
+- **Priority**:  `High`
     
-- **Bad item limit** 51 (the default value in the Exchange Management Shell is 0), so we also need to use the  _AcceptLargeDataLoss_ switch. 
+- **Bad item limit**: 51 (the default value in the Exchange Management Shell is 0), so we also need to use the  _AcceptLargeDataLoss_ switch. 
     
 ```
 Get-Mailbox -Database "MBX DB01" | New-MoveRequest -BatchName "MBX DB01 to MBX DB02" -TargetDatabase "MBX DB02" -Priority High -BadItemLimit 51 -AcceptLargeDataLoss
@@ -196,7 +196,7 @@ For detailed syntax and parameter information, see [New-MoveRequest](http://tech
   
 ### Use the Exchange Management Shell to create a local move request from a CSV file
 
-A local move request for mailboxes that are specified in a CSV file is known as a migration batch, and uses the **New-MigrationBatch** cmdlet. 
+A local move request for mailboxes that are specified in a CSV file is known as a  *migration batch*  , and uses the **New-MigrationBatch** cmdlet. 
   
 For more information about the CSV file requirements for local move requests, see [CSV Files for Mailbox Migration](http://technet.microsoft.com/library/e67b3455-3946-4335-b80c-97823c76ac54.aspx).
   
@@ -208,23 +208,23 @@ New-MigrationBatch -Local [-AutoStart] [-AutoComplete] -Name "<MigrationBatchNam
 
 This example creates a migraton batch with these settings:
   
-- **CSV file that specifies the mailboxes to move** C:\Users\Administrator\Desktop\LocalMove 01.csv. If you only want to move the primary mailbox, use the  _PrimaryOnly_ switch, or the **MailboxType** value  `PrimaryOnly` in the CSV file. If you only want to move the archive mailbox, use the  _ArchiveOnly_ switch, or the **MailboxType** value  `ArchiveOnly` in the CSV file. 
+- **CSV file that specifies the mailboxes to move**: C:\Users\Administrator\Desktop\LocalMove 01.csv. If you only want to move the primary mailbox, use the  _PrimaryOnly_ switch, or the **MailboxType** value  `PrimaryOnly` in the CSV file. If you only want to move the archive mailbox, use the  _ArchiveOnly_ switch, or the **MailboxType** value  `ArchiveOnly` in the CSV file. 
     
-- **Batch name** LocalMove 01. 
+- **Batch name**: LocalMove 01.
     
-- **Target database** MBX DB02. If we don't use the  _TargetDatabase_ parameter, and the primary mailbox databases aren't specified in the CSV file, the automatic distribution logic in Exchange randomly selects databases in the Active Directory site. 
+- **Target database**: MBX DB02. If we don't use the  _TargetDatabase_ parameter, and the primary mailbox databases aren't specified in the CSV file, the automatic distribution logic in Exchange randomly selects databases in the Active Directory site. 
     
-- **Target database for archive mailboxes** MBX DB02. Because we aren't using the  _ArchiveTargetDatabase_ parameter (in the command or the CSV file), the archive mailbox database is moved to the same database as the primary mailbox. 
+- **Target database for archive mailboxes**: MBX DB02. Because we aren't using the  _ArchiveTargetDatabase_ parameter (in the command or the CSV file), the archive mailbox database is moved to the same database as the primary mailbox. 
     
     If we use the  _ArchiveOnly_ switch (in the command or CSV file) without using the  _ArchiveTargetDatabase_ parameter (in the command or CSV file), the automatic distribution logic in Exchange will randomly select databases in the Active Directory site. 
     
-- **When to start the migration** Immediately, because we're using the  _AutoStart_ switch. If we don't use this switch, we need to use the **Start-MigrationRequest** cmdlet to start the migration batch after it's created. 
+- **When to start the migration**: Immediately, because we're using the  _AutoStart_ switch. If we don't use this switch, we need to use the **Start-MigrationRequest** cmdlet to start the migration batch after it's created. 
     
-- **When to complete the migration** After the mailboxes complete their initial synchronization, because we're using the  _AutoComplete_ switch. If we don't use this switch, we need to use the **Complete-MigrationRequest** cmdlet to start the migration batch after it's created 
+- **When to complete the migration**: After the mailboxes complete their initial synchronization, because we're using the  _AutoComplete_ switch. If we don't use this switch, we need to use the **Complete-MigrationRequest** cmdlet to start the migration batch after it's created 
     
-- **Priority** `Normal`, because we aren't using the  _Priority_ parameter. 
+- **Priority**:  `Normal`, because we aren't using the  _Priority_ parameter. 
     
-- **Bad item limit** 10 (the default value in the Exchange Management Shell is 0). Because the value is less than 51, we don't need to use the  `AcceptLargeDataLoss` switch. 
+- **Bad item limit**: 10 (the default value in the Exchange Management Shell is 0). Because the value is less than 51, we don't need to use the  `AcceptLargeDataLoss` switch. 
     
 ```
 New-MigrationBatch -Local -AutoStart -AutoComplete -Name "LocalMove 01" -CSVData ([System.IO.File]::ReadAllBytes("C:\Users\Administrator\Desktop\LocalMove 01.csv")) -TargetDatabases "MBX DB02" -BadItemLimit 10
@@ -234,9 +234,9 @@ New-MigrationBatch -Local -AutoStart -AutoComplete -Name "LocalMove 01" -CSVData
 
 To verify that you've successfully created a local move request, do any of these steps:
   
-- In the EAC, go to **Recipients** > **Migration** and verify the status of the move request (note that you might need to click **Refresh**![Refresh icon](../../media/ITPro_EAC_RefreshIcon.png)). You can select the move request, and see more information in the details pane, or by clicking **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
+- In the EAC, go to **Recipients** \> **Migration** and verify the status of the move request (note that you might need to click **Refresh**![Refresh icon](../../media/ITPro_EAC_RefreshIcon.png)). You can select the move request, and see more information in the details pane, or by clicking **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
-- In the EAC, go to **Recipients** > **Migration** and click **Status For All Batches**.
+- In the EAC, go to **Recipients** \> **Migration** and click **Status For All Batches**.
     
 - Check the notification message. The sender is Microsoft Outlook. When the move request is complete, you'll get a message with the subject  `Migration batch <MigrationBatchName> has completed successfully`.
     

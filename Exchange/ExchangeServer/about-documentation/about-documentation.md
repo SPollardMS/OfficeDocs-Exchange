@@ -3,7 +3,7 @@ title: "About Exchange documentation"
 ms.author: dstrome
 author: dstrome
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: reference
 ms.prod: office-online-server
@@ -21,7 +21,7 @@ Other information related to Exchange documentation is in [Third-party copyright
   
 ## Where to find Exchange documentation
 
-The [Exchange Server for IT pros](https://go.microsoft.com/fwlink/p/?linkid=34165) TechCenter is your primary gateway to in-depth technical information about Microsoft Exchange. Through the TechCenter, which is located on the Microsoft TechNet site, you can access the Exchange Library and the Exchange Team Blog. 
+The [Exchange Server for IT pros](https://go.microsoft.com/fwlink/p/?linkid=34165) TechCenter is your primary gateway to in-depth technical information about Microsoft Exchange. 
   
 If you're an admin for an Exchange hybrid or Exchange Online deployment, you may also be interested in the [Office 365 for IT pros](https://go.microsoft.com/fwlink/p/?LinkId=282341) TechCenter. 
   
@@ -33,14 +33,14 @@ The [Exchange Team Blog](https://go.microsoft.com/fwlink/p/?LinkID=178595) conta
 
 Looking for more than just documentation? Check out these other Exchange resources:
   
-- [Exchange Server Downloads](https://go.microsoft.com/fwlink/p/?linkId=179447) Use this page to download service packs, add-ins, tools, and trial software to help you optimize your Exchange organization. 
+- [Exchange Server Downloads](https://go.microsoft.com/fwlink/p/?linkId=179447): Use this page to download service packs, add-ins, tools, and trial software to help you optimize your Exchange organization.
     
-- [Exchange Server Forums](https://go.microsoft.com/fwlink/p/?linkId=60612) The forum provides a place to discuss Exchange with users and Exchange Team members. 
+- [Exchange Server Forums](https://go.microsoft.com/fwlink/p/?linkId=60612): The forum provides a place to discuss Exchange with users and Exchange Team members.
     
-- [Exchange Server for Developers](https://go.microsoft.com/fwlink/p/?linkId=24705) You'll find Exchange developer documentation here. 
+- [Exchange Server for Developers](https://go.microsoft.com/fwlink/p/?linkId=24705): You'll find Exchange developer documentation here.
     
-- [Support for Microsoft Exchange Server](https://go.microsoft.com/fwlink/p/?LinkId=283967) Check out this page for support resources for multiple versions of Exchange. 
+- [Support for Microsoft Exchange Server](https://go.microsoft.com/fwlink/p/?LinkId=283967): Check out this page for support resources for multiple versions of Exchange.
     
-- [Accessibility for people with disabilities](accessibility.md) This topic provides important information about features, products, and services that help make Microsoft Exchange more accessible for people with disabilities. 
+- [Accessibility for people with disabilities](accessibility.md) : This topic provides important information about features, products, and services that help make Microsoft Exchange more accessible for people with disabilities. 
     
 

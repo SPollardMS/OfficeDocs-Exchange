@@ -3,19 +3,19 @@ title: "Complete a pending Exchange 2016 certificate request"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.collection: Strat_EX_Admin
 ms.assetid: 3d2a8747-4afa-4db8-94d7-dcce6d90d21f
-description: "Learn how to complete a pending certificate request in Exchange 2016 after you receive the certificate from the certification authority."
+description: "Summary: Learn how to complete a pending certificate request in Exchange 2016 after you receive the certificate from the certification authority."
 ---
 
 # Complete a pending Exchange 2016 certificate request
 
-Learn how to complete a pending certificate request in Exchange 2016 after you receive the certificate from the certification authority.
+ **Summary**: Learn how to complete a pending certificate request in Exchange 2016 after you receive the certificate from the certification authority.
   
 Completing a pending certificate request (also known as a certificate signing request or CSR) is the next step in configuring Transport Layer Security (TLS) encryption in Exchange Server 2016. After you receive the certificate from the certification authority (CA), you install the certificate on the Exchange server to complete the pending certificate request.
   
@@ -23,9 +23,9 @@ You can complete a pending certificate request in the Exchange admin center (EAC
   
 You might receive one or more of the following types of certificate files CA:
   
-- **PKCS #12 certificate files** These are binary certificate files that have .cer, .crt, .der, .p12, or .pfx filename extensions, and require a password when the file contains the private key or chain of trust. The CA might issue you only one binary certificate file that you need to install (protected by a password), or multiple root or intermediate binary certificate files that you also need to install. 
+- **PKCS #12 certificate files**: These are binary certificate files that have .cer, .crt, .der, .p12, or .pfx filename extensions, and require a password when the file contains the private key or chain of trust. The CA might issue you only one binary certificate file that you need to install (protected by a password), or multiple root or intermediate binary certificate files that you also need to install.
     
-- **PKCS #7 certificate files** These are text certificate files that have .p7b or .p7c filename extensions. These files contain the text:  `-----BEGIN CERTIFICATE-----` and  `-----END CERTIFICATE-----` or  `-----BEGIN PKCS7-----` and  `-----END PKCS7-----`. If the CA includes a chain of certificates file with your binary certificate file, you also need to install the chain of certificates file.
+- **PKCS #7 certificate files**: These are text certificate files that have .p7b or .p7c filename extensions. These files contain the text:  `-----BEGIN CERTIFICATE-----` and  `-----END CERTIFICATE-----` or  `-----BEGIN PKCS7-----` and  `-----END PKCS7-----`. If the CA includes a chain of certificates file with your binary certificate file, you also need to install the chain of certificates file.
     
 ## What do you need to know before you begin?
 
@@ -48,7 +48,7 @@ You might receive one or more of the following types of certificate files CA:
   
 ## Use the EAC to create complete a pending certificate request
 
-1. Open the EAC and navigate to **Servers** > **Certificates**.
+1. Open the EAC and navigate to **Servers** \> **Certificates**.
     
 2. In the **Select server** list, select the Exchange server that holds the pending certificate request. 
     
@@ -104,7 +104,7 @@ Import-ExchangeCertificate -FileData "Import-ExchangeCertificate -FileData ([Byt
 
 To verify that you have successfully completed the certificate request and installed the certificate on the Exchange server, use either of the following procedures:
   
-- In the EAC at **Servers** > **Certificates**, verify the server where you installed the certificate is selected. In the list of certificates, verify that the certificate has **Status** property value **Valid**.
+- In the EAC at **Servers** \> **Certificates**, verify the server where you installed the certificate is selected. In the list of certificates, verify that the certificate has **Status** property value **Valid**.
     
 - In the Exchange Management Shell on the server where you installed the certificate, run the following command and verify that the certificate is listed:
     

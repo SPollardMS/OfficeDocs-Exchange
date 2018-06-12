@@ -3,7 +3,7 @@ title: "Configure Kerberos authentication for load-balanced Client Access servic
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 5/16/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
@@ -21,7 +21,7 @@ In order for you to use Kerberos authentication with load-balanced Mailbox serve
 ## Create the alternate service account credential in Active Directory Domain Services
 <a name="CreateAltService"> </a>
 
-All Exchange servers that run Client Access services that share the same namespaces and URLs must use the same alternate service account credentials. In general, it's sufficient to have a single account for a forest for each version of Exchange. alternate service account credential or ASA credential.
+All Exchange servers that run Client Access services that share the same namespaces and URLs must use the same alternate service account credentials. In general, it's sufficient to have a single account for a forest for each version of Exchange.  *alternate service account credential*  or  *ASA credential*  . 
   
 > [!IMPORTANT]
 > Exchange 2010 and Exchange 2016 can't share the same ASA credential. If your ASA credential was created for Exchange 2010, you have to create a new one for Exchange 2016. 
@@ -89,7 +89,7 @@ If you have a cross-forest or resource-forest deployment, and you have users tha
 
 After you create the ASA credential, you have to associate Exchange Service Principal Names (SPNs) with the ASA credential. The list of Exchange SPNs may vary with your configuration, but should include at least the following:
   
-- **http/** Use this SPN for Outlook Anywhere, MAPI over HTTP, Exchange Web Services, Autodiscover, and Offline Address Book. 
+- **http/**: Use this SPN for Outlook Anywhere, MAPI over HTTP, Exchange Web Services, Autodiscover, and Offline Address Book.
     
 The SPN values must match the service name on the network load balancer instead of on individual servers. To help plan which SPN values you should use, consider the following scenarios:
   

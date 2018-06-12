@@ -3,7 +3,7 @@ title: "Configure OAuth authentication with SharePoint 2013 and Lync 2013"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: End User
 ms.topic: article
 ms.prod: office-online-server

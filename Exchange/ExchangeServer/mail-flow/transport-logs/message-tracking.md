@@ -3,52 +3,34 @@ title: "Message tracking"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: overview
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: bada2ea7-6d7c-4630-b7f1-67f56818f0ff
-description: "Learn about message tracking and the message tracking log in Exchange 2016."
+description: "Summary: Learn about message tracking and the message tracking log in Exchange 2016."
 ---
 
 # Message tracking
 
-Learn about message tracking and the message tracking log in Exchange 2016.
+ **Summary**: Learn about message tracking and the message tracking log in Exchange 2016.
   
 The message tracking log is a detailed record of all activity as mail flows through the transport pipeline on Mailbox servers and Edge Transport servers. You can use message tracking for message forensics, mail flow analysis, reporting, and troubleshooting.
   
 By default, Exchange uses circular logging to limit the message tracking log based on file size and file age to help control the hard disk space that's used by the log files. To configure the message tracking log, see [Configure message tracking](configure-message-tracking.md).
-  
- **Contents**
-  
-[Search the message tracking log](message-tracking.md#Search)
-  
-[Structure of the message tracking log files](message-tracking.md#Structure)
-  
-[Fields in the message tracking log files](message-tracking.md#Fields)
-  
-[Event types in the message tracking log](message-tracking.md#EventTypes)
-  
-[Source values in the message tracking log](message-tracking.md#Source)
-  
-[Example entries in the message tracking log](message-tracking.md#Example)
-  
-[Security concerns for the message tracking log](message-tracking.md#Security)
   
 ## Search the message tracking log
 <a name="Search"> </a>
 
 Message tracking logs contain vast amounts of data as messages move through a Mailbox server or Edge Transport server. When it comes to searching the message tracking logs, you have different options.
   
-- **Get-MessageTrackingLog** Administrators can use this Exchange Management Shell cmdlet to search the message tracking log for information about messages using a wide range of filter criteria. For more information, see [Search message tracking logs](search-message-tracking-logs.md).
+- **Get-MessageTrackingLog**: Administrators can use this Exchange Management Shell cmdlet to search the message tracking log for information about messages using a wide range of filter criteria. For more information, see [Search message tracking logs](search-message-tracking-logs.md).
     
-- **Delivery reports for administrators** Administrators can use the **Delivery reports** tab in the Exchange admin center or the underlying **Search-MessageTrackingReport** and **Get-MessageTrackingReport** cmdlets in the Exchange Management Shell to search the message tracking logs for information about messages sent by or received by a specific mailbox in the organization. For more information, see [Delivery reports for administrators](delivery-reports.md).
+- **Delivery reports for administrators**: Administrators can use the **Delivery reports** tab in the Exchange admin center or the underlying **Search-MessageTrackingReport** and **Get-MessageTrackingReport** cmdlets in the Exchange Management Shell to search the message tracking logs for information about messages sent by or received by a specific mailbox in the organization. For more information, see [Delivery reports for administrators](delivery-reports.md).
     
-- **Delivery reports for users** Users can use the **Delivery reports** tab in Outlook on the web to search the message tracking logs for information about messages sent to or sent by their own mailbox. For more information, see [Delivery Reports for Users](https://go.microsoft.com/fwlink/p/?LinkId=279920).
+- **Delivery reports for users**: Users can use the **Delivery reports** tab in Outlook on the web to search the message tracking logs for information about messages sent to or sent by their own mailbox. For more information, see [Delivery Reports for Users](https://go.microsoft.com/fwlink/p/?LinkId=279920).
     
-[Return to top](message-tracking.md#RTT)
-  
 ## Structure of the message tracking log files
 <a name="Structure"> </a>
 
@@ -75,23 +57,24 @@ Information is written to the log file until the file reaches its maximum size. 
     
 - The message tracking log folder reaches its maximum size.
     
-    > [!IMPORTANT]
-    > The maximum size of the message tracking log folder is calculated as the total size of all log files that have the same name prefix. Other files that do not follow the name prefix convention are not counted in the total folder size calculation. Renaming old log files or copying other files into the message tracking log folder could cause the folder to exceed its specified maximum size. > On Mailbox servers, the maximum size of the message tracking log folder is three times the specified value. Although the message tracking log files are generated by the four different services and have four different name prefixes, the amount and frequency of data written to the moderated transport log ( `MSGTRKMA`) is negligible compared to the other three logs. 
-  
+    **Notes**:
+    
+  - The maximum size of the message tracking log folder is calculated as the total size of all log files that have the same name prefix. Other files that do not follow the name prefix convention are not counted in the total folder size calculation. Renaming old log files or copying other files into the message tracking log folder could cause the folder to exceed its specified maximum size.
+    
+  - On Mailbox servers, the maximum size of the message tracking log folder is three times the specified value. Although the message tracking log files are generated by the four different services and have four different name prefixes, the amount and frequency of data written to the moderated transport log ( `MSGTRKMA`) is negligible compared to the other three logs.
+    
 The message tracking log files are text files that contain data in the comma-separated value (CSV) format. Each message tracking log file has a header that contains the following information:
   
-- **#Software:** The value is  `Microsoft Exchange Server`.
+- **#Software**: The value is  `Microsoft Exchange Server`.
     
-- **#Version:** Version number of the Exchange server that created the message tracking log file. The value uses the format  `15.01.nnnn.nnn`.
+- **#Version**: Version number of the Exchange server that created the message tracking log file. The value uses the format  `15.01.nnnn.nnn`.
     
-- **#Log-Type:** The value is  `Message Tracking Log`.
+- **#Log-Type**: The value is  `Message Tracking Log`.
     
-- **#Date:** The UTC date-time when the log file was created. The UTC date-time is represented in the ISO 8601 date-time format:  _yyyy-mm-dd_T _hh:mm:ss.fff_Z, where  _yyyy_ = year,  _mm_ = month,  _dd_ = day, T indicates the beginning of the time component,  _hh_ = hour,  _mm_ = minute,  _ss_ = second,  _fff_ = fractions of a second, and Z signifies Zulu, which is another way to denote UTC. 
+- **#Date**: The UTC date-time when the log file was created. The UTC date-time is represented in the ISO 8601 date-time format:  _yyyy-mm-dd_T _hh:mm:ss.fff_Z, where  _yyyy_ = year,  _mm_ = month,  _dd_ = day, T indicates the beginning of the time component,  _hh_ = hour,  _mm_ = minute,  _ss_ = second,  _fff_ = fractions of a second, and Z signifies Zulu, which is another way to denote UTC. 
     
-- **#Fields:** Comma-delimited field names that are used in the message tracking log files. 
+- **#Fields**: Comma-delimited field names that are used in the message tracking log files.
     
-[Return to top](message-tracking.md#RTT)
-  
 ## Fields in the message tracking log files
 <a name="Fields"> </a>
 
@@ -104,7 +87,7 @@ The message tracking log stores each message event on a single line in the log. 
 |**client-hostname** <br/> |The host name or FQDN of the messaging server or messaging client that submitted the message.  <br/> |
 |**server-ip** <br/> |The IPv4 or IPv6 address of the source or destination server.  <br/> |
 |**server-hostname** <br/> |The host name or FQDN of the destination server.  <br/> |
-|**source-context** <br/> | Extra information associated with the **source** field. For example:  <br/>  `CatContentConversion` <br/>  `250 2.0.0 OK;ClientSubmitTime:<UTC>` <br/> |
+|**source-context** <br/> |Extra information associated with the **source** field. For example:  <br/>  `CatContentConversion` <br/>  `250 2.0.0 OK;ClientSubmitTime:<UTC>` <br/> |
 |**connector-id** <br/> |The name of the Send connector or Receive connector that accepted the message. For example,  _ServerName_\ _ConnectorName_ or  _ConnectorName_.  <br/> |
 |**source** <br/> |The Exchange transport component that's responsible for the event. These values are described in the [Source values in the message tracking log](message-tracking.md#Source) section later in this topic.  <br/> |
 |**event-id** <br/> |The message event type. These values are described in the [Event types in the message tracking log](message-tracking.md#EventTypes) section later in this topic.  <br/> |
@@ -112,15 +95,15 @@ The message tracking log stores each message event on a single line in the log. 
 |**message-id** <br/> |The value of the **Message-Id:** header field in the message header. If the **Message-Id:** header field doesn't exist or is blank, Exchange assigns an arbitrary value. This value is constant for the lifetime of the message. For messages created in Exchange, the value is in the format  `<GUID@ServerFQDN>`, including the angle brackets ( `< >`). For example,  `<4867a3d78a50438bad95c0f6d072fca5@mailbox01.contoso.com>`. Other messaging systems may use different syntax or values.  <br/> |
 |**network-message-id** <br/> |A unique message ID value that persists across copies of the message that may be created due to bifurcation or distribution group expansion. An example value is  `1341ac7b13fb42ab4d4408cf7f55890f`.  <br/> |
 |**recipient-address** <br/> |The email addresses of the message's recipients. Multiple email addresses are separated by the semicolon character (;).  <br/> |
-|**recipient-status** <br/> | The recipient status for each recipient separated by the semicolon character (;). The status values are presented for the recipients in the same order as the values in the **recipient-address** field. Example status values include:  <br/>  `To`,  `Cc` or  `Bcc` <br/>  `250 2.1.5 Recipient OK` <br/>  `550 4.4.7 QUEUE.Expired;<ErrorText>` <br/> |
+|**recipient-status** <br/> |The recipient status for each recipient separated by the semicolon character (;). The status values are presented for the recipients in the same order as the values in the **recipient-address** field. Example status values include:  <br/>  `To`,  `Cc` or  `Bcc` <br/>  `250 2.1.5 Recipient OK` <br/>  `550 4.4.7 QUEUE.Expired;<ErrorText>` <br/> |
 |**total-bytes** <br/> |The total size of the message in bytes, including all attachments.  <br/> |
 |**recipient-count** <br/> |The total number of recipients in the message.  <br/> |
 |**related-recipient-address** <br/> |This field is used with **EXPAND**, **REDIRECT**, and **RESOLVE** events to display other recipient email addresses that are associated with the message.  <br/> |
-|**reference** <br/> | This field contains additional information for specific types of events. For example:  <br/> **DSN** Contains the report link, which is the **Message-Id** value of the associated delivery status notification (also known as a DSN, bounce message, non-delivery report, or NDR) if a DSN is generated subsequent to this event. If this is a DSN message, the **Reference** field contains the **Message-Id** value of the original message that the DSN was generated for.  <br/> **EXPAND** Contains the **related-recipient-address** value of the related messages.  <br/> **RECEIVE** May contain the **Message-Id** value of the related message if the message was generated by other processes, for example, journaling or inbox rules.  <br/> **SEND** Contains the **Internal-Message-Id** value of any DSN messages.  <br/> **THROTTLE** Contains the reason why the message was throttled.  <br/> **TRANSFER** Contains the **Internal-Message-Id** value of the message that's being forked.  <br/> **Message generated by inbox rules** Contains the **Internal-Message-Id** value of the inbound message that caused the inbox rule to generate the outbound message.  <br/>  May contain the **Internal-Message-Id** value for forked messages.  <br/>  For other types of events, this field is usually blank.  <br/> |
+|**reference** <br/> |This field contains additional information for specific types of events. For example:  <br/> **DSN**: Contains the report link, which is the **Message-Id** value of the associated delivery status notification (also known as a DSN, bounce message, non-delivery report, or NDR) if a DSN is generated subsequent to this event. If this is a DSN message, the **Reference** field contains the **Message-Id** value of the original message that the DSN was generated for.  <br/> **EXPAND**: Contains the **related-recipient-address** value of the related messages.  <br/> **RECEIVE**: May contain the **Message-Id** value of the related message if the message was generated by other processes, for example, journaling or inbox rules.  <br/> **SEND**: Contains the **Internal-Message-Id** value of any DSN messages.  <br/> **THROTTLE**: Contains the reason why the message was throttled.  <br/> **TRANSFER**: Contains the **Internal-Message-Id** value of the message that's being forked.  <br/> **Message generated by inbox rules**: Contains the **Internal-Message-Id** value of the inbound message that caused the inbox rule to generate the outbound message.  <br/> **Forked messages**: Might contain the **Internal-Message-Id** value.  <br/> For other types of events, this field is usually blank.  <br/> |
 |**message-subject** <br/> | The message's subject found in the **Subject:** header field. The tracking of message subjects is controlled by the  _MessageTrackingLogSubjectLoggingEnabled_ parameter on the **Set-TransportService** cmdlet. By default, message subject tracking is enabled.  <br/> |
 |**sender-address** <br/> |The email address specified in the **Sender:** header field, or the **From:** header field if the **Sender:** field doesn't exist.  <br/> |
 |**return-path** <br/> |The return email address specified by the **MAIL FROM** command that sent the message. Although this field is never empty, it can have the null sender address value represented as  `<>`.  <br/> |
-|**message-info** <br/> | Additional information about the message. For example:  <br/>  The message origination date-time in UTC for **DELIVER** and **SEND** events. The origination date-time is the time when the message first entered the Exchange organization. The UTC date-time is represented in the ISO 8601 date-time format:  _yyyy-mm-dd_T _hh:mm:ss.fff_Z, where  _yyyy_ = year,  _mm_ = month,  _dd_ = day, T indicates the beginning of the time component,  _hh_ = hour,  _mm_ = minute,  _ss_ = second,  _fff_ = fractions of a second, and Z signifies Zulu, which is another way to denote UTC.  <br/>  Authentication errors. For example, you may see the value  `11a` and the type of authentication that was used when the authentication error occurred.  <br/> |
+|**message-info** <br/> |Additional information about the message. For example:  <br/> The message origination date-time in UTC for **DELIVER** and **SEND** events. The origination date-time is the time when the message first entered the Exchange organization. The UTC date-time is represented in the ISO 8601 date-time format:  _yyyy-mm-dd_T _hh:mm:ss.fff_Z, where  _yyyy_ = year,  _mm_ = month,  _dd_ = day, T indicates the beginning of the time component,  _hh_ = hour,  _mm_ = minute,  _ss_ = second,  _fff_ = fractions of a second, and Z signifies Zulu, which is another way to denote UTC.  <br/> Authentication errors. For example, you may see the value  `11a` and the type of authentication that was used when the authentication error occurred.  <br/> |
 |**directionality** <br/> |The direction of the message. Example values include  `Incoming`,  `Undefined`, and  `Originating`.  <br/> |
 |**tenant-id** <br/> |This field isn't used in on-premises Exchange organizations.  <br/> |
 |**original-client-ip** <br/> |The IPv4 or IPv6 address of the original client.  <br/> |
@@ -130,8 +113,6 @@ The message tracking log stores each message event on a single line in the log. 
 |**log-id** <br/> |A unique identifier for a row in the in the message tracking log. This field isn't important in on-premises Exchange organizations.  <br/> |
 |**schema-version** <br/> |Version number of the Exchange server that created the entry in the message tracking log. The value uses the format  `15.01.nnnn.nnn`.  <br/> |
    
-[Return to top](message-tracking.md#RTT)
-  
 ## Event types in the message tracking log
 <a name="EventTypes"> </a>
 
@@ -145,7 +126,7 @@ Various event types in the **event-id** field are used to classify the message e
 |**DEFER** <br/> |Message delivery was delayed.  <br/> |
 |**DELIVER** <br/> |A message was delivered to a local mailbox.  <br/> |
 |**DELIVERFAIL** <br/> |An agent tried to deliver the message to a folder that doesn't exist in the mailbox.  <br/> |
-|**DROP** <br/> | A message was dropped without a delivery status notification (also known as a DSN, bounce message, non-delivery report, or NDR). For example:  <br/>  Completed moderation approval request messages.  <br/>  Spam messages that were silently dropped without an NDR.  <br/> |
+|**DROP** <br/> |A message was dropped without a delivery status notification (also known as a DSN, bounce message, non-delivery report, or NDR). For example:  <br/> • Completed moderation approval request messages.  <br/> • Spam messages that were silently dropped without an NDR.  <br/> |
 |**DSN** <br/> |A delivery status notification (DSN) was generated.  <br/> |
 |**DUPLICATEDELIVER** <br/> |A duplicate message was delivered to the recipient. Duplication may occur if a recipient is a member of multiple nested distribution groups. Duplicate messages are detected and removed by the information store.  <br/> |
 |**DUPLICATEEXPAND** <br/> |During the expansion of the distribution group, a duplicate recipient was detected.  <br/> |
@@ -174,15 +155,13 @@ Various event types in the **event-id** field are used to classify the message e
 |**RESUBMITDEFER** <br/> |A message resubmitted from Safety Net was deferred.  <br/> |
 |**RESUBMITFAIL** <br/> |A message resubmitted from Safety Net failed.  <br/> |
 |**SEND** <br/> |A message was sent by SMTP between transport services.  <br/> |
-|**SUBMIT** <br/> | The Mailbox Transport Submission service successfully transmitted the message to the Transport service. For **SUBMIT** events, the **source-context** property contains the following details:  <br/> **MDB** The mailbox database GUID.  <br/> **Mailbox** The mailbox GUID.  <br/> **Event** The event sequence number.  <br/> **MessageClass** The type of message. For example,  `IPM.Note`.  <br/> **CreationTime** Date-time of the message submission.  <br/> **ClientType** For example,  `User`,  `OWA`, or  `ActiveSync`.  <br/> |
+|**SUBMIT** <br/> |The Mailbox Transport Submission service successfully transmitted the message to the Transport service. For **SUBMIT** events, the **source-context** property contains the following details:  <br/> **MDB**: The mailbox database GUID.  <br/> **Mailbox**: The mailbox GUID.  <br/> **Event**: The event sequence number.  <br/> **MessageClass**: The type of message. For example,  `IPM.Note`.  <br/> **CreationTime**: Date-time of the message submission.  <br/> **ClientType**: For example,  `User`,  `OWA`, or  `ActiveSync`.  <br/> |
 |**SUBMITDEFER** <br/> |The message transmission from the Mailbox Transport Submission service to the Transport service was deferred.  <br/> |
 |**SUBMITFAIL** <br/> |The message transmission from the Mailbox Transport Submission service to the Transport service failed.  <br/> |
 |**SUPPRESSED** <br/> |The message transmission was suppressed.  <br/> |
 |**THROTTLE** <br/> |The message was throttled.  <br/> |
 |**TRANSFER** <br/> |Recipients were moved to a forked message because of content conversion, message recipient limits, or agents. Sources include **ROUTING** or **QUEUE**.  <br/> |
    
-[Return to top](message-tracking.md#RTT)
-  
 ## Source values in the message tracking log
 <a name="Source"> </a>
 
@@ -210,8 +189,6 @@ The values in the **source** field in the message tracking log indicate the tran
 |**SMTP** <br/> |The message was submitted by the SMTP send or SMTP receive component of the transport service.  <br/> |
 |**STOREDRIVER** <br/> |The event source was a MAPI submission from a mailbox on the local server.  <br/> |
    
-[Return to top](message-tracking.md#RTT)
-  
 ## Example entries in the message tracking log
 <a name="Example"> </a>
 
@@ -232,13 +209,9 @@ SEND       SMTP        chris@contoso.com {michelle@contoso.com} test
 DELIVER    STOREDRIVER chris@contoso.com {michelle@contoso.com} test
 ```
 
-[Return to top](message-tracking.md#RTT)
-  
 ## Security concerns for the message tracking log
 <a name="Security"> </a>
 
 No message content is stored in the message tracking log. By default, the subject line of an email message is stored in the message tracking log. You might need to disable subject logging to comply with increased security or privacy requirements. For instructions on how to disable subject logging, see [Configure message tracking](configure-message-tracking.md).
-  
-[Return to top](message-tracking.md#RTT)
   
 

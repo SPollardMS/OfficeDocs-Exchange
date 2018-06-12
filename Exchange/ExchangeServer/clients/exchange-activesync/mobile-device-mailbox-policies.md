@@ -3,13 +3,12 @@ title: "Mobile device mailbox policies"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 9317b3bc-44a1-4e54-bc51-4f0b194b6a55
-
 description: "Summary: Learn about managing mobile device mailbox policies in Exchange 2016."
 ---
 
@@ -113,13 +112,13 @@ The following table summarizes the settings you can specify using mobile device 
 |Device policy refresh interval  <br/> |This setting specifies how often the mobile device mailbox policy is sent from the server to the mobile device.  <br/> |
 |IRM enabled  <br/> |This setting specifies whether Information Rights Management (IRM) is enabled on the mobile device.  <br/> |
 |Max attachment size  <br/> |This setting controls the maximum size of attachments that can be downloaded to the mobile device. The default value is Unlimited.  <br/> |
-|Max calendar age filter  <br/> |This setting specifies the maximum range of calendar days that can be synchronized to the mobile device. The following values are accepted:  <br/> All OneDay ThreeDays OneWeek TwoWeeks OneMonth |
-|Max email age filter  <br/> |This setting specifies the maximum number of days of email items to synchronize to the mobile device. The following values are accepted:  <br/> All OneDay ThreeDays OneWeek TwoWeeks OneMonth |
+|Max calendar age filter  <br/> |This setting specifies the maximum range of calendar days that can be synchronized to the mobile device. The following values are accepted:  <br/> 1: All  <br/> 2: OneDay  <br/> 3: ThreeDays  <br/> 4: OneWeek  <br/> 5: TwoWeeks  <br/> 6: OneMonth  <br/> |
+|Max email age filter  <br/> |This setting specifies the maximum number of days of email items to synchronize to the mobile device. The following values are accepted:  <br/> 1: All  <br/> 2: OneDay  <br/> 3: ThreeDays  <br/> 4: OneWeek  <br/> 5: TwoWeeks  <br/> 6: OneMonth  <br/> |
 |Max email body truncation size  <br/> |This setting specifies the maximum size at which email messages are truncated when synchronized to the mobile device. The value is in kilobytes (KB).  <br/> |
 |Max email HTML body truncation size  <br/> |This setting specifies the maximum size at which HTML email messages are truncated when synchronized to the mobile device. The value is in kilobytes (KB).  <br/> |
 |Max inactivity time lock  <br/> |This value specifies the length of time that the mobile device can be inactive before a password is required to reactivate it. You can enter any interval between 30 seconds and 1 hour. The default value is 15 minutes.  <br/> |
 |Max password failed attempts  <br/> |This setting specifies the number of attempts a user can make to enter the correct password for the mobile device. You can enter any number from 4 through 16. The default value is 8.  <br/> |
-|Min password complex characters  <br/> | This setting specifies the number of character sets that are required in the password of the mobile device. The character sets are:  <br/>  Lower case letters.  <br/>  Upper case letters.  <br/>  Digits 0 through 9.  <br/>  Special characters (for example, exclamation marks).  <br/>  You can enter any number from 1 through 4. The default value is 1.  <br/>  For Windows Phone 8 devices, this setting specifies the number of character sets that are required in the password. For example, the value 3 requires at least one character from any three of the character sets.  <br/>  For Windows Phone 10 devices, this setting specifies the following password complexity requirements:  <br/>  Digits only.  <br/>  Digits and lower case letters.  <br/>  Digits, lower case letters, and upper case letters.  <br/>  Digits, lower case letters, upper case letters, and special characters.  <br/> |
+|Min password complex characters  <br/> |This setting specifies the number of character sets that are required in the password of the mobile device. The character sets are:  <br/> • Lower case letters.  <br/> • Upper case letters.  <br/> • Digits 0 through 9.  <br/> • Special characters (for example, exclamation marks).  <br/> You can enter any number from 1 through 4. The default value is 1.  <br/> For Windows Phone 8 devices, this setting specifies the number of character sets that are required in the password. For example, the value 3 requires at least one character from any three of the character sets.  <br/> For Windows Phone 10 devices, this setting specifies the following password complexity requirements:  <br/> 1: Digits only.  <br/> 2: Digits and lower case letters.  <br/> 3: Digits, lower case letters, and upper case letters.  <br/> 4: Digits, lower case letters, upper case letters, and special characters.  <br/> |
 |Min password length  <br/> |This setting specifies the minimum number of characters in the mobile device password. You can enter any number from 1 through 16. The default value is 4.  <br/> |
 |Password enabled  <br/> |This setting enables the mobile device password.  <br/> |
 |Password expiration  <br/> |This setting enables the administrator to configure a length of time after which a mobile device password must be changed.  <br/> |

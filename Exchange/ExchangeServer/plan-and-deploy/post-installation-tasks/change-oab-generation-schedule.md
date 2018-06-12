@@ -3,7 +3,7 @@ title: "Change the offline address book generation schedule in Exchange 2016"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 1/5/2018
+ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: get-started-article
 f1_keywords:
@@ -64,11 +64,11 @@ New-SettingOverride -Name "<UniqueOverrideName>" -Component TimeBasedAssistants 
     
 This example specifies that the OAB is generated every two hours on all Exchange 2016 servers in the organization that are responsible for generating OABs.
   
-- **Setting override name** "OAB Generation Override" (must be unique) 
+- **Setting override name**: "OAB Generation Override" (must be unique)
     
-- **WorkCycle** `02:00:00` (2 hours) 
+- **WorkCycle**:  `02:00:00` (2 hours) 
     
-- **Override reason** Generate OAB every 2 hours 
+- **Override reason**: Generate OAB every 2 hours
     
 ```
 New-SettingOverride -Name "OAB Generation Override" -Component TimeBasedAssistants -Section OABGeneratorAssistant -Parameters @("WorkCycle=02:00:00") -Reason "Generate OAB every 2 hours"

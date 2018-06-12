@@ -3,18 +3,18 @@ title: "Configure protocol logging"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 4/20/2018
+ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: c81cac9c-b990-492a-b899-5be8d08a6068
-description: "Learn how to configure protocol logging for Send connectors and Receive connectors in Exchange 2016."
+description: "Summary: Learn how to configure protocol logging for Send connectors and Receive connectors in Exchange 2016."
 ---
 
 # Configure protocol logging
 
-Learn how to configure protocol logging for Send connectors and Receive connectors in Exchange 2016.
+ **Summary**: Learn how to configure protocol logging for Send connectors and Receive connectors in Exchange 2016.
   
 Protocol logging records the SMTP conversations that occur between messaging servers and between Exchange services in the transport pipeline as part of message delivery.
   
@@ -22,13 +22,13 @@ The following options are available for the protocol logs of all Send connectors
   
 - Specify the location of the protocol log files. The default locations are:
     
-  - Front End Transport service on Mailbox servers
+  - Front End Transport service on Mailbox servers:
     
   - **Receive connectors**:  `%ExchangeInstallPath%TransportRoles\Logs\FrontEnd\ProtocolLog\SmtpReceive`
     
   - **Send connectors**:  `%ExchangeInstallPath%TransportRoles\Logs\FrontEnd\ProtocolLog\SmtpSend`
     
-  - Transport service on Mailbox servers
+  - Transport service on Mailbox servers:
     
   - **Receive connectors**:  `%ExchangeInstallPath%TransportRoles\Logs\Hub\ProtocolLog\SmtpReceive`
     
@@ -38,11 +38,9 @@ The following options are available for the protocol logs of all Send connectors
     
   - Mailbox Transport Submission service on Mailbox servers ( **Send connectors**):  `%ExchangeInstallPath%TransportRoles\Logs\Mailbox\ProtocolLog\SmtpSend\Submission`
     
-    **Note**
+    **Note**: Protocol logging for side effect messages that are submitted after messages are delivered to mailboxes occurs in  `%ExchangeInstallPath%TransportRoles\Logs\Mailbox\ProtocolLog\SmtpSend\Delivery`. For example, a message that's delivered to a mailbox triggers an Inbox rule that redirects the message to another recipient.
     
-    Protocol logging for side effect messages that are submitted after messages are delivered to mailboxes occurs in  `%ExchangeInstallPath%TransportRoles\Logs\Mailbox\ProtocolLog\SmtpSend\Delivery`. For example, a message that's delivered to a mailbox triggers an Inbox rule that redirects the message to another recipient.
-    
-  - Transport service on Edge Transport servers
+  - Transport service on Edge Transport servers:
     
   - **Receive connectors**:  `%ExchangeInstallPath%TransportRoles\Logs\Edge\ProtocolLog\SmtpReceive`
     
@@ -80,17 +78,17 @@ Use this procedure to enable or disable protocol logging on a Send connector or 
   
 1. Open the EAC and navigate to one of the following locations:
     
-  - **Mail flow** > **Send connectors**.
+  - **Mail flow** \> **Send connectors**.
     
-  - **Mail flow** > **Receive connectors**.
+  - **Mail flow** \> **Receive connectors**.
     
 2. Select the connector you want to configure, and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
 3. On the **General** tab in the **Protocol logging level** section, select one of the following options: 
     
-  - **None** Protocol logging disabled on the connector. 
+  - **None**: Protocol logging disabled on the connector.
     
-  - **Verbose** Protocol logging is enabled on the connector. 
+  - **Verbose**: Protocol logging is enabled on the connector.
     
 4. When you are finished, click **Save**.
     
@@ -98,7 +96,7 @@ Use this procedure to enable or disable protocol logging on a Send connector or 
 
 Use this procedure to configure the location of the protocol logs for all Send connectors or all Receive connectors in the Transport service on Mailbox servers.
   
-1. Open the EAC and navigate to **Servers** > **Servers**.
+1. Open the EAC and navigate to **Servers** \> **Servers**.
     
 2. Select the Mailbox server you want to configure, and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     

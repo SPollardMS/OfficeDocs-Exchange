@@ -3,18 +3,18 @@ title: "Apply a retention policy to mailboxes in Exchange 2016"
 ms.author: serdars
 author: SerdarSoysal
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: End User
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 6ccc80db-d201-44f7-8d4b-473a89c14b2f
-description: "Learn how to use the Exchange Management Shell or the Exchange admin center apply a retention policy to mailboxes in Exchange 2016."
+description: "Summary: Learn how to use the Exchange Management Shell or the Exchange admin center apply a retention policy to mailboxes in Exchange 2016."
 ---
 
 # Apply a retention policy to mailboxes in Exchange 2016
 
-Learn how to use the Exchange Management Shell or the Exchange admin center apply a retention policy to mailboxes in Exchange 2016.
+ **Summary**: Learn how to use the Exchange Management Shell or the Exchange admin center apply a retention policy to mailboxes in Exchange 2016.
   
 You can use retention policies to group one or more retention tags and apply them to mailboxes to enforce message retention settings. A mailbox can't have more than one retention policy.
   
@@ -29,7 +29,7 @@ You can use retention policies to group one or more retention tags and apply the
     
 ## Use the Exchange admin center to apply a retention policy to a single mailbox
 
-1. Go to **Recipients** > **Mailboxes**.
+1. Go to **Recipients** \> **Mailboxes**.
     
 2. In the list view, select the mailbox to which you want to apply the retention policy, and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
@@ -39,7 +39,7 @@ You can use retention policies to group one or more retention tags and apply the
     
 ## Use the Exchange admin center to apply a retention policy to multiple mailboxes
 
-1. Go to **Recipients** > **Mailboxes**.
+1. Go to **Recipients** \> **Mailboxes**.
     
 2. In the list view, use the Shift or Ctrl keys to select multiple mailboxes.
     
@@ -49,8 +49,6 @@ You can use retention policies to group one or more retention tags and apply the
     
 5. In **Bulk Assign Retention Policy**, select the retention policy you want to apply to the mailboxes, and then click **Save**.
     
-[Return to top](apply-retention-policies-to-mailboxes.md#top)
-  
 ## Use the Exchange Management Shell to apply a retention policy to a single mailbox
 
 This example applies the retention policy RP-Finance to Morris's mailbox.
@@ -84,8 +82,6 @@ Get-Mailbox -OrganizationalUnit "Finance" -ResultSize Unlimited | Set-Mailbox -R
 
 For detailed syntax and parameter information, see [Get-Mailbox](http://technet.microsoft.com/library/8a5a6eb9-4a75-47f9-ae3b-a3ba251cf9a8.aspx) and [Set-Mailbox](http://technet.microsoft.com/library/a0d413b9-d949-4df6-ba96-ac0906dedae2.aspx).
   
-[Return to top](apply-retention-policies-to-mailboxes.md#top)
-  
 ## How do you know this worked?
 
 To verify that you have applied the retention policy, run the [Get-Mailbox](http://technet.microsoft.com/library/8a5a6eb9-4a75-47f9-ae3b-a3ba251cf9a8.aspx) cmdlet to retrieve the retention policy for the mailbox or mailboxes. 
@@ -102,6 +98,4 @@ This command retrieves all mailboxes that have the retention policy RP-Finance a
 Get-Mailbox -ResultSize unlimited | Where-Object {$_.RetentionPolicy -eq "RP-Finance"} | Format-Table Name,RetentionPolicy -Auto
 ```
 
-[Return to top](apply-retention-policies-to-mailboxes.md#top)
-  
 

@@ -138,7 +138,7 @@ For detailed syntax and parameter information, see [Suspend-MailboxDatabaseCopy]
 
 To verify that you've successfully activated a lagged mailbox database copy, do one of the following:
   
-- In the EAC, navigate to **Servers** > **Databases**. Select the appropriate database, and in the Details pane, click **View details** to view the database copy properties. 
+- In the EAC, navigate to **Servers** \> **Databases**. Select the appropriate database, and in the Details pane, click **View details** to view the database copy properties. 
     
 - In the Exchange Management Shell, run the following command to display status information for a database copy.
     

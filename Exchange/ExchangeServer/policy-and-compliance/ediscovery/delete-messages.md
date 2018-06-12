@@ -3,18 +3,18 @@ title: "Search for and delete messages in Exchange 2016"
 ms.author: serdars
 author: SerdarSoysal
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/12/2018
 ms.audience: Admin
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 8c36bb03-e716-4fdd-9958-4aa7a2a1db42
-description: "Learn how to search for and purge messages from Exchange 2016 mailboxes."
+description: "Summary: Learn how to search for and purge messages from Exchange 2016 mailboxes."
 ---
 
 # Search for and delete messages in Exchange 2016
 
-Learn how to search for and purge messages from Exchange 2016 mailboxes.
+ **Summary**: Learn how to search for and purge messages from Exchange 2016 mailboxes.
   
 You can use the **New-ComplianceSearch** and **New-ComplianceSearchAction** cmdlets to search for and delete an email message from all mailboxes in your organization. This can help you find and remove potentially harmful or high-risk email, such as: 
   
@@ -43,8 +43,6 @@ See the [More information](delete-messages.md#moreinfo) section for description 
     
 - A maximum of 10 items per mailbox can be removed at once. Because the capability to search for and remove messages is intended to be an incident-response tool, this limit helps ensure that messages are quickly removed from mailboxes. This feature isn't intended to clean up user mailboxes.
     
-[Return to top](delete-messages.md#top)
-  
 ## Step 1: Create and run a Compliance Search to find the message to delete
 <a name="step1"> </a>
 
@@ -101,8 +99,6 @@ Here are two examples of queries to find suspicious email messages.
   (From:chatsuwloginsset12345@outlook.com) AND (Subject:"Update your account information")
   ```
 
-[Return to top](delete-messages.md#top)
-  
 ## Step 2: Delete the message
 <a name="step2"> </a>
 
@@ -129,6 +125,4 @@ New-ComplianceSearchAction -SearchName "Remove Phishing Message" -Purge -PurgeTy
     
 - **How to get status on the search and delete operation?** Run the **Get-ComplianceSearchAction** to get the status on the delete operation. Note that the object that is created when you run the **New-ComplianceSearchAction** cmdlet is named by using this format:  `<name of Compliance Search>_Purge`.
     
-[Return to top](delete-messages.md#top)
-  
 

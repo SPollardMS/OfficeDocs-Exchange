@@ -3,7 +3,7 @@ title: "Migrate your public folders to Office 365 Groups"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/12/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
@@ -25,9 +25,9 @@ This article provides a comparison of public folders and Office 365 Groups, and 
   
 Public folders are not recommended for the following situations:
   
-- **Archiving data**. Users with mailbox limits sometimes use public folders instead of mailboxes to archive data. This practice isn't recommended because it affects storage in public folders and undermines the goal of mailbox limits.
+- **Archiving data**: Users with mailbox limits sometimes use public folders instead of mailboxes to archive data. This practice isn't recommended because it affects storage in public folders and undermines the goal of mailbox limits.
     
-- **Document sharing and collaboration**. Public folders don't provide document management features, such as versioning, controlled check-in and check-out functionality, and automatic notifications of content changes.
+- **Document sharing and collaboration**: Public folders don't provide document management features, such as versioning, controlled check-in and check-out functionality, and automatic notifications of content changes.
     
 ## What are Office 365 Groups?
 
@@ -39,46 +39,46 @@ For the full Groups story, see [Learn about Office 365 Groups](https://go.micros
 
 Office 365 Groups is the latest collaboration offering from Microsoft, which means there are many reasons why they would be a preferable solution over public folders, a much older technology. In Outlook, for example, Groups can replace mail-enabled public folders altogether. Compiling a list of every scenario in which Office 365 Groups works better than public folders is impossible, but here are the highlights:
   
-- **Collaboration over email**. Groups in Outlook has a dedicated **Conversations** space that stores all the emails and lets users collaborate over them. The group can even be set up to receive messages from people outside the group or from outside the organization. If you're currently using mail-enabled public folders to store project-related discussions, for example, or purchase orders that need to be viewed by a team of people, using groups would be an improvement. Groups are also better for situations when you simply want to broadcast information to a set of users. 
+- **Collaboration over email**: Groups in Outlook has a dedicated **Conversations** space that stores all the emails and lets users collaborate over them. The group can even be set up to receive messages from people outside the group or from outside the organization. If you're currently using mail-enabled public folders to store project-related discussions, for example, or purchase orders that need to be viewed by a team of people, using groups would be an improvement. Groups are also better for situations when you simply want to broadcast information to a set of users. 
     
-- **Collaboration over documents**. In Outlook, Groups has a dedicated **Files** tab that displays all files from the group's SharePoint team site, as well as from mail attachments. You get one view of all the files, so you don't have to go searching for them like you would in public folders. Co-authoring also becomes easier. If you're using public folders for storing files meant to be consumed by multiple people, consider migrating to Groups. 
+- **Collaboration over documents**: In Outlook, Groups has a dedicated **Files** tab that displays all files from the group's SharePoint team site, as well as from mail attachments. You get one view of all the files, so you don't have to go searching for them like you would in public folders. Co-authoring also becomes easier. If you're using public folders for storing files meant to be consumed by multiple people, consider migrating to Groups. 
     
-- **Shared calendar**. Upon creation every group gets a shared calendar. Any member of the group can create events on that calendar. When you favorite a group, that group's calendar can be displayed alongside your personal calendar. You can also subscribe to a group's events, in which case events created in that group appear in your personal calendar. If you're using public folders to host calendars for your team, such as a schedule or a timetable, Groups would be an improved experience.
+- **Shared calendar**: Upon creation every group gets a shared calendar. Any member of the group can create events on that calendar. When you favorite a group, that group's calendar can be displayed alongside your personal calendar. You can also subscribe to a group's events, in which case events created in that group appear in your personal calendar. If you're using public folders to host calendars for your team, such as a schedule or a timetable, Groups would be an improved experience.
     
-- **Simplified permissions**. When you assign users to a group, they immediately get the permissions they need, whereas with public folders you need to manually assign the proper permissions. Members can be added as "owners" or "members." Owners have full rights in the group, including the ability to perform group management tasks. Members can also create content and edit files like owners, but members cannot delete content that they have not created. If the public folders' permissions model is too overwhelming for you and you want something simple and quick, Office 365 Groups is the way to go.
+- **Simplified permissions**: When you assign users to a group, they immediately get the permissions they need, whereas with public folders you need to manually assign the proper permissions. Members can be added as "owners" or "members." Owners have full rights in the group, including the ability to perform group management tasks. Members can also create content and edit files like owners, but members cannot delete content that they have not created. If the public folders' permissions model is too overwhelming for you and you want something simple and quick, Office 365 Groups is the way to go.
     
-- **Mobile and Web presence**. Public folders can't be accessed through mobile devices and have a limited set of functionality on the Web. Office 365 Groups, on the other hand, is accessible through Outlook mobile apps and has a richer set of features on the Web. If your team is on the move and requires mobile access, then you should be using Office 365 Groups.
+- **Mobile and Web presence**: Public folders can't be accessed through mobile devices and have a limited set of functionality on the Web. Office 365 Groups, on the other hand, is accessible through Outlook mobile apps and has a richer set of features on the Web. If your team is on the move and requires mobile access, then you should be using Office 365 Groups.
     
-- **Access to a wide range of Office 365 apps**. When you create a group, you unlock access to a wide range of apps from the Office 365 suite. You get a SharePoint team site for storing files and a plan on Planner to track your tasks. Office 365 Groups is the membership service that combines elements of the entire Office 365 suite.
+- **Access to a wide range of Office 365 apps**: When you create a group, you unlock access to a wide range of apps from the Office 365 suite. You get a SharePoint team site for storing files and a plan on Planner to track your tasks. Office 365 Groups is the membership service that combines elements of the entire Office 365 suite.
     
 While Office 365 Groups offers many advantages, you should be aware of a few major differences that you'll notice after leaving the public folders experience. These are primarily:
   
-- **Folder hierarchy**. While public folders are often used to organize content in deep rooted hierarchy, Office 365 Groups has a flat structure. All emails in the group reside in the Conversations space and all the documents go into the **Files** tab. Also, you can't create sub-folders in Office 365 groups. 
+- **Folder hierarchy**: While public folders are often used to organize content in deep rooted hierarchy, Office 365 Groups has a flat structure. All emails in the group reside in the Conversations space and all the documents go into the **Files** tab. Also, you can't create sub-folders in Office 365 groups. 
     
-- **Granular permission roles**. While public folders have a variety of permission roles, Office 365 Groups only provides two: owner and member.
+- **Granular permission roles**: While public folders have a variety of permission roles, Office 365 Groups only provides two: owner and member.
     
 Before you move to Groups, it's also a good idea to make note of the various limits that come with creating and maintaining groups. See  *How do I manage my groups?*  in [Learn about Office 365 Groups](https://go.microsoft.com/fwlink/p/?linkid=858521) for more information. 
   
 ## Migrating public folders to Office 365 Groups
 
-If you decide to switch to Office 365 Groups, you can use a process known as batch migration to move your email and calendar content from your existing public folders to Groups. The specific steps for running a batch migration depends on which version of Exchange currently hosts your public folder hierarchy. At the end of this article, you will find links to instructions that walk you through the batch migration process. 
+If you decide to switch to Office 365 Groups, you can use a process known as  *batch migration*  to move your email and calendar content from your existing public folders to Groups. The specific steps for running a batch migration depends on which version of Exchange currently hosts your public folder hierarchy. At the end of this article, you will find links to instructions that walk you through the batch migration process. 
   
 > [!NOTE]
 > When you finish migrating a mail-enabled public folder to a particular group in Office 365, all the emails addressed to the public folder will at that point be received by the group. 
   
 Key benefits of batch migrations are:
   
-- **Mailbox Replication Service (MRS)-based migration**. The migration process uses migration batch cmdlets. Migration to multiple groups can be triggered together in a single migration batch. There are also scripts available to assist in the migration process.
+- **Mailbox Replication Service (MRS)-based migration**: The migration process uses migration batch cmdlets. Migration to multiple groups can be triggered together in a single migration batch. There are also scripts available to assist in the migration process.
     
-- **Supports mail and calendar public folders**. Copied emails and posts will appear as in Groups as group conversations, and copied calendar items will be visible in group calendars. Other public folder types, such as tasks and contacts, are currently not supported for this migration.
+- **Supports mail and calendar public folders**: Copied emails and posts will appear as in Groups as group conversations, and copied calendar items will be visible in group calendars. Other public folder types, such as tasks and contacts, are currently not supported for this migration.
     
-- **On-premises public folders can be migrated directly to Office 365 Groups**. This migration does not require you to first move your public folders to Office 365 and then move to Groups. The MRS data copy cmdlets read the public folder data directly from your on-premises environment and then copy the data to Office 365 Groups. Note that Exchange 2016 public folders will require an MRS Proxy-based endpoint.
+- **On-premises public folders can be migrated directly to Office 365 Groups**: This migration does not require you to first move your public folders to Office 365 and then move to Groups. The MRS data copy cmdlets read the public folder data directly from your on-premises environment and then copy the data to Office 365 Groups. Note that Exchange 2016 public folders will require an MRS Proxy-based endpoint.
     
-- **Not an "all or nothing" migration**. You get to choose specific public folders to migrate to Groups, and only those chosen public folders get migrated.
+- **Not an "all or nothing" migration**: You get to choose specific public folders to migrate to Groups, and only those chosen public folders get migrated.
     
-- **One-shot data copy**. Batch migrations are designed to be a simple one-time data copy from source public folders to target groups, without the complexities of incremental synchronization and finalization.
+- **One-shot data copy**: Batch migrations are designed to be a simple one-time data copy from source public folders to target groups, without the complexities of incremental synchronization and finalization.
     
-- **Merges public folder data with existing data in a group**. The data copy will merge the public folder content with the existing group's content, if any. If there is a need for incremental data copy, you can simply run the data copy as many times as you need. This will copy incremental data over to the group.
+- **Merges public folder data with existing data in a group**: The data copy will merge the public folder content with the existing group's content, if any. If there is a need for incremental data copy, you can simply run the data copy as many times as you need. This will copy incremental data over to the group.
     
 ### Overview of batch migrations
 

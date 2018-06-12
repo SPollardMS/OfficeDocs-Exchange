@@ -3,18 +3,18 @@ title: "POP3 and IMAP4 in Exchange 2016"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 10/5/2017
+ms.date: 6/7/2018
 ms.audience: End User
 ms.topic: overview
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: a7dc91ee-2919-4db3-ae9c-cd665d2e09ea
-description: "Learn about support for POP3 and IMAP4 in Exchange 2016."
+description: "Summary: Learn about support for POP3 and IMAP4 in Exchange 2016."
 ---
 
 # POP3 and IMAP4 in Exchange 2016
 
-Learn about support for POP3 and IMAP4 in Exchange 2016.
+ **Summary**: Learn about support for POP3 and IMAP4 in Exchange 2016.
   
 Although users typically access their Exchange mailboxes by using Outlook (MAPI), Outlook on the web (formerly known as Outlook Web App), and Exchange ActiveSync, POP3 and IMAP4 are available in Exchange Server 2016. To support clients that still rely on these protocols, you need to start the services, and configure the settings for POP3 and IMAP4. For detailed instructions, see the following topics:
   
@@ -78,28 +78,25 @@ Another important setting is how frequently the email program contacts the serve
   
 - **Send and receive messages when the application is started**
     
-- **Send and receive messages manually** Messages are only sent and received when the user clicks a "send and receive" option in the application. This is a good setting for computers that aren't always connected to the Internet (for example, dial-up or metered Internet connections). 
+- **Send and receive messages manually**: Messages are only sent and received when the user clicks a "send and receive" option in the application. This is a good setting for computers that aren't always connected to the Internet (for example, dial-up or metered Internet connections).
     
-- **Send and receive messages every set number of minutes** The application connects to the email server periodically to send messages and to download any new messages. This is a good setting for computers that are always connected to the Internet, because the application is kept up-to-date with the most current messages from the mailbox. 
+- **Send and receive messages every set number of minutes**: The application connects to the email server periodically to send messages and to download any new messages. This is a good setting for computers that are always connected to the Internet, because the application is kept up-to-date with the most current messages from the mailbox.
     
-> [!NOTE]
-> If the application and server both support the IMAP4 **IDLE** command, users can send and receive messages in near real time (Exchange supports the IMAP4 **IDLE** command). In most cases, users don't need to configure any settings in their IMAP4 application to use this connection method. 
+ **Note**: If the application and server both support the IMAP4 **IDLE** command, users can send and receive messages in near real time (Exchange supports the IMAP4 **IDLE** command). In most cases, users don't need to configure any settings in their IMAP4 application to use this connection method. 
   
-To configure a POP3 or IMAP4 client to connect to a mailbox, users need specific information about the POP3 or IMAP4 settings.
+To configure a POP3 or IMAP4 client to connect to a mailbox, users need specific information about the POP3 or IMAP4 settings. By default, Exchange uses the following settings for **internal** POP3 connections: 
   
-By default, Exchange uses the following settings for **internal** POP3 connections: 
-  
-- **POP3 server FQDN** `<ServerFQDN>`. For example,  `mailbox01.contoso.com`.
+- **POP3 server FQDN**:  `<ServerFQDN>`. For example,  `mailbox01.contoso.com`.
     
-- **TCP port and encryption method** 995 for always SSL/TLS encrypted connections, and 110 for unencrypted connections, or for opportunistic TLS ( **STARTTLS** ) that results in an encrypted connection after the initial plain text protocol handshake. 
+- **TCP port and encryption method**: 995 for always SSL/TLS encrypted connections, and 110 for unencrypted connections, or for opportunistic TLS ( **STARTTLS** ) that results in an encrypted connection after the initial plain text protocol handshake. 
     
 To allow **external** POP3 clients to connect to mailboxes, you need to configure these settings for external connections. For more information, see [Enable and configure POP3 on an Exchange 2016 server](configure-pop3.md).
   
 By default, Exchange uses the following settings for **internal** IMAP4 connections: 
   
-- **IMAP4 server FQDN** `<ServerFQDN>`. For example,  `mailbox01.contoso.com`.
+- **IMAP4 server FQDN**:  `<ServerFQDN>`. For example,  `mailbox01.contoso.com`.
     
-- **TCP port and encryption method** 993 for always SSL/TLS encrypted connections, and 143 for unencrypted connections, or for opportunistic TLS ( **STARTTLS** ) that results in an encrypted connection after the initial plain text protocol handshake. 
+- **TCP port and encryption method**: 993 for always SSL/TLS encrypted connections, and 143 for unencrypted connections, or for opportunistic TLS ( **STARTTLS** ) that results in an encrypted connection after the initial plain text protocol handshake. 
     
 To allow **external** IMAP4 clients to connect to mailboxes, you need to configure these settings for external connections. For more information, see [Enable and configure IMAP4 on an Exchange 2016 server](configure-imap4.md).
   

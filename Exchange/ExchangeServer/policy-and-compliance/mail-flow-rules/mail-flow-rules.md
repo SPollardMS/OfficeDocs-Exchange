@@ -3,18 +3,18 @@ title: "Mail flow rules in Exchange 2016"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/12/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: c3d2031c-fb7b-4866-8ae1-32928d0138ef
-description: "Learn about mail flow rules (transport rules) and their components in Exchange 2016."
+description: "Summary: Learn about mail flow rules (transport rules) and their components in Exchange 2016."
 ---
 
 # Mail flow rules in Exchange 2016
 
-Learn about mail flow rules (transport rules) and their components in Exchange 2016.
+ **Summary**: Learn about mail flow rules (transport rules) and their components in Exchange 2016.
   
 You can use mail flow rules (also known as transport rules) to identify and take action on messages that flow through the transport pipeline in your Exchange Server 2016 organization. Transport rules are similar to the Inbox rules that are available in Outlook and Outlook on the web (formerly known as Outlook Web App). The main difference is transport rules take action on messages while they're in transit, and not after the message is delivered to the mailbox. Transport rules contain a richer set of conditions, exceptions, and actions, which provides you with the flexibility to implement many types of messaging policies.
   
@@ -37,17 +37,17 @@ For steps to implement specific messaging policies, see the following topics:
 
 A rule is made of conditions, exceptions, actions, and properties:
   
-- **Conditions** Identify the messages that you want to apply the actions to. Some conditions examine message header fields (for example, the To, From, or Cc fields). Other conditions examine message properties (for example, the message subject, body, attachments, message size, or message classification). Most conditions require you to specify a comparison operator (for example, equals, doesn't equal, or contains) and a value to match. If there are no conditions or exceptions, the rule is applied to all messages. 
+- **Conditions**: Identify the messages that you want to apply the actions to. Some conditions examine message header fields (for example, the To, From, or Cc fields). Other conditions examine message properties (for example, the message subject, body, attachments, message size, or message classification). Most conditions require you to specify a comparison operator (for example, equals, doesn't equal, or contains) and a value to match. If there are no conditions or exceptions, the rule is applied to all messages.
     
     For a complete list of mail flow rule conditions, see [Mail flow rule conditions and exceptions (predicates) in Exchange 2016](conditions-and-exceptions.md).
     
-- **Exceptions** Optionally identify the messages that the actions shouldn't apply to. The same message identifiers that are available in conditions are also available in exceptions. Exceptions override conditions and prevent the rule actions from being applied to a message, even if the message matches all of the configured conditions. 
+- **Exceptions**: Optionally identify the messages that the actions shouldn't apply to. The same message identifiers that are available in conditions are also available in exceptions. Exceptions override conditions and prevent the rule actions from being applied to a message, even if the message matches all of the configured conditions.
     
-- **Actions** Specify what to do to messages that match the conditions in the rule, and don't match any of the exceptions. There are many actions available, such as rejecting, deleting, or redirecting messages, adding additional recipients, adding prefixes in the message subject, or inserting disclaimers in the message body. 
+- **Actions**: Specify what to do to messages that match the conditions in the rule, and don't match any of the exceptions. There are many actions available, such as rejecting, deleting, or redirecting messages, adding additional recipients, adding prefixes in the message subject, or inserting disclaimers in the message body.
     
     For a complete list of mail flow rule actions available, see [Mail flow rule actions in Exchange 2016](actions.md).
     
-- **Properties** Specify other rules settings that aren't conditions, exceptions or actions. For example, when the rule should be applied, whether to enforce or test the rule, and the time period when the rule is active. For more information, see the [Mail flow rule properties](mail-flow-rules.md#Properties) section in this topic. 
+- **Properties**: Specify other rules settings that aren't conditions, exceptions or actions. For example, when the rule should be applied, whether to enforce or test the rule, and the time period when the rule is active. For more information, see the [Mail flow rule properties](mail-flow-rules.md#Properties) section in this topic. 
     
 ### Multiple conditions, exceptions, and actions
 <a name="Multiple"> </a>
@@ -61,8 +61,6 @@ The following table shows how multiple conditions, condition values, exceptions,
 |Multiple exceptions  <br/> |OR  <br/> |If a message matches any one of the exceptions, the actions are not applied to the message. The message doesn't have to match all the exceptions.  <br/> |
 |Multiple actions  <br/> |AND  <br/> |Messages that match a rule's conditions get all the actions that are specified in the rule. For example, if the actions **Prepend the subject of the message with** and **Add recipients to the Bcc box** are selected, both actions are applied to the message.  <br/> Keep in mind that some actions, such as the **Delete the message without notifying anyone** action, prevent subsequent rules from being applied to a message. Other actions such as **Forward the message** do not allow additional actions.  <br/> You can also set an action on a rule so that when that rule is applied, subsequent rules are not applied to the message.  <br/> |
    
-[Return to top](mail-flow-rules.md#RTT)
-  
 ### Mail flow rule properties
 <a name="Properties"> </a>
 
@@ -79,8 +77,6 @@ The following table describes the rule properties that are available in mail flo
 |**Stop processing more rules** <br/> | _SenderAddressLocation_ <br/> |This is an action for the rule, but it looks like a property in the EAC. You can choose to stop applying additional rules to a message after a rule processes a message.  <br/> |
 |**Comments** <br/> | _Comments_ <br/> |**Comments** You can enter descriptive comments about the rule.  <br/> |
    
-[Return to top](mail-flow-rules.md#RTT)
-  
 ## How mail flow rules are applied
 <a name="HowApplied"> </a>
 
@@ -93,8 +89,6 @@ Mail flow rules are applied by a transport agent on Mailbox servers and Edge Tra
    
 For more information about transport agents, see [Transport Agents](http://technet.microsoft.com/library/e7389d63-3172-40d5-bf53-0d7cd7e78340.aspx).
   
-[Return to top](mail-flow-rules.md#RTT)
-  
 ### Differences in processing based on message type
 <a name="MessageType"> </a>
 
@@ -106,14 +100,12 @@ There are several types of messages that flow through an organization. The follo
 |:-----|:-----|
 |**Regular messages** Messages that contain a single rich text format (RTF), HTML, or plain text message body or a multipart or alternative set of message bodies.  <br/> |Yes  <br/> |
 |**S/MIME encrypted messages** <br/> |Rules can only access envelope headers and process messages based on conditions that inspect those headers.  <br/> Rules with conditions that require inspection of the message's content, or actions that modify the message's content can't be processed.  <br/> |
-|**RMS Protected messages** Messages that are protected by applying an Active Directory Rights Management Services (AD RMS) rights policy template.  <br/> | Rules can always access envelope headers and process messages based on conditions that inspect those headers.  <br/>  For a rule to inspect or modify a protected message's content, your need to:  <br/>  Have transport decryption set to **Mandatory** or **Optional**. By default, Transport decryption is set to **Optional**.  <br/>  Have the encryption key.  <br/> |
-|**Clear-signed messages** Messages that have been signed but not encrypted.  <br/> |Yes  <br/> |
-|**UM messages** Messages that are created or processed by the Unified Messaging service, such as voice mail, fax, missed call notifications, and messages created or forwarded by using Microsoft Outlook Voice Access.  <br/> |Yes  <br/> |
-|**Anonymous messages** Messages that were sent by anonymous senders.  <br/> |Yes  <br/> |
-|**Read reports** Reports that are generated in response to read receipt requests by senders. Read reports have a message class of  `IPM.Note*.MdnRead` or  `IPM.Note*.MdnNotRead`.  <br/> |Yes  <br/> |
+|**RMS Protected messages**: Messages that are protected by applying an Active Directory Rights Management Services (AD RMS) rights policy template.  <br/> |Rules can always access envelope headers and process messages based on conditions that inspect those headers.  <br/> For a rule to inspect or modify a protected message's content, your need to:  <br/> • Have transport decryption set to **Mandatory** or **Optional**. By default, Transport decryption is set to **Optional**.  <br/> • Have the encryption key.  <br/> |
+|**Clear-signed messages**: Messages that have been signed but not encrypted.  <br/> |Yes  <br/> |
+|**UM messages**: Messages that are created or processed by the Unified Messaging service, such as voice mail, fax, missed call notifications, and messages created or forwarded by using Microsoft Outlook Voice Access.  <br/> |Yes  <br/> |
+|**Anonymous messages**: Messages that were sent by anonymous senders.  <br/> |Yes  <br/> |
+|**Read reports**: Reports that are generated in response to read receipt requests by senders. Read reports have a message class of  `IPM.Note*.MdnRead` or  `IPM.Note*.MdnNotRead`.  <br/> |Yes  <br/> |
    
-[Return to top](mail-flow-rules.md#RTT)
-  
 ### Rule storage and replication
 <a name="Replication"> </a>
 
@@ -129,8 +121,6 @@ Mail flow rules that you create and configure on Edge Transport servers are stor
   
 Whenever the Transport service on a Mailbox server or Edge Transport server detects a modified mail flow rule, an event is logged in the Application log in the Event Viewer (Event ID 4002 on Mailbox servers, and Event ID 16028 on Edge Transport servers).
   
-[Return to top](mail-flow-rules.md#RTT)
-  
 #### Rule replication and storage in mixed environments
 
 There are two mixed environment scenarios that are common:
@@ -139,15 +129,16 @@ There are two mixed environment scenarios that are common:
     
     In a hybrid environment, there's no replication of rules between your on-premises Exchange organization and Office 365. Therefore, when you create a rule in Exchange, you need to create a matching rule in Office 365. Rules you create in Office 365 are stored in the cloud, whereas the rules you create in your on-premises organization are stored locally in Active Directory. When you manage rules in a hybrid environment, you need to keep the two sets of rules synchronized by making the change in both places, or making the change in one environment and then exporting the rules and importing them in the other environment.
     
-    > [!IMPORTANT]
-    > Even though there is a substantial overlap between the conditions and actions that are available in Office 365 and Exchange Server, there are differences. If you plan on creating the same rule in both locations, make sure that all conditions and actions you plan to use are available. To see the list of available conditions and actions that are available in Office 365, see the following topics: > [Transport Rule Conditions](http://technet.microsoft.com/library/7235e5ed-f7f4-41b1-b1a0-47bb96223a2f.aspx)> [Transport Rule Actions](http://technet.microsoft.com/library/a5dfe768-fe26-4290-a801-84b3499f1bc4.aspx)
-  
+    **Important**: Even though there is a substantial overlap between the conditions and actions that are available in Office 365 and Exchange Server, there are differences. If you plan on creating the same rule in both locations, make sure that all conditions and actions you plan to use are available. To see the list of available conditions and actions that are available in Office 365, see the following topics:
+    
+    [Transport Rule Conditions](http://technet.microsoft.com/library/7235e5ed-f7f4-41b1-b1a0-47bb96223a2f.aspx)
+    
+    [Transport Rule Actions](http://technet.microsoft.com/library/a5dfe768-fe26-4290-a801-84b3499f1bc4.aspx)
+    
 - **Coexistence with Exchange 2010**
     
     When you coexist with Exchange 2010, all mail flow rules are stored in Active Directory and replicated across your organization regardless of the Exchange Server version you used to create the rules. However, all mail flow rules are associated with the Exchange server version that was used to create them and are stored in a version-specific container in Active Directory. When you first deploy Exchange 2016 in your organization, any existing rules are imported to Exchange 2016 as part of the setup process. However, any changes afterwards would need to be made with both versions. For example, if you change an existing rule in Exchange 2016 (Exchange Management Shell or the EAC), you need to make the same change in Exchange 2010 (Exchange Management Shell or the Exchange Management Console).
     
     Exchange 2010 can't process rules that have the **Version** or **RuleVersion** value 15.  _n_. _n_. _n_. To be sure all your rules can be processed, only use rules that have the value 14. _n_. _n_. _n_.
     
-[Return to top](mail-flow-rules.md#RTT)
-  
 

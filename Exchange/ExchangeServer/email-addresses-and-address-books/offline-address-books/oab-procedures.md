@@ -2,18 +2,18 @@
 title: "Procedures for offline address books in Exchange 2016"
 ms.author: chrisda
 author: chrisda
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: b7f26eca-b93b-4834-ba50-11febdefbb18
-description: "Learn the tasks that administrators need to know to manage offline address books in Exchange 2016."
+description: "Summary: Learn the tasks that administrators need to know to manage offline address books in Exchange 2016."
 ---
 
 # Procedures for offline address books in Exchange 2016
 
-Learn the tasks that administrators need to know to manage offline address books in Exchange 2016.
+ **Summary**: Learn the tasks that administrators need to know to manage offline address books in Exchange 2016.
   
 An offline address book (OAB) in Exchange Server 2016 allows Outlook users in cached Exchange mode to access address list and global address list information while they're disconnected from the server. For more information, see [Offline address books in Exchange 2016](offline-address-books.md).
   
@@ -346,8 +346,8 @@ You need to be assigned permissions before you can perform this procedure or pro
   
 ### Use the EAC to assign an offline address book to a mailbox database
 
-1. Open the EAC, and go to **Servers** > **Databases**. Select the database from the list, and then click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)).
-    ![In the EAC, go to Servers > Databases, select the database, and click Edit](../../media/ddc3e195-76da-4474-b153-f5c7ef1f5fd4.png)
+1. Open the EAC, and go to **Servers** \> **Databases**. Select the database from the list, and then click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)).
+    ![In the EAC, go to Servers \> Databases, select the database, and click Edit](../../media/ddc3e195-76da-4474-b153-f5c7ef1f5fd4.png)
   
 2. The **Mailbox Database** window opens. Click the **Client settings** tab, and then click **Browse** next to **Offline address book**.
     ![In the properties of the database, select Client Settings, and then click Browse](../../media/f04b40db-44a4-4dd6-a411-583cda128fee.png)
@@ -374,7 +374,7 @@ Set-MailboxDatabase -Identity "MBX DB02" -OfflineAddressBook "Contoso Executives
 
 To verify that you've successfully assigned an OAB to a mailbox database, use either of the following procedures:
   
-- In the EAC, go to **Servers** > **Databases**. Select the database from the list, and then click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)). In the **Mailbox database** window opens, click the **Client settings** tab, and verify that the OAB is listed in **Offline address book**.
+- In the EAC, go to **Servers** \> **Databases**. Select the database from the list, and then click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)). In the **Mailbox database** window opens, click the **Client settings** tab, and verify that the OAB is listed in **Offline address book**.
     
 - In the Exchange Management Shell, run the following command:
     

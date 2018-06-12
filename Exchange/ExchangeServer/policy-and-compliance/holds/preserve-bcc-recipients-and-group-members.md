@@ -3,7 +3,7 @@ title: "Preserve Bcc and expanded distribution group recipients for eDiscovery"
 ms.author: serdars
 author: SerdarSoysal
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
@@ -16,9 +16,9 @@ description: "In-Place Hold and Litigation Hold allow you to preserve mailbox co
 
 In-Place Hold and Litigation Hold allow you to preserve mailbox content to meet regulatory compliance and eDiscovery requirements. Information about recipients directly addressed in the To and Cc fields of a message is included in all messages by default, but your organization may require the ability to search for and reproduce details about all recipients of a message. This includes
   
-- **Recipients addressed using the Bcc field of a message** Bcc recipients are stored in the message in the sender's mailbox, but not included in headers of the message delivered to recipients. 
+- **Recipients addressed using the Bcc field of a message**: Bcc recipients are stored in the message in the sender's mailbox, but not included in headers of the message delivered to recipients.
     
-- **Expanded distribution group recipients** Recipients who receive the message because they're members of a distribution group to which the message was addressed, either in the To, Cc or Bcc fields. 
+- **Expanded distribution group recipients**: Recipients who receive the message because they're members of a distribution group to which the message was addressed, either in the To, Cc or Bcc fields.
     
 Exchange 2016 preserves information about Bcc and expanded distribution group recipients. You can search for this information by using an In-Place eDiscovery search .
   

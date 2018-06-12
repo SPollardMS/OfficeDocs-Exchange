@@ -3,19 +3,19 @@ title: "Prepare Active Directory and domains"
 ms.author: dstrome
 author: dstrome
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: get-started-article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.collection: Strat_EX_Admin
 ms.assetid: f895e1ce-d766-4352-ac46-ec959c9954a9
-description: "Summary: This article tells you how to prepare Active Directory for Exchange 2016."
+description: "Summary: Learn how to prepare Active Directory for Exchange 2016."
 ---
 
 # Prepare Active Directory and domains
 
- **Summary**: This article tells you how to prepare Active Directory for Exchange 2016.
+ **Summary**: Learn how to prepare Active Directory for Exchange 2016.
   
 Before you install Microsoft Exchange Server 2016, you need to prepare your Active Directory forest and its domains. Exchange needs to prepare Active Directory so that it can store information about your users' mailboxes and the configuration of Exchange servers in the organization. If you aren't familiar with Active Directory forests or domains, check out [Active Directory Domain Services Overview](https://go.microsoft.com/fwlink/p/?LinkId=399226).
   
@@ -25,16 +25,6 @@ Before you install Microsoft Exchange Server 2016, you need to prepare your Acti
 There are a couple of ways you can prepare Active Directory for Exchange. The first is to let the Exchange 2016 Setup wizard do it for you. If you don't have a large Active Directory deployment, and you don't have a separate team that manages Active Directory, we recommend using the wizard. The account you use will need to be a member of both the Schema Admins and Enterprise Admins security groups. For more information about how to use the Setup wizard, check out [Install the Exchange 2016 Mailbox role using the Setup wizard](deploy-new-installations/install-mailbox-role.md).
   
 If you have a large Active Directory deployment, or if a separate team manages Active Directory, this topic is for you. Following the steps in this topic gives you much more control over each stage of preparation, and who can do each step. For example, Exchange administrators might not have the permissions needed to extend the Active Directory schema.
-  
-[What do you need to know before you begin?](prepare-ad-and-domains.md#BYB)
-  
-[1. Extend the Active Directory schema](prepare-ad-and-domains.md#Step1)
-  
-[2. Prepare Active Directory](prepare-ad-and-domains.md#Step2)
-  
-[3. Prepare Active Directory domains](prepare-ad-and-domains.md#Step3)
-  
-[How do you know this worked?](prepare-ad-and-domains.md#Verify)
   
 Curious about what's happening when Active Directory is being prepared for Exchange? Check out [What changes in Active Directory when Exchange 2016 is installed?](active-directory/ad-changes.md)
   
@@ -89,7 +79,7 @@ After Setup finishes extending the schema, you'll need to wait while Active Dire
 ## 2. Prepare Active Directory
 <a name="Step2"> </a>
 
-Now that the Active Directory schema has been extended, you can prepare other parts of Active Directory for Exchange 2016. During this step, Exchange will create containers, objects, and other items in Active Directory that it'll use to store information. The collection of all of the Exchange containers, objects, attributes, and so on, is called the Exchange organization.
+Now that the Active Directory schema has been extended, you can prepare other parts of Active Directory for Exchange 2016. During this step, Exchange will create containers, objects, and other items in Active Directory that it'll use to store information. The collection of all of the Exchange containers, objects, attributes, and so on, is called the  *Exchange organization*  . 
   
 Before you prepare Active Directory for Exchange, there are a few things to keep in mind:
   
@@ -160,9 +150,9 @@ Before you prepare the domains in your Active Directory forest, keep the followi
   
 - The account you use needs permissions depending on when the domain was created.
     
-  - **Domain created before PrepareAD was run** If the domain was created **before** you ran the  _PrepareAD_ command in step 2 above, then the account you use needs to be a member of the Domain Admins group in the domain you want to prepare. 
+  - **Domain created before PrepareAD was run**: If the domain was created **before** you ran the  _PrepareAD_ command in step 2 above, then the account you use needs to be a member of the Domain Admins group in the domain you want to prepare. 
     
-  - **Domain created after PrepareAD was run** If the domain was created **after** you ran the  _PrepareAD_ command in step 2 above, then the account you use needs to 1) be a member of the Organization Management role group and 2) be a member of the Domain Admins group in the domain you want to prepare. 
+  - **Domain created after PrepareAD was run**: If the domain was created **after** you ran the  _PrepareAD_ command in step 2 above, then the account you use needs to 1) be a member of the Organization Management role group and 2) be a member of the Domain Admins group in the domain you want to prepare. 
     
 - Wait until Active Directory has replicated the changes made in step 2 to all of your domain controllers. If you don't, you might get an error when you try to prepare the domain.
     
@@ -194,9 +184,9 @@ Once you've done all the steps above, you can check to make sure everything's go
   
 - In the **Schema** naming context, verify that the **rangeUpper** property on **ms-Exch-Schema-Version-Pt** is set to the value shown for your version of Exchange 2016 in the [Exchange 2016 Active Directory versions ](#ADversions.md) table. 
     
-- In the **Configuration** naming context, verify that the **objectVersion** property in the CN=<  _your organization_>,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=< _domain_> container is set to the value shown for your version of Exchange 2016 in the [Exchange 2016 Active Directory versions ](#ADversions.md) table. 
+- In the **Configuration** naming context, verify that the **objectVersion** property in the CN=\<  _your organization_\>,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=\< _domain_\> container is set to the value shown for your version of Exchange 2016 in the [Exchange 2016 Active Directory versions ](#ADversions.md) table. 
     
-- In the **Default** naming context, verify that the **objectVersion** property in the **Microsoft Exchange System Objects** container under DC=<  _root domain_ is set to the value shown for your version of Exchange 2016 in the [Exchange 2016 Active Directory versions ](#ADversions.md) table. 
+- In the **Default** naming context, verify that the **objectVersion** property in the **Microsoft Exchange System Objects** container under DC=\<  _root domain_ is set to the value shown for your version of Exchange 2016 in the [Exchange 2016 Active Directory versions ](#ADversions.md) table. 
     
 You can also check the Exchange setup log to verify that Active Directory preparation has completed successfully. For more information, see [Verify an Exchange 2016 installation](post-installation-tasks/verify-installation.md). You won't be able to use the **Get-ExchangeServer** cmdlet mentioned in the [Verify an Exchange 2016 installation](post-installation-tasks/verify-installation.md) topic until you've completed the installation of at least one Mailbox server role in an Active Directory site. 
   
@@ -205,20 +195,24 @@ You can also check the Exchange setup log to verify that Active Directory prepar
 
 The following table shows you the Exchange 2016 objects in Active Directory that get updated each time you install a new version of Exchange 2016. You can compare the object versions you see with the values in the table below to verify that the version of Exchange 2016 you installed successfully updated Active Directory during installation.
   
-||**Exchange version**|**rangeUpper**|**objectVersion**|**objectVersion**|
-|:-----|:-----|:-----|:-----|:-----|
-|**Naming context** <br/> | <br/> |Schema  <br/> |Default  <br/> |Configuration  <br/> |
-|**Container** <br/> | <br/> |ms-Exch-Schema-Version-Pt  <br/> |Microsoft Exchange System Objects  <br/> |CN=< _your organization_>, CN=Microsoft Exchange, CN=Services, CN=Configuration, DC=< _domain_>  <br/> |
-||Exchange 2016 CU9  <br/> |15332  <br/> |13236  <br/> |16213  <br/> |
-||Exchange 2016 CU8  <br/> |15332  <br/> |13236  <br/> |16213  <br/> |
-||Exchange 2016 CU7  <br/> |15332  <br/> |13236  <br/> |16213  <br/> |
-||Exchange 2016 CU6  <br/> |15330  <br/> |13236  <br/> |16213  <br/> |
-||Exchange 2016 CU5  <br/> |15326  <br/> |13236  <br/> |16213  <br/> |
-||Exchange 2016 CU4  <br/> |15326  <br/> |13236  <br/> |16213  <br/> |
-||Exchange 2016 CU3  <br/> |15326  <br/> |13236  <br/> |16212  <br/> |
-||Exchange 2016 CU2  <br/> |15325  <br/> |13236  <br/> |16212  <br/> |
-||Exchange 2016 CU1  <br/> |15323  <br/> |13236  <br/> |16211  <br/> |
-||Exchange 2016 RTM  <br/> |15317  <br/> |13236  <br/> |16210  <br/> |
-||Exchange 2016 Preview  <br/> |15317  <br/> |13236  <br/> |16041  <br/> |
+- **rangeUpper** is located in the **Schema** naming context in the **ms-Exch-Schema-Version-Pt** container. 
+    
+- **objectVersion (Default)** is located in the **Default** naming context in the **Microsoft Exchange System Objects** container. 
+    
+- **objectVersion (Configuration)** is located in the **Configuration** naming context in the **CN=\< _your organization_\>, CN=Microsoft Exchange, CN=Services, CN=Configuration, DC=\< _domain_\>** container. 
+    
+|**Exchange version**|**rangeUpper**|**objectVersion (Default)**|**objectVersion (Configuration)**|
+|:-----|:-----|:-----|:-----|
+|Exchange 2016 CU9  <br/> |15332  <br/> |13236  <br/> |16213  <br/> |
+|Exchange 2016 CU8  <br/> |15332  <br/> |13236  <br/> |16213  <br/> |
+|Exchange 2016 CU7  <br/> |15332  <br/> |13236  <br/> |16213  <br/> |
+|Exchange 2016 CU6  <br/> |15330  <br/> |13236  <br/> |16213  <br/> |
+|Exchange 2016 CU5  <br/> |15326  <br/> |13236  <br/> |16213  <br/> |
+|Exchange 2016 CU4  <br/> |15326  <br/> |13236  <br/> |16213  <br/> |
+|Exchange 2016 CU3  <br/> |15326  <br/> |13236  <br/> |16212  <br/> |
+|Exchange 2016 CU2  <br/> |15325  <br/> |13236  <br/> |16212  <br/> |
+|Exchange 2016 CU1  <br/> |15323  <br/> |13236  <br/> |16211  <br/> |
+|Exchange 2016 RTM  <br/> |15317  <br/> |13236  <br/> |16210  <br/> |
+|Exchange 2016 Preview  <br/> |15317  <br/> |13236  <br/> |16041  <br/> |
    
 

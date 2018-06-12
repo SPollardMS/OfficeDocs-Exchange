@@ -17,7 +17,7 @@ description: "Summary: How to install cumulative updates in Exchange 2016."
 
  **Summary**: How to install cumulative updates in Exchange 2016.
   
-If you have Microsoft Exchange Server 2016 installed, you can upgrade it to the latest Exchange 2016 cumulative update. You can use the Exchange 2016 Setup wizard to upgrade your current version of Exchange 2016. For more information about the latest Exchange 2016 cumulative update, see [Updates for Exchange 2016](../new-features/updated-features.md). To learn more about Exchange 2016, see [What's new in Exchange 2016](../new-features/new-features.md).
+If you have Microsoft Exchange Server 2016 installed, you can upgrade it to the latest Exchange 2016 cumulative update. You can use the Exchange 2016 Setup wizard to upgrade your current version of Exchange 2016. For more information about the latest Exchange 2016 cumulative update, see [Updates for Exchange 2016](../new-features/updates.md). To learn more about Exchange 2016, see [What's new in Exchange 2016](../new-features/new-features.md).
   
 > [!CAUTION]
 > After you upgrade Exchange 2016 to a newer cumulative update, you can't uninstall the new version to revert to the previous version. If you uninstall the new version, you remove Exchange from the server. 

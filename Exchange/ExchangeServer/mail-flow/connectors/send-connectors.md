@@ -3,18 +3,18 @@ title: "Send connectors"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 6/1/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: overview
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 6aa19a12-c7b2-4eac-a8dc-9a4d26919ac5
-description: "Learn about Send connectors in Exchange 2016, and how they control mail flow from your Exchange organization."
+description: "Summary: Learn about Send connectors in Exchange 2016, and how they control mail flow from your Exchange organization."
 ---
 
 # Send connectors
 
-Learn about Send connectors in Exchange 2016, and how they control mail flow from your Exchange organization.
+ **Summary**: Learn about Send connectors in Exchange 2016, and how they control mail flow from your Exchange organization.
   
 Exchange 2016 uses Send connectors for outbound SMTP connections from source Exchange servers to destination messaging servers. The Send connector that's used to route messages to a recipient is selected during the routing resolution phase of message categorization. For more information, see [Mail routing](../../mail-flow/mail-routing/mail-routing.md).
   
@@ -29,13 +29,13 @@ These are the important settings on Send connectors:
   
 - **Usage type**
     
-- **Network settings** Configure how the Send connector routes mail: by using DNS or by automatically forward all mail to a smart host. 
+- **Network settings**: Configure how the Send connector routes mail: by using DNS or by automatically forward all mail to a smart host.
     
-- **Address spaces** Configure the destination domains that the Send connector is responsible for. 
+- **Address spaces**: Configure the destination domains that the Send connector is responsible for.
     
-- **Scope** Configures the visibility of the Send connector to other Exchange servers in the organization. 
+- **Scope**: Configures the visibility of the Send connector to other Exchange servers in the organization.
     
-- **Source servers** Configure the Exchange servers where the Send connector is hosted. Mail that needs to be delivered by using the Send connector is routed to one of the source servers. 
+- **Source servers**: Configure the Exchange servers where the Send connector is hosted. Mail that needs to be delivered by using the Send connector is routed to one of the source servers.
     
 On Mailbox servers, you can create and manage Send connectors in the Exchange admin center or in the Exchange Management Shell. On Edge Transport servers, you can only use the Exchange Management Shell.
   
@@ -44,7 +44,7 @@ On Mailbox servers, you can create and manage Send connectors in the Exchange ad
 
 These are the notable changes to Send connectors in Exchange 2016 compared to Exchange 2010:
   
-- You can configure Send connectors to redirect or proxy outbound mail through the Front End Transport service. For more information, see [Configure Send connectors to proxy outbound mail](proxy-outbound-mail.md).
+- You can configure Send connectors to redirect or  *proxy*  outbound mail through the Front End Transport service. For more information, see [Configure Send connectors to proxy outbound mail](proxy-outbound-mail.md).
     
 - The  _IsCoexistenceConnector_ parameter is no longer available. 
     
@@ -57,7 +57,7 @@ These are the notable changes to Send connectors in Exchange 2016 compared to Ex
 ## Implicit Send connectors
 <a name="ImplicitSendConnectors"> </a>
 
-Although no Send connectors are created during the installation of Exchange 2016 servers, a special implicit Send connector named the intra-organization Send connector is present. This implicit Send connector is automatically available, invisible, and requires no management. The intra-organization Send connector exists in the transport services to send mail, either internally between services on the local Exchange server, or to services on remote Exchange servers in the organization. For example: 
+Although no Send connectors are created during the installation of Exchange 2016 servers, a special  *implicit Send connector*  named the intra-organization Send connector is present. This implicit Send connector is automatically available, invisible, and requires no management. The intra-organization Send connector exists in the transport services to send mail, either internally between services on the local Exchange server, or to services on remote Exchange servers in the organization. For example: 
   
 - Front End Transport service to the Transport service.
     
@@ -102,7 +102,7 @@ Every Send connector needs to be configured with one of these options:
 
 When you select DNS resolution to deliver mail, the source Exchange server for the Send connector must be able to resolve the MX records for the address spaces that are configured on the connector. Depending on the nature of the connector, and how many network adapters are in the server, the Send connector could require access to an internal DNS server, or an external (public) DNS server. You can configure the server to use specific DNS servers for internal and external DNS lookups:
   
-- In the EAC at **Servers** > **Server** > select the server and click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png) > **DNS lookups** tab. 
+- In the EAC at **Servers** \> **Server** \> select the server and click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png) \> **DNS lookups** tab. 
     
 - In the Exchange Management Shell, you use the  _ExternalDNS\*_ and  _InternalDNS\*_ parameters on the **Set-TransportService** cmdlet. 
     
@@ -157,7 +157,7 @@ For example, suppose the recipient is julia@marketing.contoso.com. If a Send con
 
 The source servers for a Send connector determine the destination Exchange server for mail that needs to be routed through the Send connector. The Send connector scope controls the visibility of the connector within the Exchange organization.
   
- By default, Send connectors are visible to all the Exchange servers in the entire Active Directory forest, and are used in routing decisions. However, you can limit the scope of a Send connector so that it's only visible to other Exchange servers in the same Active Directory site. The Send connector is invisible to Exchange servers in other Active Directory sites, and isn't used in their routing decisions. A Send connector that's restricted in this way is said to be scoped.
+ By default, Send connectors are visible to all the Exchange servers in the entire Active Directory forest, and are used in routing decisions. However, you can limit the scope of a Send connector so that it's only visible to other Exchange servers in the same Active Directory site. The Send connector is invisible to Exchange servers in other Active Directory sites, and isn't used in their routing decisions. A Send connector that's restricted in this way is said to be  *scoped*  . 
   
 To configure scoped Send connectors in the EAC, you select **Scoped send connector** in the **Address space** section of the new Send connector wizard, or on the **Scoping** tab in the properties of existing Send connectors. In the Exchange Management Shell, you use the  _IsScopedConnector_ parameter on the **New-SendConnector** and **Set-SendConnector** cmdlets. 
   
@@ -182,7 +182,7 @@ The available Send connector permissions are described in the following table.
    
  **Note**:
   
-Permissions names that contain  `ms-Exch-Send-Headers-` are part of the header firewall feature. For more information, see [Header firewall](https://technet.microsoft.com/library/bb232136.aspx).
+Permissions names that contain  `ms-Exch-Send-Headers-` are part of the  *header firewall*  feature. For more information, see [Header firewall](https://technet.microsoft.com/library/bb232136.aspx).
   
 ### Send connector permission procedures
 

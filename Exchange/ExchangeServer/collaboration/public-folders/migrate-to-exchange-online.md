@@ -2,7 +2,7 @@
 title: "Use batch migration to migrate Exchange 2016 public folders to Exchange Online"
 ms.author: dmaguire
 author: msdmaguire
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
@@ -27,7 +27,7 @@ Migrating your Exchange 2016 public folders to Exchange Online requires Exchange
     
 - In Exchange Online, you need to be a member of the Organization Management role group. This role group is different from the permissions assigned to you when you subscribe to Office 365 or Exchange Online. For details about how to enable the Organization Management role group, see [Manage role groups](../../permissions/role-groups.md).
     
-- In Exchange Server 2016, you need to be a member of the Organization Management or Server Management RBAC role groups. For details, see [Add Members to a Role Group](https://go.microsoft.com/fwlink/?LinkId=299212).
+- In Exchange Server 2016, you need to be a member of the Organization Management or Server Management RBAC role groups. For details, see [Add Members to a Role Group](https://go.microsoft.com/fwlink/p/?linkId=299212).
     
 - Before you begin the public folder migration, if any single public folder in your organization is larger than 25 GB, we recommend that you delete content from that folder to make it smaller, or divide the public folder's content into multiple, smaller public folders. Note that the 25 GB limit cited here only applies to the public folder and not to any child or sub-folders the folder in question may have. If neither option is feasible, we recommend that you do not move your public folders to Exchange Online. See [Exchange Online Limits](https://go.microsoft.com/fwlink/p/?LinkID=391188) for more information. 
     
@@ -40,14 +40,14 @@ Migrating your Exchange 2016 public folders to Exchange Online requires Exchange
     
 - MRS Proxy needs to be enabled on at least one Exchange server, a server that is also hosting public folder mailboxes. See [Enable the MRS Proxy endpoint for remote moves](https://go.microsoft.com/fwlink/p/?linkid=844909) for details. 
     
-- To perform the migration procedures in this article, you can't use the Exchange Admin Center (EAC). Instead, you need to use the Exchange Management Shell on your Exchange 2016 servers. In Exchange Online, you need to use Exchange Online PowerShell. For more information, see [Connect to Exchange Online PowerShell](https://go.microsoft.com/fwlink/p/?linkid=842801).
+- To perform the migration procedures in this article, you can't use the Exchange admin center (EAC). Instead, you need to use the Exchange Management Shell on your Exchange 2016 servers. In Exchange Online, you need to use Exchange Online PowerShell. For more information, see [Connect to Exchange Online PowerShell](https://go.microsoft.com/fwlink/p/?linkid=842801).
     
 - Migrating deleted items and deleted folders from Exchange 2016 to Exchange Online is supported. Before you begin your migration, we recommend that you review all deleted folders and folder items and permanently delete anything you won't need in Exchange Online. Note that once something is permanently deleted, it can't be recovered.
     
     You can use the following commands to list deleted public folders present in the Exchange dumpster (in your Exchange on-premises environment):
     
   ```
-  Get-PublicFolder \NON_IPM_SUBTREE\DUMPSTER_ROOT -Recurse | ?{$_.FolderClass -ne "$null"} | ft name,foldersize
+  Get-PublicFolder \NON_IPM_SUBTREE\DUMPSTER_ROOT -Recurse | ?{$_.FolderClass -ne "$null"} | Format-Table name,foldersize
   ```
 
     To permanently delete a specific folder, use the following command (this example uses a folder named 'Calendar2'):
@@ -424,7 +424,7 @@ Set-OrganizationConfig -PublicFolderMailboxesLockedForNewConnections $true
 ```
 
 > [!NOTE]
-> If you are not able to access the  `-PublicFolderMailboxesLockedForNewConnections` parameter, it could be because your Active Directory was not prepared during the CU upgrade, as we advised above in  *What do you need to know before you begin?*  See [Prepare Active Directory and domains](../../plan-and-deploy/prepare-ad-and-domains.md) for more information. > Also note that any users who need access to public folders should be migrated first, **before** you migrate the public folders themselves. 
+> If you are not able to access the  `-PublicFolderMailboxesLockedForNewConnections` parameter, it could be because your Active Directory was not prepared during the CU upgrade, as we advised above in  *What do you need to know before you begin?*  See [Prepare Active Directory and domains](../../plan-and-deploy/prepare-ad-and-domains.md) for more information. Also note that any users who need access to public folders should be migrated first, **before** you migrate the public folders themselves. 
   
 If your organization has public folder mailboxes on multiple Exchange 2016 servers, you'll need to wait until AD replication is complete. Once complete, you can confirm that all public folder mailboxes have picked up the  `PublicFolderMailboxesLockedForNewConnections` flag, and that any pending changes users recently made to their public folders have converged across the organization. All of this could take several hours. 
   
@@ -547,7 +547,7 @@ The following are common public folder migration issues that you may encounter i
     To see which public folders have Send on Behalf permissions on-premises:
     
   ```
-  Get-MailPublicFolder | ?{$_.GrantSendOnBehalfTo -ne "$null"} | ft name,GrantSendOnBehalfTo
+  Get-MailPublicFolder | ?{$_.GrantSendOnBehalfTo -ne "$null"} | Format-Table name,GrantSendOnBehalfTo
   ```
 
     To add Send As permission to a mail-enabled public folder in Exchange Online, in Exchange Online PowerShell type:

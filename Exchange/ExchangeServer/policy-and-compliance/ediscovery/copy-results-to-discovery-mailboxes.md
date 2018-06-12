@@ -3,22 +3,22 @@ title: "Copy eDiscovery search results to a discovery mailbox"
 ms.author: serdars
 author: SerdarSoysal
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: Admin
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: bff2ce89-9e6f-494a-bd6a-2f2011507845
-description: "Learn how to copy the results of an In-Place eDiscovery search to a discovery mailbox in Exchange 2016."
+description: "Summary: Learn how to copy the results of an In-Place eDiscovery search to a discovery mailbox in Exchange 2016."
 ---
 
 # Copy eDiscovery search results to a discovery mailbox
 
-Learn how to copy the results of an In-Place eDiscovery search to a discovery mailbox in Exchange 2016.
+ **Summary**: Learn how to copy the results of an In-Place eDiscovery search to a discovery mailbox in Exchange 2016.
   
 After you create an In-Place eDiscovery search in Exchange Server 2016, you can use the Exchange admin center (EAC) to copy the results to a discovery mailbox. You can also use the Exchange Management Shell to start an eDiscovery search that was created using the **New-MailboxSearch** cmdlet, which will copy the results to the discovery mailbox that was specified when you created the search. 
   
-## Before you begin
+## What do you need to know before you begin?
 
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "In-Place eDiscovery" entry in the [Messaging policy and compliance permissions in Exchange 2016](../../permissions/feature-permissions/policy-and-compliance-permissions.md) topic. 
     
@@ -32,7 +32,7 @@ After you create an In-Place eDiscovery search in Exchange Server 2016, you can 
     
 ## Use the EAC to copy search results
 
-1. In the EAC, go to **Compliance management** > **In-Place eDiscovery &amp; Hold**.
+1. In the EAC, go to **Compliance management** \> **In-Place eDiscovery &amp; Hold**.
     
 2. In the list view, select an eDiscovery search.
     
@@ -40,15 +40,15 @@ After you create an In-Place eDiscovery search in Exchange Server 2016, you can 
     
 4. In **Copy Search Results**, select from the following options:
     
-  - **Include unsearchable items** Select this check box to include mailbox items that couldn't be searched (for example, messages with attachments of file types that couldn't be indexed by Exchange Search). For more information, see [Unsearchable Items in Exchange eDiscovery](http://technet.microsoft.com/library/32550081-9af9-474b-ae7b-28f1e68cad41.aspx).
+  - **Include unsearchable items**: Select this check box to include mailbox items that couldn't be searched (for example, messages with attachments of file types that couldn't be indexed by Exchange Search). For more information, see [Unsearchable Items in Exchange eDiscovery](http://technet.microsoft.com/library/32550081-9af9-474b-ae7b-28f1e68cad41.aspx).
     
-  - **Enable de-duplication** Select this check box to exclude duplicate messages. Only a single instance of a message will be copied to the discovery mailbox. 
+  - **Enable de-duplication**: Select this check box to exclude duplicate messages. Only a single instance of a message will be copied to the discovery mailbox.
     
-  - **Enable full logging** Select this check box to include a full log in search results. 
+  - **Enable full logging**: Select this check box to include a full log in search results.
     
-  - **Send me mail when the copy is completed** Select this check box to get an email notification when the search is completed. 
+  - **Send me mail when the copy is completed**: Select this check box to get an email notification when the search is completed.
     
-  - **Copy results to this discovery mailbox** Click **Browse** to select the discovery mailbox where you want the search results copied to. 
+  - **Copy results to this discovery mailbox**: Click **Browse** to select the discovery mailbox where you want the search results copied to. 
     ![Copy Search Results](../../media/TA_MRM_CopySearchResults.gif)
   
 5. Click **Copy** to start the process to copy the search results to the specified discovery mailbox. 
@@ -65,7 +65,7 @@ After using the **New-MailboxSearch** cmdlet to create an In-Place eDiscovery se
     
 - [New-MailboxSearch](http://technet.microsoft.com/library/74303b47-bb49-407c-a43b-590356eae35c.aspx)
     
-In the following example, you would run the following command to start an eDiscovery search named Fabrikam Investigation to copy the search results to the discovery mailbox that was specified by the  _TargetMailbox_ parameter when the search was created. 
+In the following example, you would run the following command to start an eDiscovery search named  *Fabrikam Investigation*  to copy the search results to the discovery mailbox that was specified by the  _TargetMailbox_ parameter when the search was created. 
   
 ```
 Start-MailboxSearch "Fabrikam Investigation"
@@ -104,9 +104,9 @@ For more information about these cmdlets, see the following topics:
     
 - In addition to copying the search results to a discovery mailbox, you can also estimate or preview the search results for a selected search.
     
-  - **Estimate search results** This option returns an estimate of the total size and number of items that will be returned by the search based on the criteria you specified. Estimates are displayed in the details pane in the EAC. 
+  - **Estimate search results**: This option returns an estimate of the total size and number of items that will be returned by the search based on the criteria you specified. Estimates are displayed in the details pane in the EAC.
     
-  - **Preview search results** This option lets you preview the search results returned by the search instead of having to copy them to a discovery mailbox to view. This lets you quickly determine whether the search results are relevant. After you preview the results, you can revise your search query to narrow the search results and rerun the search. Items in the preview page are read-only versions of the actual search results, so you can't move, edit, delete or forward on the preview page. 
+  - **Preview search results**: This option lets you preview the search results returned by the search instead of having to copy them to a discovery mailbox to view. This lets you quickly determine whether the search results are relevant. After you preview the results, you can revise your search query to narrow the search results and rerun the search. Items in the preview page are read-only versions of the actual search results, so you can't move, edit, delete or forward on the preview page.
     
     For more information, see [Use the EAC to estimate or preview search results](create-searches.md#estimate).
     

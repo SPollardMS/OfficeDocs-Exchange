@@ -3,20 +3,20 @@ title: "Create a theme for Outlook on the web in Exchange 2016"
 ms.author: chrisda
 author: chrisda
 manager: scotv
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 7e1fa13c-3de3-45c2-b1fa-e74fc8487bda
-description: "Learn how to create a custom theme for Outlook on the web in Exchange 2016."
+description: "Summary: Learn how to create a custom theme for Outlook on the web in Exchange 2016."
 ---
 
 # Create a theme for Outlook on the web in Exchange 2016
 
-Learn how to create a custom theme for Outlook on the web in Exchange 2016.
+ **Summary**: Learn how to create a custom theme for Outlook on the web in Exchange 2016.
   
-A theme defines the colors, fonts, and images that are displayed to users in Outlook on the web (formerly known as Outlook Web App) in Exchange Server 2016. Each theme is a collection of files that are stored on the Exchange server. The built-in themes are described in the [Default Outlook on the web themes in Exchange 2016](owa-themes.md#DefaultThemes) section at the end of this topic. 
+A  *theme*  defines the colors, fonts, and images that are displayed to users in Outlook on the web (formerly known as Outlook Web App) in Exchange Server 2016. Each theme is a collection of files that are stored on the Exchange server. The built-in themes are described in the [Default Outlook on the web themes in Exchange 2016](owa-themes.md#DefaultThemes) section at the end of this topic. 
   
 The basic steps to create a new theme for Outlook on the web are:
   
@@ -113,9 +113,9 @@ You need to configure a unique display name and sort order for the new theme, be
 
 Theme image files are stored in the following folders in  `%ExchangeInstallPath%ClientAccess\OWA\prem\<ExchangeVersion>\resources\themes\<ThemeFolderName>`:
   
--  `\images\0` These files are used in left-to-right languages. 
+-  `\images\0`: These files are used in left-to-right languages.
     
--  `\images\rtl` These files are used in right-to-left languages. Depending on the image, the file might be exactly the same as the left-to-right version, or it might be reversed (right-to-left instead of left-to-right). 
+-  `\images\rtl`: These files are used in right-to-left languages. Depending on the image, the file might be exactly the same as the left-to-right version, or it might be reversed (right-to-left instead of left-to-right).
     
 The image files that exist in these folders are described in the following table:
   
@@ -185,7 +185,7 @@ To verify that you've successfully created an Outlook on the web theme, perform 
   
 1. Open a mailbox in Outlook on the web. On the Exchange server, you can test your theme by opening the URL https://localhost/owa or https://127.0.0.1/owa.
     
-2. Depending on the settings you configured, verify the new theme is used by default, or verify that you can see and select the new theme at **Settings** > **Change theme**.
+2. Depending on the settings you configured, verify the new theme is used by default, or verify that you can see and select the new theme at **Settings** \> **Change theme**.
     
 3. If you don't see your changes after you restart IIS, clear your browsing history (delete temporary Internet files), and refresh the browser window.
     

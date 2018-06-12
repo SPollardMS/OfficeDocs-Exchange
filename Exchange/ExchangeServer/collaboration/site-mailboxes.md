@@ -3,7 +3,7 @@ title: "Site mailboxes"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: overview
 ms.prod: office-online-server
@@ -18,7 +18,7 @@ description: "Summary: Learn about site mailboxes and how to use them."
   
 Email and documents are traditionally kept in two unique and separate data repositories. Most organizations collaborate using both mediums. The challenge is that both email and documents are accessed using different clients. This usually results in a reduction in user productivity and a degraded user experience.
   
-The site mailbox, first introduced in Exchange 2013, is a solution for this problem. Site mailboxes improve collaboration and user productivity by allowing access to both Microsoft SharePoint 2013 documents and Exchange email using the same client interface. A site mailbox is functionally comprised of SharePoint 2013 site membership (owners and members), shared storage through an Exchange 2016 mailbox for email messages and a SharePoint 2013 site for documents, and a management interface that addresses provisioning and lifecycle needs.
+The  *site mailbox*  , first introduced in Exchange 2013, is a solution for this problem. Site mailboxes improve collaboration and user productivity by allowing access to both Microsoft SharePoint 2013 documents and Exchange email using the same client interface. A site mailbox is functionally comprised of SharePoint 2013 site membership (owners and members), shared storage through an Exchange 2016 mailbox for email messages and a SharePoint 2013 site for documents, and a management interface that addresses provisioning and lifecycle needs. 
   
 Site mailboxes require Exchange 2016 and SharePoint Server 2013 integration and configuration. For more information about how to configure your Exchange 2016 organization to work with your SharePoint Server 2013 organization, see the following topics:
   
@@ -27,12 +27,6 @@ Site mailboxes require Exchange 2016 and SharePoint Server 2013 integration and 
 - [Plan Exchange 2016 integration with SharePoint and Skype for Business](../plan-and-deploy/integration-with-sharepoint-and-skype/integration-with-sharepoint-and-skype.md)
     
 For more information about collaboration features in Exchange Server 2016, see [Collaboration](collaboration.md).
-  
- **Contents**
-  
-[How do site mailboxes work?](site-mailboxes.md#howwork)
-  
-[Site mailbox provisioning policies](site-mailboxes.md#policies)
   
 ## How do site mailboxes work?
 <a name="howwork"> </a>
@@ -54,8 +48,6 @@ Site mailbox quotas can be set by using the **SiteMailboxProvisioningPolicy** cm
    
 For more information about how to configure site mailbox provisioning policies, see [Manage site mailbox provisioning policies](http://technet.microsoft.com/library/2f160d1a-a031-461f-8d29-c9cd49ca1645.aspx).
   
-[Return to top](http://technet.microsoft.com/library/2c4393f4-d274-4e6c-bd09-9577e68c5a33.aspx#howwork)
-  
 ## Lifecycle policy and retention
 <a name="policies"> </a>
 
@@ -75,8 +67,6 @@ Site mailboxes don't support retention at the item-level. Retention works on a p
 <a name="policies"> </a>
 
 Using the eDiscovery Console in SharePoint, site mailboxes can be part of the In-Place eDiscovery scope as you can do keyword searches against user mailboxes or site mailboxes. In addition, you can put a site mailbox on legal hold. For more info, see [In-Place eDiscovery in Exchange 2016](../policy-and-compliance/ediscovery/ediscovery.md).
-  
-[Return to top](http://technet.microsoft.com/library/2c4393f4-d274-4e6c-bd09-9577e68c5a33.aspx#howwork)
   
 ## Backup and restore
 <a name="policies"> </a>

@@ -17,7 +17,7 @@ description: "Summary: Use these steps to create a copy of a mailbox database in
 
  **Summary**: Use these steps to create a copy of a mailbox database in Exchange 2016.
   
-When you add a copy of a mailbox database, continuous replication is automatically enabled between the existing database and the database copy. Database copies are automatically assigned an identity in the format of < _DatabaseName_>\< _HostMailboxServerName_>. For example, a copy of the database DB1 that's hosted on the server MBX3 would be DB1\MBX3.
+When you add a copy of a mailbox database, continuous replication is automatically enabled between the existing database and the database copy. Database copies are automatically assigned an identity in the format of \< _DatabaseName_\>\\< _HostMailboxServerName_\>. For example, a copy of the database DB1 that's hosted on the server MBX3 would be DB1\MBX3.
   
 Looking for other management tasks related to mailbox database copies? Check out [Managing mailbox database copies](http://technet.microsoft.com/library/06df16b4-f209-4d3a-8c68-0805c745f9b2.aspx).
   
@@ -45,7 +45,7 @@ Looking for other management tasks related to mailbox database copies? Check out
 ## Use the EAC to add a mailbox database copy
 <a name="UseEMC"> </a>
 
-1. In the EAC, go to **Servers** > **Databases**.
+1. In the EAC, go to **Servers** \> **Databases**.
     
 2. Select the database that you want to copy, click **More** (the three dots to the right of the Refresh icon), and then click **Add database copy**.
     
@@ -85,7 +85,7 @@ Add-MailboxDatabaseCopy -Identity DB3 -MailboxServer MBX5 -ReplayLagTime 3.00:00
 
 To verify that you have successfully created a mailbox database copy, do one of the following:
   
-- In the EAC, navigate to **Servers** > **Databases**. Select the database that was copied. In the Details pane, the status of the database copy and its content index are displayed, along with the current copy queue length.
+- In the EAC, navigate to **Servers** \> **Databases**. Select the database that was copied. In the Details pane, the status of the database copy and its content index are displayed, along with the current copy queue length.
     
 - In the Exchange Management Shell, run the following command to verify the mailbox database copy was created and is healthy.
     

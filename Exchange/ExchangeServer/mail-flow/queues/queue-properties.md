@@ -3,22 +3,22 @@ title: "Queue properties"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 6/20/2016
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: fbfbdcab-e0d2-4ed9-8f7f-e5fa2c87360d
-description: "Learn about queue properties to use in filters in Exchange 2016."
+description: "Summary: Learn about queue properties to use in filters in Exchange 2016."
 ---
 
 # Queue properties
 
-Learn about queue properties to use in filters in Exchange 2016.
+ **Summary**: Learn about queue properties to use in filters in Exchange 2016.
   
 Filtering queues by one or more queue properties in Exchange Server 2016 allows you to quickly find and take action on those queues. The following scenarios are examples of how you might use queue filtering to manage mail flow:
   
-- You receive a message from the System Center Operations Manager that indicates a queue length has exceeded the established threshold. You want to investigate whether a server-wide mail flow problem exists.
+- You receive a message from System Center Operations Manager that indicates a queue length has exceeded the established threshold. You want to investigate whether a server-wide mail flow problem exists.
     
     You create a filter to view all the queues on a server whose message count exceeds what you consider to be typical. If a mail flow problem is indicated, you can select all the queues in the results and suspend the queues while you continue to investigate.
     
@@ -43,7 +43,7 @@ For more information about Queue Viewer, see [Queue Viewer](queue-viewer.md). Fo
 |n/a  <br/> | `Identity` <br/> |n/a  <br/> |The identity of the queue in the form of  _\<Server\>_\ _\<Queue\>_. For more information see [Queue identity](queues-and-messages-in-powershell.md#QueueIdentity).  <br/> |
 | n/a  <br/> | `IncomingRate` <br/> |Equals ( `-eq`)  <br/> Does not equal ( `-ne`)  <br/> Greater than ( `-gt`)  <br/> Greater than or equal to ( `-ge`)  <br/> Less than ( `-lt`)  <br/> Less than or equal to ( `-le`)  <br/> |A calculated number that indicates how quickly messages are entering the queue. For more information, see [IncomingRate, OutgoingRate, and Velocity](queues.md#RatesAndVelocity).  <br/> |
 |**Last Error** <br/> | `LastError` <br/> |**Equals** (  `-eq`)  <br/> **Does Not Equal** (  `-ne`)  <br/> **Contains** (  `-contains`)  <br/> **Is Present** <br/> **Is Not Present** <br/> |The last error that was recorded for the queue. For more information about SMTP error codes, see [DSNs and NDRs in Exchange 2016](../../mail-flow/ndrs/ndrs.md).  <br/> |
-|**Last Retry Time** <br/> | `LastRetryTime` <br/> |**Greater Than** (  `-gt`)  <br/> **Greater Than or Equals** (  `-ge`)  <br/> **Less Than** (  `-lt`)  <br/> **Less Than or Equals** (  `-le`)  <br/> **Is Present** ()  <br/> **Is Not Present** ()  <br/> |The date/time of the last connection attempt for a queue that has a status of  `Retry`. For more information, see [Message retry, resubmit, and expiration intervals](message-intervals.md).  <br/> |
+|**Last Retry Time** <br/> | `LastRetryTime` <br/> |**Greater Than** (  `-gt`)  <br/> **Greater Than or Equals** (  `-ge`)  <br/> **Less Than** (  `-lt`)  <br/> **Less Than or Equals** (  `-le`)  <br/> **Is Present** <br/> **Is Not Present** <br/> |The date/time of the last connection attempt for a queue that has a status of  `Retry`. For more information, see [Message retry, resubmit, and expiration intervals](message-intervals.md).  <br/> |
 |n/a  <br/> | `LockedMessageCount` <br/> |n/a  <br/> |This property is reserved for internal Microsoft use, and isn't used in on-premises Exchange organizations.  <br/> |
 |**Message Count** <br/> | `MessageCount` <br/> |**Equals** (  `-eq`)  <br/> **Does Not Equal** (  `-ne`)  <br/> **Greater Than** (  `-gt`)  <br/> **Greater Than or Equals** (  `-ge`)  <br/> **Less Than** (  `-lt`)  <br/> **Less Than or Equals** (  `-le`)  <br/> |The number of messages in the queue.  <br/> |
 |n/a  <br/> | `MessageCountsPerPriority` <br/> |Equals ( `-eq`)  <br/> Does Not Equal ( `-ne`)  <br/> Contains ( `-like`)  <br/> |An array that shows the number of messages in the queue by priority (importance) value. The **MessageCountsPerPriority** property shows what each number means.  <br/> For example, the value  `{1, 100, 10, 0}` indicates the queue contains 1 High priority message, 100 Normal priority messages, 10 Low priority messages, and no messages that have the priority value None.  <br/> For more information about priority queuing, see [Priority Queuing](http://technet.microsoft.com/library/6edbd826-fe55-435b-9c63-48e6365c3d09.aspx).  <br/> |

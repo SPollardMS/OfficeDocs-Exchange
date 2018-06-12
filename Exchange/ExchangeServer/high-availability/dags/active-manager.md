@@ -3,7 +3,7 @@ title: "Active Manager"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
@@ -16,9 +16,9 @@ description: "Summary: Learn about Active Manager in Exchange 2016 and how best 
 
  **Summary**: Learn about Active Manager in Exchange 2016 and how best copy and server selection (BCSS) works.
   
-Microsoft Exchange Server 2016 includes a component called Active Manager that manages the high availability platform that includes the database availability group (DAG) and mailbox database copies. Active Manager runs inside the Microsoft Exchange Replication service (MSExchangeRepl.exe) on all Mailbox servers. On Mailbox servers that aren't members of a DAG, there is a single Active Manager role: Standalone Active Manager.
+Microsoft Exchange Server 2016 includes a component called  *Active Manager*  that manages the high availability platform that includes the database availability group (DAG) and mailbox database copies. Active Manager runs inside the Microsoft Exchange Replication service (MSExchangeRepl.exe) on all Mailbox servers. On Mailbox servers that aren't members of a DAG, there is a single Active Manager role:  *Standalone Active Manager*  . 
   
-On servers that are members of a DAG, there are two Active Manager roles: Primary Active Manager (PAM) and Standby Active Manager (SAM). PAM is the Active Manager role in a DAG that decides which copies will be active and passive. PAM is responsible for getting topology change notifications and reacting to server failures. The DAG member that holds the PAM role is always the member that currently owns the cluster quorum resource (default cluster group). If the server that owns the cluster quorum resource fails, the PAM role automatically moves to a surviving server that takes ownership of the cluster quorum resource. In addition, if you need to take the server that hosts the cluster quorum resource offline for maintenance or an upgrade, you must first move the PAM to another server in the DAG. The PAM controls all movement of the active designations between a database's copies. (Only one copy can be active at any specified time, and that copy may be mounted or dismounted.) The PAM also performs the functions of the SAM role on the local system (detecting local database and local Information Store failures). 
+On servers that are members of a DAG, there are two Active Manager roles:  *Primary Active Manager*  (PAM) and  *Standby Active Manager*  (SAM). PAM is the Active Manager role in a DAG that decides which copies will be active and passive. PAM is responsible for getting topology change notifications and reacting to server failures. The DAG member that holds the PAM role is always the member that currently owns the cluster quorum resource (default cluster group). If the server that owns the cluster quorum resource fails, the PAM role automatically moves to a surviving server that takes ownership of the cluster quorum resource. In addition, if you need to take the server that hosts the cluster quorum resource offline for maintenance or an upgrade, you must first move the PAM to another server in the DAG. The PAM controls all movement of the active designations between a database's copies. (Only one copy can be active at any specified time, and that copy may be mounted or dismounted.) The PAM also performs the functions of the SAM role on the local system (detecting local database and local Information Store failures). 
   
 The SAM provides information on which server hosts the active copy of a mailbox database to other components of Exchange that are running an Active Manager client component (for example, Client Access or Transport services). The SAM detects failures of local databases and the local Information Store. It reacts to failures by asking the PAM to initiate a failover (if the database is replicated). A SAM doesn't determine the target of failover, nor does it update a database's location state in the PAM. It will access the active database copy location state to answer queries for the active copy of the database that it receives.
   
@@ -35,7 +35,7 @@ When a failure occurs that prevents access to the active copy of a replicated ma
     
 2. The PAM runs the BCSS internal algorithm.
     
-3. A process called attempt copy last logs (ACLL) occurs, which tries to copy any missing log files from the server that hosted the active database copy prior to the failure or switchover. 
+3. A process called  *attempt copy last logs*  (ACLL) occurs, which tries to copy any missing log files from the server that hosted the active database copy prior to the failure or switchover. 
     
 4. After the ACLL process has completed, the value of the  _AutoDatabaseMountDial_ for the Mailbox servers hosting copies of the database is compared with the copy queue length of the database being activated. At this point, either: 
     
@@ -61,13 +61,13 @@ In earlier versions of Exchange, the BCS process evaluated several aspects of ea
     
 In Exchange 2016, Active Manager runs through all of the same BCS checks and phases, but now it also includes the use of a constraint of the decreasing order of health states. Specifically, BCSS includes several new health checks that are part of the built in managed availability monitoring components in Exchange 2016. There are four additional checks performed by Active Manager (listed in the order in which they are performed):
   
-1. **All Healthy** Checks for a server hosting a copy of the affected database that has all monitoring components in a healthy state. 
+1. **All Healthy**: Checks for a server hosting a copy of the affected database that has all monitoring components in a healthy state.
     
-2. **Up to Normal Healthy** Checks for a server hosting a copy of the affected database that has all monitoring components with Normal priority in a healthy state. 
+2. **Up to Normal Healthy**: Checks for a server hosting a copy of the affected database that has all monitoring components with Normal priority in a healthy state.
     
-3. **All Better than Source** Checks for a server hosting a copy of the affected database that has monitoring components in a state that's better than the current server hosting the affected copy. 
+3. **All Better than Source**: Checks for a server hosting a copy of the affected database that has monitoring components in a state that's better than the current server hosting the affected copy.
     
-4. **Same as Source** Checks for a server hosting a copy of the affected database that has monitoring components in a state that's the same as the current server hosting the affected copy. 
+4. **Same as Source**: Checks for a server hosting a copy of the affected database that has monitoring components in a state that's the same as the current server hosting the affected copy.
     
 If BCSS is invoked as a result of a failover that's triggered by a monitoring component (for example, via a Failover responder), an additional mandatory constraint is enforced where the target server's component health must be better than the server on which the failover occurred. For example, if a failure of Outlook on the web triggers a failover via a Failover responder, BCSS must select a server hosting a copy of the affected database on which Outlook on the web is healthy.
   

@@ -3,38 +3,22 @@ title: "Plan for high availability and site resilience"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: conceptual
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 29bb0358-fc8e-4437-8feb-d2959ed0f102
-description: "Summary: What elements of high availability and site resilience you should incorporate in your Exchange 2016 deployment plan."
+description: "Summary: Learn about the elements of high availability and site resilience to incorporate in your Exchange 2016 deployment plan."
 ---
 
 # Plan for high availability and site resilience
 
- **Summary**: What elements of high availability and site resilience you should incorporate in your Exchange 2016 deployment plan.
+ **Summary**: Learn about the elements of high availability and site resilience to incorporate in your Exchange 2016 deployment plan.
   
 During the planning phase, the system architects, administrators, and other key stakeholders should identify the business requirements and the architectural requirements for the deployment; in particular, the requirements about high availability and site resilience.
   
 There are general requirements that must be met for deploying these features, as well as hardware, software, and networking requirements that must also be met.
-  
- **Contents**
-  
-[General requirements](#GR.md)
-  
-[Hardware requirements](#HR.md)
-  
-[Storage requirements](#StoreReq.md)
-  
-[Software requirements](#SoftReq.md)
-  
-[Network requirements](#NR.md)
-  
-[Witness server requirements](#WSR.md)
-  
-[Planning for site resilience](#PSR.md)
   
 ## General requirements
 <a name="GR"> </a>
@@ -49,21 +33,15 @@ Before deploying a database availability group (DAG) and creating mailbox databa
     
 - The name you assign to the DAG must be a valid, available, and unique computer name of 15 characters or less.
     
-[General requirements](plan-ha.md#GR)
-  
 ## Hardware requirements
 <a name="HR"> </a>
 
 Generally, there are no special hardware requirements specific to DAGs or mailbox database copies. The servers used must meet all of the requirements set forth in [Exchange 2016 prerequisites](../plan-and-deploy/prerequisites.md)and [Exchange 2016 system requirements](../plan-and-deploy/system-requirements.md).
   
-[General requirements](plan-ha.md#GR)
-  
 ## Storage requirements
 <a name="StoreReq"> </a>
 
 Generally, there are no special storage requirements specific to DAGs or mailbox database copies. DAGs don't require or use cluster-managed shared storage. Cluster-managed shared storage is supported for use in a DAG only when the DAG is configured to use a solution that leverages the Third Party Replication API built into Exchange 2016.
-  
-[General requirements](plan-ha.md#GR)
   
 ## Software requirements
 <a name="SoftReq"> </a>
@@ -72,12 +50,10 @@ Each member of a DAG must be running the same operating system. Exchange 2016 is
   
 In addition to meeting the prerequisites for installing Exchange 2016, there are operating system requirements that must be met. DAGs use Windows Failover Clustering technology, and as a result, they require the Enterprise or Datacenter version of Windows Server 2008 R2, or the Standard or Datacenter version of the Windows Server 2012 or Windows Server 2012 R2 operating systems.
   
-[General requirements](plan-ha.md#GR)
-  
 ## Network requirements
 <a name="NR"> </a>
 
-There are specific networking requirements that must be met for each DAG and for each DAG member. Each DAG must have a single MAPI network, which is used by a DAG member to communicate with other servers (for example, other Exchange 2016 servers or directory servers), and zero or more Replication networks, which are networks dedicated to log shipping and seeding.
+There are specific networking requirements that must be met for each DAG and for each DAG member. Each DAG must have a single  *MAPI network*  , which is used by a DAG member to communicate with other servers (for example, other Exchange 2016 servers or directory servers), and zero or more  *Replication networks*  , which are networks dedicated to log shipping and seeding. 
   
 In previous versions of Exchange, we recommended at least two networks (one MAPI network and one Replication network) for DAGs. In Exchange 2016, multiple networks are supported, but our recommendation depends on your physical network topology. If you have multiple physical networks between DAG members that are physically separate from one another, then using a separate MAPI and Replication network provides additional redundancy. If you have multiple networks that are partially physically separate but converge into a single physical network (for example, a single WAN link), then using a single network (preferably 10 gigabit Ethernet) for both MAPI and Replication traffic is recommended. This provides simplicity for the network and the network path.
   
@@ -196,18 +172,14 @@ The TCP/IP v4 properties for a Replication network adapter are configured as fol
     
 - The **Register this connection's addresses in DNS** check box shouldn't be selected. 
     
-[General requirements](plan-ha.md#GR)
-  
 ## Witness server requirements
 <a name="WSR"> </a>
 
-A witness server is a server outside a DAG that's used to achieve and maintain quorum when the DAG has an even number of members. DAGs with an odd number of members don't use a witness server. All DAGs with an even number of members must use a witness server. The witness server can be any computer running Windows Server. There is no requirement that the version of the Windows Server operating system of the witness server matches the operating system used by the DAG members. 
+A  *witness server*  is a server outside a DAG that's used to achieve and maintain quorum when the DAG has an even number of members. DAGs with an odd number of members don't use a witness server. All DAGs with an even number of members must use a witness server. The witness server can be any computer running Windows Server. There is no requirement that the version of the Windows Server operating system of the witness server matches the operating system used by the DAG members. 
   
-Quorum is maintained at the cluster level, underneath the DAG. A DAG has quorum when the majority of its members are online and can communicate with the other online members of the DAG. This notion of quorum is one aspect of the concept of quorum in Windows failover clustering. A related and necessary aspect to quorum in failover clusters is the quorum resource. The quorum resource is a resource inside a failover cluster that provides a means for arbitration leading to cluster state and membership decisions. The quorum resource also provides persistent storage for storing configuration information. A companion to the quorum resource is the quorum log, which is a configuration database for the cluster. The quorum log contains information such as which servers are members of the cluster, what resources are installed in the cluster, and the state of those resources (for example, online or offline).
+Quorum is maintained at the cluster level, underneath the DAG. A DAG has quorum when the majority of its members are online and can communicate with the other online members of the DAG. This notion of quorum is one aspect of the concept of quorum in Windows failover clustering. A related and necessary aspect to quorum in failover clusters is the  *quorum resource*  . The quorum resource is a resource inside a failover cluster that provides a means for arbitration leading to cluster state and membership decisions. The quorum resource also provides persistent storage for storing configuration information. A companion to the quorum resource is the  *quorum log*  , which is a configuration database for the cluster. The quorum log contains information such as which servers are members of the cluster, what resources are installed in the cluster, and the state of those resources (for example, online or offline). 
   
-It's critical that each DAG member have a consistent view of how the DAG's underlying cluster is configured. The quorum acts as the definitive repository for all configuration information relating to the cluster. The quorum is also used as a tie-breaker to avoid split-brain syndrome. Split brain syndrome is a condition that occurs when DAG members can't communicate with each other but are running. Split brain syndrome is prevented by always requiring a majority of the DAG members (and in the case of DAGs with an even number of member, the DAG witness server) to be available and interacting for the DAG to be operational. 
-  
-[General requirements](plan-ha.md#GR)
+It's critical that each DAG member have a consistent view of how the DAG's underlying cluster is configured. The quorum acts as the definitive repository for all configuration information relating to the cluster. The quorum is also used as a tie-breaker to avoid  *split-brain*  syndrome. Split brain syndrome is a condition that occurs when DAG members can't communicate with each other but are running. Split brain syndrome is prevented by always requiring a majority of the DAG members (and in the case of DAGs with an even number of member, the DAG witness server) to be available and interacting for the DAG to be operational. 
   
 ## Planning for site resilience
 <a name="PSR"> </a>
@@ -256,11 +228,11 @@ Some applications that integrate with Exchange have specific certificate require
 
 In addition to the specific networking requirements that must be met for each DAG, as well as for each server that's a member of a DAG, there are some requirements and recommendations that are specific to site resilience configurations. As with all DAGs, whether the DAG members are deployed in a single site or in multiple sites, the round-trip return network latency between DAG members must be no greater than 500 milliseconds. In addition, there are specific configuration settings that are recommended for DAGs that are extended across multiple sites:
   
-- **MAPI networks should be isolated from Replication networks** Windows network policies, Windows firewall policies, or router access control lists (ACLs) should be used to block traffic between the MAPI network and the Replication networks. This configuration is necessary to prevent network heartbeat cross talk. 
+- **MAPI networks should be isolated from Replication networks**: Windows network policies, Windows firewall policies, or router access control lists (ACLs) should be used to block traffic between the MAPI network and the Replication networks. This configuration is necessary to prevent network heartbeat cross talk.
     
-- **Client-facing DNS records should have a Time to Live (TTL) value of 5 minutes** The amount of downtime that clients experience is dependent not just on how quickly a switchover can occur, but also on how quickly DNS replication occurs and the clients query for updated DNS information. DNS records for all Exchange client services, including Microsoft Office Outlook Web App, Microsoft Exchange ActiveSync, Exchange Web services, Outlook Anywhere, SMTP, POP3, and IMAP4 in both the internal and external DNS servers should be set with a TTL of 5 minutes. 
+- **Client-facing DNS records should have a Time to Live (TTL) value of 5 minutes**: The amount of downtime that clients experience is dependent not just on how quickly a switchover can occur, but also on how quickly DNS replication occurs and the clients query for updated DNS information. DNS records for all Exchange client services, including Microsoft Office Outlook Web App, Microsoft Exchange ActiveSync, Exchange Web services, Outlook Anywhere, SMTP, POP3, and IMAP4 in both the internal and external DNS servers should be set with a TTL of 5 minutes.
     
-- **Use static routes to configure connectivity across Replication networks** To provide network connectivity between each of the Replication network adapters, use persistent static routes. This is a quick and one-time configuration that's performed on each DAG member when using static IP addresses. If you're using DHCP to obtain IP addresses for your Replication networks, you can also use it to assign static routes for the replication, thereby simplifying the configuration process. 
+- **Use static routes to configure connectivity across Replication networks**: To provide network connectivity between each of the Replication network adapters, use persistent static routes. This is a quick and one-time configuration that's performed on each DAG member when using static IP addresses. If you're using DHCP to obtain IP addresses for your Replication networks, you can also use it to assign static routes for the replication, thereby simplifying the configuration process.
     
 ### General site resilience planning
 
@@ -284,6 +256,4 @@ To minimize the time it takes to activate a second datacenter, and allow the sec
     
 - A strategy for testing the solution must also be established and factored into the SLA. Periodic validation of the deployment is the only way to guarantee that the quality and viability of the deployment doesn't degrade over time. After the deployment is validated, we recommend that the part of the configuration that directly affects the success of the solution be explicitly documented. In addition, we recommend that you enhance your change management processes around those segments of the deployment.
     
-[General requirements](plan-ha.md#GR)
-  
 

@@ -3,7 +3,7 @@ title: "Exchange 2016 prerequisites"
 ms.author: dstrome
 author: dstrome
 manager: serdars
-ms.date: 4/20/2018
+ms.date: 6/12/2018
 ms.audience: ITPro
 ms.topic: conceptual
 ms.prod: office-online-server
@@ -18,28 +18,10 @@ description: "Summary: Windows operating system prerequisites for Exchange 2016 
  **Summary**: Windows operating system prerequisites for Exchange 2016 and Exchange management tools.
   
 > [!TIP]
-> Coming from the Exchange Deployment Assistant? Click [Exchange 2013 prerequisites](https://technet.microsoft.com/en-us/library/bb691354%28v=exchg.150%29.aspx). 
+> Coming from the Exchange Deployment Assistant? Click [Exchange 2013 prerequisites](https://technet.microsoft.com/library/bb691354%28v=exchg.150%29.aspx). 
   
 This topic provides the steps for installing the necessary Windows Server 2012, Windows Server 2012 R2, and Windows Server 2016 operating system prerequisites for the Exchange 2016 Mailbox and Edge Transport server roles. It also provides the prerequisites required to install the Exchange 2016 management tools on Windows 8.1 and Windows 10 client computers.
   
-- [What do you need to know before you begin?](#prereq.md)
-    
-- [Active Directory preparation](#ADPrep.md)
-    
-- [Windows Server 2012 and Windows Server 2012 R2 prerequisites](#WS2012.md)
-    
-  - [Mailbox server role](prerequisites.md#WS2012MBX)
-    
-  - [Edge Transport server role](#WS2012Edge.md)
-    
-- [Windows Server 2016 prerequisites](#WS2016.md)
-    
-  - [Mailbox server role](prerequisites.md#WS2016MBX)
-    
-  - [Edge Transport server role](#WS2016Edge.md)
-    
-- [ Windows 8.1 and Windows 10 prerequisites (admin tools only) ](prerequisites.md#Windows8) (admin tools only) 
-    
 ## What do you need to know before you begin?
 <a name="prereq"> </a>
 
@@ -62,7 +44,7 @@ This topic provides the steps for installing the necessary Windows Server 2012, 
 > [!TIP]
 > Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
   
-The following sections describe how to prepare your environment for Exchange 2016. Once your environment is prepared, use the Exchange Deployment Assistant for next steps on your actual deployment. For information on hybrid deployments, see [Exchange Server Hybrid Deployments](https://technet.microsoft.com/en-us/library/jj200581%28v=exchg.150%29.aspx).
+The following sections describe how to prepare your environment for Exchange 2016. Once your environment is prepared, use the Exchange Deployment Assistant for next steps on your actual deployment. For information on hybrid deployments, see [Exchange Server Hybrid Deployments](https://technet.microsoft.com/library/jj200581%28v=exchg.150%29.aspx).
   
 ## Active Directory preparation
 <a name="ADPrep"> </a>

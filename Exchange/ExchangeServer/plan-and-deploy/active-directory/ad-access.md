@@ -3,7 +3,7 @@ title: "Access to Active Directory"
 ms.author: dstrome
 author: dstrome
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: conceptual
 ms.prod: office-online-server
@@ -95,9 +95,9 @@ Active Directory Recycle Bin helps minimize directory service downtime by enhanc
   
 The most important thing to understand about recovering deleted Exchange-related Active Directory objects is that Exchange objects don't exist in isolation. For example, when you mail-enable a user, several different policies and links are calculated for the user based on your current Exchange configuration. Two problems that may arise when you restore a deleted Exchange configuration or recipient object are:
   
-- **Collisions** Some Exchange attributes must be unique across a forest. For example, proxy (email) addresses must not be the same for two different users. Active Directory doesn't enforce proxy address uniqueness—Exchange administrative tools check for uniqueness. Exchange email address policies also automatically resolve possible conflicts in proxy address assignment based on deterministic rules. Therefore, it's possible to restore an Exchange user object and, as a result, create a collision with proxy addresses or other attributes that should be unique. 
+- **Collisions**: Some Exchange attributes must be unique across a forest. For example, proxy (email) addresses must not be the same for two different users. Active Directory doesn't enforce proxy address uniqueness—Exchange administrative tools check for uniqueness. Exchange email address policies also automatically resolve possible conflicts in proxy address assignment based on deterministic rules. Therefore, it's possible to restore an Exchange user object and, as a result, create a collision with proxy addresses or other attributes that should be unique.
     
-- **Misconfigurations** Exchange has automated rules that assign various policies or settings. If you delete a recipient, and then change the rules or policies, restoring an Exchange user object may result in a user being assigned to the wrong policy (or even to a policy that no longer exists). 
+- **Misconfigurations**: Exchange has automated rules that assign various policies or settings. If you delete a recipient, and then change the rules or policies, restoring an Exchange user object may result in a user being assigned to the wrong policy (or even to a policy that no longer exists).
     
 The following guidelines will help you minimize problems or issues when you recover deleted Exchange-related objects:
   

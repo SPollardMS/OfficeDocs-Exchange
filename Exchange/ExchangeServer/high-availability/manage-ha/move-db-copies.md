@@ -3,7 +3,7 @@ title: "Move the mailbox database path for a mailbox database copy"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/12/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
@@ -41,7 +41,7 @@ Looking for other management tasks related to mailbox database copies? Check out
 ## Use the Exchange Management Shell to move a replicated mailbox database to a new path
 
 > [!NOTE]
-> You can't use the EAC to move a replicated mailbox database to a new path. 
+> You can't use the Exchange admin center (EAC) to move a replicated mailbox database to a new path. 
   
 1. Note any replay lag or truncation lag settings for all copies of the mailbox database being moved. You can obtain this information by using the [Get-MailboxDatabase](http://technet.microsoft.com/library/e12bd6d3-3793-49cb-9ab6-948d42dd409e.aspx) cmdlet, as shown in this example. 
     
@@ -68,11 +68,10 @@ Looking for other management tasks related to mailbox database copies? Check out
     
 7. Add all of the database copies that were removed in Step 3. For detailed steps, see [Add a mailbox database copy](add-db-copies.md).
     
-8. On each server that contains a copy of the mailbox database being moved, run the following commands to stop and restart the content index services.
+8. On each server that contains a copy of the mailbox database being moved, run the following command to stop and restart the content index services.
     
   ```
-  Net stop MSExchangeFastSearch
-  Net start MSExchangeFastSearch
+  Restart-Service MSExchangeFastSearch
   ```
 
 9. Optionally, enable circular logging by using the [Set-MailboxDatabase](http://technet.microsoft.com/library/a01edc66-bc10-4f65-9df4-432cb9e88f58.aspx) cmdlet, as shown in this example. 
@@ -111,7 +110,7 @@ For detailed syntax and parameter information, see the following topics:
 
 To verify that you've successfully moved the path for a mailbox database copy, do one of the following:
   
-- In the EAC, navigate to **Servers** > **Databases**. Select the database that was copied. In the Details pane, the status of the database copy and its content index are displayed, along with the current copy queue length. Verify that the status is Healthy.
+- In the EAC, navigate to **Servers** \> **Databases**. Select the database that was copied. In the Details pane, the status of the database copy and its content index are displayed, along with the current copy queue length. Verify that the status is Healthy.
     
 - In the Exchange Management Shell, run the following command to verify the mailbox database copy was created and is healthy.
     

@@ -3,18 +3,18 @@ title: "Connector selection in external message routing"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 5/5/2017
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: overview
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 579c6dc1-ece3-442a-bb8c-f55bcb543119
-description: "Learn how Exchange 2016 selects connectors (Send connectors, Delivery Agent connectors, or Foreign connectors) to deliver messages to external recipients."
+description: "Summary: Learn how Exchange 2016 selects connectors (Send connectors, Delivery Agent connectors, or Foreign connectors) to deliver messages to external recipients."
 ---
 
 # Connector selection in external message routing
 
-Learn how Exchange 2016 selects connectors (Send connectors, Delivery Agent connectors, or Foreign connectors) to deliver messages to external recipients.
+ **Summary**: Learn how Exchange 2016 selects connectors (Send connectors, Delivery Agent connectors, or Foreign connectors) to deliver messages to external recipients.
   
 Like previous versions of Exchange, Exchange Server 2016 uses connectors to deliver messages to external recipients (recipients that don't exist in the Exchange organization). Exchange uses Send connectors to route messages to external SMTP domains. If the external recipient isn't on an SMTP messaging system, Exchange uses Delivery Agent connectors or Foreign connectors.
   
@@ -28,11 +28,11 @@ The settings that are configured on connectors might eliminate an otherwise avai
 |**Connector setting**|**Comments**|
 |:-----|:-----|
 |State (enabled or disabled)  <br/> |Only enabled connectors are used in routing decisions. If a connector is disabled, it's not considered when routing messages.  <br/> |
-|Address space  <br/> | The address spaces defines the destination domains or other address spaces that are serviced by the connector. When Exchange selects a connector for routing a message, it only considers connectors that have a matching address space. If more than one connector matches the destination address space, the connector with the more precise address match is selected.  <br/>  For example, suppose the recipient is julia@marketing.contoso.com, and separate Send connectors are configured for \*, \*.contoso.com and marketing.contoso.com. The order of connector preference based solely on the address space is:  <br/>  marketing.contoso.com  <br/>  \*.contoso.com  <br/>  \*  <br/> |
+|Address space  <br/> |The address spaces defines the destination domains or other address spaces that are serviced by the connector. When Exchange selects a connector for routing a message, it only considers connectors that have a matching address space. If more than one connector matches the destination address space, the connector with the more precise address match is selected.  <br/> For example, suppose the recipient is julia@marketing.contoso.com, and separate Send connectors are configured for \*, \*.contoso.com and marketing.contoso.com. The order of connector preference based solely on the address space is:  <br/> 1: marketing.contoso.com  <br/> 2: \*.contoso.com  <br/> 3: \*  <br/> |
 |Address space type  <br/> |By default, the address space type on a new Send connector is SMTP. If you specify a non-SMTP address space, the messages are still sent to the destination (a smart host) by using SMTP. You need to create a Delivery Agent connector or a Foreign connector to route non-SMTP messages to non-SMTP messaging servers without using SMTP.  <br/> |
 |Address space cost  <br/> |You use the cost value on the address space for mail flow optimization and fault tolerance when the same address space is configured on multiple connectors. A lower cost value indicates a preferred connector.  <br/> |
 |Source server  <br/> |At least one Mailbox server or Edge Transport server must be configured to host the connector. You can configure multiple source servers to provide load balancing and fault tolerance for the address spaces that are defined on the connector.  <br/> |
-|Scope  <br/> |The connector's scope controls its visibility within the Exchange organization.  <br/> By default, connectors are visible to all the Exchange servers in the entire Active Directory forest. However, you can limit the scope of a connector so that it's only visible to other Exchange servers in the local Active Directory site. The connector is invisible to Exchange servers in other Active Directory sites, and isn't used in their routing decisions. A connector that's restricted in this way is said to be scoped.  <br/> |
+|Scope  <br/> |The connector's scope controls its visibility within the Exchange organization.  <br/> By default, connectors are visible to all the Exchange servers in the entire Active Directory forest. However, you can limit the scope of a connector so that it's only visible to other Exchange servers in the local Active Directory site. The connector is invisible to Exchange servers in other Active Directory sites, and isn't used in their routing decisions. A connector that's restricted in this way is said to be  *scoped*  .  <br/> |
 |Message size limits  <br/> |A message size restriction on a connector can eliminate the connector from selection if the message is larger than the maximum size that's allowed on the connector.  <br/> For more information about message size limits on connectors, see [Connector limits](../../mail-flow/message-size-limits.md#Connector).  <br/> |
    
 ## Selecting the connector for an external recipient
@@ -52,9 +52,9 @@ For messages that are sent to external recipients, Exchange must select the best
     
 3. From the resulting list of connectors, Exchange selects the connector with the most specific address space match. If multiple connectors have the same address space specificity, Exchange uses the following criteria to select a connector:
     
-1. **Aggregate cost** This is the sum of the cost that's assigned to all the IP site links between the source Active Directory site and the Active Directory site that contains the source servers for the connector, and the cost that's assigned to the address space on the connector (IP site link costs + connector cost). The connector with the lowest aggregate cost is selected. If multiple connectors have the same aggregate cost, the selection process continues to the next step. 
+1. **Aggregate cost**: This is the sum of the cost that's assigned to all the IP site links between the source Active Directory site and the Active Directory site that contains the source servers for the connector, and the cost that's assigned to the address space on the connector (IP site link costs + connector cost). The connector with the lowest aggregate cost is selected. If multiple connectors have the same aggregate cost, the selection process continues to the next step.
     
-2. **Hop count** The source server for the connector that can be reached in the least number of hops is selected. Typically, this means the general order of preference is: 
+2. **Hop count**: The source server for the connector that can be reached in the least number of hops is selected. Typically, this means the general order of preference is:
     
 1. The local Exchange server.
     
@@ -64,7 +64,7 @@ For messages that are sent to external recipients, Exchange must select the best
     
     If multiple connectors have the same hop count, the selection process continues to the next step.
     
-3. **Connector name** If more than one routing path has the same aggregate cost and hop count, the connector with the name that has the lowest alphanumeric value is selected. 
+3. **Connector name**: If more than one routing path has the same aggregate cost and hop count, the connector with the name that has the lowest alphanumeric value is selected.
     
 ## Handling messages that can't be routed
 <a name="Select"> </a>

@@ -3,13 +3,12 @@ title: "What's discontinued in Exchange 2016"
 ms.author: dmaguire
 author: msdmaguire
 manager: scotv
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: overview
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 0ac0001c-b314-4108-b895-d9c0e271b489
-
 description: "This topic discusses the components, features, or functionality that have been removed, discontinued, or replaced in Exchange 2016."
 ---
 
@@ -28,7 +27,7 @@ This section lists the Exchange 2013 features that are no longer available in Ex
 |Client Access server role  <br/> |The Client Access server role has been replaced by Client Access services that run on the Mailbox server role. The Mailbox server role now performs all functionality that was previously included with the Client Access server role. For more information about the new Mailbox server role, see [Exchange 2016 architecture](../architecture/architecture.md).  <br/> |
 |MAPI/CDO library  <br/> |The MAPI/CDO library has been replaced by Exchange Web Services (EWS), Exchange ActiveSync (EAS), and Representational State Transfer (REST)<sup>\*</sup> APIs. If an application uses the MAPI/CDO library, it needs to move to EWS, EAS, or the REST APIs to communicate with Exchange 2016.  <br/> |
    
-<sup>\* REST APIs will be included in a future release of Exchange 2016.</sup>
+<sup>\*</sup>: REST APIs will be included in a future release of Exchange 2016.
   
 ## De-emphasized features in Exchange 2016
 
@@ -52,7 +51,7 @@ This section lists the Exchange 2010 features that are no longer available in Ex
 |Unified Messaging server role  <br/> |The Unified Messaging server role has been replaced by Unified Messaging services which run on the Mailbox and Client Access server roles. The Mailbox server role includes the Microsoft Exchange Unified Messaging service and the Client Access server role includes the Microsoft Exchange Unified Messaging Call Router service. For more information, see [Voice Architecture Changes](http://technet.microsoft.com/library/55d5ca4a-b0cd-45f1-9f47-e745ef208698.aspx).  <br/> |
 |MAPI/CDO library  <br/> |The MAPI/CDO library has been replaced by Exchange Web Services (EWS), Exchange ActiveSync (EAS), and Representational State Transfer (REST)<sup>\*</sup> APIs. If an application uses the MAPI/CDO library, it needs to move to EWS, EAS, or the REST APIs to communicate with Exchange 2016.  <br/> |
    
-<sup>\* REST APIs will be included in a future release of Exchange 2016.</sup>
+<sup>\*</sup>: REST APIs will be included in a future release of Exchange 2016.
   
 ### Management interfaces
 
@@ -87,14 +86,14 @@ This section lists the Exchange 2010 features that are no longer available in Ex
 
 |**Feature**|**Comments and mitigation**|
 |:-----|:-----|
-|Anti-spam agent management in the EMC  <br/> |In Exchange 2010, when you enabled the anti-spam agents on a Hub Transport server, you could manage the anti-spam agents in the Exchange Management Console (EMC). In Exchange 2016, when you enable the anti-spam agents on a Mailbox server, you can't manage the agents using the EAC. You can only use the Exchange Management Shell. For information about how to enable the anti-spam agents on a Mailbox server, see [Enable antispam functionality on Mailbox servers](../antispam-and-antimalware/antispam/antispam-on-mailbox-servers.md).  <br/> |
-|Connection Filtering agent on Hub Transport servers  <br/> |In Exchange 2010, when you enabled the anti-spam agents on a Hub Transport server, the Attachment Filter agent was the only anti-spam agent that wasn't available. In Exchange 2016, when you enable the anti-spam agents on a Mailbox server, the Attachment Filter agent and the Connection Filtering agent aren't available. The Connection Filtering agent provides IP Allow List and IP Block List capabilities. For information about how to enable the anti-spam agents on a Mailbox server, see [Enable antispam functionality on Mailbox servers](../antispam-and-antimalware/antispam/antispam-on-mailbox-servers.md).  <br/> > [!NOTE]> The only way to enable the Connection Filtering agent is to install an Edge Transport server in the perimeter network. For more information, see [Edge Transport servers](../architecture/edge-transport-servers/edge-transport-servers.md).           |
+|Antispam agent management in the EMC  <br/> |In Exchange 2010, when you enabled the antispam agents on a Hub Transport server, you could manage the antispam agents in the Exchange Management Console (EMC). In Exchange 2016, when you enable the antispam agents on a Mailbox server, you can't manage the agents using the EAC. You can only use the Exchange Management Shell. For information about how to enable the antispam agents on a Mailbox server, see [Enable antispam functionality on Mailbox servers](../antispam-and-antimalware/antispam/antispam-on-mailbox-servers.md).  <br/> |
+|Connection Filtering agent on Hub Transport servers  <br/> |In Exchange 2010, when you enabled the antispam agents on a Hub Transport server, the Attachment Filter agent was the only antispam agent that wasn't available. In Exchange 2016, when you enable the antispam agents on a Mailbox server, the Attachment Filter agent and the Connection Filtering agent aren't available. The Connection Filtering agent provides IP Allow List and IP Block List capabilities. For information about how to enable the antispam agents on a Mailbox server, see [Enable antispam functionality on Mailbox servers](../antispam-and-antimalware/antispam/antispam-on-mailbox-servers.md).  <br/> **Note**: The only way to enable the Connection Filtering agent is to install an Edge Transport server in the perimeter network. For more information, see [Edge Transport servers](../architecture/edge-transport-servers/edge-transport-servers.md).  <br/> |
    
 ### Messaging policy and compliance
 
 |**Feature**|**Comments and mitigation**|
 |:-----|:-----|
-|Managed Folders  <br/> |In Exchange 2010, you use managed folders for messaging retention management (MRM). In Exchange 2016, managed folders aren't supported. You must use retention policies for MRM.  <br/> > [!NOTE]> Cmdlets related to managed folders are still available. You can create managed folders, managed content settings and managed folder mailbox policies, and apply a managed folder mailbox policy to a user, but the MRM assistant skips processing of mailboxes that have a managed folder mailbox policy applied.           |
+|Managed Folders  <br/> |In Exchange 2010, you use managed folders for messaging retention management (MRM). In Exchange 2016, managed folders aren't supported. You must use retention policies for MRM.  <br/> **Note**: Cmdlets related to managed folders are still available. You can create managed folders, managed content settings and managed folder mailbox policies, and apply a managed folder mailbox policy to a user, but the MRM assistant skips processing of mailboxes that have a managed folder mailbox policy applied.  <br/> |
 |Port Managed Folder wizard  <br/> |In Exchange 2010, you use the Port Managed Folder wizard to create retention tags based on managed folder and managed content settings. In Exchange 2016, the Exchange admin center doesn't include this functionality. You can use the **New-RetentionPolicyTag** cmdlet with the  _ManagedFolderToUpgrade_ parameter to create a retention tag based on a managed folder.  <br/> |
    
 ### Unified Messaging and voice mail
@@ -107,6 +106,6 @@ This section lists the Exchange 2010 features that are no longer available in Ex
 
 |**Feature**|**Comments and mitigation**|
 |:-----|:-----|
-| Update-MailboxDatabaseCopy  <br/>  Update Mailbox Database Copy wizard  <br/> |Content index catalog seeding is no longer possible over the replication network; it can only be done over a MAPI network. This is true even when you use the  `-Network` parameter in the Update-MailboxDatabaseCopy cmdlet.  <br/> |
+|**Update-MailboxDatabaseCopy** <br/> Update Mailbox Database Copy wizard  <br/> |Content index catalog seeding is no longer possible over the replication network; it can only be done over a MAPI network. This is true even when you use the  `-Network` parameter in the **Update-MailboxDatabaseCopy** cmdlet.  <br/> |
    
 

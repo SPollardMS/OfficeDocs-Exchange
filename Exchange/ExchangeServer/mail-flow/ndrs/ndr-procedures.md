@@ -3,18 +3,18 @@ title: "Procedures for DSNs and NDRs in Exchange 2016"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 5/16/2017
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 23c9d844-6fc7-44c9-a308-587338281611
-description: "Learn how to view default and custom NDRs, and how to create, modify, and delete custom NDRs in Exchange 2016."
+description: "Summary: Learn how to view default and custom NDRs, and how to create, modify, and delete custom NDRs in Exchange 2016."
 ---
 
 # Procedures for DSNs and NDRs in Exchange 2016
 
-Learn how to view default and custom NDRs, and how to create, modify, and delete custom NDRs in Exchange 2016.
+ **Summary**: Learn how to view default and custom NDRs, and how to create, modify, and delete custom NDRs in Exchange 2016.
   
 Like previous versions of Exchange, Exchange 2016 uses delivery status notifications (also known as DSNs, non-delivery reports, NDRs, or bounce messages) to provide delivery status and failure notification messages to message senders. For more information about NDRs, see [DSNs and NDRs in Exchange 2016](ndrs.md).
   
@@ -96,13 +96,13 @@ New-SystemMessage -Internal <$true | $false> -Language <Locale> -DSNCode <x.y.z>
 
 The values are:
   
-- **Internal** Controls whether the NDR is sent to internal or external senders. For internal senders, use the value  `$true`. For external senders, use the value  `$false`. For example, in the custom text for internal senders, you can include help desk contact information that you wouldn't want to include in NDRs for external senders.
+- **Internal**: Controls whether the NDR is sent to internal or external senders. For internal senders, use the value  `$true`. For external senders, use the value  `$false`. For example, in the custom text for internal senders, you can include help desk contact information that you wouldn't want to include in NDRs for external senders.
     
-- **Language** For the list of available languages, see the [Supported languages for NDRs](ndr-procedures.md#NDRLanguages) section in this topic. 
+- **Language**: For the list of available languages, see the [Supported languages for NDRs](ndr-procedures.md#NDRLanguages) section in this topic. 
     
-- **DSNCode** The enhanced status code. Valid values are 4.  _x_. _y_ or 5.  _x_. _y_ where  _x_ and  _y_ are one to three digit numbers. 
+- **DSNCode**: The enhanced status code. Valid values are 4. _x_. _y_ or 5.  _x_. _y_ where  _x_ and  _y_ are one to three digit numbers. 
     
-- **Text** You can use plain text or HTML formatting. For more information, see the [HTML tags and special characters in NDRs](ndr-procedures.md#NDRTags) section in this topic. 
+- **Text**: You can use plain text or HTML formatting. For more information, see the [HTML tags and special characters in NDRs](ndr-procedures.md#NDRTags) section in this topic. 
     
 This example creates a custom plain text NDR for the enhanced status code 5.1.2 that's sent to external senders in English.
   
@@ -128,11 +128,11 @@ New-SystemMessage -Language <Locale> -QuotaMessageType <Quota> -Text "<NDR text>
 
 The values are:
   
-- **Language** For the list of available languages, see [Supported languages for NDRs](ndr-procedures.md#NDRLanguages).
+- **Language**: For the list of available languages, see [Supported languages for NDRs](ndr-procedures.md#NDRLanguages).
     
-- **QuotaMessageType** For a list of the available quotas, see [Identity values for NDRs](ndr-procedures.md#NDRIdentity).
+- **QuotaMessageType**: For a list of the available quotas, see [Identity values for NDRs](ndr-procedures.md#NDRIdentity).
     
-- **Text** You can use plain text or HTML formatting. For more information, see [HTML tags and special characters in NDRs](ndr-procedures.md#NDRTags).
+- **Text**: You can use plain text or HTML formatting. For more information, see [HTML tags and special characters in NDRs](ndr-procedures.md#NDRTags).
     
 This example creates a custom English plain text NDR for the **ProhibitSendReceive** quota on mailboxes. 
   
@@ -277,7 +277,7 @@ Set-OrganizationConfig -MicrosoftExchangeRecipientReplyRecipient "Contoso System
 
 For more information about the EAC, see [Exchange admin center in Exchange 2016](../../architecture/client-access/exchange-admin-center.md).
   
-1. In the EAC, go to **Mail flow** > **Receive connectors**.
+1. In the EAC, go to **Mail flow** \> **Receive connectors**.
     
 2. Click **More options** ( ![More Options icon](../../media/ITPro_EAC_MoreOptionsIcon.png)) and select **Organization transport settings**.
     
@@ -319,7 +319,7 @@ Set-TransportConfig -GenerateCopyOfDSNFor @{Add="5.7.5"; Remove="5.7.1"}
 
 ### How do you know this worked?
 
-To verify that you've successfully configured copies of NDRs to be sent to the Exchange recipient mailbox, 
+To verify that you've successfully configured copies of NDRs to be sent to the Exchange recipient mailbox,
   
 - Run the following command and verify the property values:
     
@@ -334,19 +334,19 @@ To verify that you've successfully configured copies of NDRs to be sent to the E
 
 The identity of an NDR uses one of these formats:
   
-- **NDRs for enhanced status codes** _\<Language\>_&lt;Internal | External>\ _\<DSNcode\>_. For example,  `En\Internal\5.1.2` or  `Ja\External\5.1.2`.
+- **NDRs for enhanced status codes**:  _\<Language\>_\\<Internal | External\>\ _\<DSNcode\>_. For example,  `En\Internal\5.1.2` or  `Ja\External\5.1.2`.
     
-  - ** _\<DSNcode\>_** Valid values are 4.  _x_. _y_ or 5.  _x_. _y_ where  _x_ and  _y_ are one to three digit numbers. To generate a list of the enhanced status codes that are used by Exchange, see the [Use the Exchange Management Shell to view all default NDRs](ndr-procedures.md#ViewDefaultNDRs) section earlier in this topic. 
+  - ** _\<DSNcode\>_**: Valid values are 4.  _x_. _y_ or 5.  _x_. _y_ where  _x_ and  _y_ are one to three digit numbers. To generate a list of the enhanced status codes that are used by Exchange, see the [Use the Exchange Management Shell to view all default NDRs](ndr-procedures.md#ViewDefaultNDRs) section earlier in this topic. 
     
-  - **Internal or External** You can use different text in NDRs for internal or external senders. 
+  - **Internal or External**: You can use different text in NDRs for internal or external senders. 
     
-  - ** _\<Language\>_** For the list of supported languages, see the [Supported languages for NDRs](ndr-procedures.md#NDRLanguages) section in this topic. 
+  - ** _\<Language\>_**: For the list of supported languages, see the [Supported languages for NDRs](ndr-procedures.md#NDRLanguages) section in this topic. 
     
-- **NDRs for quotas** _\<Language\>_\ _\<QuotaMessageType\>_. For example,  `En\ProhibitSendReceiveMailBox`.
+- **NDRs for quotas**:  _\<Language\>_\ _\<QuotaMessageType\>_. For example,  `En\ProhibitSendReceiveMailBox`.
     
-  - ** _\<Language\>_** For the list of supported languages, see the [Supported languages for NDRs](ndr-procedures.md#NDRLanguages) section in this topic. 
+  - ** _\<Language\>_**: For the list of supported languages, see the [Supported languages for NDRs](ndr-procedures.md#NDRLanguages) section in this topic. 
     
-  - ** _QuotaMessageType\>_** Valid values are: 
+  - ** _QuotaMessageType\>_**: Valid values are: 
     
     Mailbox size quotas:
     
@@ -503,21 +503,21 @@ This table lists the supported language that codes you can use in custom NDRs.
    
 To control the languages that are used in NDRs, you use these parameters on the **Set-TransportConfig** cmdlet: 
   
--  _ExternalDsnDefaultLanguage_ Specifies the default language to use on external NDRs. The default value is blank (  `$null`), which means the default Windows server language is used.
+-  _ExternalDsnDefaultLanguage_: Specifies the default language to use on external NDRs. The default value is blank ( `$null`), which means the default Windows server language is used.
     
--  _InternalDsnDefaultLanguage_ Specifies the default language to use on internal NDRs. The default value is blank (  `$null`), which means the default Windows server language is used.
+-  _InternalDsnDefaultLanguage_: Specifies the default language to use on internal NDRs. The default value is blank ( `$null`), which means the default Windows server language is used.
     
 -  _ExternalDsnLanguageDetectionEnabled_
     
-  -  `$true` Exchange tries to send an external NDR in the same language as the original message. This is the default value. 
+  -  `$true`: Exchange tries to send an external NDR in the same language as the original message. This is the default value.
     
-  -  `$false` Language detection is disabled for external NDRs, The NDR language is determined by the  _ExternalDsnDefaultLanguage_ parameter. 
+  -  `$false`: Language detection is disabled for external NDRs, The NDR language is determined by the  _ExternalDsnDefaultLanguage_ parameter. 
     
 -  _InternalDsnLanguageDetectionEnabled_
     
-  -  `$true` Exchange tries to send an internal NDR in the same language as the original message. This is the default value. 
+  -  `$true`: Exchange tries to send an internal NDR in the same language as the original message. This is the default value.
     
-  -  `$false` Language detection is disabled for internal NDRs, The NDR language is determined by the  _InternalDsnDefaultLanguage_ parameter. 
+  -  `$false`: Language detection is disabled for internal NDRs, The NDR language is determined by the  _InternalDsnDefaultLanguage_ parameter. 
     
 ## HTML tags and special characters in NDRs
 <a name="NDRTags"> </a>
@@ -528,15 +528,15 @@ To control whether Exchange uses HTML or plain text in NDRs, you use these param
   
 -  _ExternalDsnSendHtml_
     
-  -  `$true` Use HTML tags in NDRs for external senders. This is the default value. 
+  -  `$true`: Use HTML tags in NDRs for external senders. This is the default value.
     
-  -  `$false` Use plain text in NDRs for external senders. 
+  -  `$false`: Use plain text in NDRs for external senders.
     
 -  _InternalDsnSendHtml_
     
-  -  `$true` Use HTML tags in NDRs for internal senders. This is the default value 
+  -  `$true`: Use HTML tags in NDRs for internal senders. This is the default value
     
-  -  `$false` Use plain text in NDRs for internal senders. 
+  -  `$false`: Use plain text in NDRs for internal senders.
     
 This table describes the HTML tags that you can use in the NDR text.
   

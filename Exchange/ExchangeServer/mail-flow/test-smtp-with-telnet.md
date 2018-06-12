@@ -3,18 +3,18 @@ title: "Use Telnet to test SMTP communication on Exchange servers"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 8a5f6715-baa4-48dd-8600-02c6b3d1aa9d
-description: "Learn how to use Telnet to test SMTP connectivity and mail flow on Exchange servers."
+description: "Summary: Learn how to use Telnet to test SMTP connectivity and mail flow on Exchange servers."
 ---
 
 # Use Telnet to test SMTP communication on Exchange servers
 
-Learn how to use Telnet to test SMTP connectivity and mail flow on Exchange servers.
+ **Summary**: Learn how to use Telnet to test SMTP connectivity and mail flow on Exchange servers.
   
 You can use Telnet to test Simple Mail Transfer Protocol (SMTP) communication between messaging servers. SMTP is the protocol that's used to send email messages from one messaging server to another. Using Telnet can be helpful if you're having trouble sending or receiving messages because you can manually send SMTP commands to a messaging server. In return, the server will reply with responses that would be returned in a typical connection. These results can sometimes help you to figure out why you can't send or receive messages.
   
@@ -46,13 +46,11 @@ You can use Telnet to test SMTP communication to:
 > [!TIP]
 > Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
   
-## How do you do this?
-
-### Step 1: Install the Telnet Client on your computer
+## Step 1: Install the Telnet Client on your computer
 
 On most versions of Windows, you'll need to install the Telnet client before you can use it. To install it, see [Install Telnet Client](https://go.microsoft.com/fwlink/p/?linkId=179054).
   
-### Step 2: Find the FQDN or IP address of the destination SMTP server
+## Step 2: Find the FQDN or IP address of the destination SMTP server
 
 To connect to an SMTP server by using Telnet on port 25, you need to use the fully-qualified domain name (FQDN) (for example, mail.contoso.com) or the IP address of the SMTP server. If you don't know the FQDN or IP address, you can use the Nslookup command-line tool to find the MX record for the destination domain.
   
@@ -81,21 +79,21 @@ To connect to an SMTP server by using Telnet on port 25, you need to use the ful
     
 4. When you're ready to end the Nslookup session, type exit, and then press Enter.
     
-### Step 3: Use Telnet on Port 25 to test SMTP communication
+## Step 3: Use Telnet on Port 25 to test SMTP communication
 
 In this example, we're going to use the following values. When you run the commands on your server, replace these values with ones for your organization's SMTP server, domain, etc.
   
-- **Destination SMTP server** mail1.fabrikam.com 
+- **Destination SMTP server**: mail1.fabrikam.com
     
-- **Source domain** contoso.com 
+- **Source domain**: contoso.com
     
-- **Sender's e-mail address** chris@contoso.com 
+- **Sender's e-mail address**: chris@contoso.com
     
-- **Recipient's e-mail address** kate@fabrikam.com 
+- **Recipient's e-mail address**: kate@fabrikam.com
     
-- **Message subject** Test from Contoso 
+- **Message subject**: Test from Contoso
     
-- **Message body** This is a test message 
+- **Message body**: This is a test message
     
 > [!TIP]
 >  The commands in the Telnet Client aren't case-sensitive. The SMTP command verbs in this example are capitalized for clarity. >  You can't use the backspace key in the Telnet session after you connect to the destination SMTP server. If you make a mistake as you type an SMTP command, you need to press Enter, and then type the command again. Unrecognized SMTP commands or syntax errors result in an error message that looks like this: >  `500 5.3.3 Unrecognized command`
@@ -167,6 +165,7 @@ RCPT TO: kate@fabrikam.com NOTIFY=success,failure
 DATA
 354 Start mail input; end with <CRLF>.<CRLF>
 Subject: test
+   
 This is a test message.
 .
 250 2.6.0 <c89b4fcc-3ad1-4758-a1ab-1e820065d622@mail1.fabrikam.com> [InternalId=5111011082268, Hostname=mail1.fabrikam.com] Queued mail for delivery
@@ -174,14 +173,14 @@ QUIT
 221 2.0.0 Service closing transmission channel
 ```
 
-### Step 4: Success and error messages in the Telnet Session
+## Step 4: Success and error messages in the Telnet Session
 
 This section provides information about the success and failure responses to the commands that were used in the previous example.
   
 > [!NOTE]
 > The three-digit SMTP response codes that are defined in RFC 5321 are the same for all SMTP messaging servers, but the text descriptions in the responses might be slightly different. 
   
-#### SMTP reply codes
+### SMTP reply codes
 
 SMTP servers respond to commands with a variety of numerical reply codes in the format of x.y.z where:
   
@@ -204,11 +203,11 @@ The first digit (X) is particularly important to understand because it indicates
    
 The table above is based on information provided by [RFC 5321 (Simple Mail Transfer Protocol), section 4.2.1](https://go.microsoft.com/fwlink/p/?LinkID=824668). Additional information, including descriptions of the second (Y) and third (Z) digits of SMTP reply codes is included in this section, and in sections [4.2.2](https://go.microsoft.com/fwlink/p/?LinkId=824669) and [4.2.3](https://go.microsoft.com/fwlink/p/?LinkId=824670).
   
-#### OPEN command
+### OPEN command
 
- **Successful response** `220 mail1.fabrikam.com Microsoft ESMTP MAIL Service ready at <day-date-time>`
+ **Successful response**:  `220 mail1.fabrikam.com Microsoft ESMTP MAIL Service ready at <day-date-time>`
   
- **Failure response** `Connecting to mail1.fabrikam.com...Could not open connection to the host, on port 25: Connect failed`
+ **Failure response**:  `Connecting to mail1.fabrikam.com...Could not open connection to the host, on port 25: Connect failed`
   
  **Possible reasons for failure**
   
@@ -222,11 +221,11 @@ The table above is based on information provided by [RFC 5321 (Simple Mail Trans
     
 - Incorrect port number.
     
-#### EHLO command
+### EHLO command
 
- **Successful response** `250 mail1.fabrikam.com Hello [<sourceIPaddress>]`
+ **Successful response**:  `250 mail1.fabrikam.com Hello [<sourceIPaddress>]`
   
- **Failure response** `501 5.5.4 Invalid domain name`
+ **Failure response**:  `501 5.5.4 Invalid domain name`
   
  **Possible reasons for failure**
   
@@ -237,24 +236,24 @@ The table above is based on information provided by [RFC 5321 (Simple Mail Trans
 > [!NOTE]
 > EHLO is the Extended Simple Message Transfer Protocol (ESMTP) verb that's defined in RFC 5321. ESMTP servers can advertise their capabilities during the initial connection. These capabilities include the maximum accepted message size and supported authentication methods. HELO is the older SMTP verb that is defined in RFC 821. Most SMTP messaging servers support ESMTP and EHLO. If the non-Exchange server that you're trying to connect to doesn't support EHLO, you can use HELO instead. 
   
-#### MAIL FROM command
+### MAIL FROM command
 
- **Successful response** `250 2.1.0 Sender OK`
+ **Successful response**:  `250 2.1.0 Sender OK`
   
- **Failure response** `550 5.1.7 Invalid address`
+ **Failure response**:  `550 5.1.7 Invalid address`
   
- **Possible reasons for failure** A syntax error in the sender's e-mail address. 
+ **Possible reasons for failure**: A syntax error in the sender's e-mail address.
   
- **Failure response** `530 5.7.1 Client was not authenticated`
+ **Failure response**:  `530 5.7.1 Client was not authenticated`
   
- **Possible reasons for failure** The destination server doesn't accept anonymous message submissions. You receive this error if you try to use Telnet to submit a message directly to a Mailbox server that doesn't have a Receive connector that's configured to accept anonymous connections. 
+ **Possible reasons for failure**: The destination server doesn't accept anonymous message submissions. You receive this error if you try to use Telnet to submit a message directly to a Mailbox server that doesn't have a Receive connector that's configured to accept anonymous connections.
   
-#### RCPT TO command
+### RCPT TO command
 
- **Successful response** `250 2.1.5 Recipient OK`
+ **Successful response**:  `250 2.1.5 Recipient OK`
   
- **Failure response** `550 5.1.1 User unknown`
+ **Failure response**:  `550 5.1.1 User unknown`
   
- **Possible reasons for failure** The specified recipient doesn't exist. 
+ **Possible reasons for failure**: The specified recipient doesn't exist.
   
 

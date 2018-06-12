@@ -3,30 +3,30 @@ title: "Managed availability"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: ceb99e6f-6dca-446d-abfb-3e6fc6a72704
-description: "Learn about monitoring your Exchange 2016 organization to quickly resolve issues for greater availability and reliability."
+description: "Summary: Learn about monitoring your Exchange 2016 organization to quickly resolve issues for greater availability and reliability."
 ---
 
 # Managed availability
 
-Learn about monitoring your Exchange 2016 organization to quickly resolve issues for greater availability and reliability.
+ **Summary**: Learn about monitoring your Exchange 2016 organization to quickly resolve issues for greater availability and reliability.
   
-Ensuring that users have a good email experience has always been the primary objective for messaging system administrators. In your Exchange Server 2016 organization, all aspects of the system must be actively monitored and any detected issues must be resolved quickly. To achieve this, a feature called Managed Availability provides built-in monitoring and recovery actions that preserve the end-user experience. 
+Ensuring that users have a good email experience has always been the primary objective for messaging system administrators. In your Exchange Server 2016 organization, all aspects of the system must be actively monitored and any detected issues must be resolved quickly. To achieve this, a feature called  *Managed Availability*  provides built-in monitoring and recovery actions that preserve the end-user experience. 
   
 ## Managed Availability
 
-Managed availability, also known as Active Monitoring or Local Active Monitoring, is the integration of built-in monitoring and recovery actions with the Exchange high availability platform. It's designed to detect and recover from problems as soon as they occur and are discovered by the system. Unlike previous external monitoring solutions and techniques for Exchange, managed availability doesn't try to identify or communicate the root cause of an issue. It's instead focused on recovery aspects that address three key areas of the user experience:
+Managed availability, also known as  *Active Monitoring*  or  *Local Active Monitoring*  , is the integration of built-in monitoring and recovery actions with the Exchange high availability platform. It's designed to detect and recover from problems as soon as they occur and are discovered by the system. Unlike previous external monitoring solutions and techniques for Exchange, managed availability doesn't try to identify or communicate the root cause of an issue. It's instead focused on recovery aspects that address three key areas of the user experience: 
   
-- **Availability** Can users access the service? 
+- **Availability**: Can users access the service?
     
-- **Latency** How is the experience for users? 
+- **Latency**: How is the experience for users?
     
-- **Errors** Are users able to accomplish what they want? 
+- **Errors**: Are users able to accomplish what they want?
     
 Managed availability provides a native health monitoring and recovery solution. It moves away from monitoring individual separate slices of the system to monitoring the end-to-end user experience, and protecting the end user's experience through recovery-oriented actions.
   
@@ -34,9 +34,9 @@ Managed availability is an internal process that runs on every Exchange 2016 ser
   
 Managed availability is implemented in the form of two services:
   
-- **Exchange Health Manager Service (MSExchangeHMHost.exe)** This is a controller process used to manage worker processes. It's used to build, execute, and start and stop the worker process, as needed. It's also used to recover the worker process in case that process fails, to prevent the worker process from being a single point of failure. 
+- **Exchange Health Manager Service (MSExchangeHMHost.exe)**: This is a controller process used to manage worker processes. It's used to build, execute, and start and stop the worker process, as needed. It's also used to recover the worker process in case that process fails, to prevent the worker process from being a single point of failure.
     
-- **Exchange Health Manager Worker process (MSExchangeHMWorker.exe)** This is the worker process responsible for performing run-time tasks within the managed availability framework. 
+- **Exchange Health Manager Worker process (MSExchangeHMWorker.exe)**: This is the worker process responsible for performing run-time tasks within the managed availability framework.
     
 Managed availability uses persistent storage to perform its functions:
   
@@ -60,7 +60,7 @@ As illustrated in the following drawing, managed availability includes three mai
   
  **Probes**
   
-The first component is called a Probe. Probes are responsible for taking measurements on the server and collecting data.
+The first component is called a  *Probe*  . Probes are responsible for taking measurements on the server and collecting data. 
   
 There are three primary categories of probes: recurrent probes, notifications, and checks. Recurrent probes are synthetic transactions performed by the system to test the end-to-end user experience. Checks are the infrastructure that perform the collection of performance data, including user traffic. Checks also measure the collected data against thresholds that are set to determine spikes in user failures, which enable the checks infrastructure to become aware when users are experiencing issues. Finally, the notification logic enables the system to take action immediately, based on a critical event, and without having to wait for the results of the data collected by a probe. These are typically exceptions or conditions that can be detected and recognized without a large sample set.
   
@@ -95,23 +95,23 @@ To find the counter and threshold that is considered unhealthy, you can look at 
   
  **Monitor**
   
-The results of the measurements collected by probes flow into the second component, the Monitor. The monitor contains all of the business logic used by the system on the data collected. Similar to a pattern recognition engine, the monitor looks for the various different patterns on all the collected measurements, and then it decides whether something is considered healthy.
+The results of the measurements collected by probes flow into the second component, the  *Monitor*  . The monitor contains all of the business logic used by the system on the data collected. Similar to a pattern recognition engine, the monitor looks for the various different patterns on all the collected measurements, and then it decides whether something is considered healthy. 
   
 Monitors query the data to determine if action needs to be taken based on a predefined rule set. Depending on the rule or the nature of the issue, a monitor can either initiate a responder or escalate the issue to a human via an event log entry. In addition, monitors define how much time after a failure that a responder is executed, as well as the workflow of the recovery action. Monitors have various states. From a system state perspective, monitors have two states:
   
-- **Healthy** The monitor is operating properly and all collected metrics are within normal operating parameters. 
+- **Healthy**: The monitor is operating properly and all collected metrics are within normal operating parameters.
     
-- **Unhealthy** The monitor isn't healthy and has either initiated recovery through a responder or notified an administrator through escalation. 
+- **Unhealthy**: The monitor isn't healthy and has either initiated recovery through a responder or notified an administrator through escalation.
     
 From an administrative perspective, monitors have additional states that appear in the Exchange Management Shell:
   
-- **Degraded** When a monitor is in an unhealthy state from 0 through 60 seconds, it's considered Degraded. If a monitor is unhealthy for more than 60 seconds, it is considered Unhealthy. 
+- **Degraded**: When a monitor is in an unhealthy state from 0 through 60 seconds, it's considered Degraded. If a monitor is unhealthy for more than 60 seconds, it is considered Unhealthy.
     
-- **Disabled** The monitor has been explicitly disabled by an administrator. 
+- **Disabled**: The monitor has been explicitly disabled by an administrator.
     
-- **Unavailable** The Exchange Health service periodically queries each monitor for its state. If it doesn't get a response to the query, the monitor state becomes Unavailable. 
+- **Unavailable**: The Exchange Health service periodically queries each monitor for its state. If it doesn't get a response to the query, the monitor state becomes Unavailable.
     
-- **Repairing** An administrator sets the Repairing state to indicate to the system that corrective action is in process by a human, which allows the system and humans to differentiate between other failures that may occur at the same time corrective action is being taken (such as a database copy reseed operation). 
+- **Repairing**: An administrator sets the Repairing state to indicate to the system that corrective action is in process by a human, which allows the system and humans to differentiate between other failures that may occur at the same time corrective action is being taken (such as a database copy reseed operation).
     
 Every monitor has a  _SampleMask_ property in its definition. As the monitor executes, it looks for events in the ProbeResult channel that have a  _ResultName_ that matches the monitor's  _SampleMask_. These events could be from recurrent probes, notifications, or checks. If the monitor's thresholds are achieved, it becomes Unhealthy. From the monitor's perspective, all three probe types are the same as they each log to the ProbeResult channel.
   
@@ -119,7 +119,7 @@ It is worth noting that a single probe failure does not necessarily indicate tha
   
  **Responders**
   
- Finally, there are Responders, which are responsible for recovery and escalation actions. As their name implies, responders execute some sort of response to an alert that was generated by a monitor. When something is unhealthy, the first action is to attempt to recover that component. This could include multi-stage recovery actions; for example, the first attempt may be to restart the application pool, the second may be to restart the service, the third attempt may be to restart the server, and the subsequent attempt may be to take the server offline so that it no longer accepts traffic. If the recovery actions are unsuccessful, the system escalates the issue to a human through event log notifications.
+ Finally, there are  *Responders*  , which are responsible for recovery and escalation actions. As their name implies, responders execute some sort of response to an alert that was generated by a monitor. When something is unhealthy, the first action is to attempt to recover that component. This could include multi-stage recovery actions; for example, the first attempt may be to restart the application pool, the second may be to restart the service, the third attempt may be to restart the server, and the subsequent attempt may be to take the server offline so that it no longer accepts traffic. If the recovery actions are unsuccessful, the system escalates the issue to a human through event log notifications. 
   
 Responders take a variety of recovery actions, such as resetting an application worker pool or restarting a server. There are several types of responders:
   
@@ -145,13 +145,13 @@ All responders include throttling behavior, which provide a built-in sequencing 
 
 From a reporting perspective, managed availability has two views of health, one internal and one external.
   
-The internal view uses health sets. Each component in Exchange 2016 (for example, Outlook on the web, Exchange ActiveSync, the Information Store service, content indexing, transport services, etc.) is monitored by managed availability using probes, monitors, and responders. A group of probes, monitors and responders for a given component is called a health set. A health set is a group of probes, monitors, and responders that determine if that component is healthy. The current state of a health set (e.g., whether it is healthy or unhealthy) is determined by using the state of the health set's monitors. If all of a health set's monitors are healthy, then the health set is in a healthy state. If any monitor is not in a healthy state, then the health set state will be determined by its least healthy monitor.
+The internal view uses  *health sets*  . Each component in Exchange 2016 (for example, Outlook on the web, Exchange ActiveSync, the Information Store service, content indexing, transport services, etc.) is monitored by managed availability using probes, monitors, and responders. A group of probes, monitors and responders for a given component is called a  *health set*  . A health set is a group of probes, monitors, and responders that determine if that component is healthy. The current state of a health set (e.g., whether it is healthy or unhealthy) is determined by using the state of the health set's monitors. If all of a health set's monitors are healthy, then the health set is in a healthy state. If any monitor is not in a healthy state, then the health set state will be determined by its least healthy monitor. 
   
 For detailed steps to view server health or health sets state, see [Manage health sets and server health](health-sets.md).
   
 ## Health Groups
 
-The external view of managed availability is composed of health groups. Health groups are exposed to System Center Operations Manager 2012 R2.
+The external view of managed availability is composed of  *health groups*  . Health groups are exposed to System Center Operations Manager 2012 R2. 
   
 There are four primary health groups:
   
@@ -175,7 +175,7 @@ When the Exchange Management Pack is installed, System Center Operations Manager
 
 Overrides provide an administrator with the ability to configure some aspects of the managed availability probes, monitors, and responders. Overrides can be used to fine tune some of the thresholds used by managed availability. They can also be used to enable emergency actions for unexpected events that may require configuration settings that are different from the out-of-box defaults.
   
-Overrides can be created and applied to a single server (this is known as a server override), or they can be applied to a group of servers (this is known as a global override). Server override configuration data is stored in the Windows registry on the server on which the override is applied. Global override configuration data is stored in Active Directory.
+Overrides can be created and applied to a single server (this is known as a  *server override*  ), or they can be applied to a group of servers (this is known as a  *global override*  ). Server override configuration data is stored in the Windows registry on the server on which the override is applied. Global override configuration data is stored in Active Directory. 
   
 Overrides can be configured to last indefinitely, or they can be configured for a specific duration. In addition, global overrides can be configured to apply to all servers, or only servers running a specific version of Exchange.
   

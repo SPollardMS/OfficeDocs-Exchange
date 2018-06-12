@@ -3,20 +3,20 @@ title: "Recipient resolution in Exchange 2016"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/12/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 09deda5a-d405-45b1-a3ff-fefd3d76cdea
-description: "Learn about recipient resolution in Exchange 2016."
+description: "Summary: Learn about recipient resolution in Exchange 2016."
 ---
 
 # Recipient resolution in Exchange 2016
 
-Learn about recipient resolution in Exchange 2016.
+ **Summary**: Learn about recipient resolution in Exchange 2016.
   
-Recipient resolution is when the Exchange server expands and resolves all recipients in a message. Recipient resolution is responsible for these actions: 
+ *Recipient resolution*  is when the Exchange server expands and resolves all recipients in a message. Recipient resolution is responsible for these actions: 
   
 - Matching the recipient to the corresponding Active Directory object.
     
@@ -24,18 +24,18 @@ Recipient resolution is when the Exchange server expands and resolves all recipi
     
 - Applying message limits and any alternative recipients to each recipient.
     
-Recipient resolution in Exchange 2016 is basically unchanged from Exchange 2013. Recipient resolution is done by the categorizer in the Transport service on Mailbox servers. Each message is processed by the categorizer after the message is put in the Submission queue, but before the message is put in a delivery queue. The component of the categorizer that's responsible for recipient resolution is frequently called the resolver. For more information about the categorizer and the Submission queue, see [Understanding the Transport service on Mailbox servers](../../mail-flow/mail-flow.md#TransportService).
+Recipient resolution in Exchange 2016 is basically unchanged from Exchange 2013. Recipient resolution is done by the categorizer in the Transport service on Mailbox servers. Each message is processed by the categorizer after the message is put in the Submission queue, but before the message is put in a delivery queue. The component of the categorizer that's responsible for recipient resolution is frequently called the  *resolver*  . For more information about the categorizer and the Submission queue, see [Understanding the Transport service on Mailbox servers](../../mail-flow/mail-flow.md#TransportService).
   
 This topic explains the various stages and components of recipient resolution that occur on the Exchange server.
   
 ## Top-level resolution
 <a name="Resolution"> </a>
 
-Top-level resolution is the first stage of recipient resolution that associates each recipient in an incoming message to a matching recipient object in Active Directory. The categorizer creates a list that contains the sender and the initial, unexpanded recipient email addresses from the message, and uses that list to query Active Directory. When a match is found in the email address properties for mail-enabled Active Directory objects, the categorizer caches the properties of the objects, and enforces any sender message restrictions. 
+ *Top-level resolution*  is the first stage of recipient resolution that associates each recipient in an incoming message to a matching recipient object in Active Directory. The categorizer creates a list that contains the sender and the initial, unexpanded recipient email addresses from the message, and uses that list to query Active Directory. When a match is found in the email address properties for mail-enabled Active Directory objects, the categorizer caches the properties of the objects, and enforces any sender message restrictions. 
   
 ### Recipient email addresses
 
-Top-level resolution begins with a message and the initial, unexpanded list of recipients from the message envelope. The message envelope contains the SMTP commands that are used to transmit messages between messaging servers:
+Top-level resolution begins with a message and the initial, unexpanded list of recipients from the  *message envelope*  . The message envelope contains the SMTP commands that are used to transmit messages between messaging servers: 
   
 - The sender's email address is contained in the **MAIL FROM** command. 
     
@@ -49,7 +49,7 @@ Standard SMTP email addresses follow the specifications in RFC 5321 and RFC 5322
   
 IMCEA addresses use the syntax  `IMCEA<Type>-<address>@<domain>`:
   
--  _\<Type\>_ identifies the type of non-SMTP address (for example  `EX`,  `X400`, or  `FAX`). Although  `SMTP` and  `X500` are theoretically valid values for <  _Type_>, Exchange recipient resolution rejects any IMCEA-encoded addresses that use either of these types.
+-  _\<Type\>_ identifies the type of non-SMTP address (for example  `EX`,  `X400`, or  `FAX`). Although  `SMTP` and  `X500` are theoretically valid values for \<  _Type_\>, Exchange recipient resolution rejects any IMCEA-encoded addresses that use either of these types.
     
 -  _\<address\>_ is the encoded version of original address: 
     
@@ -77,17 +77,17 @@ Exchange doesn't support IMCEA-encoded messages where the name part of the addre
 
 For each message, the sender's email address and all recipient addresses are added to a list that's used to query Active Directory. Any encapsulated addresses are unencapsulated before they're added to the list. The Active Directory query is performed on up to 20 email addresses at a time. If the query encounters transient errors, the message is returned to the Submission queue and deferred for the time that's specified by the  _ResolverRetryInterval_ key in the  `%ExchangeInstallPath%Bin\EdgeTransport.exe.config` XML application configuration file that's associated with the Transport service. The default value is 30 minutes. 
   
-The Active Directory recipient objects that are used by Exchange are described in the following table. For more information about Exchange recipient types, see [Understanding Recipients](http://technet.microsoft.com/library/40300ed4-85a5-463d-bb3a-cf787bd44e9d.aspx).
+The Active Directory recipient objects that are used by Exchange are described in the following table. For more information about Exchange recipient types, see [Recipients](../../recipients/recipients.md).
   
 |**Active Directory recipient type**|**Description**|
 |:-----|:-----|
-|DistributionGroup  <br/> | Any mail-enabled group object. The distribution group object types are:  <br/> **MailUniversalDistributionGroup** A universal distribution group object  <br/> **MailUniversalSecurityGroup** A universal security group (USG) object that has an email address  <br/> |
+|DistributionGroup  <br/> |Any mail-enabled group object. The distribution group object types are:  <br/> **MailUniversalDistributionGroup**: A universal distribution group object  <br/> **MailUniversalSecurityGroup**: A universal security group (USG) object that has an email address  <br/> |
 |DynamicDistributionGroup  <br/> |An object that has the Active Directory class **msExchDynamicDistributionList**. For more information, see [Manage dynamic distribution groups](../../recipients/dynamic-distribution-groups/dynamic-distribution-groups.md).  <br/> |
 |Mailbox  <br/> |An object that has an email address and a defined  _Database_ parameter.  <br/> |
-|MailUser  <br/> |A user object that has an email address without a defined  _Database_ parameter. For more information, see [Create a Mail User](http://technet.microsoft.com/library/bb8b8804-f730-4ad7-9173-896a4965b90f.aspx).  <br/> |
-|MailContact  <br/> |A contact object that has an email address. Typically, a mail contact is used for recipients outside the Exchange organization. A mail contact is also used in cross-forest Exchange environments. For more information, see [Create a Mail Contact](http://technet.microsoft.com/library/74c72aed-e9ff-4927-8eb7-c08a86e79ae0.aspx).  <br/> |
-|MailPublicFolder  <br/> |A public folder object that has an email address.  <br/> |
-|MicrosoftExchangeRecipient  <br/> |An object that has the Active Directory class **msExchExchangeServerRecipient**. For more information about the Exchange recipient object, see [Recipients](http://technet.microsoft.com/library/40300ed4-85a5-463d-bb3a-cf787bd44e9d.aspx).  <br/> |
+|MailUser  <br/> |A user object that has an email address without a defined  _Database_ parameter. For more information, see [Manage mail users](../../recipients/mail-users.md).  <br/> |
+|MailContact  <br/> |A contact object that has an email address. Typically, a mail contact is used for recipients outside the Exchange organization. A mail contact is also used in cross-forest Exchange environments. For more information, see [Manage mail contacts](../../recipients/mail-contacts.md).  <br/> |
+|MailPublicFolder  <br/> |A public folder object that has an email address. For more information, see [Public folders](../../collaboration/public-folders/public-folders.md).  <br/> |
+|MicrosoftExchangeRecipient  <br/> |An object that has the Active Directory class **msExchExchangeServerRecipient**. For more information about the Exchange recipient object, see [Recipients](../../recipients/recipients.md).  <br/> |
 |SystemMailbox  <br/> |A user object that has an email address and is located in the Microsoft Exchange System Objects container. There should be one system mailbox for each mailbox database in the Exchange organization.  <br/> |
    
 The Active Directory query classifies an object with missing or malformed critical properties as an invalid object (for example, a dynamic distribution group object without an email address). Messages sent to recipients that are classified as invalid objects generate a non-delivery report (also known as an NDR or bounce message).
@@ -117,25 +117,25 @@ Expansion occurs after top-level resolution. Expansion completely expands nested
   
 The types of recipients that require expansion are described in this list:
   
-- **Distribution groups and dynamic distribution groups** Distribution groups are expanded based on the **memberOf** Active Directory property. Dynamic distribution groups are expanded by using the Active Directory query definition. If the  _ExpansionServer_ parameter is set on the group in the Exchange Management Shell, the group is routed to the specified server for expansion. 
+- **Distribution groups and dynamic distribution groups**: Distribution groups are expanded based on the **memberOf** Active Directory property. Dynamic distribution groups are expanded by using the Active Directory query definition. If the  _ExpansionServer_ parameter is set on the group in the Exchange Management Shell, the group is routed to the specified server for expansion. 
     
     **Note:** When you specify an expansion server for a group, the group becomes dependent on the availability of the expansion server (messages can't be delivered to the group if the expansion server is unavailable). Therefore, consider implementing high availability solutions for expansion servers. 
     
-- **Alternative recipients** You can configure mailboxes and mail-enabled public folders to forward messages to other recipients: 
+- **Alternative recipients**: You can configure mailboxes and mail-enabled public folders to forward messages to other recipients:
     
-  - **Mailboxes** You can configure forwarding to another recipient in the Exchange organization, or to an external email address. For more information, see [Configure email forwarding for a mailbox](../../recipients/user-mailboxes/email-forwarding.md).
+  - **Mailboxes**: You can configure forwarding to another recipient in the Exchange organization, or to an external email address. For more information, see [Configure email forwarding for a mailbox](../../recipients/user-mailboxes/email-forwarding.md).
     
-  - **Mail-enabled public folders** You can configure forwarding to another recipient in the Exchange organization. 
+  - **Mail-enabled public folders**: You can configure forwarding to another recipient in the Exchange organization.
     
     You can configure the mailbox or mail-enabled public folder to only send messages to the forwarding address, or to the forwarding address and the original recipient.
     
-- **Contact chains** A contact chain is a mail user or mail contact where the external email address is set to the email address of another recipient in the Exchange organization. 
+- **Contact chains**: A  *contact chain*  is a mail user or mail contact where the external email address is set to the email address of another recipient in the Exchange organization. 
     
 ### Recipient loop detection
 
-As groups, alternative recipients, and contacts chains are expanded, the categorizer checks for recipient loops. A recipient loop is a configuration problem that causes message delivery to the same recipients in an endless circle. The different types of recipient loops are described in this list:
+As groups, alternative recipients, and contacts chains are expanded, the categorizer checks for  *recipient loops*  . A recipient loop is a configuration problem that causes message delivery to the same recipients in an endless circle. The different types of recipient loops are described in this list: 
   
-- **Harmless recipient loop** These are the two scenarios when harmless recipient can loops occur: 
+- **Harmless recipient loop**: These are the two scenarios when harmless recipient can loops occur:
     
   - When two groups contain one another as members.
     
@@ -143,7 +143,7 @@ As groups, alternative recipients, and contacts chains are expanded, the categor
     
     When the categorizer detects a harmless recipient loop, the message is delivered to the recipient, but no additional attempts are made to deliver the message to the same recipient.
     
-- **Broken recipient loop** When mailboxes or mail-enabled public folders are set to forward to one another (the messages are only forwarded). 
+- **Broken recipient loop**: When mailboxes or mail-enabled public folders are set to forward to one another (the messages are only forwarded).
     
     A broken recipient loop can't result in successful message delivery. When the categorizer detects a broken recipient loop, expansion activity for the current recipient stops, and an NDR is generated.
     
@@ -161,29 +161,29 @@ When a group is expanded, the message type is checked to see if it's a delivery 
   
 The delivery report redirection settings that are available in the Exchange Management Shell for distribution groups and dynamic distribution groups are described in this list:
   
-- ** *ReportToManagerEnabled*  parameter ** Enables or disables sending delivery reports to the group manager. Valid values are  `$true` or  `$false`. The default value is  `$false`. For a distribution group, the manager is controlled by the  _ManagedBy_ parameter on the **Set-Group** (distribution groups), or **Set-DynamicDistributionGroup** (dynamic distribution groups) cmdlets. 
+- ** *ReportToManagerEnabled*  parameter **: Enables or disables sending delivery reports to the group manager. Valid values are  `$true` or  `$false`. The default value is  `$false`. For a distribution group, the manager is controlled by the  _ManagedBy_ parameter on the **Set-Group** (distribution groups), or **Set-DynamicDistributionGroup** (dynamic distribution groups) cmdlets. 
     
-- ** *ReportToOriginatorEnabled*  parameter ** Enables or disables sending delivery reports to the message sender for messages that are sent to the group. Valid values are  `$true` or  `$false`. The default value is  `$true`.
+- ** *ReportToOriginatorEnabled*  parameter **: Enables or disables sending delivery reports to the message sender for messages that are sent to the group. Valid values are  `$true` or  `$false`. The default value is  `$true`.
     
     **Note**: The values of  _ReportToManagerEnabled_ parameter and  _ReportToOriginatorEnabled_ can't both be  `$true`. If one parameter is set to  `$true`, the other must be set to  `$false`. The values of both parameters can be  `$false`, which suppresses the redirection of all delivery report messages for the group.
     
 The different types of delivery report messages that can be affected by delivery report redirection for groups are described in this list:
   
-- **Delivery receipt (DR)** Confirms that a message was delivered to its intended recipient. 
+- **Delivery receipt (DR)**: Confirms that a message was delivered to its intended recipient.
     
-- **Delivery status notification (DSN)** Describes the result of an attempt to deliver a message that didn't result in the message being returned to the sender in an non-delivery report (NDR). For more information about DSN messages, see [DSNs and NDRs in Exchange 2016](../../mail-flow/ndrs/ndrs.md).
+- **Delivery status notification (DSN)**: Describes the result of an attempt to deliver a message that didn't result in the message being returned to the sender in an non-delivery report (NDR). For more information about DSN messages, see [DSNs and NDRs in Exchange 2016](../../mail-flow/ndrs/ndrs.md).
     
-- **Message disposition notification (MDN)** Describes the status of a message after it has been successfully delivered to a recipient. Read notifications (RNs) and non-read notification (NRNs) are both examples of MDN messages. MDN messages are defined in RFC 2298 and are controlled by the **Disposition-Notification-To:** header field in the message header. MDN settings that use this header field are compatible with many different kinds of messaging servers. MDN settings can also be defined by using MAPI properties in Outlook and Exchange. 
+- **Message disposition notification (MDN)**: Describes the status of a message after it has been successfully delivered to a recipient. Read notifications (RNs) and non-read notification (NRNs) are both examples of MDN messages. MDN messages are defined in RFC 2298 and are controlled by the **Disposition-Notification-To:** header field in the message header. MDN settings that use this header field are compatible with many different kinds of messaging servers. MDN settings can also be defined by using MAPI properties in Outlook and Exchange. 
     
-- **Non-delivery report (NDR)** Indicates to the message sender that the message couldn't be delivered to the specified recipients. The message is returned to the sender in the NDR. 
+- **Non-delivery report (NDR)**: Indicates to the message sender that the message couldn't be delivered to the specified recipients. The message is returned to the sender in the NDR.
     
-- **Non-read notification (NRN)** Indicates that a message was deleted before it was read. 
+- **Non-read notification (NRN)**: Indicates that a message was deleted before it was read.
     
-- **Out of office (OOF)** Indicates that the recipient won't respond to email messages. The acronym OOF dates back to the original Microsoft messaging system where the corresponding notification was named "out of facility." 
+- **Out of office (OOF)**: Indicates that the recipient won't respond to email messages. The acronym OOF dates back to the original Microsoft messaging system where the corresponding notification was named "out of facility."
     
-- **Read notification (RN)** Indicates that a message was read. 
+- **Read notification (RN)**: Indicates that a message was read.
     
-- **Recall Report** Indicates the status of a recall request for a specific recipient (the sender tried to recall a sent message by using Outlook). 
+- **Recall Report**: Indicates the status of a recall request for a specific recipient (the sender tried to recall a sent message by using Outlook).
     
 These are the settings that cause delivery report messages to be deleted when they're sent to a group:
   
@@ -211,15 +211,15 @@ For more information on message size limits, see [Recipient limits](../../mail-f
 
 |**Restriction**|**EAC configuration**|**Exchange Management Shell configuration**|**Description**|
 |:-----|:-----|:-----|:-----|
-|Maximum size of a message received  <br/> |Organization: **Mail flow** > **Receive connectors** > **More options**![More Options icon](../../media/ITPro_EAC_MoreOptionsIcon.png) > **Organization transport settings** > **Limits** tab > **Maximum receive message size (MB)** <br/> Mailboxes: **Recipients** > **Mailboxes** > select the mailbox > **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png) > **Mailbox features** > **Mail flow** section > **Message size restrictions** section > **View details** > **Received messages** section > **Maximum message size (KB)** <br/> Mail users: **Recipients** > **Contacts** > select the mail user > **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png) > **Mail flow settings** > **Message size restrictions** section > **View details** > **Received messages** section > **Maximum message size (KB)** <br/> |Organization cmdlet: **Set-TransportConfig** <br/> Recipient cmdlets: **Set-DistributionGroup**, **Set-DynamicDistributionGroup**, **Set-Mailbox**, **Set-MailContact**, **Set-MailPublicFolder**, and **Set-MailUser** <br/> Parameter:  _MaxReceiveSize_ <br/> |Specifies the maximum size of a message, which includes the message header, the message body, and any attachments. Whenever Exchange checks the message size, the lower value of the current message size or the original message size (the **X-MS-Exchange-Organization-OriginalSize:** message header) is used. The size of the message can change because of content conversion, encoding, and transport agent processing.  <br/> **Note**: The specified maximum message size is inflated by approximately 33% to account for Base64 encoding (for example, the specified value 64 MB results in a realistic maximum message size of approximately 48 MB).  <br/> For more information, see [Message size limits in Exchange 2016](../../mail-flow/message-size-limits.md).  <br/> |
-|The recipient can only accept messages from internal senders, and must reject messages from external senders  <br/> |Mailboxes: **Recipients** > **Mailboxes** > select the mailbox > **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png) > **Mailbox features** > **Mail flow** section > **Message delivery restrictions** section > **View details** > **Accept messages from** section > check or uncheck **Require that all senders are authenticated** <br/> Remote mailboxes: **Recipients** > **Mialboxes** > select the Office 365 mailbox > **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png) > **Mail flow settings** > **Message delivery restrictions** section > **View details** > **Accept messages from** section > check or uncheck **Require that all senders are authenticated** <br/> Mail users: **Recipients** > **Contacts** > select the mail user > **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png) > **Mail flow settings** > **Message delivery restrictions** section > **View details** > **Accept messages from** section > check or uncheck **Require that all senders are authenticated** <br/> Groups: **Recipients** > **Groups** > select the group > **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png) > **Delivery management** > select **Only senders inside my organization** or **Senders inside and outside of my organization** <br/> |Cmdlets: **New-DistributionGroup**, **Set-DistributionGroup**, **Set-DynamicDistributionGroup**, **Set-Mailbox**, **Set-MailContact**, **Set-MailPublicFolder**, **Set-MailUser**, and **Set-RemoteMailbox** <br/> Parameter:  _RequireSenderAuthenticationEnabled_ <br/> |You can configure the recipient to only accept messages from authenticated (internal) senders, or to accept messages from authenticated and unauthenticated (external) senders.  <br/> |
-|Senders who are allowed or aren't allowed to send messages to the recipient  <br/> |Mailboxes: **Recipients** > **Mailboxes** > select the mailbox > **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png) > **Mailbox features** > **Mail flow** section > **Message delivery restrictions** section > **View details** > **Accept messages from** section: **All senders** or **Only senders in the following list** or **Reject messages from** section: **No senders** or **Senders in the following list** <br/> Remote mailboxes: **Recipients** > **Mialboxes** > select the Office 365 mailbox > **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png) > **Mail flow settings** > **Message delivery restrictions** section > **View details** > **Accept messages from** section: **All senders** or **Only senders in the following list** or **Reject messages from** section: **No senders** or **Senders in the following list** <br/> Mail users: **Recipients** > **Contacts** > select the mail user > **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png) > **Mail flow settings** > **Message delivery restrictions** section > **View details** > **Accept messages from** section: **All senders** or **Only senders in the following list** or **Reject messages from** section: **No senders** or **Senders in the following list** <br/> Groups: **Recipients** > **Groups** > select the group > **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png) > **Delivery management** > click **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png) or **Remove**![Remove icon](../../media/ITPro_EAC_RemoveIcon.png) to specify users or group members who can send to the group (messages from others senders are rejected).  <br/> |Cmdlets: **Set-DistributionGroup**, **Set-DynamicDistributionGroup**, **Set-Mailbox**, **Set-MailContact**, **Set-MailPublicFolder**, **Set-MailUser**, and **Set-RemoteMailbox** <br/> Accept parameters:  _AcceptMessagesOnlyFromSendersOrMembers_ (or  _AcceptMessagesOnlyFrom_ for individual recipients only and  _AcceptMessagesOnlyFromDLMembers_ for group members only)  <br/> Reject parameters:  _RejectMessagesFromSendersOrMembers_ (or  _RejectMessagesOnlyFrom_ for individual recipients only and  _RejectMessagesOnlyFromDLMembers_ for group members only)  <br/> |The categorizer checks the recipient permission in two passes. The first pass determines whether the sender is present in the accept or reject lists. If the sender isn't found in either list, the distribution groups in those parameters are fully expanded. This complete group expansion might take some time, so we recommend that you minimize the depth of nested groups in the accept or reject lists.  <br/> |
+|Maximum size of a message received  <br/> |Organization: **Mail flow** \> **Receive connectors** \> **More options**![More Options icon](../../media/ITPro_EAC_MoreOptionsIcon.png) \> **Organization transport settings** \> **Limits** tab \> **Maximum receive message size (MB)** <br/> Mailboxes: **Recipients** \> **Mailboxes** \> select the mailbox \> **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png) \> **Mailbox features** \> **Mail flow** section \> **Message size restrictions** section \> **View details** \> **Received messages** section \> **Maximum message size (KB)** <br/> Mail users: **Recipients** \> **Contacts** \> select the mail user \> **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png) \> **Mail flow settings** \> **Message size restrictions** section \> **View details** \> **Received messages** section \> **Maximum message size (KB)** <br/> |Organization cmdlet: **Set-TransportConfig** <br/> Recipient cmdlets: **Set-DistributionGroup**, **Set-DynamicDistributionGroup**, **Set-Mailbox**, **Set-MailContact**, **Set-MailPublicFolder**, and **Set-MailUser** <br/> Parameter:  _MaxReceiveSize_ <br/> |Specifies the maximum size of a message, which includes the message header, the message body, and any attachments. Whenever Exchange checks the message size, the lower value of the current message size or the original message size (the **X-MS-Exchange-Organization-OriginalSize:** message header) is used. The size of the message can change because of content conversion, encoding, and transport agent processing.  <br/> **Note**: The specified maximum message size is inflated by approximately 33% to account for Base64 encoding (for example, the specified value 64 MB results in a realistic maximum message size of approximately 48 MB).  <br/> For more information, see [Message size limits in Exchange 2016](../../mail-flow/message-size-limits.md).  <br/> |
+|The recipient can only accept messages from internal senders, and must reject messages from external senders  <br/> |Mailboxes: **Recipients** \> **Mailboxes** \> select the mailbox \> **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png) \> **Mailbox features** \> **Mail flow** section \> **Message delivery restrictions** section \> **View details** \> **Accept messages from** section \> check or uncheck **Require that all senders are authenticated** <br/> Remote mailboxes: **Recipients** \> **Mialboxes** \> select the Office 365 mailbox \> **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png) \> **Mail flow settings** \> **Message delivery restrictions** section \> **View details** \> **Accept messages from** section \> check or uncheck **Require that all senders are authenticated** <br/> Mail users: **Recipients** \> **Contacts** \> select the mail user \> **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png) \> **Mail flow settings** \> **Message delivery restrictions** section \> **View details** \> **Accept messages from** section \> check or uncheck **Require that all senders are authenticated** <br/> Groups: **Recipients** \> **Groups** \> select the group \> **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png) \> **Delivery management** \> select **Only senders inside my organization** or **Senders inside and outside of my organization** <br/> |Cmdlets: **New-DistributionGroup**, **Set-DistributionGroup**, **Set-DynamicDistributionGroup**, **Set-Mailbox**, **Set-MailContact**, **Set-MailPublicFolder**, **Set-MailUser**, and **Set-RemoteMailbox** <br/> Parameter:  _RequireSenderAuthenticationEnabled_ <br/> |You can configure the recipient to only accept messages from authenticated (internal) senders, or to accept messages from authenticated and unauthenticated (external) senders.  <br/> |
+|Senders who are allowed or aren't allowed to send messages to the recipient  <br/> |Mailboxes: **Recipients** \> **Mailboxes** \> select the mailbox \> **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png) \> **Mailbox features** \> **Mail flow** section \> **Message delivery restrictions** section \> **View details** \> **Accept messages from** section: **All senders** or **Only senders in the following list** or **Reject messages from** section: **No senders** or **Senders in the following list** <br/> Remote mailboxes: **Recipients** \> **Mialboxes** \> select the Office 365 mailbox \> **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png) \> **Mail flow settings** \> **Message delivery restrictions** section \> **View details** \> **Accept messages from** section: **All senders** or **Only senders in the following list** or **Reject messages from** section: **No senders** or **Senders in the following list** <br/> Mail users: **Recipients** \> **Contacts** \> select the mail user \> **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png) \> **Mail flow settings** \> **Message delivery restrictions** section \> **View details** \> **Accept messages from** section: **All senders** or **Only senders in the following list** or **Reject messages from** section: **No senders** or **Senders in the following list** <br/> Groups: **Recipients** \> **Groups** \> select the group \> **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png) \> **Delivery management** \> click **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png) or **Remove**![Remove icon](../../media/ITPro_EAC_RemoveIcon.png) to specify users or group members who can send to the group (messages from others senders are rejected).  <br/> |Cmdlets: **Set-DistributionGroup**, **Set-DynamicDistributionGroup**, **Set-Mailbox**, **Set-MailContact**, **Set-MailPublicFolder**, **Set-MailUser**, and **Set-RemoteMailbox** <br/> Accept parameters:  _AcceptMessagesOnlyFromSendersOrMembers_ (or  _AcceptMessagesOnlyFrom_ for individual recipients only and  _AcceptMessagesOnlyFromDLMembers_ for group members only)  <br/> Reject parameters:  _RejectMessagesFromSendersOrMembers_ (or  _RejectMessagesOnlyFrom_ for individual recipients only and  _RejectMessagesOnlyFromDLMembers_ for group members only)  <br/> |The categorizer checks the recipient permission in two passes. The first pass determines whether the sender is present in the accept or reject lists. If the sender isn't found in either list, the distribution groups in those parameters are fully expanded. This complete group expansion might take some time, so we recommend that you minimize the depth of nested groups in the accept or reject lists.  <br/> |
    
 Certain types of messages that are sent by authenticated senders are exempt from restrictions. The following list describes the messages that are exempt from recipient restrictions:
   
-- **Messages sent by the Microsoft Exchange recipient** These messages include DSNs and NDRs , journal reports, quota messages, and other system-generated messages that are sent to internal message senders. For more information about the Microsoft Exchange recipient, see [Recipients](http://technet.microsoft.com/library/40300ed4-85a5-463d-bb3a-cf787bd44e9d.aspx).
+- **Messages sent by the Microsoft Exchange recipient**: These messages include DSNs and NDRs , journal reports, quota messages, and other system-generated messages that are sent to internal message senders. For more information about the Microsoft Exchange recipient, see [Recipients](../../recipients/recipients.md).
     
-- **Messages sent by the external postmaster address** These messages include DSNs and NDRs, and other system-generated messages that are sent to external message senders. For more information about the external postmaster address, see [Managing the External Postmaster Address](http://technet.microsoft.com/library/6b0c8675-3238-462d-8973-b52305fb90d2.aspx).
+- **Messages sent by the external postmaster address**: These messages include DSNs and NDRs, and other system-generated messages that are sent to external message senders. For more information about the external postmaster address, see [Managing the External Postmaster Address](http://technet.microsoft.com/library/6b0c8675-3238-462d-8973-b52305fb90d2.aspx).
     
 Exchange blocks certain types of messages that are sent to external domains (for example, internal OOF messages, automatic replies, and meeting forward notifications). You configure these settings in remote domains (the default remote domain, or remote domains for specific external domains). For more information, see [Managing Remote Domains](http://technet.microsoft.com/library/10fb7d62-4d78-40a3-82db-d62bcd27ba42.aspx).
   
@@ -228,9 +228,9 @@ Exchange blocks certain types of messages that are sent to external domains (for
 
 Because the complete list of message recipients is expanded and resolved by recipient resolution, there are occasions when different copies of the same message need to be created:
   
-- **Recipients require different message settings** Creating a new version of the message that has slightly different properties than the original is called bifurcation. For example, Exchange might need to bifurcate a message when read receipts are enabled for some recipients and blocked for others. 
+- **Recipients require different message settings**: Creating a new version of the message that has slightly different properties than the original is called  *bifurcation*  . For example, Exchange might need to bifurcate a message when read receipts are enabled for some recipients and blocked for others. 
     
-- **Limit the number of envelope recipients in a single message** Expanding large group can generate thousands of individual recipients. Instead of creating a single copy of the message that has thousands of envelope recipients, Exchange creates multiple copies of the same message that have a limited number of recipients in the message envelope. 
+- **Limit the number of envelope recipients in a single message**: Expanding large group can generate thousands of individual recipients. Instead of creating a single copy of the message that has thousands of envelope recipients, Exchange creates multiple copies of the same message that have a limited number of recipients in the message envelope.
     
 ### Bifurcation
 
@@ -268,7 +268,7 @@ The performance counters that are available for recipient resolution are describ
 |AmbiguousSendersTotal  <br/> |Ambiguous Senders  <br/> |This is the number of ambiguous senders that were detected during recipient resolution. Ambiguous senders are different senders that have matching **legacyExchangeDN** Active Directory attributes or matching **proxyAddresses** Active Directory attributes.  <br/> |
 |FailedRecipientsTotal  <br/> |Failed Recipients  <br/> |The number of failed recipients that were detected during recipient resolution.  <br/> |
 |LoopRecipientsTotal  <br/> |Loop Recipients  <br/> |The number of recipients that failed recipient resolution because of recipient loops.  <br/> |
-|MessagesChippedTotal  <br/> |Messages Chipped  <br/> |The total number of copies of the same message that were created during recipient resolution to control the number of envelope recipients in a single message. This process is referred to as chipping.  <br/> |
+|MessagesChippedTotal  <br/> |Messages Chipped  <br/> |The total number of copies of the same message that were created during recipient resolution to control the number of envelope recipients in a single message. This process is referred to as  *chipping*  .  <br/> |
 |MessagesCreatedTotal  <br/> |Messages Created  <br/> |The number of messages that were created during recipient resolution.  <br/> |
 |MessagesRetriedTotal  <br/> |Messages Retried  <br/> |The number of messages that were scheduled for retry during recipient resolution.  <br/> |
 |UnresolvedOrgRecipientsTotal  <br/> |Unresolved Org Recipients  <br/> |The number of unresolved recipients from an authoritative domain that were detected during recipient resolution.  <br/> |
@@ -291,11 +291,11 @@ For more information about message tracking, see [Message tracking](../../mail-f
 
 Recipient resolution logging is controlled by the  _ResolverLogLevel_ key in the  `%ExchangeInstallPath%Bin\EdgeTransport.exe.config` application configuration file. Valid values for this key are: 
   
--  `Disabled` No recipient resolution data is logged. This is the default value. 
+-  `Disabled`: No recipient resolution data is logged. This is the default value.
     
--  `Enabled` Only message envelope data is logged. 
+-  `Enabled`: Only message envelope data is logged.
     
--  `FullContent` Message envelope data and message header data is logged 
+-  `FullContent`: Message envelope data and message header data is logged
     
 The log files are stored at  `%ExchangeInstallPath%Logging\Resolver`.
   

@@ -3,32 +3,22 @@ title: "Use Compliance Search to search all mailboxes in Exchange 2016"
 ms.author: serdars
 author: SerdarSoysal
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 9f0f4a3d-de9a-4d8a-9172-2edf4288d766
-description: "Learn how to run a script to create an In-Place eDiscovery search that uses the list of source mailboxes and search query from a Compliance Search."
+description: "Summary: Learn how to run a script to create an In-Place eDiscovery search that uses the list of source mailboxes and search query from a Compliance Search."
 ---
 
 # Use Compliance Search to search all mailboxes in Exchange 2016
 
-Learn how to run a script to create an In-Place eDiscovery search that uses the list of source mailboxes and search query from a Compliance Search.
+ **Summary**: Learn how to run a script to create an In-Place eDiscovery search that uses the list of source mailboxes and search query from a Compliance Search.
   
 The new Compliance Search feature in Exchange 2016 allows you to search all mailboxes in your organization. Unlike In-Place eDiscovery where you can search up to 10,000 mailboxes, there are no limits for the number of target mailboxes in a single search. For scenarios that require you to perform organization-wide searches, you can use the **New-ComplianceSearch** cmdlet to search all mailboxes. Then you can use the workflow features of In-Place eDiscovery to perform other eDiscovery-related tasks, such as placing mailboxes on hold and exporting search results. For example, let's say you have to search all mailboxes to identify specific custodians that are responsive to a legal case. You can use the **New-ComplianceSearch** cmdlet to search all mailboxes in your organization to identify those that are responsive to the case. Then you can use that list of custodian mailboxes as the source mailboxes for an In-Place eDiscovery. Using In-Place eDiscovery also allows you to put a hold on those source mailboxes, copy search results to a discovery mailbox, and export the search results. 
   
-This topic includes a script that you can run to create an In-Place eDiscovery search by using the list of source mailboxes and search query from a compliance search that is created by running the **New-ComplianceSearch** cmdlet. Here's an overview of the process: 
-  
-[Step 1: Run the New-ComplianceSearch cmdlet to search all mailboxes](#step1.md)
-  
-[(Optional) Step 2: Verify the number of source mailboxes in the compliance search](compliance-search.md#step2)
-  
-[Step 3: Run the script to create an In-Place eDiscovery search from the Compliance Search](#step3.md)
-  
-[Step 4: Start the In-Place eDiscovery search](#step4.md)
-  
-[Next steps after creating and running the In-Place eDiscovery search](#nextsteps.md)
+This topic includes a script that you can run to create an In-Place eDiscovery search by using the list of source mailboxes and search query from a compliance search that is created by running the **New-ComplianceSearch** cmdlet. 
   
 ## Step 1: Run the New-ComplianceSearch cmdlet to search all mailboxes
 <a name="step1"> </a>
@@ -51,9 +41,7 @@ Start-ComplianceSearch -Identity "Search All-Financial Report"
 For more information, see [New-ComplianceSearch](http://technet.microsoft.com/library/433d1602-a026-4d63-be5e-605dd6b7b0d0.aspx).
   
 > [!IMPORTANT]
-> When you create a compliance search by using the **New-ComplianceSearch** cmdlet, a shadow In-Place eDiscovery search is created (but not started) and displayed on the **In-Place eDiscovery &amp; Hold** page in the Exchange admin center (EAC). It's also returned by using the **Get-MailboxSearch** cmdlet. This mailbox search is named **ComplianceSearchName-shadow**. We recommend that you delete the shadow In-Place eDiscovery search, and use the script in Step 3 to create the In-Place eDiscovery search. The functionality of creating a shadow search will be removed in a cumulative update for Exchange 2016. 
-  
-[The new Compliance Search feature in Exchange 2016 allows you to search all mailboxes in your organization. Unlike In-Place eDiscovery where you can search up to 10,000 mailboxes, there are no limits for the number of target mailboxes in a single search. For scenarios that require you to perform organization-wide searches, you can use the New-ComplianceSearch cmdlet to search all mailboxes. Then you can use the workflow features of In-Place eDiscovery to perform other eDiscovery-related tasks, such as placing mailboxes on hold and exporting search results. For example, let's say you have to search all mailboxes to identify specific custodians that are responsive to a legal case. You can use the New-ComplianceSearch cmdlet to search all mailboxes in your organization to identify those that are responsive to the case. Then you can use that list of custodian mailboxes as the source mailboxes for an In-Place eDiscovery. Using In-Place eDiscovery also allows you to put a hold on those source mailboxes, copy search results to a discovery mailbox, and export the search results.This topic includes a script that you can run to create an In-Place eDiscovery search by using the list of source mailboxes and search query from a compliance search that is created by running the New-ComplianceSearch cmdlet. Here's an overview of the process:Step 1: Run the New-ComplianceSearch cmdlet to search all mailboxes(Optional) Step 2: Verify the number of source mailboxes in the compliance searchStep 3: Run the script to create an In-Place eDiscovery search from the Compliance SearchStep 4: Start the In-Place eDiscovery searchNext steps after creating and running the In-Place eDiscovery search](#topofpage.md)
+> When you create a compliance search by using the **New-ComplianceSearch** cmdlet, a shadow In-Place eDiscovery search is created (but not started) and displayed on the **In-Place eDiscovery &amp; Hold** page in the Exchange admin center (EAC). It's also returned by using the **Get-MailboxSearch** cmdlet. This mailbox search is named ** *ComplianceSearchName*  -shadow **. We recommend that you delete the shadow In-Place eDiscovery search, and use the script in Step 3 to create the In-Place eDiscovery search. The functionality of creating a shadow search will be removed in a cumulative update for Exchange 2016. 
   
 ## (Optional) Step 2: Verify the number of source mailboxes in the compliance search
 <a name="step2"> </a>
@@ -106,8 +94,6 @@ To help you create a compliance search with no more than 500 source mailboxes, f
     
 If there are more than 500 source mailboxes, try creating two (or more) compliance searches. For example, search half of your organization's mailboxes in one compliance search and the other half in another compliance search. You could also change the search criteria to reduce the number of mailboxes that contain search results. For example, you could specify a date range or refine the keyword query.
   
-[The new Compliance Search feature in Exchange 2016 allows you to search all mailboxes in your organization. Unlike In-Place eDiscovery where you can search up to 10,000 mailboxes, there are no limits for the number of target mailboxes in a single search. For scenarios that require you to perform organization-wide searches, you can use the New-ComplianceSearch cmdlet to search all mailboxes. Then you can use the workflow features of In-Place eDiscovery to perform other eDiscovery-related tasks, such as placing mailboxes on hold and exporting search results. For example, let's say you have to search all mailboxes to identify specific custodians that are responsive to a legal case. You can use the New-ComplianceSearch cmdlet to search all mailboxes in your organization to identify those that are responsive to the case. Then you can use that list of custodian mailboxes as the source mailboxes for an In-Place eDiscovery. Using In-Place eDiscovery also allows you to put a hold on those source mailboxes, copy search results to a discovery mailbox, and export the search results.This topic includes a script that you can run to create an In-Place eDiscovery search by using the list of source mailboxes and search query from a compliance search that is created by running the New-ComplianceSearch cmdlet. Here's an overview of the process:Step 1: Run the New-ComplianceSearch cmdlet to search all mailboxes(Optional) Step 2: Verify the number of source mailboxes in the compliance searchStep 3: Run the script to create an In-Place eDiscovery search from the Compliance SearchStep 4: Start the In-Place eDiscovery searchNext steps after creating and running the In-Place eDiscovery search](#topofpage.md)
-  
 ## Step 3: Run the script to create an In-Place eDiscovery search from the Compliance Search
 <a name="step3"> </a>
 
@@ -121,13 +107,13 @@ The next step is to run a script that will convert an existing compliance search
     
 - Creates a new In-Place eDiscovery search, with the following properties. Note that the new search isn't started. You'll start it in step 4.
     
-  - **Name** The name of the new search uses this format: \<Name of compliance search\>_MBSearch1. If you run the script again and use the same source compliance search, the search will be named \<Name of compliance search\>_MBSearch2.
+  - **Name**: The name of the new search uses this format:  *\<Name of compliance search\>*  _MBSearch1. If you run the script again and use the same source compliance search, the search will be named  *\<Name of compliance search\>*  _MBSearch2. 
     
-  - **Source mailboxes** All mailboxes from the compliance search that contain search results. 
+  - **Source mailboxes**: All mailboxes from the compliance search that contain search results.
     
-  - **Search query** The new search uses the search query from the compliance search. If the compliance search includes all content (where the search query is blank) the new search will also have a blank search query and will include all content found in the source mailboxes. 
+  - **Search query**: The new search uses the search query from the compliance search. If the compliance search includes all content (where the search query is blank) the new search will also have a blank search query and will include all content found in the source mailboxes.
     
-  - **Estimate only search** The new search is marked as an estimate-only search. It won't copy search results to a discovery mailbox after you start it. 
+  - **Estimate only search**: The new search is marked as an estimate-only search. It won't copy search results to a discovery mailbox after you start it.
     
 1. Save the following text to a Windows PowerShell script file by using a filename suffix of ps1. For example, you could save it to a file named MBSearchFromComplianceSearch.ps1.
     
@@ -195,7 +181,6 @@ The next step is to run a script that will convert an existing compliance search
   {
   	New-MailboxSearch "$msPrefix$i" -SourceMailboxes $mailboxes -SearchQuery $query -EstimateOnly;
   }
-  
   ```
 
 2. In the Exchange Management Shell, go to the folder where the script that you created in the previous step is located, and then run the script; for example:
@@ -208,27 +193,23 @@ The next step is to run a script that will convert an existing compliance search
     
     If the script is successful, a new In-Place eDiscovery search is created with a status of **NotStarted**. Run the command  `Get-MailboxSearch <Name of compliance search>_MBSearch1 | FL` to display the properties of the new search. 
     
-[The new Compliance Search feature in Exchange 2016 allows you to search all mailboxes in your organization. Unlike In-Place eDiscovery where you can search up to 10,000 mailboxes, there are no limits for the number of target mailboxes in a single search. For scenarios that require you to perform organization-wide searches, you can use the New-ComplianceSearch cmdlet to search all mailboxes. Then you can use the workflow features of In-Place eDiscovery to perform other eDiscovery-related tasks, such as placing mailboxes on hold and exporting search results. For example, let's say you have to search all mailboxes to identify specific custodians that are responsive to a legal case. You can use the New-ComplianceSearch cmdlet to search all mailboxes in your organization to identify those that are responsive to the case. Then you can use that list of custodian mailboxes as the source mailboxes for an In-Place eDiscovery. Using In-Place eDiscovery also allows you to put a hold on those source mailboxes, copy search results to a discovery mailbox, and export the search results.This topic includes a script that you can run to create an In-Place eDiscovery search by using the list of source mailboxes and search query from a compliance search that is created by running the New-ComplianceSearch cmdlet. Here's an overview of the process:Step 1: Run the New-ComplianceSearch cmdlet to search all mailboxes(Optional) Step 2: Verify the number of source mailboxes in the compliance searchStep 3: Run the script to create an In-Place eDiscovery search from the Compliance SearchStep 4: Start the In-Place eDiscovery searchNext steps after creating and running the In-Place eDiscovery search](#topofpage.md)
-  
 ## Step 4: Start the In-Place eDiscovery search
 <a name="step4"> </a>
 
 The script that you run in Step 3 creates a new In-Place eDiscovery search, but doesn't start it. The next step is to start the search so you can get an estimate of the search results.
   
-1. In the Exchange admin center (EAC), go to **Compliance management** > **In-Place eDiscovery &amp; Hold**.
+1. In the Exchange admin center (EAC), go to **Compliance management** \> **In-Place eDiscovery &amp; Hold**.
     
 2. In the list view, select the In-Place eDiscovery search that you created in Step 3.
     
-3. Click **Search**![Search icon](../../media/ITPro_EAC_.png) > **Estimate search results** to start the search and return an estimate of the total size and number of items returned by the search. 
+3. Click **Search** ( ![Search icon](../../media/ITPro_EAC_.png)) \> **Estimate search results** to start the search and return an estimate of the total size and number of items returned by the search. 
     
-    The estimates are displayed in the details pane. Click **Refresh**![Refresh icon](../../media/ITPro_EAC_RefreshIcon.png) to update the information displayed in the details pane. 
+    The estimates are displayed in the details pane. Click **Refresh** ( ![Refresh icon](../../media/ITPro_EAC_RefreshIcon.png)) to update the information displayed in the details pane.
     
 4. To preview the results after the search is completed, click **Preview search results** in the details pane. 
     
 > [!TIP]
-> Alternatively, you can use the Exchange Management Shell to start the In-Place eDiscovery search; for example  `Start-MailboxSearch -Identity <Name of compliance search>_MBSearch1`
-  
-[The new Compliance Search feature in Exchange 2016 allows you to search all mailboxes in your organization. Unlike In-Place eDiscovery where you can search up to 10,000 mailboxes, there are no limits for the number of target mailboxes in a single search. For scenarios that require you to perform organization-wide searches, you can use the New-ComplianceSearch cmdlet to search all mailboxes. Then you can use the workflow features of In-Place eDiscovery to perform other eDiscovery-related tasks, such as placing mailboxes on hold and exporting search results. For example, let's say you have to search all mailboxes to identify specific custodians that are responsive to a legal case. You can use the New-ComplianceSearch cmdlet to search all mailboxes in your organization to identify those that are responsive to the case. Then you can use that list of custodian mailboxes as the source mailboxes for an In-Place eDiscovery. Using In-Place eDiscovery also allows you to put a hold on those source mailboxes, copy search results to a discovery mailbox, and export the search results.This topic includes a script that you can run to create an In-Place eDiscovery search by using the list of source mailboxes and search query from a compliance search that is created by running the New-ComplianceSearch cmdlet. Here's an overview of the process:Step 1: Run the New-ComplianceSearch cmdlet to search all mailboxes(Optional) Step 2: Verify the number of source mailboxes in the compliance searchStep 3: Run the script to create an In-Place eDiscovery search from the Compliance SearchStep 4: Start the In-Place eDiscovery searchNext steps after creating and running the In-Place eDiscovery search](#topofpage.md)
+> Alternatively, you can use the Exchange Management Shell to start the In-Place eDiscovery search; for example  `Start-MailboxSearch -Identity <Name of compliance search>_MBSearch1`. 
   
 ## Next steps after creating and running the In-Place eDiscovery search
 <a name="nextsteps"> </a>
@@ -237,47 +218,47 @@ After you create and start the In-Place eDiscovery search that was created by th
   
 ### Create an In-Place Hold
 
-1. In the EAC, go to **Compliance management** > **In-Place eDiscovery &amp; Hold**.
+1. In the EAC, go to **Compliance management** \> **In-Place eDiscovery &amp; Hold**.
     
-2. In the list view, select the In-Place eDiscovery search that you created in Step 3, and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
+2. In the list view, select the In-Place eDiscovery search that you created in Step 3, and then click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)).
     
 3. On the **In-Place Hold** page, select the **Place content matching the search query in selected mailboxes on hold** check box and then select one of the following options: 
     
-  - **Hold indefinitely** Choose this option to place items returned by the search on an indefinite hold. Items on hold will be preserved until you remove the mailbox from the search or remove the search. 
+  - **Hold indefinitely**: Choose this option to place items returned by the search on an indefinite hold. Items on hold will be preserved until you remove the mailbox from the search or remove the search.
     
-  - **Specify number of days to hold items relative to their received date** Choose this option to hold items for a specific period. The duration is calculated from the date a mailbox item is received or created. 
+  - **Specify number of days to hold items relative to their received date**: Choose this option to hold items for a specific period. The duration is calculated from the date a mailbox item is received or created.
     
 4. Click **Save** to create the In-Place Hold and restart the search. 
     
 ### Copy the search results
 
-1. In the EAC, go to **Compliance management** > **In-Place eDiscovery &amp; Hold**.
+1. In the EAC, go to **Compliance management** \> **In-Place eDiscovery &amp; Hold**.
     
 2. In the list view, select the In-Place eDiscovery search that you created in Step 3.
     
-3. Click **Search**![Search icon](../../media/ITPro_EAC_.png), and then click **Copy search results** from the drop-down list. 
+3. Click **Search** ( ![Search icon](../../media/ITPro_EAC_.png)), and then click **Copy search results** from the drop-down list. 
     
 4. In **Copy Search Results**, select from the following options:
     
-  - **Include unsearchable items** Select this check box to include mailbox items that couldn't be searched (for example, messages with attachments of file types that couldn't be indexed by Exchange Search). 
+  - **Include unsearchable items**: Select this check box to include mailbox items that couldn't be searched (for example, messages with attachments of file types that couldn't be indexed by Exchange Search).
     
-  - **Enable de-duplication** Select this check box to exclude duplicate messages. Only a single instance of a message will be copied to the discovery mailbox. 
+  - **Enable de-duplication**: Select this check box to exclude duplicate messages. Only a single instance of a message will be copied to the discovery mailbox.
     
-  - **Enable full logging** Select this check box to include a full log in search results. 
+  - **Enable full logging**: Select this check box to include a full log in search results.
     
-  - **Send me mail when the copy is completed** Select this check box to get an email notification when the search is completed. 
+  - **Send me mail when the copy is completed**: Select this check box to get an email notification when the search is completed.
     
-  - **Copy results to this discovery mailbox** Click **Browse** to select the discovery mailbox where you want the search results copied to. 
+  - **Copy results to this discovery mailbox**: Click **Browse** to select the discovery mailbox where you want the search results copied to. 
     
 5. Click **Copy** to start the process to copy the search results to the specified discovery mailbox. 
     
-6. Click **Refresh**![Refresh icon](../../media/ITPro_EAC_RefreshIcon.png) to update the information about the copying status that is displayed in the details pane. 
+6. Click **Refresh** ( ![Refresh icon](../../media/ITPro_EAC_RefreshIcon.png)) to update the information about the copying status that is displayed in the details pane.
     
 7. When copying is complete, click **Open** to open the discovery mailbox to view the search results. 
     
 ### Export the search results
 
-1. In the EAC, go to **Compliance management** > **In-Place eDiscovery &amp; Hold**.
+1. In the EAC, go to **Compliance management** \> **In-Place eDiscovery &amp; Hold**.
     
 2. In the list view, select the In-Place eDiscovery search that you created in Step 3, and then click **Export to a PST file**.
     
@@ -295,6 +276,4 @@ After you create and start the In-Place eDiscovery search that was created by th
     
     A window is displayed that contains status information about the export process.
     
-[The new Compliance Search feature in Exchange 2016 allows you to search all mailboxes in your organization. Unlike In-Place eDiscovery where you can search up to 10,000 mailboxes, there are no limits for the number of target mailboxes in a single search. For scenarios that require you to perform organization-wide searches, you can use the New-ComplianceSearch cmdlet to search all mailboxes. Then you can use the workflow features of In-Place eDiscovery to perform other eDiscovery-related tasks, such as placing mailboxes on hold and exporting search results. For example, let's say you have to search all mailboxes to identify specific custodians that are responsive to a legal case. You can use the New-ComplianceSearch cmdlet to search all mailboxes in your organization to identify those that are responsive to the case. Then you can use that list of custodian mailboxes as the source mailboxes for an In-Place eDiscovery. Using In-Place eDiscovery also allows you to put a hold on those source mailboxes, copy search results to a discovery mailbox, and export the search results.This topic includes a script that you can run to create an In-Place eDiscovery search by using the list of source mailboxes and search query from a compliance search that is created by running the New-ComplianceSearch cmdlet. Here's an overview of the process:Step 1: Run the New-ComplianceSearch cmdlet to search all mailboxes(Optional) Step 2: Verify the number of source mailboxes in the compliance searchStep 3: Run the script to create an In-Place eDiscovery search from the Compliance SearchStep 4: Start the In-Place eDiscovery searchNext steps after creating and running the In-Place eDiscovery search](#topofpage.md)
-  
 

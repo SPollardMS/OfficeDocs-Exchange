@@ -3,7 +3,7 @@ title: "Configure storage quotas for a mailbox"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
@@ -36,7 +36,7 @@ This topic shows you how to customize storage settings for a specific mailbox in
   
 ## Use the EAC to set storage quotas for a mailbox
 
-1. In the EAC, navigate to **Recipients** > **Mailboxes**.
+1. In the EAC, navigate to **Recipients** \> **Mailboxes**.
     
 2. In the list of user mailboxes, click the mailbox that you want to change the storage quotas for, and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
@@ -78,7 +78,7 @@ For detailed syntax and parameter information, see [Set-Mailbox](http://technet.
 
 To verify that you've successfully set the storage quotas for a mailbox, do one of the following:
   
-1. In the EAC, navigate to **Recipients** > **Mailboxes**.
+1. In the EAC, navigate to **Recipients** \> **Mailboxes**.
     
 2. In the list of user mailboxes, click the mailbox that you want to verify the storage quotas for, and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     

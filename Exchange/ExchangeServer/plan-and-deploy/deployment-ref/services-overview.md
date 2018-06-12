@@ -3,13 +3,12 @@ title: "Overview of Exchange 2016 services"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/12/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 2ed45d18-2ff3-4099-b841-050eb16a416b
-
 description: "During the installation of Exchange Server 2016, Setup runs a set of tasks that install new services in Microsoft Windows. A service is a background process that can be launched during the startup of the server by the Windows Service Control Manager. Services are executable files designed to operate independently and without administrative intervention. A service can run using either a graphical user interface (GUI) mode or a console mode."
 ---
 
@@ -28,7 +27,7 @@ The following table describes the Exchange services that are installed on Mailbo
 |**Service name**|**Service short name**|**Description and dependencies**|**Default startup type**|**Security context**|**Dependencies**|**Required or optional**|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 |Microsoft Exchange Active Directory Topology  <br/> |MSExchangeADTopology  <br/> |Provides Active Directory topology information to Exchange services. If this service is stopped, most Exchange services can't start.  <br/> |Automatic  <br/> |Local System  <br/> |Net.TCP Port Sharing Service  <br/> |Required  <br/> |
-|Microsoft Exchange Anti-spam Update  <br/> |MSExchangeAntispamUpdate  <br/> |Provides Exchange SmartScreen spam definition updates.  <br/> > [!NOTE]> On November 1, 2016, Microsoft stopped producing spam definition updates for the SmartScreen filters in Exchange and Outlook. The existing SmartScreen spam definitions will be left in place, but their effectiveness will likely degrade over time. For more information, see [Deprecating support for SmartScreen in Outlook and Exchange](https://go.microsoft.com/fwlink/p/?linkid=835894).           |Automatic  <br/> |Local System  <br/> |Microsoft Exchange Active Directory Topology  <br/> |Optional  <br/> |
+|Microsoft Exchange Anti-spam Update  <br/> |MSExchangeAntispamUpdate  <br/> |Provides Exchange SmartScreen spam definition updates.  <br/> **Note**: On November 1, 2016, Microsoft stopped producing spam definition updates for the SmartScreen filters in Exchange and Outlook. The existing SmartScreen spam definitions will be left in place, but their effectiveness will likely degrade over time. For more information, see [Deprecating support for SmartScreen in Outlook and Exchange](https://go.microsoft.com/fwlink/p/?linkid=835894).  <br/> |Automatic  <br/> |Local System  <br/> |Microsoft Exchange Active Directory Topology  <br/> |Optional  <br/> |
 |Microsoft Exchange Compliance Audit  <br/> |MSComplianceAudit  <br/> |Provides Exchange auditing features.  <br/> |Automatic  <br/> |Local System  <br/> |Microsoft Exchange Active Directory Topology  <br/> |Required  <br/> |
 |Microsoft Exchange Compliance Service  <br/> |MSExchangeCompliance  <br/> |Provides a host for Exchange compliance services.  <br/> |Automatic  <br/> |Local System  <br/> |Microsoft Exchange Active Directory Topology  <br/> |Required  <br/> |
 |Microsoft Exchange DAG Management  <br/> |MSExchangeDagMgmt  <br/> |Provides storage and database layout management for Mailbox servers in database availability groups (DAGs).  <br/> |Automatic  <br/> |Local System  <br/> |Microsoft Exchange Active Directory Topology  <br/> Net.TCP Port Sharing Service  <br/> |Required  <br/> |
@@ -65,14 +64,14 @@ The following table describes the Exchange services that are installed on Edge T
   
 |**Service name**|**Service short name**|**Description**|**Default startup type**|**Security context**|**Dependencies**|**Required or optional**|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-|Microsoft Exchange ADAM|ADAM_MSExchange|Stores configuration data and recipient data on the Edge Transport server. This service represents the named instance of the Active Directory Lightweight Directory Services (AD LDS) that's automatically created by Exchange Setup.|Automatic|Network Service|COM+ Event System|Required|
-|Microsoft Exchange Anti-spam Update|MSExchangeAntispamUpdate|Provides Exchange SmartScreen spam definition updates.> [!NOTE]> On November 1, 2016, Microsoft stopped producing spam definition updates for the SmartScreen filters in Exchange and Outlook. The existing SmartScreen spam definitions will be left in place, but their effectiveness will likely degrade over time. For more information, see [Deprecating support for SmartScreen in Outlook and Exchange](https://go.microsoft.com/fwlink/p/?linkid=835894).           |Automatic|Local System|Microsoft Exchange ADAM|Optional|
-|Microsoft Exchange Credential Service|MSExchangeEdgeCredential|Monitors credential changes in Active Directory Lightweight Directory Services (AD LDS) and installs the changes on the Edge Transport server.|Automatic|Local System|Microsoft Exchange ADAM|Required|
-|Microsoft Exchange Diagnostics|MSExchangeDiagnostics|Provides an agent that monitors Exchange server health.|Automatic|Local System|None|Required|
-|Microsoft Exchange Health Manager|MSExchangeHM|Part of managed availability that monitors the health of key components on the Exchange server.|Automatic|Local System|Windows Event LogWindows Management Instrumentation|Required|
-|Microsoft Exchange Health Manager Recovery|MSExchangeHMRecovery|Part of managed availability that attempts to recover unhealthy components on the Exchange server.|Automatic|Local System|Windows Event LogWindows Management Instrumentation|Required|
-|Microsoft Exchange Service Host|MSExchangeServiceHost|Provides a service host for Exchange components that don't have their own services.|Automatic|Local System|Microsoft Exchange ADAM|Required|
-|Microsoft Exchange Transport|MSExchangeTransport|Provides SMTP server and transport stack.|Automatic|Network Service|Microsoft Exchange ADAM|Required|
-|Microsoft Exchange Transport Log Search|MSExchangeTransportLogSearch|Provides remote search capability for transport log files (for example, message tracking).|Automatic|Local System|Microsoft Exchange ADAM|Optional|
+|Microsoft Exchange ADAM  <br/> |ADAM_MSExchange  <br/> |Stores configuration data and recipient data on the Edge Transport server. This service represents the named instance of the Active Directory Lightweight Directory Services (AD LDS) that's automatically created by Exchange Setup.  <br/> |Automatic  <br/> |Network Service  <br/> |COM+ Event System  <br/> |Required  <br/> |
+|Microsoft Exchange Anti-spam Update  <br/> |MSExchangeAntispamUpdate  <br/> |Provides Exchange SmartScreen spam definition updates.  <br/> **Note**: On November 1, 2016, Microsoft stopped producing spam definition updates for the SmartScreen filters in Exchange and Outlook. The existing SmartScreen spam definitions will be left in place, but their effectiveness will likely degrade over time. For more information, see [Deprecating support for SmartScreen in Outlook and Exchange](https://go.microsoft.com/fwlink/p/?linkid=835894).  <br/> |Automatic  <br/> |Local System  <br/> |Microsoft Exchange ADAM  <br/> |Optional  <br/> |
+|Microsoft Exchange Credential Service  <br/> |MSExchangeEdgeCredential  <br/> |Monitors credential changes in Active Directory Lightweight Directory Services (AD LDS) and installs the changes on the Edge Transport server.  <br/> |Automatic  <br/> |Local System  <br/> |Microsoft Exchange ADAM  <br/> |Required  <br/> |
+|Microsoft Exchange Diagnostics  <br/> |MSExchangeDiagnostics  <br/> |Provides an agent that monitors Exchange server health.  <br/> |Automatic  <br/> |Local System  <br/> |None  <br/> |Required  <br/> |
+|Microsoft Exchange Health Manager  <br/> |MSExchangeHM  <br/> |Part of managed availability that monitors the health of key components on the Exchange server.  <br/> |Automatic  <br/> |Local System  <br/> |Windows Event Log  <br/> Windows Management Instrumentation  <br/> |Required  <br/> |
+|Microsoft Exchange Health Manager Recovery  <br/> |MSExchangeHMRecovery  <br/> |Part of managed availability that attempts to recover unhealthy components on the Exchange server.  <br/> |Automatic  <br/> |Local System  <br/> |Windows Event Log  <br/> Windows Management Instrumentation  <br/> |Required  <br/> |
+|Microsoft Exchange Service Host  <br/> |MSExchangeServiceHost  <br/> |Provides a service host for Exchange components that don't have their own services.  <br/> |Automatic  <br/> |Local System  <br/> |Microsoft Exchange ADAM  <br/> |Required  <br/> |
+|Microsoft Exchange Transport  <br/> |MSExchangeTransport  <br/> |Provides SMTP server and transport stack.  <br/> |Automatic  <br/> |Network Service  <br/> |Microsoft Exchange ADAM  <br/> |Required  <br/> |
+|Microsoft Exchange Transport Log Search  <br/> |MSExchangeTransportLogSearch  <br/> |Provides remote search capability for transport log files (for example, message tracking).  <br/> |Automatic  <br/> |Local System  <br/> |Microsoft Exchange ADAM  <br/> |Optional  <br/> |
    
 

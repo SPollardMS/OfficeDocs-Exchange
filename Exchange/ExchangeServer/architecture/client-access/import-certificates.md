@@ -3,19 +3,19 @@ title: "Import or install a certificate on an Exchange 2016 server"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.collection: Strat_EX_Admin
 ms.assetid: 43fbe354-ccfc-45b0-9fbc-4b23c6c5ccf4
-description: "Learn how to import (install) a certificate on an Exchange 2016 server."
+description: "Summary: Learn how to import (install) a certificate on an Exchange 2016 server."
 ---
 
 # Import or install a certificate on an Exchange 2016 server
 
-Learn how to import (install) a certificate on an Exchange 2016 server.
+ **Summary**: Learn how to import (install) a certificate on an Exchange 2016 server.
   
 To enable encryption for one or more Exchange services, the Exchange server needs to use a certificate. SMTP communication between internal Exchange servers is encrypted by the default self-signed certificate that's installed on the Exchange server. To encrypt communication with internal or external clients, servers, or services, you'll likely want to use a certificate that's automatically trusted by all clients, services and servers that connect to your Exchange organization. For more information, see [Certificate requirements for Exchange services](certificates.md#CertRequirements).
   
@@ -52,7 +52,7 @@ These are the types of certificate files that you can import on an Exchange serv
   
 ## Use the EAC to import a certificate on one or more Exchange servers
 
-1. Open the EAC and navigate to **Servers** > **Certificates**.
+1. Open the EAC and navigate to **Servers** \> **Certificates**.
     
 2. In the **Select server** list, select the Exchange server where you want to install the certificate, click **More options**![More Options icon](../../media/ITPro_EAC_MoreOptionsIcon.png), and select **Import Exchange certificate**.
     
@@ -110,7 +110,7 @@ Import-ExchangeCertificate -FileData "Import-ExchangeCertificate -FileData ([Byt
 
 To verify that you have successfully imported (installed) a certificate on an Exchange server, use either of the following procedures:
   
-- In the EAC at **Servers** > **Certificates**, verify the server where you installed the certificate is selected. The certificate should be in the list of certificates with the **Status** value **Valid**.
+- In the EAC at **Servers** \> **Certificates**, verify the server where you installed the certificate is selected. The certificate should be in the list of certificates with the **Status** value **Valid**.
     
 - In the Exchange Management Shell on the server where you installed the certificate, run the following command:
     

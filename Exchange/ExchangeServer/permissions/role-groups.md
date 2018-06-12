@@ -3,18 +3,18 @@ title: "Manage role groups"
 ms.author: dstrome
 author: dstrome
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: ab9b7a3b-bf67-4ba1-bde5-8e6ac174b82c
-description: "Learn how to add, remove, copy, and view management role groups in Microsoft Exchange Server 2016."
+description: "Summary: Learn how to add, remove, copy, and view management role groups in Microsoft Exchange Server 2016."
 ---
 
 # Manage role groups
 
-Learn how to add, remove, copy, and view management role groups in Microsoft Exchange Server 2016.
+ **Summary**: Learn how to add, remove, copy, and view management role groups in Microsoft Exchange Server 2016.
   
 A management role group is a universal security group (USG) used in the Role Based Access Control (RBAC) permissions model in Exchange 2016. A management role group simplifies the assignment of management roles to a group of users. All members of a role group are assigned the same set of roles. For more information about role groups in Exchange 2016, see [Understanding Management Role Groups](http://technet.microsoft.com/library/2a92e06c-523e-4fd4-a937-152562b7741d.aspx).
   
@@ -24,6 +24,8 @@ For additional management tasks related to role groups, see [Permissions](permis
 
 - Estimated time to complete each procedure: 5 to 10 minutes
     
+- To open the EAC, see [Exchange admin center in Exchange 2016](../architecture/client-access/exchange-admin-center.md). To open the Exchange Management Shell, see [Open the Exchange Management Shell](http://technet.microsoft.com/library/63976059-25f8-4b4f-b597-633e78b803c0.aspx).
+    
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Role groups" entry in the [Role management permissions](feature-permissions/rbac-permissions.md) topic. 
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../about-documentation/eac-keyboard-shortcuts.md).
@@ -31,16 +33,14 @@ For additional management tasks related to role groups, see [Permissions](permis
 > [!TIP]
 > Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
   
-## What do you want to do?
-
-### Create a role group
+## Create a role group
 <a name="CreateRG"> </a>
 
 If you want to customize the permissions that you can assign to a group of users, create a new custom management role group.
   
-#### Use the EAC to create a role group
+### Use the EAC to create a role group
 
-1. In the Exchange Administration Center (EAC), navigate to **Permissions** > **Admin Roles** and then click **Add**![Add icon](../media/ITPro_EAC_AddIcon.png).
+1. In the Exchange Administration Center (EAC), navigate to **Permissions** \> **Admin Roles** and then click **Add**![Add icon](../media/ITPro_EAC_AddIcon.png).
     
 2. In the **New role group** window, provide a name for the new role group. 
     
@@ -50,31 +50,31 @@ If you want to customize the permissions that you can assign to a group of users
     
 5. Click **Save** to create the role group. 
     
-#### Use the Exchange Management Shell to create a role group
+### Use the Exchange Management Shell to create a role group
 
 To create a role group, see the [Examples](http://technet.microsoft.com/library/c59f596d-cbdd-459e-b31f-99d03e684299.aspx#Examples) section in [New-RoleGroup](http://technet.microsoft.com/library/c59f596d-cbdd-459e-b31f-99d03e684299.aspx).
   
-#### How do you know this worked?
+### How do you know this worked?
 
 To verify that you have successfully created a role group, do the following:
   
-1. In the EAC, navigate to **Permissions** > **Admin Roles**.
+1. In the EAC, navigate to **Permissions** \> **Admin Roles**.
     
 2. Verify that the new role group appears in the role group list and then select it.
     
 3. Verify that members, assigned roles, and scope that you specified on the new role group are listed in the role group details pane.
     
-### Copy a role group
+## Copy a role group
 <a name="CopyRG"> </a>
 
-#### Use the EAC to copy a role group
+### Use the EAC to copy a role group
 
 If you have a role group that contains the permissions you want to grant to users, but you want to apply a different management scope, or remove or add one or two management roles without having to add all the other roles manually, you can copy the existing role group.
   
 > [!IMPORTANT]
 > You can't use the EAC to copy a role group if you've used the Exchange Management Shell to configure multiple management role scopes or exclusive scopes on the role group. If you've configured multiple scopes or exclusive scopes on the role group, you must use the Exchange Management Shell procedures later in this topic to copy the role group. For more information about management role scopes, see [Understanding Management Role Scopes](http://technet.microsoft.com/library/24ed4a38-438a-4223-9f9c-5d4dea4b046b.aspx). 
   
-1. In the EAC, navigate to **Permissions** > **Admin Roles**.
+1. In the EAC, navigate to **Permissions** \> **Admin Roles**.
     
 2. Select the role group you want to copy and then click **Copy**![Copy icon](../media/ITPro_EAC_CopyIcon.png).
     
@@ -88,7 +88,7 @@ If you have a role group that contains the permissions you want to grant to user
     
 7. Click **Save** to create the role group. 
     
-#### Use the Exchange Management Shell to copy a role group with no scope
+### Use the Exchange Management Shell to copy a role group with no scope
 <a name="NoScope"> </a>
 
 1. Store the role group that you want to copy in a variable using the following syntax.
@@ -114,7 +114,7 @@ After the new role group is created, you can add or remove roles, change the sco
   
 For detailed syntax and parameter information, see [Get-RoleGroup](http://technet.microsoft.com/library/369800ff-fced-4d1c-adb0-1ddbe798670d.aspx) and [New-RoleGroup](http://technet.microsoft.com/library/c59f596d-cbdd-459e-b31f-99d03e684299.aspx).
   
-#### Use the Exchange Management Shell to copy a role group with a custom scope
+### Use the Exchange Management Shell to copy a role group with a custom scope
 <a name="NoScope"> </a>
 
 1. Store the role group that you want to copy in a variable using the following syntax.
@@ -142,7 +142,7 @@ After the new role group is created, you can add or remove roles, change the sco
   
 For detailed syntax and parameter information, see [Get-RoleGroup](http://technet.microsoft.com/library/369800ff-fced-4d1c-adb0-1ddbe798670d.aspx) and [New-RoleGroup](http://technet.microsoft.com/library/c59f596d-cbdd-459e-b31f-99d03e684299.aspx).
   
-#### Use the Exchange Management Shell to copy a role group with an OU scope
+### Use the Exchange Management Shell to copy a role group with an OU scope
 <a name="NoScope"> </a>
 
 1. Store the role group that you want to copy in a variable using the following syntax.
@@ -170,60 +170,60 @@ After the new role group is created, you can add or remove roles, change the sco
   
 For detailed syntax and parameter information, see [Get-RoleGroup](http://technet.microsoft.com/library/369800ff-fced-4d1c-adb0-1ddbe798670d.aspx) and [New-RoleGroup](http://technet.microsoft.com/library/c59f596d-cbdd-459e-b31f-99d03e684299.aspx).
   
-#### How do you know this worked?
+### How do you know this worked?
 <a name="NoScope"> </a>
 
 To verify that you have successfully copied a role group, do the following:
   
-1. In the EAC, navigate to **Permissions** > **Admin Roles**.
+1. In the EAC, navigate to **Permissions** \> **Admin Roles**.
     
 2. Verify that the copied role group appears in the role group list, and then select it.
     
 3. Verify that members, assigned roles, and scope that you specified on the copied role group are listed in the role group details pane.
     
-### Remove a role group
+## Remove a role group
 <a name="RemoveRG"> </a>
 
 If you no longer need a role group you created, you can remove it. When you remove a role group, the management role assignments between the role group and the management roles are deleted. The management roles aren't deleted. If a user depended on the role group for access to a feature, the user will no longer have access to the feature. You can't remove built-in role groups.
   
-#### Use the EAC to remove a role group
+### Use the EAC to remove a role group
 
-1. In the EAC, navigate to **Permissions** > **Admin Roles**.
+1. In the EAC, navigate to **Permissions** \> **Admin Roles**.
     
 2. Select the role group you want to remove and then click **Delete**![Delete icon](../media/ITPro_EAC_DeleteIcon.png).
     
 3. Verify that you want to remove the selected role group, and if so, respond **Yes** to the warning. 
     
-#### Use the Exchange Management Shell to remove a role group
+### Use the Exchange Management Shell to remove a role group
 
 To remove a role group, see the [Examples](http://technet.microsoft.com/library/6fe6975b-bc0f-4920-b0b0-6da245429f64.aspx#Examples) section in [Remove-RoleGroup](http://technet.microsoft.com/library/6fe6975b-bc0f-4920-b0b0-6da245429f64.aspx).
   
-### View role groups
+## View role groups
 <a name="ViewRG"> </a>
 
 You can view either a list of role groups or the detailed information about a specific role group that exists in your organization.
   
-#### Use the EAC to view a list of role groups and role group details
+### Use the EAC to view a list of role groups and role group details
 
-1. In the EAC, navigate to **Permissions** > **Admin Roles**. All of the role groups in your organization are listed here.
+1. In the EAC, navigate to **Permissions** \> **Admin Roles**. All of the role groups in your organization are listed here.
     
 2. Select a role group to view the members, assigned roles, and scope that are configured on the role group.
     
-#### Use the Exchange Management Shell to view a list of role groups and role group details
+### Use the Exchange Management Shell to view a list of role groups and role group details
 
 To view a list of role groups, see the [Examples](http://technet.microsoft.com/library/369800ff-fced-4d1c-adb0-1ddbe798670d.aspx#Examples) section in [Get-RoleGroup](http://technet.microsoft.com/library/369800ff-fced-4d1c-adb0-1ddbe798670d.aspx).
   
-### Add a role to a role group
+## Add a role to a role group
 <a name="AddRemoveRGRole"> </a>
 
 Adding a management role to a role group is the best and simplest way to grant permissions to a group of administrators or specialist users. If you want to give users that are members of a role group the ability to manage a feature, you add the management role that manages the feature to the role group. After the role is added, the members of the role group are granted the permissions provided by the role.
   
-#### Use the EAC to add a management role to a role group
+### Use the EAC to add a management role to a role group
 
 > [!IMPORTANT]
 > You can't use the EAC to add roles to a role group if you've used the Exchange Management Shell to configure multiple management role scopes or exclusive scopes on the role group. If you've configured multiple scopes or exclusive scopes on the role group, you must use the Exchange Management Shell procedures later in this topic to add roles to the role group. For more information about management role scopes, see [Understanding Management Role Scopes](http://technet.microsoft.com/library/24ed4a38-438a-4223-9f9c-5d4dea4b046b.aspx). 
   
-1. In the EAC, navigate to **Permissions** > **Admin Roles**.
+1. In the EAC, navigate to **Permissions** \> **Admin Roles**.
     
 2. Select the role group you want to add a role to, and then click **Edit**![Edit icon](../media/ITPro_EAC_EditIcon.png).
     
@@ -231,7 +231,7 @@ Adding a management role to a role group is the best and simplest way to grant p
     
 4. When you've finished adding roles to the role group, click **Save**.
     
-#### Use the Exchange Management Shell to create a role assignment with no scope
+### Use the Exchange Management Shell to create a role assignment with no scope
 
 You can create a role assignment with no scope between a role and a role group. When you do this, the implicit read and implicit write scopes of the role apply.
   
@@ -249,7 +249,7 @@ New-ManagementRoleAssignment -SecurityGroup "Seattle Compliance" -Role "Transpor
 
 For detailed syntax and parameter information, see [New-ManagementRoleAssignment](http://technet.microsoft.com/library/34d4f2e3-f2c5-49e1-a6a9-1366da65a78c.aspx).
   
-#### Use the Exchange Management Shell to create a role assignment with a predefined scope
+### Use the Exchange Management Shell to create a role assignment with a predefined scope
 
 If a predefined scope meets your business requirements, you can apply that scope to the role assignment rather than create a new one. For a list of predefined scopes and their descriptions, see [Understanding Management Role Scopes](http://technet.microsoft.com/library/24ed4a38-438a-4223-9f9c-5d4dea4b046b.aspx).
   
@@ -269,7 +269,7 @@ New-ManagementRoleAssignment -SecurityGroup "Enterprise Support" -Role "Message 
 
 For detailed syntax and parameter information, see [New-ManagementRoleAssignment](http://technet.microsoft.com/library/34d4f2e3-f2c5-49e1-a6a9-1366da65a78c.aspx).
   
-#### Use the Exchange Management Shell to create a role assignment with a recipient filter-based scope
+### Use the Exchange Management Shell to create a role assignment with a recipient filter-based scope
 
 If you created a recipient filter-based scope, you need to include the scope in the command used to assign the role to a role group by using the  _CustomRecipientWriteScope_ parameter. 
   
@@ -295,7 +295,7 @@ New-ManagementRoleAssignment -SecurityGroup "Seattle Recipient Admins" -Role "Me
 
 For detailed syntax and parameter information, see [New-ManagementRoleAssignment](http://technet.microsoft.com/library/34d4f2e3-f2c5-49e1-a6a9-1366da65a78c.aspx).
   
-#### Use the Exchange Management Shell to create a role assignment with a configuration scope
+### Use the Exchange Management Shell to create a role assignment with a configuration scope
 
 If you created a server or database configuration filter or list-based scope, you need to include the scope in the command used to assign the role to a role group by using the  _CustomConfigWriteScope_ parameter. 
   
@@ -321,7 +321,7 @@ New-ManagementRoleAssignment -SecurityGroup "Seattle Server Admins" -Role "Datab
 
 For detailed syntax and parameter information, see [New-ManagementRoleAssignment](http://technet.microsoft.com/library/34d4f2e3-f2c5-49e1-a6a9-1366da65a78c.aspx).
   
-#### Use the Exchange Management Shell to create a role assignment with an OU scope
+### Use the Exchange Management Shell to create a role assignment with an OU scope
 
 If you want to scope a role's write scope to an OU, you can specify the OU in the  _RecipientOrganizationalUnitScope_ parameter directly. 
   
@@ -345,15 +345,15 @@ New-ManagementRoleAssignment -SecurityGroup "Seattle Recipient Admins" -Role "Ma
 
 For detailed syntax and parameter information, see [New-ManagementRoleAssignment](http://technet.microsoft.com/library/34d4f2e3-f2c5-49e1-a6a9-1366da65a78c.aspx).
   
-#### How do you know this worked?
+### How do you know this worked?
 
 To verify that you have successfully added roles to a role group, do the following:
   
-1. In the EAC, navigate to **Permissions** > **Admin Roles**.
+1. In the EAC, navigate to **Permissions** \> **Admin Roles**.
     
 2. Select the role group you added roles to. In the role group details pane, verify that the roles that you added are listed.
     
-### Remove a role from a role group
+## Remove a role from a role group
 <a name="AddRemoveRGRole"> </a>
 
 Removing a role from a management role group is the best and simplest way to revoke permissions granted to a group of administrators or specialist users. If you don't want administrators or specialist users to have permissions to manage a feature, you remove the management role from the management role group that manages the permissions. After the role is removed, the members of the role group will no longer have permissions to manage the feature.
@@ -361,12 +361,12 @@ Removing a role from a management role group is the best and simplest way to rev
 > [!NOTE]
 > Some role groups, such as the Organization Management role group, restrict what roles can be removed from a role group. For more information, see [Understanding Management Role Groups](http://technet.microsoft.com/library/2a92e06c-523e-4fd4-a937-152562b7741d.aspx). > If an administrator is a member of another role group that contains management roles that grants permissions to manage the feature, you need to either remove the administrator from the other role groups, or remove the role that grants permissions to manage the feature from the other role groups. 
   
-#### Use the EAC to remove a management role from a role group
+### Use the EAC to remove a management role from a role group
 
 > [!IMPORTANT]
 > You can't use the EAC to remove roles from a role group if you've used the Exchange Management Shell to configure multiple scopes or exclusive scopes on the role group. If you've configured multiple scopes or exclusive scopes on the role group, you must use the Exchange Management Shell procedures later in this topic to remove roles from the role group. For more information about management role scopes, see [Understanding Management Role Scopes](http://technet.microsoft.com/library/24ed4a38-438a-4223-9f9c-5d4dea4b046b.aspx). 
   
-1. In the EAC, navigate to **Permissions** > **Admin Roles**.
+1. In the EAC, navigate to **Permissions** \> **Admin Roles**.
     
 2. Select the role group you want to remove a role from, and then click **Edit**![Edit icon](../media/ITPro_EAC_EditIcon.png).
     
@@ -374,7 +374,7 @@ Removing a role from a management role group is the best and simplest way to rev
     
 4. When you've finished removing roles from the role group, click **Save**.
     
-#### Use the Exchange Management Shell to remove a role from a role group
+### Use the Exchange Management Shell to remove a role from a role group
 
 You can remove roles from role groups by retrieving the associated management role assignment using the **Get-ManagementRoleAssignment** cmdlet and then piping the role assignment returned to the **Remove-ManagementRoleAssignment** cmdlet. Unless you want to remove both delegating and regular role assignments at the same time, specify the  _Delegating_ parameter to specify whether you want to remove regular or delegating role assignments. 
   
@@ -396,15 +396,15 @@ Get-ManagementRoleAssignment -RoleAssignee "Seattle Recipient Administrators" -R
 
 For detailed syntax and parameter information, see [Remove-ManagementRoleAssignment](http://technet.microsoft.com/library/e2fd10e1-c0ae-48a6-992d-5b34bc73880b.aspx).
   
-#### How do you know this worked?
+### How do you know this worked?
 
 To verify that you have successfully removed roles from a role group, do the following:
   
-1. In the EAC, navigate to **Permissions** > **Admin Roles**.
+1. In the EAC, navigate to **Permissions** \> **Admin Roles**.
     
 2. Select the role group you removed roles from. In the role group details pane, verify that the roles that you removed are no longer listed.
     
-### Change a role group's scope
+## Change a role group's scope
 <a name="ChangeRGScope"> </a>
 
 The management role assignments between a role group and a role contain management scopes, which determine what objects are made available to members of that role group. By changing the write scope on a role group, you can change what objects are made available to role group members to create, change, or remove. You can't change the read scope on a role group.
@@ -417,14 +417,14 @@ For more information about management role scopes and assignments in Exchange 20
     
 - [Understanding Management Role Assignments](http://technet.microsoft.com/library/1dc33dd6-52fb-4852-a5ce-027bc73e1d8f.aspx)
     
-#### Use the EAC to change the scope on a role group
+### Use the EAC to change the scope on a role group
 
 When you use the EAC to change the scope on a role group, you're actually changing the scope on all the role assignments between the role group and each of the management roles assigned to the role group. If you want to change the scope on specific role assignments, you must use the Exchange Management Shell procedures later in this topic.
   
 > [!IMPORTANT]
 > You can't use the EAC to manage scopes on role assignments between roles and a role group if you've used the Exchange Management Shell to configure multiple scopes or exclusive scopes on those role assignments. If you've configured multiple scopes or exclusive scopes on those role assignments, you must use the Exchange Management Shell procedures later in this topic to manage scopes. For more information about management role scopes, see [Understanding Management Role Scopes](http://technet.microsoft.com/library/24ed4a38-438a-4223-9f9c-5d4dea4b046b.aspx). 
   
-1. In the EAC, navigate to **Permissions** > **Admin Roles**.
+1. In the EAC, navigate to **Permissions** \> **Admin Roles**.
     
 2. Select the role group you want to change the scope on, and then click **Edit**![Edit icon](../media/ITPro_EAC_EditIcon.png).
     
@@ -432,11 +432,11 @@ When you use the EAC to change the scope on a role group, you're actually changi
     
   - A write scope from the drop-down box, where you can select either the default write scope or a custom write scope.
     
-  - **Organizational unit** Select this option and provide an organizational unit (OU) if you want to scope this role group to an OU. 
+  - **Organizational unit**: Select this option and provide an organizational unit (OU) if you want to scope this role group to an OU.
     
 4. Click **Save** to save the changes to the role group. 
     
-#### Use the Exchange Management Shell to change the scope of all role assignments on a role group at the same time
+### Use the Exchange Management Shell to change the scope of all role assignments on a role group at the same time
 
 Role assignments between the role group and the roles assigned to it can use the implicit scope obtained from the roles themselves, the same custom scope, or different custom scopes. For more information about role assignments, see [Understanding Management Role Assignments](http://technet.microsoft.com/library/1dc33dd6-52fb-4852-a5ce-027bc73e1d8f.aspx).
   
@@ -469,7 +469,7 @@ For more information about changing management role assignments, see [Change a R
   
 For detailed syntax and parameter information, see [Get-ManagementRoleAssignment](http://technet.microsoft.com/library/a3a6ee46-061b-444a-8639-43a416309445.aspx).
   
-#### Use the Exchange Management Shell to change the scope of individual role assignments on a role group
+### Use the Exchange Management Shell to change the scope of individual role assignments on a role group
 
 Role assignments between the role group and the roles assigned to it can use the implicit scope obtained from the roles themselves, the same custom scope, or different custom scopes. For more information about role assignments, see [Understanding Management Role Assignments](http://technet.microsoft.com/library/1dc33dd6-52fb-4852-a5ce-027bc73e1d8f.aspx).
   
@@ -507,13 +507,13 @@ For more information about changing management role assignments, see [Change a R
   
 For detailed syntax and parameter information, see [Set-ManagementRoleAssignment](http://technet.microsoft.com/library/2e0659f9-dfb6-4d91-93fb-35a6a7f8a449.aspx).
   
-#### How do you know this worked?
+### How do you know this worked?
 
 To verify that you have successfully changed the scope of a role assignment on a role group, do the following:
   
 - If you used the EAC to configure the scope on the role group, do the following:
     
-1. In the EAC, navigate to **Permissions**> **Admin Roles**. All the role groups in your organization are listed here.
+1. In the EAC, navigate to **Permissions**\> **Admin Roles**. All the role groups in your organization are listed here.
     
 2. Select a role group to view the scope that's configured on the role group.
     
@@ -527,7 +527,7 @@ To verify that you have successfully changed the scope of a role assignment on a
 
 2. Verify that the write scope on the role assignments has been changed to the scope you specified.
     
-### Add or remove a role group delegate
+## Add or remove a role group delegate
 <a name="AddRemoveRGDelegate"> </a>
 
 Role group delegates are users or universal security groups (USGs) that can add or remove members from a role group or change the properties of a role group. By adding or removing role group delegates, you can control who is allowed to manage a role group.
@@ -538,7 +538,7 @@ Role group delegates are users or universal security groups (USGs) that can add 
 > [!NOTE]
 > You can't use the EAC to add a delegate to a role group. 
   
-#### Use the Exchange Management Shell to add a delegate to a role group
+### Use the Exchange Management Shell to add a delegate to a role group
 
 To change the list of delegates on a role group, you use the  _ManagedBy_ parameter on the **Set-RoleGroup** cmdlet. The  _ManagedBy_ parameter overwrites the entire delegate list on the role group. If you want to add delegates to the role group rather than replace the entire list of delegates, use the following steps: 
   
@@ -575,7 +575,7 @@ Set-RoleGroup "Organization Management" -ManagedBy $RoleGroup.ManagedBy
 
 For detailed syntax and parameter information, see [Set-RoleGroup](http://technet.microsoft.com/library/c66ee1a2-cec7-4b76-a592-a5e626f4f9d3.aspx).
   
-#### Use the Exchange Management Shell to remove a delegate from a role group
+### Use the Exchange Management Shell to remove a delegate from a role group
 
 To change the list of delegates on a role group, you use the  _ManagedBy_ parameter on the **Set-RoleGroup** cmdlet. The  _ManagedBy_ parameter overwrites the entire delegate list on the role group. If you want to remove delegates from the role group rather than replace the entire list of delegates, use the following steps: 
   
@@ -612,7 +612,7 @@ Set-RoleGroup "Organization Management" -ManagedBy $RoleGroup.ManagedBy
 
 For detailed syntax and parameter information, see [Set-RoleGroup](http://technet.microsoft.com/library/c66ee1a2-cec7-4b76-a592-a5e626f4f9d3.aspx).
   
-#### How do you know this worked?
+### How do you know this worked?
 
 To verify that you have successfully changed the delegate list on a role group, do the following:
   

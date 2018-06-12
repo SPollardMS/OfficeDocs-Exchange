@@ -3,19 +3,19 @@ title: "Verify an Exchange 2016 installation"
 ms.author: dstrome
 author: dstrome
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: get-started-article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.collection: Strat_EX_Admin
 ms.assetid: fdd20a2a-c8c1-4d17-b813-3c05d88a4411
-description: "Summary: Verifying your Exchange 2016 installation and making troubleshooting easier."
+description: "Summary: Learn how to verify your Exchange 2016 installation and make troubleshooting easier."
 ---
 
 # Verify an Exchange 2016 installation
 
- **Summary**: Verifying your Exchange 2016 installation and making troubleshooting easier.
+ **Summary**: Learn how to verify your Exchange 2016 installation and make troubleshooting easier.
   
 After you install Microsoft Exchange Server 2016, we recommend that you verify the installation by running the **Get-ExchangeServer** cmdlet and by reviewing the setup log file. If the setup process fails or errors occur during installation, you can use the setup log file to track down the source of the problem. 
   

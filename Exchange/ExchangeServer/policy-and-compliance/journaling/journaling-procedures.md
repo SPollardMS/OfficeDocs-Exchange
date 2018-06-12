@@ -3,18 +3,18 @@ title: "Journaling procedures in Exchange 2016"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 4/20/2018
+ms.date: 6/8/2018
 ms.audience: End User
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: d517f27e-f80a-4a06-988c-cbbf981c701d
-description: "Learn how to configure journaling in Exchange 2016."
+description: "Summary: Learn how to configure journaling in Exchange 2016."
 ---
 
 # Journaling procedures in Exchange 2016
 
-Learn how to configure journaling in Exchange 2016.
+ **Summary**: Learn how to configure journaling in Exchange 2016.
   
 Journaling in Exchange Server 2016 records inbound and outbound email messages. For more information, see [Journaling in Exchange 2016](journaling.md).
   
@@ -42,7 +42,7 @@ Standard journaling records all messages that are sent to and received by all ma
   
 ### Use the EAC enable or disable journaling on mailbox databases
 
-1. In the EAC, go to **Servers** > **Databases**.
+1. In the EAC, go to **Servers** \> **Databases**.
     
 2. Select the mailbox database, and then click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)).
     
@@ -91,7 +91,7 @@ Get-MailboxDatabase | Set-MailboxDatabase -JournalRecipient $null
 
 To verify that you've successfully enabled or disabled journaling on a mailbox database, use any of the following procedures:
   
-- In the EAC, go to **Servers** > **Databases** > select the database > **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)) > **Maintenance**, and verify the **Journal recipient** field is populated (journaling is enabled), or empty (journaling is disabled). 
+- In the EAC, go to **Servers** \> **Databases** \> select the database \> **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)) \> **Maintenance**, and verify the **Journal recipient** field is populated (journaling is enabled), or empty (journaling is disabled). 
     
 - In the Exchange Management Shell, run the following command to verify the value of the **JournalRecipient** property on all mailbox databases in your organization: 
     
@@ -103,7 +103,7 @@ To verify that you've successfully enabled or disabled journaling on a mailbox d
     
 ## Procedures for premium journaling
 
-Premium journaling uses journal rules to record messages based on recipients (all recipients or specified recipients) and scope (internal messages, external messages, or all messages). Premium journaling requires Exchange Enterprise client access licenses (CALs). For more information about CALs, see [Exchange Server Licensing](https://go.microsoft.com/fwlink/p/?linkid=237292).
+Premium journaling uses  *journal rules*  to record messages based on recipients (all recipients or specified recipients) and scope (internal messages, external messages, or all messages). Premium journaling requires Exchange Enterprise client access licenses (CALs). For more information about CALs, see [Exchange Server Licensing](https://go.microsoft.com/fwlink/p/?linkid=237292).
   
 ### Create journal rules
 <a name="CreateJournalRule"> </a>
@@ -119,7 +119,7 @@ The basic components of a journal rule are:
 #### Use the EAC to create journal rules
 <a name="CreateJournalRuleEAC"> </a>
 
-1. In the EAC, go to **Compliance management** > **Journal rules**, and then click **Add** ( ![Add icon](../../media/ITPro_EAC_AddIcon.png)).
+1. In the EAC, go to **Compliance management** \> **Journal rules**, and then click **Add** ( ![Add icon](../../media/ITPro_EAC_AddIcon.png)).
     
 2. In **New journal rule** window that opens, configure the following settings: 
     
@@ -177,7 +177,7 @@ For detailed syntax and parameter information, see [New-JournalRule](http://tech
 
 To verify that you've successfully created a journal rule, use any of the following procedures:
   
-- In the EAC, go to **Compliance management** > **Journal rules** and verify that the new journal rule you created is listed. 
+- In the EAC, go to **Compliance management** \> **Journal rules** and verify that the new journal rule you created is listed. 
     
 - In the Exchange Management Shell, run the following command to verify that the new journal rule is listed:
     
@@ -199,7 +199,7 @@ After you create a journal rule, you can use the EAC or the Exchange Management 
   
 #### Use the EAC to enable or disable journal rules
 
-1. In the EAC, go to **Compliance management** > **Journal rules**.
+1. In the EAC, go to **Compliance management** \> **Journal rules**.
     
 2. In the list view, select the journal rule and in the **On** column, clear the check box to disable the rule, and select the check box to enable the rule. 
     
@@ -227,7 +227,7 @@ Enable-JournalRule -Identity "Contoso Legal"
 
 To verify that you've successfully enabled or disabled a journal rule, use any of the following procedures:
   
-- In the EAC, go to **Compliance management** > **Journal rules**, and verify the status of the check box in the **On** column for the rule. 
+- In the EAC, go to **Compliance management** \> **Journal rules**, and verify the status of the check box in the **On** column for the rule. 
     
 - In the Exchange Management Shell, run the following command to verify the value of the **Enabled** property on all journal rules: 
     
@@ -242,7 +242,7 @@ To verify that you've successfully enabled or disabled a journal rule, use any o
 
 No additional settings are available when you modify a journal rule. They're the same settings that were available when you created the rule:
   
-- **EAC**: Go to **Compliance management** > **Journal rules**, and then click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)). The available settings are the same as when you created the rule. For more information, see the [Use the EAC to create journal rules](journaling-procedures.md#CreateJournalRuleEAC) section. 
+- **EAC**: Go to **Compliance management** \> **Journal rules**, and then click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)). The available settings are the same as when you created the rule. For more information, see the [Use the EAC to create journal rules](journaling-procedures.md#CreateJournalRuleEAC) section. 
     
 - **Exchange Management Shell**: The syntax to modify a journal rule is:
     
@@ -259,7 +259,7 @@ No additional settings are available when you modify a journal rule. They're the
 
 #### Use the EAC to remove journal rules
 
-1. In the EAC, go to **Compliance management** > **Journal rules**.
+1. In the EAC, go to **Compliance management** \> **Journal rules**.
     
 2. In the list view, select the rule or rules that you want to remove, and then click **Delete** ( ![Delete icon](../../media/ITPro_EAC_DeleteIcon.png)).
     
@@ -283,7 +283,7 @@ For detailed syntax and parameter information, see [Remove-JournalRule](http://t
 
 To verify that you've successfully removed a journal rule, use any of the following procedures:
   
-- In the EAC, go to **Compliance management** > **Journal rules** and verify that the rule you removed is no longer listed. 
+- In the EAC, go to **Compliance management** \> **Journal rules** and verify that the rule you removed is no longer listed. 
     
 - In the Exchange Management Shell, run the following command to verify that the rule you removed is no longer listed:
     
@@ -323,14 +323,14 @@ Get-TransportConfig | Format-List VoicemailJournalingEnabled
 ### Specify the alternate journaling mailbox
 <a name="DisableJournalingForUMNotifications"> </a>
 
-For premium journaling, you can specify an alternate journaling mailbox that accepts non-delivery reports (also known as NDRs or bounce messages) for  *all*  undeliverable journal reports when  *any*  journaling mailbox is unavailable (one alternate journaling mailbox for all journaling mailboxes in your organization). For more information, see [Alternate journaling mailbox](journaling.md#alternate).
+For premium journaling, you can specify an  *alternate journaling mailbox*  that accepts non-delivery reports (also known as NDRs or bounce messages) for  *all*  undeliverable journal reports when  *any*  journaling mailbox is unavailable (one alternate journaling mailbox for all journaling mailboxes in your organization). For more information, see [Alternate journaling mailbox](journaling.md#alternate).
   
 > [!CAUTION]
 > If the alternate journaling mailbox also becomes unavailable and rejects the NDRs for undeliverable journal reports, the original journal reports are lost and can't be retrieved. 
   
 #### Use the EAC to specify the alternate journaling mailbox
 
-1. In the EAC, go to **Compliance management** > **Journal rules**.
+1. In the EAC, go to **Compliance management** \> **Journal rules**.
     
 2. Click **Select address** next to **Send undeliverable journal reports to**.
     
@@ -362,7 +362,7 @@ Set-TransportConfig -JournalingReportNdrTo $null
 
 To verify that you've successfully specified an alternate journaling mailbox, use any of the following procedures:
   
-- In the EAC, go to **Compliance management** > **Journal rules** and verify the value of **Send undeliverable journal reports to**.
+- In the EAC, go to **Compliance management** \> **Journal rules** and verify the value of **Send undeliverable journal reports to**.
     
 - In the Exchange Management Shell, run the following command to verify the value of the **JournalingReportNdrTo** property: 
     

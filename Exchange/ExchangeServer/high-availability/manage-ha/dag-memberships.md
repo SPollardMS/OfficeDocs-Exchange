@@ -3,7 +3,7 @@ title: "Manage database availability group membership"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/4/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
@@ -24,7 +24,7 @@ Looking for other management tasks related to DAGs? Check out [Managing database
 
 - Estimated time to complete: 5 minutes per server
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Database availability groups" entry in the [High availability and site resilience permissions](../../permissions/feature-permissions/ha-permissions.md) topic. 
+- To open the EAC, see [Exchange admin center in Exchange 2016](../../architecture/client-access/exchange-admin-center.md). To open the Exchange Management Shell, see [Open the Exchange Management Shell](http://technet.microsoft.com/library/63976059-25f8-4b4f-b597-633e78b803c0.aspx).
     
 - DAGs use Windows Failover Clustering (WFC) technologies. Each Mailbox server that's a member of a DAG is also a node in the underlying cluster used by the DAG. As a result, at any specific time, a Mailbox server can be a member of only one DAG. Because DAGs use WFC technology, all servers added to a DAG must be running the same operating system: either Windows Server 2008 R2 Enterprise or Datacenter Edition, or the Standard or Datacenter Edition of Windows Server 2012 or Windows Server 2012 R2.
     
@@ -34,17 +34,17 @@ Looking for other management tasks related to DAGs? Check out [Managing database
     
 - You must remove all replicated database copies from the server before you can remove it from a DAG.
     
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Database availability groups" entry in the [High availability and site resilience permissions](../../permissions/feature-permissions/ha-permissions.md) topic. 
+    
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/eac-keyboard-shortcuts.md).
     
 > [!TIP]
 > Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).. 
   
-## What do you want to do?
-
-### Use the EAC to manage database availability group membership
+## Use the EAC to manage database availability group membership
 <a name="UseEMC"> </a>
 
-1. In the EAC, go to **Servers** > **Database Availability Groups**.
+1. In the EAC, go to **Servers** \> **Database Availability Groups**.
     
 2. Select the DAG you want to configure, and then click ![Manage DAG members](../../media/ITPro_EAC_ManageDagMembersIcon.png).
     
@@ -56,7 +56,7 @@ Looking for other management tasks related to DAGs? Check out [Managing database
     
 4. When the task has completed successfully, click **Close**.
     
-### Use the Exchange Management Shell to manage database availability group membership
+## Use the Exchange Management Shell to manage database availability group membership
 <a name="UseShell"> </a>
 
 This example adds the Mailbox server MBX1 to the DAG DAG1.
@@ -78,10 +78,11 @@ Remove-DatabaseAvailabilityGroupServer -Identity DAG2 -MailboxServer MBX4 -Confi
 ```
 
 ## How do you know this worked?
+<a name="UseShell"> </a>
 
 To verify that you've successfully managed DAG membership, do one of the following:
   
-- In the EAC, navigate to **Servers** > **Database Availability Groups**. The current DAG membership is displayed in the **Member Servers** column. 
+- In the EAC, navigate to **Servers** \> **Database Availability Groups**. The current DAG membership is displayed in the **Member Servers** column. 
     
 - In the Exchange Management Shell, run the following command to display DAG membership information.
     
@@ -90,6 +91,7 @@ To verify that you've successfully managed DAG membership, do one of the followi
   ```
 
 ## For more information
+<a name="UseShell"> </a>
 
 [Add-DatabaseAvailabilityGroupServer](http://technet.microsoft.com/library/6bd0a3fe-dec6-47c2-b9a3-8dffb60e4aad.aspx)
   

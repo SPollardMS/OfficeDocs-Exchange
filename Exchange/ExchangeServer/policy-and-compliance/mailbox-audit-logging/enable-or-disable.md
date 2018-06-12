@@ -3,26 +3,25 @@ title: "Enable or disable mailbox audit logging for a mailbox"
 ms.author: serdars
 author: SerdarSoysal
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: End User
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: c4bbfd52-6196-49c7-8c31-777fbbee11f2
-description: "Learn how to configure mailbox audit logging on mailboxes in Exchange 2016."
+description: "Summary: Learn how to configure mailbox audit logging on mailboxes in Exchange 2016."
 ---
 
 # Enable or disable mailbox audit logging for a mailbox
 
-Learn how to configure mailbox audit logging on mailboxes in Exchange 2016.
+ **Summary**: Learn how to configure mailbox audit logging on mailboxes in Exchange 2016.
   
 With mailbox audit logging in Exchange Server 2016, you can track logons to a mailbox as well as what actions are taken while the user is logged on. When you enable mailbox audit logging for a mailbox, some actions performed by administrators and delegates are logged by default. None of the actions performed by the mailbox owner are logged by default. To learn more about mailbox audit logging and what actions can be logged, see [Mailbox audit logging in Exchange 2016](mailbox-audit-logging.md).
   
 > [!CAUTION]
 > Auditing of mailbox owner actions can generate a large number of mailbox audit log entries and is therefore disabled by default. We recommend that you only enable auditing of specific owner actions needed to meet business or compliance requirements. 
   
-## Before you begin
-<a name="top"> </a>
+## What do you need to know before you begin?
 
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Mailbox audit logging" entry in the [Messaging policy and compliance permissions in Exchange 2016](../../permissions/feature-permissions/policy-and-compliance-permissions.md) topic. 
     
@@ -41,7 +40,6 @@ With mailbox audit logging in Exchange Server 2016, you can track logons to a ma
   - Microsoft Exchange Server MAPI Editor is used to access the mailbox.
     
 ## Enable or disable mailbox audit logging
-<a name="top"> </a>
 
 You can use the Exchange Management Shell to enable or disable mailbox audit logging for a mailbox. This enables or disables logging of all operations specified for administrator, delegates, and the mailbox owner.
   
@@ -66,7 +64,6 @@ Set-Mailbox -Identity "Ben Smith" -AuditEnabled $false
 For detailed syntax and parameter information, see [Set-Mailbox](http://technet.microsoft.com/library/a0d413b9-d949-4df6-ba96-ac0906dedae2.aspx).
   
 ## Configure mailbox audit logging settings for administrator, delegate, and owner access
-<a name="top"> </a>
 
 When mailbox audit logging is enabled for a mailbox, only the administrator, delegate, and owner actions specified in the audit logging configuration for the mailbox are logged.
   
@@ -90,10 +87,7 @@ Set-Mailbox -Identity "Ben Smith" -AuditOwner HardDelete -AuditEnabled $true
 
 For detailed syntax and parameter information, see [Set-Mailbox](http://technet.microsoft.com/library/a0d413b9-d949-4df6-ba96-ac0906dedae2.aspx).
   
-[Before you begin](enable-or-disable.md#top)
-  
 ## How do you know this worked?
-<a name="top"> </a>
 
 To verify that you have successfully enabled mailbox audit logging for a mailbox and specified the correct logging settings for administrator, delegate, or owner access, use the [Get-Mailbox](http://technet.microsoft.com/library/8a5a6eb9-4a75-47f9-ae3b-a3ba251cf9a8.aspx) cmdlet to retrieve the mailbox audit logging settings for that mailbox. 
   
@@ -142,6 +136,4 @@ Get-Mailbox -ResultSize Unlimited -Filter {RecipientTypeDetails -eq "UserMailbox
   Get-Mailbox -ResultSize Unlimited -Filter {RecipientTypeDetails -eq "UserMailbox"} | Set-Mailbox -AuditLogAgeLimit 60
   ```
 
-[Before you begin](enable-or-disable.md#top)
-  
 

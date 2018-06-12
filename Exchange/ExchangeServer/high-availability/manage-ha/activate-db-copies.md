@@ -3,7 +3,7 @@ title: "Activate a mailbox database copy"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
@@ -16,13 +16,15 @@ description: "Summary: How to designate a passive copy of an Exchange 2016 mailb
 
  **Summary**: How to designate a passive copy of an Exchange 2016 mailbox database as the new active copy.
   
-Activating a mailbox database copy is the process of designating a specific passive copy as the new active copy of a mailbox database. This process is referred to as a database switchover. A database switchover involves dismounting the current active database and mounting the database copy on the specified server as the new active mailbox database copy. The database copy that will become the active mailbox database must be healthy and current.
+Activating a mailbox database copy is the process of designating a specific passive copy as the new active copy of a mailbox database. This process is referred to as a  *database switchover*  . A database switchover involves dismounting the current active database and mounting the database copy on the specified server as the new active mailbox database copy. The database copy that will become the active mailbox database must be healthy and current. 
   
 Looking for other management tasks related to mailbox database copies? Check out [Managing mailbox database copies](http://technet.microsoft.com/library/06df16b4-f209-4d3a-8c68-0805c745f9b2.aspx).
   
 ## What do you need to know before you begin?
 
 - Estimated time to complete this task: 1 minute
+    
+- To open the EAC, see [Exchange admin center in Exchange 2016](../../architecture/client-access/exchange-admin-center.md). To open the Exchange Management Shell, see [Open the Exchange Management Shell](http://technet.microsoft.com/library/63976059-25f8-4b4f-b597-633e78b803c0.aspx).
     
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Mailbox database copies" entry in the [High availability and site resilience permissions](../../permissions/feature-permissions/ha-permissions.md) topic. 
     
@@ -31,12 +33,10 @@ Looking for other management tasks related to mailbox database copies? Check out
 > [!TIP]
 > Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
   
-## What do you want to do?
-
-### Use the EAC to move the active mailbox database
+## Use the EAC to move the active mailbox database
 <a name="UseEMC"> </a>
 
-1. In the EAC, go to **Servers** > **Databases**.
+1. In the EAC, go to **Servers** \> **Databases**.
     
 2. Select the database whose copy you want to activate.
     
@@ -44,7 +44,7 @@ Looking for other management tasks related to mailbox database copies? Check out
     
 4. Click **yes** to activate the database copy. 
     
-### Use the Exchange Management Shell to move the active mailbox database
+## Use the Exchange Management Shell to move the active mailbox database
 <a name="UseShell"> </a>
 
 This example activates and mounts a copy of the database DB4 hosted on MBX3 as the new active mailbox database. This command makes DB4 the new active mailbox database, and it doesn't override the database mount dial settings on MBX3.
@@ -90,10 +90,11 @@ Move-ActiveMailboxDatabase DB5 MBX6 -SkipClientExperienceChecks
 ```
 
 ## How do you know this worked?
+<a name="UseShell"> </a>
 
 To verify that you've successfully activated a mailbox database copy, do one of the following:
   
-- In the EAC, navigate to **Servers** > **Databases**. Select the appropriate database, and in the Details pane, click **View details** to view the database copy properties. 
+- In the EAC, navigate to **Servers** \> **Databases**. Select the appropriate database, and in the Details pane, click **View details** to view the database copy properties. 
     
 - In the Exchange Management Shell, run the following command to display status information for a database copy.
     
@@ -102,6 +103,7 @@ To verify that you've successfully activated a mailbox database copy, do one of 
   ```
 
 ## For more information
+<a name="UseShell"> </a>
 
 [Mailbox database copies](../../high-availability/dags/database-copies.md)
   

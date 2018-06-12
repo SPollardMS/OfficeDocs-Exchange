@@ -39,7 +39,7 @@ For additional management tasks related to public folders, see [Public folder pr
 
 When using the EAC to create a public folder, you'll only be able to set the name and the path of the public folder. To configure additional settings, you'll need to edit the public folder after it's created.
   
-1. Navigate to **Public folders** > **Public folders**.
+1. Navigate to **Public folders** \> **Public folders**.
     
 2. If you want to create this public folder as a child of an existing public folder, click the existing public folder in the list view. If you want to create a top-level public folder, skip this step.
     

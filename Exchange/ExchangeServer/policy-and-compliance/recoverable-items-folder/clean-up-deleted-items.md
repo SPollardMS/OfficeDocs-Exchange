@@ -3,20 +3,20 @@ title: "Clean up or delete items from the Recoverable Items folder"
 ms.author: chrisda
 author: chrisda
 manager: scotv
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 82c310f8-de2f-46f2-8e1a-edb6055d6e69
-description: "Learn how administrators can use the Exchange Management Shell to clean up or delete items from the Recoverable Items folder in Exchange 2016."
+description: "Summary: Learn how administrators can use the Exchange Management Shell to clean up or delete items from the Recoverable Items folder in Exchange 2016."
 ---
 
 # Clean up or delete items from the Recoverable Items folder
 
-Learn how administrators can use the Exchange Management Shell to clean up or delete items from the Recoverable Items folder in Exchange 2016.
+ **Summary**: Learn how administrators can use the Exchange Management Shell to clean up or delete items from the Recoverable Items folder in Exchange 2016.
   
-The Recoverable Items folder (known in earlier versions of Exchange as the dumpster) exists to protect from accidental or malicious deletions and to facilitate discovery efforts commonly undertaken before or during litigation or investigations.
+The Recoverable Items folder (known in earlier versions of Exchange as  *the dumpster*  ) exists to protect from accidental or malicious deletions and to facilitate discovery efforts commonly undertaken before or during litigation or investigations. 
   
 How you clean up a user's Recoverable Items folder depends on whether the mailbox is placed on In-Place Hold or Litigation Hold, or had single item recovery enabled:
   
@@ -50,8 +50,6 @@ Search-Mailbox -Identity "Gurinder Singh" -SearchDumpsterOnly -TargetMailbox "Di
 > To delete items from the mailbox without copying them to another mailbox, use the preceding command without the  _TargetMailbox_ and  _TargetFolder_ parameters. 
   
 For detailed syntax and parameter information, see [Search-Mailbox](http://technet.microsoft.com/library/9ee3b02c-d343-4816-a583-a90b1fad4b26.aspx).
-  
-[Return to top](clean-up-deleted-items.md#top)
   
 ## Use the Exchange Management Shell to clean up the Recoverable Items folder for mailboxes that are placed on hold or have single item recovery enabled
 
@@ -192,8 +190,6 @@ This procedure copies items from Gurinder Singh's Recoverable Items folder to th
   Set-CASMailbox -ActiveSyncEnabled $true -EwsEnabled $true -MAPIEnabled $true -OWAEnabled $true -ImapEnabled $true -PopEnabled $true
   ```
 
-[Return to top](clean-up-deleted-items.md#top)
-  
 For detailed syntax and parameter information, see the following topics:
   
 - [Get-Mailbox](http://technet.microsoft.com/library/8a5a6eb9-4a75-47f9-ae3b-a3ba251cf9a8.aspx)
@@ -222,6 +218,4 @@ This example retrieves the size of the Recoverable Items folder and its subfolde
 Get-MailboxFolderStatistics -Identity "Gurinder Singh" -FolderScope RecoverableItems | Format-Table Name,FolderAndSubfolderSize,ItemsInFolderAndSubfolders -Auto
 ```
 
-[Return to top](clean-up-deleted-items.md#top)
-  
 

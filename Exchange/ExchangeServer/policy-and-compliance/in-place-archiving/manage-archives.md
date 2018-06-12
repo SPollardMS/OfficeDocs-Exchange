@@ -3,33 +3,22 @@ title: "Manage In-Place Archives in Exchange 2016"
 ms.author: serdars
 author: SerdarSoysal
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: End User
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 49ef4a3e-d209-4fb2-80a3-6132b0f69bd0
-description: "Learn how to enable, disable, and re-enable archive mailboxes in Exchange 2016, and how to verify the archive mailbox settings for a user."
+description: "Summary: Learn how to enable, disable, and re-enable archive mailboxes in Exchange 2016, and how to verify the archive mailbox settings for a user."
 ---
 
 # Manage In-Place Archives in Exchange 2016
 
-Learn how to enable, disable, and re-enable archive mailboxes in Exchange 2016, and how to verify the archive mailbox settings for a user.
+ **Summary**: Learn how to enable, disable, and re-enable archive mailboxes in Exchange 2016, and how to verify the archive mailbox settings for a user.
   
 In-Place Archiving helps you regain control of your organization's messaging data by eliminating the need for personal store (.pst) files and allowing you to meet your organization's message retention and eDiscovery requirements. With archiving enabled, users can store messages in an archive mailbox, which is accessible by using Microsoft Outlook and Outlook on the web.
   
- **Archive mailbox tasks**
-  
-[Enable an archive mailbox](#enable.md)
-  
-[Enable an archive mailbox when you create a new mailbox](#enablecreate.md)
-  
-[Disable an archive mailbox](#disable.md)
-  
-[Re-enable an archive mailbox](#reenable.md)
-  
-## Before you begin
-<a name="top"> </a>
+## What do you need to know before you begin?
 
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "In-Place Archive" entry in the [Messaging policy and compliance permissions in Exchange 2016](../../permissions/feature-permissions/policy-and-compliance-permissions.md) topic. 
     
@@ -46,15 +35,14 @@ You can use the Exchange admin center or the Exchange Management Shell to enable
   
 ### Use the EAC to enable an archive mailbox
 
-1. Go to **Recipients** > **Mailboxes**.
+1. Go to **Recipients** \> **Mailboxes**.
     
 2. Select a mailbox.
     
 3. In the details pane, under **In-Place Archive**, click **Enable**.
     
-    > [!TIP]
-    > You can also bulk-enable archives by selecting multiple mailboxes (use the Shift or Ctrl keys). After selecting multiple mailboxes, in the details pane, click **More options**. Then, under **Archive** click **Enable**. 
-  
+    **Note**: You can also bulk-enable archives by selecting multiple mailboxes (use the Shift or Ctrl keys). After selecting multiple mailboxes, in the details pane, click **More options**. Then, under **Archive** click **Enable**.
+    
 4. On the **Create In-Place Archive** page, click **OK** to have Exchange automatically select a mailbox database for the archive or click **Browse** to specify one. 
     
 ### Use the Exchange Management Shell to enable an archive mailbox
@@ -75,7 +63,7 @@ Get-Mailbox -Database DB01 -Filter {ArchiveGuid -Eq $null -AND ArchiveDomain -eq
 
 To verify that you've successfully enabled an on-premises archive for an existing mailbox, do one of the following:
   
-- In the EAC, go to **Recipients** > **Mailboxes**, and then select the mailbox from the list. In the details pane, under **In-Place Archive**, confirm that it is set to **Enabled**. Click **View details** to view archive properties, including archive status and the mailbox database in which it is created. 
+- In the EAC, go to **Recipients** \> **Mailboxes**, and then select the mailbox from the list. In the details pane, under **In-Place Archive**, confirm that it is set to **Enabled**. Click **View details** to view archive properties, including archive status and the mailbox database in which it is created. 
     
 - In the Exchange Management Shell, run the following command to display information about the new archive.
     
@@ -85,8 +73,6 @@ To verify that you've successfully enabled an on-premises archive for an existin
 
 - In the Exchange Management Shell, use the **Test-ArchiveConnectivity** cmdlet to test connectivity to the archive. For an example of how to test archive connectivity, see the Examples section in the topic, [Test-ArchiveConnectivity](http://technet.microsoft.com/library/0db98a12-8cbb-4e9a-add4-c1847b057a44.aspx).
     
-[In-Place Archiving helps you regain control of your organization's messaging data by eliminating the need for personal store (.pst) files and allowing you to meet your organization's message retention and eDiscovery requirements. With archiving enabled, users can store messages in an archive mailbox, which is accessible by using Microsoft Outlook and Outlook on the web.Archive mailbox tasksEnable an archive mailboxEnable an archive mailbox when you create a new mailboxDisable an archive mailboxRe-enable an archive mailbox](#top.md)
-  
 ## Enable an archive mailbox when you create a new mailbox
 <a name="enablecreate"> </a>
 
@@ -94,26 +80,25 @@ You can also enable an archive mailbox when you first create a new mailbox for a
   
 ### Use the EAC to enable an archive mailbox when you create a new mailbox
 
-1. Go to **Recipients** > **Mailboxes**.
+1. Go to **Recipients** \> **Mailboxes**.
     
-2. Click **New** > **User mailbox**.
+2. Click **New** \> **User mailbox**.
     
 3. On the **New user mailbox** page, in the **Alias** box, type an alias for the user. 
     
-    > [!NOTE]
-    > If you leave this box blank, the value you type in the **User logon name** box is used for the alias. 
-  
+    **Note**: If you leave this box blank, the value you type in the **User logon name** box is used for the alias. 
+    
 4. Select one of the following options:
     
-  - **Existing user that isn't mail-enabled** Click this button and then click **Browse** to open the **Select User - Entire Forest** dialog box. This dialog box displays a list of Active Directory user accounts in the forest that aren't mail-enabled or don't have Exchange mailboxes. Select the user account you want to mail-enable, and then click **OK**. If you select this option, you don't have to provide user account information because this information already exists in Active Directory.
+  - **Existing user that isn't mail-enabled**: Click this button and then click **Browse** to open the **Select User - Entire Forest** dialog box. This dialog box displays a list of Active Directory user accounts in the forest that aren't mail-enabled or don't have Exchange mailboxes. Select the user account you want to mail-enable, and then click **OK**. If you select this option, you don't have to provide user account information because this information already exists in Active Directory.
     
-  - **New user** Click this button to create a new user account in Active Directory and create a mailbox for the user. If you select this option, you'll have to provide the required user account information. 
+  - **New user**: Click this button to create a new user account in Active Directory and create a mailbox for the user. If you select this option, you'll have to provide the required user account information.
     
 5. Click **More options** to configure the following settings. 
     
-  - **Mailbox database** Click **Browse** to select a mailbox database in which to store the mailbox. If you don't select a database, Exchange will automatically assign one. 
+  - **Mailbox database**: Click **Browse** to select a mailbox database in which to store the mailbox. If you don't select a database, Exchange will automatically assign one. 
     
-  - **Archive** Select this check box to create an archive mailbox for the mailbox. If you create an archive mailbox, mailbox items will be moved automatically from the primary mailbox to the archive, based on the default retention policy settings or those you define. 
+  - **Archive**: Select this check box to create an archive mailbox for the mailbox. If you create an archive mailbox, mailbox items will be moved automatically from the primary mailbox to the archive, based on the default retention policy settings or those you define.
     
     Click **Browse** to select a database to store the archive mailbox. 
     
@@ -135,7 +120,7 @@ New-Mailbox -UserPrincipalName cashton@contoso.com -Alias cashton -Database "DB0
 
 To verify that you've successfully created a user mailbox with an on-premises archive, do one of the following:
   
-- In the EAC, go to **Recipients** > **Mailboxes**, and then select the new user mailbox from the list. In the details pane, under **In-Place Archive**, confirm that it is set to **Enabled**. Click **View details** to view archive properties, including archive status and the mailbox database in which it is created. 
+- In the EAC, go to **Recipients** \> **Mailboxes**, and then select the new user mailbox from the list. In the details pane, under **In-Place Archive**, confirm that it is set to **Enabled**. Click **View details** to view archive properties, including archive status and the mailbox database in which it is created. 
     
 - In the Exchange Management Shell, run the following command to display information about the new user mailbox and archive.
     
@@ -145,8 +130,6 @@ To verify that you've successfully created a user mailbox with an on-premises ar
 
 - In the Exchange Management Shell, use the **Test-ArchiveConnectivity** cmdlet to test connectivity to the archive. For an example of how to test archive connectivity, see the Examples section in [Test-ArchiveConnectivity](http://technet.microsoft.com/library/0db98a12-8cbb-4e9a-add4-c1847b057a44.aspx).
     
-[In-Place Archiving helps you regain control of your organization's messaging data by eliminating the need for personal store (.pst) files and allowing you to meet your organization's message retention and eDiscovery requirements. With archiving enabled, users can store messages in an archive mailbox, which is accessible by using Microsoft Outlook and Outlook on the web.Archive mailbox tasksEnable an archive mailboxEnable an archive mailbox when you create a new mailboxDisable an archive mailboxRe-enable an archive mailbox](#top.md)
-  
 ## Disable an archive mailbox
 <a name="disable"> </a>
 
@@ -154,15 +137,14 @@ You may want to disable a user's archive for troubleshooting purposes or complia
   
 ### Use the EAC to disable an archive mailbox
 
-1. Go to **Recipients** > **Mailboxes**.
+1. Go to **Recipients** \> **Mailboxes**.
     
 2. Select a mailbox.
     
 3. In the details pane, under **In-Place Archive**, click **Disable**.
     
-    > [!TIP]
-    > You can also bulk-disable archives by selecting multiple mailboxes (use the Shift or Ctrl keys). After selecting multiple mailboxes, in the details pane, click **More options**. Then, under **Archive** click **Disable**. 
-  
+    **Note**: You can also bulk-disable archives by selecting multiple mailboxes (use the Shift or Ctrl keys). After selecting multiple mailboxes, in the details pane, click **More options**. Then, under **Archive** click **Disable**.
+    
 ### Use the Exchange Management Shell to disable an archive mailbox
 
 This example disables the archive mailbox for Chris Ashton's mailbox. It doesn't disable the user's primary mailbox.
@@ -192,8 +174,6 @@ To verify that you have successfully disabled an archive mailbox, do the followi
 |**DisabledArchiveDatabase** (for on-premises archives)  <br/> | _\<name of mailbox database\>_ <br/> |
 |**DisabledArchiveGuid** <br/> | _\<GUID of disabled archive\>_ <br/> |
    
-[In-Place Archiving helps you regain control of your organization's messaging data by eliminating the need for personal store (.pst) files and allowing you to meet your organization's message retention and eDiscovery requirements. With archiving enabled, users can store messages in an archive mailbox, which is accessible by using Microsoft Outlook and Outlook on the web.Archive mailbox tasksEnable an archive mailboxEnable an archive mailbox when you create a new mailboxDisable an archive mailboxRe-enable an archive mailbox](#top.md)
-  
 ## Re-enable an archive mailbox
 <a name="reenable"> </a>
 
@@ -201,7 +181,7 @@ When you disable an archive mailbox, it becomes disconnected. A disconnected arc
   
 ### Use the EAC to re-enable an archive mailbox
 
-1. Go to **Recipients** > **Mailboxes**.
+1. Go to **Recipients** \> **Mailboxes**.
     
 2. Select the mailbox.
     
@@ -228,7 +208,5 @@ Get-Mailbox "Chris Ashton" | Format-List *Archive*
 ```
 
 As previously stated, if you re-enable an archive mailbox within 30 days of disabling it, the user will be able to access the original contents of their archive mailbox. If you re-enable the archive more than 30 days after disabling it, the new archive mailbox will be empty the first time the user accesses it.
-  
-[In-Place Archiving helps you regain control of your organization's messaging data by eliminating the need for personal store (.pst) files and allowing you to meet your organization's message retention and eDiscovery requirements. With archiving enabled, users can store messages in an archive mailbox, which is accessible by using Microsoft Outlook and Outlook on the web.Archive mailbox tasksEnable an archive mailboxEnable an archive mailbox when you create a new mailboxDisable an archive mailboxRe-enable an archive mailbox](#top.md)
   
 

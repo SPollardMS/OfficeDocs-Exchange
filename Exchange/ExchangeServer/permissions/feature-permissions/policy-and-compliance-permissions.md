@@ -3,19 +3,18 @@ title: "Messaging policy and compliance permissions in Exchange 2016"
 ms.author: serdars
 author: SerdarSoysal
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/12/2018
 ms.audience: End User
 ms.topic: reference
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: ec4d3b9f-b85a-4cb9-95f5-6fc149c3899b
-
-description: "Learn about permissions that are required to manage policy and compliance features in Exchange Server 2016."
+description: "Summary: Learn about permissions that are required to manage policy and compliance features in Exchange Server 2016."
 ---
 
 # Messaging policy and compliance permissions in Exchange 2016
 
-Learn about permissions that are required to manage policy and compliance features in Exchange Server 2016.
+ **Summary**: Learn about permissions that are required to manage policy and compliance features in Exchange Server 2016.
   
 The permissions required to configure messaging policy and compliance vary depending on the procedure being performed or the cmdlet you want to run. For more information about messaging policy and compliance, see [Messaging policy and compliance in Exchange 2016](../../policy-and-compliance/policy-and-compliance.md).
   
@@ -41,13 +40,13 @@ Users who are assigned the View-Only Management role group can view the configur
 |**Feature**|**Permissions required**|
 |:-----|:-----|
 |Data loss prevention (DLP)  <br/> |[Compliance Management](http://technet.microsoft.com/library/b91b23a4-e9c7-4bd0-9ee3-ec5cb498da15.aspx) <br/> |
-|Delete mailbox content (using the [Search-Mailbox](http://technet.microsoft.com/library/9ee3b02c-d343-4816-a583-a90b1fad4b26.aspx) cmdlet with the  _DeleteContent_ switch)  <br/> |[Discovery Management](http://technet.microsoft.com/library/b8bc5922-a8c9-4707-906d-fa38bb87da8f.aspx) **and** <br/> [Mailbox Import Export Role](http://technet.microsoft.com/library/d7cdce7a-6c46-4750-b237-d1c1773e8d28.aspx) <br/> > [!NOTE]> By default, the Mailbox Import Export role isn't assigned to any role group. You can assign a management role to a built-in or custom role group, a user, or a universal security group. Assigning a role to a role group is recommended. For more information, see [Add a Role to a User or USG](http://technet.microsoft.com/library/ae5608de-a141-4714-8876-bce7d2a22cb5.aspx).           |
+|Delete mailbox content (using the [Search-Mailbox](http://technet.microsoft.com/library/9ee3b02c-d343-4816-a583-a90b1fad4b26.aspx) cmdlet with the  _DeleteContent_ switch)  <br/> |[Discovery Management](http://technet.microsoft.com/library/b8bc5922-a8c9-4707-906d-fa38bb87da8f.aspx) **and** <br/> [Mailbox Import Export Role](http://technet.microsoft.com/library/d7cdce7a-6c46-4750-b237-d1c1773e8d28.aspx) <br/> **Note**: By default, the Mailbox Import Export role isn't assigned to any role group. You can assign a management role to a built-in or custom role group, a user, or a universal security group. Assigning a role to a role group is recommended. For more information, see [Add a Role to a User or USG](http://technet.microsoft.com/library/ae5608de-a141-4714-8876-bce7d2a22cb5.aspx).  <br/> |
 |Discovery mailboxes - Create  <br/> |[Organization Management](http://technet.microsoft.com/library/0bfd21c1-86ac-4369-86b7-aeba386741c8.aspx) <br/> [Recipient Management](http://technet.microsoft.com/library/669d602e-68e3-41f9-a455-b942d212d130.aspx) <br/> |
 |Information Rights Management (IRM) configuration  <br/> |[Compliance Management](http://technet.microsoft.com/library/b91b23a4-e9c7-4bd0-9ee3-ec5cb498da15.aspx) <br/> [Organization Management](http://technet.microsoft.com/library/0bfd21c1-86ac-4369-86b7-aeba386741c8.aspx) <br/> |
 |In-Place Archive  <br/> |[Organization Management](http://technet.microsoft.com/library/0bfd21c1-86ac-4369-86b7-aeba386741c8.aspx) <br/> [Recipient Management](http://technet.microsoft.com/library/669d602e-68e3-41f9-a455-b942d212d130.aspx) <br/> |
 |In-Place Archive - Test connectivity  <br/> |[Organization Management](http://technet.microsoft.com/library/0bfd21c1-86ac-4369-86b7-aeba386741c8.aspx) <br/> [Server Management](http://technet.microsoft.com/library/30cbc4de-adb3-42e8-922f-7661095bdb8c.aspx) <br/> |
-|In-Place eDiscovery  <br/> |[Discovery Management](http://technet.microsoft.com/library/b8bc5922-a8c9-4707-906d-fa38bb87da8f.aspx) <br/> > [!NOTE]> By default, the Discovery Management role group doesn't have any members. No users, including administrators, have the required permissions to search mailboxes. For more information, see [Assign eDiscovery permissions in Exchange 2016](../../policy-and-compliance/ediscovery/assign-permissions.md).           |
-|In-Place Hold  <br/> |[Discovery Management](http://technet.microsoft.com/library/b8bc5922-a8c9-4707-906d-fa38bb87da8f.aspx) <br/> [Organization Management](http://technet.microsoft.com/library/0bfd21c1-86ac-4369-86b7-aeba386741c8.aspx) <br/> > [!IMPORTANT]> To create a query-based In-Place Hold, a user requires both the Mailbox Search and Legal Hold roles to be assigned directly or via membership in a role group that has both roles assigned. To create an In-Place Hold without using a query, which places all mailbox items on hold, you must have the Legal Hold role assigned. The Discovery Management role group is assigned both roles. > The Organization Management role group is assigned the Legal Hold role. Members of the Organization Management role group can place an In-Place Hold on all items in a mailbox, but can't create a query-based In-Place Hold.           |
+|In-Place eDiscovery  <br/> |[Discovery Management](http://technet.microsoft.com/library/b8bc5922-a8c9-4707-906d-fa38bb87da8f.aspx) <br/> **Note**: By default, the Discovery Management role group doesn't have any members. No users, including administrators, have the required permissions to search mailboxes. For more information, see [Assign eDiscovery permissions in Exchange 2016](../../policy-and-compliance/ediscovery/assign-permissions.md).  <br/> |
+|In-Place Hold  <br/> |[Discovery Management](http://technet.microsoft.com/library/b8bc5922-a8c9-4707-906d-fa38bb87da8f.aspx) <br/> [Organization Management](http://technet.microsoft.com/library/0bfd21c1-86ac-4369-86b7-aeba386741c8.aspx) <br/> **Notes**:  <br/> • To create a query-based In-Place Hold, a user requires both the Mailbox Search and Legal Hold roles to be assigned directly or via membership in a role group that has both roles assigned. To create an In-Place Hold without using a query, which places all mailbox items on hold, you must have the Legal Hold role assigned. The Discovery Management role group is assigned both roles.  <br/> • The Organization Management role group is assigned the Legal Hold role. Members of the Organization Management role group can place an In-Place Hold on all items in a mailbox, but can't create a query-based In-Place Hold.  <br/> |
 |Journaling  <br/> |[Organization Management](http://technet.microsoft.com/library/0bfd21c1-86ac-4369-86b7-aeba386741c8.aspx) <br/> [Records Management](http://technet.microsoft.com/library/0e0c95ce-6109-4591-b86d-c6cfd44d21f5.aspx) <br/> |
 |Litigation Hold  <br/> |[Organization Management](http://technet.microsoft.com/library/0bfd21c1-86ac-4369-86b7-aeba386741c8.aspx) <br/> |
 |Mailbox audit logging  <br/> |[Organization Management](http://technet.microsoft.com/library/0bfd21c1-86ac-4369-86b7-aeba386741c8.aspx) <br/> [Records Management](http://technet.microsoft.com/library/0e0c95ce-6109-4591-b86d-c6cfd44d21f5.aspx) <br/> |

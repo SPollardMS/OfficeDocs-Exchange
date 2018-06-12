@@ -3,7 +3,7 @@ title: "Exchange Server 2016 Privacy Statement"
 ms.author: dstrome
 author: dstrome
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: overview
 ms.prod: office-online-server
@@ -138,7 +138,7 @@ Microsoft is committed to helping protect the security of your information. We u
   
 ## For More Information
 
-Microsoft welcomes your comments regarding this privacy statement and its supplements. If you have questions or believe that we have not adhered to these documents, please contact us using this [Web form](http://go.microsoft.com/fwlink/p/?linkid=785778), or by email, at the following address:
+Microsoft welcomes your comments regarding this privacy statement and its supplements. If you have questions or believe that we have not adhered to these documents, please contact us using this [Web form](https://go.microsoft.com/fwlink/p/?linkid=785778), or by email, at the following address:
   
 Microsoft Privacy
   

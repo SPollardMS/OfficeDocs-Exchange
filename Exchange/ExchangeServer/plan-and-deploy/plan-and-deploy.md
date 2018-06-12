@@ -3,19 +3,19 @@ title: "Planning and deployment"
 ms.author: dstrome
 author: dstrome
 manager: serdars
-ms.date: 5/23/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: hub-page
 ms.prod: office-online-server
 localization_priority: Normal
 ms.collection: Strat_EX_Admin
 ms.assetid: 692c59e3-f0b0-4cef-a66e-751aa740abae
-description: "Guidance for planning and deploying Exchange 2016."
+description: "Summary: Guidance for planning and deploying Exchange 2016."
 ---
 
 # Planning and deployment
 
-Guidance for planning and deploying Exchange 2016.
+ **Summary**: Guidance for planning and deploying Exchange 2016.
   
 The following sections contain links to information about planning for and then deploying Microsoft Exchange Server 2016.
   
@@ -42,7 +42,7 @@ The following sections contain links to information about planning for and then 
   
 > Learn which Windows Server 2012 R2 or Windows Server 2012 features and the other software that needs to be installed to perform a successful installation of Exchange 2016.
     
-[Exchange Server Deployment Assistant](http://go.microsoft.com/fwlink/p/?LinkId=626978)
+[Exchange Server Deployment Assistant](https://go.microsoft.com/fwlink/p/?LinkId=626978)
   
 > Use this tool to generate a customized checklist for planning, installing, or upgrading to Exchange 2016. Guidance is available for multiple scenarios, including an on-premises, hybrid, or cloud deployment.
     
@@ -52,7 +52,7 @@ The following sections contain links to information about planning for and then 
     
 [Antispam and antimalware protection in Exchange 2016](../antispam-and-antimalware/antispam-and-antimalware.md)
   
-> Read this topic to understand anti-malware protection options for Exchange 2016.
+> Read this topic to understand antimalware protection options for Exchange 2016.
     
 [Exchange Server Hybrid Deployments](http://technet.microsoft.com/library/59e32000-4fcf-417f-a491-f1d8f9aeef9b.aspx)
   
@@ -62,7 +62,7 @@ The following sections contain links to information about planning for and then 
   
 > Read this topic to learn more about how you can deploy Exchange 2016 in a virtualized environment.
     
-[Exchange Development Technologies](http://go.microsoft.com/fwlink/p/?LinkId=268448)
+[Exchange Development Technologies](https://go.microsoft.com/fwlink/p/?LinkId=268448)
   
 > This topic contains important information about Application Programming Interfaces (APIs) that are available for applications that use Exchange 2016.
     
@@ -125,25 +125,25 @@ Exchange 2016 is available in two server editions: Standard Edition and Enterpri
 
 You have the following options for Exchange 2016 Setup:
   
-- **Exchange Setup UI** Running Setup.exe without any command-line switches provides an interactive experience where you are guided by the Exchange 2016 Setup wizard. 
+- **Exchange Setup UI**: Running Setup.exe without any command-line switches provides an interactive experience where you are guided by the Exchange 2016 Setup wizard.
     
-- **Exchange Unattended Setup** Running Setup.exe with command-line switches enables you to install Exchange from an interactive command line or through a script. 
+- **Exchange Unattended Setup**: Running Setup.exe with command-line switches enables you to install Exchange from an interactive command line or through a script.
     
 ### Modes of Exchange Setup
 <a name="Modes"> </a>
 
 Setup for Exchange 2016 includes several installation modes:
   
-- **Install** Use this mode when you're installing a new server role or adding a server role to an existing installation (maintenance mode). You can use this mode from both the Exchange Setup wizard and the unattended install. 
+- **Install**: Use this mode when you're installing a new server role or adding a server role to an existing installation (maintenance mode). You can use this mode from both the Exchange Setup wizard and the unattended install.
     
-- **Uninstall** Use this mode when you're removing the Exchange installation from a computer. You can use this mode from both the Exchange Setup wizard and the unattended install. 
+- **Uninstall**: Use this mode when you're removing the Exchange installation from a computer. You can use this mode from both the Exchange Setup wizard and the unattended install.
     
-- **Upgrade** Select this mode used when you have an existing installation of Exchange and you're installing a cumulative update or service pack. You can use this mode from both the Exchange Setup wizard and the unattended install. 
+- **Upgrade**: Select this mode used when you have an existing installation of Exchange and you're installing a cumulative update or service pack. You can use this mode from both the Exchange Setup wizard and the unattended install.
     
     > [!NOTE]
     > Exchange 2016 doesn't support in-place upgrades from previous versions of Exchange. This mode is used only to install cumulative updates or service packs. 
   
-- **RecoverServer** Use this mode when there has been a catastrophic failure of a server, and you need to recover data. You must install a server using the same fully qualified domain name (FQDN) as the failed server, and then run Setup with the **/m:RecoverServer** switch. Don't specify the roles to restore. Setup detects the Exchange Server object in Active Directory and installs the corresponding files and configuration automatically. After you recover the server, you can restore databases and reconfigure any additional settings. To run in **RecoverServer** mode, you can't have Exchange installed on the server. The Exchange server object must exist in Active Directory. You can only use this mode during an unattended installation. 
+- **RecoverServer**: Use this mode when there has been a catastrophic failure of a server, and you need to recover data. You must install a server using the same fully qualified domain name (FQDN) as the failed server, and then run Setup with the **/m:RecoverServer** switch. Don't specify the roles to restore. Setup detects the Exchange Server object in Active Directory and installs the corresponding files and configuration automatically. After you recover the server, you can restore databases and reconfigure any additional settings. To run in **RecoverServer** mode, you can't have Exchange installed on the server. The Exchange server object must exist in Active Directory. You can only use this mode during an unattended installation. 
     
 > [!NOTE]
 > You must complete one mode of Setup before you can use another mode. 

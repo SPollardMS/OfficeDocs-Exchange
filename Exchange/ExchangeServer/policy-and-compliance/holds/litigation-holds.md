@@ -3,7 +3,7 @@ title: "Place a mailbox on Litigation Hold"
 ms.author: serdars
 author: SerdarSoysal
 manager: scotv
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: End User
 ms.topic: article
 ms.prod: office-online-server
@@ -34,7 +34,7 @@ Place a mailbox on Litigation Hold to preserve all mailbox content, including de
 ## Use the EAC to place a mailbox on Litigation Hold
 <a name="introduction"> </a>
 
-1. Go to **Recipients** > **Mailboxes**.
+1. Go to **Recipients** \> **Mailboxes**.
     
 2. In the list of user mailboxes, click the mailbox that you want to place on Litigation Hold, and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
@@ -44,16 +44,14 @@ Place a mailbox on Litigation Hold to preserve all mailbox content, including de
     
 5. On the **Litigation Hold** page, enter the following optional information: 
     
-  - **Litigation hold duration (days)** Use this box to specify how long mailbox items are held when the mailbox is placed on Litigation Hold. The duration is calculated from the date a mailbox item is received or created. If you leave this box blank, items are held indefinitely or until the hold is removed. Use days to specify the duration. 
+  - **Litigation hold duration (days)**: Use this box to specify how long mailbox items are held when the mailbox is placed on Litigation Hold. The duration is calculated from the date a mailbox item is received or created. If you leave this box blank, items are held indefinitely or until the hold is removed. Use days to specify the duration.
     
-  - **Note** Use this box to inform the user their mailbox is on Litigation Hold. The note will appear on the **File** tab in Outlook 2010 or later. 
+  - **Note**: Use this box to inform the user their mailbox is on Litigation Hold. The note will appear on the **File** tab in Outlook 2010 or later. 
     
-  - **URL** Use this box to direct the user to a website for more information about Litigation Hold. This URL appears on the **File** tab Outlook 2010 or later. 
+  - **URL**: Use this box to direct the user to a website for more information about Litigation Hold. This URL appears on the **File** tab Outlook 2010 or later. 
     
 6. Click **Save** on the **Litigation Hold** page, and then click **Save** on the mailbox properties page. 
     
-[Place a mailbox on Litigation Hold to preserve all mailbox content, including deleted items and original versions of modified items. When you place a mailbox on Litigation Hold, the user's archive mailbox (if it's enabled) is also placed on hold. Deleted and modified items are preserved for a specified period or until you remove the mailbox from Litigation Hold. All such mailbox items are returned in an In-Place eDiscovery search.](#introduction.md)
-  
 ## Use the Exchange Management Shell to place a mailbox on Litigation Hold indefinitely
 <a name="introduction"> </a>
 
@@ -101,8 +99,6 @@ This example removes the mailbox bsuneja@contoso.com from Litigation Hold.
 Set-Mailbox bsuneja@contoso.com -LitigationHoldEnabled $false
 ```
 
-[Place a mailbox on Litigation Hold to preserve all mailbox content, including deleted items and original versions of modified items. When you place a mailbox on Litigation Hold, the user's archive mailbox (if it's enabled) is also placed on hold. Deleted and modified items are preserved for a specified period or until you remove the mailbox from Litigation Hold. All such mailbox items are returned in an In-Place eDiscovery search.](#introduction.md)
-  
 ## How do you know this worked?
 <a name="introduction"> </a>
 
@@ -110,7 +106,7 @@ To verify that you have successfully placed a mailbox on Litigation Hold, do the
   
 - In the EAC:
     
-1. Go to **Recipients** > **Mailboxes**.
+1. Go to **Recipients** \> **Mailboxes**.
     
 2. In the list of user mailboxes, click the mailbox that you want to verify Litigation Hold settings for, and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
@@ -123,19 +119,17 @@ To verify that you have successfully placed a mailbox on Litigation Hold, do the
 - In the Exchange Management Shell, run one of the following commands:
     
   ```
-  Get-Mailbox <name of mailbox> | FL LitigationHold*
+  Get-Mailbox <name of mailbox> | Format-List LitigationHold*
   ```
 
     or
     
   ```
-  Get-Mailbox -ResultSize Unlimited -Filter {RecipientTypeDetails -eq "UserMailbox"} | FL Name,LitigationHold*
+  Get-Mailbox -ResultSize Unlimited -Filter {RecipientTypeDetails -eq "UserMailbox"} | Format-List Name,LitigationHold*
   ```
 
     If a mailbox is placed on Litigation Hold indefinitely, the value for the  _LitigationHoldDuration_ property mailbox is set to  `Unlimited`.
     
-[Place a mailbox on Litigation Hold to preserve all mailbox content, including deleted items and original versions of modified items. When you place a mailbox on Litigation Hold, the user's archive mailbox (if it's enabled) is also placed on hold. Deleted and modified items are preserved for a specified period or until you remove the mailbox from Litigation Hold. All such mailbox items are returned in an In-Place eDiscovery search.](#introduction.md)
-  
 ## More information
 <a name="moreinfo"> </a>
 
@@ -183,6 +177,4 @@ To verify that you have successfully placed a mailbox on Litigation Hold, do the
 
     You can use other user mailbox properties in a filter to include or exclude mailboxes. For details, see [Filterable Properties for the -Filter Parameter](http://technet.microsoft.com/library/b02b0005-2fb6-4bc2-8815-305259fa5432.aspx).
     
-[Place a mailbox on Litigation Hold to preserve all mailbox content, including deleted items and original versions of modified items. When you place a mailbox on Litigation Hold, the user's archive mailbox (if it's enabled) is also placed on hold. Deleted and modified items are preserved for a specified period or until you remove the mailbox from Litigation Hold. All such mailbox items are returned in an In-Place eDiscovery search.](#introduction.md)
-  
 

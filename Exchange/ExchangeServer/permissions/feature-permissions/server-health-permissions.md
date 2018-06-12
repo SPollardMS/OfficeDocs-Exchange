@@ -3,18 +3,18 @@ title: "Server health and performance permissions"
 ms.author: serdars
 author: SerdarSoysal
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: End User
 ms.topic: reference
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 00b23fd3-6679-4b06-a3d4-51df3112b9cd
-description: "Learn about permissions that are required to manage workloads and event logs in Exchange Server 2016."
+description: "Summary: Learn about permissions that are required to manage workloads and event logs in Exchange Server 2016."
 ---
 
 # Server health and performance permissions
 
-Learn about permissions that are required to manage workloads and event logs in Exchange Server 2016.
+ **Summary**: Learn about permissions that are required to manage workloads and event logs in Exchange Server 2016.
   
 The permissions required to perform tasks to configure various components of Microsoft Exchange Server 2016 depend on the procedure being performed or the cmdlet you want to run. See each of the sections in this topic for more information about their respective features.
   

@@ -2,18 +2,18 @@
 title: "Procedures for mailbox imports from .pst files in Exchange 2016"
 ms.author: chrisda
 author: chrisda
-ms.date: 6/20/2017
+ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: d2edc746-6647-41c4-a99a-b086caf893fa
-description: "Learn how administrators can view, create, modify, delete, suspend and resume requests to import .pst files into mailboxes in Exchange 2016."
+description: "Summary: Learn how administrators can view, create, modify, delete, suspend and resume requests to import .pst files into mailboxes in Exchange 2016."
 ---
 
 # Procedures for mailbox imports from .pst files in Exchange 2016
 
-Learn how administrators can view, create, modify, delete, suspend and resume requests to import .pst files into mailboxes in Exchange 2016.
+ **Summary**: Learn how administrators can view, create, modify, delete, suspend and resume requests to import .pst files into mailboxes in Exchange 2016.
   
 Mailbox import requests use the Microsoft Exchange Mailbox Replication service (MRS) to import the contents of .pst files into mailboxes. For more information, see [Mailbox imports and exports in Exchange 2016](mailbox-import-and-export.md).
   
@@ -51,7 +51,7 @@ This topic shows you how to:
 
 ### Use the EAC to create a mailbox import request
 
-1. In the EAC, go to **Recipients** > **Mailboxes** > click **More options**![More Options icon](../../media/ITPro_EAC_MoreOptionsIcon.png), and select **Import PST**.
+1. In the EAC, go to **Recipients** \> **Mailboxes** \> click **More options**![More Options icon](../../media/ITPro_EAC_MoreOptionsIcon.png), and select **Import PST**.
     ![In the EAC, select Recipients, Mailboxes, and then select More Options.](../../media/59554fa9-92e2-46c0-a171-f57927eac3c7.png)
   
 2. The **Import from a .pst** wizard opens. On the first page, enter the UNC path and filename of the source .pst file. 
@@ -89,15 +89,15 @@ New-MailboxImportRequest  [-Name <UniqueName>] -FilePath <UNCPathToPST> -Mailbox
 
 This example creates a new mailbox import request with these settings:
   
-- **Mailbox import request name** The default value  `MailboxImport` is used, because we aren't using the  _Name_ parameter. The unique identity of the mailbox import request is  `<MailboxIdentity>\MailboxImportX` (  _X_ is either not present, or has the value 0 to 9). 
+- **Mailbox import request name**: The default value  `MailboxImport` is used, because we aren't using the  _Name_ parameter. The unique identity of the mailbox import request is  `<MailboxIdentity>\MailboxImportX` (  _X_ is either not present, or has the value 0 to 9). 
     
-- **Source .pst file** \\SERVER01\PSTFiles\Archives\Vbarrios.pst 
+- **Source .pst file**: \\SERVER01\PSTFiles\Archives\Vbarrios.pst
     
-- **Target mailbox** Valeria Barrios 
+- **Target mailbox**: Valeria Barrios
     
-- **Content and folders** Content in all folder paths in the .pst file is replicated in the target mailbox. Content is merged under existing folders and new folders are created if they don't already exist. 
+- **Content and folders**: Content in all folder paths in the .pst file is replicated in the target mailbox. Content is merged under existing folders and new folders are created if they don't already exist.
     
-- **Priority** `Normal`, because we aren't using the  _Priority_ parameter. 
+- **Priority**:  `Normal`, because we aren't using the  _Priority_ parameter. 
     
 ```
 New-MailboxImportRequest-FilePath \\SERVER01\PSTFiles\Archives\Vbarrios.pst -Mailbox "Valeria Barrios"
@@ -105,15 +105,15 @@ New-MailboxImportRequest-FilePath \\SERVER01\PSTFiles\Archives\Vbarrios.pst -Mai
 
 This example creates a new mailbox import request with these settings:
   
-- **Mailbox import request name** The custom name Kathleen Reiter Import is specified by the  _Name_ parameter. Specifying a custom name allows more than 10 mailbox import requests for the mailbox. The unique identity value of the mailbox import request is  `<MailboxIdentity>\<MailboxImportRequestName>` (for example,  `kreiter\Kathleen Reiter Import`).
+- **Mailbox import request name**: The custom name Kathleen Reiter Import is specified by the  _Name_ parameter. Specifying a custom name allows more than 10 mailbox import requests for the mailbox. The unique identity value of the mailbox import request is  `<MailboxIdentity>\<MailboxImportRequestName>` (for example,  `kreiter\Kathleen Reiter Import`).
     
-- **Source .pst file** \\SERVER01\PSTFiles\Archives\Recovered.pst 
+- **Source .pst file**: \\SERVER01\PSTFiles\Archives\Recovered.pst
     
-- **Target mailbox** The archive mailbox for Kathleen Reiter (Kathleen's primary mailbox alias is kreiter). 
+- **Target mailbox**: The archive mailbox for Kathleen Reiter (Kathleen's primary mailbox alias is kreiter).
     
-- **Content and folders** Only content in the Inbox folder of the .pst file is imported (regardless of the localized name of the folder), and it's imported to the Recovered Files folder in the target mailbox. 
+- **Content and folders**: Only content in the Inbox folder of the .pst file is imported (regardless of the localized name of the folder), and it's imported to the Recovered Files folder in the target mailbox.
     
-- **Priority** `High`
+- **Priority**:  `High`
     
 ```
 New-MailboxImportRequest -Name "Kathleen Reiter Import" -FilePath \\SERVER01\PSTFiles\Recovered.pst -Mailbox kreiter -IsArchive -IncludeFolders "#Inbox#" -TargetRootFolder "Recovered Files" -Priority High
@@ -145,15 +145,15 @@ To verify that you've successfully created a mailbox import request, do any of t
 
 By default, the **Get-MailboxImportRequest** cmdlet returns the name, target mailbox, and status of mailbox import requests. If you pipeline the command to the **Format-List** cmdlet, you'll only get a limited number of additional useful details: 
   
-- **FilePath** The source .pst file. 
+- **FilePath**: The source .pst file. 
     
-- **RequestGUID** The unique GUID value of the mailbox import request. 
+- **RequestGUID**: The unique GUID value of the mailbox import request. 
     
-- **RequestQueue** The mailbox database that the import request is being run on. 
+- **RequestQueue**: The mailbox database that the import request is being run on. 
     
-- **BatchName** The optional batch name for the mailbox import request. 
+- **BatchName**: The optional batch name for the mailbox import request. 
     
-- **Identity** The unique identity value of the mailbox import request (  _\<MailboxIdentity\>_\ _\<MailboxImportRequestName\>_).
+- **Identity**: The unique identity value of the mailbox import request (  _\<MailboxIdentity\>_\ _\<MailboxImportRequestName\>_).
     
 By default, the **Get-MailboxImportRequestStatistics** cmdlet returns the name, status, alias of the target mailbox, and the completion percentage of mailbox import requests. If you pipeline the command to the **Format-List** cmdlet, you'll see detailed information about the mailbox import request. 
   
@@ -313,9 +313,9 @@ You can remove fully or partially completed mailbox import requests.
     
 - By default, completed mailbox import request are removed after 30 days (you can override this value with the  _CompletedRequestAgeLimit_ parameter), and failed requests aren't automatically removed. But, if you use the  _RequestExpiryInterval_ parameter when you create or modify a mailbox import request, these results are available: 
     
-  - ** _RequestExpiryInterval_ with a timespan value ** Completed and failed requests are automatically removed after the specified timespan. 
+  - ** _RequestExpiryInterval_ with a timespan value **: Completed and failed requests are automatically removed after the specified timespan.
     
-  - ** _RequestExpiryInterval_ with the value  `unlimited`** Completed and failed requests aren't automatically removed. 
+  - ** _RequestExpiryInterval_ with the value  `unlimited`**: Completed and failed requests aren't automatically removed.
     
 This example removes the mailbox import request named MailboxImport for Akia Al-Zuhairi's mailbox.
   

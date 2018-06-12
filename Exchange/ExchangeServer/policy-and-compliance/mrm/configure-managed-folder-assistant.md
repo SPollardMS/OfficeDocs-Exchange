@@ -3,7 +3,7 @@ title: "Configure and run the Managed Folder Assistant in Exchange 2016"
 ms.author: serdars
 author: SerdarSoysal
 manager: serdars
-ms.date: 1/5/2018
+ms.date: 6/8/2018
 ms.audience: End User
 ms.topic: article
 ms.prod: office-online-server
@@ -16,9 +16,9 @@ description: "Summary: Learn how to configure the Managed Folder Assistant in Ex
 
  **Summary**: Learn how to configure the Managed Folder Assistant in Exchange 2016.
   
-The Managed Folder Assistant (MFA) is an Exchange Mailbox Assistant that applies and processes the message retention settings that are configured in retention policies. 
+The  *Managed Folder Assistant*  (MFA) is an Exchange Mailbox Assistant that applies and processes the message retention settings that are configured in retention policies. 
   
-As in Exchange 2013, the Managed Folder Assistant in Exchange 2016 is a throttle-based assistant that's always running. The MFA doesn't need to be scheduled, and the system resources that are consumed by the MFA can be throttled. You can configure the Managed Folder Assistant to process all mailboxes on a Mailbox server within a certain time period that's known as a work cycle. By default, the work cycle for the MFA is one day (all mailboxes on the server are processed by the MFA every day).
+As in Exchange 2013, the Managed Folder Assistant in Exchange 2016 is a throttle-based assistant that's always running. The MFA doesn't need to be scheduled, and the system resources that are consumed by the MFA can be throttled. You can configure the Managed Folder Assistant to process all mailboxes on a Mailbox server within a certain time period that's known as a  *work cycle*  . By default, the work cycle for the MFA is one day (all mailboxes on the server are processed by the MFA every day). 
   
 You can also force the MFA to immediately process a specified mailbox.
   
@@ -56,11 +56,11 @@ New-SettingOverride -Name "<UniqueOverrideName>" -Component TimeBasedAssistants 
     
 This example configures the work cycle for the MFA to two days (the MFA processes mailboxes every two days). Because we aren't using the  _Server_ parameter, the setting is applied to all Exchange 2016 Mailbox servers in the organization. 
   
-- **Setting override name** "MFA WorkCycle Override" (must be unique) 
+- **Setting override name**: "MFA WorkCycle Override" (must be unique)
     
-- **WorkCycle** `2.00:00:00` (2 days; note the value  `2`also works)
+- **WorkCycle**:  `2.00:00:00` (2 days; note the value  `2`also works)
     
-- **Override reason** Process mailboxes every 2 days 
+- **Override reason**: Process mailboxes every 2 days
     
 ```
 New-SettingOverride -Name "MFA WorkCycle Override" -Component TimeBasedAssistants -Section ELCAssistant -Parameters @("WorkCycle=2.00:00:00") -Reason "Process mailboxes every 2 days"

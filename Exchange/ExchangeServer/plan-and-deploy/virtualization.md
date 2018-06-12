@@ -3,7 +3,7 @@ title: "Exchange 2016 virtualization"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: conceptual
 ms.prod: office-online-server
@@ -19,25 +19,13 @@ description: "Summary: How to use hardware virtualization software with Exchange
   
 You can deploy Microsoft Exchange Server 2016 in a virtualized environment. This topic provides an overview of the scenarios that are supported for deploying Exchange 2016 on hardware virtualization software.
   
- **Contents**
-  
-[Requirements for hardware virtualization](virtualization.md#BKMK_Prereq)
-  
-[Host machine storage requirements](virtualization.md#BKMK_RootStorage)
-  
-[Exchange storage requirements](virtualization.md#BKMK_ExchangeStor)
-  
-[Exchange memory requirements and recommendations](virtualization.md#BKMK_ExchangeMemory)
-  
-[Host-based failover clustering and migration for Exchange](virtualization.md#BKMK_Failover)
-  
 The following terms are used in this discussion of Exchange virtualization:
   
-- **Cold boot** When bringing a system from a power-off state into a clean start of the operating system, the action is a cold boot. No operating system state has been persisted in this case.
+- **Cold boot**: When bringing a system from a power-off state into a clean start of the operating system, the action is a  *cold boot*  . No operating system state has been persisted in this case. 
     
-- **Saved state** When a virtual machine is powered off, hypervisors typically have the ability to save the state of the virtual machine, so when the machine is powered back on, it returns to that saved state rather than going through a cold boot startup. 
+- **Saved state**: When a virtual machine is powered off, hypervisors typically have the ability to save the state of the virtual machine, so when the machine is powered back on, it returns to that  *saved state*  rather than going through a cold boot startup. 
     
-- **Planned migration** When a system administrator initiates the move of a virtual machine from one hypervisor host to another, the action is a planned migration. The action could be a single migration, or a system administrator could configure automation to move the virtual machine on a timed basis. A planned migration could also be the result of some other event that occurs in the system, other than hardware or software failure. The key point is the Exchange virtual machine is operating normally and needs to be relocated for some reason. This relocation can be done via technology, like Live Migration or vMotion. However, if the Exchange virtual machine or the hypervisor host where the virtual machine is located experiences some sort of failure condition, the outcome isn't characterized as a planned migration.
+- **Planned migration**: When a system administrator initiates the move of a virtual machine from one hypervisor host to another, the action is a  *planned migration*  . The action could be a single migration, or a system administrator could configure automation to move the virtual machine on a timed basis. A planned migration could also be the result of some other event that occurs in the system, other than hardware or software failure. The key point is the Exchange virtual machine is operating normally and needs to be relocated for some reason. This relocation can be done via technology, like Live Migration or vMotion. However, if the Exchange virtual machine or the hypervisor host where the virtual machine is located experiences some sort of failure condition, the outcome isn't characterized as a planned migration. 
     
 ## Requirements for hardware virtualization
 <a name="BKMK_Prereq"> </a>
@@ -77,8 +65,6 @@ For deployments of Exchange 2016:
     
 - The only supported way to send emails to external domains from Azure compute resources is via an SMTP relay (otherwise known as a SMTP smart host). The Azure compute resource sends the email to the SMTP relay and then the SMTP relay provider delivers the email to the external domain. Microsoft Exchange Online Protection is one provider of an SMTP relay, but there are a number of third party providers as well. For more information, see the Microsoft Azure Support Team Blog post [Sending E-mail from Azure Compute Resource to External Domains](https://go.microsoft.com/fwlink/p/?LinkId=799723).
     
-[Requirements for hardware virtualization](virtualization.md#BKMK_Prereq)
-  
 ## Host machine storage requirements
 <a name="BKMK_RootStorage"> </a>
 
@@ -90,8 +76,6 @@ The minimum disk space requirements for each host machine are as follows:
     
 - If your host machine is running Windows Server 2012 Hyper-V or Hyper-V 2012, and you are configuring a host-based failover cluster that will host Exchange Mailbox servers in a database availability group, then we recommend following the guidance documented in Microsoft Knowledge Base article, [2872325, Guest Cluster nodes in Hyper-V may not be able to create or join](https://support.microsoft.com/kb/2872325).
     
-[Requirements for hardware virtualization](virtualization.md#BKMK_Prereq)
-  
 ## Exchange storage requirements
 <a name="BKMK_ExchangeStor"> </a>
 
@@ -107,14 +91,10 @@ Requirements for storage connected to a virtualized Exchange server are as follo
     
 - Configuring iSCSI storage to use an iSCSI initiator inside an Exchange guest virtual machine is supported. However, there is reduced performance in this configuration if the network stack inside a virtual machine isn't full-featured (for example, not all virtual network stacks support jumbo frames).
     
-[Requirements for hardware virtualization](virtualization.md#BKMK_Prereq)
-  
 ## Exchange memory requirements and recommendations
 <a name="BKMK_ExchangeMemory"> </a>
 
 Some hypervisors have the ability to oversubscribe/overcommit or dynamically adjust the amount of memory available to a specific guest machine based on the perceived usage of memory in the guest machine as compared to the needs of other guest machines managed by the same hypervisor. This technology makes sense for workloads in which memory is needed for brief periods of time and then can be surrendered for other uses. However, it doesn't make sense for workloads that are designed to use memory on an ongoing basis. Exchange, like many server applications with optimizations for performance that involve caching of data in memory, is susceptible to poor system performance and an unacceptable client experience if it doesn't have full control over the memory allocated to the physical or virtual machine on which it's running. As a result, using dynamic memory or memory overcommit features for Exchange isn't supported.
-  
-[Requirements for hardware virtualization](virtualization.md#BKMK_Prereq)
   
 ## Host-based failover clustering and migration for Exchange
 <a name="BKMK_Failover"> </a>
@@ -133,6 +113,4 @@ The following are answers to some frequently asked questions about host-based fa
     
     Migration technology refers to any technology that allows a planned move of a virtual machine from one host machine to another host machine. This move could also be an automated move that occurs as part of resource load balancing, but it isn't related to a failure in the system. Migrations are supported as long as the virtual machines never come up from a saved state that's persisted on disk. This means that technology that moves a virtual machine by transporting the state and virtual machine memory over the network with no perceived downtime is supported for use with Exchange. A third-party hypervisor vendor must provide support for the migration technology, while Microsoft provides support for Exchange when used in this configuration.
     
-[Requirements for hardware virtualization](virtualization.md#BKMK_Prereq)
-  
 

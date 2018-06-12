@@ -3,7 +3,7 @@ title: "Default settings for Exchange virtual directories"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
@@ -26,17 +26,17 @@ The following table lists the default settings on a stand-alone Exchange 2016 Ma
 
 |**Virtual directory**|**Authentication method**|**SSL settings**|**Management method**|
 |:-----|:-----|:-----|:-----|
-|Default website  <br/> | Anonymous  <br/> | Required  <br/> |IIS management console  <br/> |
-|aspnet_client  <br/> | Anonymous authentication  <br/> | SSL required  <br/>  Requires 128-bit encryption  <br/> |IIS management console  <br/> |
-|Autodiscover  <br/> | Anonymous authentication  <br/>  Basic authentication  <br/>  Windows authentication  <br/> | SSL required  <br/>  Requires 128-bit encryption  <br/> |Exchange Management Shell  <br/> |
-|ecp  <br/> | Anonymous authentication  <br/>  Basic authentication  <br/> | SSL required  <br/>  Requires 128-bit encryption  <br/> |Exchange admin center (EAC) or Exchange Management Shell  <br/> |
-|EWS  <br/> | Anonymous authentication  <br/>  Windows authentication  <br/> | SSL required  <br/>  Requires 128-bit encryption  <br/> |Exchange Management Shell  <br/> |
-|Microsoft-Server-ActiveSync  <br/> | Basic authentication  <br/> | SSL required  <br/>  Requires 128-bit encryption  <br/> |EAC or Exchange Management Shell  <br/> |
-|OAB  <br/> | Windows authentication  <br/> | Not required  <br/> |EAC or Exchange Management Shell  <br/> |
-|OWA  <br/> | Basic authentication  <br/> | SSL required  <br/>  Requires 128-bit encryption  <br/> |EAC or Exchange Management Shell  <br/> |
-|PowerShell  <br/> | Anonymous authentication  <br/> | Not required  <br/> |Exchange Management Shell  <br/> |
-|Rpc  <br/> | Basic authentication  <br/>  Windows authentication  <br/> | SSL required  <br/>  Requires 128-bit encryption  <br/> |Exchange Management Shell  <br/> |
-|RpcWithCert  <br/> |By default, all authentication methods are disabled.  <br/> | Required  <br/> | <br/> |
+|Default website  <br/> |Anonymous  <br/> |Required  <br/> |IIS management console  <br/> |
+|aspnet_client  <br/> |Anonymous authentication  <br/> |SSL required  <br/> Requires 128-bit encryption  <br/> |IIS management console  <br/> |
+|Autodiscover  <br/> |Anonymous authentication  <br/> Basic authentication  <br/> Windows authentication  <br/> |SSL required  <br/> Requires 128-bit encryption  <br/> |Exchange Management Shell  <br/> |
+|ecp  <br/> |Anonymous authentication  <br/> Basic authentication  <br/> |SSL required  <br/> Requires 128-bit encryption  <br/> |Exchange admin center (EAC) or Exchange Management Shell  <br/> |
+|EWS  <br/> |Anonymous authentication  <br/> Windows authentication  <br/> |SSL required  <br/> Requires 128-bit encryption  <br/> |Exchange Management Shell  <br/> |
+|Microsoft-Server-ActiveSync  <br/> |Basic authentication  <br/> |SSL required  <br/> Requires 128-bit encryption  <br/> |EAC or Exchange Management Shell  <br/> |
+|OAB  <br/> |Windows authentication  <br/> |Not required  <br/> |EAC or Exchange Management Shell  <br/> |
+|OWA  <br/> |Basic authentication  <br/> |SSL required  <br/> Requires 128-bit encryption  <br/> |EAC or Exchange Management Shell  <br/> |
+|PowerShell  <br/> |Anonymous authentication  <br/> |Not required  <br/> |Exchange Management Shell  <br/> |
+|Rpc  <br/> |Basic authentication  <br/> Windows authentication  <br/> |SSL required  <br/> Requires 128-bit encryption  <br/> |Exchange Management Shell  <br/> |
+|RpcWithCert  <br/> |By default, all authentication methods are disabled.  <br/> |Required  <br/> ||
    
 ## Mailbox server
 
@@ -46,8 +46,8 @@ The following table lists the default settings on a stand-alone Exchange 2016 Ma
 
 |**Virtual directory**|**Authentication method**|**SSL settings**|**Management method**|
 |:-----|:-----|:-----|:-----|
-|Default website  <br/> | Anonymous authentication  <br/> | SSL required  <br/>  Requires 128-bit encryption  <br/> |This virtual directory can't be configured by the user.  <br/> |
-|PowerShell  <br/> | Anonymous authentication  <br/> | Not required  <br/> |Exchange Management Shell  <br/> |
+|Default website  <br/> |Anonymous authentication  <br/> |SSL required  <br/> Requires 128-bit encryption  <br/> |This virtual directory can't be configured by the user.  <br/> |
+|PowerShell  <br/> |Anonymous authentication  <br/> |Not required  <br/> |Exchange Management Shell  <br/> |
    
 ## See also
 

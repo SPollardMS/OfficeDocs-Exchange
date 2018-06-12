@@ -3,18 +3,18 @@ title: "Updates for Exchange 2016"
 ms.author: dstrome
 author: dstrome
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: overview
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 9c1d8694-bd33-43af-a7ab-4caaada34745
-description: "Learn how the cumulative update process for Exchange 2016 works. This article also provides links to information about the features and improvements that were included in current, and previous, Exchange 2016 CU's."
+description: "Summary: Learn how the cumulative update process for Exchange 2016 works. This article also provides links to information about the features and improvements that were included in current, and previous, Exchange 2016 CU's."
 ---
 
 # Updates for Exchange 2016
 
-Learn how the cumulative update process for Exchange 2016 works. This article also provides links to information about the features and improvements that were included in current, and previous, Exchange 2016 CU's.
+ **Summary**: Learn how the cumulative update process for Exchange 2016 works. This article also provides links to information about the features and improvements that were included in current, and previous, Exchange 2016 CU's.
   
 Exchange 2016 follows a scheduled delivery model. In this model, cumulative updates (CU), which address customer-reported issues and may include new functionality and/or features, are released quarterly. Critical product updates, which are packages that address a Microsoft-released security bulletin or contain a change in time zone definitions, are released as needed on a monthly basis for the most recently released CU and the immediately previous CU.
   

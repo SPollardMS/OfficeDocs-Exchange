@@ -3,7 +3,7 @@ title: "Procedures for email address policies in Exchange 2016"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 9/21/2016
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 f1_keywords:
@@ -11,12 +11,12 @@ f1_keywords:
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: eb2bf42e-2058-4e17-85d5-97546433b40a
-description: "Learn how to create, modify, remove, and apply email address policies in Exchange 2016."
+description: "Summary: Learn how to create, modify, remove, and apply email address policies in Exchange 2016."
 ---
 
 # Procedures for email address policies in Exchange 2016
 
-Learn how to create, modify, remove, and apply email address policies in Exchange 2016.
+ **Summary**: Learn how to create, modify, remove, and apply email address policies in Exchange 2016.
   
 Email address policies assign email addresses to recipients in your Exchange organization. You use the Exchange admin center (EAC) or the Exchange Management Shell to configure email address policies in Exchange Server 2016.
   
@@ -46,13 +46,13 @@ After you create an email address policy, you need to apply the policy to recipi
   
 ### Use the EAC to create email address policies
 
-1. In the EAC, go to **Mail flow** > **Email address policies**, and then click **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png).
+1. In the EAC, go to **Mail flow** \> **Email address policies**, and then click **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png).
     
 2. In **New Email address policy** windows that opens, configure the following settings: 
     
-  - **Policy name** Enter a unique, descriptive name for the policy. 
+  - **Policy name**: Enter a unique, descriptive name for the policy.
     
-  - **Email address format** Click **Add** ( ![Add icon](../../media/ITPro_EAC_AddIcon.png)) to configure an email address template. After you add the first template to define the primary SMTP email address, you can add additional templates for proxy email addresses (SMTP or otherwise), or you can click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)) to modify an existing template. For details about the settings that are available, see the [Email address format window in the EAC](eap-procedures.md#EAC_EmailAddressFormat) section in this topic. 
+  - **Email address format**: Click **Add** ( ![Add icon](../../media/ITPro_EAC_AddIcon.png)) to configure an email address template. After you add the first template to define the primary SMTP email address, you can add additional templates for proxy email addresses (SMTP or otherwise), or you can click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)) to modify an existing template. For details about the settings that are available, see the [Email address format window in the EAC](eap-procedures.md#EAC_EmailAddressFormat) section in this topic. 
     
     You can also click **Remove** ( ![Delete icon](../../media/ITPro_EAC_DeleteIcon.png)) to delete existing templates.
     
@@ -62,7 +62,7 @@ After you create an email address policy, you need to apply the policy to recipi
     
   - You can't delete the email address template that defines the primary SMTP email address in the policy. Instead, you can add or modify another template, configure it to as the primary email address, and then delete the original template.
     
-  - **Run this policy in this sequence with other policies** The value that you can select here depends on how many other email address policies you've manually created. For example, for the first email address policy that you create, the only available value is 1. If you create another policy, you can select 1 or 2. Remember, the first email address policy that identifies a recipient configures the recipient's email addresses. All other policies are ignored, even if the first policy is unapplied and can't configure the recipient's email addresses. 
+  - **Run this policy in this sequence with other policies**: The value that you can select here depends on how many other email address policies you've manually created. For example, for the first email address policy that you create, the only available value is 1. If you create another policy, you can select 1 or 2. Remember, the first email address policy that identifies a recipient configures the recipient's email addresses. All other policies are ignored, even if the first policy is unapplied and can't configure the recipient's email addresses.
     
   - For details about the recipient filters that are available here, see the [Recipient filters in the EAC](eap-procedures.md#EAC_RecipientFilters) section in this topic. 
     
@@ -75,9 +75,9 @@ An email address policy in the Exchange Management Shell requires a **recipient 
   
 Email address templates use the syntax  `<Type>:<AddressFormat>`:
   
--  `<Type>` A valid email address type as described in [Address types](email-address-policies.md#AddressType). For example,  `SMTP` for the primary email address, and  `smtp` for proxy addresses. 
+-  `<Type>`: A valid email address type as described in [Address types](email-address-policies.md#AddressType). For example,  `SMTP` for the primary email address, and  `smtp` for proxy addresses. 
     
--  `<AddressFormat>` For SMTP email addresses, a domain or subdomain that's configured as accepted domain (authoritative or internal relay), and valid variables and ASCII text characters as described in [Address formats](email-address-policies.md#AddressFormat). For example:  `<alias>@contoso.com` requires the value  `%m@contoso.com`, and  `<firstname>.<lastname>@contoso.com` requires the value  `%g.%s@contoso.com`.
+-  `<AddressFormat>`: For SMTP email addresses, a domain or subdomain that's configured as accepted domain (authoritative or internal relay), and valid variables and ASCII text characters as described in [Address formats](email-address-policies.md#AddressFormat). For example:  `<alias>@contoso.com` requires the value  `%m@contoso.com`, and  `<firstname>.<lastname>@contoso.com` requires the value  `%g.%s@contoso.com`.
     
 To create an email address policy, use the following syntax:
   
@@ -87,15 +87,15 @@ New-EmailAddressPolicy -Name "<Policy Name>" <Precanned recipient filter | Custo
 
 This example creates an email address policy with a precanned recipient filter:
   
-- **Name** Southeast Offices 
+- **Name**: Southeast Offices
     
-- **Precanned recipient filter** All users with mailboxes where the **State or province** value is GA, AL, or LA (Georgia, Alabama, or Louisiana). 
+- **Precanned recipient filter**: All users with mailboxes where the **State or province** value is GA, AL, or LA (Georgia, Alabama, or Louisiana). 
     
-- **Primary SMTP email address** `<last name>.<first two letters of the first name>@contoso.com`
+- **Primary SMTP email address**:  `<last name>.<first two letters of the first name>@contoso.com`
     
-- **Additional proxy email addresses** `<last name>.<first two letters of the first name>@contoso.net`
+- **Additional proxy email addresses**:
     
-- **Priority** _n_+1, where  _n_ is the number of manually created email address policies that already exist (we didn't use the  _Priority_ parameter, and the default value is  _n_+1). Remember, the first email address policy that identifies a recipient configures the recipient's email addresses. All other policies are ignored, even if the first policy is unapplied and can't configure the recipient's email addresses.
+- **Priority**:  _n_+1, where  _n_ is the number of manually created email address policies that already exist (we didn't use the  _Priority_ parameter, and the default value is  _n_+1). Remember, the first email address policy that identifies a recipient configures the recipient's email addresses. All other policies are ignored, even if the first policy is unapplied and can't configure the recipient's email addresses.
     
 ```
 New-EmailAddressPolicy -Name "Southeast Offices" -IncludedRecipients MailboxUsers -ConditionalStateorProvince "GA","AL","LA" -EnabledEmailAddressTemplates "SMTP:%s%2g@southeast.contoso.com","smtp:%s%2g@southeast.contoso.net"
@@ -103,15 +103,15 @@ New-EmailAddressPolicy -Name "Southeast Offices" -IncludedRecipients MailboxUser
 
 This example creates an email address policy with a custom recipient filter:
   
-- **Name** Northwest Executives 
+- **Name**: Northwest Executives
     
-- **Custom recipient filter** All users with mailboxes where the **Title** value contains Director or Manager, and the **State or province** value is WA, OR, or ID (Washington, Oregon, or Idaho). 
+- **Custom recipient filter**: All users with mailboxes where the **Title** value contains Director or Manager, and the **State or province** value is WA, OR, or ID (Washington, Oregon, or Idaho). 
     
-- **Primary SMTP email address** `<first two letters of the first name><last name>@contoso.com`
+- **Primary SMTP email address**:  `<first two letters of the first name><last name>@contoso.com`
     
-- **Additional proxy email addresses** None 
+- **Additional proxy email addresses**: None
     
-- **Priority** 2 
+- **Priority**: 2
     
 ```
 New-EmailAddressPolicy -Name "Northwest Executives" -RecipientFilter {(RecipientType -eq 'UserMailbox') -and (Title -like '*Director*' -or Title -like '*Manager*') -and (StateOrProvince -eq 'WA' -or StateOrProvince -eq 'OR' -or StateOrProvince -eq 'ID')} -EnabledEmailAddressTemplates "SMTP:%2g%s@contoso.com" -Priority 2
@@ -130,7 +130,7 @@ For detailed syntax and parameter information, see [New-EmailAddressPolicy](http
 
 To verify that you've successfully created an email address policy, use either of the following procedures:
   
-- In the EAC, go to **Mail flow** > **Email address policies**, verify that the policy is listed, and the details are correct. Select the policy and click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)) to view details that aren't displayed in the list view.
+- In the EAC, go to **Mail flow** \> **Email address policies**, verify that the policy is listed, and the details are correct. Select the policy and click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)) to view details that aren't displayed in the list view.
     
 - In the Exchange Management Shell, run the following command to verify the property values:
     
@@ -154,17 +154,17 @@ To verify that you've successfully created an email address policy, use either o
 
  The same settings are available as when you created the policy, although the settings are now located on separate tabs. 
   
-1. In the EAC, go to **Mail flow** > **Email address policies**, select the policy from the list, and then click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)).
+1. In the EAC, go to **Mail flow** \> **Email address policies**, select the policy from the list, and then click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)).
     
 2. Configure the settings on the following tabs:
     
   - **General**
     
-  - **Policy name** A unique, descriptive name for the policy. 
+  - **Policy name**: A unique, descriptive name for the policy.
     
-  - **Run this policy in this sequence with other policies** Remember, the first email address policy that identifies a recipient configures the recipient's email addresses. All other policies are ignored, even if the first policy is unapplied and can't configure the recipient's email addresses. 
+  - **Run this policy in this sequence with other policies**: Remember, the first email address policy that identifies a recipient configures the recipient's email addresses. All other policies are ignored, even if the first policy is unapplied and can't configure the recipient's email addresses.
     
-  - **Email address format** For details about the settings that are available when you click **Add** ( ![Add icon](../../media/ITPro_EAC_AddIcon.png)) or **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)), see the [Email address format window in the EAC](eap-procedures.md#EAC_EmailAddressFormat) section in this topic. 
+  - **Email address format**: For details about the settings that are available when you click **Add** ( ![Add icon](../../media/ITPro_EAC_AddIcon.png)) or **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)), see the [Email address format window in the EAC](eap-procedures.md#EAC_EmailAddressFormat) section in this topic. 
     
     You can also click **Remove** ( ![Delete icon](../../media/ITPro_EAC_DeleteIcon.png)) to delete existing email address templates.
     
@@ -174,7 +174,7 @@ To verify that you've successfully created an email address policy, use either o
     
   - You can't delete the email address template that defines the primary SMTP email address in the policy. Instead, you can add or modify another template, configure it to define the primary email address, and then delete the original template.
     
-  - **Apply to** For details about the recipient filters that are available here, see the [Recipient filters in the EAC](eap-procedures.md#EAC_RecipientFilters) section in this topic. 
+  - **Apply to**: For details about the recipient filters that are available here, see the [Recipient filters in the EAC](eap-procedures.md#EAC_RecipientFilters) section in this topic. 
     
     **Note**: Even if you configured a custom recipient filter in the Exchange Management Shell, you can still select **Preview recipients the policy applies to** here. 
     
@@ -212,7 +212,7 @@ For detailed syntax and parameter information, see [Set-EmailAddressPolicy](http
 
 To verify that you've successfully modified an email address policy, use either of the following procedures:
   
-- In the EAC, go to **Mail flow** > **Email address policies**, and verify the properties are correct. Select the policy and click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)) to view properties that aren't displayed in the list view.
+- In the EAC, go to **Mail flow** \> **Email address policies**, and verify the properties are correct. Select the policy and click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)) to view properties that aren't displayed in the list view.
     
 - In the Exchange Management Shell, run the following command to verify the property values:
     
@@ -231,7 +231,7 @@ After you create or modify an email address policy in the EAC or the Exchange Ma
     
 ### Use the EAC to apply email address policies to recipients
 
-1. In the EAC, go to **Mail flow** > **Email address policies**.
+1. In the EAC, go to **Mail flow** \> **Email address policies**.
     
 2. Select the email address policy that you want to apply (a policy that has the **Status** value **Unapplied**).
     
@@ -261,7 +261,7 @@ For detailed syntax and parameter information, see [Update-EmailAddressPolicy](h
 
 To verify that you've successfully applied an email address policy, use either of the following procedures:
   
-- In the EAC, go to **Mail flow** > **Email address policies**, and verify that the **Status** value of the policy is **Applied**.
+- In the EAC, go to **Mail flow** \> **Email address policies**, and verify that the **Status** value of the policy is **Applied**.
     
 - In the Exchange Management Shell, run the following command to verify the **RecipientFilterApplied** property has the value  `True`:
     
@@ -278,7 +278,7 @@ To verify that you've successfully applied an email address policy, use either o
     
 ### Use the EAC to remove email address policies
 
-1. In the EAC, go to **Mail flow** > **Email address policies**.
+1. In the EAC, go to **Mail flow** \> **Email address policies**.
     
 2. Select the email address policy that you want to delete, and then click **Remove**![Delete icon](../../media/ITPro_EAC_DeleteIcon.png).
     
@@ -304,7 +304,7 @@ For detailed syntax and parameter information, see [Remove-EmailAddressPolicy](h
 
 To verify that you've successfully removed an email address policy, use either of the following procedures:
   
-- In the EAC, go to **Mail flow** > **Email address policies**, and verify that the policy is no longer listed.
+- In the EAC, go to **Mail flow** \> **Email address policies**, and verify that the policy is no longer listed.
     
 - In the Exchange Management Shell, run the following command to verify that the email address policy isn't listed:
     
@@ -322,25 +322,25 @@ As you create or modify an email address policy in the EAC, in the **Email addre
   
 - Precanned SMTP email addresses:
     
-  - **Select an accepted domain** Select an accepted domain (authoritative domain or internal relay domain) from the drop down list. Note that if you've configured an accepted domain for a domain and all subdomains (for example,  `*.contoso.com`), only the root domain ( `contoso.com`) is available in the drop down list.
+  - **Select an accepted domain**: Select an accepted domain (authoritative domain or internal relay domain) from the drop down list. Note that if you've configured an accepted domain for a domain and all subdomains (for example,  `*.contoso.com`), only the root domain ( `contoso.com`) is available in the drop down list.
     
     Or
     
-  - **Specify a custom domain name for the email address** Select this option when you need to enter a subdomain of a  `*.<domain>` accepted domain. For example, if  `*.contoso.com` is configured as an authoritative domain, you can type eu.contoso.com in this field. 
+  - **Specify a custom domain name for the email address**: Select this option when you need to enter a subdomain of a  `*.<domain>` accepted domain. For example, if  `*.contoso.com` is configured as an authoritative domain, you can type eu.contoso.com in this field. 
     
     And then:
     
-  - **Email address format** Select one of the available email address templates from the list. 
+  - **Email address format**: Select one of the available email address templates from the list.
     
 - Custom SMTP or non-SMTP email addresses:
     
   - Click **More options** and then select **Enter a custom address type**.
     
-  - **Enter a custom address type** If this is the first email address template that you're configuring in the policy, type SMTP, and then continue to the **Email address parameters** field to define the primary SMTP email address format. 
+  - **Enter a custom address type**: If this is the first email address template that you're configuring in the policy, type SMTP, and then continue to the **Email address parameters** field to define the primary SMTP email address format. 
     
     After you've configured a template in the policy to define the primary SMTP email address, you can type SMTP or another address type value to configure email address templates for additional proxy addresses. For more information about the type values that you can use, see [Address types](email-address-policies.md#AddressType).
     
-  - **Email address parameters** For SMTP email addresses, this value contains: 
+  - **Email address parameters**: For SMTP email addresses, this value contains:
     
   - Valid variables and ASCII text characters as described in [Address formats](email-address-policies.md#AddressFormat).
     
@@ -348,20 +348,20 @@ As you create or modify an email address policy in the EAC, in the **Email addre
     
     An example value is  `%3g.%s@contoso.com` for  `<first three letters of the first name>.<last name>`@contoso.com.
     
-- **Make this format the reply email address** The first email address template in a policy is automatically configured as the primary (reply) email address (you can't uncheck the check box). When you add additional templates to the policy, you can select this check box to define the primary email address. 
+- **Make this format the reply email address**: The first email address template in a policy is automatically configured as the primary (reply) email address (you can't uncheck the check box). When you add additional templates to the policy, you can select this check box to define the primary email address.
     
 ### Recipient filters in the EAC
 <a name="EAC_RecipientFilters"> </a>
 
 When you create or modify email address policies in the EAC, the following recipient filter settings are available:
   
-- **Specify the types of recipients this email address policy will apply to**
+- **Specify the types of recipients this email address policy will apply to**:
     
   - **All recipient types**
     
     Or
     
-  - **Only the following recipient types** Select one or more of the following values: 
+  - **Only the following recipient types**: Select one or more of the following values:
     
   - **Users with Exchange mailboxes**
     
@@ -373,7 +373,7 @@ When you create or modify email address policies in the EAC, the following recip
     
   - **Mail-enabled groups**
     
-- **Create rules to further define the recipients that this email address policy applies to**
+- **Create rules to further define the recipients that this email address policy applies to**:
     
 1. Click **Add rule** and select one of the recipient properties from the drop down list: 
     
@@ -401,7 +401,7 @@ When you create or modify email address policies in the EAC, the following recip
     
 4. Repeat the previous steps to configure more filters. Note that multiple properties use the **and** operator. For example, "Department equals Sales and Company equals Contoso". 
     
-- **Preview recipients the policy applies to** When you click this setting, a **Preview** dialog appears that shows you the recipients that are identified by the filters you configured. 
+- **Preview recipients the policy applies to**: When you click this setting, a **Preview** dialog appears that shows you the recipients that are identified by the filters you configured. 
     
  **Notes**:
   
@@ -414,7 +414,7 @@ When you create or modify email address policies in the EAC, the following recip
 
 In the Exchange Management Shell, you can specify **precanned recipient filters**, or **custom recipient filters**, but not both at the same time. 
   
-- **Precanned recipient filters**
+- **Precanned recipient filters**:
     
   - Uses the required  _IncludedRecipient_ parameter with the  `AllRecipients` value  *or*  one or more of the following values:  `MailboxUsers`,  `MailContacts`,  `MailGroups`,  `MailUsers`, or  `Resources`. You can specify multiple values separated by commas.
     
@@ -422,7 +422,7 @@ In the Exchange Management Shell, you can specify **precanned recipient filters*
     
     You specify multiple values for a  _Conditional_ parameter by using the syntax  `"<Value1>","<Value2>"...`. Multiple values of the same property implies the **or** operator. For example, "Department equals Sales or Marketing or Finance". 
     
-- **Custom recipient filters** Uses the required  _RecipientFilter_ parameter with an OPATH filter. 
+- **Custom recipient filters**: Uses the required  _RecipientFilter_ parameter with an OPATH filter. 
     
   - The basic OPATH filter syntax is  `{<Property1> -<Operator> '<Value1>' <Property2> -<Operator> '<Value2>'...}`.
     
@@ -438,7 +438,7 @@ In the Exchange Management Shell, you can specify **precanned recipient filters*
     
   -  `like` and  `notlike` (string contains and does not contain; requires at least one wildcard in the string. For example,  `{Department -like 'Sales*'}`.
     
-  - Use parentheses to group  `<Property> -<Operator> '<Value>'` statements together in complex filters. For example, {(Department -like 'Sales*' -or Department -like 'Marketing*') -and (Company -eq 'Contoso' -or Company -eq 'Fabrikam')}. Exchange stores the filter in the **RecipientFilter** property with each individual statement enclosed in parentheses, but you don't need to enter them that way. 
+  - Use parentheses to group  `<Property> -<Operator> '<Value>'` statements together in complex filters. For example, {(Department -like 'Sales\*' -or Department -like 'Marketing\*') -and (Company -eq 'Contoso' -or Company -eq 'Fabrikam')}. Exchange stores the filter in the **RecipientFilter** property with each individual statement enclosed in parentheses, but you don't need to enter them that way. 
     
   - After you use the **New-EmailAddressPolicy** cmdlet to create a policy that uses custom recipient filters, you can't modify the recipient filters in the EAC. You need to use the **Set-EmailAddressPolicy** cmdlet with the  _RecipientFilter_ parameter in the Exchange Management Shell. 
     

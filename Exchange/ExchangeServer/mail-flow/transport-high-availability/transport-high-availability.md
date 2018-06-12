@@ -3,18 +3,18 @@ title: "Transport high availability"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 6/22/2017
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: e9ec6d05-f441-4cca-8592-8f7469948299
-description: "Learn about transport high availability in Exchange 2016 and the features that improve the reliability of message delivery."
+description: "Summary: Learn about transport high availability in Exchange 2016 and the features that improve the reliability of message delivery."
 ---
 
 # Transport high availability
 
-Learn about transport high availability in Exchange 2016 and the features that improve the reliability of message delivery.
+ **Summary**: Learn about transport high availability in Exchange 2016 and the features that improve the reliability of message delivery.
   
 In Exchange 2016, transport high availability is responsible for keeping redundant copies of messages before and after the messages are successfully delivered. These features were introduced in Exchange 2013 as improvements to the transport high availability features in Exchange 2010 (for example, shadow redundancy and the transport dumpster) to help ensure messages aren't lost in transit.
   
@@ -26,7 +26,7 @@ Key features that improve transport high availability in Exchange 2013 and Excha
     
     For more information, see [Shadow redundancy in Exchange 2016](shadow-redundancy.md).
     
-- The transport dumpster has been improved and is now named Safety Net. Safety Net stores messages that were successfully processed by the Transport service on Mailbox servers. Safety Net works best for Mailbox servers in a DAG, but Safety Net also works for multiple Mailbox servers in the same Active Directory site that don't belong to a DAG.
+- The transport dumpster has been improved and is now named  *Safety Net*  . Safety Net stores messages that were successfully processed by the Transport service on Mailbox servers. Safety Net works best for Mailbox servers in a DAG, but Safety Net also works for multiple Mailbox servers in the same Active Directory site that don't belong to a DAG. 
     
 - Safety Net itself is now made redundant on another server. This is important to avoid a single point of failure, because the Transport service and the mailbox databases are both located on the Mailbox server.
     
@@ -36,7 +36,7 @@ This diagram provides a high-level overview of how transport high availability w
   
 ![Transport high availability overview](../../media/ITPro_Transport_TransportHAOverview.gif)
   
-1. An Exchange 2016 Mailbox server named Mailbox01 receives a message from an SMTP server that's outside the transport high availability boundary. The transport high availability boundary is a DAG or an Active Directory site in non-DAG environments. The message could come from: 
+1. An Exchange 2016 Mailbox server named Mailbox01 receives a message from an SMTP server that's outside the transport high availability boundary. The  *transport high availability boundary*  is a DAG or an Active Directory site in non-DAG environments. The message could come from: 
     
   - An internal third-party messaging server.
     

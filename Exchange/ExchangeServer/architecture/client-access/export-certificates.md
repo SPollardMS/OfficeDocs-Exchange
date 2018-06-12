@@ -3,19 +3,19 @@ title: "Export a certificate from an Exchange server"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.collection: Strat_EX_Admin
 ms.assetid: 7e4c4013-8a2b-4c25-a287-b367c65e48aa
-description: "Learn how to export a certificate from an Exchange 2016 server."
+description: "Summary: Learn how to export a certificate from an Exchange 2016 server."
 ---
 
 # Export a certificate from an Exchange server
 
-Learn how to export a certificate from an Exchange 2016 server.
+ **Summary**: Learn how to export a certificate from an Exchange 2016 server.
   
 You can export a certificate from an Exchange server as a backup or to import the certificate on other clients, devices or servers. You can export certificates in the Exchange admin center (EAC) or in the Exchange Management Shell. The resulting certificate file is a password-protected binary PKCS #12 file that contains the certificate's private key, and is suitable for importing (installing) on other servers.
   
@@ -36,15 +36,15 @@ You can export a certificate from an Exchange server as a backup or to import th
   
 ## Use the EAC to export a certificate
 
-1. Open the EAC and navigate to **Servers** > **Certificates**.
+1. Open the EAC and navigate to **Servers** \> **Certificates**.
     
 2. In the **Select server** list, select the Exchange server that contains the certificate, click **More options**![More Options icon](../../media/ITPro_EAC_MoreOptionsIcon.png), and select **Export Exchange certificate**.
     
 3. On the **Export Exchange certificate** page that opens, enter the following information: 
     
-  - **File to export to** Enter the UNC path and file name of the certificate file. For example,  `\\FileServer01\Data\Fabrikam.pfx`
+  - **File to export to**: Enter the UNC path and file name of the certificate file. For example,  `\\FileServer01\Data\Fabrikam.pfx`
     
-  - **Password** When you export the certificate with its private key, you need to specify a password. Exporting the certificate with its private key allows you to import the certificate on other servers. 
+  - **Password**: When you export the certificate with its private key, you need to specify a password. Exporting the certificate with its private key allows you to import the certificate on other servers.
     
     When you're finished, click **OK**.
     

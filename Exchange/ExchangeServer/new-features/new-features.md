@@ -3,18 +3,18 @@ title: "What's new in Exchange 2016"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: overview
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 97501135-2149-4590-8373-98e638ac8eb1
-description: "Learn about the new features that are available in Exchange 2016 when you upgrade from previous versions of Exchange."
+description: "Summary: Learn about the new features that are available in Exchange 2016 when you upgrade from previous versions of Exchange."
 ---
 
 # What's new in Exchange 2016
 
-Learn about the new features that are available in Exchange 2016 when you upgrade from previous versions of Exchange.
+ **Summary**: Learn about the new features that are available in Exchange 2016 when you upgrade from previous versions of Exchange.
   
 Microsoft Exchange Server 2016 brings a new set of technologies, features, and services to Exchange Server, the messaging platform that provides email, scheduling, and tools for custom collaboration and messaging service applications. Its goal is to support people and organizations as their work habits evolve from a communication focus to a collaboration focus. At the same time, Exchange 2016 helps lower the total cost of ownership whether you deploy Exchange 2016 on-premises or provision your mailboxes in the cloud.
   
@@ -28,11 +28,11 @@ For more information about deploying Exchange 2016, see [Planning and deployment
 
 When you update to Exchange 2016 Cumulative Update 1 (CU1) from Exchange 2016 RTM, you'll get the following new features:
   
-- **SHA-2 compliant S/MIME in Outlook on the web** We've updated the certificate that's used by the S/MIME control in Outlook on the web. The certificate is now SHA-2 compliant. Users who downloaded the control from Exchange 2016 RTM will need to download the control again after you install CU1. 
+- **SHA-2 compliant S/MIME in Outlook on the web**: We've updated the certificate that's used by the S/MIME control in Outlook on the web. The certificate is now SHA-2 compliant. Users who downloaded the control from Exchange 2016 RTM will need to download the control again after you install CU1.
     
-- **Additional languages for Outlook on the web** With CU1, we're adding 17 new languages to Outlook on the web. 
+- **Additional languages for Outlook on the web**: With CU1, we're adding 17 new languages to Outlook on the web.
     
-- **Improved download package** Exchange 2016 releases, starting with CU1, are now packaged as ISO files instead of a self-extracting EXE file. The ISO file can be mounted directly in Windows Server 2012 or later. If you need to install Exchange across a network, you can create a network share from the mounted ISO drive. 
+- **Improved download package**: Exchange 2016 releases, starting with CU1, are now packaged as ISO files instead of a self-extracting EXE file. The ISO file can be mounted directly in Windows Server 2012 or later. If you need to install Exchange across a network, you can create a network share from the mounted ISO drive.
     
 ## What's new when upgrading from Exchange 2013 to Exchange 2016 RTM?
 
@@ -115,9 +115,12 @@ The former Outlook Web App user interface has been updated and optimized for tab
 
 MAPI over HTTP is now the default protocol that Outlook uses to communicate with Exchange. MAPI over HTTP improves the reliability and stability of the Outlook and Exchange connections by moving the transport layer to the industry-standard HTTP model. This allows a higher level of visibility of transport errors and enhanced recoverability. Additional functionality includes support for an explicit pause-and-resume function, which enables supported clients to change networks or resume from hibernation while maintaining the same server context.
   
-> [!NOTE]
->  MAPI over HTTP isn't enabled in organizations where the following conditions are both true: >  You're installing Exchange 2016 in an organization that already has Exchange 2013 servers installed. >  MAPI over HTTP wasn't enabled in Exchange 2013. 
+ **Note**: MAPI over HTTP isn't enabled in organizations where the following conditions are both true:
   
+- You're installing Exchange 2016 in an organization that already has Exchange 2013 servers installed.
+    
+- MAPI over HTTP wasn't enabled in Exchange 2013.
+    
 While MAPI over HTTP is now the default communication protocol between Outlook and Exchange, clients that don't support it will fall back to Outlook Anywhere (RPC over HTTP).
   
 For more information, see [MAPI over HTTP in Exchange 2016](../clients/mapi-over-http/mapi-over-http.md).
@@ -152,7 +155,7 @@ The Hybrid Configuration Wizard (HCW) that was included with Exchange 2013 is mo
     
 - The same wizard will be used by everyone configuring a hybrid deployment who's running Exchange 2013 or Exchange 2016.
     
-In addition to Hybrid Configuration Wizard improvements, multi-forest hybrid deployments are being simplified with Azure Active Directory Connect (AADConnect). AADConnect introduces management agents that will make it significantly easier to synchronize multiple on-premises Active Directory forests with a single Office 365 tenant. For more information about AADConnect, see [Integrating your on-premises identities with Azure Active Directory](http://go.microsoft.com/fwlink/p/?LinkID=527969).
+In addition to Hybrid Configuration Wizard improvements, multi-forest hybrid deployments are being simplified with Azure Active Directory Connect (AADConnect). AADConnect introduces management agents that will make it significantly easier to synchronize multiple on-premises Active Directory forests with a single Office 365 tenant. For more information about AADConnect, see [Integrating your on-premises identities with Azure Active Directory](https://go.microsoft.com/fwlink/p/?LinkID=527969).
   
 Exchange ActiveSync clients will be seamlessly redirected to Office 365 when a user's mailbox is moved to Exchange Online. To support this, ActiveSync clients need to support HTTP 451 redirect. When a client is redirected, the profile on the device is updated with the URL of the Exchange Online service. This means the client will no longer attempt to contact the on-premises Exchange server when trying to find the mailbox.
   
@@ -179,9 +182,9 @@ To learn more about DLP, see [Data loss prevention in Exchange 2016](../policy-a
 
 Exchange 2016 includes the following improvements to In-Place Archiving, retention, and eDiscovery to help your organization meet its compliance needs:
   
-- ** Public folder support for In-Place eDiscovery and In-Place Hold ** Exchange 2016 integrates public folders into the In-Place eDiscovery and Hold workflow. You can use In-Place eDiscovery to search public folders in your organization, and you can put an In-Place Hold on public folders. And similar to placing a mailbox on hold, you can place a query-based and a time-based hold on public folders. Currently, you can only search and place a hold on all public folders. In later releases, you'll be able to choose specific public folders to search and place on hold. For more information, see [Search and place a hold on public folders using In-Place eDiscovery](../policy-and-compliance/ediscovery/search-public-folders.md).
+- ** Public folder support for In-Place eDiscovery and In-Place Hold **: Exchange 2016 integrates public folders into the In-Place eDiscovery and Hold workflow. You can use In-Place eDiscovery to search public folders in your organization, and you can put an In-Place Hold on public folders. And similar to placing a mailbox on hold, you can place a query-based and a time-based hold on public folders. Currently, you can only search and place a hold on all public folders. In later releases, you'll be able to choose specific public folders to search and place on hold. For more information, see [Search and place a hold on public folders using In-Place eDiscovery](../policy-and-compliance/ediscovery/search-public-folders.md).
     
-- **Compliance Search** Compliance Search is a new eDiscovery search tool in Exchange 2016 with new and improved scaling and performance capabilities. You can use it to search very large numbers of mailboxes in a single search. In fact, there's no limit on the number of mailboxes that can be included in a single search, so you can search all mailboxes in your organization at once. There's also no limit on the number of searches that can run at the same time. For In-Place eDiscovery in Exchange 2016, the limits are the same as in Exchange 2013: you can search up to 10,000 mailboxes in a single search and your organization can run a maximum of two In-Place eDiscovery searches at the same time. 
+- **Compliance Search**: Compliance Search is a new eDiscovery search tool in Exchange 2016 with new and improved scaling and performance capabilities. You can use it to search very large numbers of mailboxes in a single search. In fact, there's no limit on the number of mailboxes that can be included in a single search, so you can search all mailboxes in your organization at once. There's also no limit on the number of searches that can run at the same time. For In-Place eDiscovery in Exchange 2016, the limits are the same as in Exchange 2013: you can search up to 10,000 mailboxes in a single search and your organization can run a maximum of two In-Place eDiscovery searches at the same time.
     
     In Exchange 2016, Compliance Search is only available by using the Exchange Management Shell. For information about using the Compliance Search cmdlets, see the following topics:
     
@@ -243,13 +246,13 @@ Another advantage of the new architecture is that search scalability is improved
 
 Exchange 2016 provides a single unified management console that allows for ease of use and is optimized for management of on-premises, online, or hybrid deployments. The  *Exchange admin center*  (EAC) in Exchange 2016 replaces the Exchange Management Console (EMC) and the Exchange Control Panel (ECP) that were used in Exchange 2010 (but the name of the EAC virtual directory is still "ECP"). Some EAC features include: 
   
-- **List view** The list view in EAC has been designed to remove key limitations that existed in ECP. ECP was limited to displaying up to 500 objects and, if you wanted to view objects that weren't listed in the details pane, you needed to use searching and filtering to find those specific objects. In Exchange 2016, the viewable limit from within the EAC list view is approximately 20,000 objects. After the EAC returns the results, the EAC client performs the searching and sorting, which greatly increases the performance compared to the ECP in Exchange 2010. In addition, paging has been added so that you can page to the results. You can also configure page size and export to a .csv file. 
+- **List view**: The list view in EAC has been designed to remove key limitations that existed in ECP. ECP was limited to displaying up to 500 objects and, if you wanted to view objects that weren't listed in the details pane, you needed to use searching and filtering to find those specific objects. In Exchange 2016, the viewable limit from within the EAC list view is approximately 20,000 objects. After the EAC returns the results, the EAC client performs the searching and sorting, which greatly increases the performance compared to the ECP in Exchange 2010. In addition, paging has been added so that you can page to the results. You can also configure page size and export to a .csv file.
     
-- **Add/Remove columns to the Recipient list view** You can choose which columns to view, and with local cookies, you can save your custom list views per machine that you use to access the EAC. 
+- **Add/Remove columns to the Recipient list view**: You can choose which columns to view, and with local cookies, you can save your custom list views per machine that you use to access the EAC.
     
-- **Secure the ECP virtual directory** You can control access to the EAC from inside and outside your corporate network without affecting user access to their Outlook on the web options. For more information, see [Turn off access to the Exchange admin center](../architecture/client-access/eac-access.md).
+- **Secure the ECP virtual directory**: You can control access to the EAC from inside and outside your corporate network without affecting user access to their Outlook on the web options. For more information, see [Turn off access to the Exchange admin center](../architecture/client-access/disable-eac-access.md).
     
-- **Tool consolidation** The functionality of these management tools has been integrated into the EAC: 
+- **Tool consolidation**: The functionality of these management tools has been integrated into the EAC:
     
   - The Public Folder administration console.
     
@@ -257,7 +260,7 @@ Exchange 2016 provides a single unified management console that allows for ease 
     
   - The Call Statistics and User Call Logs tools for Unified Messaging.
     
-- **Notifications** In Exchange 2016, the EAC now has a Notification viewer so that you can view notifications and alerts for: 
+- **Notifications**: In Exchange 2016, the EAC now has a Notification viewer so that you can view notifications and alerts for:
     
   - Exchange certificates that are installed on any Exchange 2016 server in your organization that are expired or within 30 days of expiring.
     
@@ -265,7 +268,7 @@ Exchange 2016 provides a single unified management console that allows for ease 
     
      You can also configure email addresses to receive these notifications in the EAC, or all events by using the **Set-Notification** cmdlet in the Exchange Management Shell. 
     
-- **Groups enhancements** By default, up to 500 recipients are returned when you open the **Select Members** window, however, you can choose to list up to 10,000 recipients by clicking **Get All Results** beneath the recipient list. We now support browsing more than 500 recipients by using the scroll bar, and we've also added enhanced search features so you can filter recipients in the recipient list. You can filter by: 
+- **Groups enhancements**: By default, up to 500 recipients are returned when you open the **Select Members** window, however, you can choose to list up to 10,000 recipients by clicking **Get All Results** beneath the recipient list. We now support browsing more than 500 recipients by using the scroll bar, and we've also added enhanced search features so you can filter recipients in the recipient list. You can filter by: 
     
   - City
     
@@ -279,9 +282,9 @@ Exchange 2016 provides a single unified management console that allows for ease 
     
   - Title
     
-- **Delivery reports** Administrators can use the EAC to track delivery information for email messages sent to or received by any user in the organization. You just select a mailbox, and then search for messages sent to or received by a different user. You can filter the search by words in the subject line. The results track a message through the delivery process, and indicate whether the message was successfully delivered, is pending delivery, or wasn't delivered. For more information, see [Track messages with delivery reports](../mail-flow/transport-logs/track-messages-with-delivery-reports.md).
+- **Delivery reports**: Administrators can use the EAC to track delivery information for email messages sent to or received by any user in the organization. You just select a mailbox, and then search for messages sent to or received by a different user. You can filter the search by words in the subject line. The results track a message through the delivery process, and indicate whether the message was successfully delivered, is pending delivery, or wasn't delivered. For more information, see [Track messages with delivery reports](../mail-flow/transport-logs/track-messages-with-delivery-reports.md).
     
-- **Certificate management** Administrators can use the EAC to manage Exchange certificates on multiple servers from a central location, which helps to minimize the amount of interaction that's required to manage Exchange certificates. For more information about certificate management procedures in Exchange 2016, see [Certificate procedures in Exchange 2016](../architecture/client-access/certificate-procedures.md).
+- **Certificate management**: Administrators can use the EAC to manage Exchange certificates on multiple servers from a central location, which helps to minimize the amount of interaction that's required to manage Exchange certificates. For more information about certificate management procedures in Exchange 2016, see [Certificate procedures in Exchange 2016](../architecture/client-access/certificate-procedures.md).
     
 For more information about the EAC, see [Exchange admin center in Exchange 2016](../architecture/client-access/exchange-admin-center.md).
   
@@ -300,11 +303,11 @@ Like previous versions of Exchange. the Edge Transport role is typically deploye
   
 The Exchange 2016 architecture provides the following benefits:
   
-- **Version upgrade flexibility** No more rigid upgrade requirements. Mailbox servers can be upgraded independently and in any order in relation to other Mailbox servers. 
+- **Version upgrade flexibility**: No more rigid upgrade requirements. Mailbox servers can be upgraded independently and in any order in relation to other Mailbox servers.
     
-- **Session indifference** With Exchange 2010, session affinity to the Client Access server role was required for several protocols. In Exchange 2016, the client access and mailbox components reside on the same Mailbox server. No session affinity is required between Mailbox servers, Edge Transport servers, or mail servers on the Internet. This allows inbound client connections to Mailbox servers to be balanced using techniques provided by load-balancing technology like least connection or round-robin. 
+- **Session indifference**: With Exchange 2010, session affinity to the Client Access server role was required for several protocols. In Exchange 2016, the client access and mailbox components reside on the same Mailbox server. No session affinity is required between Mailbox servers, Edge Transport servers, or mail servers on the Internet. This allows inbound client connections to Mailbox servers to be balanced using techniques provided by load-balancing technology like least connection or round-robin.
     
-- **Deployment simplicity** With an Exchange 2010 site-resilient design, you needed up to eight different namespaces: two Internet Protocol namespaces, two for Outlook Web App fallback, one for Autodiscover, two for RPC Client Access, and one for SMTP. With Exchange 2016, the most organizations only need two namespaces for coexistence with Exchange 2010: one for client protocols and one for Autodiscover. Depending on how you configure your mail routing, you might also need an additional namespace for SMTP routing. 
+- **Deployment simplicity**: With an Exchange 2010 site-resilient design, you needed up to eight different namespaces: two Internet Protocol namespaces, two for Outlook Web App fallback, one for Autodiscover, two for RPC Client Access, and one for SMTP. With Exchange 2016, the most organizations only need two namespaces for coexistence with Exchange 2010: one for client protocols and one for Autodiscover. Depending on how you configure your mail routing, you might also need an additional namespace for SMTP routing.
     
 For more information about the Exchange 2016 architecture, see [Exchange 2016 architecture](../architecture/architecture.md).
   
@@ -313,9 +316,9 @@ For more information about the Exchange 2016 architecture, see [Exchange 2016 ar
 
 Setup has been completely rewritten so that installing Exchange 2016 and making sure you've got the latest product rollups and security fixes is easier than ever. Here are some of the improvements we've made:
   
-- **Improved readiness checks** Readiness checks make sure that your computer and your organization are ready for Exchange 2016. After you've provided the necessary information about your installation to Setup, the readiness checks are run before installation begins. The new readiness check engine now runs through all checks before reporting back to you on what actions need to be performed before Setup can continue, and it does so faster than ever. As with previous versions of Exchange, you can tell Setup to install the Windows features that are required by Setup so you don't have to install them manually. 
+- **Improved readiness checks**: Readiness checks make sure that your computer and your organization are ready for Exchange 2016. After you've provided the necessary information about your installation to Setup, the readiness checks are run before installation begins. The new readiness check engine now runs through all checks before reporting back to you on what actions need to be performed before Setup can continue, and it does so faster than ever. As with previous versions of Exchange, you can tell Setup to install the Windows features that are required by Setup so you don't have to install them manually.
     
-- **Simplified and modern wizard** We've removed all the steps in the Setup wizard that aren't absolutely required for you to install Exchange. What's left is an easy-to-follow wizard that takes you through the installation process one step at a time. 
+- **Simplified and modern wizard**: We've removed all the steps in the Setup wizard that aren't absolutely required for you to install Exchange. What's left is an easy-to-follow wizard that takes you through the installation process one step at a time.
     
 For more information, see [Planning and deployment](../plan-and-deploy/plan-and-deploy.md).
   
@@ -379,7 +382,7 @@ For more information, see [Deploying the Azure Rights Management connector](http
 
 Exchange 2016 includes the following improvements to In-Place Archiving, retention, and eDiscovery to help your organization meet its compliance needs:
   
-- **In-Place Hold** In-Place Hold is a unified hold model that allows you to meet legal hold requirements in the following scenarios: 
+- **In-Place Hold**: In-Place Hold is a unified hold model that allows you to meet legal hold requirements in the following scenarios:
     
   - Preserve the results of the query (query-based hold), which allows for scoped immutability across mailboxes.
     
@@ -389,7 +392,7 @@ Exchange 2016 includes the following improvements to In-Place Archiving, retenti
     
   - Place a user on multiple holds to meet different case requirements.
     
-- **In-Place eDiscovery** In-Place eDiscovery allows authorized users to search mailbox data across all mailboxes and In-Place Archives in an Exchange 2016 organization and copy messages to a discovery mailbox for review. In Exchange 2016, In-Place eDiscovery allows discovery managers to perform more efficient searches and hold. 
+- **In-Place eDiscovery**: In-Place eDiscovery allows authorized users to search mailbox data across all mailboxes and In-Place Archives in an Exchange 2016 organization and copy messages to a discovery mailbox for review. In Exchange 2016, In-Place eDiscovery allows discovery managers to perform more efficient searches and hold.
     
   - **Federated search** allows you to search and preserve data across multiple data repositories. With Exchange 2016, you can perform in-place eDiscovery searches across Exchange, SharePoint, and Skype for Business. You can use the eDiscovery Center in SharePoint 2013 to perform In-Place eDiscovery search and hold. 
     
@@ -397,18 +400,18 @@ Exchange 2016 includes the following improvements to In-Place Archiving, retenti
     
   - **Export search results** Discovery Managers can export mailbox content to a .pst file from the SharePoint 2013 eDiscovery Console. Mailbox export request cmdlets are no longer required to export a mailbox to a .pst file. 
     
-  - **Keyword statistics** Search statistics are offered on a per search term basis. This enables a Discovery Manager to quickly make intelligent decisions about how to further refine the search query to provide better results. eDiscovery search results are sorted by relevance. 
+  - **Keyword statistics**: Search statistics are offered on a per search term basis. This enables a Discovery Manager to quickly make intelligent decisions about how to further refine the search query to provide better results. eDiscovery search results are sorted by relevance.
     
-  - **KQL syntax** Discovery Managers can use Keyword Query Language (KQL) syntax in search queries. KQL is similar to the Advanced Query Syntax (AQS), that was used for discovery searches in Exchange 2010. 
+  - **KQL syntax**: Discovery Managers can use Keyword Query Language (KQL) syntax in search queries. KQL is similar to the Advanced Query Syntax (AQS), that was used for discovery searches in Exchange 2010.
     
-  - **In-Place eDiscovery and Hold wizard** Discovery Managers can use the In-Place eDiscovery and Hold wizard to perform eDiscovery and hold operations. 
+  - **In-Place eDiscovery and Hold wizard**: Discovery Managers can use the In-Place eDiscovery and Hold wizard to perform eDiscovery and hold operations.
     
     > [!NOTE]
     > If SharePoint 2013 isn't available, a subset of the eDiscovery functionality is available in the Exchange admin center. 
   
-  - ** Public folder support for In-Place eDiscovery and In-Place Hold ** Exchange 2016 has integrated public folders into the In-Place eDiscovery and Hold workflow. You can use In-Place eDiscovery to search public folders in your organization, and you can put a In-Place Hold on public folders. And similar to placing a mailbox on hold, you can place a query-based and a time-based hold on public folders. Currently, you can only search and place a hold on all public folders. In later releases, you'll be able to choose specific public folders to search and place on hold. For more information, see [Search and place a hold on public folders using In-Place eDiscovery](../policy-and-compliance/ediscovery/search-public-folders.md).
+  - ** Public folder support for In-Place eDiscovery and In-Place Hold **: Exchange 2016 has integrated public folders into the In-Place eDiscovery and Hold workflow. You can use In-Place eDiscovery to search public folders in your organization, and you can put a In-Place Hold on public folders. And similar to placing a mailbox on hold, you can place a query-based and a time-based hold on public folders. Currently, you can only search and place a hold on all public folders. In later releases, you'll be able to choose specific public folders to search and place on hold. For more information, see [Search and place a hold on public folders using In-Place eDiscovery](../policy-and-compliance/ediscovery/search-public-folders.md).
     
-  - **Compliance Search** Compliance Search is a new eDiscovery search tool in Exchange 2016 with new and improved scaling and performance capabilities. You can use it to search very large numbers of mailboxes in a single search. In fact, there's no limit on the number of mailboxes that can be included in a single search, so you can search all mailboxes in your organization at once. There's also no limit on the number of searches that can run at the same time. For In-Place eDiscovery in Exchange 2016, the limits are the same as in Exchange 2013: you can search up to 10,000 mailboxes in a single search and your organization can run a maximum of two In-Place eDiscovery searches at the same time. 
+  - **Compliance Search**: Compliance Search is a new eDiscovery search tool in Exchange 2016 with new and improved scaling and performance capabilities. You can use it to search very large numbers of mailboxes in a single search. In fact, there's no limit on the number of mailboxes that can be included in a single search, so you can search all mailboxes in your organization at once. There's also no limit on the number of searches that can run at the same time. For In-Place eDiscovery in Exchange 2016, the limits are the same as in Exchange 2013: you can search up to 10,000 mailboxes in a single search and your organization can run a maximum of two In-Place eDiscovery searches at the same time.
     
     In Exchange 2016, Compliance Search is only available by using the Exchange Management Shell. For information about using the Compliance Search cmdlets, see the following topics:
     
@@ -427,9 +430,9 @@ Exchange 2016 includes the following improvements to In-Place Archiving, retenti
     > [!NOTE]
     > To have access to the Compliance Search cmdlets, an administrator or eDiscovery manager must be assigned the Mailbox Search management role or be a member of the Discovery Management role group. 
   
-- **Search across primary and archive mailboxes in Outlook on the web** Users can search across their primary and archive mailboxes in Outlook on the web. Two separate searches are no longer necessary. 
+- **Search across primary and archive mailboxes in Outlook on the web**: Users can search across their primary and archive mailboxes in Outlook on the web. Two separate searches are no longer necessary.
     
-- **Archive Skype for Business content** Exchange 2016 supports archiving of Skype for Business content in a user's mailbox. You can place Skype for Business content on hold using In-Place Hold and use In-Place eDiscovery to search Skype for Business content archived in Exchange. 
+- **Archive Skype for Business content**: Exchange 2016 supports archiving of Skype for Business content in a user's mailbox. You can place Skype for Business content on hold using In-Place Hold and use In-Place eDiscovery to search Skype for Business content archived in Exchange.
     
 For more information, see [Messaging policy and compliance in Exchange 2016](../policy-and-compliance/policy-and-compliance.md).
   
@@ -438,9 +441,9 @@ For more information, see [Messaging policy and compliance in Exchange 2016](../
 
 Exchange 2016 includes the following improvements to auditing:
   
-- **Auditing reports** The EAC includes auditing functionality so that you can run reports or export entries from the mailbox audit log and the administrator audit log. The mailbox audit log records whenever a mailbox is accessed by someone other than the person who owns the mailbox. This can help you determine who has accessed a mailbox and what they have done. The administrator audit log records any action, based on an Exchange Management Shell cmdlet, performed by an administrator. This can help you troubleshoot configuration issues or identify the cause of problems related to security or compliance. For more information, see [Use Auditing Reports](http://technet.microsoft.com/library/2b3e1529-1677-4564-be0b-ce22757ddc0d.aspx).
+- **Auditing reports**: The EAC includes auditing functionality so that you can run reports or export entries from the mailbox audit log and the administrator audit log. The mailbox audit log records whenever a mailbox is accessed by someone other than the person who owns the mailbox. This can help you determine who has accessed a mailbox and what they have done. The administrator audit log records any action, based on an Exchange Management Shell cmdlet, performed by an administrator. This can help you troubleshoot configuration issues or identify the cause of problems related to security or compliance. For more information, see [Use Auditing Reports](http://technet.microsoft.com/library/2b3e1529-1677-4564-be0b-ce22757ddc0d.aspx).
     
-- **Viewing the administrator audit log** Instead of exporting the administrator audit log, which can take up to 24 hours to receive in an email message, you can view administrator audit log entries in the EAC. To do this, go to **Compliance Management** > **Auditing** and click **View the administrator audit log**. Up to 1000 entries will be displayed on multiple pages. To narrow the search, you can specify a date range.
+- **Viewing the administrator audit log**: Instead of exporting the administrator audit log, which can take up to 24 hours to receive in an email message, you can view administrator audit log entries in the EAC. To do this, go to **Compliance Management** \> **Auditing** and click **View the administrator audit log**. Up to 1000 entries will be displayed on multiple pages. To narrow the search, you can specify a date range.
     
     As an additional improvement, you can also export the audit log data in a format that's common to both Exchange 2016 and SharePoint Server 2016. This makes it easier to integrate with third-party tools to view the data and create richer reports.
     
@@ -451,25 +454,25 @@ Exchange 2016 includes the following improvements to auditing:
 
 The built-in malware filtering capabilities of Exchange 2016 helps protect your network from malicious software that's transferred by email messages. All messages sent or received by your Exchange 2016 Mailbox server are scanned for malware (viruses and spyware) by using the built-in Malware Agent. If malware is detected, the message is deleted. Notifications may also be sent to senders or administrators when an infected message is deleted and not delivered. You can also choose to replace infected attachments with either default or custom messages that notify the recipients of the malware detection.
   
-For more information about anti-malware protection, see [Antimalware protection in Exchange 2016](../antispam-and-antimalware/antimalware/antimalware.md).
+For more information about antimalware protection, see [Antimalware protection in Exchange 2016](../antispam-and-antimalware/antimalware/antimalware.md).
   
 ### Mail flow and the transport pipeline
 <a name="Mail2010"> </a>
 
 How messages flow through an organization and what happens to them has changed significantly in Exchange 2016. Following is a brief overview of the changes:
   
-- **Transport pipeline** The transport pipeline in Exchange 2016 is now made up of several different services: the Front End Transport service, the Transport service, and the Mailbox Transport service. For more information, see [Mail flow and the transport pipeline](../mail-flow/mail-flow.md).
+- **Transport pipeline**: The transport pipeline in Exchange 2016 is now made up of several different services: the Front End Transport service, the Transport service, and the Mailbox Transport service. For more information, see [Mail flow and the transport pipeline](../mail-flow/mail-flow.md).
     
-- **Routing** Mail routing in Exchange 2016 recognizes DAG boundaries as well as Active Directory site boundaries. Also, mail routing has been improved to queue messages more directly for internal recipients. For more information, see [Mail routing](../mail-flow/mail-routing/mail-routing.md).
+- **Routing**: Mail routing in Exchange 2016 recognizes DAG boundaries as well as Active Directory site boundaries. Also, mail routing has been improved to queue messages more directly for internal recipients. For more information, see [Mail routing](../mail-flow/mail-routing/mail-routing.md).
     
-- **Connectors** The default maximum message size for a Send connector or a Receive connector has increased from 10MB to 25MB. For more information, see [Connector limits](../mail-flow/message-size-limits.md#Connector).
+- **Connectors**: The default maximum message size for a Send connector or a Receive connector has increased from 10MB to 25MB. For more information, see [Connector limits](../mail-flow/message-size-limits.md#Connector).
     
     You can configure Send connectors to route outbound mail through the Front End transport service on Mailbox servers. For more information, see [Configure Send connectors to proxy outbound mail](../mail-flow/connectors/proxy-outbound-mail.md).
     
 ### Recipients
 <a name="Recipients2010"> </a>
 
-Administrators can now use the EAC to create a group naming policy, which lets you standardize and manage the names of distribution groups that are created by users in your organization. You can automatically add a prefix or suffix to the name of the distribution group when it's created, and you can block specific words from being used in group names. For more information, see [Create a Distribution Group Naming Policy](http://technet.microsoft.com/library/b2ffb654-345d-4be1-be8e-83d28901373e.aspx).
+Administrators can now use the EAC to create a  *group naming policy*  , which lets you standardize and manage the names of distribution groups that are created by users in your organization. You can automatically add a prefix or suffix to the name of the distribution group when it's created, and you can block specific words from being used in group names. For more information, see [Create a Distribution Group Naming Policy](http://technet.microsoft.com/library/b2ffb654-345d-4be1-be8e-83d28901373e.aspx).
   
 For more information about recipients in Exchange 2016, see [Recipients](../recipients/recipients.md).
   
@@ -478,9 +481,9 @@ For more information about recipients in Exchange 2016, see [Recipients](../reci
 
 Exchange 2016 includes the following enhancements for sharing and collaboration:
   
-- **Public folders** Public folders now take advantage of the existing high availability and storage technologies of the mailbox store. The public folder architecture uses specially designed mailboxes to store both the hierarchy and the public folder content. This new design also means that there is no longer a public folder database. Public folder replication now uses the continuous replication model. High availability for the hierarchy and content mailboxes is provided by the database availability group (DAG). With this design, we're moving away from a multi-master replication model to a single-master replication model. For more information, see [Public Folders](http://technet.microsoft.com/library/94c4fb69-9234-4b34-8c1c-da2a0a11da65.aspx).
+- **Public folders**: Public folders now take advantage of the existing high availability and storage technologies of the mailbox store. The public folder architecture uses specially designed mailboxes to store both the hierarchy and the public folder content. This new design also means that there is no longer a public folder database. Public folder replication now uses the continuous replication model. High availability for the hierarchy and content mailboxes is provided by the database availability group (DAG). With this design, we're moving away from a multi-master replication model to a single-master replication model. For more information, see [Public Folders](http://technet.microsoft.com/library/94c4fb69-9234-4b34-8c1c-da2a0a11da65.aspx).
     
-- **Shared mailboxes** In previous versions of Exchange, creating a shared mailbox was a multi-step process in which you had to use the Exchange Management Shell to set the delegate permissions. Now you can create a shared mailbox in one step via the Exchange admin center (EAC). In the EAC, go to **Recipients** > **Shared** to create a shared mailbox. Shared mailboxes are a recipient type so you can easily search for your shared mailboxes in either the EAC or by using the Exchange Management Shell. For more information, see [Shared Mailboxes](http://technet.microsoft.com/library/1d71c01b-e261-408e-a633-1d1c9d00032a.aspx).
+- **Shared mailboxes**: In previous versions of Exchange, creating a shared mailbox was a multi-step process in which you had to use the Exchange Management Shell to set the delegate permissions. Now you can create a shared mailbox in one step via the Exchange admin center (EAC). In the EAC, go to **Recipients** \> **Shared** to create a shared mailbox. Shared mailboxes are a recipient type so you can easily search for your shared mailboxes in either the EAC or by using the Exchange Management Shell. For more information, see [Shared Mailboxes](http://technet.microsoft.com/library/1d71c01b-e261-408e-a633-1d1c9d00032a.aspx).
     
 ### Integration with SharePoint and Skype for Business
 <a name="Integrate2010"> </a>
@@ -556,9 +559,12 @@ Internet Explorer 11 and Windows Store apps using JavaScript support the Applica
 
 MAPI over HTTP is now the default protocol that Outlook uses to communicate with Exchange. MAPI over HTTP improves the reliability and stability of the Outlook and Exchange connections by moving the transport layer to the industry-standard HTTP model. This allows a higher level of visibility of transport errors and enhanced recoverability. Additional functionality includes support for an explicit pause-and-resume function, which enables supported clients to change networks or resume from hibernation while maintaining the same server context.
   
-> [!NOTE]
->  MAPI over HTTP isn't enabled in organizations where the following conditions are both true: >  You're installing Exchange 2016 in an organization that already has Exchange 2013 servers installed. >  MAPI over HTTP wasn't enabled in Exchange 2013. 
+ **Note**: MAPI over HTTP isn't enabled in organizations where the following conditions are both true:
   
+- You're installing Exchange 2016 in an organization that already has Exchange 2013 servers installed.
+    
+- MAPI over HTTP wasn't enabled in Exchange 2013.
+    
 While MAPI over HTTP is now the default communication protocol between Outlook and Exchange, clients that don't support it will fall back to Outlook Anywhere (RPC over HTTP). RPC (RPC over TCP) is no longer supported.
   
 For more information, see [MAPI over HTTP in Exchange 2016](../clients/mapi-over-http/mapi-over-http.md).
@@ -606,28 +612,28 @@ The high availability model of the mailbox component has not changed significant
   
 Exchange 2016 uses DAGs and mailbox database copies, along with other features such as single item recovery, retention policies, and lagged database copies, to provide high availability, site resilience, and Exchange native data protection. The high availability platform, the Exchange Information Store and the Extensible Storage Engine (ESE), have all been enhanced to provide greater availability, easier management, and to reduce costs. These enhancements include:
   
-- **Managed availability** With managed availability, internal monitoring and recovery-oriented features are tightly integrated to help prevent failures, proactively restore services, and initiate server failovers automatically or alert administrators to take action. The focus is on monitoring and managing the end user experience rather than just server and component uptime to help keep the service continuously available. 
+- **Managed availability**: With managed availability, internal monitoring and recovery-oriented features are tightly integrated to help prevent failures, proactively restore services, and initiate server failovers automatically or alert administrators to take action. The focus is on monitoring and managing the end user experience rather than just server and component uptime to help keep the service continuously available.
     
-- **Managed Store** See the [Managed Store](new-features.md#ManagedStore) section. 
+- **Managed Store**: See the [Managed Store](new-features.md#ManagedStore) section. 
     
-- **Support for multiple databases per disk** Exchange 2016 includes enhancements that enable you to support multiple databases (mixtures of active and passive copies) on the same disk, thereby leveraging larger disks in terms of capacity and IOPS as efficiently as possible. 
+- **Support for multiple databases per disk**: Exchange 2016 includes enhancements that enable you to support multiple databases (mixtures of active and passive copies) on the same disk, thereby leveraging larger disks in terms of capacity and IOPS as efficiently as possible.
     
-- **Automatic reseed** Enables you to quickly restore database redundancy after disk failure. If a disk fails, the database copy stored on that disk is copied from the active database copy to a spare disk on the same server. If multiple database copies were stored on the failed disk, they can all be automatically re-seeded on a spare disk. This enables faster reseeds, as the active databases are likely to be on multiple servers and the data is copied in parallel. 
+- **Automatic reseed**: Enables you to quickly restore database redundancy after disk failure. If a disk fails, the database copy stored on that disk is copied from the active database copy to a spare disk on the same server. If multiple database copies were stored on the failed disk, they can all be automatically re-seeded on a spare disk. This enables faster reseeds, as the active databases are likely to be on multiple servers and the data is copied in parallel.
     
-- **Automatic recovery from storage failures** This feature continues the innovation that was introduced in Exchange 2010 to allow the system to recover from failures that affect resiliency or redundancy. In addition to the Exchange 2010 bugcheck behaviors, Exchange 2016 includes additional recovery behaviors for long I/O times, excessive memory consumption by  `MSExchangeRepl.exe`, and severe cases where the system is in such a bad state that threads can't be scheduled.
+- **Automatic recovery from storage failures**: This feature continues the innovation that was introduced in Exchange 2010 to allow the system to recover from failures that affect resiliency or redundancy. In addition to the Exchange 2010 bugcheck behaviors, Exchange 2016 includes additional recovery behaviors for long I/O times, excessive memory consumption by  `MSExchangeRepl.exe`, and severe cases where the system is in such a bad state that threads can't be scheduled.
     
-- **Lagged copy enhancements** Lagged copies can now use automatic log play down to care for themselves (to a certain extent). Lagged copies will automatically play down log files in a variety of situations, such as single page restore and low disk space scenarios. If the system detects that page patching is required for a lagged copy, the logs will be automatically replayed into the lagged copy. Lagged copies will also invoke this auto replay feature when a low disk space threshold has been reached, and when the lagged copy has been detected as the only available copy for a specific period of time. In addition, lagged copies can leverage Safety Net, making recovery or activation much easier. Safety Net is improved functionality in Exchange 2016 based on the transport dumpster of Exchange 2010. 
+- **Lagged copy enhancements**: Lagged copies can now use automatic log play down to care for themselves (to a certain extent). Lagged copies will automatically play down log files in a variety of situations, such as single page restore and low disk space scenarios. If the system detects that page patching is required for a lagged copy, the logs will be automatically replayed into the lagged copy. Lagged copies will also invoke this auto replay feature when a low disk space threshold has been reached, and when the lagged copy has been detected as the only available copy for a specific period of time. In addition, lagged copies can leverage Safety Net, making recovery or activation much easier.  *Safety Net*  is improved functionality in Exchange 2016 based on the transport dumpster of Exchange 2010. 
     
-- **Single copy alert enhancements** The single copy alert that was introduced in Exchange 2010 is no longer a separate scheduled script. It's now integrated into the managed availability components within the system and is a native function within Exchange. 
+- **Single copy alert enhancements**: The single copy alert that was introduced in Exchange 2010 is no longer a separate scheduled script. It's now integrated into the managed availability components within the system and is a native function within Exchange.
     
-- **DAG network auto-configuration** DAGs networks can be automatically configured by the system based on configuration settings. In addition to manual configuration options, DAGs can also distinguish between MAPI and Replication networks and configure DAG networks automatically. 
+- **DAG network auto-configuration**: DAGs networks can be automatically configured by the system based on configuration settings. In addition to manual configuration options, DAGs can also distinguish between MAPI and Replication networks and configure DAG networks automatically.
     
 For more information about these features, see [High Availability and Site Resilience](http://technet.microsoft.com/library/6628285e-d07c-443d-866b-be784ad1ed1e.aspx) and [Changes to high availability and site resilience over previous versions](../high-availability/ha-changes.md).
   
 #### Managed Store
 <a name="ManagedStore"> </a>
 
-In Exchange 2016, Managed Store is the name of the Information Store processes,  `Microsoft.Exchange.Store.Service.exe` and  `Microsoft.Exchange.Store.Worker.exe`. The new Managed Store is written in C# and is tightly integrated with the Microsoft Exchange Replication service ( `MSExchangeRepl.exe`) to provide higher availability through improved resiliency. In addition, the Managed Store allows more granular management of resource consumption, and has improved diagnostics for faster root cause analysis.
+In Exchange 2016,  *Managed Store*  is the name of the Information Store processes,  `Microsoft.Exchange.Store.Service.exe` and  `Microsoft.Exchange.Store.Worker.exe`. The new Managed Store is written in C# and is tightly integrated with the Microsoft Exchange Replication service ( `MSExchangeRepl.exe`) to provide higher availability through improved resiliency. In addition, the Managed Store allows more granular management of resource consumption, and has improved diagnostics for faster root cause analysis.
   
 The Managed Store works with the Microsoft Exchange Replication service to manage mailbox databases, which continue to use the Extensible Storage Engine (ESE) database engine. Exchange 2016 includes significant changes to the mailbox database schema that provide many optimizations over previous versions of Exchange. The Microsoft Exchange Replication service is also responsible for all service availability related to Mailbox servers. These architectural changes enable faster database failover and better physical disk failure handling.
   
@@ -642,9 +648,9 @@ An Exchange workload is an Exchange server feature, protocol, or service that ha
   
 There are two ways to manage Exchange workloads in Exchange 2016:
   
-- **Monitor the health of system resources** Managing workloads based on the health of system resources. 
+- **Monitor the health of system resources**: Managing workloads based on the health of system resources.
     
-- **Control how resources are consumed by individual users** Controlling how resources are consumed by individual users was possible in Exchange 2010 (user throttling), and this capability has been expanded for Exchange 2016. 
+- **Control how resources are consumed by individual users**: Controlling how resources are consumed by individual users was possible in Exchange 2010 (user throttling), and this capability has been expanded for Exchange 2016.
     
 For more information about these features, see [User workload management in Exchange 2016](../server-health/workload-management.md).
   

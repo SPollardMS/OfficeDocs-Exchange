@@ -3,18 +3,18 @@ title: "Procedures for accepted domains in Exchange 2016"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 9/20/2016
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 11801f73-4934-4025-a1c1-3935dada7e9b
-description: "Learn how to create, modify, and remove accepted domains in Exchange 2016."
+description: "Summary: Learn how to create, modify, and remove accepted domains in Exchange 2016."
 ---
 
 # Procedures for accepted domains in Exchange 2016
 
-Learn how to create, modify, and remove accepted domains in Exchange 2016.
+ **Summary**: Learn how to create, modify, and remove accepted domains in Exchange 2016.
   
 Accepted domains are the SMTP name spaces (also known as address spaces) that you configure in an Exchange organization to receive email messages. You use the Exchange admin center (EAC) or the Exchange Management Shell to configure accepted domains in Exchange Server 2016.
   
@@ -64,15 +64,15 @@ After you create an accepted domain, you can't change the domain value (for exam
   
 ### Use the EAC to create accepted domains
 
-1. In the EAC, go to **Mail flow** > **Accepted domains**, and then click **Add** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)).
+1. In the EAC, go to **Mail flow** \> **Accepted domains**, and then click **Add** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)).
     
 2. In the **New accepted domain** window that opens, configure the following settings: 
     
-  - **Name** Enter a unique, descriptive name. 
+  - **Name**: Enter a unique, descriptive name.
     
-  - **Accepted domain** Enter a single domain (for example, contoso.com) or a domain with subdomains (for example, \*.contoso.com). 
+  - **Accepted domain**: Enter a single domain (for example, contoso.com) or a domain with subdomains (for example, \*.contoso.com).
     
-  - **This domain is** Select **Authoritative**, **Internal Relay**, or **External Relay**.
+  - **This domain is**: Select **Authoritative**, **Internal Relay**, or **External Relay**.
     
     When you're finished, click **Save**.
     
@@ -98,7 +98,7 @@ For detailed syntax and parameter information, see [new-AcceptedDomain](http://t
 
 To verify that you've successfully created an accepted domain, use either of the following procedures:
   
-- In the EAC, go to **Mail flow** > **Accepted domains**, verify that the accepted domain is listed, and the details are correct.
+- In the EAC, go to **Mail flow** \> **Accepted domains**, verify that the accepted domain is listed, and the details are correct.
     
 - In the Exchange Management Shell, run the following command to verify the property values:
     
@@ -115,15 +115,15 @@ To verify that you've successfully created an accepted domain, use either of the
     
 ### Use the EAC to modify accepted domains
 
-1. In the EAC, go to **Mail flow** > **Accepted domains**, select the accepted domain from the list, and then click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)).
+1. In the EAC, go to **Mail flow** \> **Accepted domains**, select the accepted domain from the list, and then click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)).
     
 2. In the properties window that opens, you can configure the following settings:
     
   - **Name**
     
-  - **This domain is** Authoritative, Internal Relay, or External Relay. 
+  - **This domain is**: Authoritative, Internal Relay, or External Relay.
     
-  - **Make this the default domain** If the check box is cleared, select it to configure the accepted domain as the default domain. 
+  - **Make this the default domain**: If the check box is cleared, select it to configure the accepted domain as the default domain.
     
     When you're finished, click **Save**.
     
@@ -153,7 +153,7 @@ For detailed syntax and parameter information, see [set-AcceptedDomain](http://t
 
 To verify that you've successfully modified an accepted domain, use either of the following procedures:
   
-- In the EAC, go to **Mail flow** > **Accepted domains**, and verify the property values.
+- In the EAC, go to **Mail flow** \> **Accepted domains**, and verify the property values.
     
     **Notes**:
     
@@ -182,7 +182,7 @@ To verify that you've successfully modified an accepted domain, use either of th
     
 ### Use the EAC to remove accepted domains
 
-1. In the EAC, go to **Mail flow** > **Accepted domains**, select the accepted domain from the list, and then click **Remove** ( ![Remove icon](../../media/ITPro_EAC_RemoveIcon.png)).
+1. In the EAC, go to **Mail flow** \> **Accepted domains**, select the accepted domain from the list, and then click **Remove** ( ![Remove icon](../../media/ITPro_EAC_RemoveIcon.png)).
     
 2. In the **Warning** dialog that appears, click **Yes** to confirm. 
     
@@ -206,7 +206,7 @@ For detailed syntax and parameter information, see [remove-AcceptedDomain](http:
 
 To verify that you've successfully removed an accepted domain, use either of the following procedures:
   
-- In the EAC, go to **Mail flow** > **Accepted domains**, and verify that the accepted domain is no longer listed.
+- In the EAC, go to **Mail flow** \> **Accepted domains**, and verify that the accepted domain is no longer listed.
     
 - In the Exchange Management Shell, run the following command to verify that the accepted domain isn't listed:
     
@@ -249,13 +249,13 @@ These are the steps that are required to configure Exchange to accept mail for m
     
     For example, create a new policy named Fourth Coffee Recipients with the following settings:
     
-  - **Precanned recipient filter** All users with mailboxes where the **Company** value is Fourth Coffee. 
+  - **Precanned recipient filter**: All users with mailboxes where the **Company** value is Fourth Coffee. 
     
-  - **Primary SMTP email address** _\<alias\>_@fourthcoffee.com.
+  - **Primary SMTP email address**:  _\<alias\>_@fourthcoffee.com.
     
-  - **Additional proxy email addresses** None. The affected recipients can no longer receive messages sent to their old @contoso.com primary email address. 
+  - **Additional proxy email addresses**: None. The affected recipients can no longer receive messages sent to their old @contoso.com primary email address.
     
-  - **Priority** 1. The first email address policy that identifies a recipient configures the recipient's email addresses. All other policies are ignored, even if the first policy is unapplied and can't configure the recipient's email addresses. 
+  - **Priority**: 1. The first email address policy that identifies a recipient configures the recipient's email addresses. All other policies are ignored, even if the first policy is unapplied and can't configure the recipient's email addresses.
     
     For instructions, see [Create email address policies](../../email-addresses-and-address-books/email-address-policies/eap-procedures.md#CreateEAP).
     

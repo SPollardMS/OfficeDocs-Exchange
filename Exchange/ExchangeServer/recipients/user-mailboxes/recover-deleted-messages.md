@@ -3,24 +3,24 @@ title: "Recover deleted messages in a user's mailbox"
 ms.author: chrisda
 author: chrisda
 manager: scotv
-ms.date: 4/19/2018
+ms.date: 6/12/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.collection: Strat_EX_Admin
 ms.assetid: 9e0e34ce-efc5-454e-8d15-57b4da867f12
-description: "Learn how administrators can search for and recover deleted email messages in a user's mailbox in Exchange 2016"
+description: "Summary: Learn how administrators can search for and recover deleted email messages in a user's mailbox in Exchange 2016"
 ---
 
 # Recover deleted messages in a user's mailbox
 
-Learn how administrators can search for and recover deleted email messages in a user's mailbox in Exchange 2016
+ **Summary**: Learn how administrators can search for and recover deleted email messages in a user's mailbox in Exchange 2016
   
 Administrators can search for items that are purged (hard-deleted) by a user by using the Recover Deleted Items feature in Outlook or Outlook on the web. They can also search for items deleted by an automated process, such as the retention policy assigned to user mailboxes. In these situations, the purged items can't be recovered by a user. But administrators can recover purged messages if the deleted item retention period for the item hasn't expired.
   
 > [!NOTE]
-> In addition to using this procedure to search for and recover deleted items, you can also use this procedure to search for items residing in other folders in the mailbox and to delete items from the source mailbox (also known as search and purge). 
+> In addition to using this procedure to search for and recover deleted items, you can also use this procedure to search for items residing in other folders in the mailbox and to delete items from the source mailbox (also known as  *search and purge*  ). 
   
 ## What you need to know before you begin?
 
@@ -30,21 +30,21 @@ Administrators can search for items that are purged (hard-deleted) by a user by 
     
 - To search for and recover items, you need the following information:
     
-  - **Source mailbox** The mailbox being searched. 
+  - **Source mailbox**: The mailbox being searched.
     
-  - **Target mailbox** The discovery mailbox in which messages will be recovered. Exchange 2016 Setup creates a default discovery mailbox. In Exchange Online, a discovery mailbox is also created by default. If required, you can create additional discovery mailboxes. For details, see [Create a Discovery Mailbox](http://technet.microsoft.com/library/bc20285d-35e2-4e49-9bd3-38abf96114ba.aspx).
+  - **Target mailbox**: The discovery mailbox in which messages will be recovered. Exchange 2016 Setup creates a default discovery mailbox. In Exchange Online, a discovery mailbox is also created by default. If required, you can create additional discovery mailboxes. For details, see [Create a Discovery Mailbox](http://technet.microsoft.com/library/bc20285d-35e2-4e49-9bd3-38abf96114ba.aspx).
     
     > [!NOTE]
     > When using the **Search-Mailbox** cmdlet, you can also specify a target mailbox that isn't a discovery mailbox. However, you can't specify the same mailbox as the source and target mailbox. 
   
-  - **Search criteria** Criteria include sender or recipient, or keywords (words or phrases) in the message. 
+  - **Search criteria**: Criteria include sender or recipient, or keywords (words or phrases) in the message.
     
 ## Step 1: Search for and recover missing items
 
 You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "In-Place eDiscovery" entry in the [Messaging policy and compliance permissions in Exchange 2016](../../permissions/feature-permissions/policy-and-compliance-permissions.md) topic. 
   
 > [!NOTE]
-> You can use In-Place eDiscovery in the Exchange admin center (EAC) to search for missing items. However, when using the EAC, you can't restrict the search to the Recoverable Items folder. All messages matching your search parameters will be returned even if they're not deleted. After they're recovered to the specified discovery mailbox, you may need to review the search results and remove unnecessary messages before recovering the remaining messages to the user's mailbox or exporting them to a .pst file. > For details about how to use the EAC to perform an In-Place eDiscovery search, see [Create an In-Place eDiscovery search in Exchange 2016](../../policy-and-compliance/ediscovery/create-searches.md). 
+> You can use In-Place eDiscovery in the Exchange admin center (EAC) to search for missing items. However, when using the EAC, you can't restrict the search to the Recoverable Items folder. All messages matching your search parameters will be returned even if they're not deleted. After they're recovered to the specified discovery mailbox, you may need to review the search results and remove unnecessary messages before recovering the remaining messages to the user's mailbox or exporting them to a .pst file. For details about how to use the EAC to perform an In-Place eDiscovery search, see [Create an In-Place eDiscovery search in Exchange 2016](../../policy-and-compliance/ediscovery/create-searches.md). 
   
 The first step in the recovery process is to search for messages in the source mailbox. Use one of the following methods to search a user mailbox and copy messages to a discovery mailbox.
   
@@ -98,13 +98,13 @@ In Exchange 2016, you can export contents from a mailbox to a .pst file and impo
   
 This example uses the following settings to export messages from the folder April Stewart Recovery in the Discovery Search Mailbox to a .pst file:
   
-- **Mailbox** Discovery Search Mailbox 
+- **Mailbox**: Discovery Search Mailbox
     
-- **Source folder** April Stewart Recovery 
+- **Source folder**: April Stewart Recovery
     
-- **ContentFilter** April travel plans 
+- **ContentFilter**: April travel plans
     
-- **PST file path** \\MYSERVER\HelpDeskPst\AprilStewartRecovery.pst 
+- **PST file path**: \\MYSERVER\HelpDeskPst\AprilStewartRecovery.pst
     
 ```
 New-MailboxExportRequest -Mailbox "Discovery Search Mailbox" -SourceRootFolder "April Stewart Recovery" -ContentFilter {Subject -eq "April travel plans"} -FilePath \\MYSERVER\HelpDeskPst\AprilStewartRecovery.pst
@@ -114,11 +114,11 @@ For detailed syntax and parameter information, see [New-MailboxExportRequest](ht
   
 This example uses the following settings to import messages from a .pst file to the folder Recovered By Helpdesk in April Stewart's mailbox:
   
-- **Mailbox** April Stewart 
+- **Mailbox**: April Stewart
     
-- **Target folder** Recovered By Helpdesk 
+- **Target folder**: Recovered By Helpdesk
     
-- **PST file path** \\MYSERVER\HelpDeskPst\AprilStewartRecovery.pst 
+- **PST file path**: \\MYSERVER\HelpDeskPst\AprilStewartRecovery.pst
     
 ```
 New-MailboxImportRequest -Mailbox "April Stewart" -TargetRootFolder "Recovered By Helpdesk" -FilePath \\MYSERVER\HelpDeskPst\AprilStewartRecovery.pst 
@@ -132,7 +132,7 @@ To verify that you have successfully exported messages to a .pst file, use Outlo
   
 ## More information
 
-- The ability to recover deleted items is enabled by single item recovery, which lets an administrator recover a message that's been purged by a user or by retention policy as long as the deleted item retention period hasn't expired for that item. To learn more about single item recovery, see [Recoverable Items folder in Exchange 2016](../../policy-and-compliance/recoverable-items-folder/recoverable-items-folder.md).
+- The ability to recover deleted items is enabled by  *single item recovery*  , which lets an administrator recover a message that's been purged by a user or by retention policy as long as the deleted item retention period hasn't expired for that item. To learn more about single item recovery, see [Recoverable Items folder in Exchange 2016](../../policy-and-compliance/recoverable-items-folder/recoverable-items-folder.md).
     
 - In Exchange 2016, a mailbox database is configured to retain deleted items for 14 days, by default. You can configure deleted item retention settings for a mailbox or mailbox database. For more information, see:
     

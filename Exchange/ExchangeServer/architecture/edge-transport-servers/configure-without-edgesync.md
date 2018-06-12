@@ -3,18 +3,18 @@ title: "Configure Internet mail flow through Edge Transport servers without usin
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 6bb98d10-6f12-4b08-a58e-36375f605d65
-description: "Learn how you can configure mail flow between your Exchange organization and an Edge Transport server without using an Edge Subscription."
+description: "Summary: Learn how you can configure mail flow between your Exchange organization and an Edge Transport server without using an Edge Subscription."
 ---
 
 # Configure Internet mail flow through Edge Transport servers without using EdgeSync
 
-Learn how you can configure mail flow between your Exchange organization and an Edge Transport server without using an Edge Subscription.
+ **Summary**: Learn how you can configure mail flow between your Exchange organization and an Edge Transport server without using an Edge Subscription.
   
 We recommend that you use the Edge Subscription process to establish mail flow between your Exchange organization and an Edge Transport server as described in [Edge Subscriptions](edge-subscriptions.md). However, certain situations may prevent you from subscribing the Edge Transport server to your Exchange organization. To manually establish mail flow between your Exchange organization and an Edge Transport server, you need to create the Send connectors and Receive connectors as described in this topic.
   
@@ -33,7 +33,7 @@ For more information about Send connectors, see [Send connectors](../../mail-flo
     > [!NOTE]
     > Secure Sockets Layer (SSL) is being replaced by Transport Layer Security (TLS) as the protocol that's used to encrypt data sent between computer systems. They're so closely related that the terms "SSL" and "TLS" (without versions) are often used interchangeably. Because of this similarity, references to "SSL" in Exchange topics, the Exchange admin center, and the Exchange Management Shell have often been used to encompass both the SSL and TLS protocols. Typically, "SSL" refers to the actual SSL protocol only when a version is also provided (for example, SSL 3.0). To find out why you should disable the SSL protocol and switch to TLS, check out [Protecting you against the SSL 3.0 vulnerability](https://blogs.office.com/2014/10/29/protecting-ssl-3-0-vulnerability/). 
   
-- An Edge Transport server is typically multihomed (has network adapters connected to multiple network segments that each have unique IP configurations): 
+- An Edge Transport server is typically  *multihomed*  (has network adapters connected to multiple network segments that each have unique IP configurations): 
     
   - The network adapter that's connected to the external (public) network segment should be configured to use a public DNS server for name resolution. This enables the server to resolve SMTP domain names to MX resource records and route mail to the Internet.
     
@@ -74,13 +74,13 @@ The following sections walk you through all the configuration steps required to 
 
 This Send connector requires the following configuration:
   
-- **Name** To Internet (or any descriptive name) 
+- **Name**: To Internet (or any descriptive name)
     
-- **Usage type** Internet 
+- **Usage type**: Internet
     
-- **Address spaces** "\*" (all domains) 
+- **Address spaces**: "\*" (all domains)
     
-- **Network settings** Use DNS MX records to route mail automatically. Depending on your network configuration, you can also route mail through a smart host. The smart host then routes mail to the Internet. 
+- **Network settings**: Use DNS MX records to route mail automatically. Depending on your network configuration, you can also route mail through a smart host. The smart host then routes mail to the Internet.
     
 To create a Send connector that's configured to send messages to the Internet, run this command:
   
@@ -94,19 +94,19 @@ For detailed syntax and parameter information, see [New-SendConnector](http://te
 
 This Send connector requires the following configuration:
   
-- **Name** To Internal Org (or any descriptive name) 
+- **Name**: To Internal Org (or any descriptive name)
     
-- **Usage type** Internal 
+- **Usage type**: Internal
     
-- **Address spaces** `--` (indicates all accepted domains for the Exchange organization) 
+- **Address spaces**:  `--` (indicates all accepted domains for the Exchange organization) 
     
 - DNS routing disabled (smart host routing enabled)
     
-- **Smart hosts** FQDN of one or more Mailbox servers as smart hosts. For example, mbxserver01.contoso.com and mbxserver02.contoso.com. 
+- **Smart hosts**: FQDN of one or more Mailbox servers as smart hosts. For example, mbxserver01.contoso.com and mbxserver02.contoso.com.
     
-- **Smart host authentication methods** Basic authentication over TLS 
+- **Smart host authentication methods**: Basic authentication over TLS
     
-- **Smart host authentication credentials** Credentials for the user account in the internal domain that's a member of the Exchange Servers universal security group. You need to use the **Get-Credential** cmdlet to store the credentials. Use the format  _\<Domain\>_\ _\<UserName\>_ or the user principal name (UPN)(chris@contoso.com) to enter the username. 
+- **Smart host authentication credentials**: Credentials for the user account in the internal domain that's a member of the Exchange Servers universal security group. You need to use the **Get-Credential** cmdlet to store the credentials. Use the format  _\<Domain\>_\ _\<UserName\>_ or the user principal name (UPN)(chris@contoso.com) to enter the username. 
     
 To create a Send connector configured to send messages to the Exchange organization, replace the smart host values with the Mailbox servers in your organization, and run this command:
   
@@ -124,7 +124,7 @@ You should make the following configuration changes to the default Receive conne
     
 - Change the network bindings to accept messages only from the network adapter that is accessible from the Internet (for example, 10.1.1.1 and the standard SMTP TCP port value of 25).
     
-To modify the default Receive connector to only accept messages from the Internet, replace < _ServerName\>_ and bindings ith the name of your Edge Transport server and external network adapter configuration, and run this command: 
+To modify the default Receive connector to only accept messages from the Internet, replace \< _ServerName\>_ and bindings ith the name of your Edge Transport server and external network adapter configuration, and run this command: 
   
 ```
 Set-ReceiveConnector -Identity "Default internal Receive connector ServerName>" -Name "From Internet" -Bindings 10.1.1.1:25
@@ -136,15 +136,15 @@ For detailed syntax and parameter information, see [Set-ReceiveConnector](http:/
 
 This Receive connector requires the following configuration:
   
-- **Name** From Internal Org (or any descriptive name) 
+- **Name**: From Internal Org (or any descriptive name)
     
-- **Usage type** Internal 
+- **Usage type**: Internal
     
-- **Local network bindings** Internal network-facing network adapter (for example, 10.1.1.2 and the standard SMTP TCP port value of 25). 
+- **Local network bindings**: Internal network-facing network adapter (for example, 10.1.1.2 and the standard SMTP TCP port value of 25).
     
-- **Remote network settings** IP address of one or more Mailbox servers in the Exchange organization. For example, 192.168.5.10 and 192.168.5.20. 
+- **Remote network settings**: IP address of one or more Mailbox servers in the Exchange organization. For example, 192.168.5.10 and 192.168.5.20.
     
-- **Authentication methods** TLS, Basic authentication, Basic authentication over TLS, and Exchange Server authentication. 
+- **Authentication methods**: TLS, Basic authentication, Basic authentication over TLS, and Exchange Server authentication.
     
 To create a Receive connector configured to only accept messages from the Exchange organization, replace the bindings and remote IP ranges with your values, and run this command.
   
@@ -172,39 +172,39 @@ You don't need to modify the default Receive connectors on Mailbox servers. The 
 
 This Send connector requires the following configuration:
   
-- **Name** To Edge (or any descriptive name) 
+- **Name**: To Edge (or any descriptive name)
     
-- **Usage type** Internal 
+- **Usage type**: Internal
     
-- **Address spaces** "\*" (all external domains) 
+- **Address spaces**: "\*" (all external domains)
     
 - DNS routing disabled (smart host routing enabled)
     
-- **Smart hosts** IP address or FQDN of the Edge Transport server. For example, edge01.contoso.net. 
+- **Smart hosts**: IP address or FQDN of the Edge Transport server. For example, edge01.contoso.net.
     
-- **Source servers** FQDN of one or more Mailbox servers. For example, mbxserver01.contoso.com and mbxserver02.contoso.com. 
+- **Source servers**: FQDN of one or more Mailbox servers. For example, mbxserver01.contoso.com and mbxserver02.contoso.com.
     
-- **Smart host authentication methods** Basic authentication over TLS. 
+- **Smart host authentication methods**: Basic authentication over TLS.
     
-- **Smart host authentication credentials** Credentials for the user account on the Edge Transport server. 
+- **Smart host authentication credentials**: Credentials for the user account on the Edge Transport server.
     
 #### Use the EAC to create a Send connector to send outgoing messages to the Edge Transport server
 
-1. In the EAC, go to **Mail flow** > **Send connectors**, and then click **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png). This starts the **New Send connector** wizard. 
+1. In the EAC, go to **Mail flow** \> **Send connectors**, and then click **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png). This starts the **New Send connector** wizard. 
     
 2. On the first page, configure these settings:
     
-  - **Name** Enter To Edge.
+  - **Name**: Enter To Edge.
     
-  - **Type** Select **Internal**.
+  - **Type**: Select **Internal**.
     
     Click **Next**.
     
 3. On the next page, select **Route mail through smart hosts**, and then click **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png). In the **Add smart host** dialog box that appears, identify the Edge Transport by using one of these values: 
     
-  - **IP address** For example, 10.1.1.2. 
+  - **IP address**: For example, 10.1.1.2.
     
-  - **Fully qualified domain name (FQDN)** For example, edge01.contoso.net. Note that the source Mailbox servers for the Send connector must be able to resolve the Edge Transport server in DNS by using this FQDN. If they can't, use the IP address instead. 
+  - **Fully qualified domain name (FQDN)**: For example, edge01.contoso.net. Note that the source Mailbox servers for the Send connector must be able to resolve the Edge Transport server in DNS by using this FQDN. If they can't, use the IP address instead.
     
     Click **Save**.
     
@@ -218,11 +218,11 @@ This Send connector requires the following configuration:
     
 5. On the next page, in the **Address space** section, click **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png). In the **Add domain** dialog box that appears, enter the following information: 
     
-  - **Type** Verify SMTP is selected. 
+  - **Type**: Verify SMTP is selected.
     
-  - **Fully Qualified Domain Name (FQDN)** Enter an asterisk ( \*) to indicate the Send connector is used for all external domains.
+  - **Fully Qualified Domain Name (FQDN)**: Enter an asterisk (\*) to indicate the Send connector is used for all external domains.
     
-  - **Cost** Verify 1 is entered. A lower value indicates a more preferred route. 
+  - **Cost**: Verify 1 is entered. A lower value indicates a more preferred route.
     
     Click **Save**.
     
@@ -250,7 +250,7 @@ For detailed syntax and parameter information, see [New-SendConnector](http://te
 
 To verify that you've successfully created a Send connector to send outgoing messages to the Edge Transport server, use either of these steps:
   
-- In the EAC, go to **Mail flow** > **Send connectors**, select the Send connector named To Edge > click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png), and verify the property values.
+- In the EAC, go to **Mail flow** \> **Send connectors**, select the Send connector named To Edge \> click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png), and verify the property values.
     
 - In the Exchange Management Shell, run this command on a Mailbox server to verify the property values:
     

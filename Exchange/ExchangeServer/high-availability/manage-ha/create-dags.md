@@ -3,7 +3,7 @@ title: "Create a database availability group"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
@@ -27,6 +27,8 @@ Looking for other management tasks related to DAGs? Check out [Managing database
 
 - Estimated time to complete: 1 minute
     
+- To open the EAC, see [Exchange admin center in Exchange 2016](../../architecture/client-access/exchange-admin-center.md). To open the Exchange Management Shell, see [Open the Exchange Management Shell](http://technet.microsoft.com/library/63976059-25f8-4b4f-b597-633e78b803c0.aspx).
+    
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Database availability groups" entry in the [High availability and site resilience permissions](../../permissions/feature-permissions/ha-permissions.md) topic. 
     
 - When creating a DAG with Mailbox servers running Windows Server 2012, you must pre-stage the cluster name object (CNO) before adding members to the DAG. If you are creating a DAG without an administrative access point with Mailbox servers running Windows Server 2012 R2, then you do not need to pre-stage a CNO for the DAG. For detailed steps, see [Pre-stage the cluster name object for a database availability group](pre-stage-dag-cnos.md).
@@ -45,39 +47,37 @@ Looking for other management tasks related to DAGs? Check out [Managing database
     
   - You can specify a name for the DAG, leave the **Witness server** field empty, and specify the directory you want created and shared on the witness server. In this scenario, the wizard will search for an Exchange 2016 server with Client Access services, and it will automatically create the specified witness directory on that server, share the directory, and configure the DAG to use that Exchange 2016 server with Client Access services as its witness server. 
     
-    > [!IMPORTANT]
-    > If the witness server you specify isn't an Exchange 2016, Exchange 2013, or Exchange 2010 server, you must add the Exchange Trusted Subsystem universal security group to the local Administrators group on the witness server. These security permissions are necessary to ensure that Exchange can create a directory and share on the witness server as needed. If the proper permissions aren't configured, the following error is returned: >  `Error: An error occurred during discovery of the database availability group topology. Error: An error occurred while attempting a cluster operation. Error: Cluster API "AddClusterNode() (MaxPercentage=12) failed with 0x80070005. Error: Access is denied."`
-  
+    **Note**: If the witness server you specify isn't an Exchange server in your organization, you must add the Exchange Trusted Subsystem universal security group to the local Administrators group on the witness server. These security permissions are necessary to ensure that Exchange can create a directory and share on the witness server as needed. If the proper permissions aren't configured, the following error is returned:
+    
+     `Error: An error occurred during discovery of the database availability group topology. Error: An error occurred while attempting a cluster operation. Error: Cluster API "AddClusterNode() (MaxPercentage=12) failed with 0x80070005. Error: Access is denied."`
+    
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/eac-keyboard-shortcuts.md).
     
 > [!TIP]
 > Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).. 
   
-## What do you want to do?
-
-### Use the EAC to create a database availability group
+## Use the EAC to create a database availability group
 <a name="UseEMC"> </a>
 
-1. In the EAC, go to **Servers** > **Database Availability Groups**.
+1. In the EAC, go to **Servers** \> **Database Availability Groups**.
     
 2. Click ![Add icon](../../media/ITPro_EAC_AddIcon.png) to create a DAG. 
     
 3. On the **new database availability group** page, provide the following information for the DAG: 
     
-  - **Database availability group name** Use this field to type a valid and unique name for the DAG of up to 15 characters. The name is equivalent to a computer name, and a corresponding CNO will be created in Active Directory with that name. This name will be both the name of the DAG and the name of the underlying cluster. 
+  - **Database availability group name**: Use this field to type a valid and unique name for the DAG of up to 15 characters. The name is equivalent to a computer name, and a corresponding CNO will be created in Active Directory with that name. This name will be both the name of the DAG and the name of the underlying cluster.
     
-  - **Witness server** Use this field to specify a witness server for the DAG. If you leave this field blank, the system will attempt to automatically select an Exchange server with Client Access services that is in the local Active Directory site. 
+  - **Witness server**: Use this field to specify a witness server for the DAG. If you leave this field blank, the system will attempt to automatically select an Exchange server with Client Access services that is in the local Active Directory site.
     
-    > [!NOTE]
-    > If you specify a witness server, you must use either a host name or a fully qualified domain name (FQDN). Using an IP address or a wildcard name isn't supported. In addition, the witness server can't be a member of the DAG. 
-  
-  - **Witness directory** Use this field to type the path to a directory on the witness server that will be used to store witness data. If the directory doesn't exist, the system will create it for you on the witness server. If you leave this field blank, the default directory (%SystemDrive%\DAGFileShareWitnesses\\<DAG FQDN\>) will be created on the witness server. 
+    **Note**: If you specify a witness server, you must use either a host name or a fully qualified domain name (FQDN). Using an IP address or a wildcard name isn't supported. In addition, the witness server can't be a member of the DAG.
     
-  - **Database availability group IP addresses** Use this field to assign one or more static IPv4 addresses to the DAG. Enter an IPv4 address and click ![Add icon](../../media/ITPro_EAC_AddIcon.png) to add it. Leave this field blank if you want the DAG to use Dynamic Host Configuration Protocol (DHCP) to obtain the necessary IPv4 addresses. Optionally, enter 255.255.255.255 to create a DAG without an IP address or cluster administrative access point, which applies only to DAGs that will contain Mailbox servers running Windows Server 2012 R2. 
+  - **Witness directory**: Use this field to type the path to a directory on the witness server that will be used to store witness data. If the directory doesn't exist, the system will create it for you on the witness server. If you leave this field blank, the default directory (%SystemDrive%\DAGFileShareWitnesses\\<DAG FQDN\>) will be created on the witness server.
+    
+  - **Database availability group IP addresses**: Use this field to assign one or more static IPv4 addresses to the DAG. Enter an IPv4 address and click ![Add icon](../../media/ITPro_EAC_AddIcon.png) to add it. Leave this field blank if you want the DAG to use Dynamic Host Configuration Protocol (DHCP) to obtain the necessary IPv4 addresses. Optionally, enter 255.255.255.255 to create a DAG without an IP address or cluster administrative access point, which applies only to DAGs that will contain Mailbox servers running Windows Server 2012 R2. 
     
 4. Click **Save** to create the DAG. 
     
-### Use the Exchange Management Shell to create a database availability group
+## Use the Exchange Management Shell to create a database availability group
 <a name="UseShell"> </a>
 
 The following example creates a DAG named DAG1, which is configured to use the witness server FILESRV1 and the local directory C:\DAG1. DAG1 is also configured to use DHCP for the DAG's IP addresses.
@@ -111,10 +111,11 @@ New-DatabaseAvailabilityGroup -Name DAG5 -DatabaseAvailabilityGroupIPAddresses (
 ```
 
 ## How do you know this worked?
+<a name="UseShell"> </a>
 
 To verify that you've successfully created a DAG, do one of the following:
   
-- In the EAC, navigate to **Servers** > **Database Availability Groups**. The newly created DAG is displayed.
+- In the EAC, navigate to **Servers** \> **Database Availability Groups**. The newly created DAG is displayed.
     
 - In the Exchange Management Shell, run the following command to verify the DAG was created and to display DAG property information.
     
@@ -123,6 +124,7 @@ To verify that you've successfully created a DAG, do one of the following:
   ```
 
 ## For more information
+<a name="UseShell"> </a>
 
 [Database availability groups](../../high-availability/dags/dags.md)
   

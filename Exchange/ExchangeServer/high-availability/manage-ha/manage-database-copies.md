@@ -3,7 +3,7 @@ title: "Manage mailbox database copies"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/12/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
@@ -31,7 +31,7 @@ For a variety of reasons, such as performing planned maintenance, you may need t
 ### Seeding a database copy
 <a name="Seed"> </a>
 
-Seeding, also known as updating, is the process in which either a blank database or a copy of the production database, is added to the target copy location on another Mailbox server in the same DAG as the active database. This becomes the baseline database for the copy maintained by that server.
+ *Seeding*  , also known as  *updating*  , is the process in which either a blank database or a copy of the production database, is added to the target copy location on another Mailbox server in the same DAG as the active database. This becomes the baseline database for the copy maintained by that server. 
   
 Depending on the situation, you can seed a database by using an automatic process or a manual process that you initiate. When a database copy is added, the copy will be automatically seeded, provided that the target server and its storage are properly configured. If you want to manually seed a database copy and don't want automatic seeding to occur when creating the copy, you can use the  _SeedingPostponed_ parameter when running the [Add-MailboxDatabaseCopy](http://technet.microsoft.com/library/84198fa9-ac8e-44ea-bd7b-64fe1e83e709.aspx) cmdlet. 
   
@@ -97,7 +97,7 @@ When you begin a seeding process by using the [Add-MailboxDatabaseCopy](http://t
     
 13. The database data is moved from the source server's Microsoft Exchange Replication service to the target server's Microsoft Exchange Replication service.
     
-14. The Microsoft Exchange Replication service on the target server writes the database copy to a temporary directory located in the main database directory called temp-seeding.
+14. The Microsoft Exchange Replication service on the target server writes the database copy to a temporary directory located in the main database directory called  *temp-seeding*  . 
     
 15. The streaming backup operation on the source server ends when the end of the database is reached.
     
@@ -117,7 +117,7 @@ When you begin a seeding process by using the [Add-MailboxDatabaseCopy](http://t
     
 23. If there are any existing catalog files on the target server in the directory, the Microsoft Exchange Replication service on the target server deletes them.
     
-24. The Microsoft Exchange Replication service on the target server writes the catalog data to a temporary directory called CiSeed.Temp until the data is completely transferred. 
+24. The Microsoft Exchange Replication service on the target server writes the catalog data to a temporary directory called  *CiSeed.Temp*  until the data is completely transferred. 
     
 25. The Microsoft Exchange Replication service moves the complete catalog data to the final location.
     
@@ -135,17 +135,17 @@ After a database copy is created, you can view and modify its configuration sett
 ### Using replay lag and truncation lag options
 <a name="Seed"> </a>
 
-Mailbox database copies support the use of a replay lag time and a truncation lag time, both of which are configured in minutes. Setting a replay lag time enables you to take a database copy back to a specific point in time. Setting a truncation lag time enables you to use the logs on a passive database copy to recover from the loss of log files on the active database copy. Because both of these features result in the temporary buildup of log files, using either of them will affect your storage design.
+Mailbox database copies support the use of a  *replay lag time*  and a  *truncation lag time*  , both of which are configured in minutes. Setting a replay lag time enables you to take a database copy back to a specific point in time. Setting a truncation lag time enables you to use the logs on a passive database copy to recover from the loss of log files on the active database copy. Because both of these features result in the temporary buildup of log files, using either of them will affect your storage design. 
   
 #### Replay lag time
 
-Replay lag time is a mailbox database copy property that specifies the amount of time, in minutes, to delay log replay for the database copy. The replay lag timer starts when a log file has been replicated to the passive copy and has successfully passed inspection. By delaying the replay of logs to the database copy, you have the capability to recover the database to a specific point in time in the past. A mailbox database copy configured with a replay lag time greater than 0 is referred to as a lagged mailbox database copy, or simply, a lagged copy.
+Replay lag time is a mailbox database copy property that specifies the amount of time, in minutes, to delay log replay for the database copy. The replay lag timer starts when a log file has been replicated to the passive copy and has successfully passed inspection. By delaying the replay of logs to the database copy, you have the capability to recover the database to a specific point in time in the past. A mailbox database copy configured with a replay lag time greater than 0 is referred to as a  *lagged mailbox database copy*  , or simply, a  *lagged copy*  . 
   
 A strategy that uses database copies and the litigation hold features in Exchange 2016 can provide protection against a range of failures that would ordinarily cause data loss. However, these features can't provide protection against data loss in the event of logical corruption, which although rare, can cause data loss. Lagged copies are designed to prevent loss of data in the case of logical corruption. Generally, there are two types of logical corruption:
   
-- **Database logical corruption** The database pages checksum matches, but the data on the pages is wrong logically. This can occur when ESE attempts to write a database page and even though the operating system returns a success message, the data is either never written to the disk or it's written to the wrong place. This is referred to as a lost flush. To prevent lost flushes from losing data, ESE includes a lost flush detection mechanism in the database along with a page patching feature (single page restore).
+- **Database logical corruption**: The database pages checksum matches, but the data on the pages is wrong logically. This can occur when ESE attempts to write a database page and even though the operating system returns a success message, the data is either never written to the disk or it's written to the wrong place. This is referred to as a  *lost flush*  . To prevent lost flushes from losing data, ESE includes a lost flush detection mechanism in the database along with a page patching feature (single page restore). 
     
-- **Store logical corruption** Data is added, deleted, or manipulated in a way that the user doesn't expect. These cases are generally caused by third-party applications. It's generally only corruption in the sense that the user views it as corruption. The Exchange store considers the transaction that produced the logical corruption to be a series of valid MAPI operations. The litigation hold feature in Exchange 2016 provides protection from store logical corruption (because it prevents content from being permanently deleted by a user or application). However, there may be scenarios where a user mailbox becomes so corrupted that it would be easier to restore the database to a point in time prior to the corruption, and then export the user mailbox to retrieve uncorrupted data. 
+- **Store logical corruption**: Data is added, deleted, or manipulated in a way that the user doesn't expect. These cases are generally caused by third-party applications. It's generally only corruption in the sense that the user views it as corruption. The Exchange store considers the transaction that produced the logical corruption to be a series of valid MAPI operations. The litigation hold feature in Exchange 2016 provides protection from store logical corruption (because it prevents content from being permanently deleted by a user or application). However, there may be scenarios where a user mailbox becomes so corrupted that it would be easier to restore the database to a point in time prior to the corruption, and then export the user mailbox to retrieve uncorrupted data.
     
 The combination of database copies, hold policy, and ESE single page restore leaves only the rare but catastrophic store logical corruption case. Your decision on whether to use a database copy with a replay lag (a lagged copy) will depend on which third-party applications you use and your organization's history with store logical corruption.
   
@@ -163,8 +163,6 @@ If you choose to use lagged copies, be aware of the following implications for t
     
 - Lagged copies cant be patched with the ESE single page restore feature. If a lagged copy encounters database page corruption (for example, a -1018 error), the copy will have to be reseeded. Reseeding will lose the lagged aspect of the copy.
     
-i
-  
 If you want the database to replay all log files and make the database copy current, then activating and recovering a lagged mailbox database copy is an easy process . If you want to replay log files up to a specific point in time, the prosess is more difficult because you have to manually manipulate log files and run Exchange Server Database Utilities (Eseutil.exe).
   
 For detailed steps about how to activate a lagged mailbox database copy, see [Activate a lagged mailbox database copy](activate-lagged-db-copies.md).
@@ -197,7 +195,7 @@ The following criteria must be met for truncation to occur for a lagged database
     
 In Exchange 2016, log truncation doesn't occur on an active mailbox database copy when one or more passive copies are suspended. If planned maintenance activities are going to take an extended period of time (for example, several days), you may have considerable log file buildup. To prevent the log drive from filling up with transaction logs, you can remove the affected passive database copy instead of suspending it. When the planned maintenance is completed, you can re-add the passive database copy.
   
- Exchange 2016 now has a feature called loose truncation that is disabled by default. During normal operations, each database copy keeps logs that need to be shipped to other database copies until all copies of a database confirm they have replayed (passive copies) or received (lagged copies) the log files. This is default log truncation behavior. If a database copy goes offline for some reason, the log files begin accumulating on the disks used by the other copies of the database. If the affected database copy remains offline for an extended period, this can cause the other database copies to run out of disk space. 
+ Exchange 2016 now has a feature called  *loose truncation*  that is disabled by default. During normal operations, each database copy keeps logs that need to be shipped to other database copies until all copies of a database confirm they have replayed (passive copies) or received (lagged copies) the log files. This is default log truncation behavior. If a database copy goes offline for some reason, the log files begin accumulating on the disks used by the other copies of the database. If the affected database copy remains offline for an extended period, this can cause the other database copies to run out of disk space. 
   
 Truncation behavior is different when loose truncation is enabled. Each database copy tracks its own free disk space and applies loose truncation behavior if free space gets low.
   
@@ -239,40 +237,52 @@ For more information about configuring database activation policy, see [Configur
 
 On a very busy mailbox database with a high log generation rate, there is a greater chance for data loss if replication to the passive database copies can't keep up with log generation. One scenario that can introduce a high log generation rate is mailbox moves. Exchange 2016 includes a Data Guarantee API that's used by services such as the Exchange Mailbox Replication service (MRS) to check the health of the database copy architecture based on the value of the  _DataMoveReplicationConstraint_ parameter that was set by the system or an administrator. Specifically, the Data Guarantee API can be used to: 
   
-- **Check replication health** Confirms that the prerequisite number of database copies is available. 
+- **Check replication health**: Confirms that the prerequisite number of database copies is available.
     
-- **Check replication flush** Confirms that the required log files have been replayed against the prerequisite number of database copies. 
+- **Check replication flush**: Confirms that the required log files have been replayed against the prerequisite number of database copies.
     
 When executed, the API returns the following status information to the calling application:
   
-- **Retry** Signifies that there are transient errors that prevent a condition from being checked against the database. 
+- **Retry**: Signifies that there are transient errors that prevent a condition from being checked against the database.
     
-- **Satisfied** Signifies that the database meets the required conditions or the database isn't replicated. 
+- **Satisfied**: Signifies that the database meets the required conditions or the database isn't replicated.
     
-- **NotSatisfied** Signifies that the database doesn't meet the required conditions. In addition, information is provided to the calling application as to why the **NotSatisfied** response was returned. 
+- **NotSatisfied**: Signifies that the database doesn't meet the required conditions. In addition, information is provided to the calling application as to why the **NotSatisfied** response was returned. 
     
 The value of the  _DataMoveReplicationConstraint_ parameter for the mailbox database determines how many database copies should be evaluated as part of the request. The  _DataMoveReplicationConstraint_ parameter has the following possible values: 
   
--  `None` When you create a mailbox database, this value is set by default. When this value is set, the Data Guarantee API conditions are ignored. This setting should be used only for mailbox databases that aren't replicated. 
+-  `None`: When you create a mailbox database, this value is set by default. When this value is set, the Data Guarantee API conditions are ignored. This setting should be used only for mailbox databases that aren't replicated.
     
--  `SecondCopy` This is the default value when you add the second copy of a mailbox database. When this value is set, at least one passive database copy must meet the Data Guarantee API conditions. 
+-  `SecondCopy`: This is the default value when you add the second copy of a mailbox database. When this value is set, at least one passive database copy must meet the Data Guarantee API conditions.
     
--  `SecondDatacenter` When this value is set, at least one passive database copy in another Active Directory site must meet the Data Guarantee API conditions. 
+-  `SecondDatacenter`: When this value is set, at least one passive database copy in another Active Directory site must meet the Data Guarantee API conditions.
     
--  `AllDatacenters` When this value is set, at least one passive database copy in each Active Directory site must meet the Data Guarantee API conditions. 
+-  `AllDatacenters`: When this value is set, at least one passive database copy in each Active Directory site must meet the Data Guarantee API conditions.
     
--  `AllCopies` When this value is set, all copies of the mailbox database must meet the Data Guarantee API conditions. 
+-  `AllCopies`: When this value is set, all copies of the mailbox database must meet the Data Guarantee API conditions.
     
  **Check Replication Health**
   
 When the Data Guarantee API is executed to evaluate the health of the database copy infrastructure, several items are evaluated.
   
-|**If the  _DataMoveReplicationConstraint_ parameter is set to…**|**Then, for a given database…**|**Conditions**|
-|:-----|:-----|:-----|
-| `SecondCopy` <br/> |At least one passive database copy for a replicated database must meet the conditions in the next column.  <br/> | The passive database copy must:  <br/>  Be healthy.  <br/>  Have a replay queue within 10 minutes of the replay lag time.  <br/>  Have a copy queue length less than 10 logs.  <br/>  Have an average copy queue length less than 10 logs. The average copy queue length is computed based on the number of times the application has queried the database status.  <br/> |
-| `SecondDatacenter` <br/> |At least one passive database copy in another Active Directory site must meet the conditions in the next column.  <br/> |
-| `AllDatacenters` <br/> |The active copy must be mounted, and a passive copy in each Active Directory site must meet the conditions in the next column.  <br/> |
-| `AllCopies` <br/> |The active copy must be mounted, and all passive database copies must meet the conditions in the next column.  <br/> |
+In all scenarios, the passive database copy must meet the following conditions:
+  
+- Be healthy.
+    
+- Have a replay queue within 10 minutes of the replay lag time.
+    
+- Have a copy queue length less than 10 logs.
+    
+- Have an average copy queue length less than 10 logs. The average copy queue length is computed based on the number of times the application has queried the database status.
+    
+****
+
+|**If the  _DataMoveReplicationConstraint_ parameter is set to…**|**Then, for a given database…**|
+|:-----|:-----|
+| `SecondCopy` <br/> |At least one passive database copy for a replicated database must meet the previously described conditions.  <br/> |
+| `SecondDatacenter` <br/> |At least one passive database copy in another Active Directory site must meet the previously described conditions.  <br/> |
+| `AllDatacenters` <br/> |The active copy must be mounted, and a passive copy in each Active Directory site must meet the previously described conditions.  <br/> |
+| `AllCopies` <br/> |The active copy must be mounted, and all passive database copies must meet the previously described conditions.  <br/> |
    
  **Check Replication Flush**
   
@@ -311,9 +321,9 @@ You can use the RedistributeActiveDatabases.ps1 script to balance the active mai
   
 The script provides two options for balancing active database copies within a DAG:
   
-- **BalanceDbsByActivationPreference** When this option is specified, the script attempts to move databases to their most preferred copy (based on activation preference) without regard to the Active Directory site. 
+- **BalanceDbsByActivationPreference**: When this option is specified, the script attempts to move databases to their most preferred copy (based on activation preference) without regard to the Active Directory site.
     
-- **BalanceDbsBySiteAndActivationPreference** When this option is specified, the script attempts to move active databases to their most preferred copy, while also trying to balance active databases within each Active Directory site. 
+- **BalanceDbsBySiteAndActivationPreference**: When this option is specified, the script attempts to move active databases to their most preferred copy, while also trying to balance active databases within each Active Directory site.
     
 After running the script with the first option, the preceding unbalanced DAG becomes balanced, as shown in the following table.
   

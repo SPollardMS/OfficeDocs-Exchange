@@ -2,26 +2,26 @@
 title: "Address lists in Exchange 2016"
 ms.author: chrisda
 author: chrisda
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 8ee2672a-3a45-4897-8cc0-fa23c374dbf9
-description: "Learn about address lists and global address lists (GALs) how administrators can use them to organize recipients in Exchange 2016."
+description: "Summary: Learn about address lists and global address lists (GALs) how administrators can use them to organize recipients in Exchange 2016."
 ---
 
 # Address lists in Exchange 2016
 
-Learn about address lists and global address lists (GALs) how administrators can use them to organize recipients in Exchange 2016.
+ **Summary**: Learn about address lists and global address lists (GALs) how administrators can use them to organize recipients in Exchange 2016.
   
-An address list is a collection of mail-enabled recipient objects from Active Directory. Address lists are based on recipient filters, and are basically unchanged from Exchange 2010. You can filter by recipient type (for example, mailboxes and mail contacts), recipient properties (for example, Company or State or Province), or both. Address lists aren't static; they're updated dynamically. When you create or modify recipients in your organization, they're automatically added to the appropriate address lists. These are the different types of address lists that are available: 
+An  *address list*  is a collection of mail-enabled recipient objects from Active Directory. Address lists are based on recipient filters, and are basically unchanged from Exchange 2010. You can filter by recipient type (for example, mailboxes and mail contacts), recipient properties (for example, Company or State or Province), or both. Address lists aren't static; they're updated dynamically. When you create or modify recipients in your organization, they're automatically added to the appropriate address lists. These are the different types of address lists that are available: 
   
-- **Global address lists (GALs)** The built-in GAL that's automatically created by Exchange includes every mail-enabled object in the Active Directory forest. You can create additional GALs to separate users by organization or location, but a user can only see and use one GAL. 
+- **Global address lists (GALs)**: The built-in GAL that's automatically created by Exchange includes every mail-enabled object in the Active Directory forest. You can create additional GALs to separate users by organization or location, but a user can only see and use one GAL.
     
-- **Address lists** Address lists are subsets of recipients that are grouped together in one list, which makes them easier to find by users. Exchange comes with several built-in address lists, and you can create more based on you organization's needs. 
+- **Address lists**: Address lists are subsets of recipients that are grouped together in one list, which makes them easier to find by users. Exchange comes with several built-in address lists, and you can create more based on you organization's needs.
     
-- **Offline address books (OABs)** OABs contain address lists and GALs. OABs are used by Outlook clients in cached Exchange mode to provide local access to address lists and GALs for recipient look-ups. For more information, see [Offline address books in Exchange 2016](../../email-addresses-and-address-books/offline-address-books/offline-address-books.md).
+- **Offline address books (OABs)**: OABs contain address lists and GALs. OABs are used by Outlook clients in cached Exchange mode to provide local access to address lists and GALs for recipient look-ups. For more information, see [Offline address books in Exchange 2016](../../email-addresses-and-address-books/offline-address-books/offline-address-books.md).
     
 Users in your organization use address lists and the GAL to find recipients for email messages. Here's an example of what address lists look like in Outlook 2016:
   
@@ -37,7 +37,7 @@ Recipient filters identify the recipients that are included in address lists and
 
 |**Recipient filtering method**|**User interface**|**Filterable recipient properties**|**Filter operators**|
 |:-----|:-----|:-----|:-----|
-|Precanned recipient filters  <br/> |**Address lists** Exchange admin center (EAC) and the Exchange Management Shell  <br/> **GALs** Exchange Management Shell only  <br/> | Limited to:  <br/>  Recipient type (All recipient types or any combination of user mailboxes, resource mailboxes, mail contacts, mail users, and groups)  <br/>  Company  <br/>  Custom Attribute 1 to 15  <br/>  Department  <br/>  State or Province  <br/> | Property values require an exact match. Wildcards and partial matches aren't supported. For example, "Sales" doesn't match the value "Sales and Marketing".  <br/>  Multiple values of the same property always use the **or** operator. For example, "Department equals Sales or Department equals Marketing".  <br/>  Multiple properties always use the **and** operator. For example, "Department equals Sales and Company equals Contoso".  <br/> |
+|Precanned recipient filters  <br/> |**Address lists**: Exchange admin center (EAC) and the Exchange Management Shell  <br/> **GALs**: Exchange Management Shell only  <br/> | Limited to:  <br/>  Recipient type (All recipient types or any combination of user mailboxes, resource mailboxes, mail contacts, mail users, and groups)  <br/>  Company  <br/>  Custom Attribute 1 to 15  <br/>  Department  <br/>  State or Province  <br/> | Property values require an exact match. Wildcards and partial matches aren't supported. For example, "Sales" doesn't match the value "Sales and Marketing".  <br/>  Multiple values of the same property always use the **or** operator. For example, "Department equals Sales or Department equals Marketing".  <br/>  Multiple properties always use the **and** operator. For example, "Department equals Sales and Company equals Contoso".  <br/> |
 |Custom recipient filters  <br/> |Exchange Management Shell only  <br/> |You can use virtually any available recipient attributes. For more information, see [Filterable Properties for the -RecipientFilter Parameter](http://technet.microsoft.com/library/cf78aca5-6699-485c-9b15-e0adba252176.aspx).  <br/> |You use OPATH filter syntax to specify any available Windows PowerShell filter operators. Wildcards and partial matches are supported.  <br/> |
    
  **Notes**:

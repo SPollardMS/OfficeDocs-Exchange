@@ -3,7 +3,7 @@ title: "Configure legacy on-premises public folders for a hybrid deployment"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/12/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
@@ -24,13 +24,13 @@ In a hybrid deployment, your users can be in Exchange Online, Exchange on-premis
 This article describes how to synchronize mail-enabled public folders when your users are in Office 365 and your Exchange 2010 SP3 or later public folders are on-premises. However, an Office 365 user who is not represented by a MailUser object on-premises (local to the target public folder hierarchy) won't be able to access legacy or Exchange 2016 on-premises public folders.
   
 > [!NOTE]
-> This topic refers to the Exchange 2010 SP3 or later servers as the legacy Exchange server. 
+> This topic refers to the Exchange 2010 SP3 or later servers as the  *legacy Exchange server*  . 
   
 You will use the following scripts to sync your mail-enabled public folders. The scripts are initiated by a Windows task that runs in the on-premises environment:
   
-1.  `Sync-MailPublicFolders.ps1` This script synchronizes mail-enabled public folder objects from your local Exchange on-premises deployment with Office 365. It uses the local Exchange on-premises deployment as master to determine what changes need to be applied to O365. The script will create, update, or delete mail-enabled public folder objects on O365 Active Directory based on what exists in the local on-premises Exchange deployment. 
+-  `Sync-MailPublicFolders.ps1`: This script synchronizes mail-enabled public folder objects from your local Exchange on-premises deployment with Office 365. It uses the local Exchange on-premises deployment as master to determine what changes need to be applied to O365. The script will create, update, or delete mail-enabled public folder objects on O365 Active Directory based on what exists in the local on-premises Exchange deployment.
     
-2.  `SyncMailPublicFolders.strings.psd1` This is a support file used by the preceding synchronization script and should be copied to the same location as the preceding script. 
+-  `SyncMailPublicFolders.strings.psd1`: This is a support file used by the preceding synchronization script and should be copied to the same location as the preceding script.
     
 When you complete this procedure your on-premises and Office 365 users will be able to access the same on-premises public folder infrastructure.
   
@@ -58,13 +58,13 @@ A hybrid configuration with Exchange 2003 public folders is not supported. If yo
     
 5. In Exchange Online, you must be a member of the Organization Management role group. This role group is different from the permissions assigned to you when you subscribe to Exchange Online. For details about how to enable the Organization Management role group, see [Manage role groups](../../permissions/role-groups.md).
     
-6. In Exchange 2010, you must be a member of the Organization Management or Server Management Role Based Access Control (RBAC) role groups. For details, see [Add Members to a Role Group](https://go.microsoft.com/fwlink/?LinkId=299212).
+6. In Exchange 2010, you must be a member of the Organization Management or Server Management Role Based Access Control (RBAC) role groups. For details, see [Add Members to a Role Group](https://go.microsoft.com/fwlink/p/?linkId=299212).
     
 7. In order to access public folders cross-premises, users must upgrade their Outlook clients to the November 2012 or later Outlook public update.
     
-1. To download the November 2012 Outlook update for Outlook 2010, see [Update for Microsoft Outlook 2010 (KB2687623) 32-Bit Edition](https://www.microsoft.com/en-us/download/details.aspx?id=35702).
+1. To download the November 2012 Outlook update for Outlook 2010, see [Update for Microsoft Outlook 2010 (KB2687623) 32-Bit Edition](https://www.microsoft.com/download/details.aspx?id=35702).
     
-2. To download the November 2012 Outlook update for Outlook 2007, see [Update for Microsoft Office Outlook 2007 (KB2687404)](https://www.microsoft.com/en-us/download/details.aspx?id=35718).
+2. To download the November 2012 Outlook update for Outlook 2007, see [Update for Microsoft Office Outlook 2007 (KB2687404)](https://www.microsoft.com/download/details.aspx?id=35718).
     
 8. Outlook 2016 for Mac (and earlier versions) and Outlook for Mac for Office 365 are not supported for cross-premises public folders. Users must be in the same location as the public folders to access them with Outlook for Mac or Outlook for Mac for Office 365. In addition, users whose mailboxes are in Exchange Online won't be able to access on-premises public folders using Outlook on the web.
     
@@ -73,20 +73,20 @@ A hybrid configuration with Exchange 2003 public folders is not supported. If yo
 ## Step 2: Make remote public folders discoverable
 <a name="Discoverable"> </a>
 
-1. If your public folders are on Outlook 2010 servers, then you need to install Client Access services on all mailbox servers that have a public folder database. This allows the Exchange RpcClientAccess service to be running, which allows for all clients to access public folders. For more information, see [Install Exchange Server 2010](https://technet.microsoft.com/en-us/library/bb124778%28v=exchg.141%29.aspx).
+1. If your public folders are on Outlook 2010 servers, then you need to install Client Access services on all mailbox servers that have a public folder database. This allows the Exchange RpcClientAccess service to be running, which allows for all clients to access public folders. For more information, see [Install Exchange Server 2010](https://technet.microsoft.com/library/bb124778%28v=exchg.141%29.aspx).
     
     > [!NOTE]
-    > This server doesn't have to be part of the Client Access load balancing. For more information, see [Understanding Load Balancing in Exchange 2010](https://technet.microsoft.com/en-us/library/ff625247%28v=exchg.141%29.aspx). 
+    > This server doesn't have to be part of the Client Access load balancing. For more information, see [Understanding Load Balancing in Exchange 2010](https://technet.microsoft.com/library/ff625247%28v=exchg.141%29.aspx). 
   
 2. Create an empty mailbox database on each public folder server.
     
-    For Exchange 2010, run the following command. This command excludes the mailbox database from the mailbox provisioning load balancer. This prevents new mailboxes from automatically being added to this database.
+    For Exchange 2010, run the following command in the Exchange Management Shell. This command excludes the mailbox database from the mailbox provisioning load balancer. This prevents new mailboxes from automatically being added to this database.
     
   ```
   New-MailboxDatabase -Server <PFServerName_with_CASRole> -Name <NewMDBforPFs> -IsExcludedFromProvisioning $true
   ```
 
-    For Exchange 2007, run the following command:
+    For Exchange 2007, run the following command in the Exchange Management Shell:
     
   ```
   New-MailboxDatabase -StorageGroup "<PFServerName>\StorageGroup>" -Name <NewMDBforPFs>
@@ -116,7 +116,7 @@ A hybrid configuration with Exchange 2003 public folders is not supported. If yo
 ## Step 3: Download the scripts
 <a name="download"> </a>
 
-1. Download the following files from [Mail-enabled Public Folders - directory sync script](https://www.microsoft.com/en-us/download/details.aspx?id=46381):
+1. Download the following files from [Mail-enabled Public Folders - directory sync script](https://www.microsoft.com/download/details.aspx?id=46381):
     
   -  `Sync-MailPublicFolders.ps1`
     
@@ -141,7 +141,7 @@ The Directory Synchronization service doesn't synchronize mail-enabled public fo
     Where  `Credential` is your Office 365 user name and password, and  `CsvSummaryFile` is the path to where you would like to log synchronization operations and errors, in .csv format. 
     
 > [!NOTE]
-> Before running the script, we recommend that you first simulate the actions that the script would take in your environment by running it as described above with the  `-WhatIf` parameter. > > We also recommend that you run this script daily to synchronize your mail-enabled public folders. 
+> Before running the script, we recommend that you first simulate the actions that the script would take in your environment by running it as described above with the  `-WhatIf` parameter. We also recommend that you run this script daily to synchronize your mail-enabled public folders. 
   
 ## Step 5: Configure Exchange Online users to access on-premises public folders
 <a name="Access"> </a>
@@ -150,13 +150,13 @@ The final step in this procedure is to configure the Exchange Online organizatio
   
 You will point to all of the proxy public folder mailboxes that you created in [Step 2: Make remote public folders discoverable](configure-legacy-public-folders-for-hybrid.md#Discoverable) to enable theExchange Online organization to access the on-premises public folders. 
   
-Run the following command in **Windows PowerShell**:
+Run the following command in Exchange Online PowerShell. To learn how to use Windows PowerShell to connect to Exchange Online, see **Connect to Exchange Online PowerShell**.
   
 ```
 Set-OrganizationConfig -PublicFoldersEnabled Remote -RemotePublicFolderMailboxes PFMailbox1,PFMailbox2,PFMailbox3
 ```
 
-You must wait until Active Directory synchronization has completed to see the changes. This process can take up to 3 hours to complete. If you don't want to wait for the recurring synchronizations that occur every three hours, you can force directory synchronization at any time. For detailed steps to force directory synchronization, see [Force directory synchronization](http://technet.microsoft.com/en-us/library/jj151771.aspx). Office 365 randomly selects one of the public folder mailboxes that's supplied in this command.
+You must wait until Active Directory synchronization has completed to see the changes. This process can take up to 3 hours to complete. If you don't want to wait for the recurring synchronizations that occur every three hours, you can force directory synchronization at any time. For detailed steps to force directory synchronization, see [Force directory synchronization](https://technet.microsoft.com/library/jj151771.aspx). Office 365 randomly selects one of the public folder mailboxes that's supplied in this command.
   
 > [!IMPORTANT]
 > An Office 365 user who is not represented by a MailUser object on-premises (local to the target public folder hierarchy) won't be able to access legacy or Exchange 2016 on-premises public folders. See the Knowledge Base article [Exchange Online users can't access legacy on-premises public folders](https://go.microsoft.com/fwlink/p/?LinkId=699451) for a solution. 

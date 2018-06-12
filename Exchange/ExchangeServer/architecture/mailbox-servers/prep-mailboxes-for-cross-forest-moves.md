@@ -3,7 +3,7 @@ title: "Prepare mailboxes for cross-forest move requests"
 ms.author: serdars
 author: SerdarSoysal
 manager: serdars
-ms.date: 5/23/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
@@ -132,7 +132,7 @@ A linked attribute is an Active Directory attribute that references other Active
    
 ### Linked user attributes
 
-If you want to move a mailbox to an Exchange 2016 resource forest, the mailbox in the resource forest is considered a linked mailbox. In this scenario, you need to create a linked mail user in the (target) resource forest. To create a linked mail user, you need to set the attributes shown in the following table.
+If you want to move a mailbox to an Exchange 2016 resource forest, the mailbox in the resource forest is considered a  *linked mailbox*  . In this scenario, you need to create a linked mail user in the (target) resource forest. To create a linked mail user, you need to set the attributes shown in the following table. 
   
 **Linked mail user attributes**
 

@@ -3,7 +3,7 @@ title: "What changes in Active Directory when Exchange 2016 is installed?"
 ms.author: dstrome
 author: dstrome
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: conceptual
 ms.prod: office-online-server
@@ -45,9 +45,9 @@ With the schema extended, the next step is to add all of the containers, objects
   
 These are the changes that are made to the Active Directory forest:
   
-- The Microsoft Exchange container is created under CN=Services,CN=Configuration,DC=< _root domain_> if it doesn't already exist.
+- The Microsoft Exchange container is created under CN=Services,CN=Configuration,DC=\< _root domain_\> if it doesn't already exist.
     
-- The following containers and objects are created under CN=< _organization name_>,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=< _root domain_> if they don't already exist:
+- The following containers and objects are created under CN=\< _organization name_\>,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=\< _root domain_\> if they don't already exist:
     
   - CN=Address Lists Container
     
@@ -121,7 +121,7 @@ These are the changes that are made to the Active Directory forest:
     
   - CN=Workload Management Settings
     
-- The following containers and objects are created under CN=Transport Settings,CN=< _Organization Name_>,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=< _root domain_> if they don't already exist:
+- The following containers and objects are created under CN=Transport Settings,CN=\< _Organization Name_\>,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=\< _root domain_\> if they don't already exist:
     
   - CN=Accepted Domains
     
@@ -183,7 +183,7 @@ These are the changes that are made to the Active Directory forest:
     
   - View-Only Organization Management
     
-- The new management role groups (which appear as universal security groups (USGs) in Active Directory) that were created in the Microsoft Exchange Security Groups OU are added to the **otherWellKnownObjects** attribute stored on the CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=<  _root domain_> container.
+- The new management role groups (which appear as universal security groups (USGs) in Active Directory) that were created in the Microsoft Exchange Security Groups OU are added to the **otherWellKnownObjects** attribute stored on the CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=\<  _root domain_\> container.
     
 - The Unified Messaging Voice Originator contact is created in the Microsoft Exchange System Objects container of the root domain.
     
@@ -206,6 +206,6 @@ These are the changes that are made to the Active Directory domains:
     
 - Permissions are assigned at the domain level for the Exchange Servers USG and the Organization Management USG.
     
-- The **objectVersion** property in the Microsoft Exchange System Objects container under DC=<  _root domain_> is set. If you want to make sure that the Active Directory schema was extended successfully, you can check the value stored in this property. If the value in the property matches the schema version listed for the release of Exchange 2016 you installed, extending the schema was successful. For a list of Exchange releases and how to check the value of this property, check out the [How do you know this worked?](../../plan-and-deploy/prepare-ad-and-domains.md#Verify) section in [Prepare Active Directory and domains](../../plan-and-deploy/prepare-ad-and-domains.md).
+- The **objectVersion** property in the Microsoft Exchange System Objects container under DC=\<  _root domain_\> is set. If you want to make sure that the Active Directory schema was extended successfully, you can check the value stored in this property. If the value in the property matches the schema version listed for the release of Exchange 2016 you installed, extending the schema was successful. For a list of Exchange releases and how to check the value of this property, check out the [How do you know this worked?](../../plan-and-deploy/prepare-ad-and-domains.md#Verify) section in [Prepare Active Directory and domains](../../plan-and-deploy/prepare-ad-and-domains.md).
     
 

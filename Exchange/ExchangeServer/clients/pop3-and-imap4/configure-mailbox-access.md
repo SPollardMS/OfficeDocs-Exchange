@@ -3,18 +3,18 @@ title: "Enable or disable POP3 or IMAP4 access to mailboxes in Exchange 2016"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/7/2018
 ms.audience: End User
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 57e12f07-3b14-45bd-9a82-e6032d14214f
-description: "Learn how administrators can enable or disable POP3 and IMAP4 access to specific mailboxes in Exchange 2016."
+description: "Summary: Learn how administrators can enable or disable POP3 and IMAP4 access to specific mailboxes in Exchange 2016."
 ---
 
 # Enable or disable POP3 or IMAP4 access to mailboxes in Exchange 2016
 
-Learn how administrators can enable or disable POP3 and IMAP4 access to specific mailboxes in Exchange 2016.
+ **Summary**: Learn how administrators can enable or disable POP3 and IMAP4 access to specific mailboxes in Exchange 2016.
   
 After you enable and configure POP3 or IMAP4 on an Exchange 2016 server as described in [Enable and configure POP3 on an Exchange 2016 server](configure-pop3.md) and [Enable and configure IMAP4 on an Exchange 2016 server](configure-imap4.md), all user mailboxes (with the exception of the Administrator mailbox) can be accessed by using POP3 or IMAP4. You can use the procedures in this topic to disable POP3 and IMAP4 access to specific mailboxes.
   
@@ -37,7 +37,7 @@ For more information about POP3 and IMAP4, see [POP3 and IMAP4 in Exchange 2016]
 
 ### Use the EAC to enable or disable POP3 or IMAP4 access to a mailbox
 
-1. In the EAC, go to **Recipients** > **Mailboxes**.
+1. In the EAC, go to **Recipients** \> **Mailboxes**.
     
 2. In the list of mailboxes, find the mailbox that you want to modify. You can:
     
@@ -45,7 +45,7 @@ For more information about POP3 and IMAP4, see [POP3 and IMAP4 in Exchange 2016]
     
   - Click **Search** ( ![Search icon](../../media/ITPro_EAC_.png)) and enter part of the user's name, email address, or alias.
     
-  - Click **More options** ( ![More Options icon](../../media/ITPro_EAC_MoreOptionsIcon.png)) > **Advanced search** to find the mailbox. 
+  - Click **More options** ( ![More Options icon](../../media/ITPro_EAC_MoreOptionsIcon.png)) \> **Advanced search** to find the mailbox. 
     
     Once you've found the mailbox that you want to modify, select it, and then click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)).
     
@@ -53,11 +53,11 @@ For more information about POP3 and IMAP4, see [POP3 and IMAP4 in Exchange 2016]
     
     In the **Email connectivity** section, configure one or more of the following settings: 
     
-  - **POP3** To disable POP3 access to the mailbox, click **Disable**, and then click **Yes** in the warning message that appears. If POP3 is already disabled, click **Enable** to enable it. 
+  - **POP3**: To disable POP3 access to the mailbox, click **Disable**, and then click **Yes** in the warning message that appears. If POP3 is already disabled, click **Enable** to enable it. 
     
-  - **IMAP** To disable IMAP4 access to the mailbox, click **Disable**, and then click **Yes** in the warning message that appears. If IMAP4 is already disabled, click **Enable** to enable it. 
+  - **IMAP**: To disable IMAP4 access to the mailbox, click **Disable**, and then click **Yes** in the warning message that appears. If IMAP4 is already disabled, click **Enable** to enable it. 
     
-![Protocol access settings for a mailbox in the EAC at Recipients > select mailbox > Edit > Mailbox features > Email connectivity](../../media/8c2d9cda-aa53-4b6e-b83a-0f55b4b3fd3d.png)
+![Protocol access settings for a mailbox in the EAC at Recipients \> select mailbox \> Edit \> Mailbox features \> Email connectivity](../../media/8c2d9cda-aa53-4b6e-b83a-0f55b4b3fd3d.png)
   
     When you're finished, click **Save**.
     
@@ -87,7 +87,7 @@ For more information, see [Set-CASMailbox](http://technet.microsoft.com/library/
 
 ### Use the EAC to enable or disable POP3 or IMAP4 access to multiple mailboxes
 
-1. In the EAC, go to **Recipients** > **Mailboxes**.
+1. In the EAC, go to **Recipients** \> **Mailboxes**.
     
 2. In the list of mailboxes, find the mailboxes that you want to modify. You can:
     
@@ -95,7 +95,7 @@ For more information, see [Set-CASMailbox](http://technet.microsoft.com/library/
     
   - Click **Search** ( ![Search icon](../../media/ITPro_EAC_.png)) and enter part of the user's name, email address, or alias.
     
-  - Click **More options** ( ![More Options icon](../../media/ITPro_EAC_MoreOptionsIcon.png)) > **Advanced search** to find the mailbox. 
+  - Click **More options** ( ![More Options icon](../../media/ITPro_EAC_MoreOptionsIcon.png)) \> **Advanced search** to find the mailbox. 
     
 3. In the list of mailboxes, select multiple mailboxes of the same type (for example, **User**) from the list. For example:
     
@@ -155,21 +155,21 @@ After you change the POP3 or IMAP4 access settings on a mailbox, you need to res
     
   - Run the command  `services.msc` from the **Run** dialog, a Command Prompt window, or the Exchange Management Shell. 
     
-  - Open Server Manager, and then click **Tools** > **Services**.
+  - Open Server Manager, and then click **Tools** \> **Services**.
     
 2. In the list of services, perform one or both of the following actions:
     
   - **POP3**:
     
-1. Select **Microsoft Exchange POP3**, and then click **Action** > **Restart**.
+1. Select **Microsoft Exchange POP3**, and then click **Action** \> **Restart**.
     
-2. Select **Microsoft Exchange POP3 Backend**, and then click **Action** > **Restart**.
+2. Select **Microsoft Exchange POP3 Backend**, and then click **Action** \> **Restart**.
     
   - **IMAP4**:
     
-1. Select **Microsoft Exchange IMAP4**, and then click **Action** > **Restart**.
+1. Select **Microsoft Exchange IMAP4**, and then click **Action** \> **Restart**.
     
-2. Select **Microsoft Exchange IMAP4 Backend**, and then click **Action** > **Restart**.
+2. Select **Microsoft Exchange IMAP4 Backend**, and then click **Action** \> **Restart**.
     
 ### Use the Exchange Management Shell to restart the POP3 or IMAP4 services
 
@@ -197,13 +197,13 @@ Get-Service MSExchangePOP3; Get-Service MSExchangePOP3BE; Get-Service MSExchange
 
 To verify that you've enabled or disabled POP3 or IMAP4 access to a mailbox, use any of the following procedures:
   
-- In the EAC, go to **Recipients** > **Mailboxes** > select the mailbox > click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png) > **Mailbox features** > **Email connectivity**.
+- In the EAC, go to **Recipients** \> **Mailboxes** \> select the mailbox \> click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png) \> **Mailbox features** \> **Email connectivity**.
     
   - If POP3 access is enabled for the mailbox, you'll see **POP3: Enabled** and the **Disable** link. If POP3 access is disabled, you'll see **POP3: Disabled** and the **Enable** link. 
     
   - If IMAP4 access is enabled for the mailbox, you'll see **IMAP4: Enabled** and a **Disable** link. If IMAP4 access is disabled, you'll see **IMAP4: Disabled** and the **Enable** link. 
     
-![Protocol access settings for a mailbox in the EAC at Recipients > select mailbox > Edit > Mailbox features > Email connectivity](../../media/8c2d9cda-aa53-4b6e-b83a-0f55b4b3fd3d.png)
+![Protocol access settings for a mailbox in the EAC at Recipients \> select mailbox \> Edit \> Mailbox features \> Email connectivity](../../media/8c2d9cda-aa53-4b6e-b83a-0f55b4b3fd3d.png)
   
 - In the Exchange Management Shell, replace  _\<MailboxIdentity\>_ with the identity of the mailbox (for example, name, alias, or email address), and run the following command: 
     

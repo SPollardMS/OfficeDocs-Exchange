@@ -2,7 +2,7 @@
 title: "Roll back a public folder migration from Exchange 2016 to Exchange Online"
 ms.author: dmaguire
 author: msdmaguire
-ms.date: 3/20/2017
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server

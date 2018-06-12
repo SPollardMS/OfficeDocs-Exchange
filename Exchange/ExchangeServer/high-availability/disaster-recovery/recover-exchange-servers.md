@@ -3,7 +3,7 @@ title: "Recover an Exchange Server"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 4/20/2018
+ms.date: 6/12/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
@@ -23,9 +23,18 @@ Recovering a lost Exchange server is often accomplished by using new hardware. H
   
 This topic shows you how to recover a lost Exchange 2016 server that isn't a member of a database availability group (DAG). For detailed steps about how to recover a server that was a member of a DAG, see [Recover a database availability group member server](recover-dag-member-servers.md).
   
-> [!NOTE]
->  If Exchange is installed in a location other than the default location, you must use the  _/TargetDir_ switch to specify the location of the Exchange binary files. If you don't use the  _/TargetDir_ switch, the Exchange files are installed in the default location (%programfiles%\Microsoft\Exchange Server\V15). >  To determine the install location, follow these steps: >  Open ADSIEDIT.MSC or LDP.EXE. >  Navigate to the following location: **CN=ExServerName,CN=Servers,CN=First Administrative Group,CN=Administrative Groups,CN=ExOrg Name,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=DomainName,CN=Com**>  Right-click the Exchange server object, and then click **Properties**. >  Locate the **msExchInstallPath** attribute. This attribute stores the current installation path. 
+ **Note**: If Exchange is installed in a location other than the default location, you must use the  _/TargetDir_ switch to specify the location of the Exchange binary files. If you don't use the  _/TargetDir_ switch, the Exchange files are installed in the default location (%programfiles%\Microsoft\Exchange Server\V15). 
   
+To determine the install location, follow these steps:
+  
+1. Open ADSIEDIT.MSC or LDP.EXE.
+    
+2. Navigate to the following location: **CN=ExServerName,CN=Servers,CN=First Administrative Group,CN=Administrative Groups,CN=ExOrg Name,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=DomainName,CN=Com**
+    
+3. Right-click the Exchange server object, and then click **Properties**.
+    
+4. Locate the **msExchInstallPath** attribute. This attribute stores the current installation path. 
+    
 Looking for other management tasks related to backing up and restoring data? Check out [Backup, Restore, and Disaster Recovery](http://technet.microsoft.com/library/394fc4ed-fa02-41fa-9159-cc2754ff8875.aspx).
   
 ## What do you need to know before you begin?
@@ -69,8 +78,6 @@ Looking for other management tasks related to backing up and restoring data? Che
     
 ## How do you know this worked?
 
-The successful completion of Setup will be the primary indicator that the recovery was successful. To further verify that you've successfully recovered a lost server, do the following:
+The successful completion of Setup will be the primary indicator that the recovery was successful. To further verify that you've successfully recovered a lost server, open the Windows Services tool (services.msc) and verify that the Microsoft Exchange services have been installed and are running.
   
-- Open the Windows Services tool (services.msc) and verify that the Microsoft Exchange services have been installed and are running.
-    
 

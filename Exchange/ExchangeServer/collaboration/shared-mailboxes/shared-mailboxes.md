@@ -34,7 +34,7 @@ A shared mailbox is a type of user mailbox that doesn't have its own user name a
     
 - **RecipientTypeDetails**: SharedMailbox
     
-In previous version of Exchange, creating a shared mailbox was a multi-step process in which you had to use the Exchange Management Shell to complete some of the tasks. In Exchange 2013, you can use the Exchange admin center (EAC) to create a shared mailbox in one step. For details, see [Create shared mailboxes in the Exchange admin center](create-shared-mailboxes.md). In fact, the EAC has a feature area devoted entirely to shared mailboxes. Just navigate to **Recipients** > **Shared mailboxes** to view all the management tasks for shared mailboxes. 
+In previous version of Exchange, creating a shared mailbox was a multi-step process in which you had to use the Exchange Management Shell to complete some of the tasks. In Exchange 2013, you can use the Exchange admin center (EAC) to create a shared mailbox in one step. For details, see [Create shared mailboxes in the Exchange admin center](create-shared-mailboxes.md). In fact, the EAC has a feature area devoted entirely to shared mailboxes. Just navigate to **Recipients** \> **Shared mailboxes** to view all the management tasks for shared mailboxes. 
   
 You can use the following permissions with a shared mailbox.
   

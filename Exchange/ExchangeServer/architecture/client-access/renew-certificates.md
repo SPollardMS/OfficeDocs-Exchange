@@ -3,19 +3,19 @@ title: "Renew an Exchange 2016 certificate"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.collection: Strat_EX_Admin
 ms.assetid: 356ca7cd-b9d4-487d-aa21-3b38e91bde58
-description: "Learn how to renew Exchange self-signed certificate or create certificate renewal requests for a certification authority in Exchange 2016."
+description: "Summary: Learn how to renew Exchange self-signed certificate or create certificate renewal requests for a certification authority in Exchange 2016."
 ---
 
 # Renew an Exchange 2016 certificate
 
-Learn how to renew Exchange self-signed certificate or create certificate renewal requests for a certification authority in Exchange 2016.
+ **Summary**: Learn how to renew Exchange self-signed certificate or create certificate renewal requests for a certification authority in Exchange 2016.
   
 Every certificate has a built-in expiration date. In Exchange Server 2016, the default self-signed certificate that's installed on the Exchange server expires 5 years after Exchange was installed on the server. You can use the Exchange admin center (EAC) or the Exchange Management Shell to renew Exchange certificates. This includes Exchange self-signed certificates, and certificates that were issued by a certification authority (CA).
   
@@ -46,7 +46,7 @@ To renew a certificate that was issued by a CA, you create a certificate renewal
   
 ### Use the EAC to create a certificate renewal request for a certification authority
 
-1. Open the EAC and navigate to **Servers** > **Certificates**.
+1. Open the EAC and navigate to **Servers** \> **Certificates**.
     
 2. In the **Select server** list, select the Exchange server that holds the certificate that you want to renew. 
     
@@ -72,9 +72,9 @@ Get-ExchangeCertificate | where {$_.Status -eq "Valid" -and $_.IsSelfSigned -eq 
 
 This example creates a certificate renewal request with the following properties:
   
-- **Certificate to renew** `5DB9879E38E36BCB60B761E29794392B23D1C054`
+- **Certificate to renew**:  `5DB9879E38E36BCB60B761E29794392B23D1C054`
     
-- **RequestFile** `\\FileServer01\Data\ContosoCertRenewal.req`
+- **RequestFile**:  `\\FileServer01\Data\ContosoCertRenewal.req`
     
 ```
 Get-ExchangeCertificate -Thumbprint 5DB9879E38E36BCB60B761E29794392B23D1C054 | New-ExchangeCertificate -GenerateRequest -RequestFile \\FileServer01\Data\ContosoCertRenewal.req
@@ -94,7 +94,7 @@ Get-ExchangeCertificate -Thumbprint 5DB9879E38E36BCB60B761E29794392B23D1C054 | N
 
 To verify that you have successfully created a certificate renewal request for a certification authority, perform either of the following steps:
   
-- In the EAC at **Servers** > **Certificates**, verify the server where you stored the certificate request is selected. The request should be in the list of certificates with the **Status** value **Pending request**.
+- In the EAC at **Servers** \> **Certificates**, verify the server where you stored the certificate request is selected. The request should be in the list of certificates with the **Status** value **Pending request**.
     
 - In the Exchange Management Shell on the server where you stored the certificate request, run the following command:
     
@@ -108,7 +108,7 @@ When you renew an Exchange self-signed certificate, you're basically making a ne
   
 ### Use the EAC to renew an Exchange self-signed certificate
 
-1. Open the EAC and navigate to **Servers** > **Certificates**.
+1. Open the EAC and navigate to **Servers** \> **Certificates**.
     
 2. In the **Select server** list, select the Exchange server that holds the certificate that you want to renew. 
     
@@ -146,7 +146,7 @@ Get-ExchangeCertificate -Thumbprint BC37CBE2E59566BFF7D01FEAC9B6517841475F2D | N
 
 To verify that you have successfully renewed an Exchange self-signed certificate, use either of the following procedures:
   
-- In the EAC at **Servers** > **Certificates**, verify the server where you installed the certificate is selected. In the list of certificates, verify that the certificate has **Status** property value **Valid**.
+- In the EAC at **Servers** \> **Certificates**, verify the server where you installed the certificate is selected. In the list of certificates, verify that the certificate has **Status** property value **Valid**.
     
 - In the Exchange Management Shell on the server where you renewed the self-signed certificate, run the following command to verify the property values:
     

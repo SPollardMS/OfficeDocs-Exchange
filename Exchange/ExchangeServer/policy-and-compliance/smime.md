@@ -3,18 +3,18 @@ title: "S/MIME for message signing and encryption"
 ms.author: serdars
 author: SerdarSoysal
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 887c710b-0ec6-4ff0-8065-5f05f74afef3
-description: "Learn about how S/MIME in Exchange 2016 adds S/MIME-based security and lets you encrypt and digitally sign emails."
+description: "Summary: Learn about how S/MIME in Exchange 2016 adds S/MIME-based security and lets you encrypt and digitally sign emails."
 ---
 
 # S/MIME for message signing and encryption
 
-Learn about how S/MIME in Exchange 2016 adds S/MIME-based security and lets you encrypt and digitally sign emails.
+ **Summary**: Learn about how S/MIME in Exchange 2016 adds S/MIME-based security and lets you encrypt and digitally sign emails.
   
 As an administrator in Exchange 2016, you can enable Secure/Multipurpose Internet Mail Extensions (S/MIME) for your organization. S/MIME is a widely accepted method (more precisely, a protocol) for sending digitally signed and encrypted messages. S/MIME allows you to encrypt emails and digitally sign them. When you use S/MIME, it helps the people who receive the message by:
   
@@ -62,10 +62,10 @@ For information about how to send an S/MIME encrypted message in Outlook on the 
 
 A variety of encryption technologies work together to provide protection for messages at rest and in transit. S/MIME can work simultaneously with the following technologies but isn't dependent on them:
   
-> **Transport Layer Security (TLS)** Encrypts the tunnel or the route between email servers in order to help prevent snooping and eavesdropping, and encrypts the connection between email clients and servers. 
+> **Transport Layer Security (TLS)**: Encrypts the tunnel or the route between email servers in order to help prevent snooping and eavesdropping, and encrypts the connection between email clients and servers.
     
     **Note**: Secure Sockets Layer (SSL) is being replaced by Transport Layer Security (TLS) as the protocol that's used to encrypt data sent between computer systems. They're so closely related that the terms "SSL" and "TLS" (without versions) are often used interchangeably. Because of this similarity, references to "SSL" in Exchange topics, the Exchange admin center, and the Exchange Management Shell have often been used to encompass both the SSL and TLS protocols. Typically, "SSL" refers to the actual SSL protocol only when a version is also provided (for example, SSL 3.0). To find out why you should disable the SSL protocol and switch to TLS, check out [Protecting you against the SSL 3.0 vulnerability](https://blogs.office.com/2014/10/29/protecting-ssl-3-0-vulnerability/).
     
-> **BitLocker** Encrypts the data on a hard drive in a datacenter so that if someone gets unauthorized access, they can't read it. 
+> **BitLocker**: Encrypts the data on a hard drive in a datacenter so that if someone gets unauthorized access, they can't read it.
     
 

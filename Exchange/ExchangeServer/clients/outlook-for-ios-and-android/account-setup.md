@@ -3,7 +3,7 @@ title: "Account setup in Outlook for iOS and Android using Basic authentication"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 4/30/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
@@ -82,7 +82,7 @@ When you create an app configuration policy in the Azure Portal or through your 
   
 |**Key**|**Values**|
 |:-----|:-----|
-|com.microsoft.outlook.EmailProfile.EmailAccountName  <br/> |This value specifies the display name email account as it will appear to users on their devices .  <br/> **Value type**: String  <br/> **Accepted values**: Display Name  <br/> **Default if not specified**: \<blank\>  <br/> **Example**: user  <br/> **Intune Token\***: {{username}}  <br/> |
+|com.microsoft.outlook.EmailProfile.EmailAccountName  <br/> |This value specifies the display name email account as it will appear to users on their devices.  <br/> **Value type**: String  <br/> **Accepted values**: Display Name  <br/> **Default if not specified**: \<blank\>  <br/> **Example**: user  <br/> **Intune Token\***: {{username}}  <br/> |
 |com.microsoft.outlook.EmailProfile.EmailAddress  <br/> |This value specifies the email address to be used for sending and receiving mail.  <br/> **Value type**: String  <br/> **Accepted values**: Email address  <br/> **Default if not specified**: \<blank\>  <br/> **Example**: user@companyname.com  <br/> **Intune Token\***: {{mail}}  <br/> |
 |com.microsoft.outlook.EmailProfile.EmailUPN  <br/> |This value specifies the User Principal Name or username for the email profile that will be used to authenticate the account.  <br/> **Value type**: String  <br/> **Accepted values**: UPN Address or username  <br/> **Default if not specified**: \<blank\>  <br/> **Example**: userupn@companyname.com  <br/> **Intune Token\***: {{userprincipalname}}  <br/> |
 |com.microsoft.outlook.EmailProfile.ServerAuthentication  <br/> |This value specifies the authentication method for the user.  <br/> **Value type**: String  <br/> **Accepted values**: 'Username and Password'; 'Certificates'  <br/> **Default if not specified**: 'Username and Password'  <br/> **Example**: 'Username and Password'  <br/> |
@@ -90,6 +90,6 @@ When you create an app configuration policy in the Azure Portal or through your 
 |com.microsoft.outlook.EmailProfile.AccountDomain  <br/> |This value specifies the user's account domain.  <br/> **Value type**: String  <br/> **Accepted values**: Domain  <br/> **Default if not specified**: \<blank\>  <br/> **Example**: companyname  <br/> |
 |com.microsoft.outlook.EmailProfile.AccountType  <br/> |This value specifies the account type being configured based on the authentication model.  <br/> **Value type**: String  <br/> **Accepted values**: BasicAuth  <br/> **Default if not specified**: BasicAuth  <br/> **Example**: BasicAuth  <br/> |
    
- **\*** Microsoft Intune users can use tokens that will expand to the correct value according to the MDM enrolled user. See [Add app configuration policies for managed iOS devices](https://docs.microsoft.com/en-us/intune/app-configuration-policies-use-ios) for more information. 
+ **\*** Microsoft Intune users can use tokens that will expand to the correct value according to the MDM enrolled user. See [Add app configuration policies for managed iOS devices](https://docs.microsoft.com/intune/app-configuration-policies-use-ios) for more information. 
   
 

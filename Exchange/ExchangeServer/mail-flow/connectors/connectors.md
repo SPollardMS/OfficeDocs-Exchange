@@ -3,18 +3,18 @@ title: "Connectors"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 11/12/2015
+ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: hub-page
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 73559b0c-fc0e-41fd-84df-d07442137a0c
-description: "Learn how connectors are used in Exchange 2016 for incoming and outgoing mail flow in your organization."
+description: "Summary: Learn how connectors are used in Exchange 2016 for incoming and outgoing mail flow in your organization."
 ---
 
 # Connectors
 
-Learn how connectors are used in Exchange 2016 for incoming and outgoing mail flow in your organization.
+ **Summary**: Learn how connectors are used in Exchange 2016 for incoming and outgoing mail flow in your organization.
   
 Exchange uses connectors to enable incoming and outgoing mail flow on Exchange servers, and also between services in the transport pipeline on the local Exchange server.
   

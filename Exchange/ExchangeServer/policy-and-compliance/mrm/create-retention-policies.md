@@ -3,7 +3,7 @@ title: "Create a retention policy in Exchange 2016"
 ms.author: serdars
 author: SerdarSoysal
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: End User
 ms.topic: article
 ms.prod: office-online-server
@@ -30,49 +30,47 @@ You need to be assigned permissions before you can perform this procedure or pro
   
  **Use the Exchange admin center (EAC) to create a retention tag**
   
-1. Go to **Compliance management** > **Retention tags**, and click **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png).
+1. Go to **Compliance management** \> **Retention tags**, and click **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png).
     
 2. Select one of the following options:
     
-  - **Applied automatically to entire mailbox (default)** Creates a default policy tag (DPT). You can use DPTs to create a default deletion policy and a default archive policy, which applies to all items in the mailbox. 
+  - **Applied automatically to entire mailbox (default)**: Creates a default policy tag (DPT). You can use DPTs to create a default deletion policy and a default archive policy, which applies to all items in the mailbox.
     
     > [!NOTE]
     > You can't use the EAC to create a DPT to delete voice mail items. For details about how to create a DPT to delete voice mail items, see the Exchange Management Shell example below. 
   
-  - **Applied automatically to a default folder** Creates a retention policy tag (RPT) for a default folder such as **Inbox** or **Deleted Items**.
+  - **Applied automatically to a default folder**: Creates a retention policy tag (RPT) for a default folder such as **Inbox** or **Deleted Items**.
     
     > [!NOTE]
     > You can only create RPTs with the **Delete and allow recovery** or **Permanently delete** actions. 
   
-  - **Applied by users to items and folders (personal)** Creates personal tags. These tags allow Outlook and Outlook on the web users to apply archive or deletion settings to a message or folders that are different from the settings applied to the parent folder or the entire mailbox. 
+  - **Applied by users to items and folders (personal)**: Creates personal tags. These tags allow Outlook and Outlook on the web users to apply archive or deletion settings to a message or folders that are different from the settings applied to the parent folder or the entire mailbox.
     
 3. The **New retention tag** page title and options vary depending on the type of tag you select. Complete the following fields: 
     
-  - **Name** Enter a name for the retention tag. Retention tag names are displayed to users in Outlook and Outlook on the web along with the retention period. 
+  - **Name**: Enter a name for the retention tag. Retention tag names are displayed to users in Outlook and Outlook on the web along with the retention period.
     
-  - **Apply this tag to the following default folder** Available only if you selected this option in Step 2. 
+  - **Apply this tag to the following default folder**: Available only if you selected this option in Step 2.
     
-  - **Retention action** Select one of the following actions to take after the item reaches its retention period: 
+  - **Retention action**: Select one of the following actions to take after the item reaches its retention period:
     
-  - **Delete and Allow Recovery** Deletes items but allow users to recover them using the **Recover Deleted Items** option in Outlook or Outlook on the web. Items are retained until the deleted item retention period configured for the mailbox database or the mailbox user is reached. 
+  - **Delete and Allow Recovery**: Deletes items but allow users to recover them using the **Recover Deleted Items** option in Outlook or Outlook on the web. Items are retained until the deleted item retention period configured for the mailbox database or the mailbox user is reached. 
     
-  - **Permanently Delete** Permanently deletes the item from the mailbox database. 
+  - **Permanently Delete**: Permanently deletes the item from the mailbox database.
     
     > [!IMPORTANT]
     > Mailboxes or items subject to In-Place Hold or litigation hold will be retained and returned in In-Place eDiscovery searches. To learn more, see [In-Place Hold and Litigation Hold in Exchange 2016](../../policy-and-compliance/holds/holds.md). 
   
-  - **Move to Archive** Available only if you're creating a DPT or a personal tag. Select this action to move items to the user's In-Place Archive. 
+  - **Move to Archive**: Available only if you're creating a DPT or a personal tag. Select this action to move items to the user's In-Place Archive.
     
-  - **Retention period** Select one of the following options: 
+  - **Retention period**: Select one of the following options:
     
-  - **Never** Specifies that items should never be deleted or moved to the archive. 
+  - **Never**: Specifies that items should never be deleted or moved to the archive.
     
-  - **When the item reaches the following age (in days)** Specifies the number of days to retain items before they're moved or deleted. The retention age for all supported items except Calendar and Tasks is calculated from the date an item is received or created. Retention age for Calendar and Tasks items is calculated from the end date. 
+  - **When the item reaches the following age (in days)**: Specifies the number of days to retain items before they're moved or deleted. The retention age for all supported items except Calendar and Tasks is calculated from the date an item is received or created. Retention age for Calendar and Tasks items is calculated from the end date.
     
-  - **Comment** Optional field used for administrative notes or comments. The field isn't displayed to users. 
+  - **Comment**: Optional field used for administrative notes or comments. The field isn't displayed to users.
     
-[Return to top](create-retention-policies.md#top)
-  
  **Use the Exchange Management Shell to create a retention tag**
   
 Use the **New-RetentionPolicyTag** cmdlet to create a retention tag. Different options available in the cmdlet allow you to create different types of retention tags. Use the  _Type_ parameter to create a DPT (  `All`), RPT (specify a default folder type, such as  `Inbox`) or a personal tag ( `Personal`).
@@ -107,21 +105,19 @@ This example creates a personal tag to never delete a message.
 New-RetentionPolicyTag -Name "Never Delete" -Type Personal -RetentionAction DeleteAndAllowRecovery -RetentionEnabled $false
 ```
 
-[Return to top](create-retention-policies.md#top)
-  
 ## Step 2: Create a retention policy
 
 You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Messaging records management" entry in the [Messaging policy and compliance permissions in Exchange 2016](../../permissions/feature-permissions/policy-and-compliance-permissions.md) topic. 
   
  **Use the EAC to create a retention policy**
   
-1. Go to **Compliance management** > **Retention policies**, and click **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png).
+1. Go to **Compliance management** \> **Retention policies**, and click **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png).
     
 2. In **New Retention Policy**, complete the following fields:
     
-  - **Name** Enter a name for the retention policy. 
+  - **Name**: Enter a name for the retention policy.
     
-  - **Retention tags** Click **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png) to select the tags you want to add to this retention policy. 
+  - **Retention tags**: Click **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png) to select the tags you want to add to this retention policy. 
     
     A retention policy can contain the following tags:
     
@@ -140,8 +136,6 @@ You need to be assigned permissions before you can perform this procedure or pro
   
     You can create a retention policy without adding any retention tags to it, but items in the mailbox to which the policy is applied won't be moved or deleted. You can also add and remove retention tags from a retention policy after you create it.
     
-[Return to top](create-retention-policies.md#top)
-  
  **Use the Exchange Management Shell to create a retention policy**
   
 This example creates the retention policy RetentionPolicy-Corp and uses the  _RetentionPolicyTagLinks_ parameter to associate five tags to the policy. 
@@ -151,8 +145,6 @@ New-RetentionPolicy "RetentionPolicy-Corp"  -RetentionPolicyTagLinks "DPT-Corp-D
 ```
 
 For detailed syntax and parameter information, see [New-RetentionPolicy](http://technet.microsoft.com/library/4cdd6f20-5bca-4269-ac21-0a4cde0d54d6.aspx).
-  
-[Return to top](create-retention-policies.md#top)
   
 ## Step 3: Apply a retention policy to mailbox users
 
@@ -172,6 +164,4 @@ To verify that you have applied the retention policy, do the following:
 
 2. Log on to the mailbox using Outlook or Outlook on the web and verify that messages are deleted or moved to an archive in accordance with the policy configuration.
     
-[Return to top](create-retention-policies.md#top)
-  
 

@@ -3,7 +3,7 @@ title: "Manage user mailboxes"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/12/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
@@ -37,7 +37,7 @@ You can also change properties for multiple user mailboxes at the same time. For
 
 ### Use the EAC to change user mailbox properties
 
-1. In the EAC, navigate to **Recipients** > **Mailboxes**.
+1. In the EAC, navigate to **Recipients** \> **Mailboxes**.
     
 2. In the list of user mailboxes, click the mailbox that you want to change the properties for, and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
@@ -76,28 +76,16 @@ Use the **General** section to view or change basic information about the user.
     
 - **\* User logon name**: This is the name that the user uses to sign in to their mailbox and to log on to the domain. Typically the user logon name consists of the user's alias on the left side of the @ symbol, and the domain name in which the user account resides on the right side of the @ symbol. 
     
-    > [!NOTE]
-    > This box is labeled **User ID** In Exchange Online. 
-  
 - **Require password change on next logon**: Select this check box if you want the user to reset their password the next time they sign in to their mailbox.
     
-    > [!NOTE]
-    > This check box isn't available in Exchange Online. 
-  
 - **Hide from address lists**: Select this check box to prevent the recipient from appearing in the address book and other address lists that are defined in your Exchange organization. After you select this check box, users can still send messages to the recipient by using the email address.
     
 Click **More options** to view or change these additional properties: 
   
 - **Organizational unit**: This read-only box displays the organizational unit (OU) that contains the user account. You have to use Active Directory Users and Computers to move the user account to a different OU.
     
-    > [!NOTE]
-    > This box isn't available in Exchange Online. 
-  
 - **Mailbox database**: This read-only box displays the name of the mailbox database that hosts the mailbox. To move the mailbox to a different database, select it in the mailbox list, and then click **Move mailbox to another database** in the Details pane. 
     
-    > [!NOTE]
-    > This option isn't available in Exchange Online. 
-  
 - **Custom attributes**: This section displays the custom attributes defined for the user mailbox. To specify custom attribute values, click **Edit**. You can specify up to 15 custom attributes for the recipient.
     
 #### Mailbox Usage
@@ -114,18 +102,15 @@ Use the **Mailbox Usage** section to view or change the mailbox storage quota an
   
 Click **More options** to view or change the mailbox storage quota and the deleted item retention settings for the mailbox. 
   
-> [!NOTE]
-> These settings aren't available in the EAC in Exchange Online. 
-  
 - **Storage quota settings**: To customize these settings for the mailbox and not use the mailbox database defaults, click **Customize the settings for this mailbox**, type a new value, and then click **Save**.
     
     The value range for any of the storage quota settings is from 0 through 2047 gigabytes (GB).
     
   - **Issue a warning at (GB)**: This box displays the maximum storage limit before a warning is issued to the user. If the mailbox size reaches or exceeds the value specified, Exchange sends a warning message to the user.
     
-  - **Prohibit send at (GB)**: This box displays the prohibit send limit for the mailbox. If the mailbox size reaches or exceeds the specified limit, Exchange prevents the user from sending new messages and displays a descriptive error message. 
+  - **Prohibit send at (GB)**: This box displays the  *prohibit send*  limit for the mailbox. If the mailbox size reaches or exceeds the specified limit, Exchange prevents the user from sending new messages and displays a descriptive error message. 
     
-  - **Prohibit send and receive at (GB)**: This box displays the prohibit send and receive limit for the mailbox. If the mailbox size reaches or exceeds the specified limit, Exchange prevents the mailbox user from sending new messages and won't deliver any new messages to the mailbox. Any messages sent to the mailbox are returned to the sender with a descriptive error message. 
+  - **Prohibit send and receive at (GB)**: This box displays the  *prohibit send and receive*  limit for the mailbox. If the mailbox size reaches or exceeds the specified limit, Exchange prevents the mailbox user from sending new messages and won't deliver any new messages to the mailbox. Any messages sent to the mailbox are returned to the sender with a descriptive error message. 
     
 - **Deleted item retention settings**: To customize these settings for the mailbox and not use the mailbox database defaults, click **Customize the settings for this mailbox**, type a new value, and then click **Save**.
     
@@ -156,12 +141,12 @@ Use the **Organization** section to record detailed information about the user's
     
 - **Manager**: To add a manager, click **Browse**. In **Select Manager**, select a person, and then click **OK**.
     
-- **Direct reports**: You can't modify this box. A direct report is a user who reports to a specific manager. If you've specified a manager for the user, that user appears as a direct report in the details of the manager's mailbox. For example, Kari manages Chris and Kate, so Kari's mailbox is specified in the **Manager** box of Chris's mailbox and Kate's mailbox, and Chris and Kate appear in the **Direct reports** box in the properties of Kari's mailbox. 
+- **Direct reports**: You can't modify this box. A  *direct report*  is a user who reports to a specific manager. If you've specified a manager for the user, that user appears as a direct report in the details of the manager's mailbox. For example, Kari manages Chris and Kate, so Kari's mailbox is specified in the **Manager** box of Chris's mailbox and Kate's mailbox, and Chris and Kate appear in the **Direct reports** box in the properties of Kari's mailbox. 
     
 #### Email Address
 <a name="EmailAddress"> </a>
 
-Use the **Email Address** section to view or change the email addresses associated with the user mailbox. This includes the user's primary SMTP address and any associated proxy addresses. The primary SMTP address (also known as the default reply address) is displayed in bold text in the address list, with the uppercase **SMTP** value in the **Type** column. 
+Use the **Email Address** section to view or change the email addresses associated with the user mailbox. This includes the user's primary SMTP address and any associated proxy addresses. The primary SMTP address (also known as the  *default reply address*  ) is displayed in bold text in the address list, with the uppercase **SMTP** value in the **Type** column. 
   
 - **Add**: Click ** Add **![Add icon](../../media/ITPro_EAC_AddIcon.png) to add a new email address for this mailbox. Select one of following address types: 
     
@@ -178,94 +163,88 @@ Use the **Email Address** section to view or change the email addresses associat
     
 - **Automatically update email addresses based on the email address policy applied to this recipient**: Select this check box to have the recipient's email addresses automatically updated based on changes made to email address policies in your organization. This box is selected by default.
     
-    > [!NOTE]
-    > This check box isn't available in Exchange Online. 
-  
 #### Mailbox Features
 <a name="MailboxFeatures"> </a>
 
 Use the **Mailbox Features** section to view or change the following mailbox features and settings: 
   
-- **Sharing policy** This box shows the sharing policy applied to the mailbox. A sharing policy controls how users in your organization can share calendar and contact information with users outside your Exchange organization. The Default Sharing Policy is assigned to mailboxes when they are created. To change the sharing policy that's assigned to the user, select a different one from the drop-down list. 
+- **Sharing policy**: This box shows the sharing policy applied to the mailbox. A sharing policy controls how users in your organization can share calendar and contact information with users outside your Exchange organization. The Default Sharing Policy is assigned to mailboxes when they are created. To change the sharing policy that's assigned to the user, select a different one from the drop-down list.
     
-- **Role assignment policy** This box shows the role assignment policy assigned to the mailbox. The role assignment policy specifies the role-based access control (RBAC) roles that are assigned to the user and control what specific mailbox and distribution group configuration settings users can modify. To change the role assignment policy that's assigned to the user, select a different one from the drop-down list. 
+- **Role assignment policy**: This box shows the role assignment policy assigned to the mailbox. The role assignment policy specifies the role-based access control (RBAC) roles that are assigned to the user and control what specific mailbox and distribution group configuration settings users can modify. To change the role assignment policy that's assigned to the user, select a different one from the drop-down list.
     
-- **Retention policy** This box shows the retention policy assigned to the mailbox. A retention policy is a group of retention tags that are applied to the user's mailbox. They allow you to control how long to keep items in users' mailboxes and define what action to take on items that have reached a certain age. A retention policy isn't assigned to mailboxes when they are created. To assign a retention policy to the user, select one from the drop-down list. 
+- **Retention policy**: This box shows the retention policy assigned to the mailbox. A retention policy is a group of retention tags that are applied to the user's mailbox. They allow you to control how long to keep items in users' mailboxes and define what action to take on items that have reached a certain age. A retention policy isn't assigned to mailboxes when they are created. To assign a retention policy to the user, select one from the drop-down list.
     
-- **Address book policy** This box shows the address book policy applied to the mailbox. An address book policy allows you to segment users into specific groups to provide customized views of the address book. To apply or change the address book policy applied to the mailbox, select one from the drop-down list. 
+- **Address book policy**: This box shows the address book policy applied to the mailbox. An address book policy allows you to segment users into specific groups to provide customized views of the address book. To apply or change the address book policy applied to the mailbox, select one from the drop-down list.
     
-- **Unified Messaging** This feature is disabled by default. When you enable Unified Messaging (UM), the user will be able to use your organization's UM features and a default set of UM properties are applied to the user. Click **Enable** to enable UM for the mailbox. For information about how to enable UM, see [Enable a User for Unified Messaging](http://technet.microsoft.com/library/ad027767-5e14-4cb1-9f8a-0791d9188db5.aspx).
+- **Unified Messaging**: This feature is disabled by default. When you enable Unified Messaging (UM), the user will be able to use your organization's UM features and a default set of UM properties are applied to the user. Click **Enable** to enable UM for the mailbox. For information about how to enable UM, see [Enable a User for Unified Messaging](http://technet.microsoft.com/library/ad027767-5e14-4cb1-9f8a-0791d9188db5.aspx).
     
     > [!NOTE]
     > A UM dial plan and a UM mailbox policy must exist before you can enable UM. 
   
-- **Mobile Devices** Use this section to view and change the settings for Exchange ActiveSync, which is enabled by default. Exchange ActiveSync enables access to an Exchange mailbox from a mobile device. Click **Disable Exchange ActiveSync** to disable this feature for the mailbox. 
+- **Mobile Devices**: Use this section to view and change the settings for Exchange ActiveSync, which is enabled by default. Exchange ActiveSync enables access to an Exchange mailbox from a mobile device. Click **Disable Exchange ActiveSync** to disable this feature for the mailbox. 
     
-- **Outlook Web App** This feature is enabled by default. Outlook Web App enables access to an Exchange mailbox from a web browser. Click **Disable** to disable Outlook Web App for the mailbox. Click **Edit details** to add or change an Outlook Web App mailbox policy for the mailbox. 
+- **Outlook Web App**: This feature is enabled by default. Outlook Web App enables access to an Exchange mailbox from a web browser. Click **Disable** to disable Outlook Web App for the mailbox. Click **Edit details** to add or change an Outlook Web App mailbox policy for the mailbox. 
     
-- **IMAP** This feature is enabled by default. Click **Disable** to disable IMAP for the mailbox. 
+- **IMAP**: This feature is enabled by default. Click **Disable** to disable IMAP for the mailbox. 
     
-- **POP3** This feature is enabled by default. Click **Disable** to disable POP3 for the mailbox. 
+- **POP3**: This feature is enabled by default. Click **Disable** to disable POP3 for the mailbox. 
     
-- **MAPI** This feature is enabled by default. MAPI enables access to an Exchange mailbox from a MAPI client such as Outlook. Click **Disable** to disable MAPI for the mailbox. 
+- **MAPI**: This feature is enabled by default. MAPI enables access to an Exchange mailbox from a MAPI client such as Outlook. Click **Disable** to disable MAPI for the mailbox. 
     
-- **Litigation hold** This feature is disabled by default. Litigation hold preserves deleted mailbox items and records changes made to mailbox items. Deleted items and all instances of changed items are returned in a discovery search. Click **Enable** to put the mailbox on litigation hold. If the mailbox is on litigation hold, click **Disable** to remove the litigation hold. Mailboxes on litigation hold are inactive mailboxes and can't be deleted. To delete the mailbox, remove the litigation hold. If the mailbox is on litigation hold, click **Edit details** to view and change the following litigation hold settings: 
+- **Litigation hold**: This feature is disabled by default. Litigation hold preserves deleted mailbox items and records changes made to mailbox items. Deleted items and all instances of changed items are returned in a discovery search. Click **Enable** to put the mailbox on litigation hold. If the mailbox is on litigation hold, click **Disable** to remove the litigation hold. Mailboxes on litigation hold are inactive mailboxes and can't be deleted. To delete the mailbox, remove the litigation hold. If the mailbox is on litigation hold, click **Edit details** to view and change the following litigation hold settings: 
     
-  - **Hold date** This read-only box indicates the date and time when the mailbox was put on litigation hold. 
+  - **Hold date**: This read-only box indicates the date and time when the mailbox was put on litigation hold.
     
-  - **Put on hold by** This read-only box indicates the user who put the mailbox on litigation hold. 
+  - **Put on hold by**: This read-only box indicates the user who put the mailbox on litigation hold.
     
-  - **Note** Use this box to notify the user about the litigation hold, explain why the mailbox is on litigation hold, or provide additional guidance to the user, such as informing them that the litigation hold won't affect their day-to-day use of email. 
+  - **Note**: Use this box to notify the user about the litigation hold, explain why the mailbox is on litigation hold, or provide additional guidance to the user, such as informing them that the litigation hold won't affect their day-to-day use of email.
     
-  - **URL** Use this box to provide a URL to a website that provides information or guidance about the litigation hold on the mailbox. 
+  - **URL**: Use this box to provide a URL to a website that provides information or guidance about the litigation hold on the mailbox.
     
     > [!NOTE]
     > The text from these boxes appears in the user's mailbox only if they are using Outlook 2010 or later versions. It doesn't appear in Outlook Web App or other email clients. To view the text from the Note and URL boxes in Outlook, click the **File** tab, and on the **Info** page, under **Account Settings**, you'll see the litigation hold comment. 
   
-- **Archiving** If an archive mailbox doesn't exist for the user, this feature is disabled. To enable an archive mailbox, click **Enable**. If the user has an archive mailbox, the size of the archive mailbox and usage statistics are displayed. Click **Edit details** to view and change the following archive mailbox settings: 
+- **Archiving**: If an archive mailbox doesn't exist for the user, this feature is disabled. To enable an archive mailbox, click **Enable**. If the user has an archive mailbox, the size of the archive mailbox and usage statistics are displayed. Click **Edit details** to view and change the following archive mailbox settings: 
     
-  - **Status** This read-only box indicates whether an archive mailbox exists. 
+  - **Status**: This read-only box indicates whether an archive mailbox exists.
     
-  - **Database** This read-only box shows the name of the mailbox database that hosts the archive mailbox. 
+  - **Database**: This read-only box shows the name of the mailbox database that hosts the archive mailbox.
     
-  - **Name** Type the name of the archive mailbox in this box. This name is displayed under the folder list in Outlook or Outlook Web App. 
+  - **Name**: Type the name of the archive mailbox in this box. This name is displayed under the folder list in Outlook or Outlook Web App.
     
-  - **Archive quota (GB)** This box shows the total size of the archive mailbox. To change the size, type a new value in the box or select a value from the drop-down list. 
+  - **Archive quota (GB)**: This box shows the total size of the archive mailbox. To change the size, type a new value in the box or select a value from the drop-down list.
     
-  - **Issue warning at (GB)** This box shows the maximum storage limit for the archive mailbox before a warning is issued to the user. If the archive mailbox size reaches or exceeds the value specified, Exchange sends a warning message to the user. To change this limit, type a new value in the box or select a value from the drop-down list. 
+  - **Issue warning at (GB)**: This box shows the maximum storage limit for the archive mailbox before a warning is issued to the user. If the archive mailbox size reaches or exceeds the value specified, Exchange sends a warning message to the user. To change this limit, type a new value in the box or select a value from the drop-down list.
     
-- **Delivery Options** Use to forward email messages sent to the user to another recipient and to set the maximum number of recipients that the user can send a message to. Click **View details** to view and change these settings. 
+- **Delivery Options**: Use to forward email messages sent to the user to another recipient and to set the maximum number of recipients that the user can send a message to. Click **View details** to view and change these settings. 
     
-  - **Forwarding address** Select the **Enable forwarding** check box and then click **Browse** to display the **Select Mail User and Mailbox** page. Use this page to select a recipient to whom you want to forward all email messages that are sent to this mailbox. 
+  - **Forwarding address**: Select the **Enable forwarding** check box and then click **Browse** to display the **Select Mail User and Mailbox** page. Use this page to select a recipient to whom you want to forward all email messages that are sent to this mailbox. 
     
-  - **Deliver message to both forwarding address and mailbox** Select this check box so that messages will be delivered to both the forwarding address and the user's mailbox. 
+  - **Deliver message to both forwarding address and mailbox**: Select this check box so that messages will be delivered to both the forwarding address and the user's mailbox.
     
-  - **Recipient limit** This setting controls the maximum number of recipients the user can send a message to. Select the **Maximum recipients** check box to limit the number of recipients allowed in the To:, Cc:, and Bcc: boxes of an email message and then specify the maximum number of recipients. 
+  - **Recipient limit**: This setting controls the maximum number of recipients the user can send a message to. Select the **Maximum recipients** check box to limit the number of recipients allowed in the To:, Cc:, and Bcc: boxes of an email message and then specify the maximum number of recipients. For on-premises Exchange organizations, the recipient limit is unlimited. 
     
-    > [!NOTE]
-    > For on-premises Exchange organizations, the recipient limit is unlimited. For Exchange Online organizations, the limit is 500 recipients. 
-  
-- **Message Size Restrictions** These settings control the size of messages that the user can send and receive. Click **View details** to view and change maximum size for sent and received messages. 
+- **Message Size Restrictions**: These settings control the size of messages that the user can send and receive. Click **View details** to view and change maximum size for sent and received messages. 
     
-  - **Sent messages** To specify a maximum size for messages sent by this user, select the **Maximum message size (KB)** check box and type a value in the box. The message size must be between 0 and 2,097,151 KB. If the user sends a message larger than the specified size, the message will be returned to the user with a descriptive error message. 
+  - **Sent messages**: To specify a maximum size for messages sent by this user, select the **Maximum message size (KB)** check box and type a value in the box. The message size must be between 0 and 2,097,151 KB. If the user sends a message larger than the specified size, the message will be returned to the user with a descriptive error message. 
     
-  - **Received messages** To specify a maximum size for messages received by this user, select the **Maximum message size (KB)** check box and type a value in the box. The message size must be between 0 and 2,097,151 KB. If the user receives a message larger than the specified size, the message will be returned to the sender with a descriptive error message. 
+  - **Received messages**: To specify a maximum size for messages received by this user, select the **Maximum message size (KB)** check box and type a value in the box. The message size must be between 0 and 2,097,151 KB. If the user receives a message larger than the specified size, the message will be returned to the sender with a descriptive error message. 
     
-- **Message Delivery Restrictions** These settings control who can send email messages to this user. Click **View details** to view and change these restrictions. 
+- **Message Delivery Restrictions**: These settings control who can send email messages to this user. Click **View details** to view and change these restrictions. 
     
-  - **Accept messages from** Use this section to specify who can send messages to this user. 
+  - **Accept messages from**: Use this section to specify who can send messages to this user.
     
-  - **All senders** Select this option to specify that the user can accept messages from all senders. This includes both senders in your Exchange organization and external senders. This option is selected by default. This option includes external users only if you clear the **Require that all senders are authenticated** check box. If you select this check box, messages from external users will be rejected. 
+  - **All senders**: Select this option to specify that the user can accept messages from all senders. This includes both senders in your Exchange organization and external senders. This option is selected by default. This option includes external users only if you clear the **Require that all senders are authenticated** check box. If you select this check box, messages from external users will be rejected. 
     
-  - **Only senders in the following list** Select this option to specify that the user can accept messages only from a specified set of senders in your Exchange organization. Click **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png) to display the **Select Recipients** page, which displays a list of all recipients in your Exchange organization. Select the recipients you want, add them to the list, and then click **OK**. You can also search for a specific recipient by typing the recipient's name in the search box and then clicking **Search**![Search icon](../../media/ITPro_EAC_.png).
+  - **Only senders in the following list**: Select this option to specify that the user can accept messages only from a specified set of senders in your Exchange organization. Click **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png) to display the **Select Recipients** page, which displays a list of all recipients in your Exchange organization. Select the recipients you want, add them to the list, and then click **OK**. You can also search for a specific recipient by typing the recipient's name in the search box and then clicking **Search**![Search icon](../../media/ITPro_EAC_.png).
     
-  - **Require that all senders are authenticated** Select this option to prevent anonymous users from sending messages to the user. 
+  - **Require that all senders are authenticated**: Select this option to prevent anonymous users from sending messages to the user.
     
-  - **Reject messages from** Use this section to block people from sending messages to this user. 
+  - **Reject messages from**: Use this section to block people from sending messages to this user.
     
-  - **No senders** Select this option to specify that the mailbox won't reject messages from any senders in the Exchange organization. This option is selected by default. 
+  - **No senders**: Select this option to specify that the mailbox won't reject messages from any senders in the Exchange organization. This option is selected by default.
     
-  - **Senders in the following list** Select this option to specify that the mailbox will reject messages from a specified set of senders in your Exchange organization. Click **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png) to display the **Select Recipients** page, which displays a list of all recipients in your Exchange organization. Select the recipients you want, add them to the list, and then click **OK**. You can also search for a specific recipient by typing the recipient's name in the search box and then clicking **Search**![Search icon](../../media/ITPro_EAC_.png).
+  - **Senders in the following list**: Select this option to specify that the mailbox will reject messages from a specified set of senders in your Exchange organization. Click **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png) to display the **Select Recipients** page, which displays a list of all recipients in your Exchange organization. Select the recipients you want, add them to the list, and then click **OK**. You can also search for a specific recipient by typing the recipient's name in the search box and then clicking **Search**![Search icon](../../media/ITPro_EAC_.png).
     
 #### Member Of
 <a name="MemberOf"> </a>
@@ -283,13 +262,13 @@ Use the **MailTip** section to add a MailTip to alert users of potential issues 
 #### Mailbox Delegation
 <a name="MailboxDelegation"> </a>
 
-Use the **Mailbox Delegation** section to assign permissions to other users (also called delegates) to allow them to sign in to the user's mailbox or send messages on behalf of the user. You can assign the following permissions:
+Use the **Mailbox Delegation** section to assign permissions to other users (also called  *delegates*  ) to allow them to sign in to the user's mailbox or send messages on behalf of the user. You can assign the following permissions: 
   
-- **Send As** This permission allows users other than the mailbox owner to use the mailbox to send messages. After this permission is assigned to a delegate, any message that a delegate sends from this mailbox will appear as if it was sent by the mailbox owner. However, this permission doesn't allow a delegate to sign in to the user's mailbox. 
+- **Send As**: This permission allows users other than the mailbox owner to use the mailbox to send messages. After this permission is assigned to a delegate, any message that a delegate sends from this mailbox will appear as if it was sent by the mailbox owner. However, this permission doesn't allow a delegate to sign in to the user's mailbox.
     
-- **Send on Behalf Of** This permission also allows a delegate to use this mailbox to send messages. However, after this permission is assigned to a delegate, the **From:** address in any message sent by the delegate indicates that the message was sent by the delegate on behalf of the mailbox owner. 
+- **Send on Behalf Of**: This permission also allows a delegate to use this mailbox to send messages. However, after this permission is assigned to a delegate, the **From:** address in any message sent by the delegate indicates that the message was sent by the delegate on behalf of the mailbox owner. 
     
-- **Full Access** This permission allows a delegate to sign in to the user's mailbox and view the contents of the mailbox. However, after this permission is assigned to a delegate, the delegate can't send messages from the mailbox. To allow a delegate to send email from the user's mailbox, you still have to assign the delegate the Send As or the Send on Behalf Of permission. 
+- **Full Access**: This permission allows a delegate to sign in to the user's mailbox and view the contents of the mailbox. However, after this permission is assigned to a delegate, the delegate can't send messages from the mailbox. To allow a delegate to send email from the user's mailbox, you still have to assign the delegate the Send As or the Send on Behalf Of permission.
     
 To assign permissions to delegates, click **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png) under the appropriate permission to display a page that displays a list of all recipients in your Exchange organization that can be assigned the permission. Select the recipients you want, add them to the list, and then click **OK**. You can also search for a specific recipient by typing the recipient's name in the search box and then clicking **Search**![Search icon](../../media/ITPro_EAC_.png).
   
@@ -342,13 +321,13 @@ To verify that you've successfully changed properties for a user mailbox, do the
 - In the Exchange Management Shell, use the **Get-Mailbox** cmdlet to verify the changes. One advantage of using the Exchange Management Shell is that you can view multiple properties for multiple mailboxes. In the example above where the recipient limit was changed, run the following command to verify the new value. 
     
   ```
-  Get-Mailbox -ResultSize unlimited -Filter {(RecipientTypeDetails -eq 'UserMailbox')} | fl Name,RecipientLimits
+  Get-Mailbox -ResultSize unlimited -Filter {(RecipientTypeDetails -eq 'UserMailbox')} | Format-List Name,RecipientLimits
   ```
 
     For the example above where the message limits were changed, run this command.
     
   ```
-  Get-Mailbox -OrganizationalUnit "Marketing" | fl Name,IssueWarningQuota,ProhibitSendQuota,ProhibitSendReceiveQuota,UseDatabaseQuotaDefaults
+  Get-Mailbox -OrganizationalUnit "Marketing" | Format-List Name,IssueWarningQuota,ProhibitSendQuota,ProhibitSendReceiveQuota,UseDatabaseQuotaDefaults
   ```
 
 ## Bulk edit user mailboxes
@@ -358,30 +337,30 @@ You can use the EAC to change the properties for multiple user mailboxes. When y
   
 Here's a list of the user mailbox properties and features that can be bulk edited. Note that not all properties in each area are available to be changed.
   
-- **Contact Information** Change shared properties such as street, postal code, and city name. 
+- **Contact Information**: Change shared properties such as street, postal code, and city name.
     
-- **Organization** Change shared properties such as department name, company name, and the manager that the selected users report to. 
+- **Organization**: Change shared properties such as department name, company name, and the manager that the selected users report to.
     
-- **Custom attributes** Change or add values for custom attributes 1 - 15. 
+- **Custom attributes**: Change or add values for custom attributes 1 - 15.
     
-- **Mailbox quota** Change the mailbox quota values and the retention period for deleted items. 
+- **Mailbox quota**: Change the mailbox quota values and the retention period for deleted items.
     
-- **Email connectivity** Enable or disable Outlook Web App, POP3, IMAP, MAPI, and Exchange ActiveSync. 
+- **Email connectivity**: Enable or disable Outlook Web App, POP3, IMAP, MAPI, and Exchange ActiveSync.
     
-- **Archive** Enable or disable the archive mailbox. 
+- **Archive**: Enable or disable the archive mailbox.
     
-- **Retention policy, role assignment policy, and sharing policy** Update the settings for each of these mailbox features. 
+- **Retention policy, role assignment policy, and sharing policy**: Update the settings for each of these mailbox features.
     
-- **Move mailboxes to another database** Move the selected mailboxes to a different database. 
+- **Move mailboxes to another database**: Move the selected mailboxes to a different database.
     
-- **Delegate permissions** Assign permissions to users or groups that allow them to open or send messages from other mailboxes. You can assign Full, Send As and Send on Behalf permissions to users or groups. Check out [Manage permissions for recipients](../../recipients/mailbox-permissions.md) for more details. 
+- **Delegate permissions**: Assign permissions to users or groups that allow them to open or send messages from other mailboxes. You can assign Full, Send As and Send on Behalf permissions to users or groups. Check out [Manage permissions for recipients](../../recipients/mailbox-permissions.md) for more details. 
     
 > [!NOTE]
 > The estimated time to complete this task is 2 minutes, but may take longer if you change multiple properties or features. 
   
 ### Use the EAC to bulk edit user mailboxes
 
-1. In the EAC, navigate to **Recipients** > **Mailboxes**.
+1. In the EAC, navigate to **Recipients** \> **Mailboxes**.
     
 2. In the list of mailboxes, select two or more mailboxes.
     
@@ -401,7 +380,7 @@ To verify that you've successfully bulk edited user mailboxes, do one of the fol
 - In the Exchange Management Shell, use the **Get-Mailbox** cmdlet to verify the changes. One advantage of using the Exchange Management Shell is that you can view multiple properties for multiple mailboxes. For example, say you used the bulk edit feature in the EAC to enable the archive mailbox and assign a retention policy to all users in your organization. To verify these changes, you could run the following command: 
     
   ```
-  Get-Mailbox -ResultSize unlimited -Filter {(RecipientTypeDetails -eq 'UserMailbox')} | fl Name,ArchiveDatabase,RetentionPolicy
+  Get-Mailbox -ResultSize unlimited -Filter {(RecipientTypeDetails -eq 'UserMailbox')} | Format-List Name,ArchiveDatabase,RetentionPolicy
   ```
 
     For more information about the available parameters for the **Get-Mailbox** cmdlet, see [Get-Mailbox](http://technet.microsoft.com/library/8a5a6eb9-4a75-47f9-ae3b-a3ba251cf9a8.aspx).

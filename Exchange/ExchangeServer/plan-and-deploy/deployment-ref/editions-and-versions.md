@@ -3,7 +3,7 @@ title: "Exchange 2016 editions and versions"
 ms.author: dstrome
 author: dstrome
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: reference
 ms.prod: office-online-server
@@ -33,16 +33,16 @@ For a list of Exchange 2016 versions and information on how to download and upgr
 To view the build number for the version of Exchange 2016 that you're running, run the following command in the Exchange Management Shell.
   
 ```
-Get-ExchangeServer | fl name,edition,admindisplayversion
+Get-ExchangeServer | Format-List name,edition,admindisplayversion
 ```
 
 ## Exchange 2016 license types
 
 Exchange 2016 is licensed in the Server/Client Access License (CAL) model similar to how Exchange 2010 was licensed. Following are the types of licenses:
   
-- **Server licenses** A license must be assigned for each instance of the server software that is being run. The Server license is sold in two server editions: Standard Edition and Enterprise Edition. 
+- **Server licenses**: A license must be assigned for each instance of the server software that is being run. The Server license is sold in two server editions: Standard Edition and Enterprise Edition.
     
-- **Client Access licenses (CALs)** Exchange 2016 also comes in two client access license (CAL) editions, which are referred to as a Standard CAL and an Enterprise CAL. You can mix and match the server editions with the CAL types. For example, you can use Enterprise CALs with Exchange 2016 Standard Edition. Similarly, you can use Standard CALs with Exchange 2016 Enterprise Edition. 
+- **Client Access licenses (CALs)**: Exchange 2016 also comes in two client access license (CAL) editions, which are referred to as a Standard CAL and an Enterprise CAL. You can mix and match the server editions with the CAL types. For example, you can use Enterprise CALs with Exchange 2016 Standard Edition. Similarly, you can use Standard CALs with Exchange 2016 Enterprise Edition.
     
 For more information about Exchange license types, see [Licensing](https://go.microsoft.com/fwlink/p/?LinkId=392675).
   

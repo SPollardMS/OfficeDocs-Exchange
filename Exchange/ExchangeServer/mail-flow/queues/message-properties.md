@@ -3,18 +3,18 @@ title: "Properties of messages in queues"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 6/20/2016
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 8e6187c1-76f0-49da-bc24-2ab57cfb3c2c
-description: "Learn about the filterable properties for messages in queues in Exchange 2016."
+description: "Summary: Learn about the filterable properties for messages in queues in Exchange 2016."
 ---
 
 # Properties of messages in queues
 
-Learn about the filterable properties for messages in queues in Exchange 2016.
+ **Summary**: Learn about the filterable properties for messages in queues in Exchange 2016.
   
 Filtering messages in queues by one or more message properties in Exchange Server 2016 allows you to quickly locate messages and take action on them. When an email message is sent to multiple recipients, the message might be located in multiple queues on the server. When you filter messages in queues by message properties, you can locate messages across all queues. The following scenarios are examples of how you might use message filtering to manage mail flow:
   
@@ -41,8 +41,8 @@ The following table describes the message properties that you can use as filters
 |n/a  <br/> | `ExternalDirectoryOrganizationId` <br/> |n/a  <br/> |This property is reserved for internal Microsoft use, and isn't used in on-premises Exchange organizations.  <br/> In on-premises Exchange, the value is  `00000000-0000-0000-0000-000000000000`.  <br/> |
 |**From Address** <br/> | `FromAddress` <br/> |**Equals** (  `-eq`)  <br/> **Does Not Equal** (  `-ne`)  <br/> **Contains** (  `-contains`)  <br/> |The SMTP address of the sender.  <br/> |
 |n/a  <br/> | `Identity` <br/> |n/a  <br/> |The identity of the message in the form of  _\<Server\>_\ _\<Queue\>_\ _\<MessageInteger\>_. For more information see [Message identity](queues-and-messages-in-powershell.md#MessageIdentity).  <br/> |
-|**Internet Message ID** <br/> | `InternetMessageId` <br/> |**Equals** (  `-eq`)  <br/> **Does Not Equal** (  `-ne`)  <br/> **Contains** (  `-contains`)  <br/> |The value of the **Message-Id:** header field in the message header. This value is constant for the lifetime of the message. For messages created in Exchange, the value is in the format  `<GUID@ServerFQDN>`, including the angle brackets (< >). For example,  `<4867a3d78a50438bad95c0f6d072fca5@mailbox01.contoso.com>`.  <br/> |
-|**Last Error** <br/> | `LastError` <br/> |**Equals** (  `-eq`)  <br/> **Does Not Equal** (  `-ne`)  <br/> **Contains** (  `-contains`)  <br/> **Is Present** ()  <br/> **Is Not Present** ()  <br/> |The last error that was recorded for a message. For example,  `A matching connector cannot be found to route the external recipient`.  <br/> |
+|**Internet Message ID** <br/> | `InternetMessageId` <br/> |**Equals** (  `-eq`)  <br/> **Does Not Equal** (  `-ne`)  <br/> **Contains** (  `-contains`)  <br/> |The value of the **Message-Id:** header field in the message header. This value is constant for the lifetime of the message. For messages created in Exchange, the value is in the format  `<GUID@ServerFQDN>`, including the angle brackets (\< \>). For example,  `<4867a3d78a50438bad95c0f6d072fca5@mailbox01.contoso.com>`.  <br/> |
+|**Last Error** <br/> | `LastError` <br/> |**Equals** (  `-eq`)  <br/> **Does Not Equal** (  `-ne`)  <br/> **Contains** (  `-contains`)  <br/> **Is Present** <br/> **Is Not Present** <br/> |The last error that was recorded for a message. For example,  `A matching connector cannot be found to route the external recipient`.  <br/> |
 |n/a  <br/> | `LockReason` <br/> |n/a  <br/> |This property is reserved for internal Microsoft use, and isn't used in on-premises Exchange organizations.  <br/> |
 |n/a  <br/> | `MessageLatency` <br/> |Equals ( `-eq`)  <br/> Does not equal ( `-ne`)  <br/> Greater than ( `-gt`)  <br/> Greater than or equal to ( `-ge` <br/> Less than ( `-lt` <br/> Less than or equal to ( `-le` <br/> |The amount of time that elapsed between when the message first entered the Submission queue on the server, and when the message was placed in the queue. The value uses the syntax  _hh:mm:ss.ff_, where  _hh_ = hour,  _mm_ = minute,  _ss_ = second, and  _ff_ = fractions of a second.  <br/> |
 |**Message Source Name** <br/> | `MessageSourceName` <br/> |**Equals** (  `-eq`)  <br/> **Does Not Equal** (  `-ne`)  <br/> **Contains** (  `-contains`)  <br/> |The name of the transport component that submitted the message to the queue. For example, if the message came in through a Receive connector, the value is:  `SMTP:` _\<ConnectorName\>_. If the message is a delivery status notification (DSN), the value is  `DSN`.  <br/> |
@@ -55,7 +55,7 @@ The following table describes the message properties that you can use as filters
 |**Size (KB)** <br/> | `Size` <br/> |**Equals** (  `-eq`)  <br/> **Does Not Equal** (  `-ne`)  <br/> **Greater Than** (  `-gt`)  <br/> **Greater Than or Equals** (  `-ge` <br/> **Less Than** (  `-lt` <br/> **Less Than or Equals** (  `-le` <br/> |The size of the message. In Queue Viewer, you need to specify the message size in kilobytes (KB), but in the Exchange Management Shell, you can also specify other sizes, for example, bytes (B) or megabytes (MB).  <br/> |
 |**Source IP** <br/> | `SourceIP` <br/> |**Equals** (  `-eq`)  <br/> **Does Not Equal** (  `-ne`)  <br/> |The IPv4 or IPv6 address of the server that submitted the message to the Exchange server that holds the message in the queue. The address could be the IP address of a remote SMTP server, or the IP address of the local Exchange server.  <br/> |
 |**Status** <br/> | `Status` <br/> |**Equals** (  `-eq`)  <br/> **Does Not Equal** (  `-ne`)  <br/> |The current message status. Valid values are:  <br/> **Active** <br/> **Locked** <br/> **Pending Remove** (  `PendingRemove`)  <br/> **Pending Suspend** (  `PendingSuspend`)  <br/> **Ready** <br/> **Retry** <br/> **Suspended** <br/> For more information, see [Message status](queues.md#MessageStatus).  <br/> |
-|**Subject** <br/> | `Subject` <br/> |**Equals** (  `-eq`)  <br/> **Does Not Equal** (  `-ne`)  <br/> **Contains** (  `-contains`)  <br/> **Is Present** ()  <br/> **Is Not Present** ()  <br/> |The subject of the message (from the **Subject:** header field).  <br/> |
+|**Subject** <br/> | `Subject` <br/> |**Equals** (  `-eq`)  <br/> **Does Not Equal** (  `-ne`)  <br/> **Contains** (  `-contains`)  <br/> **Is Present** <br/> **Is Not Present** <br/> |The subject of the message (from the **Subject:** header field).  <br/> |
 |n/a  <br/> | `TrafficType` <br/> |n/a  <br/> |This property is reserved for internal Microsoft use, and isn't used in on-premises Exchange organizations.  <br/> In on-premises Exchange, this property is blank or has the value  `Email`.  <br/> |
 |n/a  <br/> | `TrafficSubType` <br/> |n/a  <br/> |This property is reserved for internal Microsoft use, and isn't used in on-premises Exchange organizations.  <br/> |
    

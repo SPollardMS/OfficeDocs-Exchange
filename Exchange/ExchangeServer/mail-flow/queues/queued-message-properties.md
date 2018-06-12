@@ -3,7 +3,7 @@ title: "View queued message properties in Queue Viewer"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 4/20/2018
+ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
 f1_keywords:
@@ -11,12 +11,12 @@ f1_keywords:
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 9d15d8b8-e061-4288-9354-df58e282fb6b
-description: "Learn how to use the Queue Viewer in the Exchange Toolbox to view message properties in Exchange 2016."
+description: "Summary: Learn how to use the Queue Viewer in the Exchange Toolbox to view message properties in Exchange 2016."
 ---
 
 # View queued message properties in Queue Viewer
 
-Learn how to use the Queue Viewer in the Exchange Toolbox to view message properties in Exchange 2016.
+ **Summary**: Learn how to use the Queue Viewer in the Exchange Toolbox to view message properties in Exchange 2016.
   
 You can use the Queue Viewer in the Exchange Toolbox to view queues and the properties of messages in queues. In Exchange Server 2016, Queue Viewer is available on Mailbox servers and Edge Transport servers.
   
@@ -30,7 +30,7 @@ For more information about queues, see [Queues and messages in queues](queues.md
     
 - To find and open the Exchange Toolbox, use one of the following procedures:
     
-  - **Windows 10 **: Click **Start** > **All Apps** > **MicrosoftExchange Server 2016 \>** **Exchange Toolbox**.
+  - **Windows 10 **: Click **Start** \> **All Apps** \> **MicrosoftExchange Server 2016 \>** **Exchange Toolbox**.
     
   - **Windows Server 2012 R2 or Windows 8.1**: On the Start screen, open the Apps view by clicking the down arrow near the lower-left corner or swiping up from the middle of the screen. The **Exchange Toolbox** shortcut is in a group named **MicrosoftExchange Server 2016**.
     
@@ -105,7 +105,7 @@ For more information about queues, see [Queues and messages in queues](queues.md
     
   - **Identity**: The identity of the message. The message identity uses the syntax  _\<Server\>_\ _\<Queue\>_\ _\<MessageInteger\>_, where  _\<Queue\>_ is the identity of the queue as described in the **Queue ID** property, and  _\<MessageInteger\>_ is the unique integer value of the message that's displayed in the **Identity** property of the **Get-Message** cmdlet. 
     
-  - **Internet Message ID**: The value of the **Message-Id:** header field in the message header. This value is constant for the lifetime of the message. For messages created in Exchange, the value is in the format  `<GUID@ServerFQDN>`, including the angle brackets (< >). For example,  `<4867a3d78a50438bad95c0f6d072fca5@mailbox01.contoso.com>`.
+  - **Internet Message ID**: The value of the **Message-Id:** header field in the message header. This value is constant for the lifetime of the message. For messages created in Exchange, the value is in the format  `<GUID@ServerFQDN>`, including the angle brackets (\< \>). For example,  `<4867a3d78a50438bad95c0f6d072fca5@mailbox01.contoso.com>`.
     
   - **Source IP**: The IPv4 or IPv6 address of the internal Exchange server or external messaging server that submitted the message.
     

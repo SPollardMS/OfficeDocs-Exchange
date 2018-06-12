@@ -3,30 +3,30 @@ title: "Configure email forwarding for a mailbox"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: c7a7afaf-577e-49d6-8cee-bb4c4a5d570b
-description: "Summary: How to use the Exchange Admin Center (EAC) to set up email forwarding."
+description: "Summary: Learn how to use the Exchange admin center (EAC) to set up email forwarding."
 ---
 
 # Configure email forwarding for a mailbox
 
- **Summary**: How to use the Exchange Admin Center (EAC) to set up email forwarding.
+ **Summary**: Learn how to use the Exchange admin center (EAC) to set up email forwarding.
   
 Email forwarding lets you to set up a mailbox to forward email messages sent to a user's mailbox to another user's mailbox in or outside of your organization.
   
-## Use the Exchange Admin Center and the Exchange Management Shell
+## Use the Exchange admin center and the Exchange Management Shell
 
 You can use either the Exchange Admin Center (EAC) or Exchange Management Shell to set up email forwarding.
   
 You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" entry in the [Recipients Permissions](../../permissions/feature-permissions/recipient-permissions.md) topic. 
   
-### Use the Exchange Admin Center to set up email forwarding
+### Use the Exchange admin center to set up email forwarding
 
-1. In the Exchange Admin Center, navigate to **Recipients** > **Mailboxes**.
+1. In the Exchange Admin Center, navigate to **Recipients** \> **Mailboxes**.
     
 2. In the list of user mailboxes, click or tap the mailbox that you want to set up mail forwarding for, and then click or tap **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
@@ -65,7 +65,7 @@ For detailed syntax and parameter information, see [Set-Mailbox](http://technet.
 
 To make sure that you've successfully set up email forwarding, do one of the following:
   
-1. In the Exchange Admin Center, go to **Recipients** > **Mailboxes**.
+1. In the Exchange admin center, go to **Recipients** \> **Mailboxes**.
     
 2. In the list of user mailboxes, click or tap the mailbox that you configured email forwarding for, and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
@@ -78,7 +78,7 @@ Or
 Run the following command in the Exchange Management Shell.
   
 ```
-Get-Mailbox <identity> | fl ForwardingSMTPAddress,DeliverToMailboxandForward
+Get-Mailbox <identity> | Format-List ForwardingSMTPAddress,DeliverToMailboxandForward
 ```
 
 Make sure that the forwarding address is listed in the  _ForwardingSMTPAddress_ parameter. Also, if the  _DeliverToMailboxAndForward_ parameter is set to  `$true`, messages will be delivered to the mailbox and to the forwarding address. If the parameter is set to  `$false`, messages are delivered only to the forwarding address.

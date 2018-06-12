@@ -2,7 +2,7 @@
 title: "Disable or delete a mailbox in Exchange 2016"
 ms.author: chrisda
 author: chrisda
-ms.date: 6/30/2017
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
@@ -15,7 +15,7 @@ description: "Summary: Learn how to disable or delete a mailbox in Exchange 2016
 
  **Summary**: Learn how to disable or delete a mailbox in Exchange 2016.
   
-In Exchange 2016, you can use the Exchange admin center (EAC) or the Exchange Management Shell to disable or delete mailboxes. Disabled or deleted mailboxes are also known as disconnected mailboxes. For more information about disconnected mailboxes, see [Disconnected mailboxes](disconnected-mailboxes.md).
+In Exchange 2016, you can use the Exchange admin center (EAC) or the Exchange Management Shell to disable or delete mailboxes. Disabled or deleted mailboxes are also known as  *disconnected mailboxes*  . For more information about disconnected mailboxes, see [Disconnected mailboxes](disconnected-mailboxes.md).
   
  **Note**: If you need to delete a mailbox in Office 365, see [Delete or Restore User Mailboxes in Exchange Online](http://technet.microsoft.com/library/be7f59a5-bbc9-4b7a-a28b-f47b26dd33a7.aspx).
   
@@ -128,13 +128,13 @@ When you delete a mailbox, the mailbox is disconnected from the associated user 
 
 1. In the EAC, go to the location for the type of mailbox that you want to delete:
     
-  - **Recipients** > **Mailboxes** for user mailboxes and linked mailboxes. 
+  - **Recipients** \> **Mailboxes** for user mailboxes and linked mailboxes. 
     
-  - **Recipients** > **Resources** for room and equipment mailboxes. 
+  - **Recipients** \> **Resources** for room and equipment mailboxes. 
     
-  - **Recipients** > **Shared** for shared mailboxes. 
+  - **Recipients** \> **Shared** for shared mailboxes. 
     
-  - **Public folders** > **Public folder mailboxes** for public folder mailboxes. 
+  - **Public folders** \> **Public folder mailboxes** for public folder mailboxes. 
     
 2. Find and select the mailbox that you want to disable. For example:
     

@@ -3,18 +3,18 @@ title: "Edge Subscriptions"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 5/23/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: overview
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 3addd71a-4165-401f-a009-002bcd8baba6
-description: "Learn about subscribing an Edge Transport server to your internal Exchange Server 2016 organization, which provides end-to-end mail flow, recipient look-up, and safelist aggregation."
+description: "Summary: Learn about subscribing an Edge Transport server to your internal Exchange Server 2016 organization, which provides end-to-end mail flow, recipient look-up, and safelist aggregation."
 ---
 
 # Edge Subscriptions
 
-Learn about subscribing an Edge Transport server to your internal Exchange Server 2016 organization, which provides end-to-end mail flow, recipient look-up, and safelist aggregation.
+ **Summary**: Learn about subscribing an Edge Transport server to your internal Exchange Server 2016 organization, which provides end-to-end mail flow, recipient look-up, and safelist aggregation.
   
 Edge Subscriptions are used to populate the Active Directory Lightweight Directory Services (AD LDS) instance on the Edge Transport server with Active Directory data. Although creating an Edge Subscription is optional, subscribing an Edge Transport server to the Exchange organization provides a simpler management experience and enhances antispam features. You need to create an Edge Subscription if you plan to use recipient lookup or safelist aggregation, or if you plan to help secure SMTP communications with partner domains by using Mutual Transport Layer Security (MTLS).
   
@@ -52,16 +52,16 @@ To deploy an Edge Transport server and subscribe it to an Active Directory site,
 
 Before you can subscribe your Edge Transport server to your Exchange organization, you need to make sure your infrastructure and your Mailbox servers are prepared for the EdgeSync synchronization. To prepare for EdgeSync, you need to:
   
-- **License the Edge Transport server** The licensing information for the Edge Transport server is captured when the Edge Subscription is created. Subscribed Edge Transport servers need to be subscribed to the Exchange organization after the license key has been applied on the Edge Transport server. If the license key is applied on the Edge Transport server after you perform the Edge Subscription process, licensing information will not be updated in the Exchange organization, and you will need to resubscribe the Edge Transport server. 
+- **License the Edge Transport server**: The licensing information for the Edge Transport server is captured when the Edge Subscription is created. Subscribed Edge Transport servers need to be subscribed to the Exchange organization after the license key has been applied on the Edge Transport server. If the license key is applied on the Edge Transport server after you perform the Edge Subscription process, licensing information will not be updated in the Exchange organization, and you will need to resubscribe the Edge Transport server.
     
-- **Verify that the required ports are open in the firewall** The following ports are used by subscribed Edge Transport servers: 
+- **Verify that the required ports are open in the firewall**: The following ports are used by subscribed Edge Transport servers:
     
-  - **SMTP** Port 25/TCP must be open for inbound and outbound mail flow between the Internet and the Edge Transport server, and between the Edge Transport server and the internal Exchange organization. 
+  - **SMTP**: Port 25/TCP must be open for inbound and outbound mail flow between the Internet and the Edge Transport server, and between the Edge Transport server and the internal Exchange organization.
     
-  - **Secure LDAP** Non-standard port 50636/TCP is used for directory synchronization from Mailbox servers to AD LDS on the Edge Transport server. This port is required for successful EdgeSync synchronization. 
+  - **Secure LDAP**: Non-standard port 50636/TCP is used for directory synchronization from Mailbox servers to AD LDS on the Edge Transport server. This port is required for successful EdgeSync synchronization.
     
     > [!NOTE]
-    >  Port 50389/TCP is used locally by LDAP to bind to the AD LDS instance. This port doesn't have to be open on the firewall; it's used locally on the Edge Transport server. 
+    > Port 50389/TCP is used locally by LDAP to bind to the AD LDS instance. This port doesn't have to be open on the firewall; it's used locally on the Edge Transport server. 
   
     If your environment requires specific ports, you can modify the ports used by AD LDS using the  `ConfigureAdam.ps1` script provided with Exchange. Modify the ports before you create the Edge Subscription. If you modify the ports after you create the Edge Subscription, you need to remove the Edge Subscription and create another one. 
     
@@ -69,11 +69,11 @@ Before you can subscribe your Edge Transport server to your Exchange organizatio
     
 - **Configure the following transport settings for propagation to the Edge Transport server**
     
-  - **Internal SMTP servers** Use the  _InternalSMTPServers_ parameter on the **Set-TransportConfig** cmdlet to specify a list of internal SMTP server IP addresses or IP address ranges to be ignored by the Sender ID and Connection Filtering agents on the Edge Transport server. 
+  - **Internal SMTP servers**: Use the  _InternalSMTPServers_ parameter on the **Set-TransportConfig** cmdlet to specify a list of internal SMTP server IP addresses or IP address ranges to be ignored by the Sender ID and Connection Filtering agents on the Edge Transport server. 
     
-  - **Accepted domains** Configure all authoritative domains, internal relay domains, and external relay domains. 
+  - **Accepted domains**: Configure all authoritative domains, internal relay domains, and external relay domains.
     
-  - **Remote domains** Configure the settings for the default remote domain object (used for recipients in all remote domains), and configure remote domain objects as required for recipients in specific remote domains. 
+  - **Remote domains**: Configure the settings for the default remote domain object (used for recipients in all remote domains), and configure remote domain objects as required for recipients in specific remote domains.
     
 ### Create and export an Edge Subscription file on the Edge Transport server
 <a name="CreateAndExport"> </a>
@@ -160,9 +160,9 @@ By default, when you import the Edge Subscription file to a Mailbox server, the 
   
 The Edge Subscription creates the following Send connectors:
   
-- A Send connector named EdgeSync - Inbound to < _Site Name_> that's configured to relay messages from the Edge Transport server to the Exchange organization.
+- A Send connector named EdgeSync - Inbound to \< _Site Name_\> that's configured to relay messages from the Edge Transport server to the Exchange organization.
     
-- A Send connector named EdgeSync - < _Site Name_> to Internet that's configured to relay messages from the Exchange organization to the Internet.
+- A Send connector named EdgeSync - \< _Site Name_\> to Internet that's configured to relay messages from the Exchange organization to the Internet.
     
 Also, subscribing an Edge Transport server to the Exchange organization allows the Mailbox servers in the subscribed Active Directory site to use the invisible and implicit intra-organization Send connector to relay messages to the Edge Transport server.
   
@@ -175,9 +175,9 @@ When you run the **New-EdgeSubscription** cmdlet on the Mailbox server, the  _Cr
 
 |**Property**|**Value**|
 |:-----|:-----|
-| _Name_ <br/> |EdgeSync - Inbound to < _Site Name_>  <br/> |
+| _Name_ <br/> |EdgeSync - Inbound to \< _Site Name_\>  <br/> |
 | _AddressSpaces_ <br/> | `SMTP:--;1` <br/> The  `--` value in the address space represents all authoritative and internal relay accepted domains for the Exchange organization. Any messages the Edge Transport server receives for these accepted domains are routed to this Send connector and relayed to the smart hosts.  <br/> |
-| _SourceTransportServers_ <br/> |< _Edge Subscription name_>  <br/> |
+| _SourceTransportServers_ <br/> |\< _Edge Subscription name_\>  <br/> |
 | _Enabled_ <br/> |True  <br/> |
 | _DNSRoutingEnabled_ <br/> |False  <br/> |
 | _SmartHosts_ <br/> | `--` <br/> The  `--` value in the list of smart hosts represents all Mailbox servers in the subscribed Active Directory site. Any Mailbox servers you add to the subscribed Active Directory site after you establish the Edge Subscription don't participate in the EdgeSync synchronization process. However, they are automatically added to the list of smart hosts for the automatically created inbound Send connector. If more than one Mailbox server is located in the subscribed Active Directory site, inbound connections will be load balanced across the smart hosts.  <br/> |
@@ -193,16 +193,16 @@ When you run the **New-EdgeSubscription** cmdlet on the Mailbox server, the  _Cr
 
 |**Property**|**Value**|
 |:-----|:-----|
-| _Name_ <br/> |EdgeSync - < _Site Name_> to Internet  <br/> |
+| _Name_ <br/> |EdgeSync - \< _Site Name_\> to Internet  <br/> |
 | _AddressSpaces_ <br/> | `SMTP:*;100` <br/> |
-| _SourceTransportServers_ <br/> |< _Edge Subscription name_>  <br/> The name of the Edge Subscription is the same as the name of the subscribed Edge Transport server.  <br/> |
+| _SourceTransportServers_ <br/> |\< _Edge Subscription name_\>  <br/> The name of the Edge Subscription is the same as the name of the subscribed Edge Transport server.  <br/> |
 | _Enabled_ <br/> |True  <br/> |
 | _DNSRoutingEnabled_ <br/> |True  <br/> |
 | _DomainSecureEnabled_ <br/> |True  <br/> |
    
 If more than one Edge Transport server is subscribed to the same Active Directory site, no additional Send connectors to the Internet are created. Instead, all Edge Subscriptions are added to the same Send connector as the source server. This load balances outbound connections to the Internet across the subscribed Edge Transport servers.
   
-The outbound Send connector is configured to send email messages from the Exchange organization to all remote SMTP domains, using DNS routing to resolve domain names to MX resource records. 
+The outbound Send connector is configured to send email messages from the Exchange organization to all remote SMTP domains, using DNS routing to resolve domain names to MX resource records.
   
 ## Details about the EdgeSync service
 <a name="Service"> </a>

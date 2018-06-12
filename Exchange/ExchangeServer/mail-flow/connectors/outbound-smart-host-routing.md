@@ -3,18 +3,18 @@ title: "Create a Send connector to route outbound mail through a smart host"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 12/1/2015
+ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 4a9ef08e-bd62-4c6b-8790-d24fb0f8f24b
-description: "Create a Send connector in Exchange 2016 that's configured to route outbound mail through a smart host."
+description: "Summary: Create a Send connector in Exchange 2016 that's configured to route outbound mail through a smart host."
 ---
 
 # Create a Send connector to route outbound mail through a smart host
 
-Create a Send connector in Exchange 2016 that's configured to route outbound mail through a smart host.
+ **Summary**: Create a Send connector in Exchange 2016 that's configured to route outbound mail through a smart host.
   
 Instead of routing all outbound messages directly to the Internet, you may need to route your organization's outbound mail through a third-party smart host. For example, your organization may have an appliance that scans outbound mail for spam and malware.
   
@@ -35,21 +35,21 @@ Instead of routing all outbound messages directly to the Internet, you may need 
   
 ## Use the EAC to create a Send connector that uses smart host routing
 
-1. In the EAC, navigate to **Mail flow** > **Send connectors**, and then click **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png). This starts the **New Send connector** wizard. 
+1. In the EAC, navigate to **Mail flow** \> **Send connectors**, and then click **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png). This starts the **New Send connector** wizard. 
     
 2. On the first page, enter the following information:
     
-  - **Name** Enter a descriptive name for the Send connector, for example, Smart host to Internet.
+  - **Name**: Enter a descriptive name for the Send connector, for example, Smart host to Internet.
     
-  - **Type** Select a descriptive value. For example, **Internet** or **Custom**. For more information about Send connector usage types, see [Send connector usage types](send-connectors.md#UsageTypes).
+  - **Type**: Select a descriptive value. For example, **Internet** or **Custom**. For more information about Send connector usage types, see [Send connector usage types](send-connectors.md#UsageTypes).
     
     When you are finished, click **Next**.
     
 3. On the next page, select **Route mail through smart hosts**, and then click **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png). In the **Add smart host** dialog box that appears, identify the smart host by using one of the following values: 
     
-  - **IP address** For example, 192.168.3.2. 
+  - **IP address**: For example, 192.168.3.2.
     
-  - **Fully qualified domain name (FQDN)** For example, securitydevice01.contoso.com. Note that the Exchange source servers for the Send connector must be able to resolve the smart host in DNS by using this FQDN. 
+  - **Fully qualified domain name (FQDN)**: For example, securitydevice01.contoso.com. Note that the Exchange source servers for the Send connector must be able to resolve the smart host in DNS by using this FQDN.
     
     When you are finished, click **Save**.
     
@@ -69,11 +69,11 @@ Instead of routing all outbound messages directly to the Internet, you may need 
     
 6. On the next page, in the **Address space** section, click **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png). In the **Add domain** dialog box that appears, enter the following information: 
     
-  - **Type** Verify SMTP is entered. 
+  - **Type**: Verify SMTP is entered.
     
-  - **Fully Qualified Domain Name (FQDN)** Enter an asterisk ( \*) to indicate the Send connector applies to messages addressed to all external domains. Alternatively, you can enter a specific external domain (for example, contoso.com), or a domain and all subdomains (for example, *.contoso.com).
+  - **Fully Qualified Domain Name (FQDN)**: Enter an asterisk (\*) to indicate the Send connector applies to messages addressed to all external domains. Alternatively, you can enter a specific external domain (for example, contoso.com), or a domain and all subdomains (for example, \*.contoso.com).
     
-  - **Cost** Verify 1 is entered. A lower value indicates a more preferred route for the domains you specified. 
+  - **Cost**: Verify 1 is entered. A lower value indicates a more preferred route for the domains you specified.
     
     When you are finished, click **Save**.
     
@@ -105,7 +105,7 @@ After you create the Send connector, it appears in the Send connector list.
     
   - The Send connector uses smart host routing (the  _DNSRoutingEnabled_ parameter is set to the value  `$false`). The smart host's IP address is 192.168.3.2, and the authentication method is None, because the smart host is configured to listen for connections only from a restricted list of source servers.
     
-  - The Send connector is for all external domains (*). The value  `*` is equivalent to the value  `"SMTP:*;1"`, where the address space type is  `SMTP`, and the address space cost value is  `1`.
+  - The Send connector is for all external domains (\*). The value  `*` is equivalent to the value  `"SMTP:*;1"`, where the address space type is  `SMTP`, and the address space cost value is  `1`.
     
   - The local Exchange server is the source server. We aren't using the  _SourceTransportServer_ parameter, and the default value is the local Exchange server. 
     

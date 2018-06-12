@@ -3,22 +3,22 @@ title: "Turn off access to the Exchange admin center"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 4/19/2018
+ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 49f4fa77-1722-4703-81c9-8724ae0334fb
-description: "Learn how to disable access to the Exchange admin center on an Exchange 2016 server."
+description: "Summary: Learn how to disable access to the Exchange admin center on an Exchange 2016 server."
 ---
 
 # Turn off access to the Exchange admin center
 
-Learn how to disable access to the Exchange admin center on an Exchange 2016 server.
+ **Summary**: Learn how to disable access to the Exchange admin center on an Exchange 2016 server.
   
 In Exchange Server 2016, the Exchange admin center is the primary management interface for Exchange. For more information, see [Exchange admin center in Exchange 2016](exchange-admin-center.md). By default, access to the EAC isn't restricted, and access to Outlook on the web (formally known as Outlook Web App) on an on an Internet-facing Exchange server also gives access to the EAC. You still need valid credentials to sign in to the EAC, but organizations may want to restrict access to the EAC for client connections from the Internet.
   
-In Exchange 2016, the EAC virtual directory is named ECP, and is managed by the *- **ECPVirtualDirectory** cmdlets. When you set the  _AdminEnabled_ parameter to the value  `$false` on the EAC virtual directory, you disable access to the EAC for internal and external client connections, without affecting access to the **Settings** > **Options** page in Outlook on the web. 
+In Exchange 2016, the EAC virtual directory is named ECP, and is managed by the \*- **ECPVirtualDirectory** cmdlets. When you set the  _AdminEnabled_ parameter to the value  `$false` on the EAC virtual directory, you disable access to the EAC for internal and external client connections, without affecting access to the **Settings** \> **Options** page in Outlook on the web. 
   
 ![Options menu location in Outlook on the web](../../media/f1227a01-7f83-4af9-abf5-2c3dec6cf3d0.png)
   
@@ -41,11 +41,9 @@ But, this configuration introduces a new problem: access to the EAC is completel
 > [!TIP]
 > Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
   
-## How do you do this?
+## Step 1: Use the Exchange Management Shell to disable access to the EAC
 
-### Step 1: Use the Exchange Management Shell to disable access to the EAC
-
-Remember, this step disables access to the EAC on the server for internal and external connections, but still allows users to access their own **Settings** > **Options** page in Outlook on the web. 
+Remember, this step disables access to the EAC on the server for internal and external connections, but still allows users to access their own **Settings** \> **Options** page in Outlook on the web. 
   
 To disable access to the EAC on an Exchange server, use the following syntax:
   
@@ -59,7 +57,7 @@ This example turns disables access to the EAC on the server named MBX01.
 Set-ECPVirtualDirectory -Identity "MBX01\ecp (Default Web Site)" -AdminEnabled $false
 ```
 
-#### How do you know this step worked?
+### How do you know this step worked?
 
 To verify that you've disabled access to the EAC on the server, replace  _\<Server\>_ with the name of your Exchange server, and run the following command to verify the value of the **AdminEnabled** property: 
   
@@ -67,13 +65,13 @@ To verify that you've disabled access to the EAC on the server, replace  _\<Serv
 Get-ECPVirtualDirectory -Identity "MBX01\ecp (Default Web Site)" | Format-List AdminEnabled
 ```
 
-When you open https://<servername>/ecp or from the internal network, your own **Settings** > **Options** page in Outlook on the web opens instead of the EAC. 
+When you open https://\<servername\>/ecp or from the internal network, your own **Settings** \> **Options** page in Outlook on the web opens instead of the EAC. 
   
-### Step 2: Give access to the EAC on the internal network
+## Step 2: Give access to the EAC on the internal network
 
 Choose either of the following options.
   
-#### Option 1: Configure a second Exchange 2016 server that's only accessible from the internal network
+### Option 1: Configure a second Exchange 2016 server that's only accessible from the internal network
 
 The default value of the **AdminEnabled** property is  `True` on the default EAC virtual directory. To confirm this value on the second server, replace  _\<Server\>_ with the name of the server, and run the following command: 
   
@@ -87,7 +85,7 @@ If the value is  `False`, replace  _\<Server\>_ with the name of the server, and
 Set-ECPVirtualDirectory -Identity "<Server>\ecp (Default Web Site)" -AdminEnabled $true
 ```
 
-#### Option 2: Create a new web site on the existing Exchange 2016 server, and configure the EAC and Outlook Web App in the new web site for the internal network
+### Option 2: Create a new web site on the existing Exchange 2016 server, and configure the EAC and Outlook Web App in the new web site for the internal network
 
 The required steps are:
   
@@ -138,19 +136,19 @@ The steps to assign a second IP address to the existing network adapter are desc
   
 3. In the **Add Website** window that appears, configure the following settings: 
     
-  - **Site name** `EAC_Secondary`
+  - **Site name**:  `EAC_Secondary`
     
-  - **Physical path** `C:\inetpub\EAC_Secondary`
+  - **Physical path**:  `C:\inetpub\EAC_Secondary`
     
   - **Binding**
     
-  - **Type** https 
+  - **Type**: https
     
-  - **IP address** Select the second IP address that you added in the previous step. 
+  - **IP address**: Select the second IP address that you added in the previous step.
     
-  - **Port** 443 
+  - **Port**: 443
     
-  - **SSL certificate** Choose the certificate that you want to use (for example, the default Exchange certificate named Microsoft Exchange). 
+  - **SSL certificate**: Choose the certificate that you want to use (for example, the default Exchange certificate named Microsoft Exchange).
     
     When you're finished, click **OK**.
     ![Website properites for the secondary EAC web site](../../media/a9e7f729-ae71-44ed-b491-3b6197b29cea.png)
@@ -234,18 +232,18 @@ To verify that you have successfully disabled access to the EAC on an Exchange s
   
 1. Test your organization's internal and external URL for Outlook on the web. For example, if the external URL is https://mail.contoso.com/owa, and the internal URL is https://mbx01.contoso.com/owa use the following procedures to verify your configuration:
     
-  - Verify that internal and external users can open their mailboxes by using Outlook on the web, including the **Settings** > **Options** page. 
+  - Verify that internal and external users can open their mailboxes by using Outlook on the web, including the **Settings** \> **Options** page. 
     
   - Verify that https://mail.contoso.com/ecp and https://mbx01.contoso.com/ecp return either of the following results:
     
   - **404 - website not found**
     
-  - The user is redirected to their **Settings** > **Options** page in Outlook on the web. 
+  - The user is redirected to their **Settings** \> **Options** page in Outlook on the web. 
     
 2. Verify that administrators can access the EAC on the internal network based on your configuration selection:
     
-  - **Second Exchange server** If the second Exchange server is named MBX02, verify that https://mbx02.contoso.com/ecp opens the EAC. 
+  - **Second Exchange server**: If the second Exchange server is named MBX02, verify that https://mbx02.contoso.com/ecp opens the EAC.
     
-  - **New EAC web site on the existing Exchange server** If the IP address of the new EAC web site is 10.1.1.12, verify that https://10.1.1.12/ecp opens the EAC. 
+  - **New EAC web site on the existing Exchange server**: If the IP address of the new EAC web site is 10.1.1.12, verify that https://10.1.1.12/ecp opens the EAC.
     
 

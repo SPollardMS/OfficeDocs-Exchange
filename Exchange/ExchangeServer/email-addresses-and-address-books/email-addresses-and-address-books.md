@@ -3,18 +3,18 @@ title: "Email addresses and address books in Exchange 2016"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 9/20/2016
+ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: overview
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: b97d0f68-691a-42af-9a6c-4dcc37b28a42
-description: "Learn about the different methods that Exchange 2016 uses to organize and configure email addresses."
+description: "Summary: Learn about the different methods that Exchange 2016 uses to organize and configure email addresses."
 ---
 
 # Email addresses and address books in Exchange 2016
 
-Learn about the different methods that Exchange 2016 uses to organize and configure email addresses.
+ **Summary**: Learn about the different methods that Exchange 2016 uses to organize and configure email addresses.
   
 Exchange uses address books to organize and store email address information for recipients in the organization. The topics that will help you learn about and configure email addresses and address books in Exchange Server 2016 are described in the following table.
   

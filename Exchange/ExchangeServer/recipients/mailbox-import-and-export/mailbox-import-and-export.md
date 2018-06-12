@@ -2,18 +2,18 @@
 title: "Mailbox imports and exports in Exchange 2016"
 ms.author: chrisda
 author: chrisda
-ms.date: 4/19/2018
+ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
 localization_priority: Normal
 ms.assetid: 157a7d88-d3aa-4056-9a50-df67451b14be
-description: "Learn about how administrators can import and export mailboxes to .pst files, and .pst files to mailboxes in Exchange 2016."
+description: "Summary: Learn about how administrators can import and export mailboxes to .pst files, and .pst files to mailboxes in Exchange 2016."
 ---
 
 # Mailbox imports and exports in Exchange 2016
 
-Learn about how administrators can import and export mailboxes to .pst files, and .pst files to mailboxes in Exchange 2016.
+ **Summary**: Learn about how administrators can import and export mailboxes to .pst files, and .pst files to mailboxes in Exchange 2016.
   
 Exchange 2016 uses the Microsoft Exchange Mailbox Replication service (MRS) to import .pst files to mailboxes, and export mailboxes to .pst files. The advantages of using MRS instead of Outlook to import and export mailboxes are:
   
@@ -35,11 +35,11 @@ This feature was introduced in Exchange 2010 Service Pack 1 (SP1). In Exchange 2
 
 As an administrator, you might need to import .pst files to mailboxes or export mailboxes to .pst files. For example:
   
-- **Compliance requirements** You can export a mailbox to a .pst file for legal discovery purposes. After the export is complete, you can import the .pst file to a mailbox that's specifically used for compliance purposes. 
+- **Compliance requirements**: You can export a mailbox to a .pst file for legal discovery purposes. After the export is complete, you can import the .pst file to a mailbox that's specifically used for compliance purposes.
     
-- **Create a point-in-time snapshot of a mailbox** Suppose you're keeping a backup of an entire mailbox database for just a few mailboxes. By exporting those mailboxes to .pst files, you can eliminate the mailbox database backup. 
+- **Create a point-in-time snapshot of a mailbox**: Suppose you're keeping a backup of an entire mailbox database for just a few mailboxes. By exporting those mailboxes to .pst files, you can eliminate the mailbox database backup.
     
-- **Get content out of .pst files and into mailboxes** Typically, Outlook users can save their email messages locally in .pst files. You can import users' .pst files to their primary mailboxes or archive mailboxes. This is an easy method for transferring email from a user's local computer to an Exchange server. 
+- **Get content out of .pst files and into mailboxes**: Typically, Outlook users can save their email messages locally in .pst files. You can import users' .pst files to their primary mailboxes or archive mailboxes. This is an easy method for transferring email from a user's local computer to an Exchange server.
     
 ## Considerations
 <a name="Pre"> </a>

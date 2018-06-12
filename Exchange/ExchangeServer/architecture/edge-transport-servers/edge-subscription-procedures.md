@@ -3,7 +3,7 @@ title: "Procedures for Edge Subscriptions"
 ms.author: chrisda
 author: chrisda
 manager: serdars
-ms.date: 4/16/2018
+ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
