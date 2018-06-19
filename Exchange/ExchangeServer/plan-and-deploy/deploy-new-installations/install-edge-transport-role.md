@@ -41,7 +41,7 @@ For information about tasks to complete after installation, see [Exchange 2016 p
     
 - Make sure the account you use is a member of the local Administrators group on the computer you're installing the Edge Transport role.
     
-- For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/eac-keyboard-shortcuts.md).
+- For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!CAUTION]
 > After you install Exchange 2016 on a server, you must not change the server name. Renaming a server after you have installed an Exchange 2016 server role is not supported. 

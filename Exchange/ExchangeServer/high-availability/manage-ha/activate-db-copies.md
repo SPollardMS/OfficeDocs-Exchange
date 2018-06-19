@@ -28,7 +28,7 @@ Looking for other management tasks related to mailbox database copies? Check out
     
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Mailbox database copies" entry in the [High availability and site resilience permissions](../../permissions/feature-permissions/ha-permissions.md) topic. 
     
-- For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/eac-keyboard-shortcuts.md).
+- For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
 > Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
@@ -105,7 +105,7 @@ To verify that you've successfully activated a mailbox database copy, do one of 
 ## For more information
 <a name="UseShell"> </a>
 
-[Mailbox database copies](../../high-availability/dags/database-copies.md)
+[Mailbox database copies](../../high-availability/database-availability-groups/database-copies.md)
   
 [Configure mailbox database copy properties](configure-db-properties.md)
   

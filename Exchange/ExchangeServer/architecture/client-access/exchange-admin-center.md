@@ -41,7 +41,7 @@ The URL of the EAC is controlled by the Internet Information Services (IIS) virt
     
     After you configure the settings, a common external URL value for the EAC would resemble  `https://mail.contoso.com/ecp`.
     
-    **Note**: External users who connect to Outlook on the web (formerly known as Outlook Web App) also need access to the EAC to access their own **Options** page. You can disable external administrator access to the EAC while still allowing users to access their **Options** page in Outlook on the web. For more information, see [Turn off access to the Exchange admin center](disable-eac-access.md).
+    **Note**: External users who connect to Outlook on the web (formerly known as Outlook Web App) also need access to the EAC to access their own **Options** page. You can disable external administrator access to the EAC while still allowing users to access their **Options** page in Outlook on the web. For more information, see [Turn off access to the Exchange admin center](disable-exchange-admin-center-access.md).
     
 The easiest way to find the internal and external URL values for the EAC (without using **Servers** \> **Virtual directories** in the EAC itself) is by using the **Get-EcpVirtualDirectory** cmdlet in the Exchange Management Shell. To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
   
@@ -112,7 +112,7 @@ The feature pane is the first level of navigation for most of the tasks that you
     
   - [Mailbox audit logging in Exchange 2016](../../policy-and-compliance/mailbox-audit-logging/mailbox-audit-logging.md) and [Administrator audit logging in Exchange 2016](../../policy-and-compliance/admin-audit-logging/admin-audit-logging.md)
     
-  - [Data loss prevention in Exchange 2016](../../policy-and-compliance/dlp/dlp.md)
+  - [Data loss prevention in Exchange 2016](../../policy-and-compliance/data-loss-prevention/data-loss-prevention.md)
     
   - [Retention policies](../../policy-and-compliance/mrm/retention-tags-and-retention-policies.md#Policies) and [Retention tags](../../policy-and-compliance/mrm/retention-tags-and-retention-policies.md#RT).
     
@@ -126,7 +126,7 @@ The feature pane is the first level of navigation for most of the tasks that you
     
   - [Address lists in Exchange 2016](../../email-addresses-and-address-books/address-lists/address-lists.md)
     
-- **Protection**: Manage antimalware protection for your organization. For more information, see [Antimalware protection in Exchange 2016](../../antispam-and-antimalware/antimalware/antimalware.md).
+- **Protection**: Manage antimalware protection for your organization. For more information, see [Antimalware protection in Exchange 2016](../../antispam-and-antimalware/antimalware-protection/antimalware-protection.md).
     
 - **Mail flow**: Manage mail flow rules (also known as transport rules), delivery reports, accepted domains, remote domains, email address policies, Receive connectors, and Send connectors. For more information, see the following topics:
     

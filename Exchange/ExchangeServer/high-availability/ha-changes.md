@@ -128,7 +128,7 @@ When using multiple databases per volume, we recommend adhering to the following
 
 Automatic reseed, or AutoReseed, is a feature that's the replacement for what is normally administrator-driven action in response to a disk failure, database corruption event, or other issue that necessitates a reseed of a database copy. AutoReseed is designed to automatically restore database redundancy after a disk failure by using spare disks that have been provisioned on the system.
   
-For more information, see [AutoReseed](dags/autoreseed.md). For detailed steps to configure AutoReseed, see [Configure AutoReseed for a database availability group](manage-ha/configure-dag-autoreseed.md).
+For more information, see [AutoReseed](database-availability-groups/autoreseed.md). For detailed steps to configure AutoReseed, see [Configure AutoReseed for a database availability group](manage-ha/configure-dag-autoreseed.md).
   
 ## Automatic recovery from storage failures
 

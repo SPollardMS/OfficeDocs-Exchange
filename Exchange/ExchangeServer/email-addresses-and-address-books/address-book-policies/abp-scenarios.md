@@ -111,7 +111,7 @@ These are the important issues to consider when you use ABPs in your organizatio
     
      For example, to configure values for **Company**, **Department** or **StateOrProvince** on mailboxes, mail users, or mail contacts, you can't use the **Set-Mailbox**, **Set-MailUser**, or **Set-MailContact** cmdlets. Instead, you need to use the **Set-User** and **Set-Contact** cmdlets. In contrast, the  _CustomAttribute1_ to  _CustomAttribute15_ parameters are available on the corresponding **Set-\*** cmdlets for all recipient types. 
     
-    For more information about recipient filtering, see [Recipient filtering on Edge Transport servers](../../antispam-and-antimalware/antispam/recipient-filtering.md).
+    For more information about recipient filtering, see [Recipient filtering on Edge Transport servers](../../antispam-and-antimalware/antispam-protection/recipient-filtering.md).
     
 - Client applications that access Active Directory directly through LDAP will bypass the logic that's built into ABPs. Because Entourage and Outlook for Mac use direct LDAP queries to access Active Directory, those client applications won't function properly with ABPs if a domain controller or global catalog server is specified or provided to them by the Autodiscover service. Entourage and Outlook for Mac can use Exchange Web Services (EWS) or a local OAB to access directory information, but if they can directly access an LDAP service, they will attempt to do so.
     
@@ -156,7 +156,7 @@ The ABP Routing Agent makes users that are assigned different GALs appear as ext
   
 ### Step 2: Define your virtual organizations
 
-In this scenario, the **CustomAttribute15** attribute defines the virtual organizations: the value  `FAB` for Fabrikam recipients, and the value  `TAIL` for Tailspin Toys recipients. For more information about recipient filtering, see [Recipient filtering on Edge Transport servers](../../antispam-and-antimalware/antispam/recipient-filtering.md).
+In this scenario, the **CustomAttribute15** attribute defines the virtual organizations: the value  `FAB` for Fabrikam recipients, and the value  `TAIL` for Tailspin Toys recipients. For more information about recipient filtering, see [Recipient filtering on Edge Transport servers](../../antispam-and-antimalware/antispam-protection/recipient-filtering.md).
   
 ### Step 3: Create the required elements for the address book policies
 

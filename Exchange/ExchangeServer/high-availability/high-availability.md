@@ -108,7 +108,7 @@ The following key terms are important to understand high availability or site re
 ## Database availability groups
 <a name="DA"> </a>
 
-A DAG is the base component of the high availability and site resilience framework built into Exchange 2016. A DAG is a group of up to 16 Exchange 2016 servers that host a set of databases and provides automatic, database-level recovery from failures that affect individual databases, networks, or servers. Any server in a DAG can host a copy of a mailbox database from any other server in the DAG. When a server is added to a DAG, it works with the other servers in the DAG to provide automatic recovery from failures that affect mailbox databases, such as a disk failure or server failure. For more information about DAGs, see [Database availability groups](dags/dags.md).
+A DAG is the base component of the high availability and site resilience framework built into Exchange 2016. A DAG is a group of up to 16 Exchange 2016 servers that host a set of databases and provides automatic, database-level recovery from failures that affect individual databases, networks, or servers. Any server in a DAG can host a copy of a mailbox database from any other server in the DAG. When a server is added to a DAG, it works with the other servers in the DAG to provide automatic recovery from failures that affect mailbox databases, such as a disk failure or server failure. For more information about DAGs, see [Database availability groups](database-availability-groups/database-availability-groups.md).
   
 ## Mailbox database copies
 <a name="MD"> </a>
@@ -121,12 +121,12 @@ Setting a database copy as the active mailbox database is known as a  *switchove
   
 For example, if an active database in a DAG fails because of an underlying storage failure, Active Manager will automatically recover by failing over to a database copy on another server in the DAG. In Exchange 2016, managed availability provides behaviors to recover from loss of protocol access to a database, including recycling application worker pools, restarting services and servers, and initiating database failovers.
   
-For more information about mailbox database copies, see [Mailbox database copies](dags/database-copies.md).
+For more information about mailbox database copies, see [Mailbox database copies](database-availability-groups/database-copies.md).
   
 ## Active Manager
 <a name="AM"> </a>
 
-Exchange 2016 leverages Active Manager to manage the database and database copy health, status, continuous replication, and other aspects of high availability. For more information about Active Manager, see [Active Manager](dags/active-manager.md).
+Exchange 2016 leverages Active Manager to manage the database and database copy health, status, continuous replication, and other aspects of high availability. For more information about Active Manager, see [Active Manager](database-availability-groups/active-manager.md).
   
 ## Site resilience
 <a name="Site"> </a>
@@ -171,7 +171,7 @@ The following table contains links to topics that will help you learn about and 
   
 |**Topic**|**Description**|
 |:-----|:-----|
-|[Database availability groups](dags/dags.md) <br/> |Learn about DAGs, Active Manager, Datacenter Activation Coordination (DAC) mode, and mailbox database copies.  <br/> |
+|[Database availability groups](database-availability-groups/database-availability-groups.md) <br/> |Learn about DAGs, Active Manager, Datacenter Activation Coordination (DAC) mode, and mailbox database copies.  <br/> |
 |[Plan for high availability and site resilience](plan-ha.md) <br/> |Learn about the general, hardware, network, software, witness server, and other requirements and best practices for DAGs.  <br/> |
 |[Deploying high availability and site resilience](deploy-ha.md) <br/> |Explore an example deployment scenario for deploying and configuring DAGs.  <br/> |
 |[Managing high availability and site resilience](manage-ha/manage-ha.md) <br/> |Learn about DAG management tasks, switchovers and failovers, and maintenance mode.  <br/> |

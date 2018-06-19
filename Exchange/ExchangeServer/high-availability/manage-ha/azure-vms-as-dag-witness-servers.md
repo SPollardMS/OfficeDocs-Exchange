@@ -20,7 +20,7 @@ This configuration requires three separate physical locations: two datacenters f
   
 [High availability and site resilience](../../high-availability/high-availability.md)
   
-[Database availability groups](../../high-availability/dags/dags.md)
+[Database availability groups](../../high-availability/database-availability-groups/database-availability-groups.md)
   
 [Plan for high availability and site resilience](../../high-availability/plan-ha.md)
   

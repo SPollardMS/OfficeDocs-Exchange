@@ -32,7 +32,7 @@ While the actual steps used by each organization may vary slightly, the overall 
     
 1. Optionally configure DAG encryption and compression, replication port, DAG IP addresses, and other DAG properties. For detailed steps, see [Configure database availability group properties](manage-ha/configure-dag-properties.md).
     
-2. Enable Datacenter Activation Coordination (DAC) mode for the DAG. This protects the DAG from database-level split brain conditions during switchback to the primary datacenter after a datacenter switchover has been performed, and it enables the use of the built-in DAG recovery cmdlets. For more information, see [Datacenter Activation Coordination mode](dags/dac-mode.md).
+2. Enable Datacenter Activation Coordination (DAC) mode for the DAG. This protects the DAG from database-level split brain conditions during switchback to the primary datacenter after a datacenter switchover has been performed, and it enables the use of the built-in DAG recovery cmdlets. For more information, see [Datacenter Activation Coordination mode](database-availability-groups/dac-mode.md).
     
 5. Add mailbox database copies across Mailbox servers in the DAG. For detailed steps, see [Add a mailbox database copy](manage-ha/add-db-copies.md).
     
@@ -107,7 +107,7 @@ The administrator has decided to create a Windows PowerShell command-line interf
     
 - It uses the [Add-DatabaseAvailabilityGroupServer](http://technet.microsoft.com/library/6bd0a3fe-dec6-47c2-b9a3-8dffb60e4aad.aspx) cmdlet to add each of the four Mailbox servers to the DAG. 
     
-- It uses the [Set-DatabaseAvailabilityGroup](http://technet.microsoft.com/library/4353c3ab-75b7-485e-89ae-d4b09b44b646.aspx) cmdlet to configure the DAG for DAC mode. For more information about DAC mode, see [Datacenter Activation Coordination mode](dags/dac-mode.md).
+- It uses the [Set-DatabaseAvailabilityGroup](http://technet.microsoft.com/library/4353c3ab-75b7-485e-89ae-d4b09b44b646.aspx) cmdlet to configure the DAG for DAC mode. For more information about DAC mode, see [Datacenter Activation Coordination mode](database-availability-groups/dac-mode.md).
     
 The following are the commands used in the script:
   

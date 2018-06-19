@@ -213,7 +213,7 @@ A server failover occurs when the DAG member is no longer able to service the MA
     
 9. When the database is mountable, the Active Manager on the servers mounts the databases.
     
-For more information about Active Manager's best copy selection process, see [Active Manager](../../high-availability/dags/active-manager.md).
+For more information about Active Manager's best copy selection process, see [Active Manager](../../high-availability/database-availability-groups/active-manager.md).
   
 ### Datacenter Failovers
 

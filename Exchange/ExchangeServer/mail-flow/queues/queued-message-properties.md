@@ -46,7 +46,7 @@ For more information about queues, see [Queues and messages in queues](queues.md
     
 - You can also use the **Get-Message** cmdlet in the Exchange Management Shell to view additional message properties that aren't visible in Queue Viewer. For more information, see [Properties of messages in queues](message-properties.md) and [Find queues and messages in queues in the Exchange Management Shell](queues-and-messages-in-powershell.md).
     
-- For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/eac-keyboard-shortcuts.md).
+- For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
 > Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
@@ -75,7 +75,7 @@ For more information about queues, see [Queues and messages in queues](queues.md
     
   - **Size (KB)**: The size of the message rounded up to the nearest kilobyte (KB).
     
-  - **SCL**: The spam confidence level (SCL) rating of the message. Valid SCL entries are integers 0 through 9, or -1 for internal (authenticated) messages. For more information, see [Exchange spam confidence level (SCL) thresholds](../../antispam-and-antimalware/antispam/scl.md).
+  - **SCL**: The spam confidence level (SCL) rating of the message. Valid SCL entries are integers 0 through 9, or -1 for internal (authenticated) messages. For more information, see [Exchange spam confidence level (SCL) thresholds](../../antispam-and-antimalware/antispam-protection/scl.md).
     
   - **Queue ID**: The queue that holds the message. The queue identity uses the syntax  _\<Server\>_\ _\<Queue\>_, where  _\<Queue\>_ is one of the following values: 
     
@@ -97,7 +97,7 @@ For more information about queues, see [Queues and messages in queues](queues.md
     
     For example, if you didn't create a Send connector to deliver Internet mail, messages that are addressed to external recipients will go to the Unreachable queue, and the **Last Error** value for the message will be:  `A matching connector cannot be found to route the external recipient`. For more information about creating a Send connector, see [Create a Send connector to send mail to the Internet](../../mail-flow/connectors/internet-mail-send-connectors.md).
     
-    For more information about SMTP error codes, see [DSNs and NDRs in Exchange 2016](../../mail-flow/ndrs/ndrs.md).
+    For more information about SMTP error codes, see [DSNs and NDRs in Exchange 2016](../../mail-flow/non-delivery-reports-and-bounce-messages/non-delivery-reports-and-bounce-messages.md).
     
 3. When you right-click a message and select **Properties**, additional details are available on the **General** and **Recipient Information** tabs. 
     

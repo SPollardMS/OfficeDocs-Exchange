@@ -171,7 +171,7 @@ The different types of delivery report messages that can be affected by delivery
   
 - **Delivery receipt (DR)**: Confirms that a message was delivered to its intended recipient.
     
-- **Delivery status notification (DSN)**: Describes the result of an attempt to deliver a message that didn't result in the message being returned to the sender in an non-delivery report (NDR). For more information about DSN messages, see [DSNs and NDRs in Exchange 2016](../../mail-flow/ndrs/ndrs.md).
+- **Delivery status notification (DSN)**: Describes the result of an attempt to deliver a message that didn't result in the message being returned to the sender in an non-delivery report (NDR). For more information about DSN messages, see [DSNs and NDRs in Exchange 2016](../../mail-flow/non-delivery-reports-and-bounce-messages/non-delivery-reports-and-bounce-messages.md).
     
 - **Message disposition notification (MDN)**: Describes the status of a message after it has been successfully delivered to a recipient. Read notifications (RNs) and non-read notification (NRNs) are both examples of MDN messages. MDN messages are defined in RFC 2298 and are controlled by the **Disposition-Notification-To:** header field in the message header. MDN settings that use this header field are compatible with many different kinds of messaging servers. MDN settings can also be defined by using MAPI properties in Outlook and Exchange. 
     

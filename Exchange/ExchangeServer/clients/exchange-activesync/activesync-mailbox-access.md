@@ -32,7 +32,7 @@ For information about setting up email on your mobile device, see these topics:
     
 For additional management tasks related to user access to mailboxes, see these topics:
   
-- [Enable or disable Outlook on the web access to mailboxes in Exchange 2016](../../clients/outlook-on-the-web/owa-mailbox-access.md)
+- [Enable or disable Outlook on the web access to mailboxes in Exchange 2016](../../clients/outlook-on-the-web/mailbox-access.md)
     
 - [Enable or disable POP3 or IMAP4 access to mailboxes in Exchange 2016](../../clients/pop3-and-imap4/configure-mailbox-access.md)
     
@@ -48,7 +48,7 @@ For additional management tasks related to user access to mailboxes, see these t
     
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Exchange ActiveSync settings" entry in the [Clients and mobile devices permissions](../../permissions/feature-permissions/client-and-mobile-device-permissions.md) topic. 
     
-- For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/eac-keyboard-shortcuts.md).
+- For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
 > Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).. 

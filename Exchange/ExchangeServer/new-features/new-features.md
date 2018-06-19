@@ -175,7 +175,7 @@ To comply with business standards and industry regulations, organizations need t
     
 - The action **Generate incident report and send it to** has been updated to enable the notification of multiple recipients by allowing a group address to be configured as the recipient. 
     
-To learn more about DLP, see [Data loss prevention in Exchange 2016](../policy-and-compliance/dlp/dlp.md).
+To learn more about DLP, see [Data loss prevention in Exchange 2016](../policy-and-compliance/data-loss-prevention/data-loss-prevention.md).
   
 #### In-place Archiving, retention, and eDiscovery
 <a name="Archiving2013"> </a>
@@ -250,7 +250,7 @@ Exchange 2016 provides a single unified management console that allows for ease 
     
 - **Add/Remove columns to the Recipient list view**: You can choose which columns to view, and with local cookies, you can save your custom list views per machine that you use to access the EAC.
     
-- **Secure the ECP virtual directory**: You can control access to the EAC from inside and outside your corporate network without affecting user access to their Outlook on the web options. For more information, see [Turn off access to the Exchange admin center](../architecture/client-access/disable-eac-access.md).
+- **Secure the ECP virtual directory**: You can control access to the EAC from inside and outside your corporate network without affecting user access to their Outlook on the web options. For more information, see [Turn off access to the Exchange admin center](../architecture/client-access/disable-exchange-admin-center-access.md).
     
 - **Tool consolidation**: The functionality of these management tools has been integrated into the EAC:
     
@@ -347,9 +347,9 @@ There are several new and updated message policy and compliance features in Exch
 #### Data loss prevention
 <a name="DLP2010"> </a>
 
-Data loss prevention (DLP) capabilities help you protect your sensitive data and inform users of internal compliance policies. DLP can also help keep your organization safe from users who might mistakenly send sensitive information to unauthorized people. DLP helps you identify, monitor, and protect sensitive data through deep content analysis. Exchange 2016 offers built-in DLP policies based on regulatory standards such as personally identifiable information (PII) and payment card industry data security standards (PCI), and is extensible to support other policies important to your business. With a DLP policy in Exchange 2016, you can now identify, monitor, and protect 80 different types of sensitive information. For more information, see [Sensitive information types in Exchange 2016](../policy-and-compliance/dlp/sensitive-information-types.md). Additionally, the new policy tips in Outlook 2016 inform users about policy violations before sensitive data is sent.
+Data loss prevention (DLP) capabilities help you protect your sensitive data and inform users of internal compliance policies. DLP can also help keep your organization safe from users who might mistakenly send sensitive information to unauthorized people. DLP helps you identify, monitor, and protect sensitive data through deep content analysis. Exchange 2016 offers built-in DLP policies based on regulatory standards such as personally identifiable information (PII) and payment card industry data security standards (PCI), and is extensible to support other policies important to your business. With a DLP policy in Exchange 2016, you can now identify, monitor, and protect 80 different types of sensitive information. For more information, see [Sensitive information types in Exchange 2016](../policy-and-compliance/data-loss-prevention/sensitive-information-types.md). Additionally, the new policy tips in Outlook 2016 inform users about policy violations before sensitive data is sent.
   
-To learn more, see [Data loss prevention in Exchange 2016](../policy-and-compliance/dlp/dlp.md)
+To learn more, see [Data loss prevention in Exchange 2016](../policy-and-compliance/data-loss-prevention/data-loss-prevention.md)
   
 #### Mail flow rules (transport rules)
 <a name="DLP2010"> </a>
@@ -358,7 +358,7 @@ You can use Exchange mail flow rules (also known as transport rules) to look for
   
 These features are new to mail flow rules in Exchange 2016:
   
-- Exchange mail flow rules can now identify 80 different types of sensitive information, including 30 new sensitive information types focusing on identifiers from South America, Europe, and Asia. These 80 built-in types are included, but you can also develop your own type from scratch. For more information on these sensitive information types, see [Sensitive information types in Exchange 2016](../policy-and-compliance/dlp/sensitive-information-types.md).
+- Exchange mail flow rules can now identify 80 different types of sensitive information, including 30 new sensitive information types focusing on identifiers from South America, Europe, and Asia. These 80 built-in types are included, but you can also develop your own type from scratch. For more information on these sensitive information types, see [Sensitive information types in Exchange 2016](../policy-and-compliance/data-loss-prevention/sensitive-information-types.md).
     
 - With the new condition **Any attachment has these properties, including any of these words**, a mail flow rule can match messages where the specified property of the attached Office document contains specified words. This condition makes it easy to integrate your Exchange mail flow rules and DLP policies with SharePoint, Windows Server 2012 R2 File Classification Infrastructure (FCI), or a third-party classification system.
     
@@ -454,7 +454,7 @@ Exchange 2016 includes the following improvements to auditing:
 
 The built-in malware filtering capabilities of Exchange 2016 helps protect your network from malicious software that's transferred by email messages. All messages sent or received by your Exchange 2016 Mailbox server are scanned for malware (viruses and spyware) by using the built-in Malware Agent. If malware is detected, the message is deleted. Notifications may also be sent to senders or administrators when an infected message is deleted and not delivered. You can also choose to replace infected attachments with either default or custom messages that notify the recipients of the malware detection.
   
-For more information about antimalware protection, see [Antimalware protection in Exchange 2016](../antispam-and-antimalware/antimalware/antimalware.md).
+For more information about antimalware protection, see [Antimalware protection in Exchange 2016](../antispam-and-antimalware/antimalware-protection/antimalware-protection.md).
   
 ### Mail flow and the transport pipeline
 <a name="Mail2010"> </a>

@@ -62,7 +62,7 @@ Exchange 2016 uses Mailbox servers and Edge Transport servers. These server role
     
 - Edge Transport servers are typically installed in the perimeter network, and are subscribed to the internal Exchange organization. The EdgeSync synchronization process makes recipient and other configuration information available to the Edge Transport server as mail enters and leaves the Exchange organization.
     
-- Edge Transport servers provide antispam and mail flow rules as mail enters and leaves your Exchange organization. For more information, see [Antispam protection in Exchange 2016](../antispam-and-antimalware/antispam/antispam.md)
+- Edge Transport servers provide antispam and mail flow rules as mail enters and leaves your Exchange organization. For more information, see [Antispam protection in Exchange 2016](../antispam-and-antimalware/antispam-protection/antispam-protection.md)
     
 - You manage Edge Transport servers by using the Exchange Management Shell. For more information, see [Using PowerShell with Exchange 2016 (Exchange Management Shell)](http://technet.microsoft.com/library/925ad66f-2f05-4269-9923-c353d9c19312.aspx).
     
@@ -75,7 +75,7 @@ The high availability features in Exchange 2016 are described in the following s
   
 ### Mailbox high availability
 
-A database availability group (DAG) is the fundamental element of the high availability and site resilience framework that's built into Exchange 2016. A DAG is a group of Mailbox servers that host a set of databases and provides automatic, database-level recovery from database, network, and server failures. And DAGs in Exchange 2016 have been improved compared to Exchange 2013. For more information about DAGs, see [Database availability groups](../high-availability/dags/dags.md).
+A database availability group (DAG) is the fundamental element of the high availability and site resilience framework that's built into Exchange 2016. A DAG is a group of Mailbox servers that host a set of databases and provides automatic, database-level recovery from database, network, and server failures. And DAGs in Exchange 2016 have been improved compared to Exchange 2013. For more information about DAGs, see [Database availability groups](../high-availability/database-availability-groups/database-availability-groups.md).
   
 ### Transport high availability
 

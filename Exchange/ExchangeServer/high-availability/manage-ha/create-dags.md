@@ -51,7 +51,7 @@ Looking for other management tasks related to DAGs? Check out [Managing database
     
      `Error: An error occurred during discovery of the database availability group topology. Error: An error occurred while attempting a cluster operation. Error: Cluster API "AddClusterNode() (MaxPercentage=12) failed with 0x80070005. Error: Access is denied."`
     
-- For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/eac-keyboard-shortcuts.md).
+- For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
 > Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).. 
@@ -126,7 +126,7 @@ To verify that you've successfully created a DAG, do one of the following:
 ## For more information
 <a name="UseShell"> </a>
 
-[Database availability groups](../../high-availability/dags/dags.md)
+[Database availability groups](../../high-availability/database-availability-groups/database-availability-groups.md)
   
 [Configure database availability group properties](configure-dag-properties.md)
   

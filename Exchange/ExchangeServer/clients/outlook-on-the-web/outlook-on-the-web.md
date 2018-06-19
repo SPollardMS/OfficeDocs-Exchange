@@ -34,10 +34,10 @@ The configuration and management tasks that are documented for Outlook on the we
   
 |**Topic**|**Description**|
 |:-----|:-----|
-|[View or configure Outlook on the web virtual directories in Exchange 2016](owa-vidrs.md) <br/> |View and configure the properties of Outlook on the web for all users that connect to the server.  <br/> |
+|[View or configure Outlook on the web virtual directories in Exchange 2016](virtual-directories.md) <br/> |View and configure the properties of Outlook on the web for all users that connect to the server.  <br/> |
 |[Configure http to https redirection for Outlook on the web in Exchange 2016](http-to-https-redirection.md) <br/> |Redirect Outlook on the web unencrypted http requests to https.  <br/> |
-|[Create a theme for Outlook on the web in Exchange 2016](owa-themes.md) <br/> |Outlook on the web comes with built-in themes that define the colors and icons that are used in Outlook on the web, but you can also create your own themes.  <br/> |
-|[Customize the Outlook on the web sign-in, language selection, and error pages in Exchange 2016](customize-owa.md) <br/> |Customize key pages in Outlook on the web.  <br/> |
-|[Use AD FS claims-based authentication with Outlook on the web](owa-adfs-claims-based-auth.md) <br/> |Centralize Outlook on the web authentication by using Active Directory Federation Services.  <br/> |
+|[Create a theme for Outlook on the web in Exchange 2016](themes.md) <br/> |Outlook on the web comes with built-in themes that define the colors and icons that are used in Outlook on the web, but you can also create your own themes.  <br/> |
+|[Customize the Outlook on the web sign-in, language selection, and error pages in Exchange 2016](customize-outlook-on-the-web.md) <br/> |Customize key pages in Outlook on the web.  <br/> |
+|[Use AD FS claims-based authentication with Outlook on the web](ad-fs-claims-based-auth.md) <br/> |Centralize Outlook on the web authentication by using Active Directory Federation Services.  <br/> |
    
 

@@ -167,7 +167,7 @@ You can use the same search criteria with the **New-AdminAuditLogSearch** cmdlet
 After you run the **New-AdminAuditLogSearch** cmdlet, Exchange may take up to 15 minutes to deliver the report to the specified recipient. The XML file attached report can be a maximum of 10 MB. The XML file contains the same information described in the table in [Audit log contents](#LogContents.md). For more information about the structure of the XML file, see [Administrator audit log structure](log-structure.md).
   
 > [!NOTE]
-> Outlook Web App doesn't allow you to open XML attachments by default. You can either configure Exchange to allow XML attachments to be viewed using Outlook Web App, or you can use another email client, such as Microsoft Outlook, to view the attachment. For information about how to configure Outlook Web App to allow you to view an XML attachment, see [View or configure Outlook on the web virtual directories in Exchange 2016](../../clients/outlook-on-the-web/owa-vidrs.md). 
+> Outlook Web App doesn't allow you to open XML attachments by default. You can either configure Exchange to allow XML attachments to be viewed using Outlook Web App, or you can use another email client, such as Microsoft Outlook, to view the attachment. For information about how to configure Outlook Web App to allow you to view an XML attachment, see [View or configure Outlook on the web virtual directories in Exchange 2016](../../clients/outlook-on-the-web/virtual-directories.md). 
   
 For information about how to use the **New-AdminAuditLogSearch** cmdlet, see [Search the Administrator Audit Log](http://technet.microsoft.com/library/c7188d53-e672-492b-b57d-cd711379ddb3.aspx).
   

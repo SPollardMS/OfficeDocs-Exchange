@@ -3,7 +3,7 @@ title: "Exchange 2016 prerequisites"
 ms.author: dstrome
 author: dstrome
 manager: serdars
-ms.date: 6/12/2018
+ms.date: 6/19/2018
 ms.audience: ITPro
 ms.topic: conceptual
 ms.prod: office-online-server
@@ -51,8 +51,12 @@ The following sections describe how to prepare your environment for Exchange 201
 
 The computer you want to use to prepare Active Directory for Exchange 2016 has specific prerequisites that must be met.
   
-First, install [.NET Framework 4.7.1 ](https://go.microsoft.com/fwlink/p/?linkid=866906) on the computer that will be used to prepare Active Directory. 
+First, install the following software on the computer that will be used to prepare Active Directory:
   
+- [.NET Framework 4.7.1 ](https://go.microsoft.com/fwlink/p/?linkid=866906)
+    
+- [Visual C++ Redistributable Packages for Visual Studio 2013](https://go.microsoft.com/fwlink/?linkid=2002913)
+    
 After you've installed the software listed above, complete the following steps to install the Remote Tools Administration Pack. After you've installed the Remote Tools Administration Pack you'll be able to use the computer to prepare Active Directory. For more information about preparing Active Directory, see [Prepare Active Directory and domains](prepare-ad-and-domains.md).
   
 1. Open Windows PowerShell.
@@ -90,7 +94,9 @@ After you've installed the operating system roles and features, install the foll
     > [!IMPORTANT]
     > Exchange 2016 CU5 and later **require**.NET Framework 4.6.2. Upgrade your servers to .NET Framework 4.6.2 before you install Exchange 2016 CU5 or you'll receive an error. If .NET Framework 4.5.2 is installed on your Exchange servers, upgrade your servers to Exchange 2016 CU4 before installing .NET Framework 4.6.2. 
   
-2. [Microsoft Unified Communications Managed API 4.0, Core Runtime 64-bit](https://go.microsoft.com/fwlink/p/?linkId=258269)
+2. [Visual C++ Redistributable Packages for Visual Studio 2013](https://go.microsoft.com/fwlink/?linkid=2002913)
+    
+3. [Microsoft Unified Communications Managed API 4.0, Core Runtime 64-bit](https://go.microsoft.com/fwlink/p/?linkId=258269)
     
 ### Edge Transport server role
 <a name="WS2012Edge"> </a>
@@ -107,8 +113,12 @@ Do the following to install the required Windows roles and features:
   Install-WindowsFeature ADLDS
   ```
 
-After you've installed the operating system roles and features, install [.NET Framework 4.7.1 ](https://go.microsoft.com/fwlink/p/?linkid=866906)
+After you've installed the operating system roles and features, the following software on the computer:
   
+- [.NET Framework 4.7.1 ](https://go.microsoft.com/fwlink/p/?linkid=866906)
+    
+- [Visual C++ Redistributable Packages for Visual Studio 2013](https://go.microsoft.com/fwlink/?linkid=2002913)
+    
 > [!IMPORTANT]
 > Exchange 2016 CU5 and later **require**.NET Framework 4.6.2. Upgrade your servers to .NET Framework 4.6.2 before you install Exchange 2016 CU5 or you'll receive an error. If .NET Framework 4.5.2 is installed on your Exchange servers, upgrade your servers to Exchange 2016 CU4 before installing .NET Framework 4.6.2. 
   
@@ -139,7 +149,9 @@ After you've installed the operating system roles and features, install the foll
   
 1. [Microsoft Knowledge Base article KB3206632](https://go.microsoft.com/fwlink/p/?linkid=837748)
     
-2. [Microsoft Unified Communications Managed API 4.0, Core Runtime 64-bit](https://go.microsoft.com/fwlink/p/?linkId=258269)
+2. [Visual C++ Redistributable Packages for Visual Studio 2013](https://go.microsoft.com/fwlink/?linkid=2002913)
+    
+3. [Microsoft Unified Communications Managed API 4.0, Core Runtime 64-bit](https://go.microsoft.com/fwlink/p/?linkId=258269)
     
 ### Edge Transport server role
 <a name="WS2016Edge"> </a>
@@ -162,6 +174,8 @@ Do the following to install the required Windows roles and features:
 Follow the instructions in this section to install the prerequisites on computers running Windows 8.1 or Windows 10 where you want to install the Exchange 2016 Admin Tools.
   
 On Windows 8.1 computers, install [.NET Framework 4.7.1 ](https://go.microsoft.com/fwlink/p/?linkid=866906).
+  
+On Windows 8.1 and Windows 10 computers, install [Visual C++ Redistributable Packages for Visual Studio 2013](https://go.microsoft.com/fwlink/?linkid=2002913).
   
 On Windows 8.1 and Windows 10 computers, run the following command from an elevated Windows PowerShell session.
   

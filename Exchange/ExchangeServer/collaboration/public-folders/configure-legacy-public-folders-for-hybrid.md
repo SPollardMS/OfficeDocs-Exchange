@@ -3,7 +3,7 @@ title: "Configure legacy on-premises public folders for a hybrid deployment"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 6/12/2018
+ms.date: 6/19/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
@@ -21,7 +21,7 @@ description: "Summary: Use the steps in this article to synchronize public folde
   
 In a hybrid deployment, your users can be in Exchange Online, Exchange on-premises, or both, and your public folders are either in Exchange Online or Exchange on-premises. Public folders can only reside in one place, so you must decide whether your public folders will be in Exchange Online or on-premises. They can't be in both locations. Public folder mailboxes are synchronized to Exchange Online by the Directory Synchronization service. However, mail-enabled public folders aren't synchronized across premises.
   
-This article describes how to synchronize mail-enabled public folders when your users are in Office 365 and your Exchange 2010 SP3 or later public folders are on-premises. However, an Office 365 user who is not represented by a MailUser object on-premises (local to the target public folder hierarchy) won't be able to access legacy or Exchange 2016 on-premises public folders.
+This article describes how to synchronize mail-enabled public folders when your users are in Office 365 and your Exchange 2010 SP3 or later version public folders are on-premises. However, an Office 365 user who is not represented by a MailUser object on-premises (local to the target public folder hierarchy) won't be able to access legacy or Exchange 2016 on-premises public folders.
   
 > [!NOTE]
 > This topic refers to the Exchange 2010 SP3 or later servers as the  *legacy Exchange server*  . 
@@ -73,7 +73,7 @@ A hybrid configuration with Exchange 2003 public folders is not supported. If yo
 ## Step 2: Make remote public folders discoverable
 <a name="Discoverable"> </a>
 
-1. If your public folders are on Outlook 2010 servers, then you need to install Client Access services on all mailbox servers that have a public folder database. This allows the Exchange RpcClientAccess service to be running, which allows for all clients to access public folders. For more information, see [Install Exchange Server 2010](https://technet.microsoft.com/library/bb124778%28v=exchg.141%29.aspx).
+1. If your public folders are on Exchange 2010 servers, you must install Client Access services on all mailbox servers that have a public folder database. This enables the Exchange RpcClientAccess service to run, which enables all clients to access public folders. For more information, see [Install Exchange Server 2010](https://technet.microsoft.com/library/bb124778%28v=exchg.141%29.aspx).
     
     > [!NOTE]
     > This server doesn't have to be part of the Client Access load balancing. For more information, see [Understanding Load Balancing in Exchange 2010](https://technet.microsoft.com/library/ff625247%28v=exchg.141%29.aspx). 
@@ -95,7 +95,7 @@ A hybrid configuration with Exchange 2003 public folders is not supported. If yo
     > [!NOTE]
     > We recommend that the only mailbox that you add to this database is the proxy mailbox that you'll create in the next step. No other mailboxes should be created on this mailbox database. 
   
-3. Create a proxy mailbox within the new mailbox database and hide the mailbox from the address book. The SMTP of this mailbox will be returned by AutoDiscover as the  _DefaultPublicFolderMailbox_ SMTP, so that by resolving this SMTP the client can reach the legacy exchange server for public folder access. 
+3. Create a proxy mailbox within the new mailbox database, and hide the mailbox from the address book. The SMTP of this mailbox will be returned by AutoDiscover as the  _DefaultPublicFolderMailbox_ SMTP, so that by resolving this SMTP the client can reach the legacy exchange server for public folder access. 
     
   ```
   New-Mailbox -Name <PFMailbox1> -Database <NewMDBforPFs>

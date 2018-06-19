@@ -28,7 +28,7 @@ Agent logging records the actions that are performed on messages by specific ant
     
 - [Configure Antispam Agent Logging](http://technet.microsoft.com/library/df157ca3-ad8e-4302-acbc-5fbb8570c21d.aspx)
     
-- [Enable antispam functionality on Mailbox servers](../../antispam-and-antimalware/antispam/antispam-on-mailbox-servers.md)
+- [Enable antispam functionality on Mailbox servers](../../antispam-and-antimalware/antispam-protection/antispam-on-mailbox-servers.md)
     
  **Enabled by default?**: Yes
   

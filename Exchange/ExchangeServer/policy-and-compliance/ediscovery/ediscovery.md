@@ -105,7 +105,7 @@ When using In-Place eDiscovery, also consider the following:
     
   - Reduced cost of eDiscovery, depending on the number of duplicate items excluded from search results.
     
-- **IRM-protected items**: Messages protected using Information Rights Management (IRM) are indexed by Exchange Search and therefore included in the search results if they match query parameters. Messages must be protected by using an Active Directory Rights Management Services (AD RMS) cluster in the same Active Directory forest as the Mailbox server. For more information, see [Information Rights Management in Exchange 2016](../../policy-and-compliance/irm.md).
+- **IRM-protected items**: Messages protected using Information Rights Management (IRM) are indexed by Exchange Search and therefore included in the search results if they match query parameters. Messages must be protected by using an Active Directory Rights Management Services (AD RMS) cluster in the same Active Directory forest as the Mailbox server. For more information, see [Information Rights Management in Exchange 2016](../../policy-and-compliance/information-rights-management.md).
     
     **Important**:
     

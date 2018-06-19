@@ -3,7 +3,7 @@ title: "Prepare Active Directory and domains"
 ms.author: dstrome
 author: dstrome
 manager: serdars
-ms.date: 6/8/2018
+ms.date: 6/19/2018
 ms.audience: ITPro
 ms.topic: get-started-article
 ms.prod: office-online-server
@@ -113,6 +113,9 @@ When you're ready, do the following to prepare Active Directory for Exchange. If
   Setup.exe /PrepareAD /OrganizationName:"<organization name>" /IAcceptExchangeServerLicenseTerms
   ```
 
+> [!IMPORTANT]
+> If you've configured a hybrid deployment between your on-premises organization and Exchange Online, you need to include the  `/TenantOrganizationConfig` switch when you run the above command. 
+  
 After Setup finishes preparing Active Directory for Exchange, you'll need to wait while Active Directory replicates the changes to all of your domain controllers. If you want to check on how replication is going, you can use the  `repadmin` tool.  `repadmin` is included as part of the Active Directory Domain Services Tools feature in Windows Server 2012 R2 and Windows Server 2012. For more information about how to use the tool, see [Repadmin](https://go.microsoft.com/fwlink/p/?LinkId=257879).
   
 ## 3. Prepare Active Directory domains
@@ -203,6 +206,7 @@ The following table shows you the Exchange 2016 objects in Active Directory that
     
 |**Exchange version**|**rangeUpper**|**objectVersion (Default)**|**objectVersion (Configuration)**|
 |:-----|:-----|:-----|:-----|
+|Exchange 2016 CU10  <br/> |15332  <br/> |13236  <br/> |16213  <br/> |
 |Exchange 2016 CU9  <br/> |15332  <br/> |13236  <br/> |16213  <br/> |
 |Exchange 2016 CU8  <br/> |15332  <br/> |13236  <br/> |16213  <br/> |
 |Exchange 2016 CU7  <br/> |15332  <br/> |13236  <br/> |16213  <br/> |

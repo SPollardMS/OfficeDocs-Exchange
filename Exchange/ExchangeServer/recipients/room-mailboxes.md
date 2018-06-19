@@ -36,7 +36,7 @@ If you want to learn about the types of recipients that are available in Exchang
     
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the"Recipient Provisioning Permissions" section in the [Recipients Permissions](../permissions/feature-permissions/recipient-permissions.md) topic. 
     
-- For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../about-documentation/eac-keyboard-shortcuts.md).
+- For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 - If you're using room or equipment mailboxes in Office 365, see [this article](https://support.office.com/article/9f518a6d-1e2c-4d44-93f3-e19013a1552b).
     

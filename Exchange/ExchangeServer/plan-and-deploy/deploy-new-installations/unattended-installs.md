@@ -36,7 +36,7 @@ The following information applies to both the Mailbox and Edge Transport server 
     
 - To run Exchange 2016 setup, you need to install various Windows roles and features, .NET Framework 4.5.2 or later, and other required software. To understand the prerequisites for all server roles, see [Exchange 2016 prerequisites](../../plan-and-deploy/prerequisites.md).
     
-- For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/eac-keyboard-shortcuts.md).
+- For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!CAUTION]
 > After you install Exchange 2016 on a server, you must not change the server name. Renaming a server after you have installed an Exchange 2016 server role is not supported. 

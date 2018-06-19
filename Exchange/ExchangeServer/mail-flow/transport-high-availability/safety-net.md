@@ -59,7 +59,7 @@ This table describes the parameters that are used by Safety Net.
 ## Message resubmission from Safety Net
 <a name="PrimaryResubmit"> </a>
 
-The Active Manager component of the Microsoft Exchange Replication service (MRS) manages DAGs and mailbox database copies. Message resubmissions from Safety Net require no manual actions, and are initiated by the Active Manager. For more information about Active Manager, see [Active Manager](../../high-availability/dags/active-manager.md).
+The Active Manager component of the Microsoft Exchange Replication service (MRS) manages DAGs and mailbox database copies. Message resubmissions from Safety Net require no manual actions, and are initiated by the Active Manager. For more information about Active Manager, see [Active Manager](../../high-availability/database-availability-groups/active-manager.md).
   
 There are two basic Safety Net message resubmission scenarios:
   
