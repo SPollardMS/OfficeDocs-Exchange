@@ -1,53 +1,3 @@
-<<<<<<< HEAD
-{
-  "build": {
-    "content": [
-      {
-        "files": [
-          "**/*.md"
-        ],
-        "exclude": [
-          "**/obj/**",
-          "**/includes/**",
-          "README.md",
-          "LICENSE",
-          "LICENSE-CODE",
-          "ThirdPartyNotices"
-        ]
-      }
-    ],
-    "resource": [
-      {
-        "files": [
-          "**/*.png",
-          "**/*.jpg"
-        ],
-        "exclude": [
-          "**/obj/**",
-          "**/includes/**"
-        ]
-      }
-    ],
-    "overwrite": [],
-    "externalReference": [],
-    "globalMetadata": {
-        "Manager": "serdars",
-        "ms.prod": "exchange",
-        "ms.technology": "",
-        "ms.devlang": "powershell",
-        "ROBOTS": "INDEX,FOLLOW"
-    },
-    "fileMetadata": {
-        "max.topictype": {
-            "*configure*.md": "procedural",
-            "*learn-more*.md": "csh",
-            "*readiness*.md": "setupreadiness"
-        }
-    },
-    "template": [],
-    "dest": "OfficeDocs-Exchange"
-  }
-=======
 {
   "build": {
     "content": [
@@ -152,5 +102,4 @@
     "template": [],
     "dest": "OfficeDocs-Exchange"
   }
->>>>>>> 54b93be33983e6fc62b7424dbd3df43036742d75
 }
