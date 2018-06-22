@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "build": {
     "content": [
@@ -46,4 +47,110 @@
     "template": [],
     "dest": "OfficeDocs-Exchange"
   }
+=======
+{
+  "build": {
+    "content": [
+      {
+        "files": [
+          "**/*.md",
+          "**/**.yml"
+        ],
+        "src": "Hub",
+        "dest": ".",
+        "exclude": [
+          "**/obj/**",
+          "**/includes/**",
+          "README.md",
+          "LICENSE",
+          "LICENSE-CODE",
+          "ThirdPartyNotices"
+        ]
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/**.yml"
+        ],
+        "src": "ExchangeServer",
+        "dest": ".",
+        "exclude": [
+          "**/obj/**",
+          "**/includes/**",
+          "README.md",
+          "LICENSE",
+          "LICENSE-CODE",
+          "ThirdPartyNotices"
+        ]
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/**.yml"
+        ],
+        "src": "ExchangeOnline",
+        "dest": ".",
+        "exclude": [
+          "**/obj/**",
+          "**/includes/**",
+          "README.md",
+          "LICENSE",
+          "LICENSE-CODE",
+          "ThirdPartyNotices"
+        ]
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/**.yml"
+        ],
+        "src": "ExchangeHybrid",
+        "dest": ".",
+        "exclude": [
+          "**/obj/**",
+          "**/includes/**",
+          "README.md",
+          "LICENSE",
+          "LICENSE-CODE",
+          "ThirdPartyNotices"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "**/*.png",
+          "**/*.jpg",
+          "**/*.gif",
+          "**/*.pdf",
+          "**/*.svg"
+        ],
+        "exclude": [
+          "**/obj/**",
+          "**/includes/**"
+        ]
+      }
+    ],
+    "overwrite": [],
+    "externalReference": [],
+    "globalMetadata": {
+        "Manager": "serdars",
+        "ms.prod": "exchange",
+        "ms.technology": "",
+        "ms.devlang": "powershell",
+        "ROBOTS": "INDEX,FOLLOW",
+        "searchScope": ["Exchange"],
+        "breadcrumb_path": "/exchange/breadcrumb/toc.json",
+        "extendBreadcrumb": "true",
+        "feedback_system": "GitHub",
+        "feedback_github_repo": "MicrosoftDocs/OfficeDocs-Exchange",
+        "feedback_product_url": "https://github.com/MicrosoftDocs/OfficeDocs-Exchange/issues" 
+    },
+    "fileMetadata": {
+        
+    },
+    "template": [],
+    "dest": "OfficeDocs-Exchange"
+  }
+>>>>>>> 54b93be33983e6fc62b7424dbd3df43036742d75
 }
