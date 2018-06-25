@@ -15,7 +15,7 @@ description: Exchange
                         <a href="#home-all"></a>
                         <ul id="home-all" class="cardsC">
                             <li>
-                                <a href="https://go.microsoft.com/fwlink/p/?LinkId=619423">
+                                <a href="https://docs.microsoft.com/Exchange/exchange-server">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
