@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: reference
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 2e416eed-b88f-45db-a482-1232fd2610fa
 description: "Summary: Important considerations to read before you deploy public folders in your organization."
@@ -24,11 +24,11 @@ This article contains factors to consider before you deploy public folders in yo
   
 - Activity in a public folder directly impacts the load that's placed on the public folder mailbox where the folder is located. To avoid client connectivity issues, such as high latency or the inability to access a public folder, we recommend you do the following:
     
-  - Don't let public folder mailboxes exceed 50% of the mailbox size limit. If this happens consider using the  `Split-PublicFolderMailbox.ps1` script located in C:\Program Files\Microsoft\Exchange Server\V15\Scripts folder on the Exchange 2016 server to move some public folders to a new public folder mailbox. 
+  - Don't let public folder mailboxes exceed 50% of the mailbox size limit. If this happens consider using the `Split-PublicFolderMailbox.ps1` script located in C:\Program Files\Microsoft\Exchange Server\V15\Scripts folder on the Exchange 2016 server to move some public folders to a new public folder mailbox. 
     
   - Consider moving heavily-used public folders to a dedicated public folder mailbox.
     
-  - Exclude heavily-used public folders from serving public folder hierarchy. You can do this by setting the  _IsExcludedFromServingHierarchy_ property on the public folder mailbox using the **Set-Mailbox** cmdlet. 
+  - Exclude heavily-used public folders from serving public folder hierarchy. You can do this by setting the _IsExcludedFromServingHierarchy_ property on the public folder mailbox using the **Set-Mailbox** cmdlet. 
     
   - For large organizations with many public folders, consider adding additional public folder mailboxes to distribute the load of servicing public folder hierarchy requests.
     

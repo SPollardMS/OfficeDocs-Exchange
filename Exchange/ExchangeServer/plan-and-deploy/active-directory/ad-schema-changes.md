@@ -6,8 +6,8 @@ manager: serdars
 ms.date: 4/19/2018
 ms.audience: ITPro
 ms.topic: conceptual
-ms.prod: office-online-server
-localization_priority: Normal
+ms.prod: exchange-server-itpro
+localization_priority: Critical
 ms.collection: Strat_EX_Admin
 ms.assetid: 7e879e4e-1124-4a41-94d2-c64500beb24e
 description: "Summary: What new schema classes and attributes Exchange Server 2016 adds to Active Directory, and which existing ones it modifies."

@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: overview
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 23f1eaf6-247a-4671-ad72-aae19d9b511d
 description: "Summary: Learn how address rewriting on Edge Transport servers in Exchange 2016 can modify sender and recipient email addresses on email messages in transit."
@@ -18,7 +18,7 @@ description: "Summary: Learn how address rewriting on Edge Transport servers in 
   
 Address rewriting in Exchange Server 2016 modifies the email addresses of senders and recipients in messages that enter or leave your organization through an Edge Transport server. Two transport agents on the Edge Transport server provide the rewriting functionality: the Address Rewriting Inbound Agent and the Address Rewriting Outbound Agent. The primary reason for address rewriting on outbound messages is to present a single, consistent email domain to external recipients. The primary reason for address rewriting on inbound messages is to deliver messages to the correct recipient.
   
-The  *address rewrite entry*  , which you create, specifies the internal addresses (the email addresses you want to change) and the external addresses (the final email addresses you want). You can specify whether email addresses are rewritten in inbound and outbound messages, or in outbound messages only. You can create address writing entries for a single user (chris@contoso.com to support@contoso.com), a single domain (contoso.com to fabrikam.com), or for multiple subdomains with exceptions (\*.fabrikam.com to contoso.com, except legal.fabrikam.com). 
+The *address rewrite entry*, which you create, specifies the internal addresses (the email addresses you want to change) and the external addresses (the final email addresses you want). You can specify whether email addresses are rewritten in inbound and outbound messages, or in outbound messages only. You can create address writing entries for a single user (chris@contoso.com to support@contoso.com), a single domain (contoso.com to fabrikam.com), or for multiple subdomains with exceptions (\*.fabrikam.com to contoso.com, except legal.fabrikam.com). 
   
 > [!IMPORTANT]
 > Regardless of how you plan to use address rewriting, you need to verify that the resulting email addresses are unique in your organization so you don't end up with duplicates. Address rewriting doesn't verify the uniqueness of a rewritten email address. 
@@ -42,9 +42,9 @@ The following scenarios are examples of how you can use address rewriting:
     
     The following example shows how Contoso, Ltd. can hide the email domain of the newly acquired company, Fourth Coffee:
     
-  - Contoso, Ltd. wants all outbound messages from Fourth Coffee's Exchange organization to appear as if they originate from contoso.com. All messages from both organizations are sent through the Edge Transport servers at Contoso, Ltd., where email messages are rewritten from  _user_@fourthcoffee.com to  _user_@contoso.com.
+  - Contoso, Ltd. wants all outbound messages from Fourth Coffee's Exchange organization to appear as if they originate from contoso.com. All messages from both organizations are sent through the Edge Transport servers at Contoso, Ltd., where email messages are rewritten from _user_@fourthcoffee.com to _user_@contoso.com.
     
-  - Inbound messages to  _user_@contoso.com are rewritten and routed to  _user_@fourthcoffee.com mailboxes. Inbound messages that are sent to  _user_@fourthcoffee.com are routed directly to Fourth Coffee's email servers.
+  - Inbound messages to _user_@contoso.com are rewritten and routed to _user_@fourthcoffee.com mailboxes. Inbound messages that are sent to _user_@fourthcoffee.com are routed directly to Fourth Coffee's email servers.
     
 - **Partners**: Many organizations use external partners to provide services for their customers, other organizations, or their own organization. To avoid confusion, the organization might replace the email domain of the partner organization with its own email domain.
     
@@ -57,7 +57,7 @@ The following scenarios are examples of how you can use address rewriting:
 ## Message properties modified by address rewriting
 <a name="SMTP"> </a>
 
-A standard SMTP email message consists of a  *message envelope*  and message content. The message envelope contains information that's required for transmitting and delivering the message between SMTP messaging servers. The message content contains message header fields (collectively called the  *message header*  ) and the message body. The message envelope is described in RFC 2821, and the message header is described in RFC 2822. 
+A standard SMTP email message consists of a *message envelope* and message content. The message envelope contains information that's required for transmitting and delivering the message between SMTP messaging servers. The message content contains message header fields (collectively called the *message header* ) and the message body. The message envelope is described in RFC 2821, and the message header is described in RFC 2822. 
   
 When a sender composes an email message and submits it for delivery, the message contains the basic information that's required to comply with SMTP standards, such as a sender, a recipient, the date and time that the message was composed, an optional subject line, and an optional message body. This information is contained in the message itself and, by definition, in the message header.
   
@@ -112,7 +112,7 @@ The rewritten email address needs to be configured as a proxy address on the aff
 ## Considerations for inbound and outbound address rewriting
 <a name="Consid2"> </a>
 
-Inbound and outbound, or  *bidirectional*  address rewriting on an Edge Transport server modifies the sender's email address as messages leave the Exchange organization, and the recipient's email address as messages enter the Exchange organization. 
+Inbound and outbound, or *bidirectional* address rewriting on an Edge Transport server modifies the sender's email address as messages leave the Exchange organization, and the recipient's email address as messages enter the Exchange organization. 
   
 You can configure bidirectional address rewriting for a single user (chris@contoso.com to support@contoso.com), and a single domain (contoso.com to fabrikam.com). You can't configure bidirectional address rewriting for multiple subdomains (\*.fabrikam.com to contoso.com).
   

@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: fef9ca78-b68f-4342-ada0-881ab985ce3c
 description: "Summary: Learn how to configure message size limits for Exchange ActiveSync, Exchange Web Services, and Outlook on the web (Outlook on the web) clients in Exchange 2016."
@@ -35,7 +35,7 @@ However, there are client-specific message size limits you can configure for Out
    
  **Comments on ActiveSync limits**
   
-By default, there is no  _maxAllowedContentLength_ key in the  `web.config` files for ActiveSync. However, the maximum message size for ActiveSync is affected by the **maxAllowedContentLength** value that is applied to all web sites on the server. The default value is 30000000 bytes. To see these values for ActiveSync on Mailbox servers in IIS Manager, perform the following steps: 
+By default, there is no _maxAllowedContentLength_ key in the `web.config` files for ActiveSync. However, the maximum message size for ActiveSync is affected by the **maxAllowedContentLength** value that is applied to all web sites on the server. The default value is 30000000 bytes. To see these values for ActiveSync on Mailbox servers in IIS Manager, perform the following steps: 
   
 1. Do one of the following steps:
     
@@ -53,7 +53,7 @@ To change the **maxAllowedContentLength** value, enter a new value in bytes, and
   
  **Note**: You can change the same setting in IIS manager at **Sites** \> **Default Web Site** \> **Microsoft-Server-ActiveSync** or **Sites** \> **Exchange Back End** \> **Microsoft-Server-ActiveSync** and then **Request Filtering** in the **IIS** section \> **Edit Feature Settings** in the **Actions** area \> **Maximum allowed content length (Bytes)** in the **Request Limits** section. 
   
-After you change the value in IIS Manager, a new  _maxAllowedContentLength_ key is written to the corresponding Client Access or backend web.config file that's described in the table. 
+After you change the value in IIS Manager, a new _maxAllowedContentLength_ key is written to the corresponding Client Access or backend web.config file that's described in the table. 
   
 **Exchange Web Services**
 
@@ -61,13 +61,13 @@ After you change the value in IIS Manager, a new  _maxAllowedContentLength_ key 
 |:-----|:-----|:-----|:-----|
 |Client Access (frontend)  <br/> | `%ExchangeInstallPath%FrontEnd\HttpProxy\ews\web.config` <br/> | `maxAllowedContentLength="67108864"` <br/> |bytes  <br/> |
 |Backend  <br/> | `%ExchangeInstallPath%ClientAccess\exchweb\ews\web.config` <br/> | `maxAllowedContentLength="67108864"` <br/> |bytes  <br/> |
-|Backend  <br/> | `%ExchangeInstallPath%ClientAccess\exchweb\ews\web.config` <br/> |14 instances of  `maxReceivedMessageSize="67108864"` (for different combinations of http/https bindings and authentication methods)  <br/> |bytes  <br/> |
+|Backend  <br/> | `%ExchangeInstallPath%ClientAccess\exchweb\ews\web.config` <br/> |14 instances of `maxReceivedMessageSize="67108864"` (for different combinations of http/https bindings and authentication methods)  <br/> |bytes  <br/> |
    
  **Comments on EWS limits**
   
-- In the backend  `web.config` file, there are two instances of the value  `maxReceivedMessageSize="1048576"` for **UMLegacyMessageEncoderSoap11Element** bindings that you don't need to modify. 
+- In the backend `web.config` file, there are two instances of the value `maxReceivedMessageSize="1048576"` for **UMLegacyMessageEncoderSoap11Element** bindings that you don't need to modify. 
     
--  _maxRequestLength_ is an ASP.NET setting that's present in both web.config files, but isn't used by EWS, so you don't need to modify it. 
+- _maxRequestLength_ is an ASP.NET setting that's present in both web.config files, but isn't used by EWS, so you don't need to modify it. 
     
 **Outlook on the web**
 
@@ -77,12 +77,12 @@ After you change the value in IIS Manager, a new  _maxAllowedContentLength_ key 
 |Client Access (frontend)  <br/> | `%ExchangeInstallPath%FrontEnd\HttpProxy\owa\web.config` <br/> | `maxRequestLength="35000"` <br/> |kilobytes  <br/> |
 |Backend  <br/> | `%ExchangeInstallPath%ClientAccess\Owa\web.config` <br/> | `maxAllowedContentLength="35000000"` <br/> |bytes  <br/> |
 |Backend  <br/> | `%ExchangeInstallPath%ClientAccess\Owa\web.config` <br/> | `maxRequestLength="35000"` <br/> |kilobytes  <br/> |
-|Backend  <br/> | `%ExchangeInstallPath%ClientAccess\Owa\web.config` <br/> |2 instances of  `maxReceivedMessageSize="35000000"` (for http and https bindings)  <br/> |bytes  <br/> |
-|Backend  <br/> | `%ExchangeInstallPath%ClientAccess\Owa\web.config` <br/> |2 instances of  `maxStringContentLength="35000000"` (for http and https bindings)  <br/> |bytes  <br/> |
+|Backend  <br/> | `%ExchangeInstallPath%ClientAccess\Owa\web.config` <br/> |2 instances of `maxReceivedMessageSize="35000000"` (for http and https bindings)  <br/> |bytes  <br/> |
+|Backend  <br/> | `%ExchangeInstallPath%ClientAccess\Owa\web.config` <br/> |2 instances of `maxStringContentLength="35000000"` (for http and https bindings)  <br/> |bytes  <br/> |
    
  **Comments on Outlook on the web limits**
   
-- In the backend  `web.config` file, there's an instance of the value  `maxStringContentLength="102400"` for the **MsOnlineShellService** binding that you don't need to modify. 
+- In the backend `web.config` file, there's an instance of the value `maxStringContentLength="102400"` for the **MsOnlineShellService** binding that you don't need to modify. 
     
 ## What do you need to know before you begin?
 
@@ -113,14 +113,14 @@ After you change the value in IIS Manager, a new  _maxAllowedContentLength_ key 
   Notepad %ExchangeInstallPath%FrontEnd\HttpProxy\ews\web.config
   ```
 
-2. Find the relevant keys in the appropriate web.config files as described in the tables earlier in the topic. For example, for EWS clients, find the  _maxAllowedContentLength_ key in the Client Access and backend web.config files and all 14 instances of the value  `maxReceivedMessageSize="67108864"` in the backend web.config file. 
+2. Find the relevant keys in the appropriate web.config files as described in the tables earlier in the topic. For example, for EWS clients, find the _maxAllowedContentLength_ key in the Client Access and backend web.config files and all 14 instances of the value `maxReceivedMessageSize="67108864"` in the backend web.config file. 
     
   ```
   <requestLimits maxAllowedContentLength="67108864" />
   ...maxReceivedMessageSize="67108864"...
   ```
 
-    For example, to allow a Base64 encoded maximum message size of approximately 64 MB, change all instances of  `67108864` to  `89478486` (64\*4/3\*1048756): 
+    For example, to allow a Base64 encoded maximum message size of approximately 64 MB, change all instances of `67108864` to `89478486` (64\*4/3\*1048756): 
     
   ```
   <requestLimits maxAllowedContentLength="89478486" />

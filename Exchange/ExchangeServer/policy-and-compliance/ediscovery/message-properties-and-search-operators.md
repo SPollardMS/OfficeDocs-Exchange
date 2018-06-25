@@ -4,28 +4,28 @@ ms.author: serdars
 author: SerdarSoysal
 manager: scotv
 ms.date: 6/8/2018
-ms.audience: Admin
+ms.audience: ITPro
 ms.topic: reference
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 402b74e4-8853-4c51-9737-1a9c19f8e3dd
-description: "This topic describes the properties of Exchange email messages that you can search by using In-Place eDiscovery &amp; Hold in Exchange Server 2016. The topic also describes Boolean search operators and other search query techniques that you can use to refine eDiscovery search results."
+description: "This topic describes the properties of Exchange email messages that you can search by using In-Place eDiscovery & Hold in Exchange Server 2016. The topic also describes Boolean search operators and other search query techniques that you can use to refine eDiscovery search results."
 ---
 
 # Message properties and search operators for In-Place eDiscovery in Exchange 2016
 
-This topic describes the properties of Exchange email messages that you can search by using In-Place eDiscovery &amp; Hold in Exchange Server 2016. The topic also describes Boolean search operators and other search query techniques that you can use to refine eDiscovery search results.
+This topic describes the properties of Exchange email messages that you can search by using In-Place eDiscovery & Hold in Exchange Server 2016. The topic also describes Boolean search operators and other search query techniques that you can use to refine eDiscovery search results.
   
 In-Place eDiscovery uses Keyword Query Language (KQL). For more details, see [Keyword Query Language syntax reference](https://go.microsoft.com/fwlink/p/?LinkId=269603).
   
 ## Searchable properties in Exchange
 <a name="properties"> </a>
 
-The following table lists email message properties that can be searched using an In-Place eDiscovery search or by using the **New-MailboxSearch** or the **Set-MailboxSearch** cmdlet. The table includes an example of the  _property:value_ syntax for each property and a description of the search results returned by the examples. 
+The following table lists email message properties that can be searched using an In-Place eDiscovery search or by using the **New-MailboxSearch** or the **Set-MailboxSearch** cmdlet. The table includes an example of the _property:value_ syntax for each property and a description of the search results returned by the examples. 
   
 |**Property**|**Property description**|**Examples**|**Search results returned by the examples**|
 |:-----|:-----|:-----|:-----|
-|Attachment  <br/> |The names of files attached to an email message.  <br/> |attachment:annualreport.ppt  <br/> attachment:annual\*  <br/> |Messages that have an attached file named annualreport.ppt.  <br/> In the second example, using the wildcard returns messages with the word "annual" in the file name of an attachment.  <br/> |
+|Attachment  <br/> |The names of files attached to an email message.  <br/> |attachment:annualreport.ppt  <br/> attachment:annual\* <br/> |Messages that have an attached file named annualreport.ppt.  <br/> In the second example, using the wildcard returns messages with the word "annual" in the file name of an attachment.  <br/> |
 |Bcc  <br/> |The BCC field of an email message.<sup>1</sup> <br/> |bcc:pilarp@contoso.com  <br/> bcc:pilarp  <br/> bcc:"Pilar Pinilla"  <br/> |All examples return messages with Pilar Pinilla included in the Bcc field.  <br/> |
 |Category  <br/> |The categories to search. Categories can be defined by users by using Outlook or Outlook on the web (formerly known as Outlook Web App). Valid values are:  <br/> blue  <br/> green  <br/> orange  <br/> purple  <br/> red  <br/> yellow  <br/> |category:"Red Category"  <br/> |Messages that have been assigned the red category in the source mailboxes.  <br/> |
 |Cc  <br/> |The CC field of an email message.<sup>1</sup> <br/> |cc:pilarp@contoso.com  <br/> cc:"Pilar Pinilla"  <br/> |In both examples, messages with Pilar Pinilla specified in the CC field.  <br/> |
@@ -49,21 +49,21 @@ Boolean search operators, such as **AND**, **OR**, and **NOT**, help you define 
   
 |**Operator**|**Usage**|**Description**|
 |:-----|:-----|:-----|
-|AND  <br/> |keyword1 AND keyword2  <br/> |Returns messages that include all of the specified keywords or  `property:value` expressions.  <br/> |
-|+  <br/> |keyword1 +keyword2 +keyword3  <br/> |Returns items that contain  *either*  `keyword2` or  `keyword3` *and*  that also contain  `keyword1`. Therefore, this example is equivalent to the query  `(keyword2 OR keyword3) AND keyword1`.  <br/> Note that the query  `keyword1 + keyword2` (with a space after the **+** symbol) isn't the same as using the ** AND ** operator. This query would be equivalent to  `"keyword1 + keyword2"` and return items with the exact phase  `"keyword1 + keyword2"`.  <br/> |
-|OR  <br/> |keyword1 OR keyword2  <br/> |Returns messages that include one or more of the specified keywords or  `property:value` expressions.  <br/> |
-|NOT  <br/> |keyword1 NOT keyword2  <br/> NOT from:"Ann Beebe"  <br/> |Excludes messages specified by a keyword or a  `property:value` expression. For example,  `NOT from:"Ann Beebe"` excludes messages sent by Ann Beebe.  <br/> |
-|-  <br/> |keyword1 -keyword2  <br/> |The same as the **NOT** operator. This query returns items that contain  `keyword1` and excludes items that contain  `keyword2`.  <br/> |
-|NEAR  <br/> |keyword1 NEAR(n) keyword2  <br/> |Returns messages with words that are near each other, where n equals the number of words apart. For example,  `best NEAR(5) worst` returns messages where the word "worst" is within five words of "best". If no number is specified, the default distance is eight words.  <br/> |
-|:  <br/> |property:value  <br/> |The colon (:) in the  `property:value` syntax specifies that the property value being searched for equals the specified value. For example,  `recipients:garthf@contoso.com` returns any message sent to garthf@contoso.com.  <br/> |
+|AND  <br/> |keyword1 AND keyword2  <br/> |Returns messages that include all of the specified keywords or `property:value` expressions.  <br/> |
+|+  <br/> |keyword1 +keyword2 +keyword3  <br/> |Returns items that contain *either* `keyword2` or `keyword3` *and* that also contain `keyword1`. Therefore, this example is equivalent to the query `(keyword2 OR keyword3) AND keyword1`.  <br/> Note that the query `keyword1 + keyword2` (with a space after the **+** symbol) isn't the same as using the ** AND ** operator. This query would be equivalent to `"keyword1 + keyword2"` and return items with the exact phase `"keyword1 + keyword2"`.  <br/> |
+|OR  <br/> |keyword1 OR keyword2  <br/> |Returns messages that include one or more of the specified keywords or `property:value` expressions.  <br/> |
+|NOT  <br/> |keyword1 NOT keyword2  <br/> NOT from:"Ann Beebe"  <br/> |Excludes messages specified by a keyword or a `property:value` expression. For example, `NOT from:"Ann Beebe"` excludes messages sent by Ann Beebe.  <br/> |
+|-  <br/> |keyword1 -keyword2  <br/> |The same as the **NOT** operator. This query returns items that contain `keyword1` and excludes items that contain `keyword2`.  <br/> |
+|NEAR  <br/> |keyword1 NEAR(n) keyword2  <br/> |Returns messages with words that are near each other, where n equals the number of words apart. For example, `best NEAR(5) worst` returns messages where the word "worst" is within five words of "best". If no number is specified, the default distance is eight words.  <br/> |
+|:  <br/> |property:value  <br/> |The colon (:) in the `property:value` syntax specifies that the property value being searched for equals the specified value. For example, `recipients:garthf@contoso.com` returns any message sent to garthf@contoso.com.  <br/> |
 |\<  <br/> |property\<value  <br/> |Denotes that the property being searched is less than the specified value. <sup>1</sup> <br/> |
 |\>  <br/> |property\>value  <br/> |Denotes that the property being searched is greater than the specified value.<sup>1</sup> <br/> |
 |\<=  <br/> |property\<=value  <br/> |Denotes that the property being searched is less than or equal to a specific value.<sup>1</sup> <br/> |
 |\>=  <br/> |property\>=value  <br/> |Denotes that the property being searched is greater than or equal to a specific value.<sup>1</sup> <br/> |
 |..  <br/> |property:value1..value2  <br/> |Denotes that the property being searched is greater than or equal to value1 and less than or equal to value2.<sup>1</sup> <br/> |
-|" "  <br/> |"fair value"  <br/> subject:"Quarterly Financials"  <br/> |Use double quotation marks (" ") to search for an exact phrase or term in keyword and  `property:value` search queries.  <br/> |
-|\*  <br/> |cat\*  <br/> subject:set\*  <br/> |Prefix wildcard searches (where the asterisk is placed at the end of a word) match for zero or more characters in keywords or  `property:value` queries. For example,  `subject:set*` returns messages that contain the word set, setup, and setting (and other words that start with "set") in the subject line.  <br/> |
-|( )  <br/> | (fair OR free) AND from:contoso.com  <br/>  (IPO OR initial) AND (stock OR shares)  <br/>  (quarterly financials)  <br/> |Parentheses group together Boolean phrases,  `property:value` items, and keywords. For example,  `(quarterly financials)` returns items that contain the words quarterly and financials.  <br/> |
+|" "  <br/> |"fair value"  <br/> subject:"Quarterly Financials"  <br/> |Use double quotation marks (" ") to search for an exact phrase or term in keyword and `property:value` search queries.  <br/> |
+|\* <br/> |cat\* <br/> subject:set\* <br/> |Prefix wildcard searches (where the asterisk is placed at the end of a word) match for zero or more characters in keywords or `property:value` queries. For example, `subject:set*` returns messages that contain the word set, setup, and setting (and other words that start with "set") in the subject line.  <br/> |
+|( )  <br/> | (fair OR free) AND from:contoso.com  <br/>  (IPO OR initial) AND (stock OR shares)  <br/>  (quarterly financials)  <br/> |Parentheses group together Boolean phrases, `property:value` items, and keywords. For example, `(quarterly financials)` returns items that contain the words quarterly and financials.  <br/> |
    
 <sup>1</sup>: Use this operator for properties that have date or numeric values.
   
@@ -76,13 +76,13 @@ Unsupported characters in a search query typically cause a search error or retur
   
 Here's a list of the unsupported characters for an In-Place eDiscovery search query.
   
-- **Smart quotation marks**: Smart single and double quotation marks (also called  *curly quotes*  ) aren't supported. Only straight quotation marks can be used in a search query. 
+- **Smart quotation marks**: Smart single and double quotation marks (also called *curly quotes* ) aren't supported. Only straight quotation marks can be used in a search query. 
     
 - **Non-printable and control characters**: Non-printable and control characters don't represent a written symbol, such as a alpha-numeric character. Examples of non-printable and control characters include characters that format text or separate lines of text.
     
 - **Left-to-right and right-to-left marks**: These are control characters used to indicate text direction for left-to-right languages (such as English and Spanish) and right-to-left languages (such as Arabic and Hebrew).
     
-- **Lowercase Boolean operators**: As previous explained, you have to use uppercase Boolean operators, such as **AND** and **OR**, in a search query. Note that the query syntax will often indicate that a Boolean operator is being used even though lowercase operators might be used; for example,  `(WordA or WordB) and (WordC or WordD)`.
+- **Lowercase Boolean operators**: As previous explained, you have to use uppercase Boolean operators, such as **AND** and **OR**, in a search query. Note that the query syntax will often indicate that a Boolean operator is being used even though lowercase operators might be used; for example, `(WordA or WordB) and (WordC or WordD)`.
     
  **How to prevent unsupported characters in your search queries?** The best way to prevent unsupported characters is to just type the query in the keyword box. Alternatively, you can copy a query from Word or Excel and then paste it to file in a plain text editor, such as Microsoft Notepad. Then save the text file and select **ANSI** in the **Encoding** drop-down list. This will remove any formatting and unsupported characters. Then you can copy and paste the query from the text file to the keyword query box. 
   
@@ -91,9 +91,9 @@ Here's a list of the unsupported characters for an In-Place eDiscovery search qu
 
 - Keyword searches are not case sensitive. For example, **cat** and **CAT** return the same results. 
     
-- A space between two keywords or two  `property:value` expressions is the same as using **AND**. For example,  `from:"Sara Davis" subject:reorganization` returns all messages sent by Sara Davis that contain the word ** reorganization ** in the subject line. 
+- A space between two keywords or two `property:value` expressions is the same as using **AND**. For example, `from:"Sara Davis" subject:reorganization` returns all messages sent by Sara Davis that contain the word ** reorganization ** in the subject line. 
     
-- Use syntax that matches the  `property:value` format. Values are not case-sensitive, and they can't have a space after the operator. If there is a space, your intended value will just be full-text searched. For example, **to: pilarp** searches for "pilarp" as a keyword, rather than for messages that were sent to pilarp. 
+- Use syntax that matches the `property:value` format. Values are not case-sensitive, and they can't have a space after the operator. If there is a space, your intended value will just be full-text searched. For example, **to: pilarp** searches for "pilarp" as a keyword, rather than for messages that were sent to pilarp. 
     
 - When searching a recipient property, such as To, From, Cc, or Recipients, you can use an SMTP address, alias, or display name to denote a recipient. For example, you can use pilarp@contoso.com, pilarp, or "Pilar Pinilla".
     

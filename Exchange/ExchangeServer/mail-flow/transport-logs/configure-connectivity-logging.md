@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 24e46a79-33ea-44e9-b03c-549db1c86a6f
 description: "Summary: Learn how to configure connectivity logging for transport services in Exchange 2016."
@@ -93,15 +93,15 @@ For detailed syntax and parameter information, see [Set-TransportService](http:/
   
  **Notes**:
   
-- Setting the  _ConnectivityLogPath_ parameter to the value  `$null`, effectively disables connectivity logging. However, this value generates event log errors if the value of the  _ConnectivityLogEnabled_ parameter is also  `$true`.
+- Setting the _ConnectivityLogPath_ parameter to the value `$null`, effectively disables connectivity logging. However, this value generates event log errors if the value of the _ConnectivityLogEnabled_ parameter is also `$true`.
     
-- When you use the  _ConnectivityLogPath_ parameter on the **Set-MailboxTransportService** cmdlet, two subfolders are automatically created in the folder you specify: 
+- When you use the _ConnectivityLogPath_ parameter on the **Set-MailboxTransportService** cmdlet, two subfolders are automatically created in the folder you specify: 
     
-  -  `Delivery` for the Mailbox Transport Delivery service. 
+  - `Delivery` for the Mailbox Transport Delivery service. 
     
-  -  `Submission` for the Mailbox Transport Submission service. 
+  - `Submission` for the Mailbox Transport Submission service. 
     
-- Setting the  _ConnectivityLogMaxAge_ parameter to the value  `00:00:00` prevents the automatic removal of connectivity log files because of their age. 
+- Setting the _ConnectivityLogMaxAge_ parameter to the value `00:00:00` prevents the automatic removal of connectivity log files because of their age. 
     
 ## How do you know this worked?
 

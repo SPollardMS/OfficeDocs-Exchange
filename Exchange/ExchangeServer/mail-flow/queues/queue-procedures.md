@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 37f11378-a884-4aff-ab55-689f40a46321
 description: "Summary: Learn how to view, retry, resubmit, suspend, and resume queues in Exchange 2016."
@@ -183,7 +183,7 @@ To verify that you have successfully retried a queue, use either of the followin
   
 - In Queue Viewer, verify the values of the **Status**, **Next Retry Time**, and **Last Error** properties. 
     
-- In the Exchange Management Shell, replace  _\<QueueIdentity\>_ with the identity of the queue, and use the following syntax to verify the property values: 
+- In the Exchange Management Shell, replace _\<QueueIdentity\>_ with the identity of the queue, and use the following syntax to verify the property values: 
     
   ```
   Get-Queue -Identity <QueueIdentity> | Format-Table -Auto Identity,Status,LastRetryTime,NextRetryTime
@@ -238,7 +238,7 @@ To verify that you have successfully resubmitted a queue, use either of the foll
   
 - In Queue Viewer, verify the properties of the queue.
     
-- In the Exchange Management Shell, replace  _\<QueueIdentity\>_ with the identity of the queue, and run the following command to verify the property values: 
+- In the Exchange Management Shell, replace _\<QueueIdentity\>_ with the identity of the queue, and run the following command to verify the property values: 
     
   ```
   Get-Queue -Identity <QueueIdentity>
@@ -359,7 +359,7 @@ To verify that you have successfully suspended a queue, use either of the follow
   
 - In Queue Viewer, verify the queue has the **Status** value of Retry. 
     
-- In the Exchange Management Shell, replace  _\<QueueIdentity\>_ with the identity of the queue, and run the following command to verify the **Status** property value: 
+- In the Exchange Management Shell, replace _\<QueueIdentity\>_ with the identity of the queue, and run the following command to verify the **Status** property value: 
     
   ```
   Get-Queue -Identity <QueueIdentity>
@@ -422,7 +422,7 @@ To verify that you have successfully resumed a queue, use either of the followin
   
 - In Queue Viewer, verify the queue doesn't have the **Status** value Suspended (for example, Active, Connecting, or Ready). 
     
-- In the Exchange Management Shell, replace  _\<QueueIdentity\>_ with the identity of the queue, and run the following command to verify the **Status** property value: 
+- In the Exchange Management Shell, replace _\<QueueIdentity\>_ with the identity of the queue, and run the following command to verify the **Status** property value: 
     
   ```
   Get-Queue -Identity <QueueIdentity>

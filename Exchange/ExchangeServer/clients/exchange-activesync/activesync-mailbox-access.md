@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: dcf7c05b-b1b9-4b0f-800d-fec9f2ddc9e4
 description: "Learn how administrators can enable or disable Exchange ActiveSync access to specific mailboxes in Exchange 2016."
@@ -132,9 +132,9 @@ For detailed syntax and parameter information, see [Set-CASMailbox](http://techn
 
 You can use the **Get-Mailbox**, **Get-User** or **Get-Content** cmdlets to identify the mailboxes that you want to modify. For example: 
   
-- Use the  _OrganizationalUnit_ parameter to filter the mailboxes by organizational unit (OU). 
+- Use the _OrganizationalUnit_ parameter to filter the mailboxes by organizational unit (OU). 
     
-- Use the  _Filter_ parameter to create OPATH filters that identify the mailboxes. For more information, see [Filterable Properties for the -Filter Parameter](http://technet.microsoft.com/library/b02b0005-2fb6-4bc2-8815-305259fa5432.aspx).
+- Use the _Filter_ parameter to create OPATH filters that identify the mailboxes. For more information, see [Filterable Properties for the -Filter Parameter](http://technet.microsoft.com/library/b02b0005-2fb6-4bc2-8815-305259fa5432.aspx).
     
 - Use a text file to specify the mailboxes. The text file contains one mailbox (email address, name, or other unique identifier) on each line like this:
     
@@ -177,7 +177,7 @@ To verify that you've successfully enabled or disabled Exchange ActiveSync acces
     
 ![Mobile device settings for a mailbox in the EAC at Recipients \> select mailbox \> Edit \> Mailbox features \> Mobile Devices](../../media/52364427-9557-443e-8366-35a1339a0f15.png)
   
-- In the Exchange Management Shell, replace  _\<MailboxIdentity\>_ with the identity of the mailbox (for example, name, alias, or email address), and run this command: 
+- In the Exchange Management Shell, replace _\<MailboxIdentity\>_ with the identity of the mailbox (for example, name, alias, or email address), and run this command: 
     
   ```
   Get-CasMailbox -Identity "<MailboxIdentity>"

@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: c7a7afaf-577e-49d6-8cee-bb4c4a5d570b
 description: "Summary: Learn how to use the Exchange admin center (EAC) to set up email forwarding."
@@ -81,7 +81,7 @@ Run the following command in the Exchange Management Shell.
 Get-Mailbox <identity> | Format-List ForwardingSMTPAddress,DeliverToMailboxandForward
 ```
 
-Make sure that the forwarding address is listed in the  _ForwardingSMTPAddress_ parameter. Also, if the  _DeliverToMailboxAndForward_ parameter is set to  `$true`, messages will be delivered to the mailbox and to the forwarding address. If the parameter is set to  `$false`, messages are delivered only to the forwarding address.
+Make sure that the forwarding address is listed in the _ForwardingSMTPAddress_ parameter. Also, if the _DeliverToMailboxAndForward_ parameter is set to `$true`, messages will be delivered to the mailbox and to the forwarding address. If the parameter is set to `$false`, messages are delivered only to the forwarding address.
   
 ## End users
 

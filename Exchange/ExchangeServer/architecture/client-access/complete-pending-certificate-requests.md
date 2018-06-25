@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.collection: Strat_EX_Admin
 ms.assetid: 3d2a8747-4afa-4db8-94d7-dcce6d90d21f
@@ -25,7 +25,7 @@ You might receive one or more of the following types of certificate files CA:
   
 - **PKCS #12 certificate files**: These are binary certificate files that have .cer, .crt, .der, .p12, or .pfx filename extensions, and require a password when the file contains the private key or chain of trust. The CA might issue you only one binary certificate file that you need to install (protected by a password), or multiple root or intermediate binary certificate files that you also need to install.
     
-- **PKCS #7 certificate files**: These are text certificate files that have .p7b or .p7c filename extensions. These files contain the text:  `-----BEGIN CERTIFICATE-----` and  `-----END CERTIFICATE-----` or  `-----BEGIN PKCS7-----` and  `-----END PKCS7-----`. If the CA includes a chain of certificates file with your binary certificate file, you also need to install the chain of certificates file.
+- **PKCS #7 certificate files**: These are text certificate files that have .p7b or .p7c filename extensions. These files contain the text: `-----BEGIN CERTIFICATE-----` and `-----END CERTIFICATE-----` or `-----BEGIN PKCS7-----` and `-----END PKCS7-----`. If the CA includes a chain of certificates file with your binary certificate file, you also need to install the chain of certificates file.
     
 ## What do you need to know before you begin?
 
@@ -33,7 +33,7 @@ You might receive one or more of the following types of certificate files CA:
     
 - The procedures in this topic require you to have created a new certificate request on the Exchange server, sent the certificate request to the CA, and received the certificate from the CA. For more information, see [Create an Exchange 2016 certificate request for a certification authority](create-ca-certificate-requests.md).
     
-- In the EAC, you need to retrieve the certificate file from a UNC path ( `\\<Server>\<Share>` or  `\\<LocalServerName>\c$\`). In the Exchange Management Shell, you can use a local file path.
+- In the EAC, you need to retrieve the certificate file from a UNC path (`\\<Server>\<Share>` or `\\<LocalServerName>\c$\`). In the Exchange Management Shell, you can use a local file path.
     
 - If you renew or replace a certificate that was issued by a CA on a subscribed Edge Transport server, you need to remove the old certificate, and then delete and recreate the Edge Subscription. For more information, see [Edge Subscription process](../../architecture/edge-transport-servers/edge-subscriptions.md#Process).
     
@@ -60,7 +60,7 @@ You might receive one or more of the following types of certificate files CA:
     
     Select the pending certificate request that you want to complete, and then click **Complete** in the details pane. 
     
-4. On the **Complete pending request** page that opens, in the **File to import from** field, enter the UNC path and filename for the certificate file. For example,  `\\FileServer01\Data\ContosoCert.cer`. When you are finished, click **OK**.
+4. On the **Complete pending request** page that opens, in the **File to import from** field, enter the UNC path and filename for the certificate file. For example, `\\FileServer01\Data\ContosoCert.cer`. When you are finished, click **OK**.
     
 The certificate request becomes a certificate in the list of Exchange certificates with a **Status** value of **Valid**. For next steps, see the [Next steps](create-ca-certificate-requests.md#NextSteps) section. 
   
@@ -74,7 +74,7 @@ To import a binary certificate file (PKCS #12 files that have .cer, .crt, .der, 
 Import-ExchangeCertificate -FileName "<FilePathOrUNCPath>\<FileName>" [-Password (ConvertTo-SecureString -String '<Password> ' -AsPlainText -Force)] [-PrivateKeyExportable <$true | $false>] [-Server <ServerIdentity>]
 ```
 
-This example imports the binary certificate file  `\\FileServer01\Data\Contoso Cert.cer` that's protected by the password P@ssw0rd1 on the local Exchange server. 
+This example imports the binary certificate file `\\FileServer01\Data\Contoso Cert.cer` that's protected by the password P@ssw0rd1 on the local Exchange server. 
   
 ```
 Import-ExchangeCertificate -FileName "Import-ExchangeCertificate -FileName "\\FileServer01\Data\Contoso Cert.cer" -Password (ConvertTo-SecureString -String 'P@ssw0rd1' -AsPlainText -Force)
@@ -86,7 +86,7 @@ To import a chain of certificates file (PKCS #7 text files that have .p7b or .p7
 Import-ExchangeCertificate -FileData ([Byte[]](Get-Content -Encoding Byte -Path "<FilePathOrUNCPath>" -ReadCount 0))]
 ```
 
-This example imports the text certificate file  `\\FileServer01\Data\Chain of Certificates.p7b` on the local Exchange server. 
+This example imports the text certificate file `\\FileServer01\Data\Chain of Certificates.p7b` on the local Exchange server. 
   
 ```
 Import-ExchangeCertificate -FileData "Import-ExchangeCertificate -FileData ([Byte[]](Get-Content -Encoding Byte -Path "\\FileServer01\Data\Chain of Certificates.p7b" -ReadCount 0))]
@@ -94,9 +94,9 @@ Import-ExchangeCertificate -FileData "Import-ExchangeCertificate -FileData ([Byt
 
  **Notes:**
   
-- The  _FileName_ and  _FileData_ parameters accept local paths if the certificate file is located on the Exchange server where you're running the command, and this is the same server where you want to import the certificate. Otherwise, use a UNC path. 
+- The _FileName_ and _FileData_ parameters accept local paths if the certificate file is located on the Exchange server where you're running the command, and this is the same server where you want to import the certificate. Otherwise, use a UNC path. 
     
-- If you want to be able to export the certificate from the server where you're importing it, you need to use the  _PrivateKeyExportable_ parameter with the value  `$true`.
+- If you want to be able to export the certificate from the server where you're importing it, you need to use the _PrivateKeyExportable_ parameter with the value `$true`.
     
 - For more information, see [Import-ExchangeCertificate](http://technet.microsoft.com/library/c1a98e97-e58a-49c8-a44d-948b2fc07876.aspx).
     

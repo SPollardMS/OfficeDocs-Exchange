@@ -4,9 +4,9 @@ ms.author: serdars
 author: SerdarSoysal
 manager: serdars
 ms.date: 6/8/2018
-ms.audience: End User
+ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 49ef4a3e-d209-4fb2-80a3-6132b0f69bd0
 description: "Summary: Learn how to enable, disable, and re-enable archive mailboxes in Exchange 2016, and how to verify the archive mailbox settings for a user."
@@ -201,7 +201,7 @@ Enable-Mailbox "Chris Ashton" -Archive
 
 ### How do you know this worked?
 
-To verify that you have successfully connected a disabled archive mailbox to the user's primary mailbox, run the following command to retrieve the mailbox user's archive properties, and verify the values returned for the  _ArchiveGuid_ and  _ArchiveDatabase_ properties. 
+To verify that you have successfully connected a disabled archive mailbox to the user's primary mailbox, run the following command to retrieve the mailbox user's archive properties, and verify the values returned for the _ArchiveGuid_ and _ArchiveDatabase_ properties. 
   
 ```
 Get-Mailbox "Chris Ashton" | Format-List *Archive*

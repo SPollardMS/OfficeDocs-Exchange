@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: overview
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 3addd71a-4165-401f-a009-002bcd8baba6
 description: "Summary: Learn about subscribing an Edge Transport server to your internal Exchange Server 2016 organization, which provides end-to-end mail flow, recipient look-up, and safelist aggregation."
@@ -63,13 +63,13 @@ Before you can subscribe your Edge Transport server to your Exchange organizatio
     > [!NOTE]
     > Port 50389/TCP is used locally by LDAP to bind to the AD LDS instance. This port doesn't have to be open on the firewall; it's used locally on the Edge Transport server. 
   
-    If your environment requires specific ports, you can modify the ports used by AD LDS using the  `ConfigureAdam.ps1` script provided with Exchange. Modify the ports before you create the Edge Subscription. If you modify the ports after you create the Edge Subscription, you need to remove the Edge Subscription and create another one. 
+    If your environment requires specific ports, you can modify the ports used by AD LDS using the `ConfigureAdam.ps1` script provided with Exchange. Modify the ports before you create the Edge Subscription. If you modify the ports after you create the Edge Subscription, you need to remove the Edge Subscription and create another one. 
     
 - **Verify that DNS host name resolution is successful from the Edge Transport server to the Mailbox servers and from the Mailbox servers to the Edge Transport server**
     
 - **Configure the following transport settings for propagation to the Edge Transport server**
     
-  - **Internal SMTP servers**: Use the  _InternalSMTPServers_ parameter on the **Set-TransportConfig** cmdlet to specify a list of internal SMTP server IP addresses or IP address ranges to be ignored by the Sender ID and Connection Filtering agents on the Edge Transport server. 
+  - **Internal SMTP servers**: Use the _InternalSMTPServers_ parameter on the **Set-TransportConfig** cmdlet to specify a list of internal SMTP server IP addresses or IP address ranges to be ignored by the Sender ID and Connection Filtering agents on the Edge Transport server. 
     
   - **Accepted domains**: Configure all authoritative domains, internal relay domains, and external relay domains.
     
@@ -111,7 +111,7 @@ New-EdgeSubscription -FileName "C:\Data\EdgeSubscriptionInfo.xml"
 ```
 
 > [!NOTE]
-> When you run the **New-EdgeSubscription** cmdlet on the Edge Transport server, you receive a prompt to acknowledge the commands that will be disabled and the configuration that will be overwritten on the Edge Transport server. To bypass this confirmation, you need to use the  _Force_ parameter. This parameter is useful when you script the **New-EdgeSubscription** cmdlet. You can also use the  _Force_ parameter to overwrite an existing file when you resubscribe an Edge Transport server. 
+> When you run the **New-EdgeSubscription** cmdlet on the Edge Transport server, you receive a prompt to acknowledge the commands that will be disabled and the configuration that will be overwritten on the Edge Transport server. To bypass this confirmation, you need to use the _Force_ parameter. This parameter is useful when you script the **New-EdgeSubscription** cmdlet. You can also use the _Force_ parameter to overwrite an existing file when you resubscribe an Edge Transport server. 
   
 ### Import the Edge Subscription file on a Mailbox server
 <a name="Import"> </a>
@@ -151,7 +151,7 @@ New-EdgeSubscription -FileData ([byte[]]$(Get-Content -Path "C:\Data\EdgeSubscri
 ```
 
 > [!NOTE]
-> The default values of the  _CreateInternetSendConnector_ and  _CreateInboundSendConnector_ parameters are both  `$true`, so you don't need to use them in this command. 
+> The default values of the _CreateInternetSendConnector_ and _CreateInboundSendConnector_ parameters are both `$true`, so you don't need to use them in this command. 
   
 ## Send connectors created automatically by the Edge Subscription
 <a name="SendConnectors"> </a>
@@ -169,25 +169,25 @@ Also, subscribing an Edge Transport server to the Exchange organization allows t
 ### Inbound Send connector to receive messages from the Internet
 <a name="Inbound"> </a>
 
-When you run the **New-EdgeSubscription** cmdlet on the Mailbox server, the  _CreateInboundSendConnector_ parameter is set to the value  `$true`. This creates the Send connector needed to send messages from the Edge Transport server to the Exchange organization. The following table shows the configuration of this Send connector.
+When you run the **New-EdgeSubscription** cmdlet on the Mailbox server, the _CreateInboundSendConnector_ parameter is set to the value `$true`. This creates the Send connector needed to send messages from the Edge Transport server to the Exchange organization. The following table shows the configuration of this Send connector.
   
 **Automatic inbound Send connector configuration**
 
 |**Property**|**Value**|
 |:-----|:-----|
 | _Name_ <br/> |EdgeSync - Inbound to \< _Site Name_\>  <br/> |
-| _AddressSpaces_ <br/> | `SMTP:--;1` <br/> The  `--` value in the address space represents all authoritative and internal relay accepted domains for the Exchange organization. Any messages the Edge Transport server receives for these accepted domains are routed to this Send connector and relayed to the smart hosts.  <br/> |
+| _AddressSpaces_ <br/> | `SMTP:--;1` <br/> The `--` value in the address space represents all authoritative and internal relay accepted domains for the Exchange organization. Any messages the Edge Transport server receives for these accepted domains are routed to this Send connector and relayed to the smart hosts.  <br/> |
 | _SourceTransportServers_ <br/> |\< _Edge Subscription name_\>  <br/> |
 | _Enabled_ <br/> |True  <br/> |
 | _DNSRoutingEnabled_ <br/> |False  <br/> |
-| _SmartHosts_ <br/> | `--` <br/> The  `--` value in the list of smart hosts represents all Mailbox servers in the subscribed Active Directory site. Any Mailbox servers you add to the subscribed Active Directory site after you establish the Edge Subscription don't participate in the EdgeSync synchronization process. However, they are automatically added to the list of smart hosts for the automatically created inbound Send connector. If more than one Mailbox server is located in the subscribed Active Directory site, inbound connections will be load balanced across the smart hosts.  <br/> |
+| _SmartHosts_ <br/> | `--` <br/> The `--` value in the list of smart hosts represents all Mailbox servers in the subscribed Active Directory site. Any Mailbox servers you add to the subscribed Active Directory site after you establish the Edge Subscription don't participate in the EdgeSync synchronization process. However, they are automatically added to the list of smart hosts for the automatically created inbound Send connector. If more than one Mailbox server is located in the subscribed Active Directory site, inbound connections will be load balanced across the smart hosts.  <br/> |
    
-You can't modify the address space or list of smart hosts at creation time for the automatically created inbound Send connector. However, you can set the  _CreateInboundSendConnector_ parameter to the value  `$false` when you create an Edge Subscription. This allows you to manually configure a Send connector from the Edge Transport server to the Exchange organization. 
+You can't modify the address space or list of smart hosts at creation time for the automatically created inbound Send connector. However, you can set the _CreateInboundSendConnector_ parameter to the value `$false` when you create an Edge Subscription. This allows you to manually configure a Send connector from the Edge Transport server to the Exchange organization. 
   
 ### Outbound Send connector to send messages to the Internet
 <a name="Outbound"> </a>
 
-When you run the **New-EdgeSubscription** cmdlet on the Mailbox server, the  _CreateInternetSendConnector_ parameter is set to the value  `$true`. This creates the Send connector needed to send messages from the Exchange organization to the Internet. The following table shows the default configuration of this Send connector.
+When you run the **New-EdgeSubscription** cmdlet on the Mailbox server, the _CreateInternetSendConnector_ parameter is set to the value `$true`. This creates the Send connector needed to send messages from the Exchange organization to the Internet. The following table shows the default configuration of this Send connector.
   
 **Automatic Internet Send connector configuration**
 

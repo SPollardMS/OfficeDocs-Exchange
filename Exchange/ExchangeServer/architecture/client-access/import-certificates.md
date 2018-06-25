@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.collection: Strat_EX_Admin
 ms.assetid: 43fbe354-ccfc-45b0-9fbc-4b23c6c5ccf4
@@ -25,19 +25,19 @@ These are the types of certificate files that you can import on an Exchange serv
   
 - **PKCS #12 certificate files**: These are binary certificate files that have .cer, .crt, .der, .p12, or .pfx filename extensions, and require a password when the file contains the private key or chain of trust. Examples of these types of files include:
     
-  - Self-signed certificates that were exported from other Exchange servers by using the EAC or the **Export-ExchangeCertificate** with the  _PrivateKeyExportable_ parameter value  `$true`. For more information, see [Export a certificate from an Exchange server](export-certificates.md).
+  - Self-signed certificates that were exported from other Exchange servers by using the EAC or the **Export-ExchangeCertificate** with the _PrivateKeyExportable_ parameter value `$true`. For more information, see [Export a certificate from an Exchange server](export-certificates.md).
     
   - Certificates that were issued by a certification authority (an internal CA like Active Directory Certificate Services, or a commercial CA).
     
   - Certificates that were exported from other servers (for example, Skype for Business Server).
     
-- **PKCS #7 certificate files**: These are text certificate files that have .p7b or .p7c filename extensions. These files contain the text:  `-----BEGIN CERTIFICATE-----` and  `-----END CERTIFICATE-----` or  `-----BEGIN PKCS7-----` and  `-----END PKCS7-----`. A certificate authority might include a chain of certificates file that also needs to be installed along with the actual binary certificate file.
+- **PKCS #7 certificate files**: These are text certificate files that have .p7b or .p7c filename extensions. These files contain the text: `-----BEGIN CERTIFICATE-----` and `-----END CERTIFICATE-----` or `-----BEGIN PKCS7-----` and `-----END PKCS7-----`. A certificate authority might include a chain of certificates file that also needs to be installed along with the actual binary certificate file.
     
 ## What do you need to know before you begin?
 
 - Estimated time to complete: 5 minutes.
     
-- In the EAC, you need to import the certificate file from a UNC path ( `\\<Server>\<Share>\` or  `\\<LocalServerName>\c$\`). In the Exchange Management Shell, you can specify a local path.
+- In the EAC, you need to import the certificate file from a UNC path (`\\<Server>\<Share>\` or `\\<LocalServerName>\c$\`). In the Exchange Management Shell, you can specify a local path.
     
 - In the EAC, you can import the certificate file on multiple Exchange servers at the same time (Step 4 in the procedure).
     
@@ -58,7 +58,7 @@ These are the types of certificate files that you can import on an Exchange serv
     
 3. The **Import Exchange certificate** wizard opens. On the **This wizard will import a certificate from a file** page, enter the following information: 
     
-  - **File to import from**: Enter the UNC path and filename of the certificate file. For example,  `\\FileServer01\Data\Fabrikam.cer`
+  - **File to import from**: Enter the UNC path and filename of the certificate file. For example, `\\FileServer01\Data\Fabrikam.cer`
     
   - **Password**: If the certificate file contains the private key or chain of trust, the file is protected by a password. Enter the password here.
     
@@ -78,7 +78,7 @@ To import a binary certificate file (PKCS #12 files that have .cer, .crt, .der, 
 Import-ExchangeCertificate -FileName "<FilePathOrUNCPath>\<FileName>" -Password (ConvertTo-SecureString -String '<Password> ' -AsPlainText -Force) [-PrivateKeyExportable <$true | $false>] [-Server <ServerIdentity>]
 ```
 
-This example imports the certificate file  `\\FileServer01\Data\Fabrikam.pfx` that's protected by the password P@ssw0rd1 on the local Exchange server. 
+This example imports the certificate file `\\FileServer01\Data\Fabrikam.pfx` that's protected by the password P@ssw0rd1 on the local Exchange server. 
   
 ```
 Import-ExchangeCertificate -FileName "Import-ExchangeCertificate -FileName "\\FileServer01\Data\Fabrikam.pfx" -Password (ConvertTo-SecureString -String 'P@ssw0rd1' -AsPlainText -Force)
@@ -90,7 +90,7 @@ To import a chain of certificates file (PKCS #7 text files that have .p7b or .p7
 Import-ExchangeCertificate -FileData ([Byte[]](Get-Content -Encoding Byte -Path "<FilePathOrUNCPath>" -ReadCount 0))]
 ```
 
-This example imports the chain of certificates file  `\\FileServer01\Data\Chain of Certificates.p7b`.
+This example imports the chain of certificates file `\\FileServer01\Data\Chain of Certificates.p7b`.
   
 ```
 Import-ExchangeCertificate -FileData "Import-ExchangeCertificate -FileData ([Byte[]](Get-Content -Encoding Byte -Path "\\FileServer01\Data\Chain of Certificates.p7b" -ReadCount 0))]
@@ -98,11 +98,11 @@ Import-ExchangeCertificate -FileData "Import-ExchangeCertificate -FileData ([Byt
 
  **Notes:**
   
-- You need to repeat this procedure on each Exchange server where you want to import the certificate (run the command on the server, or use the  _Server_ parameter). 
+- You need to repeat this procedure on each Exchange server where you want to import the certificate (run the command on the server, or use the _Server_ parameter). 
     
-- The  _FileName_ and  _FileData_ parameters accept local paths if the certificate file is located on the Exchange server where you're running the command, and this is the same server where you want to import the certificate. Otherwise, use a UNC path. 
+- The _FileName_ and _FileData_ parameters accept local paths if the certificate file is located on the Exchange server where you're running the command, and this is the same server where you want to import the certificate. Otherwise, use a UNC path. 
     
-- If you want to be able to export the certificate from the server where you're importing it, you need to use the  _PrivateKeyExportable_ parameter with the value  `$true`.
+- If you want to be able to export the certificate from the server where you're importing it, you need to use the _PrivateKeyExportable_ parameter with the value `$true`.
     
 - For more information, see [Import-ExchangeCertificate](http://technet.microsoft.com/library/c1a98e97-e58a-49c8-a44d-948b2fc07876.aspx).
     

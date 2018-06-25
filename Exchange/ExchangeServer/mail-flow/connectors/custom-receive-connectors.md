@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 86f7d6e7-a869-4c90-a570-0239fd0e5872
 description: "Summary: Learn how and when to create custom Receive connectors in Exchange 2016."
@@ -34,7 +34,7 @@ If you need to create a custom Receive connector, consider these issues:
     
   - A default Receive connector that listens on port 25 on all available local IP addresses from all remote IP addresses already exists on all Mailbox servers and Edge Transport servers.
     
-  - If you create a custom Receive connector that listens on port 25 on all available local IP addresses, but the connector is restricted to a limited range of  *remote*  IP addresses, the new connector won't conflict with any of the default Receive connectors on the server. For a detailed explanation, see [Receive connector remote addresses](receive-connectors.md#RemoteAddresses).
+  - If you create a custom Receive connector that listens on port 25 on all available local IP addresses, but the connector is restricted to a limited range of *remote* IP addresses, the new connector won't conflict with any of the default Receive connectors on the server. For a detailed explanation, see [Receive connector remote addresses](receive-connectors.md#RemoteAddresses).
     
     If you can't restrict the remote IP addresses of the custom Receive connector, your only other option is to restrict the local IP address that the connector uses for port 25. You'll need to modify the local IP address of the conflicting default Receive connector, and then use a different local IP address when you create custom Receive connector.
     
@@ -61,9 +61,9 @@ Read more about Receive connectors in Exchange 2016 see, [Receive connectors](re
 
 For this scenario, the Receive connector listens for anonymous SMTP connections on port 25 from all remote IP addresses. Typically, you don't need to manually configure a Receive connector to receive mail from the Internet. A Receive connector with these settings is automatically created by the installation of a Mailbox server or an Edge Transport server:
   
-- The Receive connector named Default Frontend  _\<ServerName\>_ in the Front End Transport service on Mailbox servers. 
+- The Receive connector named Default Frontend _\<ServerName\>_ in the Front End Transport service on Mailbox servers. 
     
-- The Receive connector named Default internal receive connector  _\<ServerName\>_ on Edge Transport servers. 
+- The Receive connector named Default internal receive connector _\<ServerName\>_ on Edge Transport servers. 
     
 If one of these connectors exists, and you try to create a custom Receive connector on the server that also listens for anonymous SMTP connections on port 25 from all remote IP addresses, you'll get an error. You'll need to change the network adapter binding on the conflicting Receive connector to a specific local IP address. When you create the custom Internet Receive connector, you'll need to specify a different network adapter binding.
   
@@ -83,9 +83,9 @@ If one of these connectors exists, and you try to create a custom Receive connec
     
 3. On the last page of the wizard, do one of these steps in the **Network adapter bindings** section: 
     
-  - If you're recreating an Internet Receive connector to replace the missing default Receive connector named Default Frontend  _\<ServerName\>_ on the Mailbox server, leave the default values of **IP addresses**: **(All available IPv4)** and **Port**: **25** (when you click **Finish**, you won't receive an error message).
+  - If you're recreating an Internet Receive connector to replace the missing default Receive connector named Default Frontend _\<ServerName\>_ on the Mailbox server, leave the default values of **IP addresses**: **(All available IPv4)** and **Port**: **25** (when you click **Finish**, you won't receive an error message).
     
-  - If you're creating an Internet Receive connector while the default Receive connector named Default Frontend  _\<ServerName\>_ still exists on the Mailbox server, do these steps: 
+  - If you're creating an Internet Receive connector while the default Receive connector named Default Frontend _\<ServerName\>_ still exists on the Mailbox server, do these steps: 
     
 1. Select the default entry **IP addresses**: **(All available IPv4)** and **Port**: **25**, and then click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)).
     
@@ -98,7 +98,7 @@ If one of these connectors exists, and you try to create a custom Receive connec
     When you're finished, click **Save**.
     
     > [!NOTE]
-    > After you've created the new Internet Receive connector on the Mailbox server, be sure to modify the local IP address settings in the properties of the default Receive connector named Default Frontend  _\<ServerName\>_. You'll need to go to **Scoping** \> **Network adapter bindings** in the properties of the connector, and then select a different local IP address to replace the default **IP addresses**: **(All available IPv4)** and **Port**: **25** entry. 
+    > After you've created the new Internet Receive connector on the Mailbox server, be sure to modify the local IP address settings in the properties of the default Receive connector named Default Frontend _\<ServerName\>_. You'll need to go to **Scoping** \> **Network adapter bindings** in the properties of the connector, and then select a different local IP address to replace the default **IP addresses**: **(All available IPv4)** and **Port**: **25** entry. 
   
     When you're finished, click **Finish**.
     
@@ -118,9 +118,9 @@ New-ReceiveConnector -Name "Internet Receive Connector" -TransportRole Frontend 
 
  **Notes**:
   
-- To run this command on an Edge Transport server, omit the  _TransportRole_ parameter. 
+- To run this command on an Edge Transport server, omit the _TransportRole_ parameter. 
     
-- If another Receive connector is configured to listen on port 25 using all available local IP addresses on the server, you'll need to use the  _Bindings_ parameter on the **Set-ReceiveConnector** cmdlet to specify a unique local IP address for the other connector after you create the new Internet Receive connector. 
+- If another Receive connector is configured to listen on port 25 using all available local IP addresses on the server, you'll need to use the _Bindings_ parameter on the **Set-ReceiveConnector** cmdlet to specify a unique local IP address for the other connector after you create the new Internet Receive connector. 
     
 This example creates a new Receive connector named Internet Receive Connector that listens on port 25 from all remote IP addresses, but on all available local IP addresses. You can only run this command if the server has no other Receive connectors that are configured to listen on port 25 using all available local IP addresses.
   
@@ -128,7 +128,7 @@ This example creates a new Receive connector named Internet Receive Connector th
 New-ReceiveConnector -Name "Internet Receive Connector" -TransportRole Frontend -Internet -Bindings "0.0.0.0","[::]:"
 ```
 
- **Notes**: To run this command on an Edge Transport server, omit the  _TransportRole_ parameter. 
+ **Notes**: To run this command on an Edge Transport server, omit the _TransportRole_ parameter. 
   
 For detailed syntax and parameter information, see [New-ReceiveConnector](http://technet.microsoft.com/library/eb527447-ed68-4a55-943b-aad8c8a94d01.aspx).
   
@@ -210,7 +210,7 @@ This example creates a Receive connector named Fabrikam.com TLS on a Mailbox ser
 New-ReceiveConnector -Name "Fabrikam.com TLS" -TransportRole Frontend -Partner -RemoteIPRanges 17.17.17.1/24 -Bindings 0.0.0.0:25
 ```
 
- **Note**: To run this command on an Edge Transport server, omit the  _TransportRole_ parameter. 
+ **Note**: To run this command on an Edge Transport server, omit the _TransportRole_ parameter. 
   
 For detailed syntax and parameter information, see [New-ReceiveConnector](http://technet.microsoft.com/library/eb527447-ed68-4a55-943b-aad8c8a94d01.aspx).
   
@@ -314,7 +314,7 @@ This example creates a Receive connector named Inbound From Service on a Mailbox
 New-ReceiveConnector -Name "Inbound From Service" -TransportRole Frontend -Custom -Bindings 0.0.0.0:25 -RemoteIPRanges 192.168.10.5 -AuthMechanism BasicAuth -PermissionGroups AnonymousUsers
 ```
 
- **Note**: To run this command on an Edge Transport server, omit the  _TransportRole_ parameter. 
+ **Note**: To run this command on an Edge Transport server, omit the _TransportRole_ parameter. 
   
 For detailed syntax and parameter information, see [New-ReceiveConnector](http://technet.microsoft.com/library/eb527447-ed68-4a55-943b-aad8c8a94d01.aspx).
   
@@ -353,7 +353,7 @@ This example creates a Receive connector named Inbound From Organization on an u
 New-ReceiveConnector -Name "Inbound From Organization" -Internal -RemoteIPRanges 10.1.2.10,10.1.2.15,10.1.2.20
 ```
 
- **Note**: If your Edge Transport server uses different network adapters for internal and external networks, be sure to use the  _Bindings_ parameter on the **Set-ReceiveConnector** cmdlet after you create the connector to specify the correct local IP address for the connector. 
+ **Note**: If your Edge Transport server uses different network adapters for internal and external networks, be sure to use the _Bindings_ parameter on the **Set-ReceiveConnector** cmdlet after you create the connector to specify the correct local IP address for the connector. 
   
 For detailed syntax and parameter information, see [New-ReceiveConnector](http://technet.microsoft.com/library/eb527447-ed68-4a55-943b-aad8c8a94d01.aspx).
   

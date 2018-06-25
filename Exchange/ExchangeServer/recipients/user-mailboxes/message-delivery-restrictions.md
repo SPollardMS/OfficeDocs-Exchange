@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: c4b8b89f-3dbe-4cb8-8839-9a4e8067e00c
 description: "Summary: How to place delivery restrictions on one or more mailboxes with the Exchange admin center (EAC) or the Exchange Management Shell."
@@ -80,7 +80,7 @@ Set-Mailbox -Identity "Robin Wood" -AcceptMessagesOnlyFrom "Lori Penor","Jeff Ph
 ```
 
 > [!NOTE]
-> If you're configuring a mailbox to accept messages only from individual senders, you have to use the  _AcceptMessagesOnlyFrom_ parameter. If you're setting up a mailbox to accept messages only from senders that are members of a specific distribution group, use the  _AcceptMessagesOnlyFromDLMembers_ parameter. 
+> If you're configuring a mailbox to accept messages only from individual senders, you have to use the _AcceptMessagesOnlyFrom_ parameter. If you're setting up a mailbox to accept messages only from senders that are members of a specific distribution group, use the _AcceptMessagesOnlyFromDLMembers_ parameter. 
   
 This example adds the user named David Pelton to the list of users whose messages will be accepted by the mailbox of Robin Wood.
   
@@ -107,7 +107,7 @@ Set-Mailbox -Identity "Robin Wood" -RejectMessagesFromDLMembers @{add="Legal Tea
 ```
 
 > [!NOTE]
-> If you're setting up a mailbox to reject messages from individual senders, you have to use the  _RejectMessagesFrom_ parameter. If you're setting up a mailbox to reject messages from senders that are members of a specific distribution group, use the  _RejectMessagesFromDLMembers_ parameter. 
+> If you're setting up a mailbox to reject messages from individual senders, you have to use the _RejectMessagesFrom_ parameter. If you're setting up a mailbox to reject messages from senders that are members of a specific distribution group, use the _RejectMessagesFromDLMembers_ parameter. 
   
 For detailed syntax and parameter information related to placing delivery restrictions for different types of recipients, see the following topics:
   

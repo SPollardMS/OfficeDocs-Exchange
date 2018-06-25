@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 4/19/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 4e412710-9a74-4649-ab01-502e969a7eda
 description: "Summary: Learn how to retrieve Exchange statistics for public folders to help make decisions to retain or delete those folders."
@@ -45,7 +45,7 @@ Get-PublicFolderStatistics -Identity \Marketing | Format-List
 ```
 
 > [!NOTE]
-> The value for the  _Identity_ parameter must include the path to the public folder. For example, if the public folder Marketing existed under the parent folder Business, you would provide the following value:  `\Business\Marketing`
+> The value for the _Identity_ parameter must include the path to the public folder. For example, if the public folder Marketing existed under the parent folder Business, you would provide the following value: `\Business\Marketing`
   
 For detailed syntax and parameter information, see [Get-PublicFolderStatistics](http://technet.microsoft.com/library/6b435b2e-749f-47fd-9a20-9a7edaed96fb.aspx).
   
@@ -87,15 +87,15 @@ For detailed syntax and parameter information, see [Get-PublicFolderItemStatisti
 
 This example exports the output of the cmdlet to the PFItemStats.csv file that includes the following information for all items within the public folder \Marketing\Reports:
   
-- Subject of the message ( `Subject`)
+- Subject of the message (`Subject`)
     
-- Date and time that the item was last modified ( `LastModificationTime`)
+- Date and time that the item was last modified (`LastModificationTime`)
     
-- Whether the item has attachments ( `HasAttachments`)
+- Whether the item has attachments (`HasAttachments`)
     
-- Type of item ( `ItemType)`
+- Type of item (`ItemType)`
     
-- Size of the item ( `MessageSize`)
+- Size of the item (`MessageSize`)
     
 ```
 Get-PublicFolderItemStatistics -Identity "\Marketing\Reports" | Select Subject,LastModificationTime,HasAttachments,ItemType,MessageSize | Export-CSV C:\PFItemStats.csv

@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 4/19/2018
 ms.audience: ITPro
 ms.topic: overview
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.collection: Strat_EX_Admin
 ms.assetid: 0fac891a-5713-42b6-afd5-c91b2b88f966

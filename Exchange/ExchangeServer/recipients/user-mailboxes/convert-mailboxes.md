@@ -5,7 +5,7 @@ author: chrisda
 ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: dfed045e-a740-4a90-aff9-c58d53592f79
 description: "Summary: Learn about changing a mailbox from one type to another in Exchange 2016."
@@ -80,13 +80,13 @@ This is the same example, but the user account for the room mailbox is enabled, 
 Set-Mailbox -Identity "Conference Room 01" -Type Room -EnableRoomMailboxAccount $true -RoomMailboxPassword (ConvertTo-SecureString -String 'P@ssw0rd25' -AsPlainText -Force)
 ```
 
- **Note**: Even when you convert a user mailbox with a known password to a room mailbox, you still need to use the  _RoomMailboxPassword_ parameter to specify a password. 
+ **Note**: Even when you convert a user mailbox with a known password to a room mailbox, you still need to use the _RoomMailboxPassword_ parameter to specify a password. 
   
 For detailed syntax and parameter information, see [Set-Mailbox](http://technet.microsoft.com/library/a0d413b9-d949-4df6-ba96-ac0906dedae2.aspx).
   
 ## How do you know this worked?
 
-To verify that you've successfully converted a mailbox, replace  _\<MailboxIdentity\>_ with the name, alias, or email address of the mailbox, and run this command in the Exchange Management Shell to verify the property values: 
+To verify that you've successfully converted a mailbox, replace _\<MailboxIdentity\>_ with the name, alias, or email address of the mailbox, and run this command in the Exchange Management Shell to verify the property values: 
   
 ```
 Get-Mailbox -Identity <MailboxIdentity> | Format-List Name,RecipientTypeDetails,UserPrincipalName,AccountDisabled

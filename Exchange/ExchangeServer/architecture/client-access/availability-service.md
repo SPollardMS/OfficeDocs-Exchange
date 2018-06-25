@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 4/19/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 9722dea2-2bf8-437c-85c0-3ab65b8a07b9
 description: "Summary: Learn about the improvements to reliability that the Availability service offers in Exchange 2016 ."

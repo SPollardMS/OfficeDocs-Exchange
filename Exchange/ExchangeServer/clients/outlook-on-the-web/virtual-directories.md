@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 90babcf6-4486-4e01-9819-6d3ca4ed756c
 description: "Summary: Learn how to view and configure the properties of Outlook on the web virtual directories in Exchange 2016"
@@ -50,7 +50,7 @@ You can use the Exchange admin center (EAC) or the Exchange Management Shell to 
     
   - **Authentication**: The default authentication methods are **Basic** and **FBA** (forms-based authentication). 
     
-  - **Outlook on the web version**: The default version is  `Exchange2013`.
+  - **Outlook on the web version**: The default version is `Exchange2013`.
     
   - **External URL**: The default value is blank (not configured).
     
@@ -120,7 +120,7 @@ You can use the Exchange admin center (EAC) or the Exchange Management Shell to 
     
   - **Change password**
     
-  - **Junk email-filtering**: This setting doesn't enable or disable the junk email rule in mailboxes; it controls the  *availability*  of the junk email settings for users in Outlook on the web. For more information about the junk email rule and junk email filtering in mailboxes, see [Configure Exchange antispam settings on mailboxes](../../antispam-and-antimalware/antispam-protection/configure-antispam-settings.md).
+  - **Junk email-filtering**: This setting doesn't enable or disable the junk email rule in mailboxes; it controls the *availability* of the junk email settings for users in Outlook on the web. For more information about the junk email rule and junk email filtering in mailboxes, see [Configure Exchange antispam settings on mailboxes](../../antispam-and-antimalware/antispam-protection/configure-antispam-settings.md).
     
   - **User experience**
     
@@ -188,7 +188,7 @@ If an Outlook on the web virtual directory isn't working the way you expect, you
     
 ![In the EAC, go to Servers \> Virtual Directories, and select the OWA virtual directory](../../media/e0ede2ac-7777-4aed-b3b4-8bfba68bc48e.png)
   
-2. In the **Warning** page that opens, specify the UNC path of the file to save the current virtual directory settings (for example, \\  _\<Server\>_\ _\<Share\>_\owavdir.txt or \\ _\<LocalServerName_\>\c$\owavdir.txt).
+2. In the **Warning** page that opens, specify the UNC path of the file to save the current virtual directory settings (for example, \\ _\<Server\>_\ _\<Share\>_\owavdir.txt or \\ _\<LocalServerName_\>\c$\owavdir.txt).
     
     When you're finished, click **Reset**.
     ![The warning page to reset the selected Outlook on the web virtual directory in the EAC.](../../media/6c66aab1-30a5-40b2-b94b-b7e4f786be73.png)
@@ -253,12 +253,12 @@ There are many more configuration settings available for Outlook on the web virt
 
 |**Parameter**|**Function**|
 |:-----|:-----|
-| _AllowedFileTypes_ <br/>  _BlockedFileTypes_ <br/>  _ForceSaveFileTypes_ <br/>  _AllowedMimeTypes_ <br/>  _BlockedMimeTypes_ <br/>  _ForceSaveMimeTypes_ <br/>  _ActionForUnknownFileAndMIMETypes_ <br/> |Defines the file types for direct file access (traditional file attachments an embedded MIME files) in Outlook on the web (not in other email clients).  <br/> |
+| _AllowedFileTypes_ <br/> _BlockedFileTypes_ <br/> _ForceSaveFileTypes_ <br/> _AllowedMimeTypes_ <br/> _BlockedMimeTypes_ <br/> _ForceSaveMimeTypes_ <br/> _ActionForUnknownFileAndMIMETypes_ <br/> |Defines the file types for direct file access (traditional file attachments an embedded MIME files) in Outlook on the web (not in other email clients).  <br/> |
 | _DefaultTheme_ <br/> |Specifies the default theme that's used in Outlook on the web.  <br/> |
-| _LogonAndErrorLanguage_ <br/>  _OutboundCharset_ <br/>  _UseGB18030_ <br/>  _UseISO885915_ <br/> |Configures the various language settings for Outlook on the web.  <br/> |
-| _DisplayPhotosEnabled_ <br/>  _SetPhotoEnabled_ <br/>  _SetPhotoURL_ <br/> |Configures the user photo settings in Outlook on the web.  <br/> |
+| _LogonAndErrorLanguage_ <br/> _OutboundCharset_ <br/> _UseGB18030_ <br/> _UseISO885915_ <br/> |Configures the various language settings for Outlook on the web.  <br/> |
+| _DisplayPhotosEnabled_ <br/> _SetPhotoEnabled_ <br/> _SetPhotoURL_ <br/> |Configures the user photo settings in Outlook on the web.  <br/> |
    
- **Note**: Not all of the available parameters apply to Exchange 2016 (for example,  _SpellCheckerEnabled_).
+ **Note**: Not all of the available parameters apply to Exchange 2016 (for example, _SpellCheckerEnabled_).
   
 To use the Exchange Management Shell to configure the properties of Outlook on the web virtual directories, use the following syntax:
   

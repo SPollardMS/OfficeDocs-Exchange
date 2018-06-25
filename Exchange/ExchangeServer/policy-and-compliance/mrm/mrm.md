@@ -4,9 +4,9 @@ ms.author: serdars
 author: SerdarSoysal
 manager: serdars
 ms.date: 6/8/2018
-ms.audience: End User
+ms.audience: ITPro
 ms.topic: overview
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 0dd92e9c-881e-43c0-9bbf-f41fdc9dfd87
 description: "Summary: Learn about Messaging records management in Exchange 2016."
@@ -42,7 +42,7 @@ You can use retention policies to enforce basic message retention for an entire 
   
  **Remove all messages after a specified period**: In this strategy, you implement a single MRM policy that removes all messages after a certain period. In this strategy, there's no classification of messages. You can implement this policy by creating a single default policy tag (DPT) for the mailbox. However, this doesn't ensure that messages are retained for the specified period. Users can still delete messages before retention period is reached.
   
- **Move messages to archive mailboxes**: In this strategy, you implement MRM policies that move items to the user's archive mailbox. An archive mailbox provides additional storage for users to maintain old and infrequently accessed content. Retention tags that move items are also known as  *archive policies*  . Within the same retention policy, you can combine a DPT and personal tags to move items, and a DPT, RPTs, and personal tags to delete items. To learn more about archiving policies, see [In-Place Archiving in Exchange 2016](../../policy-and-compliance/in-place-archiving/in-place-archiving.md).
+ **Move messages to archive mailboxes**: In this strategy, you implement MRM policies that move items to the user's archive mailbox. An archive mailbox provides additional storage for users to maintain old and infrequently accessed content. Retention tags that move items are also known as *archive policies* . Within the same retention policy, you can combine a DPT and personal tags to move items, and a DPT, RPTs, and personal tags to delete items. To learn more about archiving policies, see [In-Place Archiving in Exchange 2016](../../policy-and-compliance/in-place-archiving/in-place-archiving.md).
   
  **Remove messages based on folder location**: In this strategy, you implement MRM policies based on email location. For example, you can specify that messages in the Inbox are retained for one year and messages in the Junk Email folder are retained for 60 days. You can implement this policy by using a combination of retention policy tags (RPTs) for each default folder you want to configure and a DPT for the entire mailbox. The DPT applies to all custom folders and all default folders that don't have an RPT applied.
   
@@ -68,6 +68,6 @@ You can meet this requirement by using a combination of retention policies and [
 Optionally, you can use RPTs and personal tags to allow users to clean up their mailboxes. However, In-Place Hold and Litigation Hold continues to retain the deleted messages until the hold period expires.
   
 > [!NOTE]
-> A time-based In-Place Hold or Litigation Hold is similar to what was informally referred to as a  *rolling legal hold*  in Exchange 2010. Rolling legal hold was implemented by configuring the deleted item retention period for a mailbox database or individual mailbox. However, deleted item retention retains deleted and modified items based on the date deleted. In-Place Hold and Litigation Hold preserves items based on the date they're received or created. This ensures that messages are preserved for at least the specified period. 
+> A time-based In-Place Hold or Litigation Hold is similar to what was informally referred to as a *rolling legal hold* in Exchange 2010. Rolling legal hold was implemented by configuring the deleted item retention period for a mailbox database or individual mailbox. However, deleted item retention retains deleted and modified items based on the date deleted. In-Place Hold and Litigation Hold preserves items based on the date they're received or created. This ensures that messages are preserved for at least the specified period. 
   
 

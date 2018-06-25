@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 80b3b537-4786-4d02-9202-44e373811a25
 description: "Summary: Learn how to create and manage mail-enabled security groups in Exchange 2016."
@@ -41,9 +41,9 @@ You can use mail-enabled security groups to distribute messages as well as grant
 
 - When you create groups in the EAC, the value of the **Display name** property is used for the value of the unseen **Name** property (the unique identifier for the group object in the forest). Because the value of **Name** has a maximum length of 64 characters, the value of **Display name** also has a maximum length of 64 characters when you create groups in the EAC. 
     
-- When you create groups in the Exchange Management Shell, the  _Name_ parameter is required, the value must be unique, and the value has a maximum length of 64 characters. The  _DisplayName_ parameter is optional (the value of  _Name_ is used if you don't use it), the value isn't required to be unique, and the value has a maximum length of 256 characters. 
+- When you create groups in the Exchange Management Shell, the _Name_ parameter is required, the value must be unique, and the value has a maximum length of 64 characters. The _DisplayName_ parameter is optional (the value of _Name_ is used if you don't use it), the value isn't required to be unique, and the value has a maximum length of 256 characters. 
     
-- When you create groups in the EAC, the groups are automatically configured to only accept messages from authenticated (internal) senders. When you create groups in the Exchange Management Shell, you can use the  _RequireSenderAuthenticationEnabled_ parameter with the value  `$false` so the group can accept messages from authenticated an unauthenticated (internal and external) senders. After you create the group, you can use the EAC or the Exchange Management Shell to change this setting. 
+- When you create groups in the EAC, the groups are automatically configured to only accept messages from authenticated (internal) senders. When you create groups in the Exchange Management Shell, you can use the _RequireSenderAuthenticationEnabled_ parameter with the value `$false` so the group can accept messages from authenticated an unauthenticated (internal and external) senders. After you create the group, you can use the EAC or the Exchange Management Shell to change this setting. 
     
 ### Use the EAC to create a mail-enabled security group
 
@@ -59,7 +59,7 @@ You can use mail-enabled security groups to distribute messages as well as grant
     > [!NOTE]
     > If a group naming policy is applied, you need to follow the naming constraints that are enforced for your organization. For more information, see [Create a Distribution Group Naming Policy](http://technet.microsoft.com/library/b2ffb654-345d-4be1-be8e-83d28901373e.aspx). If you want to override your organization's group naming policy, see [Override a Distribution Group Naming Policy](http://technet.microsoft.com/library/9eb23fc9-3f59-4d09-9077-85c89a051ee0.aspx). 
   
-  - **\* Alias**: This value is used to generate the primary email address ( _\<alias\>_@ _\<domain_\>). This value can contain letters, numbers and the characters !, #, $, %, &amp;, ', \*, +, -, /, =, ?, ^, _, `, {, |, } and ~. Periods (.) are allowed, but each period must be surrounded by other valid characters (for example, help.desk). Unicode characters from U+00A1 to U+00FF are also allowed, but are mapped to best-fit US-ASCII text characters in the primary email address (for example, U+00F6 (ö) is changed to oe). The alias can't exceed 64 characters and must be unique in the forest. When a user types the alias on the To: line of an email message, it resolves to the group's display name.
+  - **\* Alias**: This value is used to generate the primary email address (_\<alias\>_@ _\<domain_\>). This value can contain letters, numbers and the characters !, #, $, %, &, ', \*, +, -, /, =, ?, ^, _, `, {, |, } and ~. Periods (.) are allowed, but each period must be surrounded by other valid characters (for example, help.desk). Unicode characters from U+00A1 to U+00FF are also allowed, but are mapped to best-fit US-ASCII text characters in the primary email address (for example, U+00F6 (ö) is changed to oe). The alias can't exceed 64 characters and must be unique in the forest. When a user types the alias on the To: line of an email message, it resolves to the group's display name.
     
   - **Notes**: Use this box to describe the purpose of the group. This description appears in the global address list and in the details pane in the EAC.
     
@@ -109,21 +109,21 @@ New-DistributionGroup -Type Security -Name <UniqueName> [-IgnoreNamingPolicy] [-
 
 This example creates a security group with these settings:
   
-- **Name**: File Server Managers. This value is also used for the display name because we aren't using the  _DisplayName_ parameter. If a group naming policy is applied, you can use the  _IgnoreNamingPolicy_ switch to override the policy. 
+- **Name**: File Server Managers. This value is also used for the display name because we aren't using the _DisplayName_ parameter. If a group naming policy is applied, you can use the _IgnoreNamingPolicy_ switch to override the policy. 
     
-- **Alias**: fsadmin. If we didn't use the  _Alias_ parameter, the value of the  _Name_ parameter would be used, with spaces removed (FileServerManagers in this example). 
+- **Alias**: fsadmin. If we didn't use the _Alias_ parameter, the value of the _Name_ parameter would be used, with spaces removed (FileServerManagers in this example). 
     
-- **Description**: None, because we aren't using the  _Notes_ parameter. 
+- **Description**: None, because we aren't using the _Notes_ parameter. 
     
-- **Organizational Unit**: The default location that's specified by the recipient scope, because we aren't using the  _OrganizationalUnit_ parameter. 
+- **Organizational Unit**: The default location that's specified by the recipient scope, because we aren't using the _OrganizationalUnit_ parameter. 
     
-- **Owners**: The user account that's creating the group is the only owner, because we aren't using the  _ManagedBy_ parameter. 
+- **Owners**: The user account that's creating the group is the only owner, because we aren't using the _ManagedBy_ parameter. 
     
-- **Members**: Bishamon Tamura and Valeria Barrios. Because we're using the  _CopyOwnerToMember_ switch, the group owner is also a member. 
+- **Members**: Bishamon Tamura and Valeria Barrios. Because we're using the _CopyOwnerToMember_ switch, the group owner is also a member. 
     
-- **User requests to join the group**: For mail-enabled security groups, user requests to join the group aren't sent to the group owners, regardless of the  _MemberJoinRestriction_ parameter value (  `ApprovalRequired` or  `Closed`). A group owner needs to manually add and remove group members from a mail-enabled security group.
+- **User requests to join the group**: For mail-enabled security groups, user requests to join the group aren't sent to the group owners, regardless of the _MemberJoinRestriction_ parameter value (`ApprovalRequired` or `Closed`). A group owner needs to manually add and remove group members from a mail-enabled security group.
     
-- **Accept messages from external senders**: No, because we're aren't using the  _RequireSenderAuthenticationEnabled_ parameter, and the default value is  `$true`.
+- **Accept messages from external senders**: No, because we're aren't using the _RequireSenderAuthenticationEnabled_ parameter, and the default value is `$true`.
     
 ```
 New-DistributionGroup -Type Security -Name "File Server Managers" -Alias fsadmin -Members "Bishamon Tamura","Valeria Barrios" -CopyOwnerToMember
@@ -143,7 +143,7 @@ To verify that you've successfully created a mail-enabled security group, do any
   Get-DistributionGroup -Filter {RecipientType -eq 'MailUniversalSecurityGroup'}
   ```
 
-- In the Exchange Management Shell, replace  _\<GroupIdentity\>_ with the identity of the group (for example, name, alias, or email address), and run this command to verify the property values: 
+- In the Exchange Management Shell, replace _\<GroupIdentity\>_ with the identity of the group (for example, name, alias, or email address), and run this command to verify the property values: 
     
   ```
   Get-DistributionGroup -Identity <GroupIdentity> | Format-List
@@ -153,7 +153,7 @@ To verify that you've successfully created a mail-enabled security group, do any
 
 - When you modify groups in the EAC, the maximum length for the **Display name** property is now 256 characters, and the value doesn't need to be unique. This value no longer affects the value of the unseen **Name** property (the unique identifier for the group object in the forest). You can't use the EAC to modify the **Name** value of an existing group. 
     
-- When you modify groups in the Exchange Management Shell, the maximum length for the  _Name_ parameter value is still 64 characters, and the value must be unique. The maximum length for the  _DisplayName_ parameter value is still 256 characters, and the value doesn't need to be unique. 
+- When you modify groups in the Exchange Management Shell, the maximum length for the _Name_ parameter value is still 64 characters, and the value must be unique. The maximum length for the _DisplayName_ parameter value is still 256 characters, and the value doesn't need to be unique. 
     
 ### Use the EAC to view or modify a mail-enabled security group
 
@@ -202,7 +202,7 @@ Use this tab to view or change basic information about the group.
   
 - **Display name**: This value should help users immediately recognize what the group is used for. This name appears in the global address list, on the To: line when email is sent to this group, and in the **Groups** list in the EAC. The maximum length is 256 characters, and the value doesn't need to be unique. 
     
-- **Alias**: This value is used to generate the primary email address ( _\<alias\>_@ _\<domain_\>). This value can contain letters, numbers and the characters !, #, $, %, &amp;, ', \*, +, -, /, =, ?, ^, _, `, {, |, } and ~. Periods (.) are allowed, but each period must be surrounded by other valid characters (for example, help.desk). Unicode characters from U+00A1 to U+00FF are also allowed, but are mapped to best-fit US-ASCII text characters in the primary email address (for example, U+00F6 (ö) is changed to oe). The alias can't exceed 64 characters and must be unique in the forest. When a user types the alias on the To: line of an email message, it resolves to the group's display name.
+- **Alias**: This value is used to generate the primary email address (_\<alias\>_@ _\<domain_\>). This value can contain letters, numbers and the characters !, #, $, %, &, ', \*, +, -, /, =, ?, ^, _, `, {, |, } and ~. Periods (.) are allowed, but each period must be surrounded by other valid characters (for example, help.desk). Unicode characters from U+00A1 to U+00FF are also allowed, but are mapped to best-fit US-ASCII text characters in the primary email address (for example, U+00F6 (ö) is changed to oe). The alias can't exceed 64 characters and must be unique in the forest. When a user types the alias on the To: line of an email message, it resolves to the group's display name.
     
     When you change the alias value, the previous primary email address is kept as a proxy address for the group.
     
@@ -309,7 +309,7 @@ Use this tab to view or change the email addresses that are configured for the g
     
   - **Email address type**: Select **Enter a custom address type**. Type the custom email address type (for example, X400). In the **Email address** box, type the custom email address. 
     
-    **Note**: With the exception of X.400 addresses, Exchange doesn't validate custom email addresses for correct formatting. You need to make sure that the custom email address complies with the format requirements for that address type.
+   **Note**: With the exception of X.400 addresses, Exchange doesn't validate custom email addresses for correct formatting. You need to make sure that the custom email address complies with the format requirements for that address type.
     
     When you're finished, click **OK**.
     
@@ -328,11 +328,11 @@ Use this tab to add a custom MailTip for the group. MailTips alert users to pote
 #### Group delegation
 <a name="groupdelegation"> </a>
 
-Use this tab to assign permissions to the group for a user (called a  *delegate*  ). 
+Use this tab to assign permissions to the group for a user (called a *delegate* ). 
   
 - **Send As**: The specified users can send messages that appear to be sent by the group. The actual sender isn't revealed, and replies to these messages are delivered to the group.
     
-- **Send on Behalf**: The specified users can send on behalf of the group. Although messages send on behalf of the group clearly show the sender in the From line ( _\<Sender\>_ on behalf of  _\<Group\>_), replies to these messages are delivered to the group, not the sender.
+- **Send on Behalf**: The specified users can send on behalf of the group. Although messages send on behalf of the group clearly show the sender in the From line (_\<Sender\>_ on behalf of _\<Group\>_), replies to these messages are delivered to the group, not the sender.
     
 To add delegates, click **Add**![Add icon](../media/ITPro_EAC_AddIcon.png) for the appropriate permission. In the resulting dialog that appears, select one or more delegates, click **Add**, and then click **OK**.
   
@@ -344,13 +344,13 @@ To remove delegates, select the delegate in the appropriate list, and then click
 
 You use the **Set-DistributionGroup** cmdlet to modify mail-enabled security groups. Here are some interesting settings that you can configure using the **Set-DistributionGroup** cmdlet that aren't available in the EAC or on the **New-DistributionGroup** cmdlet: 
   
-- Configure values for the **CustomAttribute1** through **CustomAttribute15** properties (the  _CustomAttribute1_ through  _CustomAttribute15_ parameters). 
+- Configure values for the **CustomAttribute1** through **CustomAttribute15** properties (the _CustomAttribute1_ through _CustomAttribute15_ parameters). 
     
-- Configure MailTips in different languages (the  _MailTipTranslations_ parameter). 
+- Configure MailTips in different languages (the _MailTipTranslations_ parameter). 
     
-- Configure the maximum message size that can be sent to or sent from the group (the  _MaxReceiveSize_ and  _MaxSendSize_ parameters). 
+- Configure the maximum message size that can be sent to or sent from the group (the _MaxReceiveSize_ and _MaxSendSize_ parameters). 
     
-- Instead of specifying the internal recipients who  *are*  allowed to send messages to the group, you can specify the internal recipients who  *aren't*  allowed to send messages to the group (the  _RejectMessagesFromSendersOrMembers_ parameter). 
+- Instead of specifying the internal recipients who *are* allowed to send messages to the group, you can specify the internal recipients who *aren't* allowed to send messages to the group (the _RejectMessagesFromSendersOrMembers_ parameter). 
     
 For detailed syntax and parameter information, see [Set-DistributionGroup](http://technet.microsoft.com/library/e3a8c709-770a-4900-9a57-adcf0d98ff68.aspx).
   
@@ -372,7 +372,7 @@ To verify that you've successfully modified a mail-enabled security group, do an
   
 - In the EAC, go to **Recipients** \> **Groups** \> select the mail-enabled security group (the **Group Type** value is **Security group**) \> click **Edit**![Edit icon](../media/ITPro_EAC_EditIcon.png) and verify the property values. 
     
-- In the Exchange Management Shell, replace  _\<GroupIdentity\>_ with the identity of the group (for example, name, alias, or email address), and run this command to verify the property values: 
+- In the Exchange Management Shell, replace _\<GroupIdentity\>_ with the identity of the group (for example, name, alias, or email address), and run this command to verify the property values: 
     
   ```
   Get-DistributionGroup -Identity <GroupIdentity> | Format-List
@@ -440,7 +440,7 @@ To verify that you've successfully removed a mail-enabled security group, do any
   Get-DistributionGroup -Filter {RecipientType -eq 'MailUniversalSecurityGroup'}
   ```
 
-- In the Exchange Management Shell, replace  _\<GroupIdentity\>_ with the identity of the group (for example, name, alias, or email address), and run this command to verify that the group isn't returned: 
+- In the Exchange Management Shell, replace _\<GroupIdentity\>_ with the identity of the group (for example, name, alias, or email address), and run this command to verify that the group isn't returned: 
     
   ```
   Get-DistributionGroup -Identity <GroupIdentity> | Format-List
@@ -466,11 +466,11 @@ Enable-DistributionGroup -Identity <GroupIdentity> [-Alias <Alias>] [-DisplayNam
 
 This example mail-enables the existing universal security group named Help Desk with the following settings:
   
-- **Alias**: hdesk. If we didn't use the  _Alias_ parameter, the value of the  _Name_ parameter would be used, with spaces removed (HelpDesk in this example). 
+- **Alias**: hdesk. If we didn't use the _Alias_ parameter, the value of the _Name_ parameter would be used, with spaces removed (HelpDesk in this example). 
     
-- **Display name**: Because we aren't using the  _DisplayName_ parameter, the group's existing **Name** property value is used for the display name. 
+- **Display name**: Because we aren't using the _DisplayName_ parameter, the group's existing **Name** property value is used for the display name. 
     
-- **Primary email address**: Because we're using the  _Alias_ parameter, the group's primary email address is  _\<alias\>_@ _\<domain\>_, where \<domain\> is specified by the email address policy that applies to the group. If we specified a value for the  _PrimarySMTPAddress_ parameter, the **EmailAddressPolicyEnabled** property would be set to the value  `$false`, which means the email addresses of the group aren't automatically updated by email address policies.
+- **Primary email address**: Because we're using the _Alias_ parameter, the group's primary email address is _\<alias\>_@ _\<domain\>_, where \<domain\> is specified by the email address policy that applies to the group. If we specified a value for the _PrimarySMTPAddress_ parameter, the **EmailAddressPolicyEnabled** property would be set to the value `$false`, which means the email addresses of the group aren't automatically updated by email address policies.
     
 ```
 Enable-DistributionGroup -Identity "Help Desk" -Alias hdesk
@@ -492,7 +492,7 @@ To verify that you've successfully mail-enabled an existing security group, do a
   Get-DistributionGroup -Filter {RecipientType -eq 'MailUniversalSecurityGroup'}
   ```
 
-- In the Exchange Management Shell, replace  _\<GroupIdentity\>_ with the identity of the group (for example, name, alias, or email address), and run this command to verify the property values: 
+- In the Exchange Management Shell, replace _\<GroupIdentity\>_ with the identity of the group (for example, name, alias, or email address), and run this command to verify the property values: 
     
   ```
   Get-DistributionGroup -Identity <GroupIdentity> | Format-List
@@ -514,7 +514,7 @@ Disable-DistributionGroup -Identity "Human Resources"
 
  **Notes**:
   
-- If the distribution group isn't visible to you because of a restricted recipient scope, you'll need to use the  _IgnoreDefaultScope_ switch to see all groups in the Active Directory forest. But, when you use this switch, you'll need to identify the group by its distinguished name (DN). For example,  `"CN=<Group Name>,CN=North America,CN=Users,DC=contoso,DC=com"`.
+- If the distribution group isn't visible to you because of a restricted recipient scope, you'll need to use the _IgnoreDefaultScope_ switch to see all groups in the Active Directory forest. But, when you use this switch, you'll need to identify the group by its distinguished name (DN). For example, `"CN=<Group Name>,CN=North America,CN=Users,DC=contoso,DC=com"`.
     
 - After you mail-disable the security group, the group will be invisible to all **\*-DistributionGroup** cmdlets except **Enable-DistributionGroup**. 
     
@@ -532,7 +532,7 @@ To verify that you've successfully mail-disabled an existing mail-enabled univer
   Get-DistributionGroup -Filter {RecipientType -eq 'MailUniversalSecurityGroup'}
   ```
 
-- In the Exchange Management Shell, replace  _\<GroupIdentity\>_ with the name of the group, and run this command to verify that the group isn't returned: 
+- In the Exchange Management Shell, replace _\<GroupIdentity\>_ with the name of the group, and run this command to verify that the group isn't returned: 
     
   ```
   Get-DistributionGroup -Identity <GroupIdentity> | Format-List

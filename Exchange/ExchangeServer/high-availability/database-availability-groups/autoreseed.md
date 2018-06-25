@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 61f9a8be-070e-4c62-b505-52644fcff0c5
 description: "Summary: Automatically restore a database in Exchange 2016 with pre-provisioned spare disks."
@@ -38,7 +38,7 @@ Once all retries are exhausted, the workflow stops. If, after 3 days, the databa
   
 At this point, if the failure was a disk failure, it would require manual intervention by an operator or administrator to remove and replace the failed disk and reconfigure the replacement disk as a spare.
   
-AutoReseed is configured using three properties of the DAG. Two of the properties refer to the two mount points that are in use. Exchange 2016 leverages the fact that Windows Server allows multiple mount points per volume. The  _AutoDagVolumesRootFolderPath_ property refers to the mount point that contains all of the available volumes. This includes volumes that host databases and spare volumes. The  _AutoDagDatabasesRootFolderPath_ property refers to the mount point that contains the databases. A third DAG property,  _AutoDagDatabaseCopiesPerVolume_, is used to configure the number of database copies per volume.
+AutoReseed is configured using three properties of the DAG. Two of the properties refer to the two mount points that are in use. Exchange 2016 leverages the fact that Windows Server allows multiple mount points per volume. The _AutoDagVolumesRootFolderPath_ property refers to the mount point that contains all of the available volumes. This includes volumes that host databases and spare volumes. The _AutoDagDatabasesRootFolderPath_ property refers to the mount point that contains the databases. A third DAG property, _AutoDagDatabaseCopiesPerVolume_, is used to configure the number of database copies per volume.
   
 An example AutoReseed configuration is illustrated below.
   
@@ -60,7 +60,7 @@ In this configuration, if MDB1 or MDB2 were to experience a failure, a copy of t
   
 ### Disk Reclaimer
 
-The AutoReseed component that allocates and formats spare disks is called the  *Disk Reclaimer*  . The Disk Reclaimer component automatically formats spare disks in preparation for automatic reseeding at different intervals, depending on the state of the disk. In order for the Disk Reclaimer to format a disk, certain conditions must met: 
+The AutoReseed component that allocates and formats spare disks is called the *Disk Reclaimer* . The Disk Reclaimer component automatically formats spare disks in preparation for automatic reseeding at different intervals, depending on the state of the disk. In order for the Disk Reclaimer to format a disk, certain conditions must met: 
   
 - The Disk Reclaimer must be enabled. It is enabled by default, but it can be disabled using [Set-DatabaseAvailabilityGroup](http://technet.microsoft.com/library/4353c3ab-75b7-485e-89ae-d4b09b44b646.aspx).
     

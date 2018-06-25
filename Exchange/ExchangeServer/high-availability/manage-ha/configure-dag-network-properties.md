@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 41197639-988f-476c-9788-51d5191a7dce
 description: "Summary: Each database availability group (DAG) network has several properties that you can configure."

@@ -4,9 +4,9 @@ ms.author: serdars
 author: SerdarSoysal
 manager: serdars
 ms.date: 6/8/2018
-ms.audience: Admin
+ms.audience: ITPro
 ms.topic: overview
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 6377cb7a-3416-4e15-8571-c45d2160fc6f
 description: "Summary: Learn about In-Place eDiscovery in Exchange 2016."
@@ -48,7 +48,7 @@ For authorized users to perform In-Place eDiscovery searches, you need to add th
 By default, permissions to perform In-Place eDiscovery-related tasks aren't assigned to any user or Exchange administrators. Exchange administrators who are members of the Organization Management role group can add users to the Discovery Management role group and create custom role groups to narrow the scope of a discovery manager to a subset of users. To learn more about adding users to the Discovery Management role group, see [Assign eDiscovery permissions in Exchange 2016](assign-permissions.md).
   
 > [!IMPORTANT]
-> If a user isn't added to the Discovery Management role group or isn't assigned the Mailbox Search role, the **In-Place eDiscovery &amp; Hold** user interface isn't displayed in the EAC, and the In-Place eDiscovery ( **\*MailboxSearch** ) cmdlets aren't available in the Exchange Management Shell. 
+> If a user isn't added to the Discovery Management role group or isn't assigned the Mailbox Search role, the **In-Place eDiscovery & Hold** user interface isn't displayed in the EAC, and the In-Place eDiscovery (**\*MailboxSearch** ) cmdlets aren't available in the Exchange Management Shell. 
   
 Auditing of RBAC role changes, which is enabled by default, makes sure that adequate records are kept to track assignment of the Discovery Management role group. You can use the administrator role group report to search for changes made to administrator role groups. For more information, see [Search the role group changes or administrator audit logs](http://technet.microsoft.com/library/c7188d53-e672-492b-b57d-cd711379ddb3.aspx).
   
@@ -57,7 +57,7 @@ Auditing of RBAC role changes, which is enabled by default, makes sure that adeq
 
 Users who have been added to the Discovery Management role group can perform In-Place eDiscovery searches. You can perform a search using the web-based interface in the EAC. This makes it easier for non-technical users such as records managers, compliance officers, or legal and HR professionals to use In-Place eDiscovery. You can also use the Exchange Management Shell to perform a search. For more information, see [Create an In-Place eDiscovery search in Exchange 2016](create-searches.md)
   
-The **In-Place eDiscovery &amp; Hold** wizard in the EAC allows you to create an In-Place eDiscovery search and also use In-Place Hold to place search results on hold. When you create an In-Place eDiscovery search, a search object is created in the In-Place eDiscovery system mailbox. This object can be manipulated to start, stop, modify, and remove the search. After you create the search, you can choose to get an estimate of search results, which includes keyword statistics that help you determine query effectiveness. You can also do a live preview of items returned in the search, allowing you to view message content, the number of messages returned from each source mailbox and the total number of messages. You can use this information to further fine-tune your query if required. 
+The **In-Place eDiscovery & Hold** wizard in the EAC allows you to create an In-Place eDiscovery search and also use In-Place Hold to place search results on hold. When you create an In-Place eDiscovery search, a search object is created in the In-Place eDiscovery system mailbox. This object can be manipulated to start, stop, modify, and remove the search. After you create the search, you can choose to get an estimate of search results, which includes keyword statistics that help you determine query effectiveness. You can also do a live preview of items returned in the search, allowing you to view message content, the number of messages returned from each source mailbox and the total number of messages. You can use this information to further fine-tune your query if required. 
   
 When satisfied with the search results, you can copy them to a discovery mailbox. You can also use the EAC or Outlook to export a discovery mailbox or some of its content to a PST file.
   
@@ -81,7 +81,7 @@ When creating an In-Place eDiscovery search, you must specify the following para
     
   - **Start and End dates**: By default, In-Place eDiscovery doesn't limit searches by a date range. To search messages sent during a specific date range, you can narrow the search by specifying the start and end dates. If you don't specify an end date, the search will return the latest results every time you restart it.
     
-  - **Senders and recipients**: To narrow down the search, you can specify the senders or recipients of messages. You can use email addresses, display names, or the name of a domain to search for items sent to or from everyone in the domain. For example, to find email sent by or sent to anyone at Contoso, Ltd, specify **@contoso.com** in the **From** or the **To/cc** field in the EAC. You can also specify **@contoso.com** in the  _Senders_ or  _Recipients_ parameters in the Exchange Management Shell 
+  - **Senders and recipients**: To narrow down the search, you can specify the senders or recipients of messages. You can use email addresses, display names, or the name of a domain to search for items sent to or from everyone in the domain. For example, to find email sent by or sent to anyone at Contoso, Ltd, specify **@contoso.com** in the **From** or the **To/cc** field in the EAC. You can also specify **@contoso.com** in the _Senders_ or _Recipients_ parameters in the Exchange Management Shell 
     
   - **Message types**: By default, all message types are searched. You can restrict the search by selecting specific message types such as email, contacts, documents, journal, meetings, notes and Lync content.
     
@@ -97,7 +97,7 @@ When using In-Place eDiscovery, also consider the following:
     
 - **Encrypted items**: Because messages encrypted using S/MIME aren't indexed by Exchange Search, In-Place eDiscovery doesn't search these messages. If you select the option to include unsearchable items in search results, these S/MIME encrypted messages are copied to the discovery mailbox.
     
-- **De-duplication**: When copying search results to a discovery mailbox or exporting search results to a PST file, you can enable  *de-duplication*  of search results to copy only one instance of a unique message to the discovery mailbox. De-duplication has the following benefits: 
+- **De-duplication**: When copying search results to a discovery mailbox or exporting search results to a PST file, you can enable *de-duplication* of search results to copy only one instance of a unique message to the discovery mailbox. De-duplication has the following benefits: 
     
   - Lower storage requirement and smaller discovery mailbox size due to reduced number of messages copied.
     
@@ -111,7 +111,7 @@ When using In-Place eDiscovery, also consider the following:
     
   - When Exchange Search fails to index an IRM-protected message, either due to a decryption failure or because IRM is disabled, the protected message isn't added to the list of failed items. If you select the option to include unsearchable items in search results, the results may not include IRM-protected messages that could not be decrypted.
     
-  - To include IRM-protected messages in a search, you can create another search to include messages with .rpmsg attachments. You can use the query string  `attachment:rpmsg` to search all IRM-protected messages in the specified mailboxes, whether successfully indexed or not. This may result in some duplication of search results in scenarios where one search returns messages that match the search criteria, including IRM-protected messages that have been indexed successfully. The search doesn't return IRM-protected messages that couldn't be indexed. 
+  - To include IRM-protected messages in a search, you can create another search to include messages with .rpmsg attachments. You can use the query string `attachment:rpmsg` to search all IRM-protected messages in the specified mailboxes, whether successfully indexed or not. This may result in some duplication of search results in scenarios where one search returns messages that match the search criteria, including IRM-protected messages that have been indexed successfully. The search doesn't return IRM-protected messages that couldn't be indexed. 
     
   - Performing a second search for all IRM-protected messages also includes the IRM-protected messages that were successfully indexed and returned in the first search. Additionally, the IRM-protected messages returned by the second search may not match the search criteria such as keywords used for the first search.
     
@@ -153,7 +153,7 @@ There are two types of logging available for In-Place eDiscovery searches.
   
 - **Basic logging**: Basic logging is enabled by default for all In-Place eDiscovery searches. It includes information about the search and who performed it. Information captured about basic logging appears in the body of the email message sent to the mailbox where the search results are stored. The message is located in the folder created to store search results.
     
-- **Full logging**: Full logging includes information about all messages returned by the search. This information is provided in a comma-separated value (.csv) file attached to the email message that contains the basic logging information. The name of the search is used for the .csv file name. This information may be required for compliance or record-keeping purposes. To enable full logging, you must select the **Enable full logging** option when copying search results to a discovery mailbox in the EAC. If you're using the Exchange Management Shell, specify the full logging option using the  _LogLevel_ parameter. 
+- **Full logging**: Full logging includes information about all messages returned by the search. This information is provided in a comma-separated value (.csv) file attached to the email message that contains the basic logging information. The name of the search is used for the .csv file name. This information may be required for compliance or record-keeping purposes. To enable full logging, you must select the **Enable full logging** option when copying search results to a discovery mailbox in the EAC. If you're using the Exchange Management Shell, specify the full logging option using the _LogLevel_ parameter. 
     
     **Note**: When using the Exchange Management Shell to create or modify an In-Place eDiscovery search, you can also disable logging.
     
@@ -181,7 +181,7 @@ In-Place eDiscovery also uses a system mailbox with the display name **SystemMai
 
 As part of eDiscovery requests, you may be required to preserve mailbox content until a lawsuit or investigation is disposed. Messages deleted or altered by the mailbox user or any processes must also be preserved. In Exchange 2016, this is accomplished by using In-Place Hold. For details, see [In-Place Hold and Litigation Hold in Exchange 2016](../../policy-and-compliance/holds/holds.md).
   
-You can use the **In-Place eDiscovery &amp; Hold** wizard to search items and preserve them for as long as they're required for eDiscovery or to meet other business requirements. When using the same search for both In-Place eDiscovery and In-Place Hold, be aware of the following: 
+You can use the **In-Place eDiscovery & Hold** wizard to search items and preserve them for as long as they're required for eDiscovery or to meet other business requirements. When using the same search for both In-Place eDiscovery and In-Place Hold, be aware of the following: 
   
 - You can't use the option to place a hold on all mailboxes in your organization. You must select the mailboxes or distribution groups. However, you can place all public folders in your organization on hold.
     
@@ -194,7 +194,7 @@ When an employee leaves an organization, it's a common practice to disable or re
   
 If your organization requires that retention settings be applied to messages of employees who are no longer in the organization or if you may need to retain an ex-employee's mailbox for an ongoing or future eDiscovery search, do not disable or remove the mailbox. You can take the following steps to ensure the mailbox can't be accessed and no new messages are delivered to it.
   
-1. Disable the Active Directory user account using **Active Directory Users &amp; Computers** or other Active Directory or account provisioning tools or scripts. This prevents mailbox logon using the associated user account. 
+1. Disable the Active Directory user account using **Active Directory Users & Computers** or other Active Directory or account provisioning tools or scripts. This prevents mailbox logon using the associated user account. 
     
     **Important**: Users with Full Access mailbox permission will still be able to access the mailbox. To prevent access by others, you must remove their Full Access permission from the mailbox. For information about how to remove Full Access mailbox permissions on a mailbox, see [Manage permissions for recipients](../../recipients/mailbox-permissions.md).
     
@@ -224,7 +224,7 @@ If you do experience dissimilar results for the same search, consider placing ma
 
 You can use a custom management scope to let specific people or groups use In-Place eDiscovery to search a subset of mailboxes in your Exchange 2016 organization. For example, you might want to let a discovery manager search only the mailboxes of users in a specific location or department. You do this by creating a custom management scope that uses a custom recipient filter to control which mailboxes can be searched. Recipient filter scopes use filters to target specific recipients based on recipient type or other recipient properties.
   
-For In-Place eDiscovery, the only property on a user mailbox that you can use to create a recipient filter for a custom scope is distribution group membership. If you use other properties, such as  _CustomAttributeN_,  _Department_, or  _PostalCode_, the search fails when it's run by a member of the role group that's assigned the custom scope. For more information, see [Create a custom management scope for In-Place eDiscovery searches](http://technet.microsoft.com/library/1543aefe-3709-402c-b9cd-c11fe898aad1.aspx).
+For In-Place eDiscovery, the only property on a user mailbox that you can use to create a recipient filter for a custom scope is distribution group membership. If you use other properties, such as _CustomAttributeN_, _Department_, or _PostalCode_, the search fails when it's run by a member of the role group that's assigned the custom scope. For more information, see [Create a custom management scope for In-Place eDiscovery searches](http://technet.microsoft.com/library/1543aefe-3709-402c-b9cd-c11fe898aad1.aspx).
   
 ## In-Place eDiscovery and Exchange Search
 <a name="search"> </a>

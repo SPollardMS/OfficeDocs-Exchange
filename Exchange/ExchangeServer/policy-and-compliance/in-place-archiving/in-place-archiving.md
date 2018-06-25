@@ -4,9 +4,9 @@ ms.author: serdars
 author: SerdarSoysal
 manager: serdars
 ms.date: 6/12/2018
-ms.audience: End User
+ms.audience: ITPro
 ms.topic: overview
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: b5e4c0e9-0558-4b90-bc12-f67adbfb59ac
 description: "Summary: Administrators can learn about In-Place Archiving and archive mailboxes in Exchange 2016."
@@ -16,7 +16,7 @@ description: "Summary: Administrators can learn about In-Place Archiving and arc
 
  **Summary**: Administrators can learn about In-Place Archiving and archive mailboxes in Exchange 2016.
   
- *In-Place Archiving*  in Exchange Server 2016 helps you regain control of your organization's messaging data by eliminating the need for personal store (.pst) files and allowing users to store messages in an  *archive mailbox*  . The archive mailbox is an additional mailbox that's enabled for a user's primary mailbox. The archive mailbox is accessible in Outlook and Outlook on the web. Users can view an archive mailbox and move or copy messages between their primary mailbox and their archive mailbox. 
+ *In-Place Archiving* in Exchange Server 2016 helps you regain control of your organization's messaging data by eliminating the need for personal store (.pst) files and allowing users to store messages in an *archive mailbox* . The archive mailbox is an additional mailbox that's enabled for a user's primary mailbox. The archive mailbox is accessible in Outlook and Outlook on the web. Users can view an archive mailbox and move or copy messages between their primary mailbox and their archive mailbox. 
   
 You can provision a user's archive mailbox on the same mailbox database as the user's primary mailbox, a different mailbox database on the same Mailbox server, or on a mailbox database on a different Mailbox server in the same Active Directory site. In Exchange hybrid deployments, you can also provision a cloud-based archive mailbox for primary mailboxes located in your on-premises organization.
   
@@ -86,11 +86,11 @@ Before provisioning archive mailboxes for your users, we recommend that you info
 ## Archive quotas
 <a name="quotas"> </a>
 
-Archive mailboxes are designed so that users can store historical messaging data outside their primary mailbox. Often, users use .pst files due to low mailbox storage quotas and the restrictions imposed when these quotas are exceeded. For example, users can be prevented from sending messages when their mailbox size exceeds the  *Prohibit send quota*  . Similarly, users can be prevented from sending and receiving messages when their mailbox size exceeds the  *Prohibit send and receive quota*  . 
+Archive mailboxes are designed so that users can store historical messaging data outside their primary mailbox. Often, users use .pst files due to low mailbox storage quotas and the restrictions imposed when these quotas are exceeded. For example, users can be prevented from sending messages when their mailbox size exceeds the *Prohibit send quota* . Similarly, users can be prevented from sending and receiving messages when their mailbox size exceeds the *Prohibit send and receive quota* . 
   
 To eliminate the need for .pst files, you can provide an archive mailbox with storage limits that meet the user's requirements. However, you may still want to retain some control of the storage quotas and growth of archive mailboxes to help monitor costs and expansion.
   
-To help with this control, you can configure archive mailboxes with an  *archive warning quota*  and an  *archive quota*  . When an archive mailbox exceeds the specified archive warning quota, a warning event is logged in the Application event log. When an archive mailbox exceeds the specified archive quota, messages are no longer moved to the archive, a warning event is logged in the Application event log, and a quota message is sent to the mailbox user. By default, in Exchange 2016, the archive warning quota is set to 90 GB and the archive quota is set to 100 GB. 
+To help with this control, you can configure archive mailboxes with an *archive warning quota* and an *archive quota* . When an archive mailbox exceeds the specified archive warning quota, a warning event is logged in the Application event log. When an archive mailbox exceeds the specified archive quota, messages are no longer moved to the archive, a warning event is logged in the Application event log, and a quota message is sent to the mailbox user. By default, in Exchange 2016, the archive warning quota is set to 90 GB and the archive quota is set to 100 GB. 
   
 The following table lists the events logged and warning messages sent when the archive warning quota and archive quota are met.
   
@@ -106,7 +106,7 @@ This section explains the functionality between In-Place Archiving and various E
   
 - **Exchange Search**: The ability to quickly search messages becomes even more critical with archive mailboxes. For Exchange Search, there's no difference between the primary and archive mailbox. Content in both mailboxes is indexed. Because the archive mailbox isn't cached on a user's computer (even when using Outlook in Cached Exchange Mode), search results for the archive are always provided by Exchange Search. When searching the entire mailbox in Outlook and later and Outlook on the web, search results include the users' primary and archive mailbox.
     
-- **In-Place eDiscovery**: When a discovery manager performs an In-Place eDiscovery search, users' archive mailboxes are also searched. There's no option to exclude archive mailboxes when creating a discovery search from the Exchange admin center (EAC). When using the Exchange Management Shell to create a discovery search, you can exclude the archive by using the  _DoNotIncludeArchive_ switch. For details, see [New-MailboxSearch](http://technet.microsoft.com/library/74303b47-bb49-407c-a43b-590356eae35c.aspx). To learn more, see [In-Place eDiscovery in Exchange 2016](../../policy-and-compliance/ediscovery/ediscovery.md).
+- **In-Place eDiscovery**: When a discovery manager performs an In-Place eDiscovery search, users' archive mailboxes are also searched. There's no option to exclude archive mailboxes when creating a discovery search from the Exchange admin center (EAC). When using the Exchange Management Shell to create a discovery search, you can exclude the archive by using the _DoNotIncludeArchive_ switch. For details, see [New-MailboxSearch](http://technet.microsoft.com/library/74303b47-bb49-407c-a43b-590356eae35c.aspx). To learn more, see [In-Place eDiscovery in Exchange 2016](../../policy-and-compliance/ediscovery/ediscovery.md).
     
 - **In-Place Hold and Litigation Hold**: When you put a mailbox on In-Place Hold or Litigation Hold, the hold is placed on both the primary and the archive mailbox. To learn more, see [In-Place Hold and Litigation Hold in Exchange 2016](../../policy-and-compliance/holds/holds.md).
     
@@ -128,7 +128,7 @@ In Exchange 2016, creating and managing archive mailboxes is integrated with com
   
 - **Disabling an archive mailbox**: You may want to disable a user's archive mailbox for troubleshooting purposes or if you're moving the primary mailbox to a version of Exchange that doesn't support In-Place Archiving. Disabling an archive is similar to disabling a primary mailbox. In on-premises deployments, a disabled archive mailbox is retained in the mailbox database until the deleted mailbox retention period for that database is reached. During this period, you can reconnect the same disabled archive mailbox to a user's primary mailbox. When the deleted mailbox retention period is reached, the disconnected archive mailbox is purged from the mailbox database.
     
-- **Retrieving mailbox statistics and folder statistics**: You can retrieve mailbox statistics and mailbox folder statistics for a user's archive mailbox by using the  _Archive_ switch with the [Get-MailboxStatistics](http://technet.microsoft.com/library/cec76f70-941f-4bc9-b949-35dcc7671146.aspx) and [Get-MailboxFolderStatistics](http://technet.microsoft.com/library/212ca564-435e-4af6-8673-5564732bf118.aspx) cmdlets. 
+- **Retrieving mailbox statistics and folder statistics**: You can retrieve mailbox statistics and mailbox folder statistics for a user's archive mailbox by using the _Archive_ switch with the [Get-MailboxStatistics](http://technet.microsoft.com/library/cec76f70-941f-4bc9-b949-35dcc7671146.aspx) and [Get-MailboxFolderStatistics](http://technet.microsoft.com/library/212ca564-435e-4af6-8673-5564732bf118.aspx) cmdlets. 
     
 - **Test archive connectivity**: In Exchange 2016, you can use the [Test-ArchiveConnectivity](http://technet.microsoft.com/library/0db98a12-8cbb-4e9a-add4-c1847b057a44.aspx) cmdlet to test connectivity to a specified user's on-premises or cloud-based archive mailbox. 
     

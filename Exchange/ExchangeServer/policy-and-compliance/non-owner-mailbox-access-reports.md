@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: dbbef170-e726-4735-abf1-2857db9bb52d
 description: "Summary: Learn how to enable mailbox audit logging in Exchange so that you run reports on non-owner mailbox access."
@@ -18,7 +18,7 @@ description: "Summary: Learn how to enable mailbox audit logging in Exchange so 
   
 The **Non-Owner Mailbox Access Report** in the Exchange admin center (EAC) lists the mailboxes that have been accessed by someone other than the person who owns the mailbox. When a non-owner accesses a mailbox, Exchange logs information about this action. Exchange stores this mailbox audit log as an email message in a hidden folder in the audited mailbox. The report displays entries from this log as search results and includes any mailboxes accessed by a non-owner, who accessed each mailbox and when, the actions performed by non-owners, and whether or not the actions were successful. 
   
-Exchange logs specific actions by non-owners, which includes administrators and users who have been assigned permissions to a mailbox (who are called  *delegated users*  ). You can also narrow the search to users inside or outside your organization. By default, Exchange retains entries in the mailbox audit log for 90 days. 
+Exchange logs specific actions by non-owners, which includes administrators and users who have been assigned permissions to a mailbox (who are called *delegated users* ). You can also narrow the search to users inside or outside your organization. By default, Exchange retains entries in the mailbox audit log for 90 days. 
   
 You enable mailbox audit logging in the Exchange Management Shell.
   
@@ -69,7 +69,7 @@ Run the following command to verify that you've successfully configured mailbox 
 Get-Mailbox | Format-List Name,AuditEnabled
 ```
 
-A value of  `True` for the  _AuditEnabled_ property verifies that audit logging is enabled. 
+A value of `True` for the _AuditEnabled_ property verifies that audit logging is enabled. 
   
 ## Step 2: Use the EAC to run a non-owner mailbox access report
 <a name="runreport"> </a>

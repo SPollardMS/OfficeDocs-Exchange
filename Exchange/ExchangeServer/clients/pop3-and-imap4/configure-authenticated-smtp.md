@@ -4,9 +4,9 @@ ms.author: chrisda
 author: chrisda
 manager: serdars
 ms.date: 6/8/2018
-ms.audience: End User
+ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: bd22bf7e-3bf7-45e6-8790-919b780166f6
 description: "Summary: Learn how to configure the authenticated SMTP settings on an Exchange 2016 server that are required by POP3 or IMAP4 clients to send email messages."
@@ -18,19 +18,19 @@ description: "Summary: Learn how to configure the authenticated SMTP settings on
   
 After you enable and configure POP3 or IMAP4 on an Exchange 2016 server as described in [Enable and configure POP3 on an Exchange 2016 server](configure-pop3.md) and [Enable and configure IMAP4 on an Exchange 2016 server](configure-imap4.md), you need to configure the authenticated SMTP settings for POP3 and IMAP4 clients so they can send email messages.
   
-The default Receive connector named "Client Frontend  _\<Server name\>_" in the Client Access services on the Mailbox server listens for authenticated SMTP client submissions on port 587. By default, this connector uses the following settings for **internal and external** client (authenticated) SMTP connections: 
+The default Receive connector named "Client Frontend _\<Server name\>_" in the Client Access services on the Mailbox server listens for authenticated SMTP client submissions on port 587. By default, this connector uses the following settings for **internal and external** client (authenticated) SMTP connections: 
   
-- **SMTP server**:  `<ServerFQDN>`. For example,  `mailbox01.contoso.com`.
+- **SMTP server**: `<ServerFQDN>`. For example, `mailbox01.contoso.com`.
     
 - **TCP port**: 587
     
-- **Encryption method**: TLS. Note that this is opportunistic TLS ( **STARTTLS** ) that results in an encrypted connection after the initial plain text protocol handshake. 
+- **Encryption method**: TLS. Note that this is opportunistic TLS (**STARTTLS** ) that results in an encrypted connection after the initial plain text protocol handshake. 
     
 For more information, see [Default Receive connectors created during setup](../../mail-flow/connectors/receive-connectors.md#DefaultConnectors) and [Client access protocol architecture](../../architecture/architecture.md#ClientAccessProtocol).
   
 To configure the authenticated SMTP settings that are used by POP3 and IMAP4 clients, perform the following steps:
   
-1. Configure the FQDN on the "Client Frontend  _\<Server name\>_" Receive connector.
+1. Configure the FQDN on the "Client Frontend _\<Server name\>_" Receive connector.
     
 2. Specify the certificate that's used to encrypt authenticated SMTP client connections.
     
@@ -45,7 +45,7 @@ For more information about POP3 and IMAP4, see [POP3 and IMAP4 in Exchange 2016]
     
 - Secure Sockets Layer (SSL) is being replaced by Transport Layer Security (TLS) as the protocol that's used to encrypt data sent between computer systems. They're so closely related that the terms "SSL" and "TLS" (without versions) are often used interchangeably. Because of this similarity, references to "SSL" in Exchange topics, the Exchange admin center, and the Exchange Management Shell have often been used to encompass both the SSL and TLS protocols. Typically, "SSL" refers to the actual SSL protocol only when a version is also provided (for example, SSL 3.0). To find out why you should disable the SSL protocol and switch to TLS, check out [Protecting you against the SSL 3.0 vulnerability](https://blogs.office.com/2014/10/29/protecting-ssl-3-0-vulnerability/).
     
-- If you have POP3 or IMAP4 clients that can only send SMTP email on port 25, you can configure port 25 on the "Client Frontend  _\<Server name\>_" Receive connector to allow clients to send authenticated SMTP email. However, because port 25 is also configured on the "Client Frontend  _\<Server name\>_" Receive connector for email from external SMTP servers, you'll need to modify the local IP addresses that are used to listen on port 25 on one or both of the connectors. For more information, see [Receive connector local address bindings](../../mail-flow/connectors/receive-connectors.md#Bindings).
+- If you have POP3 or IMAP4 clients that can only send SMTP email on port 25, you can configure port 25 on the "Client Frontend _\<Server name\>_" Receive connector to allow clients to send authenticated SMTP email. However, because port 25 is also configured on the "Client Frontend _\<Server name\>_" Receive connector for email from external SMTP servers, you'll need to modify the local IP addresses that are used to listen on port 25 on one or both of the connectors. For more information, see [Receive connector local address bindings](../../mail-flow/connectors/receive-connectors.md#Bindings).
     
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Receive connectors" entry in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic. 
     
@@ -90,7 +90,7 @@ Get-ReceiveConnector -Identity "Client Frontend*" | Set-ReceiveConnector -Fqdn m
 
 ### How do you know this step worked?
 
-To verify that you've successfully the FQDN on the "Client Frontend  *\<Server name\>*  " Receive connector, use either of the following procedures: 
+To verify that you've successfully the FQDN on the "Client Frontend *\<Server name\>* " Receive connector, use either of the following procedures: 
   
 - the EAC, go to **Mail flow** \> **Receive connectors** \> select **Client Frontend \<Server name\>**, click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)) \> **Scoping**, and verify the value in the **FQDN** field. 
     
@@ -160,7 +160,7 @@ To configure Outlook on the web to display the SMTP settings server for authenti
 Get-ReceiveConnector -Identity "Client Frontend*" | Set-ReceiveConnector -AdvertiseClientSettings $true
 ```
 
- **Note**: To prevent the SMTP settings from being displayed in Outlook on the web, change the value from  `$true` to  `$false`.
+ **Note**: To prevent the SMTP settings from being displayed in Outlook on the web, change the value from `$true` to `$false`.
   
 ### How do you know this step worked?
 
@@ -172,7 +172,7 @@ To verify that you've configured Outlook on the web to display the SMTP settings
 2. Click **Mail** \> **Accounts** \> **POP and IMAP** and verify the correct SMTP settings are displayed. 
     ![SMTP settings in Outlook on the web](../../media/8a379ed6-18b4-4393-934f-e7e5eb5a2586.png)
   
-    **Note**: If the SMTP settings that you configured don't appear as expected in Outlook on the web, run the command  `iisreset.exe /noforce` to restart Internet Information Services (IIS). 
+    **Note**: If the SMTP settings that you configured don't appear as expected in Outlook on the web, run the command `iisreset.exe /noforce` to restart Internet Information Services (IIS). 
     
 ## How do you know this task worked?
 
@@ -180,7 +180,7 @@ To verify that you've configured the authenticated SMTP settings on the Exchange
   
 - Use the **Test-PopConnectivity** or **Test-ImapConnectivity** cmdlets, which use authenticated SMTP to send test messages. For more information, see [Test-PopConnectivity](http://technet.microsoft.com/library/73f0ce87-e723-43e5-a32c-29cd2d899ff9.aspx) and [Test-ImapConnectivity](http://technet.microsoft.com/library/273690c8-4e0d-4f05-8786-11d71868dae0.aspx).
     
-- Enable protocol logging on the "Client Frontend  _\<Server name\>_" Receive connector, configure a POP3 or IMAP4 client to connect to a mailbox, send a test message from an internal network connection and/or an external Internet connection, and view the results in the protocol log. For more information, see [Protocol logging](../../mail-flow/connectors/protocol-logging.md).
+- Enable protocol logging on the "Client Frontend _\<Server name\>_" Receive connector, configure a POP3 or IMAP4 client to connect to a mailbox, send a test message from an internal network connection and/or an external Internet connection, and view the results in the protocol log. For more information, see [Protocol logging](../../mail-flow/connectors/protocol-logging.md).
     
     **Note**: You can't use POP3 or IMAP4 to connect to the Administrator mailbox. This limitation was intentionally included in Exchange 2016 to enhance the security of the Administrator mailbox.
     

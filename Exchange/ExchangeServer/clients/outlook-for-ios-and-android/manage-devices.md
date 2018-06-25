@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: overview
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 8c566e98-72d8-4174-87fb-d0771c14f0dd
 description: "Summary: This article describes how to manage mobile devices with Outlook for iOS and Android in your Exchange on-premises organization when using Basic authentication with the Exchange ActiveSync protocol."
@@ -61,7 +61,7 @@ If you don't want users in your Exchange on-premises organization to access data
 Every Exchange organization has different policies regarding security and device management. If an organization decides that Outlook for iOS and Android doesn't meet their needs or is not the best solution for them for any reason, administrators can block the app using Exchange ActiveSync device management policies. See [Controlling Device Access](https://go.microsoft.com/fwlink/p/?LinkId=624009) for complete information on configuring Exchange ActiveSync. In Exchange ActiveSync management screens, the Outlook app is identified as **DeviceModel: 'Outlook for iOS and Android'** or **DeviceType: 'Outook'**.
   
 > [!NOTE]
-> Because device IDs are not governed by any  *physical device*  ID, they can change without notice. When this happens, it can cause unintended consequences when device IDs are used for managing user devices, as existing 'allowed' devices may be unexpectedly blocked or quarantined by Exchange. Therefore, we recommend administrators only set mobile device policies that allow/block devices based on device type or device model. 
+> Because device IDs are not governed by any *physical device* ID, they can change without notice. When this happens, it can cause unintended consequences when device IDs are used for managing user devices, as existing 'allowed' devices may be unexpectedly blocked or quarantined by Exchange. Therefore, we recommend administrators only set mobile device policies that allow/block devices based on device type or device model. 
   
 Exchange users in your organization can continue using Outlook on the web for iPhone/iPad/Android apps, or the built-in mail apps on iOS and Android, to access their Exchange mailboxes.
   

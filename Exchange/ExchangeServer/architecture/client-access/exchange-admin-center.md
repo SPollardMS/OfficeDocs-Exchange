@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: overview
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.collection: Strat_EX_Admin
 ms.assetid: a9aea11a-6ba3-4f4a-a76e-79072e7cfc7d
@@ -29,7 +29,7 @@ Looking for the Exchange Online Protection version of this topic? See [Exchange 
 
 The URL of the EAC is controlled by the Internet Information Services (IIS) virtual directory named ECP in the Client Access (frontend) services on the Mailbox server. Yes, the virtual directory is named ECP, not EAC.
   
-- **Internal URL**: By default, this value contains the fully-qualified domain name (FQDN) of the Exchange server in the format  `https://<ServerFQDN>/ecp`. For example,  `https://mailbox01.contoso.com/ecp`. To access the EAC in a web browser on the Exchange server itself, you can use the value  `https://localhost/ecp`.
+- **Internal URL**: By default, this value contains the fully-qualified domain name (FQDN) of the Exchange server in the format `https://<ServerFQDN>/ecp`. For example, `https://mailbox01.contoso.com/ecp`. To access the EAC in a web browser on the Exchange server itself, you can use the value `https://localhost/ecp`.
     
 - **External URL**: By default, this value is unconfigured. Before you can connect to the EAC from the Internet, you need to configure the following settings:
     
@@ -39,7 +39,7 @@ The URL of the EAC is controlled by the Internet Information Services (IIS) virt
     
   - A TLS certificate that contains or matches the host name entry. Very likely, this will be a subject alternative name (SAN) certificate or a wildcard certificate, because most of the client services are all available under the same website on the Exchange server. For more information, see [Certificate requirements for Exchange services](certificates.md#CertRequirements).
     
-    After you configure the settings, a common external URL value for the EAC would resemble  `https://mail.contoso.com/ecp`.
+    After you configure the settings, a common external URL value for the EAC would resemble `https://mail.contoso.com/ecp`.
     
     **Note**: External users who connect to Outlook on the web (formerly known as Outlook Web App) also need access to the EAC to access their own **Options** page. You can disable external administrator access to the EAC while still allowing users to access their **Options** page in Outlook on the web. For more information, see [Turn off access to the Exchange admin center](disable-exchange-admin-center-access.md).
     
@@ -69,9 +69,9 @@ For more information, see [Get-EcpVirtualDirectory](http://technet.microsoft.com
   
 If you're in a coexistence environment with Exchange 2010, the location of your mailbox controls the default behavior for opening the EAC or ECP:
   
-- If your mailbox is located on the Exchange 2010 Mailbox server, you get the Exchange 2010 ECP by default. You can access the EAC by adding the Exchange version to the URL (which is 15 for both Exchange 2013 and Exchange 2016). For example, to access the EAC through the Client Access (frontend) services on the Mailbox server named Mailbox01, use the following URL:  `https://Mailbox01/ecp/?ExchClientVer=15`.
+- If your mailbox is located on the Exchange 2010 Mailbox server, you get the Exchange 2010 ECP by default. You can access the EAC by adding the Exchange version to the URL (which is 15 for both Exchange 2013 and Exchange 2016). For example, to access the EAC through the Client Access (frontend) services on the Mailbox server named Mailbox01, use the following URL: `https://Mailbox01/ecp/?ExchClientVer=15`.
     
-- If your mailbox is located on an Exchange 2016 Mailbox server, and you want to access the ECP on the Exchange 2010 Client Access server named CAS01, use the following URL:  `https://CAS01/ecp/?ExchClientVer=14`.
+- If your mailbox is located on an Exchange 2016 Mailbox server, and you want to access the ECP on the Exchange 2010 Client Access server named CAS01, use the following URL: `https://CAS01/ecp/?ExchClientVer=14`.
     
 ## Common user interface elements in the EAC
 <a name="common"> </a>
@@ -228,13 +228,13 @@ The EAC includes a notification viewer that displays information about:
     
 To show or hide the notification viewer, click the icon (![Notifications icon](../../media/6f2591b8-d0dc-4665-ab0b-b91a549e5b37.png)).
   
-Notifications are alerts that are sent to the arbitration mailbox named  `FederatedEmail.4c1f4d8b-8179-4148-93bf-00a95fa1e042`. The EAC checks this mailbox for alerts every 30 seconds. Notifications remain in the arbitration mailbox until they are removed by the component that sent them, or until they expire (they should be removed by the Managed Folder Assistant after 30 days).
+Notifications are alerts that are sent to the arbitration mailbox named `FederatedEmail.4c1f4d8b-8179-4148-93bf-00a95fa1e042`. The EAC checks this mailbox for alerts every 30 seconds. Notifications remain in the arbitration mailbox until they are removed by the component that sent them, or until they expire (they should be removed by the Managed Folder Assistant after 30 days).
   
 You can also use the **Get-Notification** cmdlet in the Exchange Management Shell to view more details about notifications, and the **Set-Notification** cmdlet to request notification emails for future alerts. 
   
 ### 8: Me tile and Help
 
-The  *Me tile*  allows you to sign out of the EAC and sign in as a different user by clicking on the drop-down menu that's next to your account name. 
+The *Me tile* allows you to sign out of the EAC and sign in as a different user by clicking on the drop-down menu that's next to your account name. 
   
 Click the help icon (![Help icon](../../media/ITPro_EAC_HelpIcon.png)) to view the help content for the tab that you're currently on. If you click on the drop-down menu that's next to the help icon, you can perform the following additional actions:
   
@@ -265,9 +265,10 @@ The levels of support for operating system and browser combinations that you can
     
 **Client operating systems**
 
-|||||||
-|:-----|:-----|:-----|:-----|:-----|:-----|
+****
+
 |Web browser  <br/> |Windows 7  <br/> |Windows 8.1  <br/> |Windows 10  <br/> |Mac OS X  <br/> |Linux  <br/> |
+|:-----|:-----|:-----|:-----|:-----|:-----|
 |Internet Explorer 9  <br/> |Unsupported  <br/> |n/a  <br/> |n/a  <br/> |n/a  <br/> |n/a  <br/> |
 |Internet Explorer 10  <br/> |Unsupported  <br/> |n/a  <br/> |n/a  <br/> |n/a  <br/> |n/a  <br/> |
 |Internet Explorer 11  <br/> |Supported  <br/> |Supported  <br/> |Supported  <br/> |n/a  <br/> |n/a  <br/> |
@@ -278,9 +279,10 @@ The levels of support for operating system and browser combinations that you can
    
 **Windows Server operating systems**
 
-||||||
-|:-----|:-----|:-----|:-----|:-----|
+****
+
 |Web browser  <br/> |Windows Server 2008 R2  <br/> |Windows Server 2012  <br/> |Windows Server 2012 R2  <br/> |Windows Server 2016  <br/> |
+|:-----|:-----|:-----|:-----|:-----|
 |Internet Explorer 9  <br/> |Unsupported  <br/> |n/a  <br/> |n/a  <br/> |n/a  <br/> |
 |Internet Explorer 10  <br/> |Unsupported  <br/> |Supported  <br/> |n/a  <br/> |n/a  <br/> |
 |Internet Explorer 11  <br/> |Supported  <br/> |n/a  <br/> |Supported  <br/> |Supported  <br/> |

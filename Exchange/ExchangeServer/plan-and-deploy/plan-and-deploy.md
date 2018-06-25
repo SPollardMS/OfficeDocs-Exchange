@@ -6,8 +6,8 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: hub-page
-ms.prod: office-online-server
-localization_priority: Normal
+ms.prod: exchange-server-itpro
+localization_priority: Priority
 ms.collection: Strat_EX_Admin
 ms.assetid: 692c59e3-f0b0-4cef-a66e-751aa740abae
 description: "Summary: Guidance for planning and deploying Exchange 2016."

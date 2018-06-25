@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: d1220685-14c0-4c4f-abb2-3920f3046212
 description: "Summary: How to use the Exchange admin center (EAC) and the Exchange Management Shell to set message size limits for a user mailbox."

@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: e7a81372-b6d7-4d1f-bc9e-a845a7facac2
 description: "Summary: Learn how to create, view, modify, delete, import, and export mail flow rules (transport rules) in Exchange 2016."
@@ -78,7 +78,7 @@ The EAC allows you to create mail flow rules by using a template (a filtered lis
     
   - **Enforce**: This turns on the rule and it starts processing messages immediately. All actions on the rule will be performed. This is the default value.
     
-  - **Test with Policy Tips**: This turns on the rule, and any Policy Tip actions ( **Notify the sender with a Policy Tip**) will be sent, but no actions related to message delivery will be performed. DLP is required to use this mode. To learn more, see [Policy Tips](http://technet.microsoft.com/library/4266b83c-dd8a-4b3d-99ff-402e68fc810c.aspx).
+  - **Test with Policy Tips**: This turns on the rule, and any Policy Tip actions (**Notify the sender with a Policy Tip**) will be sent, but no actions related to message delivery will be performed. DLP is required to use this mode. To learn more, see [Policy Tips](http://technet.microsoft.com/library/4266b83c-dd8a-4b3d-99ff-402e68fc810c.aspx).
     
   - **Test without Policy Tips**: For DLP policies, only the **Generate incident report and send it to** action will be enforced. No actions related to message delivery are performed. 
     
@@ -109,9 +109,9 @@ The EAC allows you to create mail flow rules by using a template (a filtered lis
 
 There are two settings that you can configure on new mail flow rules in the Exchange Management Shell that aren't available in the EAC (until after you create the rule):
   
-- Create the new rule as disabled ( _Enabled_ `$false`)
+- Create the new rule as disabled (_Enabled_ `$false`)
     
-- Set the priority of the rule ( _Priority_ _\<Number\>_).
+- Set the priority of the rule (_Priority_ _\<Number\>_).
     
 To create mail flow rules in the Exchange Management Shell, use the following syntax:
   
@@ -131,7 +131,7 @@ This example creates a new rule with the following settings:
     
   - Messages sent to the distribution group named Sales Department.
     
-- **Action**: Prepend the message's **Subject** field with the value  `"External message to Sales DG: "`. The trailing colon and space help to distinguish the added text from the original value.
+- **Action**: Prepend the message's **Subject** field with the value `"External message to Sales DG: "`. The trailing colon and space help to distinguish the added text from the original value.
     
 ```
 New-TransportRule -Name "Mark messages from the Internet to Sales DG" -FromScope NotInOrganization -SentTo "Sales Department" -PrependSubject "External message to Sales DG: "
@@ -156,7 +156,7 @@ To verify that you've successfully created a mail flow rule, use either of the f
   Get-TransportRule
   ```
 
-  - Replace  _\<RuleName\>_ with the name of the rule, and run the following command to see the details of the rule: 
+  - Replace _\<RuleName\>_ with the name of the rule, and run the following command to see the details of the rule: 
     
   ```
   Get-TransportRule -Identity "<RuleName>" | Format-List
@@ -174,7 +174,7 @@ Mail flow rules that you create on a Mailbox server are stored in Active Directo
 2. When you select a rule, information about the rule is displayed in the details pane. To see more information about the rule, click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)).
     ![In the EAC, go to Mail flow \> Rules and select a rule](../../media/37502067-8f3f-49d1-aaea-91c7f3eb8e8a.png)
   
-    In the EAC, the **Version** property is only visible in the details pane. This property indicates the compatibility of the rule with previous versions of Exchange (14.  *n*  .  *n*  .  *n*  is Exchange 2010, 15.0.  *n*  .  *n*  is Exchange 2013). 
+    In the EAC, the **Version** property is only visible in the details pane. This property indicates the compatibility of the rule with previous versions of Exchange (14. *n* . *n* . *n* is Exchange 2010, 15.0. *n* . *n* is Exchange 2013). 
     
 ### Use the Exchange Management Shell to view mail flow rules
 
@@ -206,7 +206,7 @@ For detailed syntax and parameter information, see [Get-TransportRule](http://te
   
 ### Use the Exchange Management Shell to view the available conditions and exceptions (predicates) for mail flow rules
 
-The conditions and exceptions in mail flow rules are collectively known as  *predicates*  because for every condition, there's a corresponding exception that uses the exact same settings and syntax. The only difference is: conditions specify messages to include, while exceptions specify messages to exclude. You can only view the list of conditions and exceptions in the Exchange Management Shell. 
+The conditions and exceptions in mail flow rules are collectively known as *predicates* because for every condition, there's a corresponding exception that uses the exact same settings and syntax. The only difference is: conditions specify messages to include, while exceptions specify messages to exclude. You can only view the list of conditions and exceptions in the Exchange Management Shell. 
   
 To view the conditions and exceptions that are available in mail flow rules, run the following command:
   
@@ -255,7 +255,7 @@ No additional settings are available when you modify a mail flow rule in the EAC
     
 ### Use the Exchange Management Shell to modify mail flow rules
 
-When you modify a mail flow rule in the Exchange Management Shell, you can't disable or enable the rule (there's no  _Enabled_ parameter on the **Set-TransportRule** cmdlet). Instead, you use the **Disable-TransportRule** and **Enable-TransportRule** cmdlets as describe later in this topic. 
+When you modify a mail flow rule in the Exchange Management Shell, you can't disable or enable the rule (there's no _Enabled_ parameter on the **Set-TransportRule** cmdlet). Instead, you use the **Disable-TransportRule** and **Enable-TransportRule** cmdlets as describe later in this topic. 
   
 To modify a mail flow rule in the Exchange Management Shell, use the following syntax:
   
@@ -277,7 +277,7 @@ To verify that you have successfully modified a mail flow rule, use either of th
   
 - In the EAC, go to **Mail flow** \> **Rules**, select the rule, and view the information in details pane. To see more settings, click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)).
     
-- In the Exchange Management Shell, replace  _\<RuleName\>_ with the name of the rule, and run the following command: 
+- In the Exchange Management Shell, replace _\<RuleName\>_ with the name of the rule, and run the following command: 
     
   ```
   Get-TransportRule -Identity "<RuleName>" | Format-List
@@ -290,7 +290,7 @@ By default, mail flow rules are given a priority that's based on the order they 
   
  **Notes**:
   
--  You can prevent a message from being acted on by subsequent lower priority rules by including the **Stop processing more rules** (  _StopRuleProcessing_ `$true`) action in the rule.
+-  You can prevent a message from being acted on by subsequent lower priority rules by including the **Stop processing more rules** (_StopRuleProcessing_ `$true`) action in the rule.
     
 - In the EAC, you can only change the priority of the rule after you create it. In the Exchange Management Shell, you can override the default priority when you create the rule (which can affect the priority of existing rules).
     
@@ -318,7 +318,7 @@ This example sets the priority of the rule named "Sender is a member of marketin
 Set-TransportRule -Identity "Sender is a member of marketing" -Priority 2
 ```
 
- **Note**: To set the priority of a new rule when you create it, use the  _Priority_ parameter on the **New-TransportRule** cmdlet. 
+ **Note**: To set the priority of a new rule when you create it, use the _Priority_ parameter on the **New-TransportRule** cmdlet. 
   
 ### How do you know this worked?
 
@@ -334,7 +334,7 @@ To verify that you have successfully modified the priority of a mail flow rule, 
   Get-TransportRule
   ```
 
-  - Replace  _\<RuleName\>_ with the name of the rule, and run the following command: 
+  - Replace _\<RuleName\>_ with the name of the rule, and run the following command: 
     
   ```
   Get-TransportRule -Identity "<RuleName>" | Format-List Name,Priority
@@ -345,7 +345,7 @@ To verify that you have successfully modified the priority of a mail flow rule, 
 
 Disabling a rule prevents the rule from acting on messages, but allows you to preserve the settings of the rule.
   
-By default, mail flow rules are enabled when you create them in the EAC or the Exchange Management Shell, but you can use the Exchange Management Shell to create a disabled rule (use the  _Enabled_ parameter with the value  `$false`).
+By default, mail flow rules are enabled when you create them in the EAC or the Exchange Management Shell, but you can use the Exchange Management Shell to create a disabled rule (use the _Enabled_ parameter with the value `$false`).
   
 ### Use the EAC to enable or disable mail flow rules
 
@@ -393,7 +393,7 @@ To verify that you have successfully enabled or disabled a mail flow rule, use e
   Get-TransportRule
   ```
 
-  - Replace  _\<RuleName\>_ with the name of the rule, and run the following command: 
+  - Replace _\<RuleName\>_ with the name of the rule, and run the following command: 
     
   ```
   Get-TransportRule -Identity "<RuleName>" | Format-List Name,State

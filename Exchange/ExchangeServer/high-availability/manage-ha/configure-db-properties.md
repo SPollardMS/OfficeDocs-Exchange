@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: cf186561-ab2c-45c0-90f5-8d3ecfabeeac
 description: "Summary: How to configure the properties of a mailbox database copy in Exchange 2016, and what those properties are."
@@ -51,7 +51,7 @@ Each mailbox database copy has its own properties, which you can configure. Thes
     
   - **Replay queue length**: Indicates the number of log files waiting to be replayed into the selected database copy. This field is relevant only for passive database copies.
     
-  - **Error messages**: Displays any error messages for database copies that have a status of  `Failed` or  `Failed and Suspended`.
+  - **Error messages**: Displays any error messages for database copies that have a status of `Failed` or `Failed and Suspended`.
     
   - **Latest available log time**: Displays the date and time stamp of the most recently generated log file on the active copy of the database. This field is relevant only for passive database copies. On active database copies (replicated and stand-alone), this field will display never.
     
@@ -61,7 +61,7 @@ Each mailbox database copy has its own properties, which you can configure. Thes
     
   - **Last replayed log time**: Displays the date and time stamp of the last log file that was replayed by the LogReplayer into the selected database copy. This field is relevant only for passive database copies. On active database copies (replicated and stand-alone), this field will display never.
     
-  - **Activation preference number**: Displays the activation preference number. This is used as part of Active Manager's best copy selection process, and it is used to balance the DAG by redistributing active mailbox databases throughout the DAG via the DAG's  `PreferenceMoveFrequency` property. This property defines the frequency (measured in time) when the Microsoft Exchange Replication service rebalances database copies by performing a lossless switchover that activates the copy with an activation preference number of 1. The value for activation preference is a number equal to or greater than 1, where 1 is at the top of the preference order. The number can't be larger than the number of copies of the mailbox database. 
+  - **Activation preference number**: Displays the activation preference number. This is used as part of Active Manager's best copy selection process, and it is used to balance the DAG by redistributing active mailbox databases throughout the DAG via the DAG's `PreferenceMoveFrequency` property. This property defines the frequency (measured in time) when the Microsoft Exchange Replication service rebalances database copies by performing a lossless switchover that activates the copy with an activation preference number of 1. The value for activation preference is a number equal to or greater than 1, where 1 is at the top of the preference order. The number can't be larger than the number of copies of the mailbox database. 
     
   - **Replay lag time (days)**: Displays the amount of time that the Microsoft Exchange Information Store service should wait before replaying log files that have been copied by the Microsoft Exchange Replication service to the passive database copy. Setting this parameter to a value greater than 0 creates a lagged database copy. The default setting for this value is 0 days. The maximum allowable value for this setting is 14 days. The minimum allowable value is 0 days, and setting this value to 0 disables replay lag.
     

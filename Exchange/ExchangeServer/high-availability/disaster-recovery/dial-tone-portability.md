@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: ea62fae0-5e0a-460c-beb6-52532c8c8dbc
 description: "Summary: About dial tone portability, which enables users to have a temporary mailbox for sending and receiving email while their original mailbox is being restored or repaired."
@@ -18,7 +18,7 @@ description: "Summary: About dial tone portability, which enables users to have 
   
 Dial tone portability is a feature of Exchange Server 2016 that provides a limited business continuity solution for failures that affect a mailbox database, a server, or an entire site. A temporary mailbox maintains users' ability to send email, and this mailbox can be on the same Exchange 2016 Mailbox server or on any other Exchange 2016 Mailbox server in your organization, provided they contain databases with the same database schema version. This allows an alternative server to host the mailboxes of users who were previously on a server that is no longer available. Clients that support Autodiscover are automatically redirected to the new server without having to manually update the user's desktop profile. After the user's original mailbox data has been restored, an administrator can merge a user's recovered mailbox and the user's dial tone mailbox into a single, up-to-date mailbox.
   
-The process for using dial tone portability is called a  *dial tone recovery*  . A dial tone recovery involves creating an empty database on a Mailbox server to replace a failed database. This empty database, referred to as a  *dial tone database*  , allows users to send and receive email messages while the failed database is recovered. 
+The process for using dial tone portability is called a *dial tone recovery* . A dial tone recovery involves creating an empty database on a Mailbox server to replace a failed database. This empty database, referred to as a *dial tone database*, allows users to send and receive email messages while the failed database is recovered. 
   
 There are three options for performing a dial tone recovery:
   

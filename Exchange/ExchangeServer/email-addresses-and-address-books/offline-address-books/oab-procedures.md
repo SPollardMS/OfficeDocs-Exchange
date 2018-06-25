@@ -5,7 +5,7 @@ author: chrisda
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: b7f26eca-b93b-4834-ba50-11febdefbb18
 description: "Summary: Learn the tasks that administrators need to know to manage offline address books in Exchange 2016."
@@ -108,11 +108,11 @@ This example creates a new OAB named Contoso Executives OAB with the following p
     
 - All OAB virtual directories in the organization can accept requests to download the OAB.
     
-- The organization mailbox that's responsible for generating the OAB is  `SystemMailbox{bb558c35-97f1-4cb9-8ff7-d53741dc928c}` (we didn't use the  _GeneratingMailbox_ parameter to specify a different organization mailbox). 
+- The organization mailbox that's responsible for generating the OAB is `SystemMailbox{bb558c35-97f1-4cb9-8ff7-d53741dc928c}` (we didn't use the _GeneratingMailbox_ parameter to specify a different organization mailbox). 
     
-- The OAB isn't used by mailboxes and mailbox databases that don't have an OAB specified (we didn't use the  _IsDefault_ parameter with the value  `$true`).
+- The OAB isn't used by mailboxes and mailbox databases that don't have an OAB specified (we didn't use the _IsDefault_ parameter with the value `$true`).
     
-- Shadow distribution for the OAB is disabled (read-only copies of the OAB aren't copied to all other organization mailboxes, because we didn't use the  _ShadowMailboxDistributionEnabled_ parameter with the value  `$true`).
+- Shadow distribution for the OAB is disabled (read-only copies of the OAB aren't copied to all other organization mailboxes, because we didn't use the _ShadowMailboxDistributionEnabled_ parameter with the value `$true`).
     
 ```
 New-OfflineAddressBook -Name "Contoso Executives OAB" -AddressLists "Default Global Address List","Contoso Executives Address List" -GlobalWebDistributionEnabled $true
@@ -159,7 +159,7 @@ Set-OfflineAddressBook -Identity "Contoso Executives OAB" -IsDefault $true
 ### Use the Exchange Management Shell to add and remove address lists from offline address books
 <a name="OABAddRemoveAddressLists"> </a>
 
-When you modify the address lists that are configured in an OAB, the values that you specify will  *replace*  any address lists in the OAB. To add address lists to the OAB, specify the current address lists plus the ones you want to add. To remove address lists from the OAB, specify the current address lists minus the ones you want to remove. 
+When you modify the address lists that are configured in an OAB, the values that you specify will *replace* any address lists in the OAB. To add address lists to the OAB, specify the current address lists plus the ones you want to add. To remove address lists from the OAB, specify the current address lists minus the ones you want to remove. 
   
 In this example, the OAB named Marketing OAB is already configured with Address List 1 and Address List 2. To keeps those address lists and add Address List 3, run the following command:
   
@@ -189,7 +189,7 @@ Set-OfflineAddressBook -Identity "Default Offline Address Book" -GeneratingMailb
 ### Use the Exchange Management Shell to configure any virtual directory in the organization to accept download requests for the OAB
 <a name="OABAllVdirs"> </a>
 
-The Client Access (frontend) services on any Mailbox server can proxy the OAB download request to the correct location. The OAB files are downloaded from the backend location  `%ExchangeInstallPath%ClientAccess\OAB\<OAB GUID>` on the Mailbox server that holds the active copy of the OAB's designated organization mailbox (or from the server that holds a shadow copy of the OAB). 
+The Client Access (frontend) services on any Mailbox server can proxy the OAB download request to the correct location. The OAB files are downloaded from the backend location `%ExchangeInstallPath%ClientAccess\OAB\<OAB GUID>` on the Mailbox server that holds the active copy of the OAB's designated organization mailbox (or from the server that holds a shadow copy of the OAB). 
   
 This example modifies the OAB named Default Offline Address Book to allow any virtual directory in the organization to accept requests to download the OAB.
   
@@ -267,7 +267,7 @@ This example removes the OAB named Contoso Executives OAB.
 Remove-OfflineAddressBook -Identity "Contoso Executives OAB"
 ```
 
- **Note**: If the removed OAB is the default OAB, you need to create or configure another OAB as the default (the  _IsDefault_ parameter value is  `$true`).
+ **Note**: If the removed OAB is the default OAB, you need to create or configure another OAB as the default (the _IsDefault_ parameter value is `$true`).
   
 ### How do you know this worked?
 
@@ -280,7 +280,7 @@ Get-OfflineAddressBook
 ## Use the Exchange Management Shell to find organization mailboxes
 <a name="FindOrgMailboxes"> </a>
 
-Only organization mailboxes can generate OABs. An organization mailbox is an arbitration mailbox that has the  `OrganizationCapabilityOABGen` value in the **PersistedCapability** property. To find the organization mailboxes in your organization, run the following command: 
+Only organization mailboxes can generate OABs. An organization mailbox is an arbitration mailbox that has the `OrganizationCapabilityOABGen` value in the **PersistedCapability** property. To find the organization mailboxes in your organization, run the following command: 
   
 ```
 Get-Mailbox -Arbitration | where {$_.PersistedCapabilities -like "*OAB*"} | Format-List Name,ServerName,PersistedCapabilities
@@ -323,7 +323,7 @@ You need to be assigned permissions before you can perform this procedure or pro
   Set-Mailbox -Identity "OAB Gen 2" -Arbitration -OABGen $true -MaxSendSize 1GB
   ```
 
-3. To activate the OAB generation capabilities of the new organization mailbox, run **Update-OfflineAddressBook** for  *any*  OAB in the organization. For example: 
+3. To activate the OAB generation capabilities of the new organization mailbox, run **Update-OfflineAddressBook** for *any* OAB in the organization. For example: 
     
   ```
   Update-OfflineAddressBook -Identity "Default Offline Address Book"
@@ -411,7 +411,7 @@ $USContoso = Get-User -ResultSize Unlimited -Filter {RecipientType -eq "UserMail
 
 ### How do you know this worked?
 
-To verify that you've successfully assigned an OAB to a mailbox, replace  _\<MailboxIdentity\>_ with the identity of the mailbox, and run the following command: 
+To verify that you've successfully assigned an OAB to a mailbox, replace _\<MailboxIdentity\>_ with the identity of the mailbox, and run the following command: 
   
 ```
 Get-Mailbox -Identity "<MailboxIdentity>" | Format-Table -Auto Name,OfflineAddressBook

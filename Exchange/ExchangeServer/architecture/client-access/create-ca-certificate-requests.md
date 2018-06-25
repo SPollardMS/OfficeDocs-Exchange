@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.collection: Strat_EX_Admin
 ms.assetid: efb00de7-070b-46bf-a2fc-00d07ae085c1
@@ -29,7 +29,7 @@ You can create certificate requests in the Exchange admin center (EAC) or in the
     
 - Verify the certificate request requirements of the CA. Exchange generates a PKCS #10 request (.req) file that uses Base64 (default) or Distinguished Encoding Rules (DER) encoding, with an RSA public key that's 1024, 2048 (default), or 4096 bits. Note that encoding and public key options are only available in the Exchange Management Shell.
     
-- In the EAC, you need to store the certificate request file on a UNC path ( `\\<Server>\<Share>\` or  `\\<LocalServerName>\c$\`). In the Exchange Management Shell, you can specify a local path.
+- In the EAC, you need to store the certificate request file on a UNC path (`\\<Server>\<Share>\` or `\\<LocalServerName>\c$\`). In the Exchange Management Shell, you can specify a local path.
     
 - To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
     
@@ -114,7 +114,7 @@ You can create certificate requests in the Exchange admin center (EAC) or in the
     
     When you are finished, click **Next**.
     
-10. On the **Save the certificate request to the following file** page, enter the UNC path and filename for the certificate request. For example,  `\\FileServer01\Data\ExchCertRequest.req`. When you are finished, click **Finish**.
+10. On the **Save the certificate request to the following file** page, enter the UNC path and filename for the certificate request. For example, `\\FileServer01\Data\ExchCertRequest.req`. When you are finished, click **Finish**.
     
 The certificate request appears in the list of Exchange certificates with a status value of **Pending**. For next steps, see the [Next steps](create-ca-certificate-requests.md#NextSteps) section. 
   
@@ -128,9 +128,9 @@ New-ExchangeCertificate -GenerateRequest -RequestFile <FilePathOrUNCPath>\<FileN
 
 This example creates a certificate request on the local Exchange server for a wildcard certificate with the following properties:
   
-- **SubjectName**: \*.contoso.com in the United States, which requires the value  `C=US,CN=*.contoso.com`.
+- **SubjectName**: \*.contoso.com in the United States, which requires the value `C=US,CN=*.contoso.com`.
     
-- **RequestFile**:  `\\FileServer01\Data\Contoso Wildcard Cert.req`
+- **RequestFile**: `\\FileServer01\Data\Contoso Wildcard Cert.req`
     
 - **FriendlyName**: Contoso.com Wildcard Cert 
     
@@ -140,7 +140,7 @@ New-ExchangeCertificate -GenerateRequest -RequestFile "\\FileServer01\Data\Conto
 
 This example creates a certificate request on the local Exchange server for a SAN certificate with the following properties:
   
-- **SubjectName**: mail.contoso.com in the United States, which requires the value  `C=US,CN=mail.contoso.com`. Note that this CN value is automatically included in the  _DomainName_ parameter (the **Subject Alternative Name** field). 
+- **SubjectName**: mail.contoso.com in the United States, which requires the value `C=US,CN=mail.contoso.com`. Note that this CN value is automatically included in the _DomainName_ parameter (the **Subject Alternative Name** field). 
     
 - Additional **Subject Alternative Name** field values: 
     
@@ -154,7 +154,7 @@ This example creates a certificate request on the local Exchange server for a SA
     
   - legacy.contoso.net
     
-- **RequestFile**:  `\\FileServer01\Data\Contoso SAN Cert.req`
+- **RequestFile**: `\\FileServer01\Data\Contoso SAN Cert.req`
     
 - **FriendlyName**: Contoso.com SAN Cert 
     
@@ -164,9 +164,9 @@ New-ExchangeCertificate -GenerateRequest -RequestFile "\\FileServer01\Data\Conto
 
 This example creates a request for a single subject certificate with the following properties:
   
-- **SubjectName**: mail.contoso.com in the United States, which requires the value  `C=US,CN=mail.contoso.com`.
+- **SubjectName**: mail.contoso.com in the United States, which requires the value `C=US,CN=mail.contoso.com`.
     
-- **RequestFile**:  `\\FileServer01\Data\Mail.contoso.com Cert.req`
+- **RequestFile**: `\\FileServer01\Data\Mail.contoso.com Cert.req`
     
 - **FriendlyName**: Mail.contoso.com Cert 
     
@@ -176,13 +176,13 @@ New-ExchangeCertificate -GenerateRequest -RequestFile "\\FileServer01\Data\Mail.
 
  **Notes:**
   
-- The only required part of the X.500  _SubjectName_ parameter value (the certificate's **Subject** field) is  `CN=<HostNameOrFQDN>`. However, the certificate request should always include the  `C=<CountryOrRegion>` value (otherwise, you might not be able to renew the certificate). Check the **Subject** field requirements of your CA. 
+- The only required part of the X.500 _SubjectName_ parameter value (the certificate's **Subject** field) is `CN=<HostNameOrFQDN>`. However, the certificate request should always include the `C=<CountryOrRegion>` value (otherwise, you might not be able to renew the certificate). Check the **Subject** field requirements of your CA. 
     
-- The  _RequestFile_ parameter accepts a local path or a UNC path. 
+- The _RequestFile_ parameter accepts a local path or a UNC path. 
     
-- We didn't use the  _BinaryEncoded_ switch, so the request is Base64 encoded. The information that's displayed onscreen is also written to the file, and the contents of the file are what we need to send to the CA. If we had used the  _BinaryEncoded_ switch, the request would have been encoded by DER, and the certificate request file itself is what we would need to send to the CA. 
+- We didn't use the _BinaryEncoded_ switch, so the request is Base64 encoded. The information that's displayed onscreen is also written to the file, and the contents of the file are what we need to send to the CA. If we had used the _BinaryEncoded_ switch, the request would have been encoded by DER, and the certificate request file itself is what we would need to send to the CA. 
     
-- We didn't use the  _KeySize_ parameter, so the certificate request has a 2048 bit RSA public key. 
+- We didn't use the _KeySize_ parameter, so the certificate request has a 2048 bit RSA public key. 
     
 - For more information, see [New-ExchangeCertificate](http://technet.microsoft.com/library/5e0b61b0-ece6-4d9b-949a-f6a032dd0fb9.aspx).
     
@@ -232,7 +232,7 @@ JCmt8A7JFHF9u6mghjiKlXaZ/i+2l10Wsu8=
 
 You need to send this information to the CA. How you send it depends on the CA, but typically, you send the contents of the file in an email message or in the certificate request form on the CA's web site.
   
-If the CA requires a binary certificate request that's encoded by DER (you used the **New-ExchangeCertificate** cmdlet with the  _BinaryEncoded_ switch), you typically send the whole certificate request file to the CA. 
+If the CA requires a binary certificate request that's encoded by DER (you used the **New-ExchangeCertificate** cmdlet with the _BinaryEncoded_ switch), you typically send the whole certificate request file to the CA. 
   
 After you receive the certificate from the CA, you need to complete the pending certificate request. For instructions, see [Complete a pending Exchange 2016 certificate request](complete-pending-certificate-requests.md).
   

@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: overview
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: d98623d3-e0b7-4cb9-93fb-6351b4a06137
 description: "Summary: Learn how administrators can track delivery information about messages sent or received from any mailbox in the organization."

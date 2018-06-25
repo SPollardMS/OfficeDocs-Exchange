@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 23c9d844-6fc7-44c9-a308-587338281611
 description: "Summary: Learn how to view default and custom NDRs, and how to create, modify, and delete custom NDRs in Exchange 2016."
@@ -67,7 +67,7 @@ To view detailed information for a custom NDR, use this syntax:
 Get-SystemMessage -Identity <NDRIdentity>
 ```
 
-For an explanation of the available  _\<NDRIdentity\>_ values, see the [Identity values for NDRs](ndr-procedures.md#NDRIdentity) section in this topic. 
+For an explanation of the available _\<NDRIdentity\>_ values, see the [Identity values for NDRs](ndr-procedures.md#NDRIdentity) section in this topic. 
   
 This example returns detailed information for the custom NDR for the enhanced status code 5.1.2 that's sent to internal senders in English. If there's no custom NDR for this combination of language, audience, and enhanced status code, you'll receive an error.
   
@@ -96,11 +96,11 @@ New-SystemMessage -Internal <$true | $false> -Language <Locale> -DSNCode <x.y.z>
 
 The values are:
   
-- **Internal**: Controls whether the NDR is sent to internal or external senders. For internal senders, use the value  `$true`. For external senders, use the value  `$false`. For example, in the custom text for internal senders, you can include help desk contact information that you wouldn't want to include in NDRs for external senders.
+- **Internal**: Controls whether the NDR is sent to internal or external senders. For internal senders, use the value `$true`. For external senders, use the value `$false`. For example, in the custom text for internal senders, you can include help desk contact information that you wouldn't want to include in NDRs for external senders.
     
 - **Language**: For the list of available languages, see the [Supported languages for NDRs](ndr-procedures.md#NDRLanguages) section in this topic. 
     
-- **DSNCode**: The enhanced status code. Valid values are 4. _x_. _y_ or 5.  _x_. _y_ where  _x_ and  _y_ are one to three digit numbers. 
+- **DSNCode**: The enhanced status code. Valid values are 4. _x_. _y_ or 5. _x_. _y_ where _x_ and _y_ are one to three digit numbers. 
     
 - **Text**: You can use plain text or HTML formatting. For more information, see the [HTML tags and special characters in NDRs](ndr-procedures.md#NDRTags) section in this topic. 
     
@@ -113,7 +113,7 @@ New-SystemMessage -Internal $false -Language En -DSNCode 5.1.2 -Text "You tried 
  This example creates a custom HTML NDR for the enhanced status code 5.1.2 that's sent to internal senders in English. 
   
 ```
-New-SystemMessage -DSNCode 5.1.2 -Internal $true -Language En -Text 'You tried to send a message to a <B>disabled</B> mailbox. Please visit <A HREF="https://it.contoso.com">Internal Support</A> or contact &amp;quot;InfoSec&amp;quot; for more information.'
+New-SystemMessage -DSNCode 5.1.2 -Internal $true -Language En -Text 'You tried to send a message to a <B>disabled</B> mailbox. Please visit <A HREF="https://it.contoso.com">Internal Support</A> or contact &quot;InfoSec&quot; for more information.'
 ```
 
 For detailed syntax and parameter information, see [New-SystemMessage](http://technet.microsoft.com/library/77b06405-076d-43cf-89b1-aa62b6565d8d.aspx).
@@ -163,7 +163,7 @@ To modify custom NDRs, use this syntax:
 Set-SystemMessage -Identity <NDRIdentity> [-Text "<NDR text>"] [-Original]
 ```
 
-For an explanation of the available  _\<NDRIdentity\>_ values, see the [Identity values for NDRs](ndr-procedures.md#NDRIdentity) section in this topic. For an explanation of the  _\<NDR text\>_ values, see the [HTML tags and special characters in NDRs](ndr-procedures.md#NDRTags) section in this topic. 
+For an explanation of the available _\<NDRIdentity\>_ values, see the [Identity values for NDRs](ndr-procedures.md#NDRIdentity) section in this topic. For an explanation of the _\<NDR text\>_ values, see the [HTML tags and special characters in NDRs](ndr-procedures.md#NDRTags) section in this topic. 
   
 This example changes the text in the custom NDR for the enhanced status code 5.1.2 that's sent to internal senders in English.
   
@@ -183,13 +183,13 @@ This example disables the specified custom NDR. The custom NDR is preserved, and
 Set-SystemMessage -Identity En\Internal\5.1.2 -Original
 ```
 
- **Note**: If there's no corresponding default NDR, you receive an error when you use the  _Original_ switch. 
+ **Note**: If there's no corresponding default NDR, you receive an error when you use the _Original_ switch. 
   
 For detailed syntax and parameter information, see [Set-SystemMessage](http://technet.microsoft.com/library/53b76641-d341-42a8-b281-018a91af6a36.aspx).
   
 ### How do you know this worked?
 
-To verify that you have successfully modified a custom NDR, replace  _\<NDRIdentity\>_ with the appropriate value, and run this command to verify the property values: 
+To verify that you have successfully modified a custom NDR, replace _\<NDRIdentity\>_ with the appropriate value, and run this command to verify the property values: 
   
 ```
 Get-SystemMessage -Identity <NDRIdentity> | Format-List
@@ -204,7 +204,7 @@ To remove a custom NDR, use this syntax:
 Remove-SystemMessage -Identity <NDRIdentity>
 ```
 
-For an explanation of the available  _\<NDRIdentity\>_ values, see the [Identity values for NDRs](ndr-procedures.md#NDRIdentity) section in this topic. 
+For an explanation of the available _\<NDRIdentity\>_ values, see the [Identity values for NDRs](ndr-procedures.md#NDRIdentity) section in this topic. 
   
 This example removes the custom NDR for the enhanced status code 5.1.2 that's sent to internal senders in English.
   
@@ -259,17 +259,17 @@ Set-OrganizationConfig -MicrosoftExchangeRecipientReplyRecipient "Contoso System
     
 - By default, even though there are no enhanced status codes specified, NDRs for these codes are automatically sent to the Exchange recipient:
     
-  -  `5.1.4`
+  - `5.1.4`
     
-  -  `5.2.0`
+  - `5.2.0`
     
-  -  `5.2.4`
+  - `5.2.4`
     
-  -  `5.4.4`
+  - `5.4.4`
     
-  -  `5.4.6`
+  - `5.4.6`
     
-  -  `5.4.8`
+  - `5.4.8`
     
 - You can only specify enhanced status codes. You can't specify quotas.
     
@@ -283,7 +283,7 @@ For more information about the EAC, see [Exchange admin center in Exchange 2016]
     
 3. In the **Organization transport settings** window that opens, click the **Delivery** tab. In the **DSN codes** section, do one or more of these steps: 
     
-  - To add entries, type the enhanced status code that you want to monitor (4. _\<y.z\>_ or 5.  _\<y.z\>_), and then click **Add** ( ![Add icon](../../media/ITPro_EAC_AddIcon.png)). Repeat this step as many times as you need to.
+  - To add entries, type the enhanced status code that you want to monitor (4. _\<y.z\>_ or 5. _\<y.z\>_), and then click **Add** ( ![Add icon](../../media/ITPro_EAC_AddIcon.png)). Repeat this step as many times as you need to.
     
   - To modify an existing entry, select it click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)), and then modify it inline.
     
@@ -334,15 +334,15 @@ To verify that you've successfully configured copies of NDRs to be sent to the E
 
 The identity of an NDR uses one of these formats:
   
-- **NDRs for enhanced status codes**:  _\<Language\>_\\<Internal | External\>\ _\<DSNcode\>_. For example,  `En\Internal\5.1.2` or  `Ja\External\5.1.2`.
+- **NDRs for enhanced status codes**: _\<Language\>_\\<Internal | External\>\ _\<DSNcode\>_. For example, `En\Internal\5.1.2` or `Ja\External\5.1.2`.
     
-  - ** _\<DSNcode\>_**: Valid values are 4.  _x_. _y_ or 5.  _x_. _y_ where  _x_ and  _y_ are one to three digit numbers. To generate a list of the enhanced status codes that are used by Exchange, see the [Use the Exchange Management Shell to view all default NDRs](ndr-procedures.md#ViewDefaultNDRs) section earlier in this topic. 
+  - ** _\<DSNcode\>_**: Valid values are 4. _x_. _y_ or 5. _x_. _y_ where _x_ and _y_ are one to three digit numbers. To generate a list of the enhanced status codes that are used by Exchange, see the [Use the Exchange Management Shell to view all default NDRs](ndr-procedures.md#ViewDefaultNDRs) section earlier in this topic. 
     
   - **Internal or External**: You can use different text in NDRs for internal or external senders. 
     
   - ** _\<Language\>_**: For the list of supported languages, see the [Supported languages for NDRs](ndr-procedures.md#NDRLanguages) section in this topic. 
     
-- **NDRs for quotas**:  _\<Language\>_\ _\<QuotaMessageType\>_. For example,  `En\ProhibitSendReceiveMailBox`.
+- **NDRs for quotas**: _\<Language\>_\ _\<QuotaMessageType\>_. For example, `En\ProhibitSendReceiveMailBox`.
     
   - ** _\<Language\>_**: For the list of supported languages, see the [Supported languages for NDRs](ndr-procedures.md#NDRLanguages) section in this topic. 
     
@@ -350,51 +350,51 @@ The identity of an NDR uses one of these formats:
     
     Mailbox size quotas:
     
-    **ProhibitSendReceiveMailBox**: A mailbox exceeds its  `ProhibitSendReceiveQuota` limit. 
+    **ProhibitSendReceiveMailBox**: A mailbox exceeds its `ProhibitSendReceiveQuota` limit. 
     
-    **ProhibitSendMailbox**: A mailbox exceeds its  `ProhibitSendQuota` limit. 
+    **ProhibitSendMailbox**: A mailbox exceeds its `ProhibitSendQuota` limit. 
     
-    **WarningMailbox**: A mailbox exceeds its  `IssueWarningQuota` limit when it has a  `ProhibitSendQuota` or  `ProhibitSendReceiveQuota` limit configured. 
+    **WarningMailbox**: A mailbox exceeds its `IssueWarningQuota` limit when it has a `ProhibitSendQuota` or `ProhibitSendReceiveQuota` limit configured. 
     
-    **WarningMailboxUnlimitedSize**: A mailbox exceeds its  `IssueWarningQuota` limit when it doesn't have a  `ProhibitSendQuota` or  `ProhibitSendReceiveQuota` limit configured. 
+    **WarningMailboxUnlimitedSize**: A mailbox exceeds its `IssueWarningQuota` limit when it doesn't have a `ProhibitSendQuota` or `ProhibitSendReceiveQuota` limit configured. 
     
     Public folder size quotas:
     
-    **ProhibitPostPublicFolder**: A public folder exceeds its  `ProhibitPostQuota` limit. 
+    **ProhibitPostPublicFolder**: A public folder exceeds its `ProhibitPostQuota` limit. 
     
-    **WarningPublicFolder**: A public folder exceeds its  `IssueWarningQuota` limit when it has a  `ProhibitPostQuota` limit configured. 
+    **WarningPublicFolder**: A public folder exceeds its `IssueWarningQuota` limit when it has a `ProhibitPostQuota` limit configured. 
     
-    **WarningPublicFolderUnlimitedSize**: A public folder exceeds its  `IssueWarningQuota` limit when it doesn't have a  `ProhibitPostQuota` limit configured. 
+    **WarningPublicFolderUnlimitedSize**: A public folder exceeds its `IssueWarningQuota` limit when it doesn't have a `ProhibitPostQuota` limit configured. 
     
     Maximum number of messages in a mailbox folder:
     
-    **ProhibitReceiveMailboxMessagesPerFolderCount**: A mailbox exceeds its  `MailboxMessagesPerFolderCountReceiveQuota` limit. 
+    **ProhibitReceiveMailboxMessagesPerFolderCount**: A mailbox exceeds its `MailboxMessagesPerFolderCountReceiveQuota` limit. 
     
-    **WarningMailboxMessagesPerFolderCount**: A mailbox exceeds its  `MailboxMessagesPerFolderCountWarningQuota` limit when it has a  `MailboxMessagesPerFolderCountReceiveQuota` limit configured. 
+    **WarningMailboxMessagesPerFolderCount**: A mailbox exceeds its `MailboxMessagesPerFolderCountWarningQuota` limit when it has a `ailboxMessagesPerFolderCountReceiveQuota` limit configured. 
     
-    **WarningMailboxMessagesPerFolderUnlimitedCount**: A mailbox exceeds its  `MailboxMessagesPerFolderCountWarningQuota` limit when it doesn't have a  `MailboxMessagesPerFolderCountReceiveQuota` limit configured. 
+    **WarningMailboxMessagesPerFolderUnlimitedCount**: A mailbox exceeds its `MailboxMessagesPerFolderCountWarningQuota` limit when it doesn't have a `MailboxMessagesPerFolderCountReceiveQuota` limit configured. 
     
     Maximum number of subfolders in a mailbox folder:
     
-    **ProhibitReceiveFolderHierarchyChildrenCountCount**: A mailbox exceeds its  `FolderHierarchyChildrenCountReceiveQuota` limit. 
+    **ProhibitReceiveFolderHierarchyChildrenCountCount**: A mailbox exceeds its `FolderHierarchyChildrenCountReceiveQuota` limit. 
     
-    **WarningFolderHierarchyChildrenCount**: A mailbox exceeds its  `FolderHierarchyChildrenCountWarningQuota` limit when it has a  `FolderHierarchyChildrenCountReceiveQuota` limit configured. 
+    **WarningFolderHierarchyChildrenCount**: A mailbox exceeds its `FolderHierarchyChildrenCountWarningQuota` limit when it has a `FolderHierarchyChildrenCountReceiveQuota` limit configured. 
     
-    **WarningFolderHierarchyChildrenUnlimitedCount**: A mailbox exceeds its  `FolderHierarchyChildrenCountWarningQuota` limit when it doesn't have a  `FolderHierarchyChildrenCountReceiveQuota` limit configured. 
+    **WarningFolderHierarchyChildrenUnlimitedCount**: A mailbox exceeds its `FolderHierarchyChildrenCountWarningQuota` limit when it doesn't have a `FolderHierarchyChildrenCountReceiveQuota` limit configured. 
     
-    **ProhibitReceiveFoldersCount**: A mailbox exceeds its  `FoldersCountReceiveQuota` limit. 
+    **ProhibitReceiveFoldersCount**: A mailbox exceeds its `FoldersCountReceiveQuota` limit. 
     
-    **WarningFoldersCount**: A mailbox exceeds its  `FoldersCountWarningQuota` limit when it has a  `FoldersCountReceiveQuota` limit configured. 
+    **WarningFoldersCount**: A mailbox exceeds its `FoldersCountWarningQuota` limit when it has a `FoldersCountReceiveQuota` limit configured. 
     
-    **WarningFoldersCountUnlimited** A mailbox exceeds its  `FoldersCountWarningQuota` limit when it doesn't have a  `FoldersCountReceiveQuota` limit configured. 
+    **WarningFoldersCountUnlimited** A mailbox exceeds its `FoldersCountWarningQuota` limit when it doesn't have a `FoldersCountReceiveQuota` limit configured. 
     
     Maximum number of levels (depth) in a mailbox folder:
     
-    **ProhibitReceiveFolderHierarchyDepth**: A mailbox exceeds its  `FolderHierarchyDepthWarningQuota` limit. 
+    **ProhibitReceiveFolderHierarchyDepth**: A mailbox exceeds its `FolderHierarchyDepthWarningQuota` limit. 
     
-    **WarningFolderHierarchyDepth**: A mailbox exceeds its  `FolderHierarchyDepthWarningQuota` limit when it has a  `FolderHierarchyDepthReceiveQuota` limit configured. 
+    **WarningFolderHierarchyDepth**: A mailbox exceeds its `FolderHierarchyDepthWarningQuota` limit when it has a `FolderHierarchyDepthReceiveQuota` limit configured. 
     
-    **WarningFolderHierarchyDepthUnlimited:**: A mailbox exceeds its  `FolderHierarchyDepthWarningQuota` limit when it doesn't have a  `FolderHierarchyDepthReceiveQuota` limit configured. 
+    **WarningFolderHierarchyDepthUnlimited:**: A mailbox exceeds its `FolderHierarchyDepthWarningQuota` limit when it doesn't have a `FolderHierarchyDepthReceiveQuota` limit configured. 
     
 ## Supported languages for NDRs
 <a name="NDRLanguages"> </a>
@@ -503,21 +503,21 @@ This table lists the supported language that codes you can use in custom NDRs.
    
 To control the languages that are used in NDRs, you use these parameters on the **Set-TransportConfig** cmdlet: 
   
--  _ExternalDsnDefaultLanguage_: Specifies the default language to use on external NDRs. The default value is blank ( `$null`), which means the default Windows server language is used.
+- _ExternalDsnDefaultLanguage_: Specifies the default language to use on external NDRs. The default value is blank (`$null`), which means the default Windows server language is used.
     
--  _InternalDsnDefaultLanguage_: Specifies the default language to use on internal NDRs. The default value is blank ( `$null`), which means the default Windows server language is used.
+- _InternalDsnDefaultLanguage_: Specifies the default language to use on internal NDRs. The default value is blank (`$null`), which means the default Windows server language is used.
     
--  _ExternalDsnLanguageDetectionEnabled_
+- _ExternalDsnLanguageDetectionEnabled_
     
-  -  `$true`: Exchange tries to send an external NDR in the same language as the original message. This is the default value.
+  - `$true`: Exchange tries to send an external NDR in the same language as the original message. This is the default value.
     
-  -  `$false`: Language detection is disabled for external NDRs, The NDR language is determined by the  _ExternalDsnDefaultLanguage_ parameter. 
+  - `$false`: Language detection is disabled for external NDRs, The NDR language is determined by the _ExternalDsnDefaultLanguage_ parameter. 
     
--  _InternalDsnLanguageDetectionEnabled_
+- _InternalDsnLanguageDetectionEnabled_
     
-  -  `$true`: Exchange tries to send an internal NDR in the same language as the original message. This is the default value.
+  - `$true`: Exchange tries to send an internal NDR in the same language as the original message. This is the default value.
     
-  -  `$false`: Language detection is disabled for internal NDRs, The NDR language is determined by the  _InternalDsnDefaultLanguage_ parameter. 
+  - `$false`: Language detection is disabled for internal NDRs, The NDR language is determined by the _InternalDsnDefaultLanguage_ parameter. 
     
 ## HTML tags and special characters in NDRs
 <a name="NDRTags"> </a>
@@ -526,17 +526,17 @@ The custom text that you include in an NDR can contain a maximum of 512 characte
   
 To control whether Exchange uses HTML or plain text in NDRs, you use these parameters on the **Set-TransportConfig** cmdlet: 
   
--  _ExternalDsnSendHtml_
+- _ExternalDsnSendHtml_
     
-  -  `$true`: Use HTML tags in NDRs for external senders. This is the default value.
+  - `$true`: Use HTML tags in NDRs for external senders. This is the default value.
     
-  -  `$false`: Use plain text in NDRs for external senders.
+  - `$false`: Use plain text in NDRs for external senders.
     
--  _InternalDsnSendHtml_
+- _InternalDsnSendHtml_
     
-  -  `$true`: Use HTML tags in NDRs for internal senders. This is the default value
+  - `$true`: Use HTML tags in NDRs for internal senders. This is the default value
     
-  -  `$false`: Use plain text in NDRs for internal senders.
+  - `$false`: Use plain text in NDRs for internal senders.
     
 This table describes the HTML tags that you can use in the NDR text.
   
@@ -544,11 +544,11 @@ This table describes the HTML tags that you can use in the NDR text.
 
 |**Description**|**HTML tags**|
 |:-----|:-----|
-|Bold  <br/> | `<B>` and  `</B>` <br/> |
-|Italic  <br/> | `<EM>` and  `</EM>` <br/> |
+|Bold  <br/> | `<B>` and `</B>` <br/> |
+|Italic  <br/> | `<EM>` and `</EM>` <br/> |
 |Line break  <br/> | `<BR>` <br/> |
-|Paragraph  <br/> | `<P>` and  `</P>` <br/> |
-|Hyperlink  <br/> | `<A HREF="url">` and  `</A>` <br/> **Note**: Because this tag contains double quotation marks, you need to use single quotation marks (not double quotation marks) around the complete text string if you use this tag in your custom text. Otherwise, you'll receive an error.  <br/> |
+|Paragraph  <br/> | `<P>` and `</P>` <br/> |
+|Hyperlink  <br/> | `<A HREF="url">` and `</A>` <br/> **Note**: Because this tag contains double quotation marks, you need to use single quotation marks (not double quotation marks) around the complete text string if you use this tag in your custom text. Otherwise, you'll receive an error.  <br/> |
    
 Certain characters in an NDR require escape codes to identify them literally, and not by their function in the NDR. These characters are described in the following table:
   
@@ -556,17 +556,17 @@ Certain characters in an NDR require escape codes to identify them literally, an
 
 |**Character**|**Escape code**|
 |:-----|:-----|
-|\<  <br/> | `&amp;lt;` <br/> |
-|\>  <br/> | `&amp;gt;` <br/> |
-|"  <br/> | `&amp;quot;` <br/> |
-|&amp;  <br/> | `&amp;amp;` <br/> |
+|\<  <br/> | `&lt;` <br/> |
+|\>  <br/> | `&gt;` <br/> |
+|"  <br/> | `&quot;` <br/> |
+|&  <br/> | `&amp;` <br/> |
    
-For example, if you want the NDR to display the text  `Please contact the Help Desk at <1234>.`, you need to the value  `"Please contact the Help Desk at &amp;lt;1234&amp;gt;."`
+For example, if you want the NDR to display the text `Please contact the Help Desk at <1234>.`, you need to the value `"Please contact the Help Desk at &lt;1234&gt;."`
   
 This is an example of a custom NDR text value that uses HTML tags and escape codes.
   
 ```
-'You tried to send a message to a <B>disabled</B> mailbox. Please visit <A HREF="https://it.contoso.com">Internal Support</A> or contact &amp;quot;InfoSec&amp;quot; for more information.'
+'You tried to send a message to a <B>disabled</B> mailbox. Please visit <A HREF="https://it.contoso.com">Internal Support</A> or contact &quot;InfoSec&quot; for more information.'
 ```
 
 

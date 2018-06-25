@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: overview
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: d8dd605e-0af1-4e18-9ce6-e51d04e161ba
 description: "Summary: Learn about Role Based Access Control in Exchange Server 2016."
@@ -21,13 +21,13 @@ Microsoft Exchange Server 2016 includes a large set of predefined permissions, b
 ## Role-based permissions
 <a name="RoleBased"> </a>
 
-In Exchange 2016, the permissions that you grant to administrators and users are based on management roles. A role defines the set of tasks that an administrator or user can perform. For example, a management role called  `Mail Recipients` defines the tasks that someone can perform on a set of mailboxes, contacts, and distribution groups. When a role is assigned to an administrator or user, that person is granted the permissions provided by the role. 
+In Exchange 2016, the permissions that you grant to administrators and users are based on management roles. A role defines the set of tasks that an administrator or user can perform. For example, a management role called `Mail Recipients` defines the tasks that someone can perform on a set of mailboxes, contacts, and distribution groups. When a role is assigned to an administrator or user, that person is granted the permissions provided by the role. 
   
 There are two types of roles, administrative roles and end-user roles:
   
 - **Administrative roles**: These roles contain permissions that can be assigned to administrators or specialist users using role groups that manage a part of the Exchange organization, such as recipients, servers, or databases.
     
-- **End-user roles**: These roles, assigned using role assignment policies, enable users to manage aspects of their own mailbox and distribution groups that they own. End-user roles begin with the prefix  `My`.
+- **End-user roles**: These roles, assigned using role assignment policies, enable users to manage aspects of their own mailbox and distribution groups that they own. End-user roles begin with the prefix `My`.
     
 Roles give permissions to perform tasks to administrators and users by making cmdlets available to those who are assigned the roles. Because the Exchange Administration Center (EAC) and the Exchange Management Shell use cmdlets to manage Exchange, granting access to a cmdlet gives the administrator or user permission to perform the task in each of the Exchange management interfaces.
   
@@ -44,7 +44,7 @@ For more information about role groups and role assignment policies, see the fol
   
 ### Role groups
 
-Every administrator that manages Exchange 2016 needs to be assigned at least one or more roles. Administrators might have more than one role because they may perform job functions that span multiple areas in Exchange. For example, one administrator might manage both recipients and Exchange servers. In this case, that administrator might be assigned both the  `Mail Recipients` and  `Exchange Servers` roles. 
+Every administrator that manages Exchange 2016 needs to be assigned at least one or more roles. Administrators might have more than one role because they may perform job functions that span multiple areas in Exchange. For example, one administrator might manage both recipients and Exchange servers. In this case, that administrator might be assigned both the `Mail Recipients` and `Exchange Servers` roles. 
   
 To make it easier to assign multiple roles to an administrator, Exchange 2016 includes role groups. Role groups are special universal security groups (USGs) used by Exchange 2016 that can contain Active Directory users, USGs, and other role groups. When a role is assigned to a role group, the permissions granted by the role are granted to all the members of the role group. This enables you to assign many roles to many role group members at once. Role groups typically encompass broader management areas, such as recipient management. They're used only with administrative roles, and not end-user roles.
   
@@ -66,7 +66,7 @@ Exchange 2016 includes several built-in role groups, each one providing permissi
 
 |**Role group**|**Description**|
 |:-----|:-----|
-|[Organization Management](http://technet.microsoft.com/library/0bfd21c1-86ac-4369-86b7-aeba386741c8.aspx) <br/> |Administrators who are members of the Organization Management role group have administrative access to the entire Exchange 2016 organization and can perform almost any task against any Exchange 2016 object, with some exceptions, such as the  `Discovery Management` role.  <br/> **Important**: Because the Organization Management role group is a powerful role, only users or USGs that perform organizational-level administrative tasks that can potentially impact the entire Exchange organization should be members of this role group.  <br/> |
+|[Organization Management](http://technet.microsoft.com/library/0bfd21c1-86ac-4369-86b7-aeba386741c8.aspx) <br/> |Administrators who are members of the Organization Management role group have administrative access to the entire Exchange 2016 organization and can perform almost any task against any Exchange 2016 object, with some exceptions, such as the `Discovery Management` role.  <br/> **Important**: Because the Organization Management role group is a powerful role, only users or USGs that perform organizational-level administrative tasks that can potentially impact the entire Exchange organization should be members of this role group.  <br/> |
 |[View-Only Organization Management](http://technet.microsoft.com/library/c514c6d0-0157-4c52-9ec6-441d9a30f3df.aspx) <br/> |Administrators who are members of the View Only Organization Management role group can view the properties of any object in the Exchange organization.  <br/> |
 |[Recipient Management](http://technet.microsoft.com/library/669d602e-68e3-41f9-a455-b942d212d130.aspx) <br/> |Administrators who are members of the Recipient Management role group have administrative access to create or modify Exchange 2016 recipients within the Exchange 2016 organization.  <br/> |
 |[UM Management](http://technet.microsoft.com/library/c91f0387-615c-4a1d-87d4-133ddac1e407.aspx) <br/> |Administrators who are members of the UM Management role group can manage features in the Exchange organization such as Unified Messaging (UM) service configuration, UM properties on mailboxes, UM prompts, and UM auto attendant configuration.  <br/> |
@@ -91,7 +91,7 @@ Your Exchange 2016 organization can have multiple role assignment policies that 
   
 Of the role assignment policies in your organization, one is marked as default. The default role assignment policy is associated with new mailboxes that aren't explicitly assigned a specific role assignment policy when they're created. The default role assignment policy should contain the permissions that should be applied to the majority of your mailboxes.
   
-Permissions are added to role assignment policies using end-user roles. End-user roles begin with  `My` and grant permissions for users to manage only their mailbox or distribution groups they own. They can't be used to manage any other mailbox. Only end-user roles can be assigned to role assignment policies. 
+Permissions are added to role assignment policies using end-user roles. End-user roles begin with `My` and grant permissions for users to manage only their mailbox or distribution groups they own. They can't be used to manage any other mailbox. Only end-user roles can be assigned to role assignment policies. 
   
 When an end-user role is assigned to a role assignment policy, all of the mailboxes associated with that role assignment policy receive the permissions granted by the role. This enables you to add or remove permissions to sets of users without having to configure individual mailboxes. The following figure shows:
   

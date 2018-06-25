@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 6bb98d10-6f12-4b08-a58e-36375f605d65
 description: "Summary: Learn how you can configure mail flow between your Exchange organization and an Edge Transport server without using an Edge Subscription."
@@ -33,7 +33,7 @@ For more information about Send connectors, see [Send connectors](../../mail-flo
     > [!NOTE]
     > Secure Sockets Layer (SSL) is being replaced by Transport Layer Security (TLS) as the protocol that's used to encrypt data sent between computer systems. They're so closely related that the terms "SSL" and "TLS" (without versions) are often used interchangeably. Because of this similarity, references to "SSL" in Exchange topics, the Exchange admin center, and the Exchange Management Shell have often been used to encompass both the SSL and TLS protocols. Typically, "SSL" refers to the actual SSL protocol only when a version is also provided (for example, SSL 3.0). To find out why you should disable the SSL protocol and switch to TLS, check out [Protecting you against the SSL 3.0 vulnerability](https://blogs.office.com/2014/10/29/protecting-ssl-3-0-vulnerability/). 
   
-- An Edge Transport server is typically  *multihomed*  (has network adapters connected to multiple network segments that each have unique IP configurations): 
+- An Edge Transport server is typically *multihomed* (has network adapters connected to multiple network segments that each have unique IP configurations): 
     
   - The network adapter that's connected to the external (public) network segment should be configured to use a public DNS server for name resolution. This enables the server to resolve SMTP domain names to MX resource records and route mail to the Internet.
     
@@ -66,7 +66,7 @@ The following connectors are required on the Edge Transport server:
     
 4. Modify the default Receive connector to only accept messages only from the Internet.
     
-    By default, a single Receive connector named Default internal receive connector  _\<ServerName\>_ is created during the installation of the Edge Transport server role. This connector can be used for both incoming Internet messages and incoming messages from internal Mailbox servers. 
+    By default, a single Receive connector named Default internal receive connector _\<ServerName\>_ is created during the installation of the Edge Transport server role. This connector can be used for both incoming Internet messages and incoming messages from internal Mailbox servers. 
     
 The following sections walk you through all the configuration steps required to prepare your Edge Transport server to communicate with your Exchange organization.
   
@@ -98,7 +98,7 @@ This Send connector requires the following configuration:
     
 - **Usage type**: Internal
     
-- **Address spaces**:  `--` (indicates all accepted domains for the Exchange organization) 
+- **Address spaces**: `--` (indicates all accepted domains for the Exchange organization) 
     
 - DNS routing disabled (smart host routing enabled)
     
@@ -106,7 +106,7 @@ This Send connector requires the following configuration:
     
 - **Smart host authentication methods**: Basic authentication over TLS
     
-- **Smart host authentication credentials**: Credentials for the user account in the internal domain that's a member of the Exchange Servers universal security group. You need to use the **Get-Credential** cmdlet to store the credentials. Use the format  _\<Domain\>_\ _\<UserName\>_ or the user principal name (UPN)(chris@contoso.com) to enter the username. 
+- **Smart host authentication credentials**: Credentials for the user account in the internal domain that's a member of the Exchange Servers universal security group. You need to use the **Get-Credential** cmdlet to store the credentials. Use the format _\<Domain\>_\ _\<UserName\>_ or the user principal name (UPN)(chris@contoso.com) to enter the username. 
     
 To create a Send connector configured to send messages to the Exchange organization, replace the smart host values with the Mailbox servers in your organization, and run this command:
   
@@ -120,7 +120,7 @@ For detailed syntax and parameter information, see [New-SendConnector](http://te
 
 You should make the following configuration changes to the default Receive connector:
   
-- Modify the name to indicate that the connector will be used solely to receive email from the Internet (the default name is Default internal receive connector  _\<ServerName\>_).
+- Modify the name to indicate that the connector will be used solely to receive email from the Internet (the default name is Default internal receive connector _\<ServerName\>_).
     
 - Change the network bindings to accept messages only from the network adapter that is accessible from the Internet (for example, 10.1.1.1 and the standard SMTP TCP port value of 25).
     
@@ -166,7 +166,7 @@ Get-SendConnector | Format-List Name,Usage,AddressSpaces,SourceTransportServers,
 
 You need to create a Send connector in your Exchange organization to send outgoing messages to the Edge Transport server for relay to the Internet. You source the Send connector on one or more Mailbox servers.
   
-You don't need to modify the default Receive connectors on Mailbox servers. The default Receive connector named Default Frontend  _\<MailboxServerName\>_ in the Front End Transport service on Mailbox servers is already configured to accept messages from an Edge Transport server. For more information about default Receive connectors on Mailbox servers, see [Default Receive connectors created during setup](../../mail-flow/connectors/receive-connectors.md#DefaultConnectors).
+You don't need to modify the default Receive connectors on Mailbox servers. The default Receive connector named Default Frontend _\<MailboxServerName\>_ in the Front End Transport service on Mailbox servers is already configured to accept messages from an Edge Transport server. For more information about default Receive connectors on Mailbox servers, see [Default Receive connectors created during setup](../../mail-flow/connectors/receive-connectors.md#DefaultConnectors).
   
 ### Step 5: Create a Send connector to send outgoing messages to the Edge Transport server
 

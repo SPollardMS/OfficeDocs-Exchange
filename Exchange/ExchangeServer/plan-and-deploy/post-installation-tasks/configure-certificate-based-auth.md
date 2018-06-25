@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.collection: Strat_EX_Admin
 ms.assetid: 158fb77e-e238-4c22-9d85-a8c3109f78ec
@@ -72,7 +72,7 @@ For detailed syntax and parameter information, see [Install-WindowsFeature](http
     
 ## Step 3: Use IIS Manager to configure the Outlook on the web and ActiveSync virtual directories to require client certificates
 
- **Note**: You need to  *require*  client certificates, because  *accepting*  client certificates (to support both CBA and regular user name and password authentication) doesn't work consistently across all types of ActiveSync devices. 
+ **Note**: You need to *require* client certificates, because *accepting* client certificates (to support both CBA and regular user name and password authentication) doesn't work consistently across all types of ActiveSync devices. 
   
 1. In IIS Manager, expand the server, expand **Sites**, and then expand **Default Web Site**.
     
@@ -107,7 +107,7 @@ For detailed syntax and parameter information, see [Install-WindowsFeature](http
 
 After you require client certificates for authentication, you need to disable all other authentication methods on the Outlook on the web and ActiveSync virtual directories. By default, only Basic authentication and Forms authentication are enabled.
   
-1. In the Exchange Management Shell, replace  _\<ServerName\>_ with the name of your Exchange server, and run the following command to disable all other authentication methods on the Outlook on the web virtual directory: 
+1. In the Exchange Management Shell, replace _\<ServerName\>_ with the name of your Exchange server, and run the following command to disable all other authentication methods on the Outlook on the web virtual directory: 
     
   ```
   Set-OwaVirtualDirectory "<ServerName>\owa (Default Web Site)" -BasicAuthentication $false -WindowsAuthentication $false -DigestAuthentication $false -FormsAuthentication $false -AdfsAuthentication $false -OAuthAuthentication $false
@@ -115,7 +115,7 @@ After you require client certificates for authentication, you need to disable al
 
     For detailed syntax and parameter information, see [Set-OwaVirtualDirectory](http://technet.microsoft.com/library/7fadcc2e-6339-48b1-b15c-c89e45d4e430.aspx).
     
-2. Replace  _\<ServerName\>_ with the name of your Exchange server, and run the following command to disable all other authentication methods on the ActiveSync virtual directory: 
+2. Replace _\<ServerName\>_ with the name of your Exchange server, and run the following command to disable all other authentication methods on the ActiveSync virtual directory: 
     
   ```
   Set-ActiveSyncVirtualDirectory "<ServerName>\Microsoft-Server-ActiveSync (Default Web Site)" -BasicAuthEnabled $false -WindowsAuthEnabled $false

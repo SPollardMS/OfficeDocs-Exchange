@@ -8,7 +8,7 @@ ms.audience: Developer
 ms.topic: reference
 f1_keywords:
 - 'ms.exch.setupreadiness.E16E15CoexistenceMinVersionRequirement'
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 81658d0d-f132-4dbf-9cb6-467e3e3536df
 description: "Microsoft Exchange Server 2016 Setup can't continue because it detected one or more Microsoft Exchange Server 2013 servers haven't been upgraded to Exchange Server 2013 Cumulative Update 10 (CU10) or later. Before you can install Exchange 2016, all Exchange 2013 servers in your organization must be upgraded to Exchange 2013 CU10 or later. This requirement includes Exchange 2013 Edge Transport servers."

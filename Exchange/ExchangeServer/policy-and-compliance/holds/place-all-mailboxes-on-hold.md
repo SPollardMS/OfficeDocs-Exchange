@@ -4,9 +4,9 @@ ms.author: serdars
 author: SerdarSoysal
 manager: serdars
 ms.date: 4/19/2018
-ms.audience: Admin
+ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 4c141604-3210-44cc-b98e-f3e0f15613b8
 description: "Your organization may require all mailbox data to be preserved for a specific period. You can use Litigation Hold or In-Place Hold to meet this requirement. After you place a mailbox on Litigation Hold or In-Place Hold, mailbox items that are modified or that are permanently deleted are preserved in the Recoverable Items folder for the duration specified by the hold. For more information, see In-Place Hold and Litigation Hold in Exchange 2016."
@@ -62,7 +62,7 @@ You can use the EAC to select up to 500 mailboxes and place them on hold. For de
     
 - The Exchange Management Shell command used in this topic to place a Litigation Hold on all mailboxes uses a recipient filter that returns all user mailboxes. You can use other recipient properties to return a list of specific mailboxes that you can then pipe to the **Set-Mailbox** cmdlet to place a Litigation Hold on those mailboxes. 
     
-    Here are some examples of using the **Get-Mailbox** and **Get-Recipient** cmdlets to return a subset of mailboxes based on common user or mailbox properties. These examples assume that relevant mailbox properties (such as  _CustomAttributeN_ or  _Department_) have been populated.
+    Here are some examples of using the **Get-Mailbox** and **Get-Recipient** cmdlets to return a subset of mailboxes based on common user or mailbox properties. These examples assume that relevant mailbox properties (such as _CustomAttributeN_ or _Department_) have been populated.
     
   ```
   Get-Mailbox -RecipientTypeDetails UserMailbox -ResultSize unlimited -Filter 'CustomAttribute15 -eq "OneYearLitigationHold"'

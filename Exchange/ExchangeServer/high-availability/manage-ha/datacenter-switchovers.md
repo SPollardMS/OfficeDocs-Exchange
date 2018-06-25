@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: ac208c12-04d0-4809-bacd-72478ff14983
 description: "Summary: How to plan for, and then perform, a datacenter switchover in Exchange 2016."
@@ -18,7 +18,7 @@ description: "Summary: How to plan for, and then perform, a datacenter switchove
   
 In a site resilient configuration, automatic recovery in response to a site-level failure can occur within a DAG, allowing the messaging system to remain in a functional state. This configuration requires at least three locations, as it requires deploying DAG members in two locations and the DAG's witness server in a third location.
   
-If you don't have three locations, or even if you do have three locations but you want to control datacenter-level recovery actions, you can configure a DAG for manual recovery in the event of a site-level failure. In that event, you would perform a process called a  *datacenter switchover*  . As with many disaster recovery scenarios, prior planning and preparation for a datacenter switchover can simplify your recovery process and reduce the duration of your outage. 
+If you don't have three locations, or even if you do have three locations but you want to control datacenter-level recovery actions, you can configure a DAG for manual recovery in the event of a site-level failure. In that event, you would perform a process called a *datacenter switchover* . As with many disaster recovery scenarios, prior planning and preparation for a datacenter switchover can simplify your recovery process and reduce the duration of your outage. 
   
 There are four basic steps that you complete to perform a datacenter switchover, after making the initial decision to activate the second datacenter:
   
@@ -44,9 +44,9 @@ If any DAG members in the failed datacenter are still running, they should be te
   
 When the DAG is in DAC mode, the specific actions to terminate any surviving DAG members in the primary datacenter are as follows:
   
-1. The DAG members in the primary datacenter must be marked as stopped in the primary datacenter.  *Stopped*  is a state of Active Manager that prevents databases from mounting, and Active Manager on each server in the failed datacenter is put into this state by using the [Stop-DatabaseAvailabilityGroup](http://technet.microsoft.com/library/1e167fe5-b1c5-48d9-b3d8-4cf823d1c43c.aspx) cmdlet. The  _ActiveDirectorySite_ parameter of this cmdlet can be used to mark all of the servers in the primary datacenter as stopped with a single command. This step may not be possible depending on the failure. This step should be taken if the state of the datacenter permits it. The **Stop-DatabaseAvailabilityGroup** cmdlet should be run against all servers in the primary datacenter. If the Mailbox server is unavailable but Active Directory is operating in the primary datacenter, the **Stop-DatabaseAvailabilityGroup** command with the  _ConfigurationOnly_ parameter must be run against all servers in this state in the primary datacenter, or the Mailbox server must be turned off. Failure to either turn off the Mailbox servers in the failed datacenter or to successfully perform the **Stop-DatabaseAvailabilityGroup** command against the servers will create the potential for split-brain syndrome to occur across the two datacenters. You may need to individually turn off computers through power management devices to satisfy this requirement. 
+1. The DAG members in the primary datacenter must be marked as stopped in the primary datacenter. *Stopped* is a state of Active Manager that prevents databases from mounting, and Active Manager on each server in the failed datacenter is put into this state by using the [Stop-DatabaseAvailabilityGroup](http://technet.microsoft.com/library/1e167fe5-b1c5-48d9-b3d8-4cf823d1c43c.aspx) cmdlet. The _ActiveDirectorySite_ parameter of this cmdlet can be used to mark all of the servers in the primary datacenter as stopped with a single command. This step may not be possible depending on the failure. This step should be taken if the state of the datacenter permits it. The **Stop-DatabaseAvailabilityGroup** cmdlet should be run against all servers in the primary datacenter. If the Mailbox server is unavailable but Active Directory is operating in the primary datacenter, the **Stop-DatabaseAvailabilityGroup** command with the _ConfigurationOnly_ parameter must be run against all servers in this state in the primary datacenter, or the Mailbox server must be turned off. Failure to either turn off the Mailbox servers in the failed datacenter or to successfully perform the **Stop-DatabaseAvailabilityGroup** command against the servers will create the potential for split-brain syndrome to occur across the two datacenters. You may need to individually turn off computers through power management devices to satisfy this requirement. 
     
-2. The second datacenter must now be updated to represent which primary datacenter servers are stopped. This is done by running the same **Stop-DatabaseAvailabilityGroup** command with the  _ConfigurationOnly_ parameter using the same  _ActiveDirectorySite_ parameter and specifying the name of the Active Directory site in the failed primary datacenter. The purpose of this step is to inform the servers in the second datacenter about which mailbox servers are available to use when restoring service. 
+2. The second datacenter must now be updated to represent which primary datacenter servers are stopped. This is done by running the same **Stop-DatabaseAvailabilityGroup** command with the _ConfigurationOnly_ parameter using the same _ActiveDirectorySite_ parameter and specifying the name of the Active Directory site in the failed primary datacenter. The purpose of this step is to inform the servers in the second datacenter about which mailbox servers are available to use when restoring service. 
     
 When the DAG isn't in DAC mode, the specific actions to terminate any surviving DAG members in the primary datacenter are as follows:
   
@@ -74,7 +74,7 @@ When the DAG isn't in DAC mode, the specific actions to terminate any surviving 
 
 4. Open the Failover Cluster Management tool and connect to the DAG's underlying cluster. Expand the cluster, and then expand **Nodes**. Right-click each node in the primary datacenter, select **More Actions**, and then select **Evict**. When you're done evicting the DAG members in the primary datacenter, close the Failover Cluster Management tool.
     
-If any Unified Messaging services are in use in the failed datacenter, they must be disabled to prevent call routing to the failed datacenter. You can disable Unified Messaging services by using the [Disable-UMService](http://technet.microsoft.com/library/16e5df98-4875-42a2-a429-2c66ac6a2e32.aspx) cmdlet (for example,  `Disable-UMService EX1`). Alternatively, if you are using a Voice over IP (VoIP) gateway, you can also remove the server entries from the VoIP gateway, or change the DNS records for the failed servers to point to the IP address of the servers in the second datacenter if your VoIP gateway is configured to route calls using DNS.
+If any Unified Messaging services are in use in the failed datacenter, they must be disabled to prevent call routing to the failed datacenter. You can disable Unified Messaging services by using the [Disable-UMService](http://technet.microsoft.com/library/16e5df98-4875-42a2-a429-2c66ac6a2e32.aspx) cmdlet (for example, `Disable-UMService EX1`). Alternatively, if you are using a Voice over IP (VoIP) gateway, you can also remove the server entries from the VoIP gateway, or change the DNS records for the failed servers to point to the IP address of the servers in the second datacenter if your VoIP gateway is configured to route calls using DNS.
   
 ## Activating Mailbox Servers
 <a name="ActMS"> </a>
@@ -83,9 +83,9 @@ The steps needed to activate Mailbox servers during a datacenter switchover also
   
 When the DAG is in DAC mode, the steps to complete activation of the mailbox servers in the second datacenter are as follows:
   
-1. The Cluster service must be stopped on each DAG member in the second datacenter. You can use the **Stop-Service** cmdlet to stop the service (for example,  `Stop-Service ClusSvc`), or use  `net stop clussvc` from an elevated command prompt. 
+1. The Cluster service must be stopped on each DAG member in the second datacenter. You can use the **Stop-Service** cmdlet to stop the service (for example, `Stop-Service ClusSvc`), or use `net stop clussvc` from an elevated command prompt. 
     
-2. The Mailbox servers in the standby datacenter are then activated by using the [Restore-DatabaseAvailabilityGroup](http://technet.microsoft.com/library/d65394ad-9680-423d-9a93-0b46906123e5.aspx) cmdlet. The Active Directory site of the standby datacenter is passed to the **Restore-DatabaseAvailabilityGroup** cmdlet to identify which servers to use to restore service and to configure the DAG to use an alternate witness server. If the alternate witness server wasn't previously configured, you can configure it by using the  _AlternateWitnessServer_ and  _AlternateWitnessDirectory_ parameters of the [Restore-DatabaseAvailabilityGroup](http://technet.microsoft.com/library/d65394ad-9680-423d-9a93-0b46906123e5.aspx) cmdlet. If this command succeeds, the quorum criteria are shrunk to the servers in the standby datacenter. If the number of servers in that datacenter is an even number, the DAG will switch to using the alternate witness server as identified by the setting on the DAG object. 
+2. The Mailbox servers in the standby datacenter are then activated by using the [Restore-DatabaseAvailabilityGroup](http://technet.microsoft.com/library/d65394ad-9680-423d-9a93-0b46906123e5.aspx) cmdlet. The Active Directory site of the standby datacenter is passed to the **Restore-DatabaseAvailabilityGroup** cmdlet to identify which servers to use to restore service and to configure the DAG to use an alternate witness server. If the alternate witness server wasn't previously configured, you can configure it by using the _AlternateWitnessServer_ and _AlternateWitnessDirectory_ parameters of the [Restore-DatabaseAvailabilityGroup](http://technet.microsoft.com/library/d65394ad-9680-423d-9a93-0b46906123e5.aspx) cmdlet. If this command succeeds, the quorum criteria are shrunk to the servers in the standby datacenter. If the number of servers in that datacenter is an even number, the DAG will switch to using the alternate witness server as identified by the setting on the DAG object. 
     
 3. The databases can now be activated. Depending on the specific configuration used by the organization, this may not be automatic. If the servers in the standby datacenter have an activation blocked setting, the system won't do an automatic failover from the primary datacenter to the standby datacenter of any database. If no failover restrictions are present for any of the database copies in the standby datacenter, the system will activate copies in the second datacenter assuming they are healthy. If databases are configured with an activation blocked setting that requires explicit manual action, there are two choices for action:
     
@@ -138,7 +138,7 @@ Clients connect to service endpoints (for example Outlook on the web, Autodiscov
 
 Clients will then automatically connect to the new service endpoints in one of two ways:
   
-- Clients will continue to try to connect, and should automatically connect after the TTL has expired for the original DNS entry, and after the entry is expired from the client's DNS cache. Users can also run the  `ipconfig /flushdns` command from a command prompt to manually clear their DNS cache. 
+- Clients will continue to try to connect, and should automatically connect after the TTL has expired for the original DNS entry, and after the entry is expired from the client's DNS cache. Users can also run the `ipconfig /flushdns` command from a command prompt to manually clear their DNS cache. 
     
 - Clients starting or restarting will perform a DNS lookup on startup and will get the new IP address for the service endpoint, which will be an Exchange 2016 server running Client Access services, or a Client Access services array, in the second datacenter.
     
@@ -148,7 +148,7 @@ Assuming that all appropriate configuration changes have been completed to defin
 
 Clients and other servers that submit messages typically identify those servers using DNS. Activating transport services in the second datacenter involves changing DNS records to point to the IP addresses of the Mailbox servers in the second datacenter. Clients and sending servers will then automatically connect to the servers in the second datacenter in one of two ways:
   
-- Clients will continue to try to connect, and should automatically connect after the TTL has expired for the original DNS entry, and after the entry is expired from the client's DNS cache. Users can also run the  `ipconfig /flushdns` command from a command prompt to manually clear their DNS cache. 
+- Clients will continue to try to connect, and should automatically connect after the TTL has expired for the original DNS entry, and after the entry is expired from the client's DNS cache. Users can also run the `ipconfig /flushdns` command from a command prompt to manually clear their DNS cache. 
     
 - Clients starting or restarting will perform a DNS lookup on startup and will get the new IP address for the SMTP endpoint, which will be a Mailbox server in the second datacenter.
     
@@ -158,7 +158,7 @@ Assuming that all appropriate configuration changes have been completed to defin
 
 Unified Messaging (UM) services connect to an organization's PBX system and phone lines. The logical connection between the PBX system and the Unified Messaging service is provided by an IP gateway. IP gateways include high availability functionality and are able to switch between multiple Unified Messaging services when a failure is detected.
   
-If there are Unified Messaging services in the second datacenter that were in a disabled state because they are dedicated to the site resilience solution, they can be enabled by using the [Enable-UMService](http://technet.microsoft.com/library/88f457c7-92bc-4f59-b0cf-c0b79f46a7a1.aspx) cmdlet (for example,  `Enable-UMService EX4`).
+If there are Unified Messaging services in the second datacenter that were in a disabled state because they are dedicated to the site resilience solution, they can be enabled by using the [Enable-UMService](http://technet.microsoft.com/library/88f457c7-92bc-4f59-b0cf-c0b79f46a7a1.aspx) cmdlet (for example, `Enable-UMService EX4`).
   
 Assuming the IP gateways are associated with Unified Messaging services by using DNS servers, activating Unified Messaging services therefore involves changing DNS records to point to the new IP addresses that will be configured for the Unified Messaging service in the second datacenter. Assuming that all appropriate configuration changes have been completed to define and configure the services in the second datacenter to function as they were in the primary datacenter, and assuming that the established DNS configuration is correct, no further changes should be needed to activate Unified Messaging services.
   
@@ -188,7 +188,7 @@ DNS updates enable incoming traffic, and outgoing traffic is handled by the acti
 
 Generally, datacenter failures are either temporary or permanent. With a permanent failure, such as an event that has caused the permanent destruction of a primary datacenter, there's no expectation that the primary datacenter will be activated. However, with a temporary failure (for example, an extended power loss or extensive but repairable damage), there's an expectation that the primary datacenter will eventually be restored to full service.
   
-The process of restoring service to a previously failed datacenter is referred to as a  *switchback*  . The steps used to perform a datacenter switchback are similar to the steps used to perform a datacenter switchover. A significant distinction is that datacenter switchbacks are scheduled, and the duration of the outage is often much shorter. 
+The process of restoring service to a previously failed datacenter is referred to as a *switchback* . The steps used to perform a datacenter switchback are similar to the steps used to perform a datacenter switchover. A significant distinction is that datacenter switchbacks are scheduled, and the duration of the outage is often much shorter. 
   
 It's important that switchback not be performed until the infrastructure dependencies for Exchange have been reactivated, are functioning and stable, and have been validated. If these dependencies aren't available or healthy, it's likely that the switchback process will cause a longer than necessary outage, and the process could fail altogether.
   
@@ -209,7 +209,7 @@ The Mailbox server role should be the first role that's switched back to the pri
   
 3. After a majority of the databases are in a healthy state in the primary datacenter, the switchback outage can be scheduled. When the scheduled time arrives, the following steps must be taken:
     
-1. During the datacenter switchover process, the DAG was configured to use an alternate witness server. The DAG must be reconfigured to use a witness server in the primary datacenter. If you are using the same witness server and witness directory that was used prior to the primary datacenter outage, you can run the  `Set-DatabaseAvailabilityGroup -Identity DAGName` command. If you plan on using a witness server or witness directory that is different from the original witness server and directory, use the [Set-DatabaseAvailabilityGroup](http://technet.microsoft.com/library/4353c3ab-75b7-485e-89ae-d4b09b44b646.aspx) command to configure the witness server and witness directory parameters with the appropriate values. 
+1. During the datacenter switchover process, the DAG was configured to use an alternate witness server. The DAG must be reconfigured to use a witness server in the primary datacenter. If you are using the same witness server and witness directory that was used prior to the primary datacenter outage, you can run the `Set-DatabaseAvailabilityGroup -Identity DAGName` command. If you plan on using a witness server or witness directory that is different from the original witness server and directory, use the [Set-DatabaseAvailabilityGroup](http://technet.microsoft.com/library/4353c3ab-75b7-485e-89ae-d4b09b44b646.aspx) command to configure the witness server and witness directory parameters with the appropriate values. 
     
 2. The databases being reactivated in the primary datacenter should be dismounted in the second datacenter. You can use the [Dismount-Database](http://technet.microsoft.com/library/e261955b-a9f0-4d87-bf56-f9e67ea5ba3f.aspx) cmdlet to dismount the databases. 
     

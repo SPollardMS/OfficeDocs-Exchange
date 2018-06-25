@@ -6,8 +6,8 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: conceptual
-ms.prod: office-online-server
-localization_priority: Normal
+ms.prod: exchange-server-itpro
+localization_priority: Critical
 ms.collection: Strat_EX_Admin
 ms.assetid: 1e80857c-b870-4a6d-a0f4-ff7b3a7be037
 description: "Summary: Learn about what you need to have in your environment before installing Exchange 2016."
@@ -49,7 +49,7 @@ The following table lists the requirements for the network and the directory ser
 |:-----|:-----|
 |Domain controllers  <br/> |All domain controllers in the forest need to be running one of the following:  <br/> Windows Server 2016 Standard or Datacenter  <br/> Windows Server 2012 R2 Standard or Datacenter  <br/> Windows Server 2012 Standard or Datacenter  <br/> Windows Server 2008 R2 Standard or Enterprise  <br/> Windows Server 2008 R2 Datacenter RTM or later  <br/> |
 |Active Directory forest  <br/> |The Active Directory forest functionality level needs to be at Windows Server 2008 R2 or higher.  <br/> |
-|DNS namespace support  <br/> |Exchange 2016 supports the following domain name system (DNS) namespaces:  <br/> • Contiguous  <br/> • Noncontiguous  <br/> • Single label domains  <br/> • Disjoint  <br/> For more information about DNS namespaces supported by Exchange, see Microsoft Knowledge Base article 2269838, [Microsoft Exchange compatibility with Single Label Domains, Disjoined Namespaces, and Discontiguous Namespaces](https://go.microsoft.com/fwlink/p/?linkid=3052&amp;kbid=2269838).  <br/> |
+|DNS namespace support  <br/> |Exchange 2016 supports the following domain name system (DNS) namespaces:  <br/> • Contiguous  <br/> • Noncontiguous  <br/> • Single label domains  <br/> • Disjoint  <br/> For more information about DNS namespaces supported by Exchange, see Microsoft Knowledge Base article 2269838, [Microsoft Exchange compatibility with Single Label Domains, Disjoined Namespaces, and Discontiguous Namespaces](https://go.microsoft.com/fwlink/p/?linkid=3052&kbid=2269838).  <br/> |
 |IPv6 support  <br/> |In Exchange 2016, IPv6 is supported only when IPv4 is also installed and enabled. If Exchange 2016 is deployed in this configuration, and the network supports IPv4 and IPv6, all Exchange servers can send data to and receive data from devices, servers, and clients that use IPv6 addresses. For more information, see [IPv6 Support in Exchange 2013](http://technet.microsoft.com/library/33543023-eb9a-4102-b990-84a818a52814.aspx).  <br/> |
    
 ## Directory server architecture
@@ -57,7 +57,7 @@ The following table lists the requirements for the network and the directory ser
 The use of 64-bit Active Directory domain controllers increases directory service performance for Exchange 2016.
   
 > [!NOTE]
-> In multi-domain environments, on Windows Server 2008 domain controllers that have the Active Directory language locale set to Japanese (ja-jp), your servers may not receive some attributes that are stored on an object during inbound replication. For more information, see Microsoft Knowledge Base article 949189, [A Windows Server 2008 domain controller that is configured with the Japanese language locale may not apply updates to attributes on an object during inbound replication](https://go.microsoft.com/fwlink/p/?linkid=3052&amp;kbid=949189). 
+> In multi-domain environments, on Windows Server 2008 domain controllers that have the Active Directory language locale set to Japanese (ja-jp), your servers may not receive some attributes that are stored on an object during inbound replication. For more information, see Microsoft Knowledge Base article 949189, [A Windows Server 2008 domain controller that is configured with the Japanese language locale may not apply updates to attributes on an object during inbound replication](https://go.microsoft.com/fwlink/p/?linkid=3052&kbid=949189). 
   
 ### Installing Exchange 2016 on directory servers
 

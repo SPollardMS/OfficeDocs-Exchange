@@ -8,7 +8,7 @@ ms.audience: ITPro
 ms.topic: get-started-article
 f1_keywords:
 - 'Microsoft.Exchange.Management.SnapIn.Esm.Servers.EnterProductKeyWizardForm.EnterProductKeyWizardPage'
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.collection: Strat_EX_Admin
 ms.assetid: ccb14685-4bdc-42a4-a985-35cd2a1a415c

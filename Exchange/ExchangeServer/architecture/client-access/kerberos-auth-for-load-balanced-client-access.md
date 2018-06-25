@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 8f4faeea-a825-438d-97dc-1c398ce7aba5
 description: "Summary: How to use Kerberos authentication with load-balanced Exchange 2016 servers running Client Access services."
@@ -21,7 +21,7 @@ In order for you to use Kerberos authentication with load-balanced Mailbox serve
 ## Create the alternate service account credential in Active Directory Domain Services
 <a name="CreateAltService"> </a>
 
-All Exchange servers that run Client Access services that share the same namespaces and URLs must use the same alternate service account credentials. In general, it's sufficient to have a single account for a forest for each version of Exchange.  *alternate service account credential*  or  *ASA credential*  . 
+All Exchange servers that run Client Access services that share the same namespaces and URLs must use the same alternate service account credentials. In general, it's sufficient to have a single account for a forest for each version of Exchange. *alternate service account credential* or *ASA credential* . 
   
 > [!IMPORTANT]
 > Exchange 2010 and Exchange 2016 can't share the same ASA credential. If your ASA credential was created for Exchange 2010, you have to create a new one for Exchange 2016. 
@@ -61,7 +61,7 @@ When you set up the ASA credential, keep these guidelines in mind:
   New-ADComputer -Name EXCH2016ASA -AccountPassword (Read-Host 'Enter password' -AsSecureString) -Description 'Alternate Service Account credentials for Exchange' -Enabled:$True -SamAccountName EXCH2016ASA
   ```
 
-    Where  _EXCH2016ASA_ is the name of the account, the description  _Alternate Service Account credentials for Exchange_ is whatever you want it to be, and the value for the  _SamAccountName_ parameter, in this case  _EXCH2016ASA_, has to be unique in your directory.
+    Where _EXCH2016ASA_ is the name of the account, the description _Alternate Service Account credentials for Exchange_ is whatever you want it to be, and the value for the _SamAccountName_ parameter, in this case _EXCH2016ASA_, has to be unique in your directory.
     
 3. Use the **Set-ADComputer** cmdlet to enable the AES 256 encryption cipher support used by Kerberos using this cmdlet syntax: 
     
@@ -75,7 +75,7 @@ When you set up the ASA credential, keep these guidelines in mind:
   Set-ADComputer EXCH2016ASA -add @{"msDS-SupportedEncryptionTypes"="28"}
   ```
 
-    Where  _EXCH2016ASA_ is the name of the account and the attribute to be modified is  _msDS-SupportedEncryptionTypes_ with a decimal value of 28, which enables the following ciphers: RC4-HMAC, AES128-CTS-HMAC-SHA1-96, AES256-CTS-HMAC-SHA1-96. 
+    Where _EXCH2016ASA_ is the name of the account and the attribute to be modified is _msDS-SupportedEncryptionTypes_ with a decimal value of 28, which enables the following ciphers: RC4-HMAC, AES128-CTS-HMAC-SHA1-96, AES256-CTS-HMAC-SHA1-96. 
     
 For more information about these cmdlets, see [Import-Module](https://technet.microsoft.com/library/hh849725.aspx) and [New-ADComputer](https://technet.microsoft.com/library/ee617245.aspx).
   
@@ -149,7 +149,7 @@ The only supported method for deploying the ASA credential is to use the RollAlt
 
 1. Open the Exchange Management Shell on an Exchange 2016 server.
     
-2. Change directories to  _\<Exchange 2016 installation directory\>_\V15\Scripts.
+2. Change directories to _\<Exchange 2016 installation directory\>_\V15\Scripts.
     
 3. Run the following command to deploy the ASA credential to the first Exchange 2016 server running Client Access services:
     
@@ -204,7 +204,7 @@ cas-1 Latest: 1/12/2016 10:19:22 AM, tailspin\EXCH2016ASA$
 
 1. Open the Exchange Management Shell on an Exchange 2016 server.
     
-2. Change directories to  _\<Exchange 2016 installation directory\>_\V15\Scripts.
+2. Change directories to _\<Exchange 2016 installation directory\>_\V15\Scripts.
     
 3. Run the following command to deploy the ASA credential to another Exchange 2016 server running Client Access services:
     

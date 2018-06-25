@@ -4,9 +4,9 @@ ms.author: chrisda
 author: chrisda
 manager: serdars
 ms.date: 6/8/2018
-ms.audience: End User
+ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 6ea3a695-3ddd-4d53-b3c6-90041f44ef64
 description: "Summary: Learn how administrators can use Information Rights Management (IRM) in Exchange 2016 to help prevent the disclosure of sensitive information."
@@ -131,7 +131,7 @@ To allow authorized users to view IRM-protected messages and attachments, Exchan
 ## IRM agents
 <a name="agents"> </a>
 
-IRM features use the built-in transport agents that exist in the Transport service on Mailbox servers. Most of the built-in transport agents are invisible and unmanageable by the transport agent management cmdlets in the Exchange Management Shell ( **\*-TransportAgent** ). 
+IRM features use the built-in transport agents that exist in the Transport service on Mailbox servers. Most of the built-in transport agents are invisible and unmanageable by the transport agent management cmdlets in the Exchange Management Shell (**\*-TransportAgent** ). 
   
 The built-in transport agents that are associated with IRM are described in this table:
   
@@ -153,7 +153,7 @@ By default, an Exchange organization is enabled for IRM. To actually implement I
   
 |**Server**|**Requirements**|
 |:-----|:-----|
-|AD RMS cluster  <br/> | *AD RMS cluster*  is the term that's used for any AD RMS deployment, including a single AD RMS server. AD RMS is a Web service, so you don't need to set up a Windows Server failover cluster. For high availability and load-balancing, you can deploy multiple AD RMS servers in the cluster and use network load balancing (NLB).  <br/> **Service connection point**: AD RMS-aware applications like Exchange use the service connection point that's registered in Active Directory to discover an AD RMS cluster and URLs. There's only one service connection point for AD RMS in an Active Directory forest. You can register the service connection point during AD RMS Setup, or after setup is complete.  <br/> **Permissions**: Read and Execute permissions to the AD RMS server certification pipeline (the  `ServerCertification.asmx` file at  `\inetpub\wwwroot\_wmcs\certification\`) must be assigned to these security principals:  <br/> • The Exchange Servers group or individual Exchange servers.  <br/> • The AD RMS Service group on AD RMS servers.  <br/> For details, see [Set Permissions on the AD RMS Server Certification Pipeline](https://go.microsoft.com/fwlink/p/?linkId=186951).  <br/> **AD RMS super users**: To enable transport decryption, journal report decryption, IRM in Outlook on the web, and IRM decryption for Exchange Search, you need to add the Federation mailbox to the Super Users group on the AD RMS server. For details, see [Add Federated Delivery Mailbox to AD RMS Super Users](http://technet.microsoft.com/library/44618df9-54f0-4474-a450-dcba48a02901.aspx).  <br/> |
+|AD RMS cluster  <br/> | *AD RMS cluster* is the term that's used for any AD RMS deployment, including a single AD RMS server. AD RMS is a Web service, so you don't need to set up a Windows Server failover cluster. For high availability and load-balancing, you can deploy multiple AD RMS servers in the cluster and use network load balancing (NLB).  <br/> **Service connection point**: AD RMS-aware applications like Exchange use the service connection point that's registered in Active Directory to discover an AD RMS cluster and URLs. There's only one service connection point for AD RMS in an Active Directory forest. You can register the service connection point during AD RMS Setup, or after setup is complete.  <br/> **Permissions**: Read and Execute permissions to the AD RMS server certification pipeline (the `ServerCertification.asmx` file at `\inetpub\wwwroot\_wmcs\certification\`) must be assigned to these security principals:  <br/> • The Exchange Servers group or individual Exchange servers.  <br/> • The AD RMS Service group on AD RMS servers.  <br/> For details, see [Set Permissions on the AD RMS Server Certification Pipeline](https://go.microsoft.com/fwlink/p/?linkId=186951).  <br/> **AD RMS super users**: To enable transport decryption, journal report decryption, IRM in Outlook on the web, and IRM decryption for Exchange Search, you need to add the Federation mailbox to the Super Users group on the AD RMS server. For details, see [Add Federated Delivery Mailbox to AD RMS Super Users](http://technet.microsoft.com/library/44618df9-54f0-4474-a450-dcba48a02901.aspx).  <br/> |
 |Exchange  <br/> |Exchange 2010 or later is required.  <br/> In a production environment, installing AD RMS and Exchange on the same server isn't supported.  <br/> |
 |Outlook  <br/> |AD RMS templates for protecting messages are available in Outlook 2007 or later.  <br/> Outlook protection rules in Exchange require Outlook 2010 or later,  <br/> |
 |Exchange ActiveSync  <br/> |IRM is available on mobile applications and devices that support Exchange ActiveSync protocol version 14.1 or later, and the included **RightsManagementInformation** tag (both introduced in Exchange 2010 Service Pack 1). Users with supported devices can use ActiveSync to view, reply to, forward, and create IRM-protected messages without connecting to a computer to activate the device for IRM. For more information, see [Understanding Information Rights Management in Exchange ActiveSync](http://technet.microsoft.com/library/ebf04460-4d61-4b00-86b9-85ec1dbbd6a1.aspx).  <br/> |

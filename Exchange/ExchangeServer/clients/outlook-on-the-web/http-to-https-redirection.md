@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 5fb6a873-f3cf-4f82-87d1-2ff6e47a0080
 description: "Summary: Learn how to configure redirection for Outlook on the web in Exchange 2016 so http requests are automatically redirected to https."
@@ -16,9 +16,9 @@ description: "Summary: Learn how to configure redirection for Outlook on the web
 
  **Summary**: Learn how to configure redirection for Outlook on the web in Exchange 2016 so http requests are automatically redirected to https.
   
-By default in Exchange Server 2016, the URL https:// _\<ServerName\>_ redirects users to https://  _\<ServerName\>_/owa. But, if anyone tries to access Outlook on the web (formerly known as Outlook Web App) by using http:// _\<ServerName\>_ or http://  _\<ServerName\>_/owa, they'll get an error.
+By default in Exchange Server 2016, the URL https:// _\<ServerName\>_ redirects users to https:// _\<ServerName\>_/owa. But, if anyone tries to access Outlook on the web (formerly known as Outlook Web App) by using http:// _\<ServerName\>_ or http:// _\<ServerName\>_/owa, they'll get an error.
   
-You can configure http redirection for Outlook on the web so that requests for http:// _\<ServerName\>_ or http://  _\<ServerName\>_/owa are automatically redirected to https:// _\<ServerName\>_/owa. This requires the following configuration steps in Internet Information Services (IIS):
+You can configure http redirection for Outlook on the web so that requests for http:// _\<ServerName\>_ or http:// _\<ServerName\>_/owa are automatically redirected to https:// _\<ServerName\>_/owa. This requires the following configuration steps in Internet Information Services (IIS):
   
 1. Remove the **Require SSL** setting from the default website. 
     
@@ -38,7 +38,7 @@ For the default SSL and http redirect settings on all virtual directories in the
     
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "IIS Manager" entry in the Outlook on the web permissions section of the [Clients and mobile devices permissions](../../permissions/feature-permissions/client-and-mobile-device-permissions.md) topic. 
     
-- The procedures in this topic might cause a web.config file to be created in the folder  `%ExchangeInstallPath%ClientAccess\OAB`. If you later remove http redirection for Outlook on the web, Outlook might freeze when users click **Send and Receive**. To prevent Outlook from freezing after you remove http redirection, delete the web.config file in  `%ExchangeInstallPath%ClientAccess\OAB`.
+- The procedures in this topic might cause a web.config file to be created in the folder `%ExchangeInstallPath%ClientAccess\OAB`. If you later remove http redirection for Outlook on the web, Outlook might freeze when users click **Send and Receive**. To prevent Outlook from freezing after you remove http redirection, delete the web.config file in `%ExchangeInstallPath%ClientAccess\OAB`.
     
 - Secure Sockets Layer (SSL) is being replaced by Transport Layer Security (TLS) as the protocol that's used to encrypt data sent between computer systems. They're so closely related that the terms "SSL" and "TLS" (without versions) are often used interchangeably. Because of this similarity, references to "SSL" in Exchange topics, the Exchange admin center, and the Exchange Management Shell have often been used to encompass both the SSL and TLS protocols. Typically, "SSL" refers to the actual SSL protocol only when a version is also provided (for example, SSL 3.0). To find out why you should disable the SSL protocol and switch to TLS, check out [Protecting you against the SSL 3.0 vulnerability](https://blogs.office.com/2014/10/29/protecting-ssl-3-0-vulnerability/).
     
@@ -85,7 +85,7 @@ Based on the information in the [Default Require SSL and HTTP Redirect settings 
   
 5. Repeat the previous steps on each virtual directory in the default website that had **Require SSL** enabled by default (except for /owa). The only virtual directories that don't have **Require SSL** enabled by default are /IES, /PowerShell, and /Rpc. 
     
- **Note**: To perform these procedures on the command line, replace  _\<VirtualDirectory\>_ with the name of the virtual directory, and run the following command in an elevated command prompt: 
+ **Note**: To perform these procedures on the command line, replace _\<VirtualDirectory\>_ with the name of the virtual directory, and run the following command in an elevated command prompt: 
   
 ```
 %windir%\system32\inetsrv\appcmd.exe set config "Default Web Site/<VirtualDirectory>" -section:Access -sslFlags:Ssl,Ssl128 -commit:APPHOST
@@ -141,7 +141,7 @@ Use the following procedure to remove the redirect setting from all virtual dire
   
 6. Repeat the previous steps on each virtual directory in the default website.
     
- **Note**: To perform these procedures on the command line, replace  _\<VirtualDirectory\>_ with the name of the virtual directory, and run the following command in an elevated command prompt: 
+ **Note**: To perform these procedures on the command line, replace _\<VirtualDirectory\>_ with the name of the virtual directory, and run the following command in an elevated command prompt: 
   
 ```
 %windir%\system32\inetsrv\appcmd.exe set config "Default Web Site/<VirtualDirectory>" -section:httpredirect -enabled:false -destination:"" -childOnly:false

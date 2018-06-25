@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: overview
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 40da446b-bcc3-4a97-ace7-a54f6ddebd79
 description: "Summary: Learn how protocol logging records SMTP activity in Exchange 2016."
@@ -34,7 +34,7 @@ Protocol logging records the SMTP conversations that occur between messaging ser
     
 By default, protocol logging is enabled on the following connectors:
   
-- The default Receive connector named Default Frontend  _\<ServerName\>_ in the Front End Transport service on Mailbox servers. 
+- The default Receive connector named Default Frontend _\<ServerName\>_ in the Front End Transport service on Mailbox servers. 
     
 - The implicit and invisible Send connector in the Front End Transport service on Mailbox servers.
     
@@ -49,33 +49,33 @@ By default, the protocol log files exist in the following locations:
   
 - Front End Transport service on Mailbox servers:
     
-  - **Receive connectors**:  `%ExchangeInstallPath%TransportRoles\Logs\FrontEnd\ProtocolLog\SmtpReceive`
+  - **Receive connectors**: `%ExchangeInstallPath%TransportRoles\Logs\FrontEnd\ProtocolLog\SmtpReceive`
     
-  - **Send connectors**:  `%ExchangeInstallPath%TransportRoles\Logs\FrontEnd\ProtocolLog\SmtpSend`
+  - **Send connectors**: `%ExchangeInstallPath%TransportRoles\Logs\FrontEnd\ProtocolLog\SmtpSend`
     
 - Transport service on Mailbox servers:
     
-  - **Receive connectors**:  `%ExchangeInstallPath%TransportRoles\Logs\Hub\ProtocolLog\SmtpReceive`
+  - **Receive connectors**: `%ExchangeInstallPath%TransportRoles\Logs\Hub\ProtocolLog\SmtpReceive`
     
-  - **Send connectors**:  `%ExchangeInstallPath%TransportRoles\Logs\Hub\ProtocolLog\SmtpSend`
+  - **Send connectors**: `%ExchangeInstallPath%TransportRoles\Logs\Hub\ProtocolLog\SmtpSend`
     
-- Mailbox Transport Delivery service on Mailbox servers ( **Receive connectors**):  `%ExchangeInstallPath%TransportRoles\Logs\Mailbox\ProtocolLog\SmtpReceive\Delivery`
+- Mailbox Transport Delivery service on Mailbox servers (**Receive connectors**): `%ExchangeInstallPath%TransportRoles\Logs\Mailbox\ProtocolLog\SmtpReceive\Delivery`
     
-- Mailbox Transport Submission service on Mailbox servers ( **Send connectors**):  `%ExchangeInstallPath%TransportRoles\Logs\Mailbox\ProtocolLog\SmtpSend\Submission`
+- Mailbox Transport Submission service on Mailbox servers (**Send connectors**): `%ExchangeInstallPath%TransportRoles\Logs\Mailbox\ProtocolLog\SmtpSend\Submission`
     
-    **Note**: Protocol logging for side effect messages that are submitted after messages are delivered to mailboxes occurs in  `%ExchangeInstallPath%TransportRoles\Logs\Mailbox\ProtocolLog\SmtpSend\Delivery`. For example, a message that's delivered to a mailbox triggers an Inbox rule that redirects the message to another recipient.
+    **Note**: Protocol logging for side effect messages that are submitted after messages are delivered to mailboxes occurs in `%ExchangeInstallPath%TransportRoles\Logs\Mailbox\ProtocolLog\SmtpSend\Delivery`. For example, a message that's delivered to a mailbox triggers an Inbox rule that redirects the message to another recipient.
     
 - Transport service on Edge Transport servers:
     
-  - **Receive connectors**:  `%ExchangeInstallPath%TransportRoles\Logs\Edge\ProtocolLog\SmtpReceive`
+  - **Receive connectors**: `%ExchangeInstallPath%TransportRoles\Logs\Edge\ProtocolLog\SmtpReceive`
     
-  - **Send connectors**:  `%ExchangeInstallPath%TransportRoles\Logs\Edge\ProtocolLog\SmtpSend`
+  - **Send connectors**: `%ExchangeInstallPath%TransportRoles\Logs\Edge\ProtocolLog\SmtpSend`
     
-The naming convention for log files is  `SENDyyyymmdd-nnnn.log` for Send connectors and  `RECVyyyymmdd-nnnn.log` for Receive connectors. The placeholders represent the following information: 
+The naming convention for log files is `SENDyyyymmdd-nnnn.log` for Send connectors and `RECVyyyymmdd-nnnn.log` for Receive connectors. The placeholders represent the following information: 
   
--  _yyyymmdd_ is the coordinated universal time (UTC) date when the log file was created.  _yyyy_ = year,  _mm_ = month, and  _dd_ = day. 
+- _yyyymmdd_ is the coordinated universal time (UTC) date when the log file was created. _yyyy_ = year, _mm_ = month, and _dd_ = day. 
     
--  _nnnn_ is an instance number that starts at the value 1 every day. 
+- _nnnn_ is an instance number that starts at the value 1 every day. 
     
 Information is written to the log file until the file reaches its maximum size. Then, a new log file that has an incremented instance number is opened (the first log file is -1, the next is -2, and so on). Circular logging deletes the oldest log files when either of the following conditions is true:
   
@@ -85,13 +85,13 @@ Information is written to the log file until the file reaches its maximum size. 
     
 The protocol log files are text files that contain data in the comma-separated value file (CSV) format. Each protocol log file has a header that contains the following information:
   
-- **#Software**: The value is  `Microsoft Exchange Server`.
+- **#Software**: The value is `Microsoft Exchange Server`.
     
-- **#Version**: Version number of the Exchange server that created the message tracking log file. The value uses the format  `15.01.nnnn.nnn`.
+- **#Version**: Version number of the Exchange server that created the message tracking log file. The value uses the format `15.01.nnnn.nnn`.
     
-- **#Log-Type**: The value is either  `SMTP Receive Protocol Log` or  `SMTP Send Protocol Log`.
+- **#Log-Type**: The value is either `SMTP Receive Protocol Log` or `SMTP Send Protocol Log`.
     
-- **#Date**: UTC date-time when the log file was created. The UTC date-time is represented in the ISO 8601 date-time format:  _yyyy-mm-dd_T _hh:mm:ss.fff_Z, where  _yyyy_ = year,  _mm_ = month,  _dd_ = day, T indicates the beginning of the time component,  _hh_ = hour,  _mm_ = minute,  _ss_ = second,  _fff_ = fractions of a second, and Z signifies Zulu, which is another way to denote UTC. 
+- **#Date**: UTC date-time when the log file was created. The UTC date-time is represented in the ISO 8601 date-time format: _yyyy-mm-dd_T _hh:mm:ss.fff_Z, where _yyyy_ = year, _mm_ = month, _dd_ = day, T indicates the beginning of the time component, _hh_ = hour, _mm_ = minute, _ss_ = second, _fff_ = fractions of a second, and Z signifies Zulu, which is another way to denote UTC. 
     
 - **#Fields**: Comma-delimited field names that are used in the protocol log files.
     
@@ -102,13 +102,13 @@ The protocol log stores each SMTP protocol event on a single line in the log. Th
   
 |**Field name**|**Description**|
 |:-----|:-----|
-|**date-time** <br/> |UTC date-time of the protocol event. The UTC date-time is represented in the ISO 8601 date-time format:  _yyyy-mm-dd_T _hh:mm:ss.fff_Z, where  _yyyy_ = year,  _mm_ = month,  _dd_ = day, T indicates the beginning of the time component,  _hh_ = hour,  _mm_ = minute,  _ss_ = second,  _fff_ = fractions of a second, and Z signifies Zulu, which is another way to denote UTC.  <br/> |
+|**date-time** <br/> |UTC date-time of the protocol event. The UTC date-time is represented in the ISO 8601 date-time format: _yyyy-mm-dd_T _hh:mm:ss.fff_Z, where _yyyy_ = year, _mm_ = month, _dd_ = day, T indicates the beginning of the time component, _hh_ = hour, _mm_ = minute, _ss_ = second, _fff_ = fractions of a second, and Z signifies Zulu, which is another way to denote UTC.  <br/> |
 |**connector-id** <br/> |Distinguished name (DN) of the connector that's associated with the SMTP event.  <br/> |
 |**session-id** <br/> |GUID value that's unique for each SMTP session, but is the same for every event that's associated with that SMTP session.  <br/> |
 |**sequence-number** <br/> |Counter that starts at 0 and is incremented for each event in the same SMTP session.  <br/> |
-|**local-endpoint** <br/> |Local endpoint of an SMTP session. This consists of an IP address and TCP port number formatted as  _\<IP address\>_: _\<port\>_.  <br/> |
-|**remote-endpoint** <br/> |Remote endpoint of an SMTP session. This consists of an IP address and TCP port number formatted as  _\<IP address\>_: _\<port\>_.  <br/> |
-|**event** <br/> |Single character that represents the protocol event. Valid values are:  <br/>  `+`: Connect  <br/>  `-`: Disconnect  <br/>  `>`: Send  <br/>  `<`: Receive  <br/>  `*`: Information  <br/> |
+|**local-endpoint** <br/> |Local endpoint of an SMTP session. This consists of an IP address and TCP port number formatted as _\<IP address\>_: _\<port\>_.  <br/> |
+|**remote-endpoint** <br/> |Remote endpoint of an SMTP session. This consists of an IP address and TCP port number formatted as _\<IP address\>_: _\<port\>_.  <br/> |
+|**event** <br/> |Single character that represents the protocol event. Valid values are:  <br/> `+`: Connect  <br/> `-`: Disconnect  <br/> `>`: Send  <br/> `<`: Receive  <br/> `*`: Information  <br/> |
 |**data** <br/> |Text information associated with the SMTP event.  <br/> |
 |**context** <br/> |Additional contextual information that may be associated with the SMTP event.  <br/> |
    

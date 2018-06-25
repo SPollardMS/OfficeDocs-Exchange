@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 6eaa753a-523a-4ae7-b174-a639b819e729
 description: "Summary: Configure Send connectors to proxy outbound mail through the Front End Transport service."
@@ -20,13 +20,13 @@ When you create Send connectors, outbound mail flows through the Send connector 
   
 ![Send connector created with default configuration](../../media/c43075b4-7254-417a-9a61-d735f4abac4f.png)
   
-However, you can configure a Send connector to relay or  *proxy*  outbound mail through the Front End Transport service on the Mailbox server, as shown in the following diagram. 
+However, you can configure a Send connector to relay or *proxy* outbound mail through the Front End Transport service on the Mailbox server, as shown in the following diagram. 
   
 ![Send connector configured for outbound proxy](../../media/4180d15b-1ee8-40dd-ad7d-8d381c51e8eb.png)
   
 By default, all inbound mail enters your Exchange organization through the Front End Transport service, and the Front End Transport service proxies inbound mail to the Transport service. For more information, see [Mail flow and the transport pipeline](../../mail-flow/mail-flow.md).
   
-When you configure a Send connector to proxy outbound mail through the Front End Transport service, the Receive connector named "Outbound Proxy Frontend  _\<Mailbox server name\>_" in the Front End Transport service listens for these outbound messages from the Transport service, and then the Front End Transport service sends the messages to the Internet. This configuration can consolidate and simplify mail flow by having inbound and outbound mail enter and leave your organization from the same place.
+When you configure a Send connector to proxy outbound mail through the Front End Transport service, the Receive connector named "Outbound Proxy Frontend _\<Mailbox server name\>_" in the Front End Transport service listens for these outbound messages from the Transport service, and then the Front End Transport service sends the messages to the Internet. This configuration can consolidate and simplify mail flow by having inbound and outbound mail enter and leave your organization from the same place.
   
 ## What do you need to know before you begin?
 
@@ -55,7 +55,7 @@ In the Exchange Management Shell, you can configure new or existing Send connect
   
 For information about how to open the Exchange Management Shell, see [Open the Exchange Management Shell](http://technet.microsoft.com/library/63976059-25f8-4b4f-b597-633e78b803c0.aspx).
   
-- To configure a new Send connector to proxy outbound mail, add  `-FrontEndProxyEnabled $true` to the **New-SendConnector** command. 
+- To configure a new Send connector to proxy outbound mail, add `-FrontEndProxyEnabled $true` to the **New-SendConnector** command. 
     
 - To configure an existing Send connector to proxy outbound mail, run the following command:
     
@@ -81,6 +81,6 @@ To verify that a Send connector is configured for outbound proxy, perform either
   Get-SendConnector | Format-Table -Auto Name,FrontEndProxyEnabled
   ```
 
-    Verify the **FrontEndProxyEnabled** value is  `True` for the Send connector. 
+    Verify the **FrontEndProxyEnabled** value is `True` for the Send connector. 
     
 

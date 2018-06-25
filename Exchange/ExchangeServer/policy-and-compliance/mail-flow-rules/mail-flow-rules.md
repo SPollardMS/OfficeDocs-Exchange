@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/12/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: c3d2031c-fb7b-4866-8ae1-32928d0138ef
 description: "Summary: Learn about mail flow rules (transport rules) and their components in Exchange 2016."
@@ -70,8 +70,8 @@ The following table describes the rule properties that are available in mail flo
 |:-----|:-----|:-----|
 |**Priority** <br/> | _Priority_ <br/> |Indicates the order that the rules are applied to messages. The default priority is based on when the rule is created (older rules have a higher priority than newer rules), and higher priority rules are processed before lower priority rules.  <br/>  You change the rule priority in the EAC by moving the rule up or down in the list of rules. In the Exchange Management Shell, you set the priority number (0 is the highest priority).  <br/> For example, if you have one rule to reject messages that include a credit card number, and another one requiring approval, you'll want the reject rule to happen first, and stop applying other rules.  <br/> For more information, see [Set the priority of mail flow rules](mail-flow-rule-procedures.md#priority).  <br/> |
 |**Mode** <br/> | _Mode_ <br/> |You can specify whether you want the rule to start processing messages immediately, or whether you want to test rules without affecting the delivery of the message (with or without Data Loss Prevention or DLP Policy Tips).  <br/> Policy Tips are similar to MailTips, and can be configured to present a brief note in Outlook or Outlook on the web that provides information about possible policy violations to the person that's creating the message. For more information, see [Policy Tips](http://technet.microsoft.com/library/4266b83c-dd8a-4b3d-99ff-402e68fc810c.aspx).  <br/> For more information about the modes, see [Test a mail flow rule](http://technet.microsoft.com/library/3d949e2a-8ba4-4261-8cfb-736fd2446ea1.aspx).  <br/> |
-|**Activate this rule on the following date** <br/> **Deactivate this rule on the following date** <br/> | _ActivationDate_ <br/>  _ExpiryDate_ <br/> | Specifies the date range when the rule is active.  <br/> |
-|**On** check box selected or not selected  <br/> |New rules:  _Enabled_ parameter on the **New-TransportRule** cmdlet.  <br/> Existing rules: Use the **Enable-TransportRule** or **Disable-TransportRule** cmdlets.  <br/> The value is displayed in the **State** property of the rule.  <br/> |You can create a disabled rule, and enable it when you're ready to test it. Or, you can disable a rule without deleting it to preserve the settings. For instructions, see [Enable or disable mail flow rules](mail-flow-rule-procedures.md#enable).  <br/> |
+|**Activate this rule on the following date** <br/> **Deactivate this rule on the following date** <br/> | _ActivationDate_ <br/> _ExpiryDate_ <br/> | Specifies the date range when the rule is active.  <br/> |
+|**On** check box selected or not selected  <br/> |New rules: _Enabled_ parameter on the **New-TransportRule** cmdlet.  <br/> Existing rules: Use the **Enable-TransportRule** or **Disable-TransportRule** cmdlets.  <br/> The value is displayed in the **State** property of the rule.  <br/> |You can create a disabled rule, and enable it when you're ready to test it. Or, you can disable a rule without deleting it to preserve the settings. For instructions, see [Enable or disable mail flow rules](mail-flow-rule-procedures.md#enable).  <br/> |
 |**Defer the message if rule processing doesn't complete** <br/> | _RuleErrorAction_ <br/> |You can specify how the message should be handled if the rule processing can't be completed. By default, the rule will be ignored, but you can choose to resubmit the message for processing.  <br/> |
 |**Match sender address in message** <br/> | _SenderAddressLocation_ <br/> |If the rule uses conditions or exceptions that examine the sender's email address, you can look for the value in the message header, the message envelope, or both. For more information, see [Senders](conditions-and-exceptions.md#Senders).  <br/> |
 |**Stop processing more rules** <br/> | _SenderAddressLocation_ <br/> |This is an action for the rule, but it looks like a property in the EAC. You can choose to stop applying additional rules to a message after a rule processes a message.  <br/> |
@@ -104,7 +104,7 @@ There are several types of messages that flow through an organization. The follo
 |**Clear-signed messages**: Messages that have been signed but not encrypted.  <br/> |Yes  <br/> |
 |**UM messages**: Messages that are created or processed by the Unified Messaging service, such as voice mail, fax, missed call notifications, and messages created or forwarded by using Microsoft Outlook Voice Access.  <br/> |Yes  <br/> |
 |**Anonymous messages**: Messages that were sent by anonymous senders.  <br/> |Yes  <br/> |
-|**Read reports**: Reports that are generated in response to read receipt requests by senders. Read reports have a message class of  `IPM.Note*.MdnRead` or  `IPM.Note*.MdnNotRead`.  <br/> |Yes  <br/> |
+|**Read reports**: Reports that are generated in response to read receipt requests by senders. Read reports have a message class of `IPM.Note*.MdnRead` or `IPM.Note*.MdnNotRead`.  <br/> |Yes  <br/> |
    
 ### Rule storage and replication
 <a name="Replication"> </a>
@@ -139,6 +139,6 @@ There are two mixed environment scenarios that are common:
     
     When you coexist with Exchange 2010, all mail flow rules are stored in Active Directory and replicated across your organization regardless of the Exchange Server version you used to create the rules. However, all mail flow rules are associated with the Exchange server version that was used to create them and are stored in a version-specific container in Active Directory. When you first deploy Exchange 2016 in your organization, any existing rules are imported to Exchange 2016 as part of the setup process. However, any changes afterwards would need to be made with both versions. For example, if you change an existing rule in Exchange 2016 (Exchange Management Shell or the EAC), you need to make the same change in Exchange 2010 (Exchange Management Shell or the Exchange Management Console).
     
-    Exchange 2010 can't process rules that have the **Version** or **RuleVersion** value 15.  _n_. _n_. _n_. To be sure all your rules can be processed, only use rules that have the value 14. _n_. _n_. _n_.
+    Exchange 2010 can't process rules that have the **Version** or **RuleVersion** value 15. _n_. _n_. _n_. To be sure all your rules can be processed, only use rules that have the value 14. _n_. _n_. _n_.
     
 

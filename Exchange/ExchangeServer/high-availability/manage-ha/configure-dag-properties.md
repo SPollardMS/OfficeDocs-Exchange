@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 50daeac5-a16f-4362-a325-19e0fe25d59d
 description: "Summary: You can use the EAC or the Exchange Management Shell to configure the properties of a database availability group (DAG), including DAG IP address configuration, the witness server, and the witness directory."

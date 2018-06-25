@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/12/2018
 ms.audience: ITPro
 ms.topic: overview
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 34351f2f-ab6c-4267-91be-4f9649338275
 description: "Summary: An overview of Exchange features you can use to protect your data."
@@ -90,7 +90,7 @@ Earlier versions of Exchange included two VSS writers: one inside the Microsoft 
 ## Exchange Server Recovery
 <a name="SerRec"> </a>
 
-Almost all of the configuration settings for Mailbox servers and Client Access services are stored in Active Directory. As with previous versions of Exchange, Exchange 2016 includes a Setup parameter for recovering lost servers. This parameter,  _/m:RecoverServer_, is used to rebuild and re-create a lost server by using the settings and configuration information stored in Active Directory. However, be aware that there are several settings which are not restored, such as changes to local web.config and other configuration files. In addition, custom registry entries are not restored. We recommend that you use a reliable change management process to track and recreate these changes.
+Almost all of the configuration settings for Mailbox servers and Client Access services are stored in Active Directory. As with previous versions of Exchange, Exchange 2016 includes a Setup parameter for recovering lost servers. This parameter, _/m:RecoverServer_, is used to rebuild and re-create a lost server by using the settings and configuration information stored in Active Directory. However, be aware that there are several settings which are not restored, such as changes to local web.config and other configuration files. In addition, custom registry entries are not restored. We recommend that you use a reliable change management process to track and recreate these changes.
   
 For detailed steps about how to perform a server recovery of a lost Exchange 2016 server, see [Recover an Exchange Server](recover-exchange-servers.md). For detailed steps about how to recover a lost server that's a member of a database availability group (DAG), see [Recover a database availability group member server](recover-dag-member-servers.md).
   
@@ -120,7 +120,7 @@ For more information, see [Database Portability](http://technet.microsoft.com/li
 
 Dial tone portability is a feature that provides a limited business continuity solution for failures that affect a mailbox database, a server, or an entire site. Dial tone portability enables a user to have a temporary mailbox for sending and receiving e-mail while the original mailbox is being restored or repaired. The temporary mailbox can be on the same Exchange 2016 Mailbox server or on any other Exchange 2016 Mailbox server in your organization. This allows an alternative server to host the mailboxes of users who were previously on a server that's no longer available. Clients that support Autodiscover, such as Microsoft Outlook, are automatically redirected to the new server without having to manually update the user's desktop profile. After the user's original mailbox data has been restored, an administrator can merge a user's recovered mailbox and the user's dial tone mailbox into a single, up-to-date mailbox.
   
-The process for using dial tone portability is called a  *dial tone recovery*  . A dial tone recovery involves creating an empty database on a Mailbox server to replace a failed database. This empty database, referred to as a  *dial tone database*  , allows users to send and receive e-mail while the failed database is recovered. After the failed database is recovered, the dial done database and the recovered database are swapped, and then the data from the dial tone database is merged into the recovered database. 
+The process for using dial tone portability is called a *dial tone recovery* . A dial tone recovery involves creating an empty database on a Mailbox server to replace a failed database. This empty database, referred to as a *dial tone database*, allows users to send and receive e-mail while the failed database is recovered. After the failed database is recovered, the dial done database and the recovered database are swapped, and then the data from the dial tone database is merged into the recovered database. 
   
 For more information, see [Dial tone portability](dial-tone-portability.md). For detailed steps to perform a dial tone recovery, see [Perform a dial tone recovery](dial-tone-recovery.md).
   

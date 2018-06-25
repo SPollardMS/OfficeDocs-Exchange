@@ -4,9 +4,9 @@ ms.author: serdars
 author: SerdarSoysal
 manager: serdars
 ms.date: 6/8/2018
-ms.audience: End User
+ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: c4bbfd52-6196-49c7-8c31-777fbbee11f2
 description: "Summary: Learn how to configure mailbox audit logging on mailboxes in Exchange 2016."
@@ -67,19 +67,19 @@ For detailed syntax and parameter information, see [Set-Mailbox](http://technet.
 
 When mailbox audit logging is enabled for a mailbox, only the administrator, delegate, and owner actions specified in the audit logging configuration for the mailbox are logged.
   
-This example specifies that the  `MessageBind` and  `FolderBind` actions performed by administrators will be logged for Ben Smith's mailbox. 
+This example specifies that the `MessageBind` and `FolderBind` actions performed by administrators will be logged for Ben Smith's mailbox. 
   
 ```
 Set-Mailbox -Identity "Ben Smith" -AuditAdmin MessageBind,FolderBind -AuditEnabled $true
 ```
 
-This example specifies that the  `SendAs` or  `SendOnBehalf` actions performed by delegate users will be logged for Ben Smith's mailbox. 
+This example specifies that the `SendAs` or `SendOnBehalf` actions performed by delegate users will be logged for Ben Smith's mailbox. 
   
 ```
 Set-Mailbox -Identity "Ben Smith" -AuditDelegate SendAs,SendOnBehalf -AuditEnabled $true
 ```
 
-This example specifies that the  `HardDelete` action performed by the mailbox owner will be logged for Ben Smith's mailbox. 
+This example specifies that the `HardDelete` action performed by the mailbox owner will be logged for Ben Smith's mailbox. 
   
 ```
 Set-Mailbox -Identity "Ben Smith" -AuditOwner HardDelete -AuditEnabled $true
@@ -97,7 +97,7 @@ This example retrieves Ben Smith's mailbox settings and pipes the specified audi
 Get-Mailbox "Ben Smith" | Format-List Audit*
 ```
 
-A value of  `True` for the **AuditEnabled** property verifies that audit logging is enabled. 
+A value of `True` for the **AuditEnabled** property verifies that audit logging is enabled. 
   
 This example retrieves the auditing settings for all user mailboxes in your organization.
   

@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 4/19/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 158817fa-4b17-4fa9-8341-a86609e6a388
 description: "Summary: How to perform a dial tone recovery in Exchange 2016."

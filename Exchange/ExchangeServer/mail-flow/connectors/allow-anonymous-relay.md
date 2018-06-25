@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 5b675b4e-3a33-4191-91ce-44e1c0923517
 description: "Summary: Learn how to configure anonymous relay in Exchange 2016."
@@ -16,42 +16,40 @@ description: "Summary: Learn how to configure anonymous relay in Exchange 2016."
 
  **Summary**: Learn how to configure anonymous relay in Exchange 2016.
   
- *Open relay*  is a very bad thing for messaging servers on the Internet. Messaging servers that are accidentally or intentionally configured as open relays allow mail from any source to be transparently re-routed through the open relay server. This behavior masks the original source of the messages, and makes it look like the mail originated from the open relay server. Open relay servers are eagerly sought out and used by spammers, so you never want your messaging servers to be configured for open relay. 
+ *Open relay* is a very bad thing for messaging servers on the Internet. Messaging servers that are accidentally or intentionally configured as open relays allow mail from any source to be transparently re-routed through the open relay server. This behavior masks the original source of the messages, and makes it look like the mail originated from the open relay server. Open relay servers are eagerly sought out and used by spammers, so you never want your messaging servers to be configured for open relay. 
   
-On the other hand,  *anonymous relay*  is a common requirement for many businesses that have internal web servers, database servers, monitoring applications, or other network devices that generate email messages, but are incapable of actually sending those messages. 
+On the other hand, *anonymous relay* is a common requirement for many businesses that have internal web servers, database servers, monitoring applications, or other network devices that generate email messages, but are incapable of actually sending those messages. 
   
 In Exchange Server 2016, you can create a dedicated Receive connector in the Front End Transport service on a Mailbox server that allows anonymous relay from a specific list of internal network hosts. Here are some key considerations for the anonymous relay Receive connector:
   
 - You need to create a dedicated Receive connector to specify the network hosts that are allowed to anonymously relay messages, so you can exclude anyone or anything else from using the connector. Don't attempt to add anonymous relay capability to the default Receive connectors that are created by Exchange. Restricting access to the Receive connector is critical, because you don't want to configure the server as an open relay.
     
-- You need to create the dedicated Receive connector in the Front End Transport service, not in the Transport service. In Exchange 2016, the Front End Transport service and the Transport service are always located together on Mailbox servers. The Front End Transport service has a default Receive connector named Default Frontend  _\<ServerName\>_ that's configured to listen for inbound SMTP connections from any source on TCP port 25. You can create another Receive connector in the Front End Transport service that also listens for incoming SMTP connections on TCP port 25, but you need to specify the IP addresses that are allowed to use the connector. The dedicated Receive connector will always be used for incoming connections from those specific network hosts (the Receive connector that's configured with the most specific match to the connecting server's IP address wins). 
+- You need to create the dedicated Receive connector in the Front End Transport service, not in the Transport service. In Exchange 2016, the Front End Transport service and the Transport service are always located together on Mailbox servers. The Front End Transport service has a default Receive connector named Default Frontend _\<ServerName\>_ that's configured to listen for inbound SMTP connections from any source on TCP port 25. You can create another Receive connector in the Front End Transport service that also listens for incoming SMTP connections on TCP port 25, but you need to specify the IP addresses that are allowed to use the connector. The dedicated Receive connector will always be used for incoming connections from those specific network hosts (the Receive connector that's configured with the most specific match to the connecting server's IP address wins). 
     
-    In contrast, the Transport service has a Default receive connector named Default  _\<ServerName\>_ that's also configured to listed for inbound SMTP connections from any source, but this connector listens on TCP port 2525 so that it doesn't conflict with the Receive connector in the Front End Transport service. Furthermore, only other transport services and Exchange servers in your organization are expected to use this Receive connector, so the authentication and encryption methods are set accordingly. 
+    In contrast, the Transport service has a Default receive connector named Default _\<ServerName\>_ that's also configured to listed for inbound SMTP connections from any source, but this connector listens on TCP port 2525 so that it doesn't conflict with the Receive connector in the Front End Transport service. Furthermore, only other transport services and Exchange servers in your organization are expected to use this Receive connector, so the authentication and encryption methods are set accordingly. 
     
     For more information, see [Mail flow and the transport pipeline](../../mail-flow/mail-flow.md) and [Default Receive connectors created during setup](receive-connectors.md#DefaultConnectors).
     
 - After you create the dedicated Receive connector, you need to modify its permissions to allow anonymous relay only by the specified network hosts as identified by their IP addresses. At a minimum, the network hosts need the following permissions on the Receive connector to anonymously relay messages:
     
-  -  `ms-Exch-Accept-Headers-Routing`
+  - `ms-Exch-Accept-Headers-Routing`
     
-  -  `ms-Exch-SMTP-Accept-Any-Recipient`
+  - `ms-Exch-SMTP-Accept-Any-Recipient`
     
-  -  `ms-Exch-SMTP-Accept-Any-Sender`
+  - `ms-Exch-SMTP-Accept-Any-Sender`
     
-  -  `ms-Exch-SMTP-Accept-Authoritative-Domain-Sender`
+  - `ms-Exch-SMTP-Accept-Authoritative-Domain-Sender`
     
-  -  `ms-Exch-SMTP-Submit`
+  - `ms-Exch-SMTP-Submit`
     
     For more information about permissions on Receive connectors, see [Receive connector permission groups](receive-connectors.md#PermissionGroups) and [Receive connector permissions](receive-connectors.md#Permissions).
     
     There are two different methods that you can use to configure the permissions that are required for anonymous relay on a Receive connector. These methods are described in the following table.
     
-   ****
-
 |**Method**|**Permissions granted**|**Pros**|**Cons**|
 |:-----|:-----|:-----|:-----|
-|Add the **Anonymous users** (  `Anonymous`) permission group to the Receive connector and add the  `Ms-Exch-SMTP-Accept-Any-Recipient` permission to the  <br/>  `NT AUTHORITY\ANONYMOUS LOGON` security principal on the Receive connector.  <br/> |Connections use the  `NT AUTHORITY\ANONYMOUS LOGON` security principal with the following permissions:  <br/>  `ms-Exch-Accept-Headers-Routing` <br/>  `ms-Exch-SMTP-Accept-Any-Recipient` <br/>  `ms-Exch-SMTP-Accept-Any-Sender` <br/>  `ms-Exch-SMTP-Accept-Authoritative-Domain-Sender` <br/>  `ms-Exch-SMTP-Submit` <br/> |Grants the minimum required permissions to allow anonymous relay.  <br/> |More difficult to configure (must use the Exchange Management Shell).  <br/> The network hosts are considered anonymous senders. The messages don't bypass antispam or message size limit checks, and the sender's email address can't be resolved to the corresponding display name (if any) in the global address list.  <br/> |
-|Add the **Exchange servers** (  `ExchangeServers`) permission group and the **Externally secured** (  `ExternalAuthoritative`) authentication mechanism to the Receive connector.  <br/> |Connections use the  `MS Exchange\Externally Secured Servers` security principal with the following permissions:  <br/>  `ms-Exch-Accept-Headers-Routing` <br/>  `ms-Exch-Bypass-Anti-Spam` <br/>  `ms-Exch-Bypass-Message-Size-Limit` <br/>  `ms-Exch-SMTP-Accept-Any-Recipient` <br/>  `ms-Exch-SMTP-Accept-Any-Sender` <br/>  `ms-Exch-SMTP-Accept-Authentication-Flag` <br/>  `ms-Exch-SMTP-Accept-Authoritative-Domain-Sender` <br/>  `ms-Exch-SMTP-Accept-Exch50` <br/>  `ms-Exch-SMTP-Submit` <br/> |Easier to configure (can do everything in the Exchange admin center).  <br/> The network hosts are considered authenticated senders. The messages bypass antispam and message size limit checks, and the sender's email address can be resolved to a corresponding display name in the global address list.  <br/> |Grants the permissions to submit messages as if they originated from internal senders within your Exchange organization. The network hosts are considered completely trustworthy, regardless of the volume, size, or content of the messages that they send.  <br/> |
+|Add the **Anonymous users** (`Anonymous`) permission group to the Receive connector and add the `Ms-Exch-SMTP-Accept-Any-Recipient` permission to the  <br/> `NT AUTHORITY\ANONYMOUS LOGON` security principal on the Receive connector.  <br/> |Connections use the `NT AUTHORITY\ANONYMOUS LOGON` security principal with the following permissions:  <br/> `ms-Exch-Accept-Headers-Routing` <br/> `ms-Exch-SMTP-Accept-Any-Recipient` <br/> `ms-Exch-SMTP-Accept-Any-Sender` <br/> `ms-Exch-SMTP-Accept-Authoritative-Domain-Sender` <br/> `ms-Exch-SMTP-Submit` <br/> |Grants the minimum required permissions to allow anonymous relay.  <br/> |More difficult to configure (must use the Exchange Management Shell).  <br/> The network hosts are considered anonymous senders. The messages don't bypass antispam or message size limit checks, and the sender's email address can't be resolved to the corresponding display name (if any) in the global address list.  <br/> |
+|Add the **Exchange servers** (`ExchangeServers`) permission group and the **Externally secured** (`ExternalAuthoritative`) authentication mechanism to the Receive connector.  <br/> |Connections use the `MS Exchange\Externally Secured Servers` security principal with the following permissions:  <br/> `ms-Exch-Accept-Headers-Routing` <br/> `ms-Exch-Bypass-Anti-Spam` <br/> `ms-Exch-Bypass-Message-Size-Limit` <br/> `ms-Exch-SMTP-Accept-Any-Recipient` <br/> `ms-Exch-SMTP-Accept-Any-Sender` <br/> `ms-Exch-SMTP-Accept-Authentication-Flag` <br/> `ms-Exch-SMTP-Accept-Authoritative-Domain-Sender` <br/> `ms-Exch-SMTP-Accept-Exch50` <br/> `ms-Exch-SMTP-Submit` <br/> |Easier to configure (can do everything in the Exchange admin center).  <br/> The network hosts are considered authenticated senders. The messages bypass antispam and message size limit checks, and the sender's email address can be resolved to a corresponding display name in the global address list.  <br/> |Grants the permissions to submit messages as if they originated from internal senders within your Exchange organization. The network hosts are considered completely trustworthy, regardless of the volume, size, or content of the messages that they send.  <br/> |
    
     Ultimately, you need to decide on the approach that best fits the needs of your organization. We'll show you how to configure both methods. Just remember that it's one method or the other, and not both at the same time.
     
@@ -118,11 +116,11 @@ This example creates a new Receive connector with the following configuration op
   
 - **Name**: Anonymous Relay
     
-- **Transport role**:  `FrontEndTransport`
+- **Transport role**: `FrontEndTransport`
     
 - **Usage type**: Custom
     
-- **Bindings**:  `0.0.0.0:25` (listen for inbound messages on all IP addresses that are configured on all network adapters in the Exchange server on TCP port 25.) 
+- **Bindings**: `0.0.0.0:25` (listen for inbound messages on all IP addresses that are configured on all network adapters in the Exchange server on TCP port 25.) 
     
 - **Remote IP addresses that are allowed to use this connector**: 192.168.5.10 and 192.168.5.11
     
@@ -132,9 +130,9 @@ New-ReceiveConnector -Name "Anonymous Relay" -TransportRole FrontendTransport -C
 
  **Notes:**
   
-- The  _Bindings_ parameter is required when you specify the Custom usage type. 
+- The _Bindings_ parameter is required when you specify the Custom usage type. 
     
-- The  _RemoteIpRanges_ parameter accepts an individual IP address, an IP address range (for example,  `192.168.5.10-192.168.5.20`), or Classless InterDomain Routing (CIDR) (for example,  `192.168.5.1/24`). You can specify multiple values separated by commas.
+- The _RemoteIpRanges_ parameter accepts an individual IP address, an IP address range (for example, `192.168.5.10-192.168.5.20`), or Classless InterDomain Routing (CIDR) (for example, `192.168.5.1/24`). You can specify multiple values separated by commas.
     
 ## Step 2: Configure the permissions for anonymous relay on the dedicated Receive connector
 
@@ -208,7 +206,7 @@ To verify that you've successfully configured anonymous relay, do the following:
     
     For the test, the you'll need the following values:
     
-  - **Destination**: This is the IP address or FQDN that you use to connect to the dedicated Receive connector. This is likely the IP address of the Mailbox server where the Receive connector is defined. This relates to the **Network adapter bindings** property (or the  _Bindings_ parameter) value that you configured on the connector. You'll need to use the valid value for your environment. In this example, we'll use 10.1.1.1. 
+  - **Destination**: This is the IP address or FQDN that you use to connect to the dedicated Receive connector. This is likely the IP address of the Mailbox server where the Receive connector is defined. This relates to the **Network adapter bindings** property (or the _Bindings_ parameter) value that you configured on the connector. You'll need to use the valid value for your environment. In this example, we'll use 10.1.1.1. 
     
   - **Sender's email address**: You'll probably configure the servers or devices that are anonymously relaying mail to use a sending email address that's in an authoritative domain for your organization. In this example, we'll use chris@contoso.com.
     
@@ -230,9 +228,9 @@ To verify that you've successfully configured anonymous relay, do the following:
     
 6. Type RCPT TO:kate@fabrikam.com, and then press Enter.
     
-  - If you receive the response  `250 2.1.5 Recipient OK`, the Receive connector allows anonymous relay from the network host. Continue to the next step to finish sending the test message.
+  - If you receive the response `250 2.1.5 Recipient OK`, the Receive connector allows anonymous relay from the network host. Continue to the next step to finish sending the test message.
     
-  - If you receive the response  `550 5.7.1 Unable to relay`, the Receive connector doesn't allow anonymous relay from the network host. If this happens, do the following:
+  - If you receive the response `550 5.7.1 Unable to relay`, the Receive connector doesn't allow anonymous relay from the network host. If this happens, do the following:
     
   - Verify that you're connecting to the correct IP address or FQDN for the dedicated Receive connector.
     

@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/4/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: d64c18e7-16af-4bd8-a5c5-01206984d4d1
 description: "Summary: Step-by-step guidance for restoring a recovery database in Exchange 2016."

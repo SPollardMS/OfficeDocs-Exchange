@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: reference
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 57eca42a-5a7f-4c65-89f0-7a84f2dbea19
 description: "Summary: Learn about permissions that are required to perform tasks for clients and mobile devices in Exchange Server 2016."

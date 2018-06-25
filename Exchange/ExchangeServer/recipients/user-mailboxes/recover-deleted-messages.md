@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 6/12/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.collection: Strat_EX_Admin
 ms.assetid: 9e0e34ce-efc5-454e-8d15-57b4da867f12
@@ -20,7 +20,7 @@ description: "Summary: Learn how administrators can search for and recover delet
 Administrators can search for items that are purged (hard-deleted) by a user by using the Recover Deleted Items feature in Outlook or Outlook on the web. They can also search for items deleted by an automated process, such as the retention policy assigned to user mailboxes. In these situations, the purged items can't be recovered by a user. But administrators can recover purged messages if the deleted item retention period for the item hasn't expired.
   
 > [!NOTE]
-> In addition to using this procedure to search for and recover deleted items, you can also use this procedure to search for items residing in other folders in the mailbox and to delete items from the source mailbox (also known as  *search and purge*  ). 
+> In addition to using this procedure to search for and recover deleted items, you can also use this procedure to search for items residing in other folders in the mailbox and to delete items from the source mailbox (also known as *search and purge* ). 
   
 ## What you need to know before you begin?
 
@@ -61,7 +61,7 @@ Search-Mailbox "April Stewart" -SearchQuery "from:'Ken Kwok' AND seattle" -Targe
 ```
 
 > [!NOTE]
-> When using the **Search-Mailbox** cmdlet, you can scope the search by using the  _SearchQuery_ parameter to specify a query formatted using Keyword Query Language (KQL). You can also use the  _SearchDumpsterOnly_ switch to search only items in the Recoverable Items folder. 
+> When using the **Search-Mailbox** cmdlet, you can scope the search by using the _SearchQuery_ parameter to specify a query formatted using Keyword Query Language (KQL). You can also use the _SearchDumpsterOnly_ switch to search only items in the Recoverable Items folder. 
   
 For detailed syntax and parameter information, see [Search-Mailbox](http://technet.microsoft.com/library/9ee3b02c-d343-4816-a583-a90b1fad4b26.aspx).
   
@@ -132,7 +132,7 @@ To verify that you have successfully exported messages to a .pst file, use Outlo
   
 ## More information
 
-- The ability to recover deleted items is enabled by  *single item recovery*  , which lets an administrator recover a message that's been purged by a user or by retention policy as long as the deleted item retention period hasn't expired for that item. To learn more about single item recovery, see [Recoverable Items folder in Exchange 2016](../../policy-and-compliance/recoverable-items-folder/recoverable-items-folder.md).
+- The ability to recover deleted items is enabled by *single item recovery*, which lets an administrator recover a message that's been purged by a user or by retention policy as long as the deleted item retention period hasn't expired for that item. To learn more about single item recovery, see [Recoverable Items folder in Exchange 2016](../../policy-and-compliance/recoverable-items-folder/recoverable-items-folder.md).
     
 - In Exchange 2016, a mailbox database is configured to retain deleted items for 14 days, by default. You can configure deleted item retention settings for a mailbox or mailbox database. For more information, see:
     

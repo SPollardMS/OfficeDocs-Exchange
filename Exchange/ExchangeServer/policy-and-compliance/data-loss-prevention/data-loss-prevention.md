@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 6/12/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 7c8ed3c1-ca91-4d9b-b16b-0a2b8ac89730
 description: "Summary: Learn about DLP policies in on-premises Exchange 2016, including what they contain and how to test them."
@@ -45,7 +45,7 @@ Looking for management tasks related to Data Loss Prevention? See [DLP Procedure
 ## Establish policies to protect sensitive data
 <a name="dlp_establish"> </a>
 
-The data loss prevention features can help you identify and monitor many categories of sensitive information that you have defined within the conditions of your policies, such as private identification numbers or credit card numbers. You have the option of defining your own custom policies and mail flow rules, or you can use the DLP policy templates that are included in Exchange to get started quickly. A  *policy template*  is a model that includes a range of conditions, rules, and actions that you can choose from to create and save an actual DLP policy that will help you inspect messages. For more information about the included policy templates, see [DLP Policy Templates Supplied in Exchange](http://technet.microsoft.com/library/7e1917ab-1920-4a52-97d1-7dfe2add6198.aspx).
+The data loss prevention features can help you identify and monitor many categories of sensitive information that you have defined within the conditions of your policies, such as private identification numbers or credit card numbers. You have the option of defining your own custom policies and mail flow rules, or you can use the DLP policy templates that are included in Exchange to get started quickly. A *policy template* is a model that includes a range of conditions, rules, and actions that you can choose from to create and save an actual DLP policy that will help you inspect messages. For more information about the included policy templates, see [DLP Policy Templates Supplied in Exchange](http://technet.microsoft.com/library/7e1917ab-1920-4a52-97d1-7dfe2add6198.aspx).
   
 There are three different methods that you can use to implement DLP:
   
@@ -79,7 +79,7 @@ You can use Policy Tip notification messages to inform email senders about possi
 ## Detecting sensitive information along with traditional message classification
 <a name="dlp_detectingsens"> </a>
 
-A key factor in the strength of a DLP solution is the ability to correctly identify confidential or sensitive content that may be unique to your organization, regulatory needs, geography, or other business needs. The Exchange DLP architecture uses deep content analysis coupled with detection criteria that you establish through rules in your DLP policies. Helping to prevent data loss in Exchange requires you to configure the appropriate set of sensitive information rules that provide a high degree of protection while minimizing disruptions to mail flow that are caused by false positives and negatives. These types of rules (referred to throughout the DLP information as  *sensitive information detection*  ) function within the framework of mail flow rules to enable DLP capabilities. To learn more about these features, see [Integrating Sensitive Information Rules with Transport Rules](http://technet.microsoft.com/library/feb014a7-89dd-4f2d-a06d-52806ce435d4.aspx).
+A key factor in the strength of a DLP solution is the ability to correctly identify confidential or sensitive content that may be unique to your organization, regulatory needs, geography, or other business needs. The Exchange DLP architecture uses deep content analysis coupled with detection criteria that you establish through rules in your DLP policies. Helping to prevent data loss in Exchange requires you to configure the appropriate set of sensitive information rules that provide a high degree of protection while minimizing disruptions to mail flow that are caused by false positives and negatives. These types of rules (referred to throughout the DLP information as *sensitive information detection* ) function within the framework of mail flow rules to enable DLP capabilities. To learn more about these features, see [Integrating Sensitive Information Rules with Transport Rules](http://technet.microsoft.com/library/feb014a7-89dd-4f2d-a06d-52806ce435d4.aspx).
   
 You can still apply traditional message classifications to messages, and you can combine these classifications with sensitive information detection. You can use these features together within a single DLP policy, or operate them independently (concurrently). To learn more about the traditional Exchange 2010 message classifications, see [Understanding Message Classifications](https://go.microsoft.com/fwlink/p/?LinkId=266612).
   

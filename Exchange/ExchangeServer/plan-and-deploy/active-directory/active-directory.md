@@ -6,8 +6,8 @@ manager: serdars
 ms.date: 4/19/2018
 ms.audience: ITPro
 ms.topic: conceptual
-ms.prod: office-online-server
-localization_priority: Normal
+ms.prod: exchange-server-itpro
+localization_priority: Priority
 ms.collection: Strat_EX_Admin
 ms.assetid: 8e8464df-2d1d-4d68-82de-b0c158c549c3
 description: "Summary: How Exchange 2016 interacts with Active Directory."

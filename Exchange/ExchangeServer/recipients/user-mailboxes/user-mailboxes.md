@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/12/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 4f7da774-b484-4312-b822-809dbeced5f8
 description: "Summary: How to use the Exchange admin center (EAC) or Exchange Management Shell to make changes to user mailboxes."
@@ -108,9 +108,9 @@ Click **More options** to view or change the mailbox storage quota and the delet
     
   - **Issue a warning at (GB)**: This box displays the maximum storage limit before a warning is issued to the user. If the mailbox size reaches or exceeds the value specified, Exchange sends a warning message to the user.
     
-  - **Prohibit send at (GB)**: This box displays the  *prohibit send*  limit for the mailbox. If the mailbox size reaches or exceeds the specified limit, Exchange prevents the user from sending new messages and displays a descriptive error message. 
+  - **Prohibit send at (GB)**: This box displays the *prohibit send* limit for the mailbox. If the mailbox size reaches or exceeds the specified limit, Exchange prevents the user from sending new messages and displays a descriptive error message. 
     
-  - **Prohibit send and receive at (GB)**: This box displays the  *prohibit send and receive*  limit for the mailbox. If the mailbox size reaches or exceeds the specified limit, Exchange prevents the mailbox user from sending new messages and won't deliver any new messages to the mailbox. Any messages sent to the mailbox are returned to the sender with a descriptive error message. 
+  - **Prohibit send and receive at (GB)**: This box displays the *prohibit send and receive* limit for the mailbox. If the mailbox size reaches or exceeds the specified limit, Exchange prevents the mailbox user from sending new messages and won't deliver any new messages to the mailbox. Any messages sent to the mailbox are returned to the sender with a descriptive error message. 
     
 - **Deleted item retention settings**: To customize these settings for the mailbox and not use the mailbox database defaults, click **Customize the settings for this mailbox**, type a new value, and then click **Save**.
     
@@ -141,12 +141,12 @@ Use the **Organization** section to record detailed information about the user's
     
 - **Manager**: To add a manager, click **Browse**. In **Select Manager**, select a person, and then click **OK**.
     
-- **Direct reports**: You can't modify this box. A  *direct report*  is a user who reports to a specific manager. If you've specified a manager for the user, that user appears as a direct report in the details of the manager's mailbox. For example, Kari manages Chris and Kate, so Kari's mailbox is specified in the **Manager** box of Chris's mailbox and Kate's mailbox, and Chris and Kate appear in the **Direct reports** box in the properties of Kari's mailbox. 
+- **Direct reports**: You can't modify this box. A *direct report* is a user who reports to a specific manager. If you've specified a manager for the user, that user appears as a direct report in the details of the manager's mailbox. For example, Kari manages Chris and Kate, so Kari's mailbox is specified in the **Manager** box of Chris's mailbox and Kate's mailbox, and Chris and Kate appear in the **Direct reports** box in the properties of Kari's mailbox. 
     
 #### Email Address
 <a name="EmailAddress"> </a>
 
-Use the **Email Address** section to view or change the email addresses associated with the user mailbox. This includes the user's primary SMTP address and any associated proxy addresses. The primary SMTP address (also known as the  *default reply address*  ) is displayed in bold text in the address list, with the uppercase **SMTP** value in the **Type** column. 
+Use the **Email Address** section to view or change the email addresses associated with the user mailbox. This includes the user's primary SMTP address and any associated proxy addresses. The primary SMTP address (also known as the *default reply address* ) is displayed in bold text in the address list, with the uppercase **SMTP** value in the **Type** column. 
   
 - **Add**: Click ** Add **![Add icon](../../media/ITPro_EAC_AddIcon.png) to add a new email address for this mailbox. Select one of following address types: 
     
@@ -262,7 +262,7 @@ Use the **MailTip** section to add a MailTip to alert users of potential issues 
 #### Mailbox Delegation
 <a name="MailboxDelegation"> </a>
 
-Use the **Mailbox Delegation** section to assign permissions to other users (also called  *delegates*  ) to allow them to sign in to the user's mailbox or send messages on behalf of the user. You can assign the following permissions: 
+Use the **Mailbox Delegation** section to assign permissions to other users (also called *delegates* ) to allow them to sign in to the user's mailbox or send messages on behalf of the user. You can assign the following permissions: 
   
 - **Send As**: This permission allows users other than the mailbox owner to use the mailbox to send messages. After this permission is assigned to a delegate, any message that a delegate sends from this mailbox will appear as if it was sent by the mailbox owner. However, this permission doesn't allow a delegate to sign in to the user's mailbox.
     

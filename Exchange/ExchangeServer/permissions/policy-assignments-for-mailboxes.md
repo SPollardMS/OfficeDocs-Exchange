@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 011690a5-233a-4c03-8842-92276f899a89
 description: "Summary: Learn how to change the management role assignment policy assigned to a mailbox."
@@ -60,7 +60,7 @@ Set-Mailbox Brian -RoleAssignmentPolicy "Unified Messaging Users"
 > [!NOTE]
 > You can't use the EAC to change the assignment policy on a group of mailboxes all at once. 
   
-This procedure makes use of pipelining, the **Where** cmdlet, and the  _WhatIf_ parameter. For more information about these concepts, see the following topics: 
+This procedure makes use of pipelining, the **Where** cmdlet, and the _WhatIf_ parameter. For more information about these concepts, see the following topics: 
   
 - [Pipelining](http://technet.microsoft.com/library/59411ed3-926b-4eec-a462-84e6b26056c9.aspx)
     
@@ -80,7 +80,7 @@ This example finds all the mailboxes assigned to the Redmond Users - No Voicemai
 Get-Mailbox | Where { $_.RoleAssignmentPolicy -Eq "Redmond Users - No Voicemail" } | Set-Mailbox -RoleAssignmentPolicy "Redmond Users - Voicemail Enabled"
 ```
 
-This example includes the  _WhatIf_ parameter so that you can see all the mailboxes that would be changed without committing any changes. 
+This example includes the _WhatIf_ parameter so that you can see all the mailboxes that would be changed without committing any changes. 
   
 ```
 Get-Mailbox | Where { $_.RoleAssignmentPolicy -Eq "Redmond Users - No Voicemail" } | Set-Mailbox -RoleAssignmentPolicy "Redmond Users - Voicemail Enabled" -WhatIf

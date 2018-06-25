@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: get-started-article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.collection: Strat_EX_Admin
 ms.assetid: 0eda267b-41e5-4a60-a209-70a8522a9f41
@@ -23,11 +23,11 @@ To configure instant messaging (IM) integration between Skype for Business Serve
   
 Also, the following health set errors are generated on the Exchange server:
   
-- **HealthSet**:  `OWA.Protocol.Dep`
+- **HealthSet**: `OWA.Protocol.Dep`
     
-- **Subject**:  `OWA.Protocol.Dep health set unhealthy (OwaIMinitializationFialiedMonitor/OWA.Protocol.Dep) - Owa InstantMessaging provider failed to intialize`
+- **Subject**: `OWA.Protocol.Dep health set unhealthy (OwaIMinitializationFialiedMonitor/OWA.Protocol.Dep) - Owa InstantMessaging provider failed to intialize`
     
-- **Message**:  `Owa InstantMessaging provider failed to initialize due to incorrect IM configuration on the server. Signin attempts to OWA IM will fail. Error Message: {Instant Messaging Certificate Thumbprint is null or empty on web.config).`
+- **Message**: `Owa InstantMessaging provider failed to initialize due to incorrect IM configuration on the server. Signin attempts to OWA IM will fail. Error Message: {Instant Messaging Certificate Thumbprint is null or empty on web.config).`
     
 Use the procedures in this topic to fix these errors and configure IM integration between Skype for Business Server and Exchange 2016. IM integration between Lync Server 2013 and Exchange 2016 isn't supported.
   
@@ -58,9 +58,9 @@ New-SettingOverride -Name "<UniqueOverrideName>" -Component OwaServer -Section I
 
  **Notes:**
   
-- To configure the same settings on all Exchange 2016 servers in the Active Directory forest, don't use the  _Server_ parameter. 
+- To configure the same settings on all Exchange 2016 servers in the Active Directory forest, don't use the _Server_ parameter. 
     
-- To configure the settings on a specific Exchange 2016 server, use the  _Server_ parameter and the name of the server (don't use the fully qualified domain name or FQDN). This method is useful when you need to specify different settings on different Exchange servers. 
+- To configure the settings on a specific Exchange 2016 server, use the _Server_ parameter and the name of the server (don't use the fully qualified domain name or FQDN). This method is useful when you need to specify different settings on different Exchange servers. 
     
 This example specifies the IM server and IM certificate thumbprint on all Exchange 2016 servers in the organization.
   
@@ -108,7 +108,7 @@ Restart-WebAppPool MSExchangeOWAAppPool
 
 You'll know that you've successfully configured IM integration with Outlook on the web when the error message goes away, and clients are able to sign in to IM.
   
-To verify the values of the **IMServerName** and **IMCertificateThumbprint** properties on an Exchange server, replace  _\<ServerName\>_ with the name of the server (not the FQDN), and run the following command: 
+To verify the values of the **IMServerName** and **IMCertificateThumbprint** properties on an Exchange server, replace _\<ServerName\>_ with the name of the server (not the FQDN), and run the following command: 
   
 ```
 [xml]$diag=Get-ExchangeDiagnosticInfo -Server <ServerName> -Process MSExchangeMailboxAssistants -Component VariantConfiguration -Argument "Config,Component=OwaServer"; $diag.Diagnostics.Components.VariantConfiguration.Configuration.OwaServer.IMSettings
@@ -116,8 +116,8 @@ To verify the values of the **IMServerName** and **IMCertificateThumbprint** pro
 
  **Note**: In Exchange 2016 CU3 or earlier, you need to use different values for some of the parameters:
   
--  _Process_:  `Microsoft.Exchange.Directory.TopologyService` (instead of  `MSExchangeMailboxAssistants`).
+- _Process_: `Microsoft.Exchange.Directory.TopologyService` (instead of `MSExchangeMailboxAssistants`).
     
--  _Argument_:  `Config` (instead of  `"Config,Component=OwaServer"`).
+- _Argument_: `Config` (instead of `"Config,Component=OwaServer"`).
     
 

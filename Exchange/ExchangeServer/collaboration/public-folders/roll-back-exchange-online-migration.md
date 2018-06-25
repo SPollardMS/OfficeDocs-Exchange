@@ -5,7 +5,7 @@ author: msdmaguire
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: bcd54aa0-aa45-4c68-b504-1475842d4b96
 description: "Summary: Follow these steps to return your public folder infrastructure to its pre-migration state in your Exchange 2016 on-premises organization."
@@ -28,7 +28,7 @@ Note that if you roll back your migration, you will lose any content that was ad
   Set-OrganizationConfig -PublicFolderMailboxesLockedForNewConnections:$false -PublicFolderMailboxesMigrationComplete:$false -PublicFoldersEnabled Local 
   ```
 
-2. In your Exchange on-premises environment, revert the  `ExternalEmailAddress` of any mail-enabled public folder that was updated by SetMailPublicFolderExternalAddress.ps1 (the script used in  *Step 8: Test and unlock public folders in Exchange Online*  of [Use batch migration to migrate Exchange 2016 public folders to Exchange Online](migrate-to-exchange-online.md). You can refer to the summary file created by the script to identify the ones that were modified, or use the file OnPrem_MEPF.xml file generated earlier in the same batch migration process to get the original properties for all mail-enabled public folders.
+2. In your Exchange on-premises environment, revert the `ExternalEmailAddress` of any mail-enabled public folder that was updated by SetMailPublicFolderExternalAddress.ps1 (the script used in *Step 8: Test and unlock public folders in Exchange Online* of [Use batch migration to migrate Exchange 2016 public folders to Exchange Online](migrate-to-exchange-online.md). You can refer to the summary file created by the script to identify the ones that were modified, or use the file OnPrem_MEPF.xml file generated earlier in the same batch migration process to get the original properties for all mail-enabled public folders.
     
 3. In Exchange Online PowerShell, run the following commands to remove all Exchange Online public folders and mailboxes:
     

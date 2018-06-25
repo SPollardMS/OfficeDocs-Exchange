@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/19/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.collection:
 - Ent_O365_Hybrid
@@ -24,13 +24,13 @@ In a hybrid deployment, your users can be in Exchange Online, Exchange on-premis
 This article describes how to synchronize mail-enabled public folders when your users are in Office 365 and your Exchange 2010 SP3 or later version public folders are on-premises. However, an Office 365 user who is not represented by a MailUser object on-premises (local to the target public folder hierarchy) won't be able to access legacy or Exchange 2016 on-premises public folders.
   
 > [!NOTE]
-> This topic refers to the Exchange 2010 SP3 or later servers as the  *legacy Exchange server*  . 
+> This topic refers to the Exchange 2010 SP3 or later servers as the *legacy Exchange server* . 
   
 You will use the following scripts to sync your mail-enabled public folders. The scripts are initiated by a Windows task that runs in the on-premises environment:
   
--  `Sync-MailPublicFolders.ps1`: This script synchronizes mail-enabled public folder objects from your local Exchange on-premises deployment with Office 365. It uses the local Exchange on-premises deployment as master to determine what changes need to be applied to O365. The script will create, update, or delete mail-enabled public folder objects on O365 Active Directory based on what exists in the local on-premises Exchange deployment.
+- `Sync-MailPublicFolders.ps1`: This script synchronizes mail-enabled public folder objects from your local Exchange on-premises deployment with Office 365. It uses the local Exchange on-premises deployment as master to determine what changes need to be applied to O365. The script will create, update, or delete mail-enabled public folder objects on O365 Active Directory based on what exists in the local on-premises Exchange deployment.
     
--  `SyncMailPublicFolders.strings.psd1`: This is a support file used by the preceding synchronization script and should be copied to the same location as the preceding script.
+- `SyncMailPublicFolders.strings.psd1`: This is a support file used by the preceding synchronization script and should be copied to the same location as the preceding script.
     
 When you complete this procedure your on-premises and Office 365 users will be able to access the same on-premises public folder infrastructure.
   
@@ -95,7 +95,7 @@ A hybrid configuration with Exchange 2003 public folders is not supported. If yo
     > [!NOTE]
     > We recommend that the only mailbox that you add to this database is the proxy mailbox that you'll create in the next step. No other mailboxes should be created on this mailbox database. 
   
-3. Create a proxy mailbox within the new mailbox database, and hide the mailbox from the address book. The SMTP of this mailbox will be returned by AutoDiscover as the  _DefaultPublicFolderMailbox_ SMTP, so that by resolving this SMTP the client can reach the legacy exchange server for public folder access. 
+3. Create a proxy mailbox within the new mailbox database, and hide the mailbox from the address book. The SMTP of this mailbox will be returned by AutoDiscover as the _DefaultPublicFolderMailbox_ SMTP, so that by resolving this SMTP the client can reach the legacy exchange server for public folder access. 
     
   ```
   New-Mailbox -Name <PFMailbox1> -Database <NewMDBforPFs>
@@ -118,9 +118,9 @@ A hybrid configuration with Exchange 2003 public folders is not supported. If yo
 
 1. Download the following files from [Mail-enabled Public Folders - directory sync script](https://www.microsoft.com/download/details.aspx?id=46381):
     
-  -  `Sync-MailPublicFolders.ps1`
+  - `Sync-MailPublicFolders.ps1`
     
-  -  `SyncMailPublicFolders.strings.psd1`
+  - `SyncMailPublicFolders.strings.psd1`
     
 2. Save the files to the local computer on which you'll be running PowerShell. For example, C:\PFScripts.
     
@@ -138,10 +138,10 @@ The Directory Synchronization service doesn't synchronize mail-enabled public fo
   Sync-MailPublicFolders.ps1 -Credential (Get-Credential) -CsvSummaryFile:sync_summary.csv
   ```
 
-    Where  `Credential` is your Office 365 user name and password, and  `CsvSummaryFile` is the path to where you would like to log synchronization operations and errors, in .csv format. 
+    Where `Credential` is your Office 365 user name and password, and `CsvSummaryFile` is the path to where you would like to log synchronization operations and errors, in .csv format. 
     
 > [!NOTE]
-> Before running the script, we recommend that you first simulate the actions that the script would take in your environment by running it as described above with the  `-WhatIf` parameter. We also recommend that you run this script daily to synchronize your mail-enabled public folders. 
+> Before running the script, we recommend that you first simulate the actions that the script would take in your environment by running it as described above with the `-WhatIf` parameter. We also recommend that you run this script daily to synchronize your mail-enabled public folders. 
   
 ## Step 5: Configure Exchange Online users to access on-premises public folders
 <a name="Access"> </a>

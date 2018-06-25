@@ -4,9 +4,9 @@ ms.author: chrisda
 author: chrisda
 manager: serdars
 ms.date: 6/7/2018
-ms.audience: End User
+ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 57e12f07-3b14-45bd-9a82-e6032d14214f
 description: "Summary: Learn how administrators can enable or disable POP3 and IMAP4 access to specific mailboxes in Exchange 2016."
@@ -112,9 +112,9 @@ For more information, see [Set-CASMailbox](http://technet.microsoft.com/library/
 
 You can use the **Get-Mailbox**, **Get-User**, or **Get-Content** cmdlets to identify the mailboxes that you want to modify. For example: 
   
-- Use the  _OrganizationalUnit_ parameter to filter the mailboxes by organizational unit (OU). 
+- Use the _OrganizationalUnit_ parameter to filter the mailboxes by organizational unit (OU). 
     
-- Use the  _Filter_ parameter to create OPATH filters that identify the mailboxes. For more information, see [Filterable Properties for the -Filter Parameter](http://technet.microsoft.com/library/b02b0005-2fb6-4bc2-8815-305259fa5432.aspx).
+- Use the _Filter_ parameter to create OPATH filters that identify the mailboxes. For more information, see [Filterable Properties for the -Filter Parameter](http://technet.microsoft.com/library/b02b0005-2fb6-4bc2-8815-305259fa5432.aspx).
     
 - Use a text file to specify the mailboxes. The text file contains one mailbox (email address, name, or other unique identifier) on each line like this:
     
@@ -153,7 +153,7 @@ After you change the POP3 or IMAP4 access settings on a mailbox, you need to res
 
 1. On the Exchange server, open the Windows Services console. For example:
     
-  - Run the command  `services.msc` from the **Run** dialog, a Command Prompt window, or the Exchange Management Shell. 
+  - Run the command `services.msc` from the **Run** dialog, a Command Prompt window, or the Exchange Management Shell. 
     
   - Open Server Manager, and then click **Tools** \> **Services**.
     
@@ -205,7 +205,7 @@ To verify that you've enabled or disabled POP3 or IMAP4 access to a mailbox, use
     
 ![Protocol access settings for a mailbox in the EAC at Recipients \> select mailbox \> Edit \> Mailbox features \> Email connectivity](../../media/8c2d9cda-aa53-4b6e-b83a-0f55b4b3fd3d.png)
   
-- In the Exchange Management Shell, replace  _\<MailboxIdentity\>_ with the identity of the mailbox (for example, name, alias, or email address), and run the following command: 
+- In the Exchange Management Shell, replace _\<MailboxIdentity\>_ with the identity of the mailbox (for example, name, alias, or email address), and run the following command: 
     
   ```
   Get-CasMailbox - Identity <MailboxIdentity>

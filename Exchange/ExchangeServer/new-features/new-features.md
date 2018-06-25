@@ -6,8 +6,8 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: overview
-ms.prod: office-online-server
-localization_priority: Normal
+ms.prod: exchange-server-itpro
+localization_priority: Critical
 ms.assetid: 97501135-2149-4590-8373-98e638ac8eb1
 description: "Summary: Learn about the new features that are available in Exchange 2016 when you upgrade from previous versions of Exchange."
 ---
@@ -244,7 +244,7 @@ Another advantage of the new architecture is that search scalability is improved
 ### Exchange admin center
 <a name="EAC2010"> </a>
 
-Exchange 2016 provides a single unified management console that allows for ease of use and is optimized for management of on-premises, online, or hybrid deployments. The  *Exchange admin center*  (EAC) in Exchange 2016 replaces the Exchange Management Console (EMC) and the Exchange Control Panel (ECP) that were used in Exchange 2010 (but the name of the EAC virtual directory is still "ECP"). Some EAC features include: 
+Exchange 2016 provides a single unified management console that allows for ease of use and is optimized for management of on-premises, online, or hybrid deployments. The *Exchange admin center* (EAC) in Exchange 2016 replaces the Exchange Management Console (EMC) and the Exchange Control Panel (ECP) that were used in Exchange 2010 (but the name of the EAC virtual directory is still "ECP"). Some EAC features include: 
   
 - **List view**: The list view in EAC has been designed to remove key limitations that existed in ECP. ECP was limited to displaying up to 500 objects and, if you wanted to view objects that weren't listed in the details pane, you needed to use searching and filtering to find those specific objects. In Exchange 2016, the viewable limit from within the EAC list view is approximately 20,000 objects. After the EAC returns the results, the EAC client performs the searching and sorting, which greatly increases the performance compared to the ECP in Exchange 2010. In addition, paging has been added so that you can page to the results. You can also configure page size and export to a .csv file.
     
@@ -472,7 +472,7 @@ How messages flow through an organization and what happens to them has changed s
 ### Recipients
 <a name="Recipients2010"> </a>
 
-Administrators can now use the EAC to create a  *group naming policy*  , which lets you standardize and manage the names of distribution groups that are created by users in your organization. You can automatically add a prefix or suffix to the name of the distribution group when it's created, and you can block specific words from being used in group names. For more information, see [Create a Distribution Group Naming Policy](http://technet.microsoft.com/library/b2ffb654-345d-4be1-be8e-83d28901373e.aspx).
+Administrators can now use the EAC to create a *group naming policy*, which lets you standardize and manage the names of distribution groups that are created by users in your organization. You can automatically add a prefix or suffix to the name of the distribution group when it's created, and you can block specific words from being used in group names. For more information, see [Create a Distribution Group Naming Policy](http://technet.microsoft.com/library/b2ffb654-345d-4be1-be8e-83d28901373e.aspx).
   
 For more information about recipients in Exchange 2016, see [Recipients](../recipients/recipients.md).
   
@@ -620,9 +620,9 @@ Exchange 2016 uses DAGs and mailbox database copies, along with other features s
     
 - **Automatic reseed**: Enables you to quickly restore database redundancy after disk failure. If a disk fails, the database copy stored on that disk is copied from the active database copy to a spare disk on the same server. If multiple database copies were stored on the failed disk, they can all be automatically re-seeded on a spare disk. This enables faster reseeds, as the active databases are likely to be on multiple servers and the data is copied in parallel.
     
-- **Automatic recovery from storage failures**: This feature continues the innovation that was introduced in Exchange 2010 to allow the system to recover from failures that affect resiliency or redundancy. In addition to the Exchange 2010 bugcheck behaviors, Exchange 2016 includes additional recovery behaviors for long I/O times, excessive memory consumption by  `MSExchangeRepl.exe`, and severe cases where the system is in such a bad state that threads can't be scheduled.
+- **Automatic recovery from storage failures**: This feature continues the innovation that was introduced in Exchange 2010 to allow the system to recover from failures that affect resiliency or redundancy. In addition to the Exchange 2010 bugcheck behaviors, Exchange 2016 includes additional recovery behaviors for long I/O times, excessive memory consumption by `MSExchangeRepl.exe`, and severe cases where the system is in such a bad state that threads can't be scheduled.
     
-- **Lagged copy enhancements**: Lagged copies can now use automatic log play down to care for themselves (to a certain extent). Lagged copies will automatically play down log files in a variety of situations, such as single page restore and low disk space scenarios. If the system detects that page patching is required for a lagged copy, the logs will be automatically replayed into the lagged copy. Lagged copies will also invoke this auto replay feature when a low disk space threshold has been reached, and when the lagged copy has been detected as the only available copy for a specific period of time. In addition, lagged copies can leverage Safety Net, making recovery or activation much easier.  *Safety Net*  is improved functionality in Exchange 2016 based on the transport dumpster of Exchange 2010. 
+- **Lagged copy enhancements**: Lagged copies can now use automatic log play down to care for themselves (to a certain extent). Lagged copies will automatically play down log files in a variety of situations, such as single page restore and low disk space scenarios. If the system detects that page patching is required for a lagged copy, the logs will be automatically replayed into the lagged copy. Lagged copies will also invoke this auto replay feature when a low disk space threshold has been reached, and when the lagged copy has been detected as the only available copy for a specific period of time. In addition, lagged copies can leverage Safety Net, making recovery or activation much easier. *Safety Net* is improved functionality in Exchange 2016 based on the transport dumpster of Exchange 2010. 
     
 - **Single copy alert enhancements**: The single copy alert that was introduced in Exchange 2010 is no longer a separate scheduled script. It's now integrated into the managed availability components within the system and is a native function within Exchange.
     
@@ -633,7 +633,7 @@ For more information about these features, see [High Availability and Site Resil
 #### Managed Store
 <a name="ManagedStore"> </a>
 
-In Exchange 2016,  *Managed Store*  is the name of the Information Store processes,  `Microsoft.Exchange.Store.Service.exe` and  `Microsoft.Exchange.Store.Worker.exe`. The new Managed Store is written in C# and is tightly integrated with the Microsoft Exchange Replication service ( `MSExchangeRepl.exe`) to provide higher availability through improved resiliency. In addition, the Managed Store allows more granular management of resource consumption, and has improved diagnostics for faster root cause analysis.
+In Exchange 2016, *Managed Store* is the name of the Information Store processes, `Microsoft.Exchange.Store.Service.exe` and `Microsoft.Exchange.Store.Worker.exe`. The new Managed Store is written in C# and is tightly integrated with the Microsoft Exchange Replication service (`MSExchangeRepl.exe`) to provide higher availability through improved resiliency. In addition, the Managed Store allows more granular management of resource consumption, and has improved diagnostics for faster root cause analysis.
   
 The Managed Store works with the Microsoft Exchange Replication service to manage mailbox databases, which continue to use the Extensible Storage Engine (ESE) database engine. Exchange 2016 includes significant changes to the mailbox database schema that provide many optimizations over previous versions of Exchange. The Microsoft Exchange Replication service is also responsible for all service availability related to Mailbox servers. These architectural changes enable faster database failover and better physical disk failure handling.
   

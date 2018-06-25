@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 83358884-6036-4e91-87a8-35200541874d
 description: "Summary: Learn how to remove, suspend, resume, and redirect messages in queues in Exchange 2016."
@@ -74,7 +74,7 @@ For information about exporting messages from queues, see [Export messages from 
 
 1. In the **Exchange Toolbox**, in the **Mail flow tools** section, double-click **Queue Viewer** to open the tool in a new window. 
     
-2. In Queue Viewer, click the **Messages** tab. A list of all messages on the server that you're connected to is displayed. To adjust the action to a single queue, click the **Queues** tab, double-click the queue name, and then click the  _Server\Queue_ tab that appears. 
+2. In Queue Viewer, click the **Messages** tab. A list of all messages on the server that you're connected to is displayed. To adjust the action to a single queue, click the **Queues** tab, double-click the queue name, and then click the _Server\Queue_ tab that appears. 
     
 3. Select one or more messages from the list, right-click, and then select **Remove Messages (with NDR)** or **Remove Messages (without NDR)**. A dialog box appears that confirms the selected action and displays, **Do you want to continue?**. Click **Yes**.
     
@@ -111,7 +111,7 @@ To verify that you have successfully removed messages from queues, use either of
   
 - In Queue Viewer, select the queue or create a filter to verify the messages no longer exist.
     
-- In the Exchange Management Shell, replace  _MessageFilter_ with the filter that you used, or  _\<QueueIdentity\>_ with the identity of the queue, and run either of the following commands to verify the messages no longer exist: 
+- In the Exchange Management Shell, replace _MessageFilter_ with the filter that you used, or _\<QueueIdentity\>_ with the identity of the queue, and run either of the following commands to verify the messages no longer exist: 
     
   ```
   Get-Message -Filter {MessageFilter}
@@ -138,7 +138,7 @@ To verify that you have successfully removed messages from queues, use either of
 
 1. In the **Exchange Toolbox**, in the **Mail flow tools** section, double-click **Queue Viewer** to open the tool in a new window. 
     
-2. In Queue Viewer, click the **Messages** tab. A list of all messages on the server that you're connected to is displayed. To limit the view to a single queue, click the **Queues** tab, double-click the queue name, and then click the  _Server\Queue_ tab that appears. 
+2. In Queue Viewer, click the **Messages** tab. A list of all messages on the server that you're connected to is displayed. To limit the view to a single queue, click the **Queues** tab, double-click the queue name, and then click the _Server\Queue_ tab that appears. 
     
 3. Select one or more messages, right-click, and then select **Suspend**.
     
@@ -182,7 +182,7 @@ To verify that you have successfully suspended messages in queues, use either of
   
 - In Queue Viewer, select the queue or create a filter to verify messages are suspended.
     
-- In the Exchange Management Shell, replace  _MessageFilter_ with the filter that you used, or  _\<QueueIdentity\>_ with the identity of the queue, and run either of the following commands to verify that the messages are suspended: 
+- In the Exchange Management Shell, replace _MessageFilter_ with the filter that you used, or _\<QueueIdentity\>_ with the identity of the queue, and run either of the following commands to verify that the messages are suspended: 
     
   ```
   Get-Message -Filter {MessageFilter}
@@ -209,7 +209,7 @@ To verify that you have successfully suspended messages in queues, use either of
 
 1. In the **Exchange Toolbox**, in the **Mail flow tools** section, double-click **Queue Viewer** to open the tool in a new window. 
     
-2. In Queue Viewer, click the **Messages** tab. A list of all messages on the server that you're connected to is displayed. To adjust the action to focus on a single queue, click the **Queues** tab, double-click the queue name, and then click the  _Server\Queue_ tab that appears. 
+2. In Queue Viewer, click the **Messages** tab. A list of all messages on the server that you're connected to is displayed. To adjust the action to focus on a single queue, click the **Queues** tab, double-click the queue name, and then click the _Server\Queue_ tab that appears. 
     
 3. Click **Create Filter**, and enter your filter expression as follows:
     
@@ -249,7 +249,7 @@ To verify that you have successfully resumed messages in queues, use either of t
   
 - In Queue Viewer, select the queue or create a filter to verify the that messages are no longer suspended.
     
-- In the Exchange Management Shell, replace  _MessageFilter_ with the filter that you used, or  _\<QueueIdentity\>_ with the identity of the queue, and run either of the following commands to verify that the messages are no longer suspended: 
+- In the Exchange Management Shell, replace _MessageFilter_ with the filter that you used, or _\<QueueIdentity\>_ with the identity of the queue, and run either of the following commands to verify that the messages are no longer suspended: 
     
   ```
   Get-Message -Filter {MessageFilter}

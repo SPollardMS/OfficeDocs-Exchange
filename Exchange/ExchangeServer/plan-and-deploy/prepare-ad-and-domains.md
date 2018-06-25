@@ -6,8 +6,8 @@ manager: serdars
 ms.date: 6/19/2018
 ms.audience: ITPro
 ms.topic: get-started-article
-ms.prod: office-online-server
-localization_priority: Normal
+ms.prod: exchange-server-itpro
+localization_priority: Critical
 ms.collection: Strat_EX_Admin
 ms.assetid: f895e1ce-d766-4352-ac46-ec959c9954a9
 description: "Summary: Learn how to prepare Active Directory for Exchange 2016."
@@ -55,7 +55,7 @@ Before you extend your schema, there are a few things to keep in mind:
     
 - The computer where you'll run the command to extend the schema needs to be in the same Active Directory domain and site as the schema master.
     
-- If you use the  _DomainController_ parameter, make sure to use the name of the domain controller that's the schema master. 
+- If you use the _DomainController_ parameter, make sure to use the name of the domain controller that's the schema master. 
     
 - The only way to extend the schema for Exchange is to use the steps in this topic or use Exchange 2016 Setup. Other ways of extending the schema aren't supported.
     
@@ -74,16 +74,16 @@ When you're ready, do the following to extend your Active Directory schema. If y
   Setup.exe /PrepareSchema /IAcceptExchangeServerLicenseTerms
   ```
 
-After Setup finishes extending the schema, you'll need to wait while Active Directory replicates the changes to all of your domain controllers. If you want to check on how replication is going, you can use the  `repadmin` tool.  `Repadmin` is included as part of the Active Directory Domain Services Tools feature in Windows Server 2012 R2 and Windows Server 2012. For more information about how to use it, see [Repadmin](https://go.microsoft.com/fwlink/p/?LinkId=257879).
+After Setup finishes extending the schema, you'll need to wait while Active Directory replicates the changes to all of your domain controllers. If you want to check on how replication is going, you can use the `repadmin` tool. `Repadmin` is included as part of the Active Directory Domain Services Tools feature in Windows Server 2012 R2 and Windows Server 2012. For more information about how to use it, see [Repadmin](https://go.microsoft.com/fwlink/p/?LinkId=257879).
   
 ## 2. Prepare Active Directory
 <a name="Step2"> </a>
 
-Now that the Active Directory schema has been extended, you can prepare other parts of Active Directory for Exchange 2016. During this step, Exchange will create containers, objects, and other items in Active Directory that it'll use to store information. The collection of all of the Exchange containers, objects, attributes, and so on, is called the  *Exchange organization*  . 
+Now that the Active Directory schema has been extended, you can prepare other parts of Active Directory for Exchange 2016. During this step, Exchange will create containers, objects, and other items in Active Directory that it'll use to store information. The collection of all of the Exchange containers, objects, attributes, and so on, is called the *Exchange organization* . 
   
 Before you prepare Active Directory for Exchange, there are a few things to keep in mind:
   
-- The account you're logged in as needs to be a member of the Enterprise Admins security group. If you skipped step 1 because you want the  _PrepareAD_ command to extend the schema, the account you use also needs to be a member of the Schema Admins security group. 
+- The account you're logged in as needs to be a member of the Enterprise Admins security group. If you skipped step 1 because you want the _PrepareAD_ command to extend the schema, the account you use also needs to be a member of the Schema Admins security group. 
     
 - The computer where you'll run the command needs to be in the same Active Directory domain and site as the schema master. It'll also need to contact all of the domains in the forest on TCP port 389.
     
@@ -114,20 +114,20 @@ When you're ready, do the following to prepare Active Directory for Exchange. If
   ```
 
 > [!IMPORTANT]
-> If you've configured a hybrid deployment between your on-premises organization and Exchange Online, you need to include the  `/TenantOrganizationConfig` switch when you run the above command. 
+> If you've configured a hybrid deployment between your on-premises organization and Exchange Online, you need to include the `/TenantOrganizationConfig` switch when you run the above command. 
   
-After Setup finishes preparing Active Directory for Exchange, you'll need to wait while Active Directory replicates the changes to all of your domain controllers. If you want to check on how replication is going, you can use the  `repadmin` tool.  `repadmin` is included as part of the Active Directory Domain Services Tools feature in Windows Server 2012 R2 and Windows Server 2012. For more information about how to use the tool, see [Repadmin](https://go.microsoft.com/fwlink/p/?LinkId=257879).
+After Setup finishes preparing Active Directory for Exchange, you'll need to wait while Active Directory replicates the changes to all of your domain controllers. If you want to check on how replication is going, you can use the `repadmin` tool. `repadmin` is included as part of the Active Directory Domain Services Tools feature in Windows Server 2012 R2 and Windows Server 2012. For more information about how to use the tool, see [Repadmin](https://go.microsoft.com/fwlink/p/?LinkId=257879).
   
 ## 3. Prepare Active Directory domains
 <a name="Step3"> </a>
 
 The final step to get Active Directory ready for Exchange is to prepare each of the Active Directory domains where Exchange will be installed or where mail-enabled users will be located. This step creates additional containers and security groups, and sets permissions so that Exchange can access them.
   
-If you have multiple domains in your Active Directory forest, you have a couple of choices in how you prepare them. Select the option that matches what you want to do. If you only have one domain, you can skip this step because the  _PrepareAD_ command in step 2 already prepared the domain for you. 
+If you have multiple domains in your Active Directory forest, you have a couple of choices in how you prepare them. Select the option that matches what you want to do. If you only have one domain, you can skip this step because the _PrepareAD_ command in step 2 already prepared the domain for you. 
   
 ### Prepare all of the domains in my Active Directory forest
 
-To prepare all of your Active Directory domains, you can use the  _PrepareAllDomains_ parameter when you run Setup. Setup will prepare every domain for Exchange in your Active Directory forest for you. 
+To prepare all of your Active Directory domains, you can use the _PrepareAllDomains_ parameter when you run Setup. Setup will prepare every domain for Exchange in your Active Directory forest for you. 
   
 Before you prepare all of the domains in your Active Directory forest, keep the following in mind:
   
@@ -147,21 +147,21 @@ When you're ready, do the following to prepare all of the domains in your Active
 
 ### Let me choose which Active Directory domains I want to prepare
 
-If you want to choose which Active Directory domains you want to prepare, you can use the  _PrepareDomain_ parameter when you run Setup. When you use the  _PrepareDomain_ parameter, you need to include the fully qualified domain name (FQDN) of the domain you want to prepare. 
+If you want to choose which Active Directory domains you want to prepare, you can use the _PrepareDomain_ parameter when you run Setup. When you use the _PrepareDomain_ parameter, you need to include the fully qualified domain name (FQDN) of the domain you want to prepare. 
   
 Before you prepare the domains in your Active Directory forest, keep the following in mind:
   
 - The account you use needs permissions depending on when the domain was created.
     
-  - **Domain created before PrepareAD was run**: If the domain was created **before** you ran the  _PrepareAD_ command in step 2 above, then the account you use needs to be a member of the Domain Admins group in the domain you want to prepare. 
+  - **Domain created before PrepareAD was run**: If the domain was created **before** you ran the _PrepareAD_ command in step 2 above, then the account you use needs to be a member of the Domain Admins group in the domain you want to prepare. 
     
-  - **Domain created after PrepareAD was run**: If the domain was created **after** you ran the  _PrepareAD_ command in step 2 above, then the account you use needs to 1) be a member of the Organization Management role group and 2) be a member of the Domain Admins group in the domain you want to prepare. 
+  - **Domain created after PrepareAD was run**: If the domain was created **after** you ran the _PrepareAD_ command in step 2 above, then the account you use needs to 1) be a member of the Organization Management role group and 2) be a member of the Domain Admins group in the domain you want to prepare. 
     
 - Wait until Active Directory has replicated the changes made in step 2 to all of your domain controllers. If you don't, you might get an error when you try to prepare the domain.
     
 - You need to prepare every domain where an Exchange server will be installed. You'll also need to prepare any domain that'll contain mail-enabled users, even if those domains won't contain any Exchange servers.
     
-- You don't need to run the  _PrepareDomain_ command in the domain where the  _PrepareAD_ command was run. The  _PrepareAD_ command prepares that domain automatically. 
+- You don't need to run the _PrepareDomain_ command in the domain where the _PrepareAD_ command was run. The _PrepareAD_ command prepares that domain automatically. 
     
 When you're ready, do the following to prepare an individual domain in your Active Directory forest for Exchange.
   
@@ -187,9 +187,9 @@ Once you've done all the steps above, you can check to make sure everything's go
   
 - In the **Schema** naming context, verify that the **rangeUpper** property on **ms-Exch-Schema-Version-Pt** is set to the value shown for your version of Exchange 2016 in the [Exchange 2016 Active Directory versions ](#ADversions.md) table. 
     
-- In the **Configuration** naming context, verify that the **objectVersion** property in the CN=\<  _your organization_\>,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=\< _domain_\> container is set to the value shown for your version of Exchange 2016 in the [Exchange 2016 Active Directory versions ](#ADversions.md) table. 
+- In the **Configuration** naming context, verify that the **objectVersion** property in the CN=\< _your organization_\>,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=\< _domain_\> container is set to the value shown for your version of Exchange 2016 in the [Exchange 2016 Active Directory versions ](#ADversions.md) table. 
     
-- In the **Default** naming context, verify that the **objectVersion** property in the **Microsoft Exchange System Objects** container under DC=\<  _root domain_ is set to the value shown for your version of Exchange 2016 in the [Exchange 2016 Active Directory versions ](#ADversions.md) table. 
+- In the **Default** naming context, verify that the **objectVersion** property in the **Microsoft Exchange System Objects** container under DC=\< _root domain_ is set to the value shown for your version of Exchange 2016 in the [Exchange 2016 Active Directory versions ](#ADversions.md) table. 
     
 You can also check the Exchange setup log to verify that Active Directory preparation has completed successfully. For more information, see [Verify an Exchange 2016 installation](post-installation-tasks/verify-installation.md). You won't be able to use the **Get-ExchangeServer** cmdlet mentioned in the [Verify an Exchange 2016 installation](post-installation-tasks/verify-installation.md) topic until you've completed the installation of at least one Mailbox server role in an Active Directory site. 
   

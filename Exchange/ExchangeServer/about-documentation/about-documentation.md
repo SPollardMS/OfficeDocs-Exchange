@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: reference
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.collection: Ent_O365_Hybrid
 ms.assetid: cbc07e0d-2884-4e5d-8065-39b7f6299b9b

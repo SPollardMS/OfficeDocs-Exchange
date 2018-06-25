@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: overview
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 645154a1-fd8a-4332-a306-5ce0b4be1a05
 description: "Summary: Learn about site mailboxes and how to use them."
@@ -18,7 +18,7 @@ description: "Summary: Learn about site mailboxes and how to use them."
   
 Email and documents are traditionally kept in two unique and separate data repositories. Most organizations collaborate using both mediums. The challenge is that both email and documents are accessed using different clients. This usually results in a reduction in user productivity and a degraded user experience.
   
-The  *site mailbox*  , first introduced in Exchange 2013, is a solution for this problem. Site mailboxes improve collaboration and user productivity by allowing access to both Microsoft SharePoint 2013 documents and Exchange email using the same client interface. A site mailbox is functionally comprised of SharePoint 2013 site membership (owners and members), shared storage through an Exchange 2016 mailbox for email messages and a SharePoint 2013 site for documents, and a management interface that addresses provisioning and lifecycle needs. 
+The *site mailbox*, first introduced in Exchange 2013, is a solution for this problem. Site mailboxes improve collaboration and user productivity by allowing access to both Microsoft SharePoint 2013 documents and Exchange email using the same client interface. A site mailbox is functionally comprised of SharePoint 2013 site membership (owners and members), shared storage through an Exchange 2016 mailbox for email messages and a SharePoint 2013 site for documents, and a management interface that addresses provisioning and lifecycle needs. 
   
 Site mailboxes require Exchange 2016 and SharePoint Server 2013 integration and configuration. For more information about how to configure your Exchange 2016 organization to work with your SharePoint Server 2013 organization, see the following topics:
   
@@ -42,9 +42,9 @@ Site mailbox quotas can be set by using the **SiteMailboxProvisioningPolicy** cm
   
 |**Quota**|**Description**|**Default setting**|
 |:-----|:-----|:-----|
-|IssueWarningQuota  <br/> |The  _IssueWarningQuota_ parameter specifies the site mailbox size that triggers a warning message to the site mailbox  <br/> |4.5 GB  <br/> |
-|MaxReceiveSize  <br/> |The  _MaxReceiveSize_ parameter specifies the maximum size of email messages that can be received by the site mailbox.  <br/> |36 MB  <br/> |
-|ProhibitSendReceiveQuota  <br/> |The  _ProhibitSendReceiveQuota_ parameter specifies the size at which the site mailbox can no longer send or receive messages.  <br/> |5 GB  <br/> |
+|IssueWarningQuota  <br/> |The _IssueWarningQuota_ parameter specifies the site mailbox size that triggers a warning message to the site mailbox  <br/> |4.5 GB  <br/> |
+|MaxReceiveSize  <br/> |The _MaxReceiveSize_ parameter specifies the maximum size of email messages that can be received by the site mailbox.  <br/> |36 MB  <br/> |
+|ProhibitSendReceiveQuota  <br/> |The _ProhibitSendReceiveQuota_ parameter specifies the size at which the site mailbox can no longer send or receive messages.  <br/> |5 GB  <br/> |
    
 For more information about how to configure site mailbox provisioning policies, see [Manage site mailbox provisioning policies](http://technet.microsoft.com/library/2f160d1a-a031-461f-8d29-c9cd49ca1645.aspx).
   
@@ -73,6 +73,6 @@ Using the eDiscovery Console in SharePoint, site mailboxes can be part of the In
 
 Backup and Restore for the Exchange site mailboxes housed on the mailbox server will use the same backup and restore method that you use for all Exchange mailboxes. For more information, see [Database Availability Groups](http://technet.microsoft.com/library/ab9b88ce-2f44-4334-96ad-a666b95888a0.aspx).
   
-For SharePoint documents, you should backup and restore into the same place. If you restore your SharePoint content to same URLs, then the site mailbox will continue to work and no additional configuration is needed. If you restore to a different URL, then you'll need to run **Set-SiteMailbox** cmdlet to update the  _SharePointURL_ property. We recommend that you don't restore SharePoint to a new forest. 
+For SharePoint documents, you should backup and restore into the same place. If you restore your SharePoint content to same URLs, then the site mailbox will continue to work and no additional configuration is needed. If you restore to a different URL, then you'll need to run **Set-SiteMailbox** cmdlet to update the _SharePointURL_ property. We recommend that you don't restore SharePoint to a new forest. 
   
 

@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: e45e33c9-e53b-427c-ada5-70901bc399b8
 description: "Summary: Learn about using mail flow rules (transport rules) to add disclaimers to email messages in Exchange 2016."
@@ -42,7 +42,7 @@ You can choose whether to insert the disclaimer at the beginning of the message 
   
 In the EAC, you select the action **Append the disclaimer** or **Apply a disclaimer to the message** \> **prepend a disclaimer**.
   
-In the Exchange Management Shell, you use the  _ApplyHtmlDisclaimerTextLocation_ parameter with the value  `Append` (default) or  `Prepend`.
+In the Exchange Management Shell, you use the _ApplyHtmlDisclaimerTextLocation_ parameter with the value `Append` (default) or `Prepend`.
   
 ## Format your disclaimer
 <a name="FormatDisclaimer"> </a>
@@ -52,11 +52,11 @@ Here's the formatting that you can use in your disclaimer text.
 |**Type of information**|**Description**|
 |:-----|:-----|
 |Plain text  <br/> |The maximum length is 5,000 characters, including any HTML tags and inline Cascading Style Sheets (CSS).  <br/> |
-|HTML and inline CSS  <br/> |You can use HTML and inline CSS styles to format the text. For example, use the  `<HR>` tag to add a line before the disclaimer.  <br/> HTML is ignored if the disclaimer is added to a plain text message.  <br/> |
-|Images  <br/> |Use the  `<IMG>` tag to point to an image available on the Internet. For example,  `<IMG src="http://contoso.com/images/companylogo.gif" alt="Contoso logo">`.  <br/> By default, Outlook and Outlook on the web (formerly known as Outlook Web App) block external web content, including images. Users need to acknowledge and download the blocked external content. We recommend that you test disclaimers that have  `IMG` tags to verify they display the way you want.  <br/> |
-|User information for personalized signatures  <br/> |You can use tokens to add unique attributes from each user's Active Directory account, such as  `DisplayName`,  `FirstName`,  `LastName`,  `PhoneNumber`,  `Email`,  `FaxNumber`, and  `Department`. The syntax is to enclose the attribute name in two percent signs (for example,  `%%DisplayName%%`).  <br/> For a complete list of attributes that can be used in disclaimers and personalized signatures, see the description for the  `ADAttribute` property in [Mail flow rule conditions and exceptions (predicates) in Exchange 2016](conditions-and-exceptions.md).  <br/> |
+|HTML and inline CSS  <br/> |You can use HTML and inline CSS styles to format the text. For example, use the `<HR>` tag to add a line before the disclaimer.  <br/> HTML is ignored if the disclaimer is added to a plain text message.  <br/> |
+|Images  <br/> |Use the `<IMG>` tag to point to an image available on the Internet. For example, `<IMG src="http://contoso.com/images/companylogo.gif" alt="Contoso logo">`.  <br/> By default, Outlook and Outlook on the web (formerly known as Outlook Web App) block external web content, including images. Users need to acknowledge and download the blocked external content. We recommend that you test disclaimers that have `IMG` tags to verify they display the way you want.  <br/> |
+|User information for personalized signatures  <br/> |You can use tokens to add unique attributes from each user's Active Directory account, such as `DisplayName`, `FirstName`, `LastName`, `PhoneNumber`, `Email`, `FaxNumber`, and `Department`. The syntax is to enclose the attribute name in two percent signs (for example, `%%DisplayName%%`).  <br/> For a complete list of attributes that can be used in disclaimers and personalized signatures, see the description for the `ADAttribute` property in [Mail flow rule conditions and exceptions (predicates) in Exchange 2016](conditions-and-exceptions.md).  <br/> |
    
-Here's an example of an HTML disclaimer that includes a signature, an  `IMG` tag, and embedded CSS. 
+Here's an example of an HTML disclaimer that includes a signature, an `IMG` tag, and embedded CSS. 
   
 ```
 <div style="font-size:9pt;  font-family: 'Calibri',sans-serif;">
@@ -65,7 +65,7 @@ Here's an example of an HTML disclaimer that includes a signature, an  `IMG` tag
 %%company%%</br>
 %%street%%</br>
 %%city%%, %%state%% %%zipcode%%</div>
-&amp;nbsp;</br>
+&nbsp;</br>
 <div style="background-color:#D5EAFF; border:1px dotted #003333; padding:.8em; ">
 <div><img alt="Fabrikam"  src="http://fabrikam.com/images/fabrikamlogo.png"></div>
 <span style="font-size:12pt;  font-family: 'Cambria','times new roman','garamond',serif; color:#ff0000;">HTML Disclaimer Title</span></br>
@@ -77,7 +77,7 @@ Here's an example of an HTML disclaimer that includes a signature, an  `IMG` tag
 ## Fallback options for disclaimer rules
 <a name="FallbackOptions"> </a>
 
-Exchange can't modify the content of some messages (for example, encrypted messages). For rules that add disclaimers to messages, you need to specify what to do if the disclaimer can't be added. This is known as the  *fallback option*  for the disclaimer rule. The available fallback options are: 
+Exchange can't modify the content of some messages (for example, encrypted messages). For rules that add disclaimers to messages, you need to specify what to do if the disclaimer can't be added. This is known as the *fallback option* for the disclaimer rule. The available fallback options are: 
   
 - **Wrap**: The original message is wrapped in a new message envelope, and the disclaimer text is inserted into the new message. This is the default value.
     
@@ -89,7 +89,7 @@ Exchange can't modify the content of some messages (for example, encrypted messa
     
 - **Reject**: The message is returned to the sender in an NDR.
     
-In the EAC, you select the fallback option in the rule action. In the Exchange Management Shell, you use the  _ApplyHtmlDisclaimerFallbackAction_ parameter. 
+In the EAC, you select the fallback option in the rule action. In the Exchange Management Shell, you use the _ApplyHtmlDisclaimerFallbackAction_ parameter. 
   
 ## Scope your disclaimer
 <a name="Scoping"> </a>
@@ -102,8 +102,8 @@ Here are some examples of the conditions and exceptions you can use.
 |:-----|:-----|:-----|
 |The recipient is located outside your Exchange organization. An exception is configured so messages that already contain the disclaimer text "CONTOSO LEGAL NOTICE" don't have the disclaimer applied again.  <br/> |Condition: **The recipient is located** \> **Outside the organization** <br/> Exception: **The subject or body** \> **Subject or body matches these text patterns** \> CONTOSO LEGAL NOTICE <br/> | `-FromScope NotInOrganization -ExceptIf -SubjectOrBodyMatches "CONTOSO LEGAL NOTICE"` <br/> |
 |Incoming messages with executable attachments  <br/> |Condition 1: **The sender is located** \> **Outside the organization** <br/> Condition 2: **Any attachment** \> **has executable content** <br/> | `-FromScope NotInOrganization -AttachmentHasExecutableContent` <br/> |
-|Sender is in the marketing department  <br/> |Condition: **The sender** \> **is a member of this group** \>  _group name_ <br/> | `-FromMemberOf "Marketing Team"` <br/> |
-|Every message that comes from an external sender to the sales discussion group  <br/> |Condition 1: **The sender is located** \> **Outside the organization** <br/> Condition 2: **The message** \> **To or Cc box contains this person** \>  _group name_ <br/> | `-FromScope NotInOrganization -SentTo "Sales Discussion Group"` <br/> |
+|Sender is in the marketing department  <br/> |Condition: **The sender** \> **is a member of this group** \> _group name_ <br/> | `-FromMemberOf "Marketing Team"` <br/> |
+|Every message that comes from an external sender to the sales discussion group  <br/> |Condition 1: **The sender is located** \> **Outside the organization** <br/> Condition 2: **The message** \> **To or Cc box contains this person** \> _group name_ <br/> | `-FromScope NotInOrganization -SentTo "Sales Discussion Group"` <br/> |
 |Prepend an advertisement to outgoing messages for one month  <br/> |Condition 1: **The recipient is located** \> **Outside the organization** <br/> Enter the dates in the **Activate this rule on the following date** and **Deactivate this rule on the following date** fields.  <br/> | `-ApplyHtmlDisclaimerLocation Prepend -SentToScope NotInOrganization -ActivationDate '03/1/2016' -ExpiryDate '03/31/2016'` <br/> |
    
 For a complete list of conditions and exceptions that you can use to target the disclaimer, see [Mail flow rule conditions and exceptions (predicates) in Exchange 2016](conditions-and-exceptions.md).

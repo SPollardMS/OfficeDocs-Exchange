@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: ab9b7a3b-bf67-4ba1-bde5-8e6ac174b82c
 description: "Summary: Learn how to add, remove, copy, and view management role groups in Microsoft Exchange Server 2016."
@@ -136,7 +136,7 @@ $RoleGroup = Get-RoleGroup "Organization Management"
 New-RoleGroup "Vancouver Organization Management" -Roles $RoleGroup.Roles -CustomRecipientWriteScope "Vancouver Users" -CustomConfigWriteScope "Vancouver Servers"
 ```
 
-You can also add members to the role group when you create it by using the  _Members_ parameter as shown in [Use the Exchange Management Shell to copy a role group with no scope](#NoScope.md) earlier in this topic. For more information about management scopes, see [Understanding Management Scopes](http://technet.microsoft.com/library/24ed4a38-438a-4223-9f9c-5d4dea4b046b.aspx).
+You can also add members to the role group when you create it by using the _Members_ parameter as shown in [Use the Exchange Management Shell to copy a role group with no scope](#NoScope.md) earlier in this topic. For more information about management scopes, see [Understanding Management Scopes](http://technet.microsoft.com/library/24ed4a38-438a-4223-9f9c-5d4dea4b046b.aspx).
   
 After the new role group is created, you can add or remove roles, change the scope of role assignments on the role, and perform other tasks.
   
@@ -164,7 +164,7 @@ $RoleGroup = Get-RoleGroup "Recipient Management"
 New-RoleGroup "Toronto Recipient Management" -Roles $RoleGroup.Roles -RecipientOrganizationalUnitScope "contoso.com/Toronto Users"
 ```
 
-You can also add members to the role group when you create it by using the  _Members_ parameter as shown in [Use the Exchange Management Shell to copy a role group with no scope](#NoScope.md) earlier in this topic. For more information about management scopes, see [Understanding Management Scopes](http://technet.microsoft.com/library/24ed4a38-438a-4223-9f9c-5d4dea4b046b.aspx).
+You can also add members to the role group when you create it by using the _Members_ parameter as shown in [Use the Exchange Management Shell to copy a role group with no scope](#NoScope.md) earlier in this topic. For more information about management scopes, see [Understanding Management Scopes](http://technet.microsoft.com/library/24ed4a38-438a-4223-9f9c-5d4dea4b046b.aspx).
   
 After the new role group is created, you can add or remove roles, change the scope of role assignments on the role, and more.
   
@@ -271,7 +271,7 @@ For detailed syntax and parameter information, see [New-ManagementRoleAssignment
   
 ### Use the Exchange Management Shell to create a role assignment with a recipient filter-based scope
 
-If you created a recipient filter-based scope, you need to include the scope in the command used to assign the role to a role group by using the  _CustomRecipientWriteScope_ parameter. 
+If you created a recipient filter-based scope, you need to include the scope in the command used to assign the role to a role group by using the _CustomRecipientWriteScope_ parameter. 
   
 You can also include a configuration write scope when you create a role assignment that has a recipient write scope.
   
@@ -297,7 +297,7 @@ For detailed syntax and parameter information, see [New-ManagementRoleAssignment
   
 ### Use the Exchange Management Shell to create a role assignment with a configuration scope
 
-If you created a server or database configuration filter or list-based scope, you need to include the scope in the command used to assign the role to a role group by using the  _CustomConfigWriteScope_ parameter. 
+If you created a server or database configuration filter or list-based scope, you need to include the scope in the command used to assign the role to a role group by using the _CustomConfigWriteScope_ parameter. 
   
 You can also include a recipient write scope when you create a role assignment that has a configuration write scope.
   
@@ -323,7 +323,7 @@ For detailed syntax and parameter information, see [New-ManagementRoleAssignment
   
 ### Use the Exchange Management Shell to create a role assignment with an OU scope
 
-If you want to scope a role's write scope to an OU, you can specify the OU in the  _RecipientOrganizationalUnitScope_ parameter directly. 
+If you want to scope a role's write scope to an OU, you can specify the OU in the _RecipientOrganizationalUnitScope_ parameter directly. 
   
 For more information about role assignments and management scopes, see the following topics:
   
@@ -376,7 +376,7 @@ Removing a role from a management role group is the best and simplest way to rev
     
 ### Use the Exchange Management Shell to remove a role from a role group
 
-You can remove roles from role groups by retrieving the associated management role assignment using the **Get-ManagementRoleAssignment** cmdlet and then piping the role assignment returned to the **Remove-ManagementRoleAssignment** cmdlet. Unless you want to remove both delegating and regular role assignments at the same time, specify the  _Delegating_ parameter to specify whether you want to remove regular or delegating role assignments. 
+You can remove roles from role groups by retrieving the associated management role assignment using the **Get-ManagementRoleAssignment** cmdlet and then piping the role assignment returned to the **Remove-ManagementRoleAssignment** cmdlet. Unless you want to remove both delegating and regular role assignments at the same time, specify the _Delegating_ parameter to specify whether you want to remove regular or delegating role assignments. 
   
 For more information about regular and delegating role assignments, see [Understanding Management Role Assignments](http://technet.microsoft.com/library/1dc33dd6-52fb-4852-a5ce-027bc73e1d8f.aspx).
   
@@ -388,7 +388,7 @@ To remove a role from a role group, use the following syntax.
 Get-ManagementRoleAssignment -RoleAssignee <role group name> -Role <role name> -Delegating <$true | $false> | Remove-ManagementRoleAssignment
 ```
 
-This example removes the Distribution Groups role, which enables administrators to manage distribution groups, from the Seattle Recipient Administrators role group. Because we want to remove the role assignment that provides permissions to manage distribution groups, the  _Delegating_ parameter is set to  `$False`, which returns only regular role assignments.
+This example removes the Distribution Groups role, which enables administrators to manage distribution groups, from the Seattle Recipient Administrators role group. Because we want to remove the role assignment that provides permissions to manage distribution groups, the _Delegating_ parameter is set to `$False`, which returns only regular role assignments.
   
 ```
 Get-ManagementRoleAssignment -RoleAssignee "Seattle Recipient Administrators" -Role "Distribution Groups" -Delegating $false | Remove-ManagementRoleAssignment
@@ -444,7 +444,7 @@ The scopes on the role assignments are managed using the **Set-ManagementRoleAss
   
 To change the scope of all the role assignments between a role group and a set of management roles at the same time, you need to first retrieve the role assignments on the role group, and then set the new scope on each of the assignments. You can do this by using the **Get-ManagementRoleAssignment** cmdlet to retrieve the role assignments, and then pipe them to the **Set-ManagementRoleAssignment** cmdlet. 
   
-This procedure uses the concepts of pipelining and the  _WhatIf_ switch. For more information, see the following topics: 
+This procedure uses the concepts of pipelining and the _WhatIf_ switch. For more information, see the following topics: 
   
 - [Pipelining](http://technet.microsoft.com/library/59411ed3-926b-4eec-a462-84e6b26056c9.aspx)
     
@@ -463,7 +463,7 @@ Get-ManagementRoleAssignment -RoleAssignee "Sales Recipient Management" | Set-Ma
 ```
 
 > [!NOTE]
-> You can use the  _WhatIf_ switch to verify that only the role assignments you want to change are changed. Run the preceding command with the  _WhatIf_ switch to verify the results, and then remove the  _WhatIf_ switch to apply the changes. 
+> You can use the _WhatIf_ switch to verify that only the role assignments you want to change are changed. Run the preceding command with the _WhatIf_ switch to verify the results, and then remove the _WhatIf_ switch to apply the changes. 
   
 For more information about changing management role assignments, see [Change a Role Assignment](http://technet.microsoft.com/library/0fa77efc-e393-461f-b3c0-232cc56cee85.aspx).
   
@@ -533,14 +533,14 @@ To verify that you have successfully changed the scope of a role assignment on a
 Role group delegates are users or universal security groups (USGs) that can add or remove members from a role group or change the properties of a role group. By adding or removing role group delegates, you can control who is allowed to manage a role group.
   
 > [!IMPORTANT]
-> After you add a delegate to a role group, the role group can only be managed by the delegates on the role group, or by users who are assigned, either directly or indirectly, the Role Management management role. > If a user is assigned, either directly or indirectly, the Role Management role and isn't added as a delegate of the role group, the user must use the  _BypassSecurityGroupManagerCheck_ switch on the **Add-RoleGroupMember**, **Remove-RoleGroupMember**, **Update-RoleGroupMember**, and **Set-RoleGroup** cmdlets to manage a role group. 
+> After you add a delegate to a role group, the role group can only be managed by the delegates on the role group, or by users who are assigned, either directly or indirectly, the Role Management management role. > If a user is assigned, either directly or indirectly, the Role Management role and isn't added as a delegate of the role group, the user must use the _BypassSecurityGroupManagerCheck_ switch on the **Add-RoleGroupMember**, **Remove-RoleGroupMember**, **Update-RoleGroupMember**, and **Set-RoleGroup** cmdlets to manage a role group. 
   
 > [!NOTE]
 > You can't use the EAC to add a delegate to a role group. 
   
 ### Use the Exchange Management Shell to add a delegate to a role group
 
-To change the list of delegates on a role group, you use the  _ManagedBy_ parameter on the **Set-RoleGroup** cmdlet. The  _ManagedBy_ parameter overwrites the entire delegate list on the role group. If you want to add delegates to the role group rather than replace the entire list of delegates, use the following steps: 
+To change the list of delegates on a role group, you use the _ManagedBy_ parameter on the **Set-RoleGroup** cmdlet. The _ManagedBy_ parameter overwrites the entire delegate list on the role group. If you want to add delegates to the role group rather than replace the entire list of delegates, use the following steps: 
   
 1. Store the role group in a variable using the following command.
     
@@ -577,7 +577,7 @@ For detailed syntax and parameter information, see [Set-RoleGroup](http://techne
   
 ### Use the Exchange Management Shell to remove a delegate from a role group
 
-To change the list of delegates on a role group, you use the  _ManagedBy_ parameter on the **Set-RoleGroup** cmdlet. The  _ManagedBy_ parameter overwrites the entire delegate list on the role group. If you want to remove delegates from the role group rather than replace the entire list of delegates, use the following steps: 
+To change the list of delegates on a role group, you use the _ManagedBy_ parameter on the **Set-RoleGroup** cmdlet. The _ManagedBy_ parameter overwrites the entire delegate list on the role group. If you want to remove delegates from the role group rather than replace the entire list of delegates, use the following steps: 
   
 1. Store the role group in a variable using the following command.
     
@@ -622,6 +622,6 @@ To verify that you have successfully changed the delegate list on a role group, 
   Get-RoleGroup <role group name> | Format-List ManagedBy
   ```
 
-2. Verify that the delegates listed on the  _ManagedBy_ property include only the delegates that should be able to manage the role group. 
+2. Verify that the delegates listed on the _ManagedBy_ property include only the delegates that should be able to manage the role group. 
     
 

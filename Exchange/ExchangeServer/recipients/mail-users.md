@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: c72f46dc-8db3-486d-a998-0f01ffc1a843
 description: "Summary: Learn how to create mail users and how to change mail user properties."
@@ -102,7 +102,7 @@ This example creates a mail-enabled user account for Jeffrey Zeng in Exchange Se
     
 - The password is Pa$$word1.
     
-- The mail user will be created in the default OU. To specify a different OU, you can use the  _OrganizationalUnit_ parameter. 
+- The mail user will be created in the default OU. To specify a different OU, you can use the _OrganizationalUnit_ parameter. 
     
 ```
 New-MailUser -Name "Jeffrey Zeng" -Alias jeffreyz -ExternalEmailAddress jzeng@tailspintoys.com -FirstName Jeffrey -LastName Zeng -UserPrincipalName jeffreyz@contoso.com -Password (ConvertTo-SecureString -String 'Pa$$word1' -AsPlainText -Force)
@@ -196,12 +196,12 @@ Use the **Organization** section to record detailed information about the user's
     
 - **Manager**: To add a manager, click **Browse**. In **Select Manager**, select a person, and then click **OK**.
     
-- **Direct reports**: You can't modify this box. A  *direct report*  is a user who reports to a specific manager. If you've specified a manager for the user, that user appears as a direct report in the details of the manager's mailbox. For example, Kari manages Chris and Kate, so Kari is specified in the **Manager** box for Chris and Kate, and Chris and Kate appear in the **Direct reports** box in the properties of Kari's account. 
+- **Direct reports**: You can't modify this box. A *direct report* is a user who reports to a specific manager. If you've specified a manager for the user, that user appears as a direct report in the details of the manager's mailbox. For example, Kari manages Chris and Kate, so Kari is specified in the **Manager** box for Chris and Kate, and Chris and Kate appear in the **Direct reports** box in the properties of Kari's account. 
     
 #### Email Addresses
 <a name="EmailAddress"> </a>
 
-Use the **Email Addresses** section to view or change the email addresses associated with the mail user. This includes the mail user's primary SMTP address, their external email address, and any associated proxy addresses. The primary SMTP address (also known as the  *default reply address*  ) is displayed in bold text in the address list, with the uppercase **SMTP** value in the **Type** column. By default, after the mail user is created, the primary SMTP address and the external email address are the same. 
+Use the **Email Addresses** section to view or change the email addresses associated with the mail user. This includes the mail user's primary SMTP address, their external email address, and any associated proxy addresses. The primary SMTP address (also known as the *default reply address* ) is displayed in bold text in the address list, with the uppercase **SMTP** value in the **Type** column. By default, after the mail user is created, the primary SMTP address and the external email address are the same. 
   
 - **Add**: Click ** Add **![Add icon](../media/ITPro_EAC_AddIcon.png) to add a new email address for this mailbox. Select one of following address types: 
     

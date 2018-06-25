@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: overview
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: f3c6fd0b-2e25-442e-a0fc-46f663130c3e
 description: "Summary: An overview of recovery databases in Exchange 2016."

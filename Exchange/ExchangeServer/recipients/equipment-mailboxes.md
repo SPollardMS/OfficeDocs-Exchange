@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: e5f58b3a-83e1-4742-8846-85103a44ee18
 description: "Summary: Learn how to create an Exchange equipment mailbox, which is a resource mailbox assigned to a resource that isn't location-specific."
@@ -16,7 +16,7 @@ description: "Summary: Learn how to create an Exchange equipment mailbox, which 
 
  **Summary**: Learn how to create an Exchange equipment mailbox, which is a resource mailbox assigned to a resource that isn't location-specific.
   
-In Exchange 2016, an  *equipment mailbox*  is a resource mailbox assigned to a resource that's not location specific, such as a portable computer, projector, microphone, or a company car. After an administrator creates an equipment mailbox, users can easily reserve the piece of equipment by including the corresponding equipment mailbox in a meeting request. You can use the Exchange admin center (EAC) and the Exchange Management Shell to create an equipment mailbox or change equipment mailbox properties. For more information, see [Recipients](http://technet.microsoft.com/library/40300ed4-85a5-463d-bb3a-cf787bd44e9d.aspx).
+In Exchange 2016, an *equipment mailbox* is a resource mailbox assigned to a resource that's not location specific, such as a portable computer, projector, microphone, or a company car. After an administrator creates an equipment mailbox, users can easily reserve the piece of equipment by including the corresponding equipment mailbox in a meeting request. You can use the Exchange admin center (EAC) and the Exchange Management Shell to create an equipment mailbox or change equipment mailbox properties. For more information, see [Recipients](http://technet.microsoft.com/library/40300ed4-85a5-463d-bb3a-cf787bd44e9d.aspx).
   
 For information about another type of resource mailbox, a room mailbox, see [Create and manage room mailboxes](room-mailboxes.md).
   
@@ -66,7 +66,7 @@ This example creates an equipment mailbox with the following configuration:
     
 - The mailbox is in the Equipment organizational unit.
     
-- The  _Equipment_ parameter specifies that this mailbox will be created as an equipment mailbox. 
+- The _Equipment_ parameter specifies that this mailbox will be created as an equipment mailbox. 
     
 ```
 New-Mailbox -Database "Mailbox Database 1" -Name MotorVehicle2 -OrganizationalUnit Equipment -DisplayName "Motor Vehicle 2" -Equipment
@@ -188,7 +188,7 @@ Use the **Contact Information** section to view or change the contact informatio
 #### Email Address
 <a name="EmailAddress"> </a>
 
-Use the **Email Address** section to view or change the email addresses associated with the equipment mailbox. This includes the mailbox's primary SMTP address and any associated proxy addresses. The primary SMTP address (also known as the  *reply address*  ) is displayed in bold text in the address list, with the uppercase **SMTP** value in the **Type** column. 
+Use the **Email Address** section to view or change the email addresses associated with the equipment mailbox. This includes the mailbox's primary SMTP address and any associated proxy addresses. The primary SMTP address (also known as the *reply address* ) is displayed in bold text in the address list, with the uppercase **SMTP** value in the **Type** column. 
   
 - **Add**: Click ** Add **![Add icon](../media/ITPro_EAC_AddIcon.png) to add a new email address for this mailbox. Select one of following address types: 
     

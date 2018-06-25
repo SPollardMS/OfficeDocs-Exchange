@@ -6,8 +6,8 @@ manager: serdars
 ms.date: 4/19/2018
 ms.audience: ITPro
 ms.topic: get-started-article
-ms.prod: office-online-server
-localization_priority: Normal
+ms.prod: exchange-server-itpro
+localization_priority: Critical
 ms.collection: Strat_EX_Admin
 ms.assetid: 681835cf-79fe-4aa7-8a28-4a39944d0efc
 description: "Summary: Overview of Exchange installation options."

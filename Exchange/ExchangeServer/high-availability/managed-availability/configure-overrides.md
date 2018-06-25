@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/4/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: c8f315b3-1d5e-4ad9-8bea-9c3a4a13ebfc
 description: "Summary: Learn how to configure local overrides (also known as server overrides) and global overrides for managed availability in Exchange 2016."
@@ -53,9 +53,9 @@ Add-ServerMonitoringOverride -Server <ServerName> -Identity <HealthSetName>\<Mon
 ```
 
 > [!NOTE]
-> When you create the override, the values used in the  _Identity_ parameter are case-sensitive. 
+> When you create the override, the values used in the _Identity_ parameter are case-sensitive. 
   
-This example adds a local override that disables the responder  `ActiveDirectoryConnectivityConfigDCServerReboot` on the server named EXCH03 for 20 days. 
+This example adds a local override that disables the responder `ActiveDirectoryConnectivityConfigDCServerReboot` on the server named EXCH03 for 20 days. 
   
 ```
 Add-ServerMonitoringOverride -Server EXCH03 -Identity "AD\ActiveDirectoryConnectivityConfigDCServerReboot" -ItemType Responder -PropertyName Enabled -PropertyValue 0 -Duration 20.00:00:00
@@ -79,7 +79,7 @@ To remove a local override, use the following syntax.
 Remove-ServerMonitoringOverride -Server <ServerName> -Identity <HealthSetName>\<MonitoringItemName>[\<TargetResource>] -ItemType <ExistingItemTypeValue> -PropertyName <PropertytoRemove>
 ```
 
-This example removes the existing local override of the  `ActiveDirectoryConnectivityConfigDCServerReboot` responder in the Exchange health set from server EXCH01. 
+This example removes the existing local override of the `ActiveDirectoryConnectivityConfigDCServerReboot` responder in the Exchange health set from server EXCH01. 
   
 ```
 Remove-ServerMonitoringOverride -Server EXCH01 -Identity Exchange\ActiveDirectoryConnectivityConfigDCServerReboot -ItemType Responder -PropertyName Enabled
@@ -110,15 +110,15 @@ Add-GlobalMonitoringOverride -Identity <HealthSetName>\<MonitoringItemName>[\<Ta
 ```
 
 > [!NOTE]
-> When you create the override, the values used in the  _Identity_ parameter are case-sensitive. 
+> When you create the override, the values used in the _Identity_ parameter are case-sensitive. 
   
-This example adds a global override that disables the  `OnPremisesInboundProxy` probe for 30 days. 
+This example adds a global override that disables the `OnPremisesInboundProxy` probe for 30 days. 
   
 ```
 Add-GlobalMonitoringOverride -Identity "FrontendTransport\OnPremisesInboundProxy" -ItemType Probe -PropertyName Enabled -PropertyValue 0 -Duration 30.00:00:00
 ```
 
-This example adds a global override that disables the  `StorageLogicalDriveSpaceEscalate` responder for all servers running Exchange version 15.01.0225.042. 
+This example adds a global override that disables the `StorageLogicalDriveSpaceEscalate` responder for all servers running Exchange version 15.01.0225.042. 
   
 ```
 Add-GlobalMonitoringOverride -Identity "MailboxSpace\StorageLogicalDriveSpaceEscalate" -PropertyName Enabled -PropertyValue 0 -ItemType Responder -ApplyVersion "15.01.0225.042"
@@ -142,7 +142,7 @@ To remove a global override, use the following syntax.
 Remove-GlobalMonitoringOverride -Identity <HealthSetName>\<MonitoringItemName>[\<TargetResource>] -ItemType <ExistingItemTypeValue> -PropertyName <OverriddenProperty>
 ```
 
-This example removes the existing global override of the  `ExtensionAttributes` property of the  `OnPremisesInboundProxy` probe in the  `FrontEndTransport` health set. 
+This example removes the existing global override of the `ExtensionAttributes` property of the `OnPremisesInboundProxy` probe in the `FrontEndTransport` health set. 
   
 ```
 Remove-GlobalMonitoringOverride -Identity FrontEndTransport\OnPremisesInboundProxy -ItemType Probe -PropertyName ExtensionAttributes

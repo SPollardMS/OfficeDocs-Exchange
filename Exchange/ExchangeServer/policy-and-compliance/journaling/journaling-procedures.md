@@ -4,9 +4,9 @@ ms.author: chrisda
 author: chrisda
 manager: serdars
 ms.date: 6/8/2018
-ms.audience: End User
+ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: d517f27e-f80a-4a06-988c-cbbf981c701d
 description: "Summary: Learn how to configure journaling in Exchange 2016."
@@ -103,7 +103,7 @@ To verify that you've successfully enabled or disabled journaling on a mailbox d
     
 ## Procedures for premium journaling
 
-Premium journaling uses  *journal rules*  to record messages based on recipients (all recipients or specified recipients) and scope (internal messages, external messages, or all messages). Premium journaling requires Exchange Enterprise client access licenses (CALs). For more information about CALs, see [Exchange Server Licensing](https://go.microsoft.com/fwlink/p/?linkid=237292).
+Premium journaling uses *journal rules* to record messages based on recipients (all recipients or specified recipients) and scope (internal messages, external messages, or all messages). Premium journaling requires Exchange Enterprise client access licenses (CALs). For more information about CALs, see [Exchange Server Licensing](https://go.microsoft.com/fwlink/p/?linkid=237292).
   
 ### Create journal rules
 <a name="CreateJournalRule"> </a>
@@ -158,17 +158,17 @@ This example creates the journal rule named Regulation 123 with the following se
   
 - **Journal recipient**: The user Connie Mayr, whose email address is cmayr@contoso.com.
     
-- **Journal rule scope**: Internal and external messages (we didn't use the  _Scope_ parameter, and the default value is  `Global`).
+- **Journal rule scope**: Internal and external messages (we didn't use the _Scope_ parameter, and the default value is `Global`).
     
 - **Journaling mailbox**: The mailbox named Journal Mailbox.
     
-- The journal rule is enabled (we didn't use the  _Enabled_ parameter, and the default value is  `$true`).
+- The journal rule is enabled (we didn't use the _Enabled_ parameter, and the default value is `$true`).
     
 ```
 New-JournalRule -Name "Regulation 123" -JournalEmailAddress "Journal Mailbox" -Recipient cmayr@contoso.com
 ```
 
- **Note**: To create a journal rule that applies to all recipients, don't use the  _Recipient_ parameter. 
+ **Note**: To create a journal rule that applies to all recipients, don't use the _Recipient_ parameter. 
   
 For detailed syntax and parameter information, see [New-JournalRule](http://technet.microsoft.com/library/fcad9ef1-b3f2-442d-a1a7-cd1bbe442054.aspx).
   
@@ -190,7 +190,7 @@ To verify that you've successfully created a journal rule, use any of the follow
 ### Enable or disable journal rules
 <a name="EnableOrDisableJournalRule"> </a>
 
-By default, when you create a journal rule in the EAC or the Exchange Management Shell, the rule is enabled. You can only use the Exchange Management Shell to create a journal rule that's disabled (the  _Enabled_ parameter value is  `$false` in the **New-JournalRule** command). 
+By default, when you create a journal rule in the EAC or the Exchange Management Shell, the rule is enabled. You can only use the Exchange Management Shell to create a journal rule that's disabled (the _Enabled_ parameter value is `$false` in the **New-JournalRule** command). 
   
 After you create a journal rule, you can use the EAC or the Exchange Management Shell to disable or enable the rule.
   
@@ -250,7 +250,7 @@ No additional settings are available when you modify a journal rule. They're the
   Set-JournalRule -Identity <JournalRuleIdentity> [-Name <RuleName>] [-JournalEmailAddress <JournalMailboxIdentity>] [-Recipient <JournalRecipientEmailAddress | $null>] [-Scope <Global | Internal | External>]
   ```
 
-    You can't use the **Set-Journal** cmdlet to enable or disable the rule (there's no  _Enabled_ parameter). To enable or disable the rule, you use the **Enable-JournalRule** and **Disable-JournalRule** cmdlets as described in the [Enable or disable journal rules](journaling-procedures.md#EnableOrDisableJournalRule) section. 
+    You can't use the **Set-Journal** cmdlet to enable or disable the rule (there's no _Enabled_ parameter). To enable or disable the rule, you use the **Enable-JournalRule** and **Disable-JournalRule** cmdlets as described in the [Enable or disable journal rules](journaling-procedures.md#EnableOrDisableJournalRule) section. 
     
     For detailed syntax and parameter information, see [Set-JournalRule](http://technet.microsoft.com/library/e72562c6-64d2-43c3-81b0-062e7d7b28c9.aspx).
     
@@ -323,7 +323,7 @@ Get-TransportConfig | Format-List VoicemailJournalingEnabled
 ### Specify the alternate journaling mailbox
 <a name="DisableJournalingForUMNotifications"> </a>
 
-For premium journaling, you can specify an  *alternate journaling mailbox*  that accepts non-delivery reports (also known as NDRs or bounce messages) for  *all*  undeliverable journal reports when  *any*  journaling mailbox is unavailable (one alternate journaling mailbox for all journaling mailboxes in your organization). For more information, see [Alternate journaling mailbox](journaling.md#alternate).
+For premium journaling, you can specify an *alternate journaling mailbox* that accepts non-delivery reports (also known as NDRs or bounce messages) for *all* undeliverable journal reports when *any* journaling mailbox is unavailable (one alternate journaling mailbox for all journaling mailboxes in your organization). For more information, see [Alternate journaling mailbox](journaling.md#alternate).
   
 > [!CAUTION]
 > If the alternate journaling mailbox also becomes unavailable and rejects the NDRs for undeliverable journal reports, the original journal reports are lost and can't be retrieved. 

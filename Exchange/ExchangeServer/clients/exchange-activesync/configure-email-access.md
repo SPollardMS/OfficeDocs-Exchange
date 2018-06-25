@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 8d6e2cea-265a-43d9-a074-076f35658436
 description: "Summary:How to configure a mobile phone or device to use Exchange ActiveSync. For device-specific information about setting up Exchange-based email on a phone or tablet, see Set up a mobile device using Office 365 for business."

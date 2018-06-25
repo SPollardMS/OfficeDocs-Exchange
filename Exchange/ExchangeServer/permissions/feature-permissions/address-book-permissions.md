@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: reference
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 1c1de09d-16ef-4424-9bfb-eb7edffbc8c2
 description: "Summary: Learn about permissions that are required to manage email address and address book features in Exchange Server 2016."

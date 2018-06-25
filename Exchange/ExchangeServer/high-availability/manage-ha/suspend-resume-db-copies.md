@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/4/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 96aa1b82-3e15-4215-843e-3d583af9504b
 description: "Summary: How to suspend or resume a mailbox database copy in Exchange 2016."

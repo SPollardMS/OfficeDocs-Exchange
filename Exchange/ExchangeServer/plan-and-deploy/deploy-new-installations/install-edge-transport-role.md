@@ -6,8 +6,8 @@ manager: serdars
 ms.date: 4/19/2018
 ms.audience: ITPro
 ms.topic: get-started-article
-ms.prod: office-online-server
-localization_priority: Normal
+ms.prod: exchange-server-itpro
+localization_priority: Priority
 ms.collection: Strat_EX_Admin
 ms.assetid: b8e51b0b-201e-4c64-92c8-3ac0db04b6e2
 description: "Summary: How to use the Exchange Server 2016 Setup wizard to install the Exchange 2016 Edge Transport server role on a computer."
@@ -54,10 +54,10 @@ For information about tasks to complete after installation, see [Exchange 2016 p
     
 3. Navigate to the network location of the Exchange 2016 installation files.
     
-4. Start Exchange 2016 Setup by double-clicking  `Setup.exe`
+4. Start Exchange 2016 Setup by double-clicking `Setup.exe`
     
     > [!IMPORTANT]
-    > If you have User Access Control (UAC) enabled, you must right-click  `Setup.exe` and select **Run as administrator**. 
+    > If you have User Access Control (UAC) enabled, you must right-click `Setup.exe` and select **Run as administrator**. 
   
 5. On the **Check for Updates?** page, choose whether you want Setup to connect to the Internet and download product and security updates for Exchange 2016. If you select **Connect to the Internet and check for updates**, Setup will download updates and apply them prior to continuing. If you select **Don't check for updates right now**, you can download and install updates manually later. We recommend that you download and install updates now. Click **Next** to continue. 
     
@@ -92,6 +92,6 @@ To verify that you've successfully installed Exchange 2016, see [Verify an Excha
   
 Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
   
-Did you find what you're looking for? Please take a minute to [send us feedback](mailto:ExchangeHelpFeedback@microsoft.com&amp;subject=Exchange%202016%20help%20feedback&amp;Body=Thanks%20for%20taking%20the%20time%20to%20send%20us%20feedback!%20We%20strive%20to%20respond%20to%20every%20message%20we%20receive,%20even%20though%20it%20might%20take%20us%20a%20while.%20Let%20us%20know%20what%20you%20think%20about%20Exchange%20content:%20What%20are%20we%20doing%20right%3F%20How%20can%20we%20make%20help%20better%3F%0APlease%20note%20that%20we're%20unable%20to%20respond%20to%20requests%20for%20support%20submitted%20via%20this%20email%20address.%20If%20you%20need%20help,%20please%20contact%20Exchange%20Server%20support%20at%20http://go.microsoft.com/fwlink/p/%3FLinkId=402506.%0AThanks!%0AThe%20Exchange%20Server%20Content%20Publishing%20team) about the information you were hoping to find. 
+Did you find what you're looking for? Please take a minute to [send us feedback](mailto:ExchangeHelpFeedback@microsoft.com&subject=Exchange%202016%20help%20feedback&Body=Thanks%20for%20taking%20the%20time%20to%20send%20us%20feedback!%20We%20strive%20to%20respond%20to%20every%20message%20we%20receive,%20even%20though%20it%20might%20take%20us%20a%20while.%20Let%20us%20know%20what%20you%20think%20about%20Exchange%20content:%20What%20are%20we%20doing%20right%3F%20How%20can%20we%20make%20help%20better%3F%0APlease%20note%20that%20we're%20unable%20to%20respond%20to%20requests%20for%20support%20submitted%20via%20this%20email%20address.%20If%20you%20need%20help,%20please%20contact%20Exchange%20Server%20support%20at%20http://go.microsoft.com/fwlink/p/%3FLinkId=402506.%0AThanks!%0AThe%20Exchange%20Server%20Content%20Publishing%20team) about the information you were hoping to find. 
   
 

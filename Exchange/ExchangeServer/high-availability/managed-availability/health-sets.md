@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: a4f84312-6cfa-4f17-9707-676aadab1143
 description: "Summary: Exchange Management Shell cmdlets that can help you monitor the health of your Exchange organization."
@@ -71,7 +71,7 @@ For detailed syntax and parameter information, see [Get-HealthReport](http://tec
   
 ## Use the Exchange Management Shell to view a list of health sets
 
-A  *health set*  is a group of monitors, probes and responders for a component that determine whether the component is healthy or unhealthy. 
+A *health set* is a group of monitors, probes and responders for a component that determine whether the component is healthy or unhealthy. 
   
 Run the following command to view the health sets on an Exchange server:
   

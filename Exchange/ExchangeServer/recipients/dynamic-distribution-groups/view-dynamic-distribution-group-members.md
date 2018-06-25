@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 40b100c6-864e-4c82-9f98-08dd5c83e378
 description: "Summary: Learn how to use the Exchange Management Shell to view dynamic distribution group membership."
@@ -34,7 +34,7 @@ You can't use the Exchange admin center (EAC) to view the members of a dynamic d
 ## Use the Exchange Management Shell to view the members of a dynamic distribution group
 <a name="Shell"> </a>
 
-This example returns the list of members for the dynamic distribution group named Full Time Employees. The first command stores the dynamic distribution group object in the variable  `$FTE`. The second command uses the **Get-Recipient** cmdlet to list the recipients that match the criteria defined for the dynamic distribution group. 
+This example returns the list of members for the dynamic distribution group named Full Time Employees. The first command stores the dynamic distribution group object in the variable `$FTE`. The second command uses the **Get-Recipient** cmdlet to list the recipients that match the criteria defined for the dynamic distribution group. 
   
 ```
 $FTE = Get-DynamicDistributionGroup "Full Time Employees"

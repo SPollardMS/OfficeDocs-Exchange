@@ -4,9 +4,9 @@ ms.author: chrisda
 author: chrisda
 manager: serdars
 ms.date: 6/7/2018
-ms.audience: End User
+ms.audience: ITPro
 ms.topic: overview
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: a7dc91ee-2919-4db3-ae9c-cd665d2e09ea
 description: "Summary: Learn about support for POP3 and IMAP4 in Exchange 2016."
@@ -86,17 +86,17 @@ Another important setting is how frequently the email program contacts the serve
   
 To configure a POP3 or IMAP4 client to connect to a mailbox, users need specific information about the POP3 or IMAP4 settings. By default, Exchange uses the following settings for **internal** POP3 connections: 
   
-- **POP3 server FQDN**:  `<ServerFQDN>`. For example,  `mailbox01.contoso.com`.
+- **POP3 server FQDN**: `<ServerFQDN>`. For example, `mailbox01.contoso.com`.
     
-- **TCP port and encryption method**: 995 for always SSL/TLS encrypted connections, and 110 for unencrypted connections, or for opportunistic TLS ( **STARTTLS** ) that results in an encrypted connection after the initial plain text protocol handshake. 
+- **TCP port and encryption method**: 995 for always SSL/TLS encrypted connections, and 110 for unencrypted connections, or for opportunistic TLS (**STARTTLS** ) that results in an encrypted connection after the initial plain text protocol handshake. 
     
 To allow **external** POP3 clients to connect to mailboxes, you need to configure these settings for external connections. For more information, see [Enable and configure POP3 on an Exchange 2016 server](configure-pop3.md).
   
 By default, Exchange uses the following settings for **internal** IMAP4 connections: 
   
-- **IMAP4 server FQDN**:  `<ServerFQDN>`. For example,  `mailbox01.contoso.com`.
+- **IMAP4 server FQDN**: `<ServerFQDN>`. For example, `mailbox01.contoso.com`.
     
-- **TCP port and encryption method**: 993 for always SSL/TLS encrypted connections, and 143 for unencrypted connections, or for opportunistic TLS ( **STARTTLS** ) that results in an encrypted connection after the initial plain text protocol handshake. 
+- **TCP port and encryption method**: 993 for always SSL/TLS encrypted connections, and 143 for unencrypted connections, or for opportunistic TLS (**STARTTLS** ) that results in an encrypted connection after the initial plain text protocol handshake. 
     
 To allow **external** IMAP4 clients to connect to mailboxes, you need to configure these settings for external connections. For more information, see [Enable and configure IMAP4 on an Exchange 2016 server](configure-imap4.md).
   

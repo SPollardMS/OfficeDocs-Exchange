@@ -6,8 +6,8 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: reference
-ms.prod: office-online-server
-localization_priority: Normal
+ms.prod: exchange-server-itpro
+localization_priority: Critical
 ms.assetid: 1aacc1c9-c81b-47d4-b222-ee73956cf968
 description: "Summary: Learn about the architecture of Exchange 2016"
 ---
@@ -50,7 +50,7 @@ Exchange 2016 uses Mailbox servers and Edge Transport servers. These server role
     
 - Mailbox servers contain mailbox databases that process, render, and store data. For more information, see [Manage mailbox databases in Exchange 2016](mailbox-servers/manage-databases.md).
     
-- Mailbox servers contain the client access services that accept client connections for all protocols. These frontend services are responsible for routing or  *proxying*  connections to the corresponding backend services on a Mailbox server. Clients don't connect directly to the backend services. For more information, see the [Client access protocol architecture](http://technet.microsoft.com/library/0dac9f83-efd2-4a2d-940a-c03310bf9c6a.aspx#ClientAccessProtocol) section later in this topic. 
+- Mailbox servers contain the client access services that accept client connections for all protocols. These frontend services are responsible for routing or *proxying* connections to the corresponding backend services on a Mailbox server. Clients don't connect directly to the backend services. For more information, see the [Client access protocol architecture](http://technet.microsoft.com/library/0dac9f83-efd2-4a2d-940a-c03310bf9c6a.aspx#ClientAccessProtocol) section later in this topic. 
     
 - Mailbox servers contain the Unified Messaging (UM) services that provide voice mail and other telephony features to mailboxes.
     
@@ -79,9 +79,9 @@ A database availability group (DAG) is the fundamental element of the high avail
   
 ### Transport high availability
 
-- The Transport service makes redundant copies of all messages in transit. This feature is known as  *shadow redundancy*  . 
+- The Transport service makes redundant copies of all messages in transit. This feature is known as *shadow redundancy* . 
     
-- The transport service makes redundant copies of all delivered messages. This feature is known as  *Safety Net*  . 
+- The transport service makes redundant copies of all delivered messages. This feature is known as *Safety Net* . 
     
 - In Exchange 2016, a DAG represents a transport high availability boundary. You can achieve site resilience by spanning a DAG across multiple Active Directory sites.
     
@@ -98,7 +98,7 @@ The client access services on Exchange 2016 Mailbox servers are responsible for 
   
 The protocol that's used by a client determines the protocol that's used to proxy the request to the backend services on the destination Mailbox server. For example, if the client connected using HTTP, the Mailbox server uses HTTP to proxy the request to the destination Mailbox server (secured via SSL using a self-signed certificate). If the client used IMAP or POP, then the protocol that's used is IMAP or POP.
   
-Telephony requests are different than other client connections. Instead of proxying the request, the Mailbox server  *redirects*  the request to the Mailbox server that holds the active copy of the user's mailbox. Telephony devices are required to establish their SIP and RTP sessions directly with the Unified Messaging services on the destination Mailbox server. 
+Telephony requests are different than other client connections. Instead of proxying the request, the Mailbox server *redirects* the request to the Mailbox server that holds the active copy of the user's mailbox. Telephony devices are required to establish their SIP and RTP sessions directly with the Unified Messaging services on the destination Mailbox server. 
   
 ## Exchange 2016 architecture changes
 <a name="Improvements"> </a>

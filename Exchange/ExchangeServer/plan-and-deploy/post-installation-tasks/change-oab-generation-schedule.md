@@ -8,7 +8,7 @@ ms.audience: ITPro
 ms.topic: get-started-article
 f1_keywords:
 - 'Microsoft.Exchange.Management.SnapIn.Esm.OrganizationConfiguration.Mailbox.OfflineAddressBookGeneralPage'
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.collection: Strat_EX_Admin
 ms.assetid: d2b4d527-311e-442d-9f1f-54fac8371b80
@@ -54,19 +54,19 @@ New-SettingOverride -Name "<UniqueOverrideName>" -Component TimeBasedAssistants 
 
  **Notes:**
   
-- To specify a  _\<TimeSpan\>_ value, use the syntax  `d.hh:mm:ss`, where  _d_ = days,  _hh_ = hours,  _mm_ = minutes, and  _ss_ = seconds. 
+- To specify a _\<TimeSpan\>_ value, use the syntax `d.hh:mm:ss`, where _d_ = days, _hh_ = hours, _mm_ = minutes, and _ss_ = seconds. 
     
-- To configure the OAB generation schedule on all Exchange 2016 Mailbox servers in the Active Directory forest, don't use the  _Server_ parameter. 
+- To configure the OAB generation schedule on all Exchange 2016 Mailbox servers in the Active Directory forest, don't use the _Server_ parameter. 
     
-- To configure the OAB generation schedule on a specific Exchange 2016 Mailbox server, use the  _Server_ parameter and the name (not the fully qualified domain name or FQDN) of the server. This method is useful when you need to specify different OAB generation schedules on different Exchange servers. 
+- To configure the OAB generation schedule on a specific Exchange 2016 Mailbox server, use the _Server_ parameter and the name (not the fully qualified domain name or FQDN) of the server. This method is useful when you need to specify different OAB generation schedules on different Exchange servers. 
     
-- In Exchange 2016 Cumulative Update 3 (CU3) or earlier, the  _Component_ parameter value is  `MailboxAssistants`.
+- In Exchange 2016 Cumulative Update 3 (CU3) or earlier, the _Component_ parameter value is `MailboxAssistants`.
     
 This example specifies that the OAB is generated every two hours on all Exchange 2016 servers in the organization that are responsible for generating OABs.
   
 - **Setting override name**: "OAB Generation Override" (must be unique)
     
-- **WorkCycle**:  `02:00:00` (2 hours) 
+- **WorkCycle**: `02:00:00` (2 hours) 
     
 - **Override reason**: Generate OAB every 2 hours
     
@@ -90,7 +90,7 @@ Get-ExchangeDiagnosticInfo -Process Microsoft.Exchange.Directory.TopologyService
 
  **Notes:**
   
-- If you didn't use the  _Server_ parameter in Step 1, don't use it here. If you used the  _Server_ parameter in Step 1, use the same server name here. 
+- If you didn't use the _Server_ parameter in Step 1, don't use it here. If you used the _Server_ parameter in Step 1, use the same server name here. 
     
 - If you delete the custom OAB generation schedule by using the **Remove-SettingOverride** cmdlet, you still need to run this command to change the generation schedule back to the default value of 8 hours. 
     
@@ -108,13 +108,13 @@ Get-ExchangeDiagnosticInfo -Process Microsoft.Exchange.Directory.TopologyService
 
 ### How do you know this worked?
 
-To verify that you've configured the OAB generation schedule on one or more Exchange 2016 servers, replace  _\<ServerName\>_ with the name of the server (not the FQDN), and run the following command to verify the value of the **WorkCycle** property: 
+To verify that you've configured the OAB generation schedule on one or more Exchange 2016 servers, replace _\<ServerName\>_ with the name of the server (not the FQDN), and run the following command to verify the value of the **WorkCycle** property: 
   
 ```
 [xml]$diag=Get-ExchangeDiagnosticInfo -Server <ServerName> -Process MSExchangeMailboxAssistants -Component VariantConfiguration -Argument "Config,Component=TimeBasedAssistants"; $diag.Diagnostics.Components.VariantConfiguration.Configuration.TimeBasedAssistants.OABGeneratorAssistant
 ```
 
- **Note**: In Exchange 2016 CU3 or earlier, you need to run this command instead:  `[xml]$diag=Get-ExchangeDiagnosticInfo -Server <ServerName> -Process Microsoft.Exchange.Directory.TopologyService -Component VariantConfiguration -Argument Config; $diag.Diagnostics.Components.VariantConfiguration.Configuration.MailboxAssistants.OABGeneratorAssistant`.
+ **Note**: In Exchange 2016 CU3 or earlier, you need to run this command instead: `[xml]$diag=Get-ExchangeDiagnosticInfo -Server <ServerName> -Process Microsoft.Exchange.Directory.TopologyService -Component VariantConfiguration -Argument Config; $diag.Diagnostics.Components.VariantConfiguration.Configuration.MailboxAssistants.OABGeneratorAssistant`.
   
 ## See also
 

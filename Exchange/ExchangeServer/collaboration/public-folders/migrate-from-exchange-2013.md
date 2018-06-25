@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 2/16/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 0f98801d-ad5c-4109-a021-63645e9c9ca2
 description: "Summary: Learn how to migrate on-premises public folders from Exchange 2013 to Exchange 2016."
@@ -98,7 +98,7 @@ The command above will return each move request you created along with one of th
     
 - **Retry** The migration service is currently having trouble proceeding with the job, but it has not given up, and will continue trying. 
     
-- **AutoSuspended** The public folder mailbox's move is ready to enter its final stages but won't proceed further until you manually resume the move. This can be helpful if you want to choose the time a move will complete. Moves can be automatically suspended when they're created by using the  _SuspendWhenReadyToComplete_ switch on the **New-MoveRequest** cmdlet. To resume the move when you're ready, use the **Resume-MoveRequest** cmdlet. 
+- **AutoSuspended** The public folder mailbox's move is ready to enter its final stages but won't proceed further until you manually resume the move. This can be helpful if you want to choose the time a move will complete. Moves can be automatically suspended when they're created by using the _SuspendWhenReadyToComplete_ switch on the **New-MoveRequest** cmdlet. To resume the move when you're ready, use the **Resume-MoveRequest** cmdlet. 
     
 - **Suspended** The public folder mailbox's move has been suspended by **Suspend-MoveRequest** cmdlet and won't proceed further until you manually resume the move. To resume the move when you're ready, use the **Resume-MoveRequest** cmdlet. 
     

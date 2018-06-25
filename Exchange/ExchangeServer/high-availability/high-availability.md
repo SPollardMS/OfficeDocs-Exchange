@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: overview
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: b1704c87-5f5c-464e-9dc5-1bb1bdf9ac2a
 description: "Summary: Learn about the high availability and site resilience capabilities available in Exchange 2016."
@@ -89,13 +89,13 @@ The following key terms are important to understand high availability or site re
   
 > A set of internal processes made up of probes, monitors, and responders that incorporate monitoring and high availability across all server roles and all protocols.
     
- *\*over*  (pronounced "star over") 
+ *\*over* (pronounced "star over") 
   
-> Short for  *switchovers*  and  *failovers*  . A switchover is a manual activation of one or more database copies. A failover is an automatic activation of one or more database copies after a failure. 
+> Short for *switchovers* and *failovers* . A switchover is a manual activation of one or more database copies. A failover is an automatic activation of one or more database copies after a failure. 
     
  *Safety Net* 
   
-> Formerly known as transport dumpster, this is a feature of the transport service that stores a copy of all messages for  _X_ days. The default setting is 2 days. 
+> Formerly known as transport dumpster, this is a feature of the transport service that stores a copy of all messages for _X_ days. The default setting is 2 days. 
     
  *Shadow redundancy* 
   
@@ -117,7 +117,7 @@ The high availability and site resilience features used first introduced in Exch
   
 Database mobility disconnects databases from servers and adds support for up to 16 copies of a single database. It also provides a native experience for creating copies of a database.
   
-Setting a database copy as the active mailbox database is known as a  *switchover*  . When a failure affecting a database or access to a database occurs and a new database becomes the active copy, this process is known as a  *failover*  . This process also refers to a server failure in which one or more servers bring online the databases previously online on the failed server. When either a switchover or failover occurs, other Exchange 2016 servers become aware of the switchover almost immediately and redirect client and messaging traffic to the new active database. 
+Setting a database copy as the active mailbox database is known as a *switchover* . When a failure affecting a database or access to a database occurs and a new database becomes the active copy, this process is known as a *failover* . This process also refers to a server failure in which one or more servers bring online the databases previously online on the failed server. When either a switchover or failover occurs, other Exchange 2016 servers become aware of the switchover almost immediately and redirect client and messaging traffic to the new active database. 
   
 For example, if an active database in a DAG fails because of an underlying storage failure, Active Manager will automatically recover by failing over to a database copy on another server in the DAG. In Exchange 2016, managed availability provides behaviors to recover from loss of protocol access to a database, including recycling application worker pools, restarting services and servers, and initiating database failovers.
   
@@ -158,7 +158,7 @@ For details about planning and deploying site resilience, see [Plan for high ava
 
 Exchange 2016 includes a third-party replication API that enables organizations to use third-party synchronous replication solutions instead of the built-in continuous replication feature. Microsoft supports third-party solutions that use this API, provided that the solution provides the necessary functionality to replace all native continuous replication functionality that's disabled as a result of using the API. Solutions are supported only when the API is used within a DAG to manage and activate mailbox database copies. Use of the API outside of these boundaries isn't supported. In addition, the solution must meet the applicable Windows hardware support requirements. (Test validation isn't required for support.)
   
-When deploying a solution that uses the built-in third-party replication API, be aware that the solution vendor is responsible for primary support of the solution. Microsoft supports Exchange data for both replicated and non-replicated solutions. Solutions that use data replication must adhere to the Microsoft support policy for data replication, as described in Microsoft Knowledge Base article 895847, [Multi-site data replication support for Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=3052&amp;kbid=895847). In addition, solutions that utilize the Windows Failover Cluster resource model must meet Windows cluster supportability requirements as described in Microsoft Knowledge Base article 943984, [The Microsoft Support Policy for Windows Server 2008 or Windows Server 2008 R2 Failover Clusters](https://go.microsoft.com/fwlink/p/?linkid=3052&amp;kbid=943984) or [The Microsoft Support Policy for Windows Server 2012 Failover Clusters](https://go.microsoft.com/fwlink/p/?linkid=3052&amp;kbid=2775067).
+When deploying a solution that uses the built-in third-party replication API, be aware that the solution vendor is responsible for primary support of the solution. Microsoft supports Exchange data for both replicated and non-replicated solutions. Solutions that use data replication must adhere to the Microsoft support policy for data replication, as described in Microsoft Knowledge Base article 895847, [Multi-site data replication support for Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=3052&kbid=895847). In addition, solutions that utilize the Windows Failover Cluster resource model must meet Windows cluster supportability requirements as described in Microsoft Knowledge Base article 943984, [The Microsoft Support Policy for Windows Server 2008 or Windows Server 2008 R2 Failover Clusters](https://go.microsoft.com/fwlink/p/?linkid=3052&kbid=943984) or [The Microsoft Support Policy for Windows Server 2012 Failover Clusters](https://go.microsoft.com/fwlink/p/?linkid=3052&kbid=2775067).
   
 Microsoft's backup and restore support policy for deployments that use third-party replication API-based solutions is the same as for native continuous replication deployments.
   

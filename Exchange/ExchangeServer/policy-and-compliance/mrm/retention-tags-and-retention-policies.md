@@ -4,9 +4,9 @@ ms.author: serdars
 author: SerdarSoysal
 manager: serdars
 ms.date: 6/8/2018
-ms.audience: End User
+ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 48c13be5-3f01-4849-a089-766210e54f89
 description: "Summary: Learn about how retention tags and retention policies in Exchange 2016 help manage the email life cycle."
@@ -21,13 +21,13 @@ Messaging records management (MRM) helps organizations to manage email lifecycle
 ## Messaging records management strategy
 <a name="MRM"> </a>
 
-MRM in Exchange 2016 is accomplished by using  *retention tags*  and  *retention policies*  . Before discussing the details about each of these retention features, let's learn how the features are used in the overall MRM strategy: 
+MRM in Exchange 2016 is accomplished by using *retention tags* and *retention policies* . Before discussing the details about each of these retention features, let's learn how the features are used in the overall MRM strategy: 
   
-- Assigning  *retention policy tags*  (RPTs) to default folders, such as the Inbox and Deleted Items. 
+- Assigning *retention policy tags* (RPTs) to default folders, such as the Inbox and Deleted Items. 
     
-- Applying  *default policy tags*  (DPTs) to mailboxes to manage the retention of all untagged items. 
+- Applying *default policy tags* (DPTs) to mailboxes to manage the retention of all untagged items. 
     
-- Allowing the user to assign  *personal tags*  to custom folders and individual items. 
+- Allowing the user to assign *personal tags* to custom folders and individual items. 
     
 - Separating MRM functionality from users' Inbox management and filing habits. Users aren't required to file messages in managed folders based on retention requirements. Individual messages can have a different retention tag than the one applied to the folder in which they're located.
     
@@ -50,7 +50,7 @@ Retention tags are classified into the following three types based on who can ap
   
 |**Type of retention tag**|**Applied...**|**Applied by...**|**Available actions…**|**Details**|
 |:-----|:-----|:-----|:-----|:-----|
-|Default policy tag (DPT)  <br/> |Automatically to entire mailbox  <br/> A DPT applies to  *untagged*  items, which are mailbox items that don't have a retention tag applied directly or by inheritance from the folder.  <br/> |Administrator  <br/> |Move to archive  <br/> Delete and allow recovery  <br/> Permanently delete  <br/> |Users can't change DPTs applied to a mailbox.  <br/> |
+|Default policy tag (DPT)  <br/> |Automatically to entire mailbox  <br/> A DPT applies to *untagged* items, which are mailbox items that don't have a retention tag applied directly or by inheritance from the folder.  <br/> |Administrator  <br/> |Move to archive  <br/> Delete and allow recovery  <br/> Permanently delete  <br/> |Users can't change DPTs applied to a mailbox.  <br/> |
 |Retention policy tag (RPT)  <br/> |Automatically to a default folder  <br/> Default folders are folders created automatically in all mailboxes, for example: **Inbox**, **Deleted Items**, and **Sent Items**. See the list of supported default folders in [Default folders that support Retention Policy Tags](http://technet.microsoft.com/library/d2e2064f-4102-4018-b688-504d09da6d39.aspx).  <br/> |Administrator  <br/> |Delete and allow recovery  <br/> Permanently delete  <br/> |Users can't change the RPT applied to a default folder.  <br/> |
 |Personal tag  <br/> |Manually to items and folders  <br/> Users can automate tagging by using Inbox rules to either move a message to a folder that has a particular tag or to apply a personal tag to the message.  <br/> |Users  <br/> |Move to archive  <br/> Delete and allow recovery  <br/> Permanently delete  <br/> |Personal tags allow your users to determine how long an item should be retained. For example, the mailbox can have a DPT to delete items in seven years, but a user can create an exception for items such as newsletters and automated notifications by applying a personal tag to delete them in three days.  <br/> |
    
@@ -85,7 +85,7 @@ When creating or configuring a retention tag, you can select one of the followin
 |**Retention action**|**Action taken…**|**Except…**|
 |:-----|:-----|:-----|
 |**Move to archive** <br/> |Moves the message to the user's archive mailbox  <br/> Only available for DPTs and personal tags  <br/> For details about archiving, see [In-Place Archiving in Exchange 2016](../../policy-and-compliance/in-place-archiving/in-place-archiving.md).  <br/> |If the user doesn't have an archive mailbox, no action is taken.  <br/> |
-|**Delete and allow recovery**:  <br/> |Emulates the behavior when the user empties the Deleted Items folder.  <br/> Items are moved to the [Recoverable Items folder in Exchange 2016](../../policy-and-compliance/recoverable-items-folder/recoverable-items-folder.md) in the mailbox and preserved until the  *deleted item retention*  period.  <br/> Provides the user a second chance to recover the item using the **Recover Deleted Items** dialog box in Outlook or Outlook on the web  <br/> |If you've set the deleted item retention period to zero days, items are permanently deleted. For details, see [Configure Deleted Item retention and Recoverable Items quotas](../../recipients/user-mailboxes/deleted-item-retention-and-recoverable-items-quotas.md).  <br/> |
+|**Delete and allow recovery**:  <br/> |Emulates the behavior when the user empties the Deleted Items folder.  <br/> Items are moved to the [Recoverable Items folder in Exchange 2016](../../policy-and-compliance/recoverable-items-folder/recoverable-items-folder.md) in the mailbox and preserved until the *deleted item retention* period.  <br/> Provides the user a second chance to recover the item using the **Recover Deleted Items** dialog box in Outlook or Outlook on the web  <br/> |If you've set the deleted item retention period to zero days, items are permanently deleted. For details, see [Configure Deleted Item retention and Recoverable Items quotas](../../recipients/user-mailboxes/deleted-item-retention-and-recoverable-items-quotas.md).  <br/> |
 |**Permanently delete** <br/> |Permanently deletes messages.  <br/> You can't recover messages after they're permanently deleted.  <br/> |If mailbox is placed on [In-Place Hold and Litigation Hold in Exchange 2016](../../policy-and-compliance/holds/holds.md) or Litigation Hold, items are preserved in the Recoverable Items folder based on hold parameters. [In-Place eDiscovery in Exchange 2016](../../policy-and-compliance/ediscovery/ediscovery.md) will still return these items in search results.  <br/> |
 |**Mark as past retention limit** <br/> |Marks a message as expired. In Outlook, and Outlook on the web, expired items are displayed with the notification stating 'This item has expired' and 'This item will expire in 0 days'.  <br/> |N. A.  <br/> |
    
@@ -126,7 +126,7 @@ The Managed Folder Assistant, a mailbox assistant that runs on Mailbox servers, 
   
 The Managed Folder Assistant applies the retention policy by inspecting items in the mailbox and determining whether they're subject to retention. It then stamps items subject to retention with the appropriate retention tags and takes the specified retention action on items past their retention age.
   
-The Managed Folder Assistant is a throttle-based assistant. Throttle-based assistants are always running and don't need to be scheduled. The system resources they can consume are throttled. You can configure the Managed Folder Assistant to process all mailboxes on a Mailbox server within a certain period (known as a  *work cycle*  ). Additionally, at a specified interval (known as the  *work cycle checkpoint*  ), the assistant refreshes the list of mailboxes to be processed. During the refresh, the assistant adds newly created or moved mailboxes to the queue. It also reprioritizes existing mailboxes that haven't been processed successfully due to failures and moves them higher in the queue so they can be processed during the same work cycle. 
+The Managed Folder Assistant is a throttle-based assistant. Throttle-based assistants are always running and don't need to be scheduled. The system resources they can consume are throttled. You can configure the Managed Folder Assistant to process all mailboxes on a Mailbox server within a certain period (known as a *work cycle* ). Additionally, at a specified interval (known as the *work cycle checkpoint* ), the assistant refreshes the list of mailboxes to be processed. During the refresh, the assistant adds newly created or moved mailboxes to the queue. It also reprioritizes existing mailboxes that haven't been processed successfully due to failures and moves them higher in the queue so they can be processed during the same work cycle. 
   
 You can also use the [Start-ManagedFolderAssistant](http://technet.microsoft.com/library/75d840ea-5abc-44bb-b361-e81561fa1b04.aspx) cmdlet to manually trigger the assistant to process a specified mailbox. To learn more, see [Configure and run the Managed Folder Assistant in Exchange 2016](configure-managed-folder-assistant.md).
   
@@ -139,7 +139,7 @@ A mailbox item moved from one folder to another inherits any tags applied to the
   
 ### Applying a retention tag to a folder in the archive
 
-When the user applies a personal tag to a folder in the archive, if a folder with the same name exists in the primary mailbox and has a different tag, the tag on that folder in the archive changes to match the one in the primary mailbox. This is by design to avoid any confusion about items in a folder in the archive having a different expiry behavior than the same folder in the user's primary mailbox. For example, the user has a folder named Project Contoso in the primary mailbox with a  *Delete - 3 years*  tag and a Project Contoso folder also exists in the archive mailbox. If the user applies a  *Delete - 1 year*  personal tag to delete items in the folder after 1 year. When the mailbox is processed again, the folder reverts to the Delete - 3 Years tag. 
+When the user applies a personal tag to a folder in the archive, if a folder with the same name exists in the primary mailbox and has a different tag, the tag on that folder in the archive changes to match the one in the primary mailbox. This is by design to avoid any confusion about items in a folder in the archive having a different expiry behavior than the same folder in the user's primary mailbox. For example, the user has a folder named Project Contoso in the primary mailbox with a *Delete - 3 years* tag and a Project Contoso folder also exists in the archive mailbox. If the user applies a *Delete - 1 year* personal tag to delete items in the folder after 1 year. When the mailbox is processed again, the folder reverts to the Delete - 3 Years tag. 
   
 ### Removing or deleting a retention tag from a retention policy
 
@@ -169,7 +169,7 @@ When users are temporarily away from work and don't have access to their email, 
   
 During long absences from work, users may accrue a large amount of email. Depending on the volume of email and the length of absence, it may take these users several weeks to sort through their messages. In these cases, consider the additional time it may take the users to catch up on their mail before removing them from retention hold.
   
-If your organization has never implemented MRM, and your users aren't familiar with its features, you can also use retention holds during the initial  *warm up and training*  phase of your MRM deployment. You can create and deploy retention policies and educate users about the policies without the risk of having items moved or deleted before users can tag them. A few days before the warm up and training period ends, you should remind users of the warm-up deadline. After the deadline, you can remove the retention hold from user mailboxes, allowing the Managed Folder Assistant to process mailbox items and take the specified retention action. 
+If your organization has never implemented MRM, and your users aren't familiar with its features, you can also use retention holds during the initial *warm up and training* phase of your MRM deployment. You can create and deploy retention policies and educate users about the policies without the risk of having items moved or deleted before users can tag them. A few days before the warm up and training period ends, you should remind users of the warm-up deadline. After the deadline, you can remove the retention hold from user mailboxes, allowing the Managed Folder Assistant to process mailbox items and take the specified retention action. 
   
 For details about how to place a mailbox on retention hold, see [Place a Mailbox on Retention Hold](http://technet.microsoft.com/library/2baac4a7-3402-4142-bfb3-1649a950e677.aspx).
   

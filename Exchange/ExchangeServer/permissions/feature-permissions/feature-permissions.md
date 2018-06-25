@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: hub-page
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 48d06fa6-e4a2-4d5c-bdbd-718eeaade4be
 description: "Summary: See a list of management role groups for managing Exchange 2016 features."

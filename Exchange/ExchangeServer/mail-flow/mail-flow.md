@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: overview
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 14df5e1a-a5f7-4b0d-ba97-f53b76f0e7e0
 description: "Summary: Learn about mail flow and the transport pipeline in Exchange 2016."
@@ -16,7 +16,7 @@ description: "Summary: Learn about mail flow and the transport pipeline in Excha
 
  **Summary**: Learn about mail flow and the transport pipeline in Exchange 2016.
   
-In Exchange Server 2016, mail flow occurs through the transport pipeline. The  *transport pipeline*  is a collection of services, connections, components, and queues that work together to route all messages to the categorizer in the Transport service on an Exchange 2016 Mailbox server inside the organization. 
+In Exchange Server 2016, mail flow occurs through the transport pipeline. The *transport pipeline* is a collection of services, connections, components, and queues that work together to route all messages to the categorizer in the Transport service on an Exchange 2016 Mailbox server inside the organization. 
   
 For information about how to configure mail flow in a new Exchange 2016 organization, see [Configure mail flow and client access](../plan-and-deploy/post-installation-tasks/configure-mail-flow-and-client-access.md).
   
@@ -59,9 +59,9 @@ The following diagram and list describe inbound mail flow with only Exchange 201
   
 ![Inbound mail flow in the transport pipleline (no Edge Transport servers)](../media/45f8e675-43b1-4e3f-ba14-5c9a0d1551bf.png)
   
-1. A message from outside the organization enters the transport pipeline through the default Receive connector named "Default Frontend  _\<Mailbox server name\>_" in the Front End Transport service.
+1. A message from outside the organization enters the transport pipeline through the default Receive connector named "Default Frontend _\<Mailbox server name\>_" in the Front End Transport service.
     
-2. The message is sent to the Transport service on the local Mailbox server or on a different Mailbox server. The Transport service listens for messages on the default Receive connector named "Default  _\<Mailbox server name\>_".
+2. The message is sent to the Transport service on the local Mailbox server or on a different Mailbox server. The Transport service listens for messages on the default Receive connector named "Default _\<Mailbox server name\>_".
     
 3. The message is sent from the Transport service to the Mailbox Transport Delivery service on the local Mailbox server or on a different Mailbox server.
     
@@ -73,13 +73,13 @@ The following diagram and list describe inbound mail flow with an Edge Transport
   
 ![Inbound mail flow in the transport pipleline with Edge Transport servers](../media/e0983c92-784c-4c17-8483-8e2cb07cf097.png)
   
-1. A message from outside the Exchange organization enters the transport pipeline through the default Receive connector named "Default internal Receive connector  _\<Edge Transport server name\>_" in the Transport service on the Edge Transport server.
+1. A message from outside the Exchange organization enters the transport pipeline through the default Receive connector named "Default internal Receive connector _\<Edge Transport server name\>_" in the Transport service on the Edge Transport server.
     
-2. In the Transport service on the Edge Transport server, the default Send connector named "EdgeSync - Inbound to  _\<Active Directory site name\>_" sends the message to a Mailbox server in the subscribed Active Directory site.
+2. In the Transport service on the Edge Transport server, the default Send connector named "EdgeSync - Inbound to _\<Active Directory site name\>_" sends the message to a Mailbox server in the subscribed Active Directory site.
     
-3.  In the Front End Transport service on the Mailbox server, the default Receive connector named "Default Frontend  _\<Mailbox server name\>_" accepts the message.
+3.  In the Front End Transport service on the Mailbox server, the default Receive connector named "Default Frontend _\<Mailbox server name\>_" accepts the message.
     
-4. The message is sent from the Front End Transport service to the Transport service on the local Mailbox server or on a different Mailbox server. The Transport service listens for messages on the default Receive connector named "Default  _\<Mailbox server name\>_".
+4. The message is sent from the Front End Transport service to the Transport service on the local Mailbox server or on a different Mailbox server. The Transport service listens for messages on the default Receive connector named "Default _\<Mailbox server name\>_".
     
 5. The message is sent from the Transport service to the Mailbox Transport Delivery service on the local Mailbox server, or on a different Mailbox server.
     
@@ -110,13 +110,13 @@ By default, in a new Exchange 2016 organization, there's no Send connector that'
     
 2. The Mailbox Transport Submission service uses SMTP to send the message to the Transport service on the local Mailbox server or on a different Mailbox server.
     
-3. In the Transport service, the default Receive connector named "Default  _\<Mailbox server name\>_" accepts the message.
+3. In the Transport service, the default Receive connector named "Default _\<Mailbox server name\>_" accepts the message.
     
 4. What happens next depends on the configuration of the Send connector:
     
   - **Default**: The Transport service uses the Send connector you created to send the message to the Internet.
     
-  - **Outbound proxy**: The Transport service uses the Send connector you created to send the message to the Front End Transport service on the local Mailbox server or on a remote Mailbox server. In the Front End Transport service, the default Receive connector named "Outbound Proxy Frontend  _\<Mailbox server name\>_" accepts the message. The Front End Transport services sends the message to the Internet.
+  - **Outbound proxy**: The Transport service uses the Send connector you created to send the message to the Front End Transport service on the local Mailbox server or on a remote Mailbox server. In the Front End Transport service, the default Receive connector named "Outbound Proxy Frontend _\<Mailbox server name\>_" accepts the message. The Front End Transport services sends the message to the Internet.
     
 #### Outbound mail flow with Edge Transport servers
 
@@ -128,13 +128,13 @@ If you have an Edge Transport server installed in the perimeter network, outboun
     
 2. The Mailbox Transport Submission service uses SMTP to send the message to the Transport service on the local Mailbox server or on a different Mailbox server.
     
-3. In the Transport service on a Mailbox server in the subscribed Active Directory site, the default Receive connector named "Default  _\<Mailbox server name\>_" accepts the message.
+3. In the Transport service on a Mailbox server in the subscribed Active Directory site, the default Receive connector named "Default _\<Mailbox server name\>_" accepts the message.
     
 4. The message is sent to the Edge Transport server using the implicit and invisible intra-organization Send connector that automatically sends mail between Exchange servers in the same organization.
     
-5. In the Transport service on the Edge Transport server, the default Receive connector named "Default internal Receive connector  _\<Edge Transport server name\>_" accepts the message.
+5. In the Transport service on the Edge Transport server, the default Receive connector named "Default internal Receive connector _\<Edge Transport server name\>_" accepts the message.
     
-6. In the Transport service on the Edge Transport server, the default Send connector named "EdgeSync -  _\<Active Directory site name\>_ to Internet" sends the message to the Internet. 
+6. In the Transport service on the Edge Transport server, the default Send connector named "EdgeSync - _\<Active Directory site name\>_ to Internet" sends the message to the Internet. 
     
 ## Understanding the Transport service on Mailbox servers
 <a name="TransportService"> </a>

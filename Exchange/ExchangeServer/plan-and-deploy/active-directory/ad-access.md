@@ -6,8 +6,8 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: conceptual
-ms.prod: office-online-server
-localization_priority: Normal
+ms.prod: exchange-server-itpro
+localization_priority: Priority
 ms.assetid: 61080b45-8bce-4c23-b744-ed264d5f0b7d
 description: "Summary: How Exchange 2016 retrieves data from Active Directory, and how to recover deleted objects."
 ---

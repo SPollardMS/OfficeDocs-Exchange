@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: get-started-article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 2c07b1e6-8d07-4e73-8800-b306e2266c7d
 description: "Summary: How to enable or disable MAPI over HTTP in your Exchange 2016 organization."
@@ -19,7 +19,7 @@ description: "Summary: How to enable or disable MAPI over HTTP in your Exchange 
 In Exchange 2016, MAPI over HTTP can be set at the organization level or at the individual mailbox level. Mailbox-level settings always take precedence over organization-wide settings. At the organization level, MAPI over HTTP is enabled by default in new Exchange 2016 topologies, in topologies where all servers have been upgraded from Exchange 2010 to Exchange 2016, and in mixed topologies consisting of both Exchange 2010 and Exchange 2016 servers.
   
 > [!NOTE]
-> When MAPI over HTTP is enabled at the organization level, the  `MapiHttpEnabled` parameter of the  `Get-OrganizationConfig` cmdlet is set to **True**. 
+> When MAPI over HTTP is enabled at the organization level, the `MapiHttpEnabled` parameter of the `Get-OrganizationConfig` cmdlet is set to **True**. 
   
 This article describes how to configure and then enable MAPI over HTTP for Exchange 2016 organizations that contain Exchange 2013 servers, or for any topology where MAPI over HTTP has been previously disabled. You can also use the procedures in this article to disable MAPI over HTTP at the organization level.
   
@@ -31,13 +31,13 @@ Complete the following steps to configure MAPI over HTTP for your organization. 
   
 1. **Virtual directory configuration**: By default, Exchange 2016 creates a virtual directory for MAPI over HTTP. You use the **Set-MapiVirtualDirectory** cmdlet to configure the virtual directory. You must configure an internal URL, an external URL, or both. For more information see, [Set-MapiVirtualDirectory](http://technet.microsoft.com/library/c9308fe6-3b61-4d99-a5f2-ef47abbc7656.aspx).
     
-    For example, to configure the default MAPI virtual directory on the local Exchange server by setting the internal URL value to https://contoso.com/mapi, and the authentication method to  `Negotiate`, run the following command:
+    For example, to configure the default MAPI virtual directory on the local Exchange server by setting the internal URL value to https://contoso.com/mapi, and the authentication method to `Negotiate`, run the following command:
     
   ```
   Set-MapiVirtualDirectory -Identity "Contoso\mapi (Default Web Site)" -InternalUrl https://Contoso.com/mapi -IISAuthenticationMethods Negotiate
   ```
 
-2. **Certificate configuration**: The digital certificate used by your Exchange environment must include the same  _InternalURL_ and  _ExternalURL_ values that are defined on the MAPI virtual directory. For more information on Exchange 2016 certificate management, see [Digital certificates and encryption in Exchange 2016](../../architecture/client-access/certificates.md). Make sure the Exchange certificate is trusted on the Outlook client workstation and that there are no certificate errors, especially when you access the URLs configured on the MAPI virtual directory.
+2. **Certificate configuration**: The digital certificate used by your Exchange environment must include the same _InternalURL_ and _ExternalURL_ values that are defined on the MAPI virtual directory. For more information on Exchange 2016 certificate management, see [Digital certificates and encryption in Exchange 2016](../../architecture/client-access/certificates.md). Make sure the Exchange certificate is trusted on the Outlook client workstation and that there are no certificate errors, especially when you access the URLs configured on the MAPI virtual directory.
     
 3. **Update server rules**: Verify that your load balancers, reverse proxies, and firewalls are configured to allow access to the MAPI over HTTP virtual directory.
     
@@ -48,7 +48,7 @@ Complete the following steps to configure MAPI over HTTP for your organization. 
   
     **Enable MAPI over HTTP in your Exchange organization**
     
-    In Exchange 2016, MAPI over HTTP connections are set with the  `MapiHttpEnabled` parameter on the  `set-OrganizationConfig` cmdlet. **True** indicates MAPI over HTTP connections are allowed for all mailboxes in the organization. **False** will prevent MAPI over HTTP connections for all mailboxes. 
+    In Exchange 2016, MAPI over HTTP connections are set with the `MapiHttpEnabled` parameter on the `set-OrganizationConfig` cmdlet. **True** indicates MAPI over HTTP connections are allowed for all mailboxes in the organization. **False** will prevent MAPI over HTTP connections for all mailboxes. 
     
     Note that connection settings made at the mailbox level take precedence over any organization-wide settings.
     
@@ -62,7 +62,7 @@ Complete the following steps to configure MAPI over HTTP for your organization. 
     
     **Enable MAPI over HTTP for an individual mailbox**
     
-    To enable or disable MAPI over HTTP at the mailbox level, use the  `set-Casmailbox` cmdlet with the  `MapiHttpEnabled` parameter. The default value is **Null**, which means the mailbox will follow organization-level settings. The other options are **True** to enable MAPI over HTTP and **False** to disable. In either case, the setting would override any organization-level settings. 
+    To enable or disable MAPI over HTTP at the mailbox level, use the `set-Casmailbox` cmdlet with the `MapiHttpEnabled` parameter. The default value is **Null**, which means the mailbox will follow organization-level settings. The other options are **True** to enable MAPI over HTTP and **False** to disable. In either case, the setting would override any organization-level settings. 
     
     If MAPI over HTTP is enabled at the organization level but disabled for a mailbox, that mailbox will use Outlook Anywhere connections.
     
@@ -104,9 +104,9 @@ Logs for MAPI over HTTP activity are at the following locations:
     
 ## Combining MAPI over HTTP configurations and internal or external connections
 
-The following table summarizes the different setting combinations allowable at the organization level, in combination with different connection settings on individual mailboxes. As described previously in this article, the organization settings are made with  `Set-Organization -MapiHttpEnabled <parameter>` and mailbox settings are made with  `Set-Casmailbox <user ID or mailbox ID> -MapiHttpEnabled <parameter>`.
+The following table summarizes the different setting combinations allowable at the organization level, in combination with different connection settings on individual mailboxes. As described previously in this article, the organization settings are made with `Set-Organization -MapiHttpEnabled <parameter>` and mailbox settings are made with `Set-Casmailbox <user ID or mailbox ID> -MapiHttpEnabled <parameter>`.
   
-In addition, you can use the  `MapiBlockOutlookExternalConnectivity` parameter with  `Set-Casmailbox` to allow or deny external connections to a mailbox through Outlook Anywhere or MAPI over HTTP. **True** will allow only internal connections to the mailbox. **False** is the default setting. 
+In addition, you can use the `MapiBlockOutlookExternalConnectivity` parameter with `Set-Casmailbox` to allow or deny external connections to a mailbox through Outlook Anywhere or MAPI over HTTP. **True** will allow only internal connections to the mailbox. **False** is the default setting. 
   
 |**Organization setting (MapiHttpEnabled value)**|**User or mailbox setting (MapiHttpEnabled value)**|**User or mailbox setting (MapiBlockOutlookExternalConnectivity setting)**|**AutoDiscover result**|
 |:-----|:-----|:-----|:-----|

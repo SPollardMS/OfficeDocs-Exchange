@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/12/2018
 ms.audience: ITPro
 ms.topic: reference
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 5b690bcb-c6df-4511-90e1-08ca91f43b37
 description: "Summary: Learn about permissions that are required to manage recipients in Exchange Server 2016."

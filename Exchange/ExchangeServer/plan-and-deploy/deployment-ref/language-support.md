@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: reference
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 934686fb-53a2-4b13-aaf0-498e4011d61a
 description: "Microsoft Exchange Server 2016 has enhanced language support for both servers and clients. This topic lists the languages that are available for both servers and clients in Exchange 2016."

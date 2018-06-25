@@ -4,9 +4,9 @@ ms.author: chrisda
 author: chrisda
 manager: serdars
 ms.date: 6/8/2018
-ms.audience: End User
+ms.audience: ITPro
 ms.topic: overview
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 6a20f207-4485-44ef-b010-ec760eb5165b
 description: "Summary: Learn about journaling in Exchange 2016."
@@ -22,7 +22,7 @@ Exchange provides the following journaling options:
   
 - **Standard journaling**: Journal all messages that are sent to and received by mailboxes on a specific mailbox database. To journal all messages in your organization, you need to configure journaling on all mailbox databases on all Exchange servers.
     
-- **Premium journaling**: Use  *journal rules*  to journal messages based on recipients (all recipients or specified recipients), and scope (internal messages, external messages, or all messages). Premium journaling requires Exchange Enterprise client access licenses (CALs). For more information about CALs, see [Exchange Server Licensing](https://go.microsoft.com/fwlink/p/?linkid=237292).
+- **Premium journaling**: Use *journal rules* to journal messages based on recipients (all recipients or specified recipients), and scope (internal messages, external messages, or all messages). Premium journaling requires Exchange Enterprise client access licenses (CALs). For more information about CALs, see [Exchange Server Licensing](https://go.microsoft.com/fwlink/p/?linkid=237292).
     
 To configure journaling, see [Journaling procedures in Exchange 2016](journaling-procedures.md).
   
@@ -33,9 +33,9 @@ When you plan for messaging retention and compliance, it's important to understa
 
 First, it's important to understand the difference between journaling and archiving when it comes to email messages:
   
--  *Journaling*  refers to recording email communications as part of the organization's email retention strategy. 
+- *Journaling* refers to recording email communications as part of the organization's email retention strategy. 
     
--  *Archiving*  refers to removing email messages from their native location (for example, a user's mailbox), and storing them elsewhere. 
+- *Archiving* refers to removing email messages from their native location (for example, a user's mailbox), and storing them elsewhere. 
     
 Many organizations need to maintain records of the email communication that occurs as employees perform their daily business tasks. You can use Exchange journaling as a tool in your email retention or archival strategy.
   
@@ -47,7 +47,7 @@ The following list shows some of the more well-known U.S. and international regu
     
 - Security Exchange Commission Rule 17a-4 (SEC Rule 17 A-4)
     
-- National Association of Securities Dealers 3010 &amp; 3110 (NASD 3010 &amp; 3110)
+- National Association of Securities Dealers 3010 & 3110 (NASD 3010 & 3110)
     
 - Gramm-Leach-Bliley Act (Financial Modernization Act)
     
@@ -66,14 +66,14 @@ The following list shows some of the more well-known U.S. and international regu
 ## Journaling agent
 <a name="agent"> </a>
 
-The  *Journaling agent*  is the built-in Exchange transport agent that processes messages as they flow through the Transport service on Mailbox servers. The journaling configuration settings are stored in Active Directory, and are read by the Journaling agent. The Journaling agent is registered on the **OnSubmittedMessage** and **OnRoutedMessage** categorizer events in the transport pipeline. For more information about the transport pipeline, see [Mail flow and the transport pipeline](../../mail-flow/mail-flow.md).
+The *Journaling agent* is the built-in Exchange transport agent that processes messages as they flow through the Transport service on Mailbox servers. The journaling configuration settings are stored in Active Directory, and are read by the Journaling agent. The Journaling agent is registered on the **OnSubmittedMessage** and **OnRoutedMessage** categorizer events in the transport pipeline. For more information about the transport pipeline, see [Mail flow and the transport pipeline](../../mail-flow/mail-flow.md).
   
-Note that built-in transport agents like the Journaling agent are invisible and unmanageable by the transport agent management cmdlets ( **\*-TransportAgent** ). 
+Note that built-in transport agents like the Journaling agent are invisible and unmanageable by the transport agent management cmdlets (**\*-TransportAgent** ). 
   
 ## Journal reports
 <a name="report"> </a>
 
-A  *journal report*  is the message that's recorded by journaling. The journal report contains the original message as an unaltered file attachment. The body of the journal report contains summary information from the original message (for example, the sender's email address, message subject, **Message-ID**, and recipient email addresses). This type of journaling is known as  *envelope journaling*  , and is the only journaling method that's supported by Exchange. 
+A *journal report* is the message that's recorded by journaling. The journal report contains the original message as an unaltered file attachment. The body of the journal report contains summary information from the original message (for example, the sender's email address, message subject, **Message-ID**, and recipient email addresses). This type of journaling is known as *envelope journaling*, and is the only journaling method that's supported by Exchange. 
   
 ### Journal reports and IRM-protected messages
 
@@ -93,7 +93,7 @@ The basic components of a journal rule are:
 ### Journal recipient
 <a name="recip"> </a>
 
-The  *journal recipient*  specifies who you want to journal. Messages that are sent to or received by the journal recipient are journaled (the direction doesn't matter). You can configure a journal rule to journal messages for all senders and recipients in the Exchange organization, or you can limit a journal rule to an Exchange mailbox, group, mail user, or mail contact. If you specify a distribution group, you enable journaling for the  *members*  of the distribution group (not for the group itself). 
+The *journal recipient* specifies who you want to journal. Messages that are sent to or received by the journal recipient are journaled (the direction doesn't matter). You can configure a journal rule to journal messages for all senders and recipients in the Exchange organization, or you can limit a journal rule to an Exchange mailbox, group, mail user, or mail contact. If you specify a distribution group, you enable journaling for the *members* of the distribution group (not for the group itself). 
   
 By targeting specific recipients or groups of recipients, you can configure a journaling environment that helps you meet your organization's regulatory and legal requirements, while minimizing the storage and other costs that are associated with retaining large amounts of data.
   
@@ -134,9 +134,9 @@ The journaling mailbox is where the journaled messages are delivered. How you co
 #### Alternate journaling mailbox
 <a name="alternate"> </a>
 
-Like other messages, undeliverable journal reports are queued, and delivery is periodically retried until the message expires (the default value is two days, and is configured by the  _MessageExpirationTimeout_ parameter on the **Set-TransportService** cmdlet). Unlike other messages, expired journal reports can't be returned to the sender in a non-delivery report (also known as an NDR or bounce message), because the sender is the Microsoft Exchange recipient. Expired journal reports can't be recovered. 
+Like other messages, undeliverable journal reports are queued, and delivery is periodically retried until the message expires (the default value is two days, and is configured by the _MessageExpirationTimeout_ parameter on the **Set-TransportService** cmdlet). Unlike other messages, expired journal reports can't be returned to the sender in a non-delivery report (also known as an NDR or bounce message), because the sender is the Microsoft Exchange recipient. Expired journal reports can't be recovered. 
   
-If you don't want undeliverable journal reports to queue and eventually expire, you can specify an  *alternate journaling mailbox*  that accepts the NDRs for  *all*  undeliverable journal reports when  *any*  journaling mailbox is unavailable (one alternate journaling mailbox for all journaling mailboxes in your organization). The original journal report is an attachment in the NDR. When the journaling mailbox becomes available again, you can use the **Resend this message** feature in Outlook on the NDRs in the alternate journaling mailbox to send the unaltered delivery reports to the journaling mailbox. 
+If you don't want undeliverable journal reports to queue and eventually expire, you can specify an *alternate journaling mailbox* that accepts the NDRs for *all* undeliverable journal reports when *any* journaling mailbox is unavailable (one alternate journaling mailbox for all journaling mailboxes in your organization). The original journal report is an attachment in the NDR. When the journaling mailbox becomes available again, you can use the **Resend this message** feature in Outlook on the NDRs in the alternate journaling mailbox to send the unaltered delivery reports to the journaling mailbox. 
   
 Before you configure an alternate journaling mailbox, contact your legal representatives. Laws or regulations that apply to your organization may prohibit all journaled messages from being stored in the same mailbox.
   

@@ -4,9 +4,9 @@ ms.author: serdars
 author: SerdarSoysal
 manager: serdars
 ms.date: 6/8/2018
-ms.audience: End User
+ms.audience: ITPro
 ms.topic: overview
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 71031c06-852d-44d8-b558-dff444eaef8c
 description: "Summary: Learn about In-Place Hold and Litigation Hold in Exchange 2016."
@@ -75,9 +75,9 @@ If you're upgrading from Exchange Server 2010, the notion of legal hold is to ho
 
 The Legal Hold management role is required to place a mailbox on Litigation Hold or In-Place Hold. But to create a query-based In-Place Hold, you must also be assigned the Mailbox Search role. Users that have been added to the [Discovery Management](http://technet.microsoft.com/library/b8bc5922-a8c9-4707-906d-fa38bb87da8f.aspx) role-based access control (RBAC) role group (or assigned the Legal Hold and Mailbox Search roles) can place users hold and create a query-based In-Place Hold. To learn how to add members to the Discovery Management role group, see [Assign eDiscovery permissions in Exchange 2016](../../policy-and-compliance/ediscovery/assign-permissions.md).
   
-You can place a mailbox Litigation Hold on the **Recipients** page in the Exchange admin center or by using the  `Set-Mailbox -LitigationHoldEnabled $true` command in the Exchange Management Shell. 
+You can place a mailbox Litigation Hold on the **Recipients** page in the Exchange admin center or by using the `Set-Mailbox -LitigationHoldEnabled $true` command in the Exchange Management Shell. 
   
-The In-Place Hold functionality is integrated with In-Place eDiscovery searches. You can place a mailbox on In-Place Hold by using the **In-Place eDiscovery &amp; Hold** wizard in the EAC or the **New-MailboxSearch** cmdlet in the Exchange Management Shell. To learn how, see: 
+The In-Place Hold functionality is integrated with In-Place eDiscovery searches. You can place a mailbox on In-Place Hold by using the **In-Place eDiscovery & Hold** wizard in the EAC or the **New-MailboxSearch** cmdlet in the Exchange Management Shell. To learn how, see: 
   
 - [Place a mailbox on Litigation Hold](litigation-holds.md)
     
@@ -93,7 +93,7 @@ Many organizations require that users be informed when they're placed on hold. A
 
 Litigation Hold and In-Place Hold use the Recoverable Items folder to preserve items. The Recoverable Items folder is hidden from the default view of Outlook, Outlook on the web, and other email clients. To learn more about the Recoverable Items folder, see [Recoverable Items folder in Exchange 2016](../../policy-and-compliance/recoverable-items-folder/recoverable-items-folder.md).
   
-By default, when a user deletes a message from a folder other than the Deleted Items folder, the message is moved to the Deleted Items folder. When a user  *soft deletes*  an item (by pressing SHIFT+DELETE) or deletes an item from the Deleted Items folder, the message is moved to the Recoverable Items folder, thereby disappearing from the user's view. 
+By default, when a user deletes a message from a folder other than the Deleted Items folder, the message is moved to the Deleted Items folder. When a user *soft deletes* an item (by pressing SHIFT+DELETE) or deletes an item from the Deleted Items folder, the message is moved to the Recoverable Items folder, thereby disappearing from the user's view. 
   
 Items in the Recoverable Items folder are retained for the deleted item retention period configured on the user's mailbox database. By default, the deleted item retention period is set to 14 days for mailbox databases.
   
@@ -105,7 +105,7 @@ The Recoverable Items folder contains the following subfolders used to store del
     
 - **DiscoveryHolds**: If a user is put on an In-Place Hold, deleted items are moved to this folder. When the mailbox assistant processes the mailbox, it evaluates messages in this folder. Items that match the In-Place Hold query are retained until the hold period specified in the query. If no hold period is specified, items are held indefinitely or until the user is removed from the hold. However, if you put a user who was already on an In-Place Hold on Litigation Hold, the Litigation Hold takes preference. Therefore, deleted items are moved to the Purges folder instead.
     
-- **Versions**: When a user is put on In-Place Hold or Litigation Hold, mailbox items must be protected from tampering or modification by the user or a process. This is done by using a  *copy-on-write*  process. When a user or a process changes specific properties of a mailbox item, a copy of the original item is saved in the Versions folder before the change is committed. This process is repeated for subsequent changes. Items captured in the Versions folder are also indexed and returned in In-Place eDiscovery searches. After the hold is removed, copies in the Versions folder are removed by the Managed Folder Assistant. 
+- **Versions**: When a user is put on In-Place Hold or Litigation Hold, mailbox items must be protected from tampering or modification by the user or a process. This is done by using a *copy-on-write* process. When a user or a process changes specific properties of a mailbox item, a copy of the original item is saved in the Versions folder before the change is committed. This process is repeated for subsequent changes. Items captured in the Versions folder are also indexed and returned in In-Place eDiscovery searches. After the hold is removed, copies in the Versions folder are removed by the Managed Folder Assistant. 
     
 **Properties that trigger copy-on-write**
 
@@ -125,9 +125,9 @@ If a mailbox isn't placed on Litigation Hold or In-Place Hold, items in the Purg
 ## Holds and mailbox quotas
 <a name="quotas"> </a>
 
-Items in the Recoverable Items folder aren't calculated toward the user's mailbox quota. In Exchange, the Recoverable Items folder has its own quota. For Exchange, the default values for the  _RecoverableItemsWarningQuota_ and  _RecoverableItemsQuota_ mailbox properties are set to 20 GB and 30 GB respectively. To modify these values for a mailbox database for Exchange 2016, use the [Set-MailboxDatabase](http://technet.microsoft.com/library/a01edc66-bc10-4f65-9df4-432cb9e88f58.aspx) cmdlet. To modify them for individual mailboxes, use the [Set-Mailbox](http://technet.microsoft.com/library/a0d413b9-d949-4df6-ba96-ac0906dedae2.aspx) cmdlet. 
+Items in the Recoverable Items folder aren't calculated toward the user's mailbox quota. In Exchange, the Recoverable Items folder has its own quota. For Exchange, the default values for the _RecoverableItemsWarningQuota_ and _RecoverableItemsQuota_ mailbox properties are set to 20 GB and 30 GB respectively. To modify these values for a mailbox database for Exchange 2016, use the [Set-MailboxDatabase](http://technet.microsoft.com/library/a01edc66-bc10-4f65-9df4-432cb9e88f58.aspx) cmdlet. To modify them for individual mailboxes, use the [Set-Mailbox](http://technet.microsoft.com/library/a0d413b9-d949-4df6-ba96-ac0906dedae2.aspx) cmdlet. 
   
-When a user's Recoverable Items folder exceeds the warning quota for recoverable items (as specified by the  _RecoverableItemsWarningQuota_ parameter), an event is logged in the Application event log of the Mailbox server. When the folder exceeds the quota for recoverable items (as specified by the  _RecoverableItemsQuota_ parameter), users won't be able to empty the Deleted Items folder or permanently delete mailbox items. Also copy-on-write won't be able to create copies of modified items. Therefore, it's critical that you monitor Recoverable Items quotas for mailbox users placed on In-Place Hold. 
+When a user's Recoverable Items folder exceeds the warning quota for recoverable items (as specified by the _RecoverableItemsWarningQuota_ parameter), an event is logged in the Application event log of the Mailbox server. When the folder exceeds the quota for recoverable items (as specified by the _RecoverableItemsQuota_ parameter), users won't be able to empty the Deleted Items folder or permanently delete mailbox items. Also copy-on-write won't be able to create copies of modified items. Therefore, it's critical that you monitor Recoverable Items quotas for mailbox users placed on In-Place Hold. 
   
 ## Holds and email forwarding
 <a name="emailforwarding"> </a>

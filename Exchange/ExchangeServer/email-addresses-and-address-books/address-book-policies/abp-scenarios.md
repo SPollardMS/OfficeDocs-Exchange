@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 6ac3c87d-161f-447b-afb2-149ae7e3f1dc
 description: "Summary: Learn how to use address book polices to split single Exchange 2016 organizations into separate virtual organizations based on different requirements and scenarios."
@@ -109,7 +109,7 @@ These are the important issues to consider when you use ABPs in your organizatio
     
   - Even recipient types that support the **Company**, **Department** or **StateOrProvince** attributes require different cmdlets to configure them. 
     
-     For example, to configure values for **Company**, **Department** or **StateOrProvince** on mailboxes, mail users, or mail contacts, you can't use the **Set-Mailbox**, **Set-MailUser**, or **Set-MailContact** cmdlets. Instead, you need to use the **Set-User** and **Set-Contact** cmdlets. In contrast, the  _CustomAttribute1_ to  _CustomAttribute15_ parameters are available on the corresponding **Set-\*** cmdlets for all recipient types. 
+     For example, to configure values for **Company**, **Department** or **StateOrProvince** on mailboxes, mail users, or mail contacts, you can't use the **Set-Mailbox**, **Set-MailUser**, or **Set-MailContact** cmdlets. Instead, you need to use the **Set-User** and **Set-Contact** cmdlets. In contrast, the _CustomAttribute1_ to _CustomAttribute15_ parameters are available on the corresponding **Set-\*** cmdlets for all recipient types. 
     
     For more information about recipient filtering, see [Recipient filtering on Edge Transport servers](../../antispam-and-antimalware/antispam-protection/recipient-filtering.md).
     
@@ -131,7 +131,7 @@ These are the important issues to consider when you use ABPs in your organizatio
     
 - All ABPs must contain a room address list. However, if your organization doesn't use room address lists, you can create an empty room address list.
     
-    **Note**: The room list that's required for an ABP is an address list that specifies rooms (contains the filter  `RecipientDisplayType -eq 'ConferenceRoomMailbox'`). It's not a room finder distribution group that you create with the  _RoomList_ switch on the **New-DistributionGroup** or **Set-DistributionGroup** cmdlets. For more information, see [Create and manage room mailboxes](../../recipients/room-mailboxes.md).
+    **Note**: The room list that's required for an ABP is an address list that specifies rooms (contains the filter `RecipientDisplayType -eq 'ConferenceRoomMailbox'`). It's not a room finder distribution group that you create with the _RoomList_ switch on the **New-DistributionGroup** or **Set-DistributionGroup** cmdlets. For more information, see [Create and manage room mailboxes](../../recipients/room-mailboxes.md).
     
 - Deploying ABPs doesn't prevent users in one virtual organization from sending email to users in another virtual organization. If you want to prevent users from sending email across virtual organizations, we recommend that you create a mail flow rule (also known as a transport rule) that looks for messages sent between the recipients. For example, to prevent Contoso users from receiving messages from Fabrikam users and vice-versa, but still allow Fabrikam's senior leadership team to send messages to Contoso users, you can create the following mail flow rule in the Exchange Management Shell:
     
@@ -156,7 +156,7 @@ The ABP Routing Agent makes users that are assigned different GALs appear as ext
   
 ### Step 2: Define your virtual organizations
 
-In this scenario, the **CustomAttribute15** attribute defines the virtual organizations: the value  `FAB` for Fabrikam recipients, and the value  `TAIL` for Tailspin Toys recipients. For more information about recipient filtering, see [Recipient filtering on Edge Transport servers](../../antispam-and-antimalware/antispam-protection/recipient-filtering.md).
+In this scenario, the **CustomAttribute15** attribute defines the virtual organizations: the value `FAB` for Fabrikam recipients, and the value `TAIL` for Tailspin Toys recipients. For more information about recipient filtering, see [Recipient filtering on Edge Transport servers](../../antispam-and-antimalware/antispam-protection/recipient-filtering.md).
   
 ### Step 3: Create the required elements for the address book policies
 

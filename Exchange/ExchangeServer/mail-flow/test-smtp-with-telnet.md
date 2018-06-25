@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 8a5f6715-baa4-48dd-8600-02c6b3d1aa9d
 description: "Summary: Learn how to use Telnet to test SMTP connectivity and mail flow on Exchange servers."
@@ -96,7 +96,7 @@ In this example, we're going to use the following values. When you run the comma
 - **Message body**: This is a test message
     
 > [!TIP]
->  The commands in the Telnet Client aren't case-sensitive. The SMTP command verbs in this example are capitalized for clarity. >  You can't use the backspace key in the Telnet session after you connect to the destination SMTP server. If you make a mistake as you type an SMTP command, you need to press Enter, and then type the command again. Unrecognized SMTP commands or syntax errors result in an error message that looks like this: >  `500 5.3.3 Unrecognized command`
+>  The commands in the Telnet Client aren't case-sensitive. The SMTP command verbs in this example are capitalized for clarity. >  You can't use the backspace key in the Telnet session after you connect to the destination SMTP server. If you make a mistake as you type an SMTP command, you need to press Enter, and then type the command again. Unrecognized SMTP commands or syntax errors result in an error message that looks like this: > `500 5.3.3 Unrecognized command`
   
 1. Open a Command Prompt window, type telnet, and then press Enter.
     
@@ -126,7 +126,7 @@ In this example, we're going to use the following values. When you run the comma
     
 10. Press Enter again.
     
-     A blank line is needed between the  `Subject:` field and the message body. 
+     A blank line is needed between the `Subject:` field and the message body. 
     
 11. Type This is a test message, and then press Enter.
     
@@ -205,9 +205,9 @@ The table above is based on information provided by [RFC 5321 (Simple Mail Trans
   
 ### OPEN command
 
- **Successful response**:  `220 mail1.fabrikam.com Microsoft ESMTP MAIL Service ready at <day-date-time>`
+ **Successful response**: `220 mail1.fabrikam.com Microsoft ESMTP MAIL Service ready at <day-date-time>`
   
- **Failure response**:  `Connecting to mail1.fabrikam.com...Could not open connection to the host, on port 25: Connect failed`
+ **Failure response**: `Connecting to mail1.fabrikam.com...Could not open connection to the host, on port 25: Connect failed`
   
  **Possible reasons for failure**
   
@@ -223,9 +223,9 @@ The table above is based on information provided by [RFC 5321 (Simple Mail Trans
     
 ### EHLO command
 
- **Successful response**:  `250 mail1.fabrikam.com Hello [<sourceIPaddress>]`
+ **Successful response**: `250 mail1.fabrikam.com Hello [<sourceIPaddress>]`
   
- **Failure response**:  `501 5.5.4 Invalid domain name`
+ **Failure response**: `501 5.5.4 Invalid domain name`
   
  **Possible reasons for failure**
   
@@ -238,21 +238,21 @@ The table above is based on information provided by [RFC 5321 (Simple Mail Trans
   
 ### MAIL FROM command
 
- **Successful response**:  `250 2.1.0 Sender OK`
+ **Successful response**: `250 2.1.0 Sender OK`
   
- **Failure response**:  `550 5.1.7 Invalid address`
+ **Failure response**: `550 5.1.7 Invalid address`
   
  **Possible reasons for failure**: A syntax error in the sender's e-mail address.
   
- **Failure response**:  `530 5.7.1 Client was not authenticated`
+ **Failure response**: `530 5.7.1 Client was not authenticated`
   
  **Possible reasons for failure**: The destination server doesn't accept anonymous message submissions. You receive this error if you try to use Telnet to submit a message directly to a Mailbox server that doesn't have a Receive connector that's configured to accept anonymous connections.
   
 ### RCPT TO command
 
- **Successful response**:  `250 2.1.5 Recipient OK`
+ **Successful response**: `250 2.1.5 Recipient OK`
   
- **Failure response**:  `550 5.1.1 User unknown`
+ **Failure response**: `550 5.1.1 User unknown`
   
  **Possible reasons for failure**: The specified recipient doesn't exist.
   

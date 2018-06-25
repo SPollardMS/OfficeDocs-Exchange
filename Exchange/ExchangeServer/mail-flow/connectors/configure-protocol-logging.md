@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: c81cac9c-b990-492a-b899-5be8d08a6068
 description: "Summary: Learn how to configure protocol logging for Send connectors and Receive connectors in Exchange 2016."
@@ -24,27 +24,27 @@ The following options are available for the protocol logs of all Send connectors
     
   - Front End Transport service on Mailbox servers:
     
-  - **Receive connectors**:  `%ExchangeInstallPath%TransportRoles\Logs\FrontEnd\ProtocolLog\SmtpReceive`
+  - **Receive connectors**: `%ExchangeInstallPath%TransportRoles\Logs\FrontEnd\ProtocolLog\SmtpReceive`
     
-  - **Send connectors**:  `%ExchangeInstallPath%TransportRoles\Logs\FrontEnd\ProtocolLog\SmtpSend`
+  - **Send connectors**: `%ExchangeInstallPath%TransportRoles\Logs\FrontEnd\ProtocolLog\SmtpSend`
     
   - Transport service on Mailbox servers:
     
-  - **Receive connectors**:  `%ExchangeInstallPath%TransportRoles\Logs\Hub\ProtocolLog\SmtpReceive`
+  - **Receive connectors**: `%ExchangeInstallPath%TransportRoles\Logs\Hub\ProtocolLog\SmtpReceive`
     
-  - **Send connectors**:  `%ExchangeInstallPath%TransportRoles\Logs\Hub\ProtocolLog\SmtpSend`
+  - **Send connectors**: `%ExchangeInstallPath%TransportRoles\Logs\Hub\ProtocolLog\SmtpSend`
     
-  - Mailbox Transport Delivery service on Mailbox servers ( **Receive connectors**):  `%ExchangeInstallPath%TransportRoles\Logs\Mailbox\ProtocolLog\SmtpReceive\Delivery`
+  - Mailbox Transport Delivery service on Mailbox servers (**Receive connectors**): `%ExchangeInstallPath%TransportRoles\Logs\Mailbox\ProtocolLog\SmtpReceive\Delivery`
     
-  - Mailbox Transport Submission service on Mailbox servers ( **Send connectors**):  `%ExchangeInstallPath%TransportRoles\Logs\Mailbox\ProtocolLog\SmtpSend\Submission`
+  - Mailbox Transport Submission service on Mailbox servers (**Send connectors**): `%ExchangeInstallPath%TransportRoles\Logs\Mailbox\ProtocolLog\SmtpSend\Submission`
     
-    **Note**: Protocol logging for side effect messages that are submitted after messages are delivered to mailboxes occurs in  `%ExchangeInstallPath%TransportRoles\Logs\Mailbox\ProtocolLog\SmtpSend\Delivery`. For example, a message that's delivered to a mailbox triggers an Inbox rule that redirects the message to another recipient.
+    **Note**: Protocol logging for side effect messages that are submitted after messages are delivered to mailboxes occurs in `%ExchangeInstallPath%TransportRoles\Logs\Mailbox\ProtocolLog\SmtpSend\Delivery`. For example, a message that's delivered to a mailbox triggers an Inbox rule that redirects the message to another recipient.
     
   - Transport service on Edge Transport servers:
     
-  - **Receive connectors**:  `%ExchangeInstallPath%TransportRoles\Logs\Edge\ProtocolLog\SmtpReceive`
+  - **Receive connectors**: `%ExchangeInstallPath%TransportRoles\Logs\Edge\ProtocolLog\SmtpReceive`
     
-  - **Send connectors**:  `%ExchangeInstallPath%TransportRoles\Logs\Edge\ProtocolLog\SmtpSend`
+  - **Send connectors**: `%ExchangeInstallPath%TransportRoles\Logs\Edge\ProtocolLog\SmtpSend`
     
 - Specify a maximum size for the protocol log files. The default size is 10 megabytes (MB).
     
@@ -228,9 +228,9 @@ Set-TransportService Mailbox01 -ReceiveProtocolLogPath "D:\Hub SMTP Receive Log"
 
  **Notes**:
   
-- Setting the  _SendProtocolLogPath_ or  _ReceiveProtocolLogPath_ parameters to the value  `$null` effectively disables protocol logging for all Send connectors or Receive connectors on the server. However, setting the value to  `$null` generates event log errors when protocol logging is enabled for any Send connector or Receive connector on the server, including the intra-organization Send connector or the mailbox delivery Receive connector. 
+- Setting the _SendProtocolLogPath_ or _ReceiveProtocolLogPath_ parameters to the value `$null` effectively disables protocol logging for all Send connectors or Receive connectors on the server. However, setting the value to `$null` generates event log errors when protocol logging is enabled for any Send connector or Receive connector on the server, including the intra-organization Send connector or the mailbox delivery Receive connector. 
     
-- Setting the  _ReceiveProtocolLogMaxAge_ or  _SendProtocolLogMaxAge_ parameters to the value  `00:00:00` prevents the automatic removal of protocol log files because of their age. 
+- Setting the _ReceiveProtocolLogMaxAge_ or _SendProtocolLogMaxAge_ parameters to the value `00:00:00` prevents the automatic removal of protocol log files because of their age. 
     
 ### How do you know this worked?
 

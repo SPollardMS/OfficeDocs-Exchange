@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 4/19/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 2b043878-0b34-4563-a9c2-28a9efa7447e
 description: "Summary: Learn to use the custom attributes in Exchange 2016 to add information about a mail recipient."
@@ -20,7 +20,7 @@ Exchange 2016 includes 15 extension attributes that you can use to add informati
   
 In earlier versions of Exchange, if you wanted to store this information in Active Directory, you had to create an attribute by extending the Active Directory schema. Schema extension requires planning, procuring object identifiers (OIDs) for new attributes, and testing the extension process in a test environment before you implement it in a production environment. Exchange 2016 doesn't let you use schema extensions in recipient filters that are used by address lists, e-mail address policies, and dynamic distribution groups.
   
-The custom attributes available to Exchange 2016 are labeled in Active Directory as **ms-Exch-Extension-Attribute1** through **ms-Exch-Extension-Attribute15**. In the Exchange Management Shell, the corresponding parameters are  _CustomAttribute1_ through  _CustomAttribute15_. These attributes aren't used by any Exchange components. They can be used to store Active Directory data without having to extend the Active Directory schema.
+The custom attributes available to Exchange 2016 are labeled in Active Directory as **ms-Exch-Extension-Attribute1** through **ms-Exch-Extension-Attribute15**. In the Exchange Management Shell, the corresponding parameters are _CustomAttribute1_ through _CustomAttribute15_. These attributes aren't used by any Exchange components. They can be used to store Active Directory data without having to extend the Active Directory schema.
   
 ## Advantages of custom attributes
 <a name="AO"> </a>
@@ -33,11 +33,11 @@ There are several advantages to using custom attributes:
     
 - You can use the Exchange admin center (EAC) or the Exchange Management Shell to manage the attributes. You don't need to build custom controls or write scripts to populate and display these attributes.
     
-- You can filter and reuse the attributes, as attributes are filterable properties that can be used in the  _Filter_ parameter with recipient cmdlets such as **Get-Mailbox**. They can also be used in the EAC and the Exchange Management Shell to create filters for e-mail address policies, address lists, and dynamic distribution groups. 
+- You can filter and reuse the attributes, as attributes are filterable properties that can be used in the _Filter_ parameter with recipient cmdlets such as **Get-Mailbox**. They can also be used in the EAC and the Exchange Management Shell to create filters for e-mail address policies, address lists, and dynamic distribution groups. 
     
 ### Multivalued custom attributes
 
-Starting withExchange 2010 Service Pack 2 (SP2), five multivalued custom attributes were added to Exchange to allow you to store additional information for mail recipients if the traditional custom attributes didn't meet your needs. The  _ExtensionCustomAttribute1_ to  _ExtensionCustomAttribute5_ parameters can hold up to 1,300 values each. You can specify multiple values as a comma-delimited list. The following cmdlets support these new parameters: 
+Starting withExchange 2010 Service Pack 2 (SP2), five multivalued custom attributes were added to Exchange to allow you to store additional information for mail recipients if the traditional custom attributes didn't meet your needs. The _ExtensionCustomAttribute1_ to _ExtensionCustomAttribute5_ parameters can hold up to 1,300 values each. You can specify multiple values as a comma-delimited list. The following cmdlets support these new parameters: 
   
 - [Set-DistributionGroup](http://technet.microsoft.com/library/e3a8c709-770a-4900-9a57-adcf0d98ff68.aspx)
     
@@ -56,7 +56,7 @@ For more information about multivalued properties, see [Modifying multivalued pr
 ## Custom attribute examples
 <a name="CA"> </a>
 
-A common scenario in many Exchange deployments is that of creating an e-mail address policy for all recipients in an OU. The OU isn't a filterable property that can be used in the  _RecipientFilter_ parameter of an e-mail address policy or an address list. 
+A common scenario in many Exchange deployments is that of creating an e-mail address policy for all recipients in an OU. The OU isn't a filterable property that can be used in the _RecipientFilter_ parameter of an e-mail address policy or an address list. 
   
 > [!NOTE]
 > Dynamic distribution groups have an additional parameter that you can use to restrict it to recipients in a particular OU or container. 
@@ -67,7 +67,7 @@ If the recipients in a particular OU don't share any common properties that you 
 Get-Mailbox -OrganizationalUnit Sales | Set-Mailbox CustomAttribute1 "SalesOU"
 ```
 
-With that done, now you can create an e-mail address policy for all recipients that have the  _CustomAttribute1_ property that equals SalesOU, as shown in this example. 
+With that done, now you can create an e-mail address policy for all recipients that have the _CustomAttribute1_ property that equals SalesOU, as shown in this example. 
   
 ```
 New-EmailAddressPolicy -Name "Sales" -RecipientFilter { CustomAttribute1 -eq "SalesOU"} -EnabledEmailAddressTemplates "SMTP:%s%2g@sales.contoso.com"
@@ -76,33 +76,33 @@ New-EmailAddressPolicy -Name "Sales" -RecipientFilter { CustomAttribute1 -eq "Sa
 ## Custom attribute example using the ConditionalCustomAttributes parameter
 <a name="CAE"> </a>
 
-When creating dynamic distribution groups, email address policies, or address lists, you don't need to use the  _RecipeintFilter_ parameter to specify custom attributes. You can use the  _ConditionalCustomAttribute1_ to  _ConditionalCustomAttribute15_ parameters instead. 
+When creating dynamic distribution groups, email address policies, or address lists, you don't need to use the _RecipeintFilter_ parameter to specify custom attributes. You can use the _ConditionalCustomAttribute1_ to _ConditionalCustomAttribute15_ parameters instead. 
   
-This example creates a dynamic distribution group based on the recipients whose  _CustomAttribute1_ is set to SalesOU. 
+This example creates a dynamic distribution group based on the recipients whose _CustomAttribute1_ is set to SalesOU. 
   
 ```
 New-DynamicDistributionGroup -Name "Sales Users and Contacts" -IncludedRecipients "MailboxUsers,MailContacts" -ConditionalCustomAttribute1 "SalesOU"
 ```
 
 > [!NOTE]
-> You need to use the  _IncludedRecipients_ parameter if you use a  _Conditional_ parameter. In addition, you can't use  _Conditional_ parameters if you use the  _RecipientFilter_ parameter. If you want to include additional filters to create your dynamic distribution group, email address policies, or address lists, you should use the  _RecipientFilter_ parameter. 
+> You need to use the _IncludedRecipients_ parameter if you use a _Conditional_ parameter. In addition, you can't use _Conditional_ parameters if you use the _RecipientFilter_ parameter. If you want to include additional filters to create your dynamic distribution group, email address policies, or address lists, you should use the _RecipientFilter_ parameter. 
   
 ## Custom attribute example using ExtensionCustomAttributes parameter
 <a name="extcusparam"> </a>
 
-In this example, the mailbox for Kweku will have  _ExtensionCustomAttribute1_ updated to reflect that he's enrolled in the following educational classes: MATH307, ECON202, and ENGL300. 
+In this example, the mailbox for Kweku will have _ExtensionCustomAttribute1_ updated to reflect that he's enrolled in the following educational classes: MATH307, ECON202, and ENGL300. 
   
 ```
 Set-Mailbox -Identity Kweku -ExtensionCustomAttribute1 MATH307,ECON202,ENGL300
 ```
 
-Next, a dynamic distribution group for all students enrolled MATH307 is created by using the  _RecipientFilter_ parameter where  _ExtensionCustomAttribute1_ is equal to MATH307. When using the  _ExtentionCustomAttributes_ parameters, you can use the  `-eq` operator instead of the  `-like` operator. 
+Next, a dynamic distribution group for all students enrolled MATH307 is created by using the _RecipientFilter_ parameter where _ExtensionCustomAttribute1_ is equal to MATH307. When using the _ExtentionCustomAttributes_ parameters, you can use the `-eq` operator instead of the `-like` operator. 
   
 ```
 New-DynamicDistributionGroup -Name Students_MATH307 -RecipientFilter {ExtensionCustomAttribute1 -eq "MATH307"}
 ```
 
-In this example, Kweku's  _ExtensionCustomAttribute1_ values are updated to reflect that he's added the class ENGL210 and removed the class ECON202. 
+In this example, Kweku's _ExtensionCustomAttribute1_ values are updated to reflect that he's added the class ENGL210 and removed the class ECON202. 
   
 ```
 Set-Mailbox -Identity Kweku -ExtensionCustomAttribute1 @{Add="ENGL210"; Remove="ECON202"}

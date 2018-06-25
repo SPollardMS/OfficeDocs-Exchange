@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 6359abaf-e6f6-4667-8c2b-3860728b39a9
 description: "Summary: Learn how to manage address book policies, how to assign address book policies to users, and how to install and enable the Address Book Policy Routing Agent in Exchange 2016."
@@ -60,7 +60,7 @@ For detailed syntax and parameter information, see [Get-AddressBookPolicy](http:
 
 An ABP requires one global address list (GAL), one offline address book (OAB), one room list, and one or more address lists. To view the available objects, use the **Get-GlobalAddressList**, **Get-OfflineAddressBook**, and **Get-AddressList** cmdlets. 
   
- **Note**: The room list that's required for an ABP is an address list that specifies rooms (contains the filter  `RecipientDisplayType -eq 'ConferenceRoomMailbox'`). It's not a room finder distribution group that you create with the  _RoomList_ switch on the **New-DistributionGroup** or **Set-DistributionGroup** cmdlets. 
+ **Note**: The room list that's required for an ABP is an address list that specifies rooms (contains the filter `RecipientDisplayType -eq 'ConferenceRoomMailbox'`). It's not a room finder distribution group that you create with the _RoomList_ switch on the **New-DistributionGroup** or **Set-DistributionGroup** cmdlets. 
   
 To create an ABP, use this syntax:
   
@@ -94,7 +94,7 @@ To verify that you've successfully created an ABP, use either of these procedure
   Get-AddressBookPolicy
   ```
 
-- Replace  _\<ABPIdentity\>_ with the name of the ABP, and run this command in the Exchange Management Shell to verify the property values: 
+- Replace _\<ABPIdentity\>_ with the name of the ABP, and run this command in the Exchange Management Shell to verify the property values: 
     
   ```
   Get-AddressBookPolicy -Identity "<ABPIdenity>" | Format-List
@@ -105,7 +105,7 @@ To verify that you've successfully created an ABP, use either of these procedure
 
 You use the **Set-AddressBookPolicy** cmdlet to modify an existing ABP. The settings are identical to the settings that are available when you create an ABP. 
   
-- The  _Name_,  _GlobalAddressList_,  _OfflineAddressBook_, and  _RoomList_ parameters all take single values, so the value you specify replaces the existing value. 
+- The _Name_, _GlobalAddressList_, _OfflineAddressBook_, and _RoomList_ parameters all take single values, so the value you specify replaces the existing value. 
     
     This example modifies the ABP named "All Fabrikam ABP" by replacing the OAB with the specified OAB.
     
@@ -113,7 +113,7 @@ You use the **Set-AddressBookPolicy** cmdlet to modify an existing ABP. The sett
   Set-AddressBookPolicy -Identity "All Fabrikam ABP" -OfflineAddressBook \Fabrikam-OAB-2
   ```
 
-- The  _AddressLists_ parameter takes multiple values, so you need to decide whether you want to  *replace*  the existing address lists in the ABP, or  *add and remove*  address lists without affecting the other address lists in the ABP. 
+- The _AddressLists_ parameter takes multiple values, so you need to decide whether you want to *replace* the existing address lists in the ABP, or *add and remove* address lists without affecting the other address lists in the ABP. 
     
     This example replaces the existing address lists in the ABP named Government Agency A with the specified address lists.
     
@@ -121,7 +121,7 @@ You use the **Set-AddressBookPolicy** cmdlet to modify an existing ABP. The sett
   Set-AddressBookPolicy -Identity "Government Agency A" -AddressLists "GovernmentAgencyA-Atlanta","GovernmentAgencyA-Moscow"
   ```
 
-    To add address lists to an ABP, you need to specify the new address lists  *and*  any existing address lists that you want to keep. 
+    To add address lists to an ABP, you need to specify the new address lists *and* any existing address lists that you want to keep. 
     
     This example adds the address list named Contoso-Chicago to the ABP named ABP Contoso, which is already configured to use the address list named Contoso-Seattle.
     
@@ -141,7 +141,7 @@ For detailed syntax and parameter information, see [Set-AddressBookPolicy](http:
   
 ### How do you know this worked?
 
-To verify that you've successfully modify an ABP, replace  _\<ABPIdentity\>_ with the name of the ABP, and run this command in the Exchange Management Shell to verify the property values: 
+To verify that you've successfully modify an ABP, replace _\<ABPIdentity\>_ with the name of the ABP, and run this command in the Exchange Management Shell to verify the property values: 
   
 ```
 Get-AddressBookPolicy -Identity "<ABPIdenity>" | Format-List
@@ -150,9 +150,9 @@ Get-AddressBookPolicy -Identity "<ABPIdenity>" | Format-List
 ## Use the Exchange Management Shell to remove address book policies
 <a name="RemoveABP"> </a>
 
-- You can't remove an ABP if it's assigned to a mailbox. To see if an ABP is assigned to a mailbox, replace  _\<ABPIdentity\>_ with the name of the ABP, and run this command in the Exchange Management Shell to get the **DistinguishedName** value: 
+- You can't remove an ABP if it's assigned to a mailbox. To see if an ABP is assigned to a mailbox, replace _\<ABPIdentity\>_ with the name of the ABP, and run this command in the Exchange Management Shell to get the **DistinguishedName** value: 
     
-     `Get-AddressBookPolicy -Identity <ABPIdentity> | Format-List DistinguishedName`
+   `Get-AddressBookPolicy -Identity <ABPIdentity> | Format-List DistinguishedName`
     
     Then, use the **DistinguishedName** value of the ABP in this command to show all mailboxes where the ABP is assigned: 
     
@@ -184,7 +184,7 @@ To verify that you've successfully removed an ABP, use either of these procedure
   Get-AddressBookPolicy
   ```
 
-- Replace  _\<ABPIdentity\>_ with the name of the ABP, and run this command to confirm that an error is returned: 
+- Replace _\<ABPIdentity\>_ with the name of the ABP, and run this command to confirm that an error is returned: 
     
   ```
   Get-AddressBookPolicy -Identity "<ABPIdenity>"
@@ -201,7 +201,7 @@ To verify that you've successfully removed an ABP, use either of these procedure
     
   - To assign ABPs to mailboxes, you select the ABP in EAC, or specify the ABP in the Exchange Management Shell.
     
-  - To remove the ABP assignments from mailboxes, you select the value **[No Policy]** in the EAC, or use the value  `$null` in the Exchange Management Shell. 
+  - To remove the ABP assignments from mailboxes, you select the value **[No Policy]** in the EAC, or use the value `$null` in the Exchange Management Shell. 
     
 ### Use the Exchange admin center (EAC) to assign an ABP to a single mailbox
 
@@ -240,7 +240,7 @@ This example assigns the ABP named All Fabrikam to mailbox joe@fabrikam.com.
 Set-Mailbox -Identity joe@fabrikam.com -AddressBookPolicy "All Fabrikam"
 ```
 
- **Note**: You can also assign an ABP when you create a user mailbox with the **New-Mailbox** cmdlet by using the  _AddressBookPolicy_ parameter. If you don't specify an ABP when you create the mailbox, no ABP is assigned (the default value is blank or  `$null`).
+ **Note**: You can also assign an ABP when you create a user mailbox with the **New-Mailbox** cmdlet by using the _AddressBookPolicy_ parameter. If you don't specify an ABP when you create the mailbox, no ABP is assigned (the default value is blank or `$null`).
   
 For detailed syntax and parameter information, see [Set-Mailbox](http://technet.microsoft.com/library/a0d413b9-d949-4df6-ba96-ac0906dedae2.aspx).
   
@@ -280,7 +280,7 @@ For detailed syntax and parameter information, see [Set-Mailbox](http://technet.
 
 You can use the **Get-Mailbox** or **Get-Content** cmdlets to identify the user mailboxes that you want to assign the ABP to. For example: 
   
-- Use the  _Filter_ parameter to create OPATH filters that identify the mailboxes. For more information, see [Filterable Properties for the -Filter Parameter](http://technet.microsoft.com/library/b02b0005-2fb6-4bc2-8815-305259fa5432.aspx).
+- Use the _Filter_ parameter to create OPATH filters that identify the mailboxes. For more information, see [Filterable Properties for the -Filter Parameter](http://technet.microsoft.com/library/b02b0005-2fb6-4bc2-8815-305259fa5432.aspx).
     
 - Use a text file to specify the mailboxes. The text file contains one mailbox (email address, name, or other unique identifier) on each line like this:
     
@@ -291,7 +291,7 @@ You can use the **Get-Mailbox** or **Get-Content** cmdlets to identify the user 
   hrim@tailspintoys.com
   ```
 
-This example assigns the ABP named ABP_EngineeringDepartment to all user mailboxes where the  `CustomAttribute11` attribute contains the value Engineering Department. 
+This example assigns the ABP named ABP_EngineeringDepartment to all user mailboxes where the `CustomAttribute11` attribute contains the value Engineering Department. 
   
 ```
 Get-Mailbox -Filter {RecipientType -eq 'UserMailbox' -and CustomAttribute11 -like '*Engineering Department'} | Set-Mailbox -AddressBookPolicy "ABP_EngineeringDepartment"
@@ -312,7 +312,7 @@ To verify that you've successfully assigned an ABP to a mailbox, do any of these
 - In the EAC, go to **Recipients** \> **Mailboxes** \> select the mailbox \> click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png) \> **Mailbox features** and verify the **Address Book Policy** value. 
     ![Address book policy settings for a mailbox in the EAC at Recipients \> select mailbox \> Edit \> Mailbox features](../../media/2b219961-4664-40b3-873c-5892f1fcf2b6.png)
   
-- In the Exchange Management Shell, replace  _\<MailboxIdentity\>_ with the identity of the mailbox (for example, name, alias, or email address), and run this command: 
+- In the Exchange Management Shell, replace _\<MailboxIdentity\>_ with the identity of the mailbox (for example, name, alias, or email address), and run this command: 
     
   ```
   Get-Mailbox -Identity "<MailboxIdentity>" | Format-List AddressBookPolicy
@@ -324,7 +324,7 @@ To verify that you've successfully assigned an ABP to a mailbox, do any of these
   Get-Mailbox -Filter {RecipientType -eq 'UserMailbox' -and CustomAttribute11 -like '*Engineering Department'} | Format-Table -Auto Name,EmailAddress,AddressBookPolicy
   ```
 
-- In the Exchange Management Shell, replace  _\<ABPIdentity\>_ with the name of the ABP, and run this command to get the **DistinguishedName** value: 
+- In the Exchange Management Shell, replace _\<ABPIdentity\>_ with the name of the ABP, and run this command to get the **DistinguishedName** value: 
     
   ```
   Get-AddressBookPolicy -Identity <ABPIdentity> | Format-List DistinguishedName

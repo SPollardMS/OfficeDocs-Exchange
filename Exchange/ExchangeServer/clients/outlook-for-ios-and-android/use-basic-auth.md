@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: conceptual
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 4a124605-5824-472b-9865-3452c689be6d
 description: "Summary: This article contains architectural and security information for administrators about Outlook for iOS and Android in an Exchange 2016 on-premises environment when the app uses Basic authentication."
@@ -22,7 +22,7 @@ Note that this article is about using the app in an Exchange 2016 environment. F
   
 ## Outlook for iOS and Android architecture
 
-Outlook for iOS and Android consists of a front-end app that is installed on mobile devices and a secure and scalable cloud service on the back end, known as the  *Outlook service*  . Processing information in the Outlook service enables advanced features and capabilities that enhance the Outlook experience, as well as improved performance and stability. This architecture relies on the Outlook service for intensive processing, minimizing the resources required from users' devices. 
+Outlook for iOS and Android consists of a front-end app that is installed on mobile devices and a secure and scalable cloud service on the back end, known as the *Outlook service* . Processing information in the Outlook service enables advanced features and capabilities that enhance the Outlook experience, as well as improved performance and stability. This architecture relies on the Outlook service for intensive processing, minimizing the resources required from users' devices. 
   
 ![Architecture of Basic authentication in Outlook for iOS and Android](../../media/08b57616-7479-4577-b5de-1fc48dd059a1.PNG)
   
@@ -68,7 +68,7 @@ You have three options for removing your information from the Outlook service.
     
 2. Tap **Select an Account**, and then, with the account selected, tap **Remove Account**.
     
-3. Tap **Device &amp; Remote Data**.
+3. Tap **Device & Remote Data**.
     
 ### How is the temporarily cached mailbox data secured while stored in the Outlook service?
 

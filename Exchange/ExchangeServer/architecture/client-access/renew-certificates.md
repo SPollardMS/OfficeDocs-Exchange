@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.collection: Strat_EX_Admin
 ms.assetid: 356ca7cd-b9d4-487d-aa21-3b38e91bde58
@@ -52,7 +52,7 @@ To renew a certificate that was issued by a CA, you create a certificate renewal
     
 3. All valid certificates have a **Renew** link in the details pane that's visible when you select the certificate from the list. Select the certificate that you want to renew, and then click **Renew** in the details pane. 
     
-4. On the **Renew Exchange certificate** page that opens, in the **Save the certificate request to the following file** field, enter the UNC path and filename for the new certificate renewal request file. For example,  `\\FileServer01\Data\ContosoCertRenewal.req`. When you are finished, click **OK**.
+4. On the **Renew Exchange certificate** page that opens, in the **Save the certificate request to the following file** field, enter the UNC path and filename for the new certificate renewal request file. For example, `\\FileServer01\Data\ContosoCertRenewal.req`. When you are finished, click **OK**.
     
 The certificate request appears in the list of Exchange certificates with a status value of **Pending**.
   
@@ -72,9 +72,9 @@ Get-ExchangeCertificate | where {$_.Status -eq "Valid" -and $_.IsSelfSigned -eq 
 
 This example creates a certificate renewal request with the following properties:
   
-- **Certificate to renew**:  `5DB9879E38E36BCB60B761E29794392B23D1C054`
+- **Certificate to renew**: `5DB9879E38E36BCB60B761E29794392B23D1C054`
     
-- **RequestFile**:  `\\FileServer01\Data\ContosoCertRenewal.req`
+- **RequestFile**: `\\FileServer01\Data\ContosoCertRenewal.req`
     
 ```
 Get-ExchangeCertificate -Thumbprint 5DB9879E38E36BCB60B761E29794392B23D1C054 | New-ExchangeCertificate -GenerateRequest -RequestFile \\FileServer01\Data\ContosoCertRenewal.req
@@ -82,11 +82,11 @@ Get-ExchangeCertificate -Thumbprint 5DB9879E38E36BCB60B761E29794392B23D1C054 | N
 
  **Notes:**
   
-- The  _RequestFile_ parameter accepts a local path or a UNC path. 
+- The _RequestFile_ parameter accepts a local path or a UNC path. 
     
-- We didn't use the  _BinaryEncoded_ switch, so the request is Base64 encoded. The information that's displayed onscreen is also written to the file, and the contents of the file are what we need to send to the CA. If we had used the  _BinaryEncoded_ switch, the request would have been encoded by DER, and the certificate request file itself is what we would need to send to the CA. 
+- We didn't use the _BinaryEncoded_ switch, so the request is Base64 encoded. The information that's displayed onscreen is also written to the file, and the contents of the file are what we need to send to the CA. If we had used the _BinaryEncoded_ switch, the request would have been encoded by DER, and the certificate request file itself is what we would need to send to the CA. 
     
-- We didn't use the  _KeySize_ parameter, so the certificate request has a 2048 bit RSA public key. 
+- We didn't use the _KeySize_ parameter, so the certificate request has a 2048 bit RSA public key. 
     
 - For more information, see [get-ExchangeCertificate](http://technet.microsoft.com/library/e368589a-6510-4209-9f10-171d1990cd7d.aspx) and [New-ExchangeCertificate](http://technet.microsoft.com/library/5e0b61b0-ece6-4d9b-949a-f6a032dd0fb9.aspx).
     
@@ -132,9 +132,9 @@ Get-ExchangeCertificate | where {$_.IsSelfSigned -eq $true} | Format-List Friend
 
 This example renews a self-signed certificate on the local Exchange server, and uses the following settings:
   
-- The thumbprint value of the existing self-signed certificate to renew is  `BC37CBE2E59566BFF7D01FEAC9B6517841475F2D`
+- The thumbprint value of the existing self-signed certificate to renew is `BC37CBE2E59566BFF7D01FEAC9B6517841475F2D`
     
-- The  _Force_ switch replaces the original self-signed certificate without a confirmation prompt. 
+- The _Force_ switch replaces the original self-signed certificate without a confirmation prompt. 
     
 - The private key is exportable. This allows you to export the certificate and import it on other servers.
     

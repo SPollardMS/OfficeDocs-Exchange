@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 5420124f-aa4c-4702-b493-40a9a7edb786
 description: "Summary: Learn how to configure message expiration intervals, message retries, and message resubmissions in the Transport service on a Mailbox server or on an Edge Transport server."
@@ -52,7 +52,7 @@ To configure these intervals, you modify keys in the %ExchangeInstallPath%Bin\Ed
   Notepad %ExchangeInstallPath%Bin\EdgeTransport.exe.config
   ```
 
-2. Locate the following keys in the  `<appSettings>` section. 
+2. Locate the following keys in the `<appSettings>` section. 
     
   ```
   <add key="QueueGlitchRetryCount" value="<Integer>" />
@@ -75,7 +75,7 @@ To configure these intervals, you modify keys in the %ExchangeInstallPath%Bin\Ed
 4. Restart the Exchange Transport service by running this command:
     
   ```
-  net stop MSExchangeTransport &amp;&amp; net start MSExchangeTransport
+  net stop MSExchangeTransport && net start MSExchangeTransport
   ```
 
 ### How do you know this worked?
@@ -88,7 +88,7 @@ To verify that you've configured these intervals, do these steps:
   Notepad %ExchangeInstallPath%Bin\EdgeTransport.exe.config
   ```
 
-2. Verify the values of the following keys in the  `<appSettings>` section. 
+2. Verify the values of the following keys in the `<appSettings>` section. 
     
   ```
   <add key="QueueGlitchRetryCount" value="<Integer>" />
@@ -99,7 +99,7 @@ To verify that you've configured these intervals, do these steps:
 
 ## Configure the transient failure retry attempts, the transient failure retry interval, and the outbound connection failure retry interval
 
-- **Transient failure retry attempts**: The number of connection attempts that are tried after the connection attempts controlled by the  _QueueGlitchRetryCount_ and  _QueueGlitchRetryInterval_ keys have failed. A valid value is 0 through 15, and the default value is 6. If you set the value to 0, the next connection attempt is controlled by the outbound connection failure retry interval. 
+- **Transient failure retry attempts**: The number of connection attempts that are tried after the connection attempts controlled by the _QueueGlitchRetryCount_ and _QueueGlitchRetryInterval_ keys have failed. A valid value is 0 through 15, and the default value is 6. If you set the value to 0, the next connection attempt is controlled by the outbound connection failure retry interval. 
     
 - **Transient failure retry interval**: The interval between each transient failure retry attempt. On Mailbox servers, the default value is 5 minutes. On Edge Tranport Servers, the default value is 10 minutes.
     
@@ -193,7 +193,7 @@ Get-TransportService | Format-List Name,MessageRetryInterval
 
 - **Delay DSN message notification timeout interval**: How long to wait before sending delay DSN messages to senders. This setting applies to the Transport service on a Mailbox server or an Edge Transport server.
     
-    **Note**: This value should always be greater than the transient failure retry count multiplied by the transient failure retry interval (the default total is 30 minutes on a Mailbox server, and one hour on an Edge Transport server).
+ **Note**: This value should always be greater than the transient failure retry count multiplied by the transient failure retry interval (the default total is 30 minutes on a Mailbox server, and one hour on an Edge Transport server).
     
 - **Internal and external delay DSN settings**: Specifies whether delay DSN messages can be sent to internal or external message senders (senders who are inside or outside the Exchange organization). This setting applies to the Transport service on all Mailbox servers in the organization.
     

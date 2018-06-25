@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 76e12d4a-1c3a-42e2-b64c-c09d36e81bd3
 description: "Summary: Linked mailboxes are mailboxes that users access in a separate, trusted forest. Learn how to create linked mailboxes in Exchange resource forests."
@@ -16,7 +16,7 @@ description: "Summary: Linked mailboxes are mailboxes that users access in a sep
 
  **Summary**: Linked mailboxes are mailboxes that users access in a separate, trusted forest. Learn how to create linked mailboxes in Exchange resource forests.
   
-Linked mailboxes may be necessary for organizations that deploy Exchange in a  *resource forest*  . The resource forest scenario lets an organization centralize Exchange in a single forest, while allowing access to the Exchange organization with user accounts that are located in one or more trusted forests (called  *account forests*  ). The user account that accesses the linked mailbox doesn't exist in the forest where Exchange is deployed. Therefore, a disabled user account that exists in the same forest as Exchange is created and associated with the corresponding linked mailbox. 
+Linked mailboxes may be necessary for organizations that deploy Exchange in a *resource forest* . The resource forest scenario lets an organization centralize Exchange in a single forest, while allowing access to the Exchange organization with user accounts that are located in one or more trusted forests (called *account forests* ). The user account that accesses the linked mailbox doesn't exist in the forest where Exchange is deployed. Therefore, a disabled user account that exists in the same forest as Exchange is created and associated with the corresponding linked mailbox. 
   
 The following figure illustrates the relationship between the linked user account used to access the linked mailbox (located in the account forest) and the disabled user account in the Exchange resource forest that's associated with the linked mailbox.
   
@@ -33,7 +33,7 @@ The following figure illustrates the relationship between the linked user accoun
     
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" section in the [Recipients Permissions](../permissions/feature-permissions/recipient-permissions.md) topic. 
     
-- A user account (called the  *linked master account*  ) must exist in the account forest before you can create a linked mailbox. This is because the linked mailbox is associated with a user in the account forest. 
+- A user account (called the *linked master account* ) must exist in the account forest before you can create a linked mailbox. This is because the linked mailbox is associated with a user in the account forest. 
     
 - If you've configured a one-way outgoing trust where the Exchange forest trusts the account forest, you'll need administrator credentials in the account forest to create a linked mailbox.
     
@@ -199,9 +199,9 @@ Click **More options** to view or change the mailbox storage quota and the delet
     
   - **Issue a warning at (GB)**: This box displays the maximum storage limit before a warning is issued to the user. If the mailbox size reaches or exceeds the value specified, Exchange sends a warning message to the user.
     
-  - **Prohibit send at (GB)**: This box displays the  *prohibit send*  limit for the mailbox. If the mailbox size reaches or exceeds the specified limit, Exchange prevents the user from sending new messages and displays a descriptive error message. 
+  - **Prohibit send at (GB)**: This box displays the *prohibit send* limit for the mailbox. If the mailbox size reaches or exceeds the specified limit, Exchange prevents the user from sending new messages and displays a descriptive error message. 
     
-  - **Prohibit send and receive at (GB)**: This box displays the  *prohibit send and receive*  limit for the mailbox. If the mailbox size reaches or exceeds the specified limit, Exchange prevents the mailbox user from sending new messages and won't deliver any new messages to the mailbox. Any messages sent to the mailbox are returned to the sender with a descriptive error message. 
+  - **Prohibit send and receive at (GB)**: This box displays the *prohibit send and receive* limit for the mailbox. If the mailbox size reaches or exceeds the specified limit, Exchange prevents the mailbox user from sending new messages and won't deliver any new messages to the mailbox. Any messages sent to the mailbox are returned to the sender with a descriptive error message. 
     
 - **Deleted item retention settings**: To customize these settings for the mailbox and not use the mailbox database defaults, click **Customize settings for this mailbox**, type a new value, and then click **Save**.
     
@@ -212,7 +212,7 @@ Click **More options** to view or change the mailbox storage quota and the delet
 #### Email Address
 <a name="EmailAddress"> </a>
 
-Use the **Email address** section to view or change the email addresses associated with the linked mailbox. This includes the user's primary SMTP addresses and any associated proxy addresses. The primary SMTP address (also known as the  *default reply address*  ) is displayed in bold text in the address list, with the uppercase **SMTP** value in the **Type** column. 
+Use the **Email address** section to view or change the email addresses associated with the linked mailbox. This includes the user's primary SMTP addresses and any associated proxy addresses. The primary SMTP address (also known as the *default reply address* ) is displayed in bold text in the address list, with the uppercase **SMTP** value in the **Type** column. 
   
 - **Add**: Click **Add**![Add icon](../media/ITPro_EAC_AddIcon.png) to add a new email address for this mailbox. Select one of following address types: 
     
@@ -329,7 +329,7 @@ Use the **MailTip** section to add a MailTip to alert users of potential issues 
 #### Mailbox Delegation
 <a name="MailboxDelegation"> </a>
 
-Use the **Mailbox Delegation** section to assign permissions to other users (also called  *delegates*  ) to allow them to sign in to the user's mailbox or send messages on behalf of the user. You can assign the following permissions: 
+Use the **Mailbox Delegation** section to assign permissions to other users (also called *delegates* ) to allow them to sign in to the user's mailbox or send messages on behalf of the user. You can assign the following permissions: 
   
 - **Send As**: This permission allows users other than the mailbox owner to use the mailbox to send messages. After this permission is assigned to a delegate, any message that a delegate sends from this mailbox will appear as if it was sent by the mailbox owner. However, this permission doesn't allow a delegate to sign in to the user's mailbox.
     

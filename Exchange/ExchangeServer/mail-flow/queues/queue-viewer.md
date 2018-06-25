@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: db892f88-5c13-4607-a38c-8845b35ab8b2
 description: "Summary: Learn about Queue Viewer in Exchange 2016."

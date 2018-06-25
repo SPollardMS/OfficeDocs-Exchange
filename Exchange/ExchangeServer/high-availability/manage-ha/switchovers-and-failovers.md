@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 75388645-cae1-402e-bf02-c4949d3e2c31
 description: "Summary: An overview of switchovers and failovers in Exchange 2016."
@@ -18,9 +18,9 @@ description: "Summary: An overview of switchovers and failovers in Exchange 2016
   
 Switchovers and failovers are the two forms of outages in Microsoft Exchange Server 2016:
   
-- A  *switchover*  is a scheduled outage of a database or server that's explicitly initiated by a cmdlet or by the managed availability system in Exchange 2016. Switchovers are typically done to prepare for performing a maintenance operation. Switchovers involve moving the active mailbox database copy to another server in the database availability group (DAG). If no healthy target is found during a switchover, administrators will receive an error and the mailbox database will remain up, or mounted. 
+- A *switchover* is a scheduled outage of a database or server that's explicitly initiated by a cmdlet or by the managed availability system in Exchange 2016. Switchovers are typically done to prepare for performing a maintenance operation. Switchovers involve moving the active mailbox database copy to another server in the database availability group (DAG). If no healthy target is found during a switchover, administrators will receive an error and the mailbox database will remain up, or mounted. 
     
-- A  *failover*  refers to unexpected events that result in the unavailability of services, data, or both. A failover involves the system automatically recovering from the failure by activating a passive mailbox database copy to make it the active mailbox database copy. If no healthy target is found during a failover, the mailbox database will be dismounted. 
+- A *failover* refers to unexpected events that result in the unavailability of services, data, or both. A failover involves the system automatically recovering from the failure by activating a passive mailbox database copy to make it the active mailbox database copy. If no healthy target is found during a failover, the mailbox database will be dismounted. 
     
 Exchange 2016 is specifically designed to handle both switchovers and failovers.
   
@@ -38,7 +38,7 @@ There are three types of switchovers in Exchange 2016:
     
 ### Database Switchovers
 
-A  *database switchover*  is the process by which an individual active database is switched over to another database copy (a passive copy), and that database copy is made the new active database copy. Database switchovers can happen both within and across datacenters. A database switchover can be performed by using the Exchange Admin Center (EAC) or the Exchange Management Shell. Regardless of which interface is used, the switchover process is as follows: 
+A *database switchover* is the process by which an individual active database is switched over to another database copy (a passive copy), and that database copy is made the new active database copy. Database switchovers can happen both within and across datacenters. A database switchover can be performed by using the Exchange Admin Center (EAC) or the Exchange Management Shell. Regardless of which interface is used, the switchover process is as follows: 
   
 1. The administrator initiates a database switchover to move the current active mailbox database copy to another server.
     
@@ -108,7 +108,7 @@ For detailed steps about how to perform a server switchover, see [Perform a serv
 
 In a site resilient configuration, automatic recovery in response to a site-level failure can occur within a DAG, allowing the messaging system to remain in a functional state. This configuration requires at least three locations, as it requires deploying DAG members in two locations and the DAG's witness server in a third location.
   
-If you don't have three locations, or even if you do have three locations but you want to control datacenter-level recovery actions, you can configure a DAG for manual recovery in the event of a site-level failure. In that event, you would perform a process called a  *datacenter switchover*  . As with many disaster recovery scenarios, prior planning and preparation for a datacenter switchover can simplify your recovery process and reduce the duration of your outage. For detailed steps to performing a datacenter switchover, see [Datacenter switchovers](datacenter-switchovers.md)
+If you don't have three locations, or even if you do have three locations but you want to control datacenter-level recovery actions, you can configure a DAG for manual recovery in the event of a site-level failure. In that event, you would perform a process called a *datacenter switchover* . As with many disaster recovery scenarios, prior planning and preparation for a datacenter switchover can simplify your recovery process and reduce the duration of your outage. For detailed steps to performing a datacenter switchover, see [Datacenter switchovers](datacenter-switchovers.md)
   
 ## Failovers
 
@@ -119,7 +119,7 @@ DAGs and mailbox database copies provide full redundancy and rapid recovery of b
 |**Description**|**Automatic activation**|**Automatic repair action**|**State during repair: Active**|**State during repair: Passive**|**Repair actions**|**Comments**|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 |Extensible Storage Engine (ESE) soft database failure: The drives storing the database are returning errors on some reads (for example, a -1018 error).  <br/> |Possible short outage.  <br/> Possible automatic failover.  <br/> |Automatic patching of bad page.  <br/> |Manual switchover, automatic failover, or online repair.  <br/> |Failed  <br/> |RAID rebuild, database and database copy repair, restore and run recovery then page patching, or page patching from copy.  <br/> |There may be other soft database failure codes.  <br/> Doesn't include NTFS file system block failures.  <br/> If failover or switchover is performed, host server is updated.  <br/> |
-|ESE " *semi-soft"*  database failure: The drives storing the database are returning errors on some writes.  <br/> |Short outage during automatic failover.  <br/> |Automatic volume/disk rebuilt after possible drive replacement.  <br/> |Dismounted if can't be recovered.  <br/> |Failed  <br/> |RAID rebuild may solve the problem.  <br/> Copy and repair, restore and run recovery, or volume/disk rebuilt after possible replacement.  <br/> |An ESE semi-soft write error means some writes are successful.  <br/> Doesn't include an NTFS block failure.  <br/> |
+|ESE " *semi-soft"* database failure: The drives storing the database are returning errors on some writes.  <br/> |Short outage during automatic failover.  <br/> |Automatic volume/disk rebuilt after possible drive replacement.  <br/> |Dismounted if can't be recovered.  <br/> |Failed  <br/> |RAID rebuild may solve the problem.  <br/> Copy and repair, restore and run recovery, or volume/disk rebuilt after possible replacement.  <br/> |An ESE semi-soft write error means some writes are successful.  <br/> Doesn't include an NTFS block failure.  <br/> |
 |ESE "semi-soft" log failure: The drives storing the log data are returning non-recovered errors on some reads or writes.  <br/> |Short outage during automatic failover.  <br/> |Automatic volume/disk rebuilt after possible drive replacement.  <br/> |Dismounted if can't be recovered.  <br/> |Failed  <br/> |RAID rebuild may solve the problem.  <br/> Copy and repair, restore and run recovery, or volume/disk rebuilt after possible replacement.  <br/> |An ESE semi-soft read/write error means some reads/writes are successful.  <br/> If the database fails, automated recovery will occur before log data recovery processing starts.  <br/> |
 |ESE software error or resource exhaustion: An error where ESE terminates instance (for example, Event ID 1022, checkpoint depth too deep).  <br/> |Short outage during automatic failover.  <br/> |None.  <br/> |Dismounted if can't be recovered.  <br/> |Failed  <br/> |Fix underlying resource issue.  <br/> |This failure could be the surfaced error of other cases.  <br/> |
 |NTFS block failures: The drives storing the database or logs experiences a read or write error to an NTFS control structure.  <br/> |Short outage during automatic failover.  <br/> |Volume completely rebuilt after possible drive replacement.  <br/> |Dismounted if can't be recovered.  <br/> |Failed  <br/> |RAID rebuild may solve the problem. NTFS utilities may solve the NTFS problems. Exchange recovery may be required.  <br/> |This is more likely to occur when RAID isn't in use. If this impacts the active log volume, some recent log files will be lost.  <br/> Doesn't include errors automatically corrected by NTFS or its underlying software or hardware stack.  <br/> |

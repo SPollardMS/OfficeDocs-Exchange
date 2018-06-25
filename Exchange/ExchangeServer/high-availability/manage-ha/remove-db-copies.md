@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/4/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 99fecdde-b158-4dfc-9ca7-ff7c0ada7819
 description: "Summary: How to remove a copy of a mailbox database in Exchange 2016."

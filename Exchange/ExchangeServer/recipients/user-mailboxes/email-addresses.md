@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.collection: Strat_EX_Admin
 ms.assetid: 93e2d9a4-7558-4509-8641-8381a7eb674f
@@ -17,7 +17,7 @@ description: "Summary: Learn how to add or remove email addresses using the Exch
 
  **Summary**: Learn how to add or remove email addresses using the Exchange admin center (EAC) or by using the Exchange Management Shell.
   
-You can use the EAC or the Exchange Management Shell to add or remove an email address for a user mailbox. You can configure more than one email address for the same mailbox. The additional addresses are called  *proxy addresses*  . A proxy address lets a user receive email that's sent to a different email address. Any email message sent to the user's proxy address is delivered to their primary email address, which is also known as the  *primary SMTP address*  or the  *default reply address*  . 
+You can use the EAC or the Exchange Management Shell to add or remove an email address for a user mailbox. You can configure more than one email address for the same mailbox. The additional addresses are called *proxy addresses* . A proxy address lets a user receive email that's sent to a different email address. Any email message sent to the user's proxy address is delivered to their primary email address, which is also known as the *primary SMTP address* or the *default reply address* . 
   
 > [!NOTE]
 > The procedures in this topic show how to add or remove email addresses for a user mailbox. You can use similar procedures to add or remove email addresses for other recipient types. 
@@ -63,7 +63,7 @@ For additional management tasks related to managing recipients, see the "Recipie
     
 ### Use the Exchange Management Shell to add an email address
 
-The email addresses associated with a mailbox are contained in the  _EmailAddresses_ property for the mailbox. Because it can contain more than one email address, the  _EmailAddresses_ property is known as a  *multivalued*  property. The following examples show different ways to modify a multivalued property. 
+The email addresses associated with a mailbox are contained in the _EmailAddresses_ property for the mailbox. Because it can contain more than one email address, the _EmailAddresses_ property is known as a *multivalued* property. The following examples show different ways to modify a multivalued property. 
   
 This example shows how to add an SMTP address to the mailbox of Dan Jump.
   
@@ -79,7 +79,7 @@ Set-Mailbox "Dan Jump" -EmailAddresses @{add="dan.jump@northamerica.contoso.com"
 
 For more information about how to use this method of adding and removing values for multivalued properties, see [Modifying Multivalued Properties](http://technet.microsoft.com/library/dc2c1062-ad79-404b-8da3-5b5798dbb73b.aspx).
   
-This example shows another way to add email addresses to a mailbox by specifying all addresses associated with the mailbox. In this example, danj@tailspintoys.com is the new email address that you want to add. The other two email addresses are existing addresses. The address with the case-sensitive qualifier  `SMTP` is the primary SMTP address. You have to include all email addresses for the mailbox when you use this command syntax. If you don't, the addresses specified in the command will overwrite the existing addresses. 
+This example shows another way to add email addresses to a mailbox by specifying all addresses associated with the mailbox. In this example, danj@tailspintoys.com is the new email address that you want to add. The other two email addresses are existing addresses. The address with the case-sensitive qualifier `SMTP` is the primary SMTP address. You have to include all email addresses for the mailbox when you use this command syntax. If you don't, the addresses specified in the command will overwrite the existing addresses. 
   
 ```
 Set-Mailbox "Dan Jump" -EmailAddresses "SMTP:dan.jump@contoso.com","dan.jump@northamerica.contoso.com","danj@tailspintoys.com"
@@ -192,7 +192,7 @@ Import-CSV "C:\Users\Administrator\Desktop\AddEmailAddress.csv" | foreach {Set-M
 ```
 
 > [!NOTE]
-> The column names in the first row of this CSV file ( `Mailbox,NewEmailAddress`) are arbitrary. Whatever you use for column names, make sure you use the same column names in the Exchange Management Shell command. 
+> The column names in the first row of this CSV file (`Mailbox,NewEmailAddress`) are arbitrary. Whatever you use for column names, make sure you use the same column names in the Exchange Management Shell command. 
   
 ### How do you know this worked?
 

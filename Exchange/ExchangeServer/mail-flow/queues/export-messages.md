@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 688b342c-f380-4fe0-afce-7e38cf490627
 description: "Summary: Learn how to export messages from queues in Exchange 2016."

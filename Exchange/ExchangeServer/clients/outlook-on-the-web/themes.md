@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 7e1fa13c-3de3-45c2-b1fa-e74fc8487bda
 description: "Summary: Learn how to create a custom theme for Outlook on the web in Exchange 2016."
@@ -16,7 +16,7 @@ description: "Summary: Learn how to create a custom theme for Outlook on the web
 
  **Summary**: Learn how to create a custom theme for Outlook on the web in Exchange 2016.
   
-A  *theme*  defines the colors, fonts, and images that are displayed to users in Outlook on the web (formerly known as Outlook Web App) in Exchange Server 2016. Each theme is a collection of files that are stored on the Exchange server. The built-in themes are described in the [Default Outlook on the web themes in Exchange 2016](themes.md#DefaultThemes) section at the end of this topic. 
+A *theme* defines the colors, fonts, and images that are displayed to users in Outlook on the web (formerly known as Outlook Web App) in Exchange Server 2016. Each theme is a collection of files that are stored on the Exchange server. The built-in themes are described in the [Default Outlook on the web themes in Exchange 2016](themes.md#DefaultThemes) section at the end of this topic. 
   
 The basic steps to create a new theme for Outlook on the web are:
   
@@ -44,7 +44,7 @@ After you create a theme, you may also want to customize elements that are commo
     
 - To replace an existing color with a new color, you need the HTML RGB value of the new color. You can find HTML RGB values at [Color Table](https://go.microsoft.com/fwlink/p/?LinkId=280679). If you can't find the color there, you can use an image editing tool or an HTML color codes web site to determine its HTML RGB value.
     
-- Don't delete the folder  `%ExchangeInstallPath%ClientAccess\OWA\prem\<ExchangeVersion>\resources\themes\base`, or any files in it.
+- Don't delete the folder `%ExchangeInstallPath%ClientAccess\OWA\prem\<ExchangeVersion>\resources\themes\base`, or any files in it.
     
 - If you decide to directly edit an existing theme (not a copy of the theme), make a backup copy of the original files before you modify them.
     
@@ -63,59 +63,59 @@ You can use the information in the [Default Outlook on the web themes in Exchang
   
 The theme files and folders are stored in the following locations:
   
--  `%ExchangeInstallPath%ClientAccess\OWA\prem\<ExchangeVersion>\resources\themes\` contains the theme folder that holds the header image, theme preview image, and theme description text. 
+- `%ExchangeInstallPath%ClientAccess\OWA\prem\<ExchangeVersion>\resources\themes\` contains the theme folder that holds the header image, theme preview image, and theme description text. 
     
--  `%ExchangeInstallPath%ClientAccess\OWA\prem\<ExchangeVersion>\resources\styles\` contains the  `_fabric.color.variables.theme.<ThemeFolderName>.less` and  `fabric.color.theme.<ThemeFolderName>.css` files that define the colors that are used in the theme. 
+- `%ExchangeInstallPath%ClientAccess\OWA\prem\<ExchangeVersion>\resources\styles\` contains the `_fabric.color.variables.theme.<ThemeFolderName>.less` and `fabric.color.theme.<ThemeFolderName>.css` files that define the colors that are used in the theme. 
     
-    **Note**: The  _\<ExchangeVersion\>_ subfolder uses the syntax 15.1.  _nnn_. _nn_, and indicates the Exchange Cumulative Update (CU) that's installed.
+    **Note**: The _\<ExchangeVersion\>_ subfolder uses the syntax 15.1. _nnn_. _nn_, and indicates the Exchange Cumulative Update (CU) that's installed.
     
 After you've identified the theme that's closest to what you want (for example, with or without a header image), you need to copy the theme folder and the corresponding files, and then rename the copied folders and files
   
-1. In File Explorer, browse to  `%ExchangeInstallPath%ClientAccess\OWA\prem\<ExchangeVersion>\resources\themes`.
+1. In File Explorer, browse to `%ExchangeInstallPath%ClientAccess\OWA\prem\<ExchangeVersion>\resources\themes`.
     
-2. Select an existing theme folder in the  `\themes` folder, copy it, and then paste it back into the  `\themes` folder. This results in a new folder named  `<ThemeFolderName> - Copy`.
+2. Select an existing theme folder in the `\themes` folder, copy it, and then paste it back into the `\themes` folder. This results in a new folder named `<ThemeFolderName> - Copy`.
     
     **Note**: An easy way to copy and paste the theme folder is to select the folder, press the Control key + C, and then press the Control key + V.
     
-3. Rename the new theme folder that you created in the previous step. For example,  `fourthcoffee`.
+3. Rename the new theme folder that you created in the previous step. For example, `fourthcoffee`.
     
     **Note**: An easy way to rename the folder is to select it, and then press the F2 key.
     
-4. In File Explorer, browse to  `%ExchangeInstallPath%ClientAccess\OWA\prem\<ExchangeVersion>\resources\styles\`.
+4. In File Explorer, browse to `%ExchangeInstallPath%ClientAccess\OWA\prem\<ExchangeVersion>\resources\styles\`.
     
-5. Locate the files named  `_fabric.color.variables.theme.<ThemeFolderName>.less` and  `fabric.color.theme.<ThemeFolderName>.css` that correspond to the theme folder you copied in step 2. Select each file, copy it, and paste it back into the  `\styles` folder. This results in new files named  `_fabric.color.variables.theme.<ThemeFolderName> - Copy.less` and  `fabric.color.theme.<ThemeFolderName> - Copy.css`.
+5. Locate the files named `_fabric.color.variables.theme.<ThemeFolderName>.less` and `fabric.color.theme.<ThemeFolderName>.css` that correspond to the theme folder you copied in step 2. Select each file, copy it, and paste it back into the `\styles` folder. This results in new files named `_fabric.color.variables.theme.<ThemeFolderName> - Copy.less` and `fabric.color.theme.<ThemeFolderName> - Copy.css`.
     
-6. Rename the new files that you created in the previous step. The  _\<ThemeFolderName\>_ value must match the folder name from step 3. For example,  `_fabric.color.variables.theme.fourthcoffee.less` and  `fabric.color.theme.fourthcoffee.css`.
+6. Rename the new files that you created in the previous step. The _\<ThemeFolderName\>_ value must match the folder name from step 3. For example, `_fabric.color.variables.theme.fourthcoffee.less` and `fabric.color.theme.fourthcoffee.css`.
     
 ## Step 2: Use Notepad to configure the display name and sort order of the new theme
 
 You need to configure a unique display name and sort order for the new theme, because the new theme has the same display name and sort order as the theme you copied. The theme's display name appears in the **Change theme** panel in Outlook on the web. The sort order determines where the theme appears in the list of themes. 
   
-1. Use Notepad to open the file named  `themeinfo.xml` in the new theme folder  `%ExchangeInstallPath%ClientAccess\OWA\prem\<ExchangeVersion>\resources\themes\<NewThemeFolder>` that you created in Step 1. The contents of the file look like this: 
+1. Use Notepad to open the file named `themeinfo.xml` in the new theme folder `%ExchangeInstallPath%ClientAccess\OWA\prem\<ExchangeVersion>\resources\themes\<NewThemeFolder>` that you created in Step 1. The contents of the file look like this: 
     
-     `<theme displayname="__<CopiedThemeName>__" sortorder="<CopiedThemeSortOrder>" />`
+ `<theme displayname="__<CopiedThemeName>__" sortorder="<CopiedThemeSortOrder>" />`
     
-2. Change the  `<theme displayname="__<CopiedThemeName>__"` value to the value you want. For example  `displayname = "Fourth Coffee Corporate Theme"`.
+2. Change the `<theme displayname="__<CopiedThemeName>__"` value to the value you want. For example `displayname = "Fourth Coffee Corporate Theme"`.
     
-    **Note**: The theme display name value  `"__<ThemeName>__"` is a code string that's localized into different languages. The text value that you specify for the new theme isn't localized into different languages. 
+    **Note**: The theme display name value `"__<ThemeName>__"` is a code string that's localized into different languages. The text value that you specify for the new theme isn't localized into different languages. 
     
-3. Change the  `sortorder="<CopiedThemeSortOrder>"` integer value to the unique value you want. A lower value appears earlier in the list of themes. You can use the information in the [Default Outlook on the web themes in Exchange 2016](themes.md#DefaultThemes) section at the end of this topic to find the sort order values for the built-in themes. The Default theme has  `sortorder="0"`, and appears first in the list.
+3. Change the `sortorder="<CopiedThemeSortOrder>"` integer value to the unique value you want. A lower value appears earlier in the list of themes. You can use the information in the [Default Outlook on the web themes in Exchange 2016](themes.md#DefaultThemes) section at the end of this topic to find the sort order values for the built-in themes. The Default theme has `sortorder="0"`, and appears first in the list.
     
-  - If you want to insert your new theme among the list of built-in themes, change the number to a unique value that isn't already in use. For example, if you want your new theme to appear second in the list, you can use the value  `sortorder="5"`.
+  - If you want to insert your new theme among the list of built-in themes, change the number to a unique value that isn't already in use. For example, if you want your new theme to appear second in the list, you can use the value `sortorder="5"`.
     
-  - If you want to  *replace*  the position of a built-in theme in the list, set the number to the same value as built-in theme, and then change the sort order for the built-in theme. For example, if you want your new theme to appear first in the list, you need to set your new theme to  `sortorder="0"`. But, you also need to open the  `themeinfo.xml` file in the  `\base` folder (the Default theme) to change the value  `sortorder="0"` to something else (for example,  `sortorder="5")`.
+  - If you want to *replace* the position of a built-in theme in the list, set the number to the same value as built-in theme, and then change the sort order for the built-in theme. For example, if you want your new theme to appear first in the list, you need to set your new theme to `sortorder="0"`. But, you also need to open the `themeinfo.xml` file in the `\base` folder (the Default theme) to change the value `sortorder="0"` to something else (for example, `sortorder="5")`.
     
-4. When you're finished, save and close the  `themeinfo.xml` file. 
+4. When you're finished, save and close the `themeinfo.xml` file. 
     
 ## Step 3: Customize the new theme
 
 ### Image files
 
-Theme image files are stored in the following folders in  `%ExchangeInstallPath%ClientAccess\OWA\prem\<ExchangeVersion>\resources\themes\<ThemeFolderName>`:
+Theme image files are stored in the following folders in `%ExchangeInstallPath%ClientAccess\OWA\prem\<ExchangeVersion>\resources\themes\<ThemeFolderName>`:
   
--  `\images\0`: These files are used in left-to-right languages.
+- `\images\0`: These files are used in left-to-right languages.
     
--  `\images\rtl`: These files are used in right-to-left languages. Depending on the image, the file might be exactly the same as the left-to-right version, or it might be reversed (right-to-left instead of left-to-right).
+- `\images\rtl`: These files are used in right-to-left languages. Depending on the image, the file might be exactly the same as the left-to-right version, or it might be reversed (right-to-left instead of left-to-right).
     
 The image files that exist in these folders are described in the following table:
   
@@ -129,11 +129,11 @@ You can edit the existing image file, or replace the file with a new file that h
   
 ### Colors
 
-Theme colors are defined in the following files in the  `%ExchangeInstallPath%ClientAccess\OWA\prem\<ExchangeVersion>\resources\styles` folder: 
+Theme colors are defined in the following files in the `%ExchangeInstallPath%ClientAccess\OWA\prem\<ExchangeVersion>\resources\styles` folder: 
   
--  `fabric.color.theme.<ThemeFolderName>.css`
+- `fabric.color.theme.<ThemeFolderName>.css`
     
--  `_fabric.color.variables.<ThemeFolderName>.less`
+- `_fabric.color.variables.<ThemeFolderName>.less`
     
 If you change a color value, you need to change all references to the color in both files.
   
@@ -147,7 +147,7 @@ To set the default theme and prevent users from changing their theme in Outlook 
 Set-OwaVirtualDirectory -Identity <VirtualDirectoryIdentity> -DefaultTheme <ThemeFolderName> -ThemeSelectionEnabled $false
 ```
 
-This example configures the theme folder named  `fourthcoffee` as the default theme in Outlook on the web for the default website on the server named Mailbox01. 
+This example configures the theme folder named `fourthcoffee` as the default theme in Outlook on the web for the default website on the server named Mailbox01. 
   
 ```
 Set-OwaVirtualDirectory -Identity "Mailbox01\owa (Default Web Site)" -DefaultTheme fourthcoffee -ThemeSelectionEnabled $false
@@ -155,11 +155,11 @@ Set-OwaVirtualDirectory -Identity "Mailbox01\owa (Default Web Site)" -DefaultThe
 
  **Notes**:
   
-- By default, the value of the  _DefaultTheme_ parameter is blank (  `$null`). This value indicates that no default theme is specified, and the theme named Default is used if the user hasn't manually selected a theme.
+- By default, the value of the _DefaultTheme_ parameter is blank (`$null`). This value indicates that no default theme is specified, and the theme named Default is used if the user hasn't manually selected a theme.
     
-- Exchange doesn't validate the value that you specify for the  _DefaultTheme_ parameter. Make sure that the theme exists. 
+- Exchange doesn't validate the value that you specify for the _DefaultTheme_ parameter. Make sure that the theme exists. 
     
-- To specify a default theme for specific users that overrides the default theme setting on the Outlook on the web virtual directory, use the  _DefaultTheme_ parameter on the **Set-OwaMailboxPolicy** cmdlet. 
+- To specify a default theme for specific users that overrides the default theme setting on the Outlook on the web virtual directory, use the _DefaultTheme_ parameter on the **Set-OwaMailboxPolicy** cmdlet. 
     
 ## Step 5: Restart IIS
 
@@ -192,7 +192,7 @@ To verify that you've successfully created an Outlook on the web theme, perform 
 ## Default Outlook on the web themes in Exchange 2016
 <a name="DefaultThemes"> </a>
 
-The built-in Outlook on the web themes are located in the folder  `%ExchangeInstallPath%ClientAccess\OWA\prem\<ExchangeVersion>\resources\themes`, and are described in the following table.
+The built-in Outlook on the web themes are located in the folder `%ExchangeInstallPath%ClientAccess\OWA\prem\<ExchangeVersion>\resources\themes`, and are described in the following table.
   
 ****
 

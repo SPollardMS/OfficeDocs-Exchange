@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: overview
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: de53c00b-091c-4a31-aacc-1bd40c756ce2
 description: "Summary: An overview of enhancements and additions to high availability and site resilience capabilities since the Exchange 2010 release."
@@ -186,7 +186,7 @@ To enable play down for low disk space thresholds, you must configure the follow
   
 After configuring either of these registry settings, restart the Microsoft Exchange DAG Management service for the changes to take effect.
   
-As an example, consider an environment where a given database has 4 copies (3 highly available copies and 1 lagged copy), and the default setting is used for  _ReplayLagManagerNumAvailableCopies_. If a non-lagged copy is out-of-service for any reason (for example, it is suspended, etc.) then the lagged copy will automatically play down its log files in 24 hours.
+As an example, consider an environment where a given database has 4 copies (3 highly available copies and 1 lagged copy), and the default setting is used for _ReplayLagManagerNumAvailableCopies_. If a non-lagged copy is out-of-service for any reason (for example, it is suspended, etc.) then the lagged copy will automatically play down its log files in 24 hours.
   
 ## Single copy alert enhancements
 
@@ -218,7 +218,7 @@ A DAG network is a collection of one or more subnets used for either replication
   
 In Exchange 2016, collapsing DAG networks is no longer necessary. Exchange 2016 still uses the same detection mechanisms to distinguish between the MAPI and replication networks, but it now automatically collapses DAG networks as appropriate.
   
-In addition, by default, DAG networks are now automatically managed by the system. To view DAG network properties using the Exchange Administration Center (EAC), you must configure the DAG for manual network control by modifying the properties of the DAG using EAC, or by using the **Set-DatabaseAvailabilityGroup** cmdlet to set the  _ManualDagNetworkConfiguration_ parameter to  `True`.
+In addition, by default, DAG networks are now automatically managed by the system. To view DAG network properties using the Exchange Administration Center (EAC), you must configure the DAG for manual network control by modifying the properties of the DAG using EAC, or by using the **Set-DatabaseAvailabilityGroup** cmdlet to set the _ManualDagNetworkConfiguration_ parameter to `True`.
   
 ## Changes to best copy selection
 

@@ -8,7 +8,7 @@ ms.audience: ITPro
 ms.topic: article
 f1_keywords:
 - 'Microsoft.Exchange.Management.Edge.SystemManager.MessagePropertyPage'
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 9d15d8b8-e061-4288-9354-df58e282fb6b
 description: "Summary: Learn how to use the Queue Viewer in the Exchange Toolbox to view message properties in Exchange 2016."
@@ -77,7 +77,7 @@ For more information about queues, see [Queues and messages in queues](queues.md
     
   - **SCL**: The spam confidence level (SCL) rating of the message. Valid SCL entries are integers 0 through 9, or -1 for internal (authenticated) messages. For more information, see [Exchange spam confidence level (SCL) thresholds](../../antispam-and-antimalware/antispam-protection/scl.md).
     
-  - **Queue ID**: The queue that holds the message. The queue identity uses the syntax  _\<Server\>_\ _\<Queue\>_, where  _\<Queue\>_ is one of the following values: 
+  - **Queue ID**: The queue that holds the message. The queue identity uses the syntax _\<Server\>_\ _\<Queue\>_, where _\<Queue\>_ is one of the following values: 
     
   - **Persistent queue name**
     
@@ -89,13 +89,13 @@ For more information about queues, see [Queues and messages in queues](queues.md
     
   - **Delivery queue name**: The value of the **NextHopDomain** property of the queue, which is effectively the name of the queue. For example, a domain name, Active Directory site name, or database availability group (DAG) name. For more information, see [NextHopSolutionKey](queues.md#NextHopSolutionKey).
     
-  - **Message Source Name**: The Exchange component that submitted the message to the queue. For example,  `SMTP:Default <ServerName>`.
+  - **Message Source Name**: The Exchange component that submitted the message to the queue. For example, `SMTP:Default <ServerName>`.
     
   - **Subject**: The subject of the message.
     
   - **Last Error**: The last error that was encountered for the message.
     
-    For example, if you didn't create a Send connector to deliver Internet mail, messages that are addressed to external recipients will go to the Unreachable queue, and the **Last Error** value for the message will be:  `A matching connector cannot be found to route the external recipient`. For more information about creating a Send connector, see [Create a Send connector to send mail to the Internet](../../mail-flow/connectors/internet-mail-send-connectors.md).
+    For example, if you didn't create a Send connector to deliver Internet mail, messages that are addressed to external recipients will go to the Unreachable queue, and the **Last Error** value for the message will be: `A matching connector cannot be found to route the external recipient`. For more information about creating a Send connector, see [Create a Send connector to send mail to the Internet](../../mail-flow/connectors/internet-mail-send-connectors.md).
     
     For more information about SMTP error codes, see [DSNs and NDRs in Exchange 2016](../../mail-flow/non-delivery-reports-and-bounce-messages/non-delivery-reports-and-bounce-messages.md).
     
@@ -103,9 +103,9 @@ For more information about queues, see [Queues and messages in queues](queues.md
     
   - The **General** tab displays the same **Subject**, **From** **Address**, **Status**, **Size**, **Message Source Name**, **SCL**, and **Last Error** values that are shown in the list of messages. The following additional properties are also displayed on the **General** tab: 
     
-  - **Identity**: The identity of the message. The message identity uses the syntax  _\<Server\>_\ _\<Queue\>_\ _\<MessageInteger\>_, where  _\<Queue\>_ is the identity of the queue as described in the **Queue ID** property, and  _\<MessageInteger\>_ is the unique integer value of the message that's displayed in the **Identity** property of the **Get-Message** cmdlet. 
+  - **Identity**: The identity of the message. The message identity uses the syntax _\<Server\>_\ _\<Queue\>_\ _\<MessageInteger\>_, where _\<Queue\>_ is the identity of the queue as described in the **Queue ID** property, and _\<MessageInteger\>_ is the unique integer value of the message that's displayed in the **Identity** property of the **Get-Message** cmdlet. 
     
-  - **Internet Message ID**: The value of the **Message-Id:** header field in the message header. This value is constant for the lifetime of the message. For messages created in Exchange, the value is in the format  `<GUID@ServerFQDN>`, including the angle brackets (\< \>). For example,  `<4867a3d78a50438bad95c0f6d072fca5@mailbox01.contoso.com>`.
+  - **Internet Message ID**: The value of the **Message-Id:** header field in the message header. This value is constant for the lifetime of the message. For messages created in Exchange, the value is in the format `<GUID@ServerFQDN>`, including the angle brackets (\< \>). For example, `<4867a3d78a50438bad95c0f6d072fca5@mailbox01.contoso.com>`.
     
   - **Source IP**: The IPv4 or IPv6 address of the internal Exchange server or external messaging server that submitted the message.
     

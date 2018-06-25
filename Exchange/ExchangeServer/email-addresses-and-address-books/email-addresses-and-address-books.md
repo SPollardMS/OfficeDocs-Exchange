@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: overview
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: b97d0f68-691a-42af-9a6c-4dcc37b28a42
 description: "Summary: Learn about the different methods that Exchange 2016 uses to organize and configure email addresses."

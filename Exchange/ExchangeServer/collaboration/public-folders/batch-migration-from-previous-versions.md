@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: da808e27-d2b7-4fbd-915c-a600751f526c
 description: "Summary: How to migrate Exchange 2010 public folders to Exchange 2016."
@@ -18,24 +18,24 @@ description: "Summary: How to migrate Exchange 2010 public folders to Exchange 2
   
 Migrate your public folders from Exchange Server 2010 SP3 RU8 to Microsoft Exchange Server 2016 within the same forest. If you're looking for the Exchange 2013 version of this article, [go here](https://technet.microsoft.com/library/dn912663%28v=exchg.150%29.aspx).
   
-We refer to the Exchange 2010 SP3 RU8 or later server as the  *legacy Exchange server*  . 
+We refer to the Exchange 2010 SP3 RU8 or later server as the *legacy Exchange server* . 
   
 > [!NOTE]
 > The batch migration method described in this article is the only supported method for migrating legacy public folders to Exchange 2016. The old serial migration method for migrating public folders is being deprecated and is no longer supported by Microsoft. 
   
 You'll perform the migration by using the **\*MigrationBatch** cmdlets, and the **\*PublicFolderMigrationRequest** cmdlets for troubleshooting. In addition, you will use the following PowerShell scripts: 
   
--  `Export-PublicFolderStatistics.ps1` This script creates the folder name-to-folder size mapping file. 
+- `Export-PublicFolderStatistics.ps1` This script creates the folder name-to-folder size mapping file. 
     
--  `Export-PublicFolderStatistics.psd1` This support file is used by the Export-PublicFolderStatistics.ps1 script and should be downloaded to the same location. 
+- `Export-PublicFolderStatistics.psd1` This support file is used by the Export-PublicFolderStatistics.ps1 script and should be downloaded to the same location. 
     
--  `PublicFolderToMailboxMapGenerator.ps1` This script creates the public folder-to-mailbox mapping file. 
+- `PublicFolderToMailboxMapGenerator.ps1` This script creates the public folder-to-mailbox mapping file. 
     
--  `PublicFolderToMailboxMapGenerator.strings.psd1` This support file is used by the PublicFolderToMailboxMapGenerator.ps1 script and should be downloaded to the same location. 
+- `PublicFolderToMailboxMapGenerator.strings.psd1` This support file is used by the PublicFolderToMailboxMapGenerator.ps1 script and should be downloaded to the same location. 
     
--  `Create-PublicFolderMailboxesForMigration.ps1` This script creates the target public folder mailboxes for the migration. In addition, this script calculates the number of mailboxes necessary to handle the estimated user load, based on the guidelines for the number of user logons per public folder mailbox recommended in [Limits for public folders](limits.md).
+- `Create-PublicFolderMailboxesForMigration.ps1` This script creates the target public folder mailboxes for the migration. In addition, this script calculates the number of mailboxes necessary to handle the estimated user load, based on the guidelines for the number of user logons per public folder mailbox recommended in [Limits for public folders](limits.md).
     
--  `Create-PublicFolderMailboxesForMigration.strings.psd1` This support file is used by the Create-PublicFolderMailboxesForMigration.ps1 script and should be downloaded to the same location. 
+- `Create-PublicFolderMailboxesForMigration.strings.psd1` This support file is used by the Create-PublicFolderMailboxesForMigration.ps1 script and should be downloaded to the same location. 
     
 [Step 1: Download the migration scripts](batch-migration-from-previous-versions.md#Scripts) provides details about where to download these scripts. Make sure all scripts are downloaded to the same location. 
   
@@ -137,9 +137,9 @@ Perform the following prerequisite steps before you begin the migration.
   Get-OrganizationConfig | Format-List PublicFoldersLockedforMigration, PublicFolderMigrationComplete
   ```
 
-     If there has been a previous successful migration, the value of the  _PublicFoldersLockedforMigration_ or  _PublicFolderMigrationComplete_ properties is  `$true`. Use the command in step 3b to set the value to  `$false`. If the value is set to  `$true`, your migration request will fail.
+     If there has been a previous successful migration, the value of the _PublicFoldersLockedforMigration_ or _PublicFolderMigrationComplete_ properties is `$true`. Use the command in step 3b to set the value to `$false`. If the value is set to `$true`, your migration request will fail.
     
-2. If the status of the  _PublicFoldersLockedforMigration_ or  _PublicFolderMigrationComplete_ properties is  `$true`, run the following command to set the value to  `$false`.
+2. If the status of the _PublicFoldersLockedforMigration_ or _PublicFolderMigrationComplete_ properties is `$true`, run the following command to set the value to `$false`.
     
   ```
   Set-OrganizationConfig -PublicFoldersLockedforMigration:$false -PublicFolderMigrationComplete:$false
@@ -247,17 +247,17 @@ For detailed syntax and parameter information, see the following topics:
 ## Step 3: Generate the .csv files
 <a name="CSVFiles"> </a>
 
-1. On the legacy Exchange server, run the  `Export-PublicFolderStatistics.ps1` script to create the folder name-to-folder size mapping file. This script needs to be run by a local administrator. The file will contain two columns: **FolderName** and **FolderSize**. The values for the **FolderSize** column will be displayed in bytes. For example, **\PublicFolder01,10000**.
+1. On the legacy Exchange server, run the `Export-PublicFolderStatistics.ps1` script to create the folder name-to-folder size mapping file. This script needs to be run by a local administrator. The file will contain two columns: **FolderName** and **FolderSize**. The values for the **FolderSize** column will be displayed in bytes. For example, **\PublicFolder01,10000**.
     
   ```
   .\Export-PublicFolderStatistics.ps1  <Folder to size map path> <FQDN of source server>
   ```
 
-  -  _FQDN of source server_ equals the fully qualified domain name of the Mailbox server where the public folder hierarchy is hosted. 
+  - _FQDN of source server_ equals the fully qualified domain name of the Mailbox server where the public folder hierarchy is hosted. 
     
-  -  _Folder to size map path_ equals the file name and path on a network shared folder where you want the .csv file saved. Later in this topic, you'll need to access this file from the Exchange 2016 server. If you specify only the file name, the file will be generated in the current PowerShell directory on the local computer. 
+  - _Folder to size map path_ equals the file name and path on a network shared folder where you want the .csv file saved. Later in this topic, you'll need to access this file from the Exchange 2016 server. If you specify only the file name, the file will be generated in the current PowerShell directory on the local computer. 
     
-2. Run the  `PublicFolderToMailboxMapGenerator.ps1` script to create the public folder-to-mailbox mapping file. This file is used to calculate the correct number of public folder mailboxes on the Exchange 2016 server. 
+2. Run the `PublicFolderToMailboxMapGenerator.ps1` script to create the public folder-to-mailbox mapping file. This file is used to calculate the correct number of public folder mailboxes on the Exchange 2016 server. 
     
     > [!NOTE]
     > If the name of a public folder contains a backslash **\**, the public folders will be created in the parent public folder. We recommend that you review the .csv file and edit any names that contain a backslash. 
@@ -266,11 +266,11 @@ For detailed syntax and parameter information, see the following topics:
   .\PublicFolderToMailboxMapGenerator.ps1 <Maximum mailbox size in bytes> <Folder to size map path> <Folder to mailbox map path>
   ```
 
-  -  _Maximum mailbox size in bytes_ equals the maximum size you want to set for the new public folder mailboxes. When specifying this setting, be sure to allow for expansion so the public folder mailbox has room to grow. 
+  - _Maximum mailbox size in bytes_ equals the maximum size you want to set for the new public folder mailboxes. When specifying this setting, be sure to allow for expansion so the public folder mailbox has room to grow. 
     
-  -  _Folder to size map path_ equals the file path of the .csv file you created when running the  `Export-PublicFolderStatistics.ps1` script. 
+  - _Folder to size map path_ equals the file path of the .csv file you created when running the `Export-PublicFolderStatistics.ps1` script. 
     
-  -  _Folder to mailbox map path_ equals the file name and path of the folder-to-mailbox .csv file that you'll create with this step. If you specify only the file name, the file will be generated in the current PowerShell directory on the local computer. 
+  - _Folder to mailbox map path_ equals the file name and path of the folder-to-mailbox .csv file that you'll create with this step. If you specify only the file name, the file will be generated in the current PowerShell directory on the local computer. 
     
 ## Step 4: Create the public folder mailboxes in Exchange 2016
 <a name="CreatePFMbxs"> </a>
@@ -281,7 +281,7 @@ For detailed syntax and parameter information, see the following topics:
   .\Create-PublicFolderMailboxesForMigration.ps1 -FolderMappingCsv Mapping.csv -EstimatedNumberOfConcurrentUsers:<estimate>
   ```
 
-     _Mapping.csv_ is the file generated by the PublicFoldertoMailboxMapGenerator.ps1 script in Step 3. The estimated number of simultaneous user connections browsing a public folder hierarchy is usually less than the total number of users in an organization. 
+    _Mapping.csv_ is the file generated by the PublicFoldertoMailboxMapGenerator.ps1 script in Step 3. The estimated number of simultaneous user connections browsing a public folder hierarchy is usually less than the total number of users in an organization. 
     
 ## Step 5: Start the migration request
 <a name="StartMigrRequest"> </a>
@@ -296,7 +296,7 @@ Once batch migration requests are created with the appropriate cmdlet, you can t
   New-MigrationBatch -Name PFMigration -SourcePublicFolderDatabase (Get-PublicFolderDatabase -Server <Source server name>) -CSVData (Get-Content <Folder to mailbox map path> -Encoding Byte) -NotificationEmails <email addresses for migration notifications> 
   ```
 
-    The  `NotificationEmails` parameter is optional. 
+    The `NotificationEmails` parameter is optional. 
     
 2. Start the migration using the following command:
     
@@ -315,7 +315,7 @@ Once batch migration requests are created with the appropriate cmdlet, you can t
     
 3. Select the migration batch you just created, and then click the start button.
     
-The **Status** column will show the initial batch status as **Created**. The status changes to **Syncing** during migration. When the migration request is complete, the status will be **Synced**. You can double-click a batch to view the status of individual mailboxes within the batch. Mailbox jobs begin with a status of **Queued**. When the job begins the status is **Syncing**, and once  `InitialSync` is complete, the status will show **Synced**.
+The **Status** column will show the initial batch status as **Created**. The status changes to **Syncing** during migration. When the migration request is complete, the status will be **Synced**. You can double-click a batch to view the status of individual mailboxes within the batch. Mailbox jobs begin with a status of **Queued**. When the job begins the status is **Syncing**, and once `InitialSync` is complete, the status will show **Synced**.
   
 The progress and completion of the migration can be viewed and managed in the EAC. Because the **New-MigrationBatch** cmdlet initiates a mailbox migration request for each public folder mailbox, you can view the status of these requests using the mailbox migration page. You can get to the mailbox migration page, and create migration reports that can be emailed to you, by doing the following: 
   
@@ -340,7 +340,7 @@ For detailed syntax and parameter information, see the following topics:
 
 Until this point in the migration, users have been able to access public folders. The next steps will log users off from the legacy public folders and lock the folders while the migration completes its final synchronization. Users won't be able to access public folders during this process. Also, any mail sent to mail-enabled public folders will be queued and won't be delivered until the public folder migration is complete.
   
-Before you run the  `PublicFoldersLockedForMigration` command as described below, make sure that all jobs are in the **Synced** state. You can do this by running the  `Get-PublicFolderMailboxMigrationRequest` command. Continue with this step only after you've verified that all jobs are in the **Synced** state. 
+Before you run the `PublicFoldersLockedForMigration` command as described below, make sure that all jobs are in the **Synced** state. You can do this by running the `Get-PublicFolderMailboxMigrationRequest` command. Continue with this step only after you've verified that all jobs are in the **Synced** state. 
   
 On the legacy Exchange server, run the following command to lock the legacy public folders for finalization.
   
@@ -349,11 +349,11 @@ Set-OrganizationConfig -PublicFoldersLockedForMigration:$true
 ```
 
 > [!NOTE]
-> If for any reason the migration batch file does not finalize ( **PublicFolderMigrationComplete** displays **False**), on the legacy server, restart the Information Store (IS). 
+> If for any reason the migration batch file does not finalize (**PublicFolderMigrationComplete** displays **False**), on the legacy server, restart the Information Store (IS). 
   
 For detailed syntax and parameter information, see [Set-OrganizationConfig](http://technet.microsoft.com/library/3b6df0fe-27c8-415f-ad0c-8b265f234c1a.aspx).
   
-If your organization has multiple public folder databases, you'll need to wait until public folder replication is complete to confirm that all public folder databases have picked up the  `PublicFoldersLockedForMigration` flag and any pending changes users recently made to folders have converged across the organization. This may take several hours. 
+If your organization has multiple public folder databases, you'll need to wait until public folder replication is complete to confirm that all public folder databases have picked up the `PublicFoldersLockedForMigration` flag and any pending changes users recently made to folders have converged across the organization. This may take several hours. 
   
 ## Step 7: Finalize the public folder migration (downtime required)
 <a name="Finalize"> </a>
@@ -403,7 +403,7 @@ After you finalize the public folder migration, you should run the following tes
   ```
 
     > [!IMPORTANT]
-    > Don't use the  _IsExcludedFromServingHierarchy_ parameter after initial migration validation is complete as this parameter is used by the automated storage management service for Exchange Online. 
+    > Don't use the _IsExcludedFromServingHierarchy_ parameter after initial migration validation is complete as this parameter is used by the automated storage management service for Exchange Online. 
   
 4. On the legacy Exchange server, run the following command to indicate that the public folder migration is complete:
     
@@ -478,7 +478,7 @@ If you run into issues with the migration and need to reactivate your legacy Exc
   Get-Mailbox -PublicFolder | Remove-Mailbox -PublicFolder -Force -Confirm:$false
   ```
 
-3. On the legacy Exchange server, run the following command to set the  `PublicFolderMigrationComplete` flag to  `$false`.
+3. On the legacy Exchange server, run the following command to set the `PublicFolderMigrationComplete` flag to `$false`.
     
   ```
   Set-OrganizationConfig -PublicFolderMigrationComplete:$False

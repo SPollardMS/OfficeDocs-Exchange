@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: f1e7d407-f0d3-47a7-8cc3-03c5980445d5
 description: "Summary: Learn how to use and configure the Availability service in cross-forest topologies in Exchange 2016."

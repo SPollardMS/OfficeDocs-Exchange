@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: overview
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.collection: Strat_EX_Admin
 ms.assetid: cdaf6096-f23e-4e18-8130-40127e4a97be
@@ -22,7 +22,7 @@ A database availability group (DAG) is the base component of the Mailbox server 
 > [!IMPORTANT]
 > All servers within a DAG must be running the same version of Exchange. You can't mix Exchange 2013 servers and Exchange 2016 servers in the same DAG. 
   
-A DAG is a boundary for mailbox database replication, database and server switchovers and failovers, and an internal component called  *Active Manager*  . Active Manager, which runs on every Mailbox server, manages switchovers and failovers within DAGs. For more information about Active Manager, see [Active Manager](active-manager.md).
+A DAG is a boundary for mailbox database replication, database and server switchovers and failovers, and an internal component called *Active Manager* . Active Manager, which runs on every Mailbox server, manages switchovers and failovers within DAGs. For more information about Active Manager, see [Active Manager](active-manager.md).
   
 Any server in a DAG can host a copy of a mailbox database from any other server in the DAG. When a server is added to a DAG, it works with the other servers in the DAG to provide automatic recovery from failures that affect mailbox databases, such as a disk, server, or network failure.
   
@@ -32,7 +32,7 @@ Any server in a DAG can host a copy of a mailbox database from any other server 
 ## Database availability group lifecycle
 <a name="DAG_Lifecycle"> </a>
 
-DAGs leverage the concept of  *incremental deployment*  , which is the ability to deploy service and data availability for all Mailbox servers and databases after Exchange is installed. After you deploy Exchange 2016 Mailbox servers, you can create a DAG, add Mailbox servers to the DAG, and then replicate mailbox databases between the DAG members. 
+DAGs leverage the concept of *incremental deployment*, which is the ability to deploy service and data availability for all Mailbox servers and databases after Exchange is installed. After you deploy Exchange 2016 Mailbox servers, you can create a DAG, add Mailbox servers to the DAG, and then replicate mailbox databases between the DAG members. 
   
 > [!NOTE]
 >  It's supported to create a DAG that contains a combination of physical Mailbox servers and virtualized Mailbox servers, provided that the servers and solution comply with the [Exchange 2016 system requirements](../../plan-and-deploy/system-requirements.md) and the requirements set forth in [Exchange 2016 virtualization](../../plan-and-deploy/virtualization.md). As with all Exchange high availability configurations, you must ensure that all Mailbox servers in the DAG are sized appropriately to handle the necessary workload during scheduled and unscheduled outages. 
@@ -71,7 +71,7 @@ Add-DatabaseAvailabilityGroupServer -Identity DAG1 -MailboxServer EX2
 Add-DatabaseAvailabilityGroupServer -Identity DAG1 -MailboxServer EX3
 ```
 
-The cluster for DAG1 is created when EX1 is added to the DAG. During cluster creation, the **Add-DatabaseAvailabilityGroupServer** cmdlet retrieves the IP addresses configured for the DAG and ignores the ones that don't match any of the subnets found on EX1. In the first example above, the cluster for DAG1 is created with an IP address of 10.0.0.5, and 192.168.0.5 is ignored. In the second example above, the value of the  _DatabaseAvailabilityGroupIPAddresses_ parameter instructs the task to create a failover cluster for the DAG that does not have an administrative access point. Thus, the cluster is created with an IP address or network name resource in the core cluster resource group. 
+The cluster for DAG1 is created when EX1 is added to the DAG. During cluster creation, the **Add-DatabaseAvailabilityGroupServer** cmdlet retrieves the IP addresses configured for the DAG and ignores the ones that don't match any of the subnets found on EX1. In the first example above, the cluster for DAG1 is created with an IP address of 10.0.0.5, and 192.168.0.5 is ignored. In the second example above, the value of the _DatabaseAvailabilityGroupIPAddresses_ parameter instructs the task to create a failover cluster for the DAG that does not have an administrative access point. Thus, the cluster is created with an IP address or network name resource in the core cluster resource group. 
   
 Then, EX2 is added, and the **Add-DatabaseAvailabilityGroupServer** cmdlet again retrieves the IP addresses configured for the DAG. There are no changes to the cluster's IP addresses because in EX2 is on the same subnet as EX1. 
   
@@ -81,7 +81,7 @@ For DAGs with cluster administrative access points, Windows failover clustering 
   
 DAGs are also configured to use a witness server and a witness directory. The witness server and witness directory are either automatically configured by the system, or they can be manually configured by the administrator. In the examples above, EX4 (a server that is not and will not be a member of the DAG) is being manually configured as the DAG's witness server.
   
-By default, a DAG is designed to use the built-in continuous replication feature to replicate mailbox databases among servers in the DAG. If you're using third-party data replication that supports the Third Party Replication API in Exchange 2016, you must create the DAG in third-party replication mode by using the [New-DatabaseAvailabilityGroup](http://technet.microsoft.com/library/c0cd98a9-eaaa-4cfb-845d-213e5d606d3b.aspx) cmdlet with the  _ThirdPartyReplication_ parameter. After this mode is enabled, it can't be disabled. 
+By default, a DAG is designed to use the built-in continuous replication feature to replicate mailbox databases among servers in the DAG. If you're using third-party data replication that supports the Third Party Replication API in Exchange 2016, you must create the DAG in third-party replication mode by using the [New-DatabaseAvailabilityGroup](http://technet.microsoft.com/library/c0cd98a9-eaaa-4cfb-845d-213e5d606d3b.aspx) cmdlet with the _ThirdPartyReplication_ parameter. After this mode is enabled, it can't be disabled. 
   
 After the DAG is created, Mailbox servers can be added to the DAG. When the first server is added to the DAG, a cluster is formed for use by the DAG. DAGs make use of Windows failover clustering technology, such as the cluster heartbeat, cluster networks, and the cluster database (for storing data that changes, such as database state changes from active to passive or vice versa, or from mounted to dismounted and vice versa). As each subsequent server is added to the DAG, it's joined to the underlying cluster, the cluster's quorum model is automatically adjusted by Exchange, and the server is added to the DAG object in Active Directory.
   
@@ -98,7 +98,7 @@ Quorum is important to ensure consistency, to act as a tie-breaker to avoid part
   
 - **Ensuring consistency**: A primary requirement for a Windows failover cluster is that each of the members always has a view of the cluster that's consistent with the other members. The cluster hive acts as the definitive repository for all configuration information relating to the cluster. If the cluster hive can't be loaded locally on a DAG member, the Cluster service doesn't start, because it isn't able to guarantee that the member meets the requirement of having a view of the cluster that's consistent with the other members.
     
-- **Acting as a tie-breaker**: A quorum witness resource is used in DAGs with an even number of members to avoid split brain syndrome scenarios and to make sure that only one collection of the members in the DAG is considered official. When the witness server is needed for quorum, any member of the DAG that can communicate with the witness server can place a Server Message Block (SMB) lock on the witness server's witness.log file. The DAG member that locks the witness server (referred to as the  *locking node*  ) retains an additional vote for quorum purposes. The DAG members in contact with the locking node are in the majority and maintain quorum. Any DAG members that can't contact the locking node are in the minority and therefore lose quorum. 
+- **Acting as a tie-breaker**: A quorum witness resource is used in DAGs with an even number of members to avoid split brain syndrome scenarios and to make sure that only one collection of the members in the DAG is considered official. When the witness server is needed for quorum, any member of the DAG that can communicate with the witness server can place a Server Message Block (SMB) lock on the witness server's witness.log file. The DAG member that locks the witness server (referred to as the *locking node* ) retains an additional vote for quorum purposes. The DAG members in contact with the locking node are in the majority and maintain quorum. Any DAG members that can't contact the locking node are in the minority and therefore lose quorum. 
     
 - **Ensuring responsiveness**: To ensure responsiveness, the quorum model makes sure that, whenever the cluster is running, enough members of the distributed system are operational and communicative, and at least one replica of the cluster's current state can be guaranteed. No additional time is required to bring members into communication or to determine whether a specific replica is guaranteed.
     

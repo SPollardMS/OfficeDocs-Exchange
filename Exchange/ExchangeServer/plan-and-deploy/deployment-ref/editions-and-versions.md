@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: reference
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: b563b543-fb3f-4465-9a54-cbfd680aee1f
 description: "Microsoft Exchange Server 2016 is available in two server editions: Standard Edition and Enterprise Edition. Enterprise Edition can scale to 100 mounted databases per server; Standard Edition is limited to 5 mounted databases per server. A mounted database is a database that is in use. A mounted database can be an active mailbox database that is mounted for use by clients, or a passive mailbox database that is mounted in recovery for log replication and replay. While you can create more databases than the limits described above, you can only mount the maximum number specified above. The recovery database does not count towards this limit."

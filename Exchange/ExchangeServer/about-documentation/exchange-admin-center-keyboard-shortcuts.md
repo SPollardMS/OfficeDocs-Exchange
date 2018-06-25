@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: reference
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 146b2b52-1ef8-4606-991a-4cf4da694970
 description: "Summary: Learn about the keyboard shortcuts that are available in the Exchange admin center in Exchange 2016."

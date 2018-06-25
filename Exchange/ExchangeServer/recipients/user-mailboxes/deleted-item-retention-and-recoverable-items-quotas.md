@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: de7d667a-1c93-4364-a4f9-2aa5e3678b12
 description: "Summary: Learn how to configure the deleted item retention period for a mailbox or mailbox database in Exchange 2016."
@@ -78,7 +78,7 @@ Set-Mailbox -Identity "April Stewart" -RecoverableItemsWarningQuota 12GB -Recove
 ```
 
 > [!NOTE]
-> To configure a mailbox to use different recoverable items quotas than the mailbox database in which it resides, you must set the  _UseDatabaseQuotaDefaults_ parameter to  `$false`. 
+> To configure a mailbox to use different recoverable items quotas than the mailbox database in which it resides, you must set the _UseDatabaseQuotaDefaults_ parameter to `$false`. 
   
 For detailed syntax and parameter information, see [Set-Mailbox](http://technet.microsoft.com/library/a0d413b9-d949-4df6-ba96-ac0906dedae2.aspx).
   

@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 27de4104-fb8e-4eab-9ad2-a64f81a4fb69
 description: "After you've subscribed an Edge Transport server to an Active Directory site in your Exchange organization as described in Edge Subscriptions, you might need to perform maintenance tasks on the Edge Subscription. These tasks are described in this topic."
@@ -36,27 +36,27 @@ After you remove the Edge Subscription, synchronization of information from AD L
   
 1. To remove the Edge Subscription from the Edge Transport server, use the following syntax.
     
-  ```
-  Remove-EdgeSubscription <EdgeTransportServerIdentity>
-  ```
+   ```
+   Remove-EdgeSubscription <EdgeTransportServerIdentity>
+   ```
 
     For example, to remove the Edge Subscription on the Edge Transport server named Edge01, run the following command.
     
-  ```
-  Remove-EdgeSubscription Edge01
-  ```
+   ```
+   Remove-EdgeSubscription Edge01
+   ```
 
 2. To remove the Edge Subscription from the Mailbox server, use the following syntax.
     
-  ```
-  Remove-EdgeSubscription <EdgeTransportServerIdentity>
-  ```
+   ```
+   Remove-EdgeSubscription <EdgeTransportServerIdentity>
+   ```
 
     For example, to remove the Edge Subscription for the Edge Transport server named Edge01 on a Mailbox server in the subscribed Active Directory site, run the following command.
     
-  ```
-  Remove-EdgeSubscription Edge01
-  ```
+   ```
+   Remove-EdgeSubscription Edge01
+    ```
 
 You will need to remove the Edge Subscription if:
   
@@ -72,7 +72,7 @@ When you remove an Edge Subscription from the Exchange organization:
     
 - The ESRA accounts are removed from both Active Directory and AD LDS.
     
-- The Edge Transport server is removed from the  _SourceTransportServers_ property of any Send connector. 
+- The Edge Transport server is removed from the _SourceTransportServers_ property of any Send connector. 
     
 - The automatic inbound Send connector from the Edge Transport server to the Exchange organization is removed from AD LDS.
     
@@ -149,7 +149,7 @@ You can use the **Test-EdgeSynchronization** cmdlet to verify that the Edge sync
   
 The output of this cmdlet lets you view objects that have not been synchronized to the Edge Transport server. The task compares data stored in Active Directory against data stored in AD LDS and reports any data inconsistencies.
   
-You can use the  _ExcludeRecipientTest_ parameter on the **Test-EdgeSynchronization** cmdlet to exclude validation of recipient data synchronization. If you include this parameter, only the synchronization of configuration objects is validated. Validating recipient data will take longer than validating only configuration data. 
+You can use the _ExcludeRecipientTest_ parameter on the **Test-EdgeSynchronization** cmdlet to exclude validation of recipient data synchronization. If you include this parameter, only the synchronization of configuration objects is validated. Validating recipient data will take longer than validating only configuration data. 
   
 ## Verify EdgeSync results for a single recipient
 <a name="Verfiy6A"> </a>

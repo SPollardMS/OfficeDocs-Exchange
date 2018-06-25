@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: be012ffe-8fdb-4fb7-aebd-78b3a55593fa
 description: "Summary: Learn how to configure Outlook on the web mailbox policies in Exchange 2016."
@@ -65,7 +65,7 @@ You can configure mailbox policies in Exchange 2016 for Outlook on the web throu
     
 ## Use the Exchange Management Shell to view Outlook on the web mailbox policies
 
-This example retrieves the properties of the Outlook on the web mailbox policy  `Executives` in the organization  `Fabrikam`.
+This example retrieves the properties of the Outlook on the web mailbox policy `Executives` in the organization `Fabrikam`.
   
 ```
 Get-OwaMailboxPolicy -Identity Fabrikam\Executives

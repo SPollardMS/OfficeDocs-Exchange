@@ -4,9 +4,9 @@ ms.author: serdars
 author: SerdarSoysal
 manager: serdars
 ms.date: 6/8/2018
-ms.audience: End User
+ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 6ccc80db-d201-44f7-8d4b-473a89c14b2f
 description: "Summary: Learn how to use the Exchange Management Shell or the Exchange admin center apply a retention policy to mailboxes in Exchange 2016."

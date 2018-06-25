@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: reference
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: b7fa4b7c-1266-45bd-a14b-f66be0459cc5
 description: "Summary: Learn about permissions that are required to manage sharing and collaboration features in Exchange Server 2016."

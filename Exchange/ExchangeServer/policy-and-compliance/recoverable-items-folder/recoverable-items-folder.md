@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: efc48fb4-2ed8-4d05-93af-f3505fbc389d
 description: "Summary: Learn about protecting user account data in Exchange 2016 by using the Recoverable Items folder."
@@ -16,7 +16,7 @@ description: "Summary: Learn about protecting user account data in Exchange 2016
 
  **Summary**: Learn about protecting user account data in Exchange 2016 by using the Recoverable Items folder.
   
-To protect from accidental or malicious deletion and to facilitate discovery efforts commonly undertaken before or during litigation or investigations, Exchange 2016 and Exchange Online use the Recoverable Items folder. The Recoverable Items folder replaces the feature that was known as  *the dumpster*  in earlier versions of Exchange. The following Exchange features use the Recoverable Items folder: 
+To protect from accidental or malicious deletion and to facilitate discovery efforts commonly undertaken before or during litigation or investigations, Exchange 2016 and Exchange Online use the Recoverable Items folder. The Recoverable Items folder replaces the feature that was known as *the dumpster* in earlier versions of Exchange. The following Exchange features use the Recoverable Items folder: 
   
 - Deleted item retention
     
@@ -45,7 +45,7 @@ Knowledge of the following terms will help you understand the content in this to
     
  **Hard delete**
   
-> Describes when an item is marked to be purged from the mailbox database. This is also known as a  *store hard delete*  . 
+> Describes when an item is marked to be purged from the mailbox database. This is also known as a *store hard delete* . 
     
 ## Recoverable Items folder
 <a name="RIF"> </a>
@@ -106,7 +106,7 @@ After the deleted item retention period expires, the item is moved to the Purges
 
 If an item is removed from the Deletions subfolder, either by a user purging the item by using the Recover Deleted Items feature or by an automated process such as the Managed Folder Assistant, the item can't be recovered by the user. In previous versions of Exchange, recovering these items required the administrator to restore the mailbox database or a mailbox from backup copies. This process generally delayed recovery by minutes or hours, depending on the backup mechanism used.
   
-In Exchange 2016, you can use  *single item recovery*  to recover items without using backup media to restore the mailbox databases. This results in considerably shorter recovery periods. When the Managed Folder Assistant processes the Recoverable Items folder for a mailbox that has single item recovery enabled, any item in the Purges subfolder isn't purged if the deleted item retention period hasn't expired for that item. 
+In Exchange 2016, you can use *single item recovery* to recover items without using backup media to restore the mailbox databases. This results in considerably shorter recovery periods. When the Managed Folder Assistant processes the Recoverable Items folder for a mailbox that has single item recovery enabled, any item in the Purges subfolder isn't purged if the deleted item retention period hasn't expired for that item. 
   
 The following table lists the contents of and actions that can be performed in the Recoverable Items folder if single item recovery is enabled.
   
@@ -147,7 +147,7 @@ To learn more about In-Place eDiscovery, In-Place Hold, and Litigation Hold, see
 ### Copy-on-write page protection and modified items
 <a name="COW"> </a>
 
-If a user who is placed on In-Place Hold or Litigation Hold modifies specific properties of a mailbox item, a copy of the original mailbox item is created before the changed item is written. The original copy is saved in the Versions subfolder. This process is known as  *copy-on-write page protection*  . Copy-on-write page protection applies to items residing in any mailbox folder. The Versions subfolder isn't visible to users. 
+If a user who is placed on In-Place Hold or Litigation Hold modifies specific properties of a mailbox item, a copy of the original mailbox item is created before the changed item is written. The original copy is saved in the Versions subfolder. This process is known as *copy-on-write page protection* . Copy-on-write page protection applies to items residing in any mailbox folder. The Versions subfolder isn't visible to users. 
   
 The following table lists the message properties that trigger copy-on-write page protection.
   
@@ -167,7 +167,7 @@ When a mailbox is no longer on In-Place Hold or litigation hold, copies of modif
 ## Recoverable Items mailbox quotas
 <a name="RIQuotas"> </a>
 
-When an item is moved to the Recoverable Items folder, its size is deducted from the mailbox quota and added to the size of the Recoverable Items folder. In Exchange 2016, mailbox databases have a configurable Recoverable Items warning quota ( *soft limit*  ) of 20 GB and a Recoverable Items quota (  *hard limit*  ) of 30 GB. By default, these limits are inherited by all mailboxes in the database. However, you can configure individual mailboxes with different quotas. To learn more, see [Configure Deleted Item retention and Recoverable Items quotas](../../recipients/user-mailboxes/deleted-item-retention-and-recoverable-items-quotas.md).
+When an item is moved to the Recoverable Items folder, its size is deducted from the mailbox quota and added to the size of the Recoverable Items folder. In Exchange 2016, mailbox databases have a configurable Recoverable Items warning quota (*soft limit* ) of 20 GB and a Recoverable Items quota ( *hard limit* ) of 30 GB. By default, these limits are inherited by all mailboxes in the database. However, you can configure individual mailboxes with different quotas. To learn more, see [Configure Deleted Item retention and Recoverable Items quotas](../../recipients/user-mailboxes/deleted-item-retention-and-recoverable-items-quotas.md).
   
 In Exchange Online, the default limits for the Recoverable Items quota are the same as Exchange 2016; a soft limit of 20 GB and a hard limit of 30 GB. However, the quotas for the Recoverable Items folder are automatically increased to 90 GB and 100 GB, respectively, when you place a mailbox on Litigation Hold or In-Place Hold.
   
@@ -191,8 +191,8 @@ The following table lists the events logged when the Recoverable Items folder re
 
 |**Event ID**|**Type**|**Source**|**Message**|
 |:-----|:-----|:-----|:-----|
-|10024  <br/> |Warning  <br/> |MSExchangeIS Mailbox Store  <br/> |The mailbox for  _\<mailbox user\>_ (  _\<GUID\>_) has exceeded the Recoverable Items Warning Quota. Please remove items from Recoverable Items or increase the Recoverable Items Warning Quota and Recoverable Items Quota. If the Recoverable Items Quota is exceeded, the user will be unable to delete items from the mailbox.  <br/> |
-|10023  <br/> |Error  <br/> |MSExchangeIS Mailbox Store  <br/> |The mailbox for  _\<mailbox user\>_ (  _\<GUID\>_) has exceeded the maximum Recoverable Items Quota. Items cannot be deleted from this mailbox. The mailbox owner should be notified about the condition of the mailbox as soon as possible. Please remove items from Recoverable Items or increase the Recoverable Items Quota to restore functionality.  <br/> |
+|10024  <br/> |Warning  <br/> |MSExchangeIS Mailbox Store  <br/> |The mailbox for _\<mailbox user\>_ (_\<GUID\>_) has exceeded the Recoverable Items Warning Quota. Please remove items from Recoverable Items or increase the Recoverable Items Warning Quota and Recoverable Items Quota. If the Recoverable Items Quota is exceeded, the user will be unable to delete items from the mailbox.  <br/> |
+|10023  <br/> |Error  <br/> |MSExchangeIS Mailbox Store  <br/> |The mailbox for _\<mailbox user\>_ (_\<GUID\>_) has exceeded the maximum Recoverable Items Quota. Items cannot be deleted from this mailbox. The mailbox owner should be notified about the condition of the mailbox as soon as possible. Please remove items from Recoverable Items or increase the Recoverable Items Quota to restore functionality.  <br/> |
 |10023  <br/> |Warning  <br/> |MSExchangeMailboxAssistants  <br/> |The mailbox: _\<mailbox user\>_ Recoverable Items size has exceeded the warning quota limit. Items were deleted from Recoverable Items folders to prevent mailbox outage. Recoverable Items Warning Quota: 20 GB (21,474,836,480 bytes) Original Recoverable Items size: 21475005311 Current Recoverable Items size: 21474823820 Folder stats: - Folders processed: RecoverableItemsRoot, RecoverableItemsVersions, RecoverableItemsPurges, RecoverableItemsDeletions - Original folder sizes: 21391661934, 55190914, 1987247, 26157788 (item counts: 276828, 400, 84, 646) - Current folder sizes: 21391480443, 55190914, 1987247, 26157788 (item counts: 276817, 400, 84, 646)  <br/> |
    
 If the mailbox is placed on In-Place Hold or Litigation Hold, copy-on-write page protection can't maintain versions of modified items. To maintain versions of modified items, you need to reduce the size of the Recoverable Items folder. You can use the [Search-Mailbox](http://technet.microsoft.com/library/9ee3b02c-d343-4816-a583-a90b1fad4b26.aspx) cmdlet to copy messages from the Recoverable Items folder of a mailbox to a discovery mailbox, and then delete the items from the mailbox. Alternatively, you can also raise the Recoverable Items quota for the mailbox. For details, see [Clean up or delete items from the Recoverable Items folder](clean-up-deleted-items.md).

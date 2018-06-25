@@ -6,8 +6,8 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: get-started-article
-ms.prod: office-online-server
-localization_priority: Normal
+ms.prod: exchange-server-itpro
+localization_priority: Critical
 ms.assetid: 1879fd5e-3d63-4264-9cc2-9c050c6ab3c5
 description: "Welcome to Microsoft Exchange Server 2016! This topic contains important information that you need to know to successfully deploy Exchange 2016. Please read this topic completely before beginning your deployment."
 ---
@@ -45,7 +45,7 @@ Welcome to Microsoft Exchange Server 2016! This topic contains important informa
   Get-MailboxDatabase | Where {$_.AdminDisplayVersion -Like "*15.1*"} | Format-Table Name, ServerName
   ```
 
-3. Run the following command to move the migration mailbox to your Exchange 2016 server. Paste the mailbox database name you copied in the previous step after  _TargetDatabase_.
+3. Run the following command to move the migration mailbox to your Exchange 2016 server. Paste the mailbox database name you copied in the previous step after _TargetDatabase_.
     
   ```
   New-MoveRequest "Migration.8f3e7716-2011-43e4-96b1-aba62d229136" -TargetDatabase "<mailbox database name>"

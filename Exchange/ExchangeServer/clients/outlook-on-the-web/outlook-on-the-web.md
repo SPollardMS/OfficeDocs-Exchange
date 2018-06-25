@@ -5,7 +5,7 @@ author: chrisda
 ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 3814b665-01e8-4881-9a44-163f14789ee4
 description: "Summary: Learn about administrative tasks for managing Outlook on the web (Outlook Web App) in Exchange 2016."
@@ -17,7 +17,7 @@ description: "Summary: Learn about administrative tasks for managing Outlook on 
   
 The user interface in Outlook on the web (formerly known as Outlook Web App) for Exchange Server 2016 has been optimized and simplified for use with phones and tablets. Supported web browsers give users access to more Outlook features. Unsupported web browsers give users the light version of Outlook on the web that has less features. For more information about features and supported web browsers, see [Outlook on the web (formerly Outlook Web App)](../../new-features/new-features.md#OutlookAppfrom2013) and [Outlook on the web (formerly Outlook Web App)](../../new-features/new-features.md#OutlookAppfrom2010).
   
-When you install Exchange 2016, Outlook on the web is automatically available for internal users at  `https://<ServerName>/owa` (for example,  `https://mailbox01.contoso.com/owa`). But, you'll likely want to configure Outlook on the web for external access (for example,  `https://mail.contoso.com/owa`). For more information, see [Step 4: Configure external URLs](../../plan-and-deploy/post-installation-tasks/configure-mail-flow-and-client-access.md#ConfigExternalURL).
+When you install Exchange 2016, Outlook on the web is automatically available for internal users at `https://<ServerName>/owa` (for example, `https://mailbox01.contoso.com/owa`). But, you'll likely want to configure Outlook on the web for external access (for example, `https://mail.contoso.com/owa`). For more information, see [Step 4: Configure external URLs](../../plan-and-deploy/post-installation-tasks/configure-mail-flow-and-client-access.md#ConfigExternalURL).
   
  In an Outlook 2010 or later installation that's connected to an Exchange mailbox, you can typically see the Outlook on the web URL at **File** \> **Info** \> **Account Information** in the **Account Settings** section. 
   

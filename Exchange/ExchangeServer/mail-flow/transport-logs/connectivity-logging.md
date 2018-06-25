@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: c31fd710-4ae4-4d9a-8936-d056e7ca2748
 description: "Summary: Learn about connectivity logging and how it records outbound connection activity for transmitting messages in Exchange 2016."
@@ -41,21 +41,21 @@ By default, the connectivity log files exist in these locations:
   
 - **Mailbox servers**:
     
-  - **Transport service**:  `%ExchangeInstallPath%TransportRoles\Logs\Hub\Connectivity`
+  - **Transport service**: `%ExchangeInstallPath%TransportRoles\Logs\Hub\Connectivity`
     
-  - **Front End Transport service**:  `%ExchangeInstallPath%TransportRoles\Logs\FrontEnd\Connectivity`
+  - **Front End Transport service**: `%ExchangeInstallPath%TransportRoles\Logs\FrontEnd\Connectivity`
     
-  - **Mailbox Transport Delivery service**:  `%ExchangeInstallPath%TransportRoles\Logs\Mailbox\Connectivity\Delivery`
+  - **Mailbox Transport Delivery service**: `%ExchangeInstallPath%TransportRoles\Logs\Mailbox\Connectivity\Delivery`
     
-  - **Mailbox Transport Submission service**:  `%ExchangeInstallPath%TransportRoles\Logs\Mailbox\Connectivity\Submission`
+  - **Mailbox Transport Submission service**: `%ExchangeInstallPath%TransportRoles\Logs\Mailbox\Connectivity\Submission`
     
 - **Edge Transport servers**
     
-The naming convention for the connectivity log files is  `CONNECTLOGyyymmdd-nnnn.log`. The placeholders represent the following information:
+The naming convention for the connectivity log files is `CONNECTLOGyyymmdd-nnnn.log`. The placeholders represent the following information:
   
--  _yyyymmdd_ is the Coordinated Universal Time (UTC) when the log file was created.  _yyyy_ = year,  _mm_ = month, and  _dd_ = day. 
+- _yyyymmdd_ is the Coordinated Universal Time (UTC) when the log file was created. _yyyy_ = year, _mm_ = month, and _dd_ = day. 
     
--  _nnnn_ is an instance number that starts at the value of 1 for each day. 
+- _nnnn_ is an instance number that starts at the value of 1 for each day. 
     
 Information is written to the log file until the file reaches its maximum size. Then, a new log file that has an incremented instance number is opened (the first log file is -1, the next is -2, and so on). Circular logging deletes the oldest log files when either of the following conditions are true:
   
@@ -65,13 +65,13 @@ Information is written to the log file until the file reaches its maximum size. 
     
 The connectivity log files are text files that contain data in the comma-separated value file (CSV) format. Each connectivity log file has a header that contains the following information:
   
-- **#Software**: The value is  `Microsoft Exchange Server`.
+- **#Software**: The value is `Microsoft Exchange Server`.
     
-- **#Version**: The value is  `15.0.0.0`.
+- **#Version**: The value is `15.0.0.0`.
     
-- **#Log-Type**: The value is  `Transport Connectivity Log`.
+- **#Log-Type**: The value is `Transport Connectivity Log`.
     
-- **#Date**: The UTC date-time when the log file was created. The UTC date-time is represented in the ISO 8601 date-time format:  _yyyy-mm-dd_T _hh:mm:ss.fff_Z, where  _yyyy_ = year,  _mm_ = month,  _dd_ = day, T indicates the beginning of the time component,  _hh_ = hour,  _mm_ = minute,  _ss_ = second,  _fff_ = fractions of a second, and Z signifies Zulu, which is another way to denote UTC. 
+- **#Date**: The UTC date-time when the log file was created. The UTC date-time is represented in the ISO 8601 date-time format: _yyyy-mm-dd_T _hh:mm:ss.fff_Z, where _yyyy_ = year, _mm_ = month, _dd_ = day, T indicates the beginning of the time component, _hh_ = hour, _mm_ = minute, _ss_ = second, _fff_ = fractions of a second, and Z signifies Zulu, which is another way to denote UTC. 
     
 - **#Fields**: Comma delimited field names that are used in the connectivity log files. These values are described in the next section.
     
@@ -82,11 +82,11 @@ Connectivity logging stores each outbound connection event on a single line in t
   
 |**Field name**|**Description**|
 |:-----|:-----|
-|**date-time** <br/> |UTC date-time of the connection event. The UTC date-time is represented in the ISO 8601 date-time format:  _yyyy-mm-dd_T _hh:mm:ss.fff_Z, where  _yyyy_ = year,  _mm_ = month,  _dd_ = day, T indicates the beginning of the time component,  _hh_ = hour,  _mm_ = minute,  _ss_ = second,  _fff_ = fractions of a second, and Z signifies Zulu, which is another way to denote UTC.  <br/> |
+|**date-time** <br/> |UTC date-time of the connection event. The UTC date-time is represented in the ISO 8601 date-time format: _yyyy-mm-dd_T _hh:mm:ss.fff_Z, where _yyyy_ = year, _mm_ = month, _dd_ = day, T indicates the beginning of the time component, _hh_ = hour, _mm_ = minute, _ss_ = second, _fff_ = fractions of a second, and Z signifies Zulu, which is another way to denote UTC.  <br/> |
 |**session** <br/> |A GUID value. The value is the same for every event that's associated with the session, but different for each session.  <br/> |
 |**source** <br/> |One of these values:  <br/> **SMTP** for SMTP connections.  <br/> **MapiDelivery** for connections from the local mailbox database by the Mailbox Transport Delivery service.  <br/> **MapiSubmission** for connections from the local mailbox database by the Mailbox Transport Submission service.  <br/> |
-|**destination** <br/> |These are some examples of values you'll see here:  <br/> **In the Transport service**:  <br/> • The FQDN of the destination messaging server  <br/> •  `shadowredundancy` (on Mailbox servers only)  <br/> **In the Front End Transport service**:  <br/> •  `internalproxy` <br/> •  `client proxy` <br/> **In the Mailbox Transport Delivery service**: The GUID of the destination mailbox database.  <br/> **In the Mailbox Transport Submission service**:  <br/> • The GUID of the destination mailbox database.  <br/> •  `mailboxtransportsubmissioninternalproxy` <br/> |
-|**direction** <br/> |Single character that represents the start, middle, or end of the connection. The values you'll see here are:  <br/>  `+`: Connect  <br/>  `-`: Disconnect  <br/>  `>`: Send  <br/> |
+|**destination** <br/> |These are some examples of values you'll see here:  <br/> **In the Transport service**:  <br/> • The FQDN of the destination messaging server  <br/> • `shadowredundancy` (on Mailbox servers only)  <br/> **In the Front End Transport service**:  <br/> • `internalproxy` <br/> • `client proxy` <br/> **In the Mailbox Transport Delivery service**: The GUID of the destination mailbox database.  <br/> **In the Mailbox Transport Submission service**:  <br/> • The GUID of the destination mailbox database.  <br/> • `mailboxtransportsubmissioninternalproxy` <br/> |
+|**direction** <br/> |Single character that represents the start, middle, or end of the connection. The values you'll see here are:  <br/> `+`: Connect  <br/> `-`: Disconnect  <br/> `>`: Send  <br/> |
 |**description** <br/> |Text information that's associated with the connection event. For example:  <br/> Number and size of messages that were transmitted.  <br/> DNS MX resource record resolution information for destination domains.  <br/> DNS resolution information for destination Mailbox servers.  <br/> Connection establishment messages.  <br/> Connection failure messages.  <br/> |
    
 The transport services connect to and transmit messages to multiple destinations simultaneously. Entries in the log file from different connection events are interlaced (they typically aren't grouped together as one uninterrupted series of connection events). However you can use the fields (in particular, the unique **session** field value for a connection) to organize and arrange the log entries for each separate connection from start to finish. 

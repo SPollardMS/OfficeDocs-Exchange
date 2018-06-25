@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 82c310f8-de2f-46f2-8e1a-edb6055d6e69
 description: "Summary: Learn how administrators can use the Exchange Management Shell to clean up or delete items from the Recoverable Items folder in Exchange 2016."
@@ -16,7 +16,7 @@ description: "Summary: Learn how administrators can use the Exchange Management 
 
  **Summary**: Learn how administrators can use the Exchange Management Shell to clean up or delete items from the Recoverable Items folder in Exchange 2016.
   
-The Recoverable Items folder (known in earlier versions of Exchange as  *the dumpster*  ) exists to protect from accidental or malicious deletions and to facilitate discovery efforts commonly undertaken before or during litigation or investigations. 
+The Recoverable Items folder (known in earlier versions of Exchange as *the dumpster* ) exists to protect from accidental or malicious deletions and to facilitate discovery efforts commonly undertaken before or during litigation or investigations. 
   
 How you clean up a user's Recoverable Items folder depends on whether the mailbox is placed on In-Place Hold or Litigation Hold, or had single item recovery enabled:
   
@@ -47,7 +47,7 @@ Search-Mailbox -Identity "Gurinder Singh" -SearchDumpsterOnly -TargetMailbox "Di
 ```
 
 > [!NOTE]
-> To delete items from the mailbox without copying them to another mailbox, use the preceding command without the  _TargetMailbox_ and  _TargetFolder_ parameters. 
+> To delete items from the mailbox without copying them to another mailbox, use the preceding command without the _TargetMailbox_ and _TargetFolder_ parameters. 
   
 For detailed syntax and parameter information, see [Search-Mailbox](http://technet.microsoft.com/library/9ee3b02c-d343-4816-a583-a90b1fad4b26.aspx).
   
@@ -63,22 +63,22 @@ This procedure copies items from Gurinder Singh's Recoverable Items folder to th
   
 1. Retrieve the following quota settings. Be sure to note the values so you can revert to these settings after cleaning up the Recoverable Items folder:
     
-  -  _RecoverableItemsQuota_
+  - _RecoverableItemsQuota_
     
-  -  _RecoverableItemsWarningQuota_
+  - _RecoverableItemsWarningQuota_
     
-  -  _ProhibitSendQuota_
+  - _ProhibitSendQuota_
     
-  -  _ProhibitSendReceiveQuota_
+  - _ProhibitSendReceiveQuota_
     
-  -  _UseDatabaseQuotaDefaults_
+  - _UseDatabaseQuotaDefaults_
     
-  -  _RetainDeletedItemsFor_
+  - _RetainDeletedItemsFor_
     
-  -  _UseDatabaseRetentionDefaults_
+  - _UseDatabaseRetentionDefaults_
     
     > [!NOTE]
-    > If the  _UseDatabaseQuotaDefaults_ parameter is set to  `$true`, the previous quota settings aren't applied. The corresponding quota settings configured on the mailbox database are applied, even if individual mailbox settings are populated. 
+    > If the _UseDatabaseQuotaDefaults_ parameter is set to `$true`, the previous quota settings aren't applied. The corresponding quota settings configured on the mailbox database are applied, even if individual mailbox settings are populated. 
   
   ```
   Get-Mailbox "Gurinder Singh" | Format-List RecoverableItemsQuota, RecoverableItemsWarningQuota, ProhibitSendQuota, ProhibitSendReceiveQuota, UseDatabaseQuotaDefaults, RetainDeletedItemsFor, UseDatabaseRetentionDefaults
@@ -138,7 +138,7 @@ This procedure copies items from Gurinder Singh's Recoverable Items folder to th
   Search-Mailbox -Identity "Gurinder Singh" -SearchDumpsterOnly -TargetMailbox "Discovery Search Mailbox" -TargetFolder "GurinderSingh-RecoverableItems" -DeleteContent
   ```
 
-    If you need to delete only messages that match specified conditions, use the  _SearchQuery_ parameter to specify the conditions. This example deletes messages that have the string "Your bank statement" in the **Subject** field. 
+    If you need to delete only messages that match specified conditions, use the _SearchQuery_ parameter to specify the conditions. This example deletes messages that have the string "Your bank statement" in the **Subject** field. 
     
   ```
   Search-Mailbox -Identity "Gurinder Singh" -SearchQuery "Subject:'Your bank statement'" -SearchDumpsterOnly -TargetMailbox "Discovery Search Mailbox" -TargetFolder "GurinderSingh-RecoverableItems" -DeleteContent
@@ -158,21 +158,21 @@ This procedure copies items from Gurinder Singh's Recoverable Items folder to th
   
 11. Revert the following quotas to the values noted in Step 1:
     
-  -  _RecoverableItemsQuota_
+  - _RecoverableItemsQuota_
     
-  -  _RecoverableItemsWarningQuota_
+  - _RecoverableItemsWarningQuota_
     
-  -  _ProhibitSendQuota_
+  - _ProhibitSendQuota_
     
-  -  _ProhibitSendReceiveQuota_
+  - _ProhibitSendReceiveQuota_
     
-  -  _UseDatabaseQuotaDefaults_
+  - _UseDatabaseQuotaDefaults_
     
-  -  _RetainDeletedItemsFor_
+  - _RetainDeletedItemsFor_
     
-  -  _UseDatabaseRetentionDefaults_
+  - _UseDatabaseRetentionDefaults_
     
-    In this example, the mailbox is removed from retention hold, the deleted item retention period is reset to the default value of 14 days, and the Recoverable Items quota is configured to use the same value as the mailbox database. If the values you noted in Step 1 are different, you must use the preceding parameters to specify each value and set the  _UseDatabaseQuotaDefaults_ parameter to  `$false`. If the  _RetainDeletedItemsFor_ _and UseDatabaseRetentionDefaults_ parameters were previously set to a different value, you must also revert them to the values noted in Step 1. 
+    In this example, the mailbox is removed from retention hold, the deleted item retention period is reset to the default value of 14 days, and the Recoverable Items quota is configured to use the same value as the mailbox database. If the values you noted in Step 1 are different, you must use the preceding parameters to specify each value and set the _UseDatabaseQuotaDefaults_ parameter to `$false`. If the _RetainDeletedItemsFor_ _and UseDatabaseRetentionDefaults_ parameters were previously set to a different value, you must also revert them to the values noted in Step 1. 
     
   ```
   Set-Mailbox "Gurinder Singh" -RetentionHoldEnabled $false -RetainDeletedItemsFor 14 -RecoverableItemsQuota unlimited -UseDatabaseQuotaDefaults $true

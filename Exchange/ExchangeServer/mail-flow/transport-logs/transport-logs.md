@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: f8cf635d-60c2-4aa3-9c06-244c29942cba
 description: "Summary: Learn about transport logging in Exchange 2016 and the kinds of logs and information that is logged."
@@ -36,11 +36,11 @@ Agent logging records the actions that are performed on messages by specific ant
   
 - **Mailbox servers**:
     
-  - **Front End Transport service**:  `%ExchangeInstallPath%TransportRoles\Logs\FrontEnd\AgentLog`
+  - **Front End Transport service**: `%ExchangeInstallPath%TransportRoles\Logs\FrontEnd\AgentLog`
     
-  - **Transport service**:  `%ExchangeInstallPath%TransportRoles\Logs\Hub\AgentLog`
+  - **Transport service**: `%ExchangeInstallPath%TransportRoles\Logs\Hub\AgentLog`
     
-- **Transport service on Edge Transport servers**:  `%ExchangeInstallPath%TransportRoles\Logs\Edge\AgentLog`
+- **Transport service on Edge Transport servers**: `%ExchangeInstallPath%TransportRoles\Logs\Edge\AgentLog`
     
 ## Connectivity logging
 
@@ -56,15 +56,15 @@ Connectivity logging records outbound message transmission activity by the trans
   
 - **Mailbox servers**:
     
-  - **Front End Transport service**:  `%ExchangeInstallPath%TransportRoles\Logs\FrontEnd\Connectivity`
+  - **Front End Transport service**: `%ExchangeInstallPath%TransportRoles\Logs\FrontEnd\Connectivity`
     
-  - **Transport service**:  `%ExchangeInstallPath%TransportRoles\Logs\Hub\Connectivity`
+  - **Transport service**: `%ExchangeInstallPath%TransportRoles\Logs\Hub\Connectivity`
     
-  - **Mailbox Transport Delivery service**:  `%ExchangeInstallPath%TransportRoles\Logs\Mailbox\Connectivity\Delivery`
+  - **Mailbox Transport Delivery service**: `%ExchangeInstallPath%TransportRoles\Logs\Mailbox\Connectivity\Delivery`
     
   - **Mailbox Transport Submission service**:
     
-- **Transport service on Edge Transport servers**:  `%ExchangeInstallPath%TransportRoles\Logs\Edge\Connectivity`
+- **Transport service on Edge Transport servers**: `%ExchangeInstallPath%TransportRoles\Logs\Edge\Connectivity`
     
 ## Message tracking and delivery reports for administrators
 
@@ -86,15 +86,15 @@ Delivery reports for administrators is a targeted search of the message tracking
   
  **Default location of log files**:
   
-- **Mailbox servers**:  `%ExchangeInstallPath%TransportRoles\Logs\MessageTracking`:
+- **Mailbox servers**: `%ExchangeInstallPath%TransportRoles\Logs\MessageTracking`:
     
-  -  `MSGTRK` files for the Transport service. 
+  - `MSGTRK` files for the Transport service. 
     
-  -  `MSGTRMD` files for the Mailbox Transport Delivery service. 
+  - `MSGTRMD` files for the Mailbox Transport Delivery service. 
     
-  -  `MSGTRMS` files for the Mailbox Transport Submission service. 
+  - `MSGTRMS` files for the Mailbox Transport Submission service. 
     
-- **Transport service on Edge Transport servers**:  `%ExchangeInstallPath%TransportRoles\Logs\MessageTracking`
+- **Transport service on Edge Transport servers**: `%ExchangeInstallPath%TransportRoles\Logs\MessageTracking`
     
 ## Pipeline tracing
 
@@ -110,11 +110,11 @@ Pipeline tracing records snapshots of messages before and after the message is a
   
 - **Mailbox servers**:
     
-  - **Transport service**:  `%ExchangeInstallPath%TransportRoles\Logs\Hub\PipelineTracing`
+  - **Transport service**: `%ExchangeInstallPath%TransportRoles\Logs\Hub\PipelineTracing`
     
-  - **Mailbox Transport service**:  `%ExchangeInstallPath%TransportRoles\Logs\Mailbox\PipelineTracing`
+  - **Mailbox Transport service**: `%ExchangeInstallPath%TransportRoles\Logs\Mailbox\PipelineTracing`
     
-- **Transport service on Edge Transport servers**:  `%ExchangeInstallPath%TransportRoles\Logs\Edge\PipelineTracking`
+- **Transport service on Edge Transport servers**: `%ExchangeInstallPath%TransportRoles\Logs\Edge\PipelineTracking`
     
 ## Protocol logging
 
@@ -126,7 +126,7 @@ Protocol logging records the SMTP conversations that occur on Send connectors an
     
  **Enabled by default?**: Only on these connectors:
   
-- The default Receive connector named Default Frontend  _\<ServerName\>_ in the Front End Transport service on Mailbox servers. 
+- The default Receive connector named Default Frontend _\<ServerName\>_ in the Front End Transport service on Mailbox servers. 
     
 - The implicit and invisible Send connector in the Front End Transport service on Mailbox servers.
     
@@ -138,29 +138,29 @@ For more information about these connectors, see [Default Receive connectors cre
     
   - **Front End Transport service**:
     
-  - **Receive connectors**:  `%ExchangeInstallPath%TransportRoles\Logs\FrontEnd\ProtocolLog\SmtpReceive`
+  - **Receive connectors**: `%ExchangeInstallPath%TransportRoles\Logs\FrontEnd\ProtocolLog\SmtpReceive`
     
-  - **Send connectors**:  `%ExchangeInstallPath%TransportRoles\Logs\FrontEnd\ProtocolLog\SmtpSend`
+  - **Send connectors**: `%ExchangeInstallPath%TransportRoles\Logs\FrontEnd\ProtocolLog\SmtpSend`
     
   - **Transport service**:
     
-  - **Receive connectors**:  `%ExchangeInstallPath%TransportRoles\Logs\Hub\ProtocolLog\SmtpReceive`
+  - **Receive connectors**: `%ExchangeInstallPath%TransportRoles\Logs\Hub\ProtocolLog\SmtpReceive`
     
-  - **Send connectors**:  `%ExchangeInstallPath%TransportRoles\Logs\Hub\ProtocolLog\SmtpSend`
+  - **Send connectors**: `%ExchangeInstallPath%TransportRoles\Logs\Hub\ProtocolLog\SmtpSend`
     
-  - **Mailbox Transport Delivery service (Receive Connectors)**:  `%ExchangeInstallPath%TransportRoles\Logs\Mailbox\ProtocolLog\SmtpReceive\Delivery`
+  - **Mailbox Transport Delivery service (Receive Connectors)**: `%ExchangeInstallPath%TransportRoles\Logs\Mailbox\ProtocolLog\SmtpReceive\Delivery`
     
   - **Mailbox Transport Submission service**:
     
-  - **Send connectors**:  `%ExchangeInstallPath%TransportRoles\Logs\Mailbox\ProtocolLog\SmtpSend\Submission`
+  - **Send connectors**: `%ExchangeInstallPath%TransportRoles\Logs\Mailbox\ProtocolLog\SmtpSend\Submission`
     
-  - **Side effect messages**:  `%ExchangeInstallPath%TransportRoles\Logs\Mailbox\ProtocolLog\SmtpSend\Delivery`
+  - **Side effect messages**: `%ExchangeInstallPath%TransportRoles\Logs\Mailbox\ProtocolLog\SmtpSend\Delivery`
     
 - **Transport service on Edge Transport servers**:
     
-  - **Receive connectors**:  `%ExchangeInstallPath%TransportRoles\Logs\Edge\ProtocolLog\SmtpReceive`
+  - **Receive connectors**: `%ExchangeInstallPath%TransportRoles\Logs\Edge\ProtocolLog\SmtpReceive`
     
-  - **Send connectors**:  `%ExchangeInstallPath%TransportRoles\Logs\Edge\ProtocolLog\SmtpSend`
+  - **Send connectors**: `%ExchangeInstallPath%TransportRoles\Logs\Edge\ProtocolLog\SmtpSend`
     
 ## Routing table logging
 
@@ -178,16 +178,16 @@ Routing table logging periodically records snapshots of the routing table that E
   
 - **Mailbox servers**:
     
-  - **Front End Transport service**:  `%ExchangeInstallPath%TransportRoles\Logs\FrontEnd\Routing`
+  - **Front End Transport service**: `%ExchangeInstallPath%TransportRoles\Logs\FrontEnd\Routing`
     
-  - **Transport service**:  `%ExchangeInstallPath%TransportRoles\Logs\Hub\Routing`
+  - **Transport service**: `%ExchangeInstallPath%TransportRoles\Logs\Hub\Routing`
     
-  - **Mailbox Transport service:**:  `%ExchangeInstallPath%TransportRoles\Logs\Mailbox\Routing`:
+  - **Mailbox Transport service:**: `%ExchangeInstallPath%TransportRoles\Logs\Mailbox\Routing`:
     
-  -  `MDRoutingConfig` files for the Mailbox Transport Delivery service. 
+  - `MDRoutingConfig` files for the Mailbox Transport Delivery service. 
     
-  -  `MSRoutingConfig` files for the Mailbox Transport Submission service. 
+  - `MSRoutingConfig` files for the Mailbox Transport Submission service. 
     
-- **Transport service on Edge Transport servers**:  `%ExchangeInstallPath%TransportRoles\Logs\Edge\Routing`
+- **Transport service on Edge Transport servers**: `%ExchangeInstallPath%TransportRoles\Logs\Edge\Routing`
     
 

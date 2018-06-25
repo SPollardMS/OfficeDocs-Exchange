@@ -6,8 +6,8 @@ manager: serdars
 ms.date: 6/19/2018
 ms.audience: ITPro
 ms.topic: conceptual
-ms.prod: office-online-server
-localization_priority: Normal
+ms.prod: exchange-server-itpro
+localization_priority: Critical
 ms.collection: Strat_EX_Admin
 ms.assetid: e21cf744-7813-48b3-9293-5cecd89a6c25
 description: "Summary: Windows operating system prerequisites for Exchange 2016 and Exchange management tools."

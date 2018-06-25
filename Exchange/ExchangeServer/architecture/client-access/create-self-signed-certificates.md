@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.collection: Strat_EX_Admin
 ms.assetid: ae826efe-7558-4007-b255-7dfe5933bbbf
@@ -102,9 +102,9 @@ New-ExchangeCertificate [-FriendlyName <DescriptiveName>] [-SubjectName [C=<Coun
 
 This example creates a self-signed certificate on the local Exchange server with the following properties:
   
-- **Subject**:  _\<ServerName\>_. For example, if you run the command on the server named Mailbox01, the value is  `Mailbox01`.
+- **Subject**: _\<ServerName\>_. For example, if you run the command on the server named Mailbox01, the value is `Mailbox01`.
     
-- **Subject alternative names**:  _\<ServerName\>_, \<Server FQDN\>. For example,  `Mailbox01, Mailbox01.contoso.com`.
+- **Subject alternative names**: _\<ServerName\>_, \<Server FQDN\>. For example, `Mailbox01, Mailbox01.contoso.com`.
     
 - **Friendly name**: Microsoft Exchange
     
@@ -116,7 +116,7 @@ New-ExchangeCertificate
 
 This example creates a creates a self-signed certificate on the local Exchange server with the following properties:
   
-- **Subject**: Exchange01, which requires the value  `CN=Exchange01`. Note that this value is automatically included in the  _DomainName_ parameter (the **Subject Alternative Name** field). 
+- **Subject**: Exchange01, which requires the value `CN=Exchange01`. Note that this value is automatically included in the _DomainName_ parameter (the **Subject Alternative Name** field). 
     
 - Additional subject alternative names:
     
@@ -140,9 +140,9 @@ New-ExchangeCertificate -FriendlyName "Contoso Exchange Certificate" -SubjectNam
 
  **Notes:**
   
-- The only required part of the X.500  _SubjectName_ parameter value (the certificate's **Subject** field) is  `CN=<HostNameOrFQDN>`.
+- The only required part of the X.500 _SubjectName_ parameter value (the certificate's **Subject** field) is `CN=<HostNameOrFQDN>`.
     
--  Some  _Services_ parameter values generate warning or confirmation messages. For more information, see [Assign certificates to Exchange 2016 services](assign-certificates-to-services.md).
+-  Some _Services_ parameter values generate warning or confirmation messages. For more information, see [Assign certificates to Exchange 2016 services](assign-certificates-to-services.md).
     
 - For more information, see [New-ExchangeCertificate](http://technet.microsoft.com/library/5e0b61b0-ece6-4d9b-949a-f6a032dd0fb9.aspx).
     

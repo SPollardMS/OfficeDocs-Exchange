@@ -4,9 +4,9 @@ ms.author: chrisda
 author: chrisda
 manager: serdars
 ms.date: 6/8/2018
-ms.audience: End User
+ms.audience: ITPro
 ms.topic: overview
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: c1839a5b-49f9-4c53-b247-f4e5d78efc45
 description: "Summary: Learn about the three types of accepted domains in Exchange 2016: authoritative, internal relay, and external relay."
@@ -16,7 +16,7 @@ description: "Summary: Learn about the three types of accepted domains in Exchan
 
  **Summary**: Learn about the three types of accepted domains in Exchange 2016: authoritative, internal relay, and external relay.
   
- *Accepted domains*  are the SMTP name spaces (also known as address spaces) that you configure in an Exchange Server 2016 organization to receive email messages. For example, if your company registered the domain contoso.com, and you configured a mail exchanger (MX) record in your Internet DNS for contoso.com, you need to configure contoso.com as an accepted domain in your Exchange organization to accept messages that are addressed to @contoso.com recipients. 
+ *Accepted domains* are the SMTP name spaces (also known as address spaces) that you configure in an Exchange Server 2016 organization to receive email messages. For example, if your company registered the domain contoso.com, and you configured a mail exchanger (MX) record in your Internet DNS for contoso.com, you need to configure contoso.com as an accepted domain in your Exchange organization to accept messages that are addressed to @contoso.com recipients. 
   
 Accepted domains in Exchange 2016 are basically unchanged from Exchange Server 2010, and consist of the following types:
   
@@ -59,7 +59,7 @@ You configure a relay domain as an internal relay domain or as an external relay
     
   - The Send connector that you configure for non-existent recipients in the internal relay domain is sourced on an internal Mailbox server.
     
-    **Note**: By default, you can't configure a Send connector for an internal relay domain on a subscribed Edge Transport server. Messages sent to recipients in the internal relay domain are automatically forwarded to internal Mailbox servers in the subscribed Active Directory site by using the default "EdgeSync - Inbound to  *\<Active Directory site name\>*  " Send connector. This Send connector is automatically configured to route mail for all authoritative domains and internal relay domains (the address space value is  `--`). For more information, see [Send connectors created automatically by the Edge Subscription](../../architecture/edge-transport-servers/edge-subscriptions.md#SendConnectors).
+    **Note**: By default, you can't configure a Send connector for an internal relay domain on a subscribed Edge Transport server. Messages sent to recipients in the internal relay domain are automatically forwarded to internal Mailbox servers in the subscribed Active Directory site by using the default "EdgeSync - Inbound to *\<Active Directory site name\>* " Send connector. This Send connector is automatically configured to route mail for all authoritative domains and internal relay domains (the address space value is `--`). For more information, see [Send connectors created automatically by the Edge Subscription](../../architecture/edge-transport-servers/edge-subscriptions.md#SendConnectors).
     
   - You can use internal relay domains in email address policies.
     
@@ -79,28 +79,28 @@ Email address policies assign email addresses to recipients. You need to add an 
 ## Recipient Lookup in accepted domains
 <a name="RecipientLookup"> </a>
 
-Recipient filtering on a subscribed Edge Transport server can block messages that are addressed to non-existent recipients in your Exchange organization. This feature is known as  *Recipient Lookup*  . For more information about recipient filtering, see [Recipient filtering on Edge Transport servers](../../antispam-and-antimalware/antispam-protection/recipient-filtering.md).
+Recipient filtering on a subscribed Edge Transport server can block messages that are addressed to non-existent recipients in your Exchange organization. This feature is known as *Recipient Lookup* . For more information about recipient filtering, see [Recipient filtering on Edge Transport servers](../../antispam-and-antimalware/antispam-protection/recipient-filtering.md).
   
-You can enable or disable Recipient Lookup for an accepted domain by using the  _AddressBookEnabled_ parameter on the **Set-AcceptedDomain** cmdlet. The default value for each accepted domain type is described in the following table: 
+You can enable or disable Recipient Lookup for an accepted domain by using the _AddressBookEnabled_ parameter on the **Set-AcceptedDomain** cmdlet. The default value for each accepted domain type is described in the following table: 
   
 ****
 
-|**Accepted domain type**|**Default Recipient Lookup ( _AddressBookEnabled_ parameter) value**|**Comments**|
+|**Accepted domain type**|**Default Recipient Lookup (_AddressBookEnabled_ parameter) value**|**Comments**|
 |:-----|:-----|:-----|
-|Authoritative domain  <br/> |Enabled ( `$true`)  <br/> |All recipients in an authoritative domain exist in the Exchange organization, so Recipient Lookup for the domain is enabled by default.  <br/> |
-|Internal relay domain  <br/> |Disabled ( `$false`)  <br/> |If all recipients in the internal relay domain exist in the Exchange organization (including mail contacts and mail users), you can enable Recipient Lookup for the domain.  <br/> If some or none of the recipients in the internal relay domain exist in the Exchange organization, you shouldn't enable Recipient Lookup for the domain.  <br/> |
-|External relay domain  <br/> |Disabled ( `$false`)  <br/> |No recipients in the authoritative domain exist in the Exchange organization, so you shouldn't enable Recipient Lookup for the domain.  <br/> |
+|Authoritative domain  <br/> |Enabled (`$true`)  <br/> |All recipients in an authoritative domain exist in the Exchange organization, so Recipient Lookup for the domain is enabled by default.  <br/> |
+|Internal relay domain  <br/> |Disabled (`$false`)  <br/> |If all recipients in the internal relay domain exist in the Exchange organization (including mail contacts and mail users), you can enable Recipient Lookup for the domain.  <br/> If some or none of the recipients in the internal relay domain exist in the Exchange organization, you shouldn't enable Recipient Lookup for the domain.  <br/> |
+|External relay domain  <br/> |Disabled (`$false`)  <br/> |No recipients in the authoritative domain exist in the Exchange organization, so you shouldn't enable Recipient Lookup for the domain.  <br/> |
    
 For configuration instructions, see [Modify accepted domains](accepted-domain-procedures.md#ModifyAcceptedDomain).
   
 ## Default domain
 <a name="DefaultDomain"> </a>
 
-Because the forest root FQDN is automatically configured as the first accepted domain in your organization, that accepted domain is also configured as the  *default domain*  . However, after you add additional accepted domains, you can configure one of them as the default domain. Here's some information about the default domain: 
+Because the forest root FQDN is automatically configured as the first accepted domain in your organization, that accepted domain is also configured as the *default domain* . However, after you add additional accepted domains, you can configure one of them as the default domain. Here's some information about the default domain: 
   
 - You can't delete the default domain. You need to configure another accepted domain as the default domain (one accepted domain is always configured as the default domain).
     
-- The default domain is used in the external postmaster address:  `postmaster@<default domain>`.
+- The default domain is used in the external postmaster address: `postmaster@<default domain>`.
     
 - The default domain is used in encapsulated non-SMTP email addresses (Internet Mail Connector Encapsulated Address or IMCEA encapsulation).
     

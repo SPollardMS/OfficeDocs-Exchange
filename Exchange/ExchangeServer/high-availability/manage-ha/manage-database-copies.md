@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/12/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 28cedf1d-365a-4e36-b2ba-6bf81af8684f
 description: "Summary: Learn about managing mailbox database copies in the Mailbox server in Exchange 2016."
@@ -31,17 +31,17 @@ For a variety of reasons, such as performing planned maintenance, you may need t
 ### Seeding a database copy
 <a name="Seed"> </a>
 
- *Seeding*  , also known as  *updating*  , is the process in which either a blank database or a copy of the production database, is added to the target copy location on another Mailbox server in the same DAG as the active database. This becomes the baseline database for the copy maintained by that server. 
+ *Seeding*, also known as *updating*, is the process in which either a blank database or a copy of the production database, is added to the target copy location on another Mailbox server in the same DAG as the active database. This becomes the baseline database for the copy maintained by that server. 
   
-Depending on the situation, you can seed a database by using an automatic process or a manual process that you initiate. When a database copy is added, the copy will be automatically seeded, provided that the target server and its storage are properly configured. If you want to manually seed a database copy and don't want automatic seeding to occur when creating the copy, you can use the  _SeedingPostponed_ parameter when running the [Add-MailboxDatabaseCopy](http://technet.microsoft.com/library/84198fa9-ac8e-44ea-bd7b-64fe1e83e709.aspx) cmdlet. 
+Depending on the situation, you can seed a database by using an automatic process or a manual process that you initiate. When a database copy is added, the copy will be automatically seeded, provided that the target server and its storage are properly configured. If you want to manually seed a database copy and don't want automatic seeding to occur when creating the copy, you can use the _SeedingPostponed_ parameter when running the [Add-MailboxDatabaseCopy](http://technet.microsoft.com/library/84198fa9-ac8e-44ea-bd7b-64fe1e83e709.aspx) cmdlet. 
   
 Database copies rarely need to be reseeded after the initial seeding. However, if reseeding is necessary, or if you want to manually seed a database copy instead of having the system automatically seed the copy, you have two options. You can reseed a database by using the Update Mailbox Database Copy wizard in the EAC or by using the [Update-MailboxDatabaseCopy](http://technet.microsoft.com/library/37ebb66a-382e-4fd9-81f8-795f776a87b1.aspx) cmdlet in the Exchange Management Shell. Before seeding a database copy, you must first suspend the mailbox database copy. For detailed steps about how to seed a database copy, see [Update a mailbox database copy](update-db-copies.md).
   
-After a manual seed operation has completed, replication for the seeded mailbox database copy is automatically resumed. If you don't want replication to automatically resume, you can use the  _ManualResume_ parameter when running the [Update-MailboxDatabaseCopy](http://technet.microsoft.com/library/37ebb66a-382e-4fd9-81f8-795f776a87b1.aspx) cmdlet. 
+After a manual seed operation has completed, replication for the seeded mailbox database copy is automatically resumed. If you don't want replication to automatically resume, you can use the _ManualResume_ parameter when running the [Update-MailboxDatabaseCopy](http://technet.microsoft.com/library/37ebb66a-382e-4fd9-81f8-795f776a87b1.aspx) cmdlet. 
   
 #### Choosing what to seed
 
-When you perform a seed operation, you can choose to seed the mailbox database copy, the content index catalog for the mailbox database copy, or both the database copy and the content index catalog copy. The default behavior of the Update Mailbox Database Copy wizard and the [Update-MailboxDatabaseCopy](http://technet.microsoft.com/library/37ebb66a-382e-4fd9-81f8-795f776a87b1.aspx) cmdlet is to seed both the mailbox database copy and the content index catalog copy. To seed just the mailbox database copy without seeding the content index catalog, use the  _DatabaseOnly_ parameter when running the [Update-MailboxDatabaseCopy](http://technet.microsoft.com/library/37ebb66a-382e-4fd9-81f8-795f776a87b1.aspx) cmdlet. To seed just the content index catalog copy, use the  _CatalogOnly_ parameter when running the [Update-MailboxDatabaseCopy](http://technet.microsoft.com/library/37ebb66a-382e-4fd9-81f8-795f776a87b1.aspx) cmdlet. 
+When you perform a seed operation, you can choose to seed the mailbox database copy, the content index catalog for the mailbox database copy, or both the database copy and the content index catalog copy. The default behavior of the Update Mailbox Database Copy wizard and the [Update-MailboxDatabaseCopy](http://technet.microsoft.com/library/37ebb66a-382e-4fd9-81f8-795f776a87b1.aspx) cmdlet is to seed both the mailbox database copy and the content index catalog copy. To seed just the mailbox database copy without seeding the content index catalog, use the _DatabaseOnly_ parameter when running the [Update-MailboxDatabaseCopy](http://technet.microsoft.com/library/37ebb66a-382e-4fd9-81f8-795f776a87b1.aspx) cmdlet. To seed just the content index catalog copy, use the _CatalogOnly_ parameter when running the [Update-MailboxDatabaseCopy](http://technet.microsoft.com/library/37ebb66a-382e-4fd9-81f8-795f776a87b1.aspx) cmdlet. 
   
 #### Selecting the seeding source
 
@@ -49,15 +49,15 @@ Any healthy database copy can be used as the seeding source for an additional co
   
 To use a specific copy as a source for seeding when adding a new database copy, you can do the following:
   
-- Use the  _SeedingPostponed_ parameter when running the [Add-MailboxDatabaseCopy](http://technet.microsoft.com/library/84198fa9-ac8e-44ea-bd7b-64fe1e83e709.aspx) cmdlet to add the database copy. If you don't use the  _SeedingPostponed_ parameter, the database copy will be explicitly seeded using the active copy of the database as the source. 
+- Use the _SeedingPostponed_ parameter when running the [Add-MailboxDatabaseCopy](http://technet.microsoft.com/library/84198fa9-ac8e-44ea-bd7b-64fe1e83e709.aspx) cmdlet to add the database copy. If you don't use the _SeedingPostponed_ parameter, the database copy will be explicitly seeded using the active copy of the database as the source. 
     
-- You can specify the source server you want to use as part of the Update Mailbox Database Copy wizard in the EAC, or you can use the  _SourceServer_ parameter when running the [Update-MailboxDatabaseCopy](http://technet.microsoft.com/library/37ebb66a-382e-4fd9-81f8-795f776a87b1.aspx) cmdlet to specify the desired source server for seeding. In the preceding example, you would specify MBX3 as the source server. If the you don' t use  _SourceServer_ parameter, the database copy will be explicitly seeded from the active copy of the database. 
+- You can specify the source server you want to use as part of the Update Mailbox Database Copy wizard in the EAC, or you can use the _SourceServer_ parameter when running the [Update-MailboxDatabaseCopy](http://technet.microsoft.com/library/37ebb66a-382e-4fd9-81f8-795f776a87b1.aspx) cmdlet to specify the desired source server for seeding. In the preceding example, you would specify MBX3 as the source server. If the you don' t use _SourceServer_ parameter, the database copy will be explicitly seeded from the active copy of the database. 
     
 #### Seeding and networks
 
 In addition to selecting a specific source server for seeding a mailbox database copy, you can also use the Exchange Management Shell to specify which DAG networks to use. You have the option to override the DAG network's compression and encryption settings during the seed operation.
   
- You can specify the networks you want to use for seeding by using the  _Network_ parameter when running the [Update-MailboxDatabaseCopy](http://technet.microsoft.com/library/37ebb66a-382e-4fd9-81f8-795f776a87b1.aspx) cmdlet and specify the DAG networks that you want to use. If you don't use the  _Network_ parameter, the system uses the following default behavior for selecting a network to use for the seeding operation: 
+ You can specify the networks you want to use for seeding by using the _Network_ parameter when running the [Update-MailboxDatabaseCopy](http://technet.microsoft.com/library/37ebb66a-382e-4fd9-81f8-795f776a87b1.aspx) cmdlet and specify the DAG networks that you want to use. If you don't use the _Network_ parameter, the system uses the following default behavior for selecting a network to use for the seeding operation: 
   
 - If the source server and target server are on the same subnet and a replication network has been configured that includes the subnet, the replication network will be used.
     
@@ -65,7 +65,7 @@ In addition to selecting a specific source server for seeding a mailbox database
     
 - If the source server and target server are in different datacenters, the client (MAPI) network will be used for seeding.
     
-At the DAG level, DAG networks are configured for encryption and compression. The default settings use encryption and compression only for communications on different subnets. If the source and target are on different subnets and the DAG is configured with the default values for  _NetworkCompression_ and  _NetworkEncryption_, you can override these values by using the  _NetworkCompressionOverride_ and  _NetworkEncryptionOverride_ parameters, respectively, when running the [Update-MailboxDatabaseCopy](http://technet.microsoft.com/library/37ebb66a-382e-4fd9-81f8-795f776a87b1.aspx) cmdlet. 
+At the DAG level, DAG networks are configured for encryption and compression. The default settings use encryption and compression only for communications on different subnets. If the source and target are on different subnets and the DAG is configured with the default values for _NetworkCompression_ and _NetworkEncryption_, you can override these values by using the _NetworkCompressionOverride_ and _NetworkEncryptionOverride_ parameters, respectively, when running the [Update-MailboxDatabaseCopy](http://technet.microsoft.com/library/37ebb66a-382e-4fd9-81f8-795f776a87b1.aspx) cmdlet. 
   
 #### Seeding process
 
@@ -97,7 +97,7 @@ When you begin a seeding process by using the [Add-MailboxDatabaseCopy](http://t
     
 13. The database data is moved from the source server's Microsoft Exchange Replication service to the target server's Microsoft Exchange Replication service.
     
-14. The Microsoft Exchange Replication service on the target server writes the database copy to a temporary directory located in the main database directory called  *temp-seeding*  . 
+14. The Microsoft Exchange Replication service on the target server writes the database copy to a temporary directory located in the main database directory called *temp-seeding* . 
     
 15. The streaming backup operation on the source server ends when the end of the database is reached.
     
@@ -117,7 +117,7 @@ When you begin a seeding process by using the [Add-MailboxDatabaseCopy](http://t
     
 23. If there are any existing catalog files on the target server in the directory, the Microsoft Exchange Replication service on the target server deletes them.
     
-24. The Microsoft Exchange Replication service on the target server writes the catalog data to a temporary directory called  *CiSeed.Temp*  until the data is completely transferred. 
+24. The Microsoft Exchange Replication service on the target server writes the catalog data to a temporary directory called *CiSeed.Temp* until the data is completely transferred. 
     
 25. The Microsoft Exchange Replication service moves the complete catalog data to the final location.
     
@@ -135,15 +135,15 @@ After a database copy is created, you can view and modify its configuration sett
 ### Using replay lag and truncation lag options
 <a name="Seed"> </a>
 
-Mailbox database copies support the use of a  *replay lag time*  and a  *truncation lag time*  , both of which are configured in minutes. Setting a replay lag time enables you to take a database copy back to a specific point in time. Setting a truncation lag time enables you to use the logs on a passive database copy to recover from the loss of log files on the active database copy. Because both of these features result in the temporary buildup of log files, using either of them will affect your storage design. 
+Mailbox database copies support the use of a *replay lag time* and a *truncation lag time*, both of which are configured in minutes. Setting a replay lag time enables you to take a database copy back to a specific point in time. Setting a truncation lag time enables you to use the logs on a passive database copy to recover from the loss of log files on the active database copy. Because both of these features result in the temporary buildup of log files, using either of them will affect your storage design. 
   
 #### Replay lag time
 
-Replay lag time is a mailbox database copy property that specifies the amount of time, in minutes, to delay log replay for the database copy. The replay lag timer starts when a log file has been replicated to the passive copy and has successfully passed inspection. By delaying the replay of logs to the database copy, you have the capability to recover the database to a specific point in time in the past. A mailbox database copy configured with a replay lag time greater than 0 is referred to as a  *lagged mailbox database copy*  , or simply, a  *lagged copy*  . 
+Replay lag time is a mailbox database copy property that specifies the amount of time, in minutes, to delay log replay for the database copy. The replay lag timer starts when a log file has been replicated to the passive copy and has successfully passed inspection. By delaying the replay of logs to the database copy, you have the capability to recover the database to a specific point in time in the past. A mailbox database copy configured with a replay lag time greater than 0 is referred to as a *lagged mailbox database copy*, or simply, a *lagged copy* . 
   
 A strategy that uses database copies and the litigation hold features in Exchange 2016 can provide protection against a range of failures that would ordinarily cause data loss. However, these features can't provide protection against data loss in the event of logical corruption, which although rare, can cause data loss. Lagged copies are designed to prevent loss of data in the case of logical corruption. Generally, there are two types of logical corruption:
   
-- **Database logical corruption**: The database pages checksum matches, but the data on the pages is wrong logically. This can occur when ESE attempts to write a database page and even though the operating system returns a success message, the data is either never written to the disk or it's written to the wrong place. This is referred to as a  *lost flush*  . To prevent lost flushes from losing data, ESE includes a lost flush detection mechanism in the database along with a page patching feature (single page restore). 
+- **Database logical corruption**: The database pages checksum matches, but the data on the pages is wrong logically. This can occur when ESE attempts to write a database page and even though the operating system returns a success message, the data is either never written to the disk or it's written to the wrong place. This is referred to as a *lost flush* . To prevent lost flushes from losing data, ESE includes a lost flush detection mechanism in the database along with a page patching feature (single page restore). 
     
 - **Store logical corruption**: Data is added, deleted, or manipulated in a way that the user doesn't expect. These cases are generally caused by third-party applications. It's generally only corruption in the sense that the user views it as corruption. The Exchange store considers the transaction that produced the logical corruption to be a series of valid MAPI operations. The litigation hold feature in Exchange 2016 provides protection from store logical corruption (because it prevents content from being permanently deleted by a user or application). However, there may be scenarios where a user mailbox becomes so corrupted that it would be easier to restore the database to a point in time prior to the corruption, and then export the user mailbox to retrieve uncorrupted data.
     
@@ -195,7 +195,7 @@ The following criteria must be met for truncation to occur for a lagged database
     
 In Exchange 2016, log truncation doesn't occur on an active mailbox database copy when one or more passive copies are suspended. If planned maintenance activities are going to take an extended period of time (for example, several days), you may have considerable log file buildup. To prevent the log drive from filling up with transaction logs, you can remove the affected passive database copy instead of suspending it. When the planned maintenance is completed, you can re-add the passive database copy.
   
- Exchange 2016 now has a feature called  *loose truncation*  that is disabled by default. During normal operations, each database copy keeps logs that need to be shipped to other database copies until all copies of a database confirm they have replayed (passive copies) or received (lagged copies) the log files. This is default log truncation behavior. If a database copy goes offline for some reason, the log files begin accumulating on the disks used by the other copies of the database. If the affected database copy remains offline for an extended period, this can cause the other database copies to run out of disk space. 
+ Exchange 2016 now has a feature called *loose truncation* that is disabled by default. During normal operations, each database copy keeps logs that need to be shipped to other database copies until all copies of a database confirm they have replayed (passive copies) or received (lagged copies) the log files. This is default log truncation behavior. If a database copy goes offline for some reason, the log files begin accumulating on the disks used by the other copies of the database. If the affected database copy remains offline for an extended period, this can cause the other database copies to run out of disk space. 
   
 Truncation behavior is different when loose truncation is enabled. Each database copy tracks its own free disk space and applies loose truncation behavior if free space gets low.
   
@@ -228,14 +228,14 @@ There are scenarios in which you may want to create a mailbox database copy and 
     
 - If you are performing maintenance or an upgrade of a server.
     
-In each of the preceding scenarios, you have database copies that you don't want the system to activate automatically. To prevent the system from automatically activating a mailbox database copy, you can configure the copy to be blocked (suspended) for activation. This allows the system to maintain the currency of the database through log shipping and replay, but prevents the system from automatically activating and using the copy. Copies blocked for activation must be manually activated by an administrator. You can configure the database activation policy for an entire server by using the [Set-MailboxServer](http://technet.microsoft.com/library/6a229126-b863-4f07-b024-a39c93b253f7.aspx) cmdlet or an individual database copy by using the [Set-MailboxDatabaseCopy](http://technet.microsoft.com/library/839f8781-2eb1-47bd-85ff-a31c8773998a.aspx) cmdlet to set the  _DatabaseCopyAutoActivationPolicy_ parameter to Blocked. 
+In each of the preceding scenarios, you have database copies that you don't want the system to activate automatically. To prevent the system from automatically activating a mailbox database copy, you can configure the copy to be blocked (suspended) for activation. This allows the system to maintain the currency of the database through log shipping and replay, but prevents the system from automatically activating and using the copy. Copies blocked for activation must be manually activated by an administrator. You can configure the database activation policy for an entire server by using the [Set-MailboxServer](http://technet.microsoft.com/library/6a229126-b863-4f07-b024-a39c93b253f7.aspx) cmdlet or an individual database copy by using the [Set-MailboxDatabaseCopy](http://technet.microsoft.com/library/839f8781-2eb1-47bd-85ff-a31c8773998a.aspx) cmdlet to set the _DatabaseCopyAutoActivationPolicy_ parameter to Blocked. 
   
 For more information about configuring database activation policy, see [Configure activation policy for a mailbox database copy](configure-activation-policies.md).
   
 ### Effect of mailbox moves on continuous replication
 <a name="Effect"> </a>
 
-On a very busy mailbox database with a high log generation rate, there is a greater chance for data loss if replication to the passive database copies can't keep up with log generation. One scenario that can introduce a high log generation rate is mailbox moves. Exchange 2016 includes a Data Guarantee API that's used by services such as the Exchange Mailbox Replication service (MRS) to check the health of the database copy architecture based on the value of the  _DataMoveReplicationConstraint_ parameter that was set by the system or an administrator. Specifically, the Data Guarantee API can be used to: 
+On a very busy mailbox database with a high log generation rate, there is a greater chance for data loss if replication to the passive database copies can't keep up with log generation. One scenario that can introduce a high log generation rate is mailbox moves. Exchange 2016 includes a Data Guarantee API that's used by services such as the Exchange Mailbox Replication service (MRS) to check the health of the database copy architecture based on the value of the _DataMoveReplicationConstraint_ parameter that was set by the system or an administrator. Specifically, the Data Guarantee API can be used to: 
   
 - **Check replication health**: Confirms that the prerequisite number of database copies is available.
     
@@ -249,17 +249,17 @@ When executed, the API returns the following status information to the calling a
     
 - **NotSatisfied**: Signifies that the database doesn't meet the required conditions. In addition, information is provided to the calling application as to why the **NotSatisfied** response was returned. 
     
-The value of the  _DataMoveReplicationConstraint_ parameter for the mailbox database determines how many database copies should be evaluated as part of the request. The  _DataMoveReplicationConstraint_ parameter has the following possible values: 
+The value of the _DataMoveReplicationConstraint_ parameter for the mailbox database determines how many database copies should be evaluated as part of the request. The _DataMoveReplicationConstraint_ parameter has the following possible values: 
   
--  `None`: When you create a mailbox database, this value is set by default. When this value is set, the Data Guarantee API conditions are ignored. This setting should be used only for mailbox databases that aren't replicated.
+- `None`: When you create a mailbox database, this value is set by default. When this value is set, the Data Guarantee API conditions are ignored. This setting should be used only for mailbox databases that aren't replicated.
     
--  `SecondCopy`: This is the default value when you add the second copy of a mailbox database. When this value is set, at least one passive database copy must meet the Data Guarantee API conditions.
+- `SecondCopy`: This is the default value when you add the second copy of a mailbox database. When this value is set, at least one passive database copy must meet the Data Guarantee API conditions.
     
--  `SecondDatacenter`: When this value is set, at least one passive database copy in another Active Directory site must meet the Data Guarantee API conditions.
+- `SecondDatacenter`: When this value is set, at least one passive database copy in another Active Directory site must meet the Data Guarantee API conditions.
     
--  `AllDatacenters`: When this value is set, at least one passive database copy in each Active Directory site must meet the Data Guarantee API conditions.
+- `AllDatacenters`: When this value is set, at least one passive database copy in each Active Directory site must meet the Data Guarantee API conditions.
     
--  `AllCopies`: When this value is set, all copies of the mailbox database must meet the Data Guarantee API conditions.
+- `AllCopies`: When this value is set, all copies of the mailbox database must meet the Data Guarantee API conditions.
     
  **Check Replication Health**
   
@@ -277,7 +277,7 @@ In all scenarios, the passive database copy must meet the following conditions:
     
 ****
 
-|**If the  _DataMoveReplicationConstraint_ parameter is set to…**|**Then, for a given database…**|
+|**If the _DataMoveReplicationConstraint_ parameter is set to…**|**Then, for a given database…**|
 |:-----|:-----|
 | `SecondCopy` <br/> |At least one passive database copy for a replicated database must meet the previously described conditions.  <br/> |
 | `SecondDatacenter` <br/> |At least one passive database copy in another Active Directory site must meet the previously described conditions.  <br/> |
@@ -286,9 +286,9 @@ In all scenarios, the passive database copy must meet the following conditions:
    
  **Check Replication Flush**
   
-The Data Guarantee API can also be used to validate that a prerequisite number of database copies have replayed the required transaction logs. This is verified by comparing the last log replayed timestamp with that of the calling service's commit timestamp (in most cases, this is the timestamp of the last log file that contains required data) plus an additional five seconds (to deal with system time clock skews or drift). If the replay timestamp is greater than the commit timestamp, the  _DataMoveReplicationConstraint_ parameter is satisfied. If the replay timestamp is less than the commit timestamp, the  _DataMoveReplicationConstraint_ isn't satisfied. 
+The Data Guarantee API can also be used to validate that a prerequisite number of database copies have replayed the required transaction logs. This is verified by comparing the last log replayed timestamp with that of the calling service's commit timestamp (in most cases, this is the timestamp of the last log file that contains required data) plus an additional five seconds (to deal with system time clock skews or drift). If the replay timestamp is greater than the commit timestamp, the _DataMoveReplicationConstraint_ parameter is satisfied. If the replay timestamp is less than the commit timestamp, the _DataMoveReplicationConstraint_ isn't satisfied. 
   
-Before moving large numbers of mailboxes to or from replication databases within a DAG, we recommend that you configure the  _DataMoveReplicationConstraint_ parameter on each mailbox database according to the following: 
+Before moving large numbers of mailboxes to or from replication databases within a DAG, we recommend that you configure the _DataMoveReplicationConstraint_ parameter on each mailbox database according to the following: 
   
 |**If you're deploying…**|**Set DataMoveReplicationConstraint to…**|
 |:-----|:-----|
@@ -400,15 +400,15 @@ You can quickly identify which Mailbox server is the current mailbox database ma
   
 There are several internal checks that will be performed before a passive copy is activated. In some cases, the database switchover is blocked or canceled. In other cases, you can use cmdlets to move or skip over some checks.
   
-- The status of the database copy is checked. If the database copy is in a failed state, the switchover is blocked. You can override this behavior and bypass the health check by using the  _SkipHealthChecks_ parameter of the **Move-ActiveMailboxDatabase** cmdlet. This parameter lets you move the active copy to a database copy in a failed state. 
+- The status of the database copy is checked. If the database copy is in a failed state, the switchover is blocked. You can override this behavior and bypass the health check by using the _SkipHealthChecks_ parameter of the **Move-ActiveMailboxDatabase** cmdlet. This parameter lets you move the active copy to a database copy in a failed state. 
     
-- The active database copy is checked to see if it's currently a seeding source for any passive copies of the database. If the active copy is currently being used as a source for seeding, the switchover is blocked. You can override this behavior and bypass the seeding source check by using the  _SkipActiveCopyChecks_ parameter of the **Move-ActiveMailboxDatabase** cmdlet. This parameter allows you to move an active copy that's being used as a seeding source. Using this parameter will cause the seeding operation to be cancelled and considered failed. 
+- The active database copy is checked to see if it's currently a seeding source for any passive copies of the database. If the active copy is currently being used as a source for seeding, the switchover is blocked. You can override this behavior and bypass the seeding source check by using the _SkipActiveCopyChecks_ parameter of the **Move-ActiveMailboxDatabase** cmdlet. This parameter allows you to move an active copy that's being used as a seeding source. Using this parameter will cause the seeding operation to be cancelled and considered failed. 
     
-- The copy queue and replay queue lengths for the database copy are checked to ensure their values are within the configured criteria. Also, the database copy is verified to ensure that it isn't currently in use as a source for seeding. If the values for the queue lengths are outside the configured criteria, or if the database is currently used as a source for seeding, the switchover is blocked. You can override this behavior and bypass these checks by using the  _SkipLagChecks_ parameter of the **Move-ActiveMailboxDatabase** cmdlet. This parameter allows a copy to be activated that has replay and copy queues outside of the configured criteria. 
+- The copy queue and replay queue lengths for the database copy are checked to ensure their values are within the configured criteria. Also, the database copy is verified to ensure that it isn't currently in use as a source for seeding. If the values for the queue lengths are outside the configured criteria, or if the database is currently used as a source for seeding, the switchover is blocked. You can override this behavior and bypass these checks by using the _SkipLagChecks_ parameter of the **Move-ActiveMailboxDatabase** cmdlet. This parameter allows a copy to be activated that has replay and copy queues outside of the configured criteria. 
     
-- The state of the search catalog (content index) for the database copy is checked. If the search catalog isn't up to date, is in an unhealthy state, or is corrupt, the switchover is blocked. You can override this behavior and bypass the search catalog check by using the  _SkipClientExperienceChecks_ parameter of the **Move-ActiveMailboxDatabase** cmdlet. This parameter causes this search to skip the catalog health check. If the search catalog for the database copy you're activating is in an unhealthy or unusable state and you use this parameter to skip the catalog health check and activate the database copy, you will need to either crawl or seed the search catalog again. 
+- The state of the search catalog (content index) for the database copy is checked. If the search catalog isn't up to date, is in an unhealthy state, or is corrupt, the switchover is blocked. You can override this behavior and bypass the search catalog check by using the _SkipClientExperienceChecks_ parameter of the **Move-ActiveMailboxDatabase** cmdlet. This parameter causes this search to skip the catalog health check. If the search catalog for the database copy you're activating is in an unhealthy or unusable state and you use this parameter to skip the catalog health check and activate the database copy, you will need to either crawl or seed the search catalog again. 
     
-When you perform a database switchover, you also have the option of overriding the mount dial settings configured for the server that hosts the passive database copy being activated. Using the  _MountDialOverride_ parameter of the **Move-ActiveMailboxDatabase** cmdlet instructs the target server to override its own mount dial settings and use those specified by the  _MountDialOverride_ parameter. 
+When you perform a database switchover, you also have the option of overriding the mount dial settings configured for the server that hosts the passive database copy being activated. Using the _MountDialOverride_ parameter of the **Move-ActiveMailboxDatabase** cmdlet instructs the target server to override its own mount dial settings and use those specified by the _MountDialOverride_ parameter. 
   
 For detailed steps about how to perform a switchover of a database copy, see [Activate a mailbox database copy](activate-db-copies.md).
   

@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.collection: Strat_EX_Admin
 ms.assetid: e1678327-bcd5-42d4-a363-67f33067fe9a
@@ -37,15 +37,15 @@ Message tracking records the message activity as mail flows through the transpor
     
 - The field names displayed in the results from the **Get-MessageTrackingLog** cmdlet are similar to the actual field names found in the message tracking log files. The biggest differences are: 
     
-  - Dashes are removed from the field names. For example, **internal-message-id** is displayed as  `InternalMessageId`.
+  - Dashes are removed from the field names. For example, **internal-message-id** is displayed as `InternalMessageId`.
     
-  - The **date-time** field is displayed as  `Timestamp`.
+  - The **date-time** field is displayed as `Timestamp`.
     
-  - The **recipient-address** field is displayed as  `Recipients`.
+  - The **recipient-address** field is displayed as `Recipients`.
     
-  - The **sender-address** field is displayed as  `Sender`.
+  - The **sender-address** field is displayed as `Sender`.
     
-- The **date-time** field in the message tracking log stores information in Coordinated Universal Time (UTC). However, you need to enter your date-time search criteria for the  _Start_ or  _End_ parameters in the regional date-time format of the computer that you are using to perform the search. 
+- The **date-time** field in the message tracking log stores information in Coordinated Universal Time (UTC). However, you need to enter your date-time search criteria for the _Start_ or _End_ parameters in the regional date-time format of the computer that you are using to perform the search. 
     
 - You can't copy the message tracking log files from another Exchange server and then search them by using the **Get-MessageTrackingLog** cmdlet. Also, if you manually save an existing message tracking log file, the change in the file's date-time stamp breaks the query logic that Exchange uses to search the message tracking logs. 
     
@@ -90,9 +90,9 @@ This example searches the message tracking logs using the following search crite
     
 - Display the results in the list format.
     
-- Display only those field names that begin with  `Send` or  `Recipient`.
+- Display only those field names that begin with `Send` or `Recipient`.
     
-- Write the output to a new file named  `D:\Send Search.txt`
+- Write the output to a new file named `D:\Send Search.txt`
     
 ```
 Get-MessageTrackingLog -EventId Send | Format-List Send*,Recipient* > "D:\Send Search.txt"
@@ -110,7 +110,7 @@ $Servers = Get-ExchangeServer;  $Servers | where {$_.isHubTransportServer -eq $t
 
 This example searches the message tracking logs on all Mailbox servers and Exchange 2010 Hub Transport server by using the following search criteria:
   
-- Find any entries related to a message that has a **MessageID:** value of  `<ba18339e-8151-4ff3-aeea-87ccf5fc9796@mailbox01.contoso.com>`. Note that you can omit the angle bracket characters ( `<` `>`). If you don't, you need to enclose the entire **MessageID:** value in quotation marks. 
+- Find any entries related to a message that has a **MessageID:** value of `<ba18339e-8151-4ff3-aeea-87ccf5fc9796@mailbox01.contoso.com>`. Note that you can omit the angle bracket characters (`<` `>`). If you don't, you need to enclose the entire **MessageID:** value in quotation marks. 
     
 - For each entry, display the fields **date-time**, **server-hostname**, **client-hostname**, **source**, **event-id**, and **recipient-address**. 
     

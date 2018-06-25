@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/12/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: df35765a-0bef-4561-9846-d91d69c0269c
 description: "Summary: Learn how to permanently delete a mailbox in Exchange 2016."
@@ -48,7 +48,7 @@ To learn more about disconnected mailboxes and perform other related management 
   
 ## Use the Exchange Management Shell to permanently delete an active mailbox
 
-If you don't include the  _Permanent_ parameter when you delete a mailbox, the deleted mailbox is retained in the mailbox database for 30 days (by default) before it's permanently deleted. 
+If you don't include the _Permanent_ parameter when you delete a mailbox, the deleted mailbox is retained in the mailbox database for 30 days (by default) before it's permanently deleted. 
   
 Run the following command to permanently delete an active mailbox and the associated Active Directory user account:
   
@@ -84,7 +84,7 @@ Run the following command to determine whether a disconnected mailbox is disable
 Get-MailboxDatabase | Get-MailboxStatistics | where { $_.DisplayName -eq "<display name>" } | Format-List DisplayName,MailboxGuid,Database,DisconnectReason
 ```
 
-The value for the  _DisconnectReason_ property will be either  `Disabled` or  `SoftDeleted`.
+The value for the _DisconnectReason_ property will be either `Disabled` or `SoftDeleted`.
   
 You can run the following command to display the type for all disconnected mailboxes in your organization:
   

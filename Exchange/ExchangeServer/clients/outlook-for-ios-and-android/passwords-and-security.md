@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: overview
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 82f23054-5433-41da-ac5b-90cd081aa993
 description: "Summary: This article describes how passwords and security work in Outlook for iOS and Android with Exchange Server when using Basic authentication with the Exchange ActiveSync protocol."
@@ -18,7 +18,7 @@ description: "Summary: This article describes how passwords and security work in
   
 ## Creating an account and protecting passwords
 
-The first time the Outlook app for iOS and Android is run in an Exchange on-premises environment, Outlook generates a random AES-128 key. This key is known as the  *device key*  and is stored only on the user's device. 
+The first time the Outlook app for iOS and Android is run in an Exchange on-premises environment, Outlook generates a random AES-128 key. This key is known as the *device key* and is stored only on the user's device. 
   
 When a user logs onto Exchange with Basic authentication, the username, password, and a unique AES-128 device key are sent from the user's device to the Outlook cloud service over a TLS connection, where the device key is held in runtime compute memory. After verifying the password with the Exchange server, the Outlook service uses the device key to encrypt the password, and the encrypted password is then stored in the service. The device key, meanwhile, is wiped from memory and never stored in the Outlook service (the key is only stored on the user's device).
   

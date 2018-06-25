@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: fdbed4fc-a77e-40d5-a211-863b05d74784
 description: "Summary: Learn about preparing mailboxes for cross-forest moves in Exchange 2016."
@@ -26,7 +26,7 @@ To prepare for the mailbox move, you have to create mail-enabled users with the 
     
     For more information, including how to download the sample code, see [Prepare Mailboxes for Cross-Forest Moves Using Sample Code](http://technet.microsoft.com/library/f35ac7a5-bb84-4653-b6d0-65906e93627b.aspx).
     
-- If you created the target mail user using an Active Directory tool other than ILM or Microsoft Identity Integration Server (MIIS), use the **Update-Recipient** cmdlet with the  _Identity_ parameter to run the Address List service to generate the **LegacyExchangeDN** for the target mail user. We have created a sample PowerShell script that reads from and writes to Active Directory and calls the **Update-Recipient** cmdlet. 
+- If you created the target mail user using an Active Directory tool other than ILM or Microsoft Identity Integration Server (MIIS), use the **Update-Recipient** cmdlet with the _Identity_ parameter to run the Address List service to generate the **LegacyExchangeDN** for the target mail user. We have created a sample PowerShell script that reads from and writes to Active Directory and calls the **Update-Recipient** cmdlet. 
     
     For more information about using the sample script, see [Prepare mailboxes for cross-forest moves using the Exchange Management Shell](prep-mailboxes-for-cross-forest-moves-in-powershell.md).
     
@@ -79,7 +79,7 @@ The following table lists the minimum set of attributes that need to be configur
 |**proxyAddresses** <br/> |Copy source mailbox's **proxyAddresses** attribute. Additionally, copy source mailbox's **LegacyExchangeDN** as an X500 address in the **proxyAddresses** attribute of the target mail user.  <br/> **Note**: The **proxyAddresses** of the source mailbox user must contain an SMTP address that matches the authoritative domain of the target forest. This allows the **New-MoveRequest** cmdlet to correctly select the **targetAddress** of the source mail-enabled user (converted from the source mailbox user after the mailbox move request is complete) to ensure that mail routing is still functional.  <br/> |
 |**sAMAccountName** <br/> |Copy the corresponding attribute of the source mailbox or generate a new value.  <br/> Ensure that the value is unique within the target forest domain that the target mail user belongs to.  <br/> |
 |**targetAddress** <br/> |Set to an SMTP address in the **proxyAddresses** attribute of the source mailbox.  <br/> This SMTP address must belong to the authoritative domain of the source forest.  <br/> |
-|**userAccountControl** <br/> |Constant: 514 (equivalent to 0x202,  `ACCOUNTDISABLE | NORMAL_ACCOUNT`).  <br/> |
+|**userAccountControl** <br/> |Constant: 514 (equivalent to 0x202, `ACCOUNTDISABLE | NORMAL_ACCOUNT`).  <br/> |
 |**userPrincipalName** <br/> |Copy the corresponding attribute of the source mailbox or generate a new value. Because the mail user is logon disabled, this **userPrincipalName** isn't used.  <br/> |
    
 ### Optional attributes
@@ -132,7 +132,7 @@ A linked attribute is an Active Directory attribute that references other Active
    
 ### Linked user attributes
 
-If you want to move a mailbox to an Exchange 2016 resource forest, the mailbox in the resource forest is considered a  *linked mailbox*  . In this scenario, you need to create a linked mail user in the (target) resource forest. To create a linked mail user, you need to set the attributes shown in the following table. 
+If you want to move a mailbox to an Exchange 2016 resource forest, the mailbox in the resource forest is considered a *linked mailbox* . In this scenario, you need to create a linked mail user in the (target) resource forest. To create a linked mail user, you need to set the attributes shown in the following table. 
   
 **Linked mail user attributes**
 
@@ -140,7 +140,7 @@ If you want to move a mailbox to an Exchange 2016 resource forest, the mailbox i
 |:-----|:-----|
 |**msExchMasterAccountHistory** <br/> |Directly copy the corresponding attribute of the source mailbox.  <br/> |
 |**msExchMasterAccountSid** <br/> |If the source mailbox has **msExchMasterAccountSid**, copy it. Otherwise, copy the source mailbox's **objectSid**.  <br/> |
-|**msExchRecipientDisplayType** <br/> |Constant:-1073741818 decimal (equivalent to  `*unsigned* 0xC0000006`).  <br/> |
+|**msExchRecipientDisplayType** <br/> |Constant:-1073741818 decimal (equivalent to `*unsigned* 0xC0000006`).  <br/> |
    
 > [!NOTE]
 > A linked mailbox can only be created if there's forest trust between the source forest and target forest. 
@@ -159,7 +159,7 @@ If you want to move a resource mailbox to an Exchange 2016 forest, you need to s
 
 |**Mail user's Active Directory attributes**|**Action**|
 |:-----|:-----|
-|**msExchRecipientDisplayType** <br/> |If the source mailbox is a conference room: Constant: -2147481850 decimal (equivalent to  `*unsigned* 0x80000706`).  <br/> If the source mailbox is an equipment mailbox: Constant: -2147481594 decimal (equivalent to  `*unsigned* 0x80000806`).  <br/> |
+|**msExchRecipientDisplayType** <br/> |If the source mailbox is a conference room: Constant: -2147481850 decimal (equivalent to `*unsigned* 0x80000706`).  <br/> If the source mailbox is an equipment mailbox: Constant: -2147481594 decimal (equivalent to `*unsigned* 0x80000806`).  <br/> |
 |**msExchResourceCapacity** <br/> |Directly copy the corresponding attribute of the source mailbox.  <br/> |
 |**msExchResourceDisplay** <br/> |Directly copy the corresponding attribute of the source mailbox.  <br/> |
 |**msExchResourceMetaData** <br/> |Directly copy the corresponding attribute of the source mailbox.  <br/> |

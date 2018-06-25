@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 0e701643-1f18-4cc3-8595-4fd4b15caf6c
 description: "Summary: How administrations can deploy hybrid Modern Authentication and Enterprise Mobility + Security features for Exchange on-premises mailboxes to enable support for Outlook for iOS and Android."
@@ -64,9 +64,9 @@ When Outlook for iOS and Android is enabled with hybrid Modern Authentication, t
   
 ![Authentication flow in hybrid modern authentication](../../media/d4262a39-bf40-4bbb-b63e-c06306fd70e3.PNG)
   
-1. After the user enters their email address, Outlook for iOS and Android connects to the AutoDetect service. AutoDetect determines the mailbox type by initiating an AutoDiscover query to Exchange Online. Exchange Online determines that the user's mailbox is on-premises and returns a 302-redirect to AutoDetect with the on-premises Autodiscover URL. AutoDetect initiates a query against the on-premises AutoDiscover service to determine the ActiveSync endpoint for the email address. The URL attempted on-premises is similar to this example: https://autodiscover.contoso.com/autodiscover/autodiscover.json?Email=test%40contoso.com&amp;Protocol=activesync&amp;RedirectCount=3.
+1. After the user enters their email address, Outlook for iOS and Android connects to the AutoDetect service. AutoDetect determines the mailbox type by initiating an AutoDiscover query to Exchange Online. Exchange Online determines that the user's mailbox is on-premises and returns a 302-redirect to AutoDetect with the on-premises Autodiscover URL. AutoDetect initiates a query against the on-premises AutoDiscover service to determine the ActiveSync endpoint for the email address. The URL attempted on-premises is similar to this example: https://autodiscover.contoso.com/autodiscover/autodiscover.json?Email=test%40contoso.com&Protocol=activesync&RedirectCount=3.
     
-2. AutoDetect initiates a connection to the on-premises ActiveSync URL returned in Step 1 above with an empty bearer challenge. The empty bearer challenge tells the on-premises ActiveSync that the client supports Modern Authentication. On-premises ActiveSync responds with a 401-challenge response and includes the  *WWW-Authenticate: Bearer*  header. Within the WWW-Authenticate: Bearer header is the authorization_uri value that identifies the Azure Active Directory (AAD) endpoint that should be used to obtain an OAuth token. 
+2. AutoDetect initiates a connection to the on-premises ActiveSync URL returned in Step 1 above with an empty bearer challenge. The empty bearer challenge tells the on-premises ActiveSync that the client supports Modern Authentication. On-premises ActiveSync responds with a 401-challenge response and includes the *WWW-Authenticate: Bearer* header. Within the WWW-Authenticate: Bearer header is the authorization_uri value that identifies the Azure Active Directory (AAD) endpoint that should be used to obtain an OAuth token. 
     
 3. AutoDetect returns the AAD endpoint to the client. The client begins the log-in flow and the user is presented with a Web form (or redirected to the Microsoft Authenticator app) and can enter credentials. Depending on the identity configuration, this may or may not involve a federated endpoint redirect to an on-premises identity provider. Ultimately, the client obtains an access-and-refresh token pair, which is named AT1/RT1. This access token is scoped to the Outlook for iOS and Android client with an audience of the Exchange Online endpoint.
     
@@ -226,9 +226,9 @@ If you have already enabled hybrid Modern Authentication to support other versio
   
 3. Ensure your EAS maxRequestLength is configured to match your transport configuration's MaxSendSize/MaxReceiveSize:
     
-  - Path:  `%ExchangeInstallPath%FrontEnd\HttpProxy\Sync\web.config`
+  - Path: `%ExchangeInstallPath%FrontEnd\HttpProxy\Sync\web.config`
     
-  - Property:  `maxRequestLength`
+  - Property: `maxRequestLength`
     
   - Value: set in KB size (10MB is 10240, for example)
     
@@ -433,7 +433,7 @@ request-id →2323088f-8838-4f97-a88d-559bfcf92866
 x-ms-diagnostics →2000003;reason="The hostname component of the audience claim value is invalid. Expected 'https://mail.contoso.com'. Actual 'http://mail.contoso.com'.";error_category="invalid_resource"
 ```
 
-As specified above in the section  *Technical and licensing requirements*  , SSL/TLS offloading is not supported for OAuth flows. 
+As specified above in the section *Technical and licensing requirements*, SSL/TLS offloading is not supported for OAuth flows. 
   
 For EvoSTS Certificate Metadata, the certifricate metadata leveraged by EvoSTS is occasionally updated in Office 365. The Exchange on-premises arbitration mailbox that has the organization capability of "OrganizationCapabilityManagement" is responsible for detecting the changes and for updating the corresponding metadata on-premises; this process executes every eight hours.
   

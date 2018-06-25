@@ -6,8 +6,8 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: get-started-article
-ms.prod: office-online-server
-localization_priority: Normal
+ms.prod: exchange-server-itpro
+localization_priority: Critical
 ms.collection: Strat_EX_Admin
 ms.assetid: 9c2b4186-be7d-4c57-b119-17a1c36fd6a0
 description: "Summary: Improve the attachment experience for Outlook on the web (formerly known as Outlook Web App) users by installing Office Online Server."
@@ -91,9 +91,9 @@ To install Office Online Server, do the following on the computer where you want
     
 7. Open Windows PowerShell and run the following commands. When you run the commands, replace the example FQDNs and certificate friendly name with your own.
     
-  - **Same internal and external FQDN**:  `New-OfficeWebAppsFarm -InternalURL "https://oos.contoso.com" -ExternalURL "https://oos.contoso.com" -CertificateName "Office Online Server Preview Certificate"`
+  - **Same internal and external FQDN**: `New-OfficeWebAppsFarm -InternalURL "https://oos.contoso.com" -ExternalURL "https://oos.contoso.com" -CertificateName "Office Online Server Preview Certificate"`
     
-  - **Different internal and external FQDNs**:  `New-OfficeWebAppsFarm -InternalURL "https://oos.internal.contoso.com" -ExternalURL "https://oos.contoso.com" -CertificateName "Office Online Server Preview Certificate"`
+  - **Different internal and external FQDNs**: `New-OfficeWebAppsFarm -InternalURL "https://oos.internal.contoso.com" -ExternalURL "https://oos.contoso.com" -CertificateName "Office Online Server Preview Certificate"`
     
 ## Configure the Office Online Server endpoint at the Mailbox server level
 

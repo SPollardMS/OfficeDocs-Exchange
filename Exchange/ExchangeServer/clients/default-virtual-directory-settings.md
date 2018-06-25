@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: d2d89ce6-4721-4737-a325-fba5ad9422e0
 description: "Summary: Learn about default settings for Client Access services on Mailbox servers in Exchange 2016."

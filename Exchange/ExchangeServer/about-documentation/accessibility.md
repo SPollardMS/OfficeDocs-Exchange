@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: reference
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.collection: Ent_O365_Hybrid
 ms.assetid: a7203ebd-ffac-4a8d-a2d0-6c8a61c8eeb8

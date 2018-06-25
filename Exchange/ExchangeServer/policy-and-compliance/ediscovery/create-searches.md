@@ -4,9 +4,9 @@ ms.author: serdars
 author: SerdarSoysal
 manager: serdars
 ms.date: 6/12/2018
-ms.audience: Admin
+ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: feedc0c9-4a44-4bb2-8520-cc29d66d4fc3
 description: "Summary: Learn how to create an In-Place eDiscovery search in Exchange 2016."
@@ -40,9 +40,9 @@ Use an In-Place eDiscovery search to search for content across all mailboxes and
 
 As previously explained, to create eDiscovery searches, you have to sign in to a user account that has an SMTP address in your organization.
   
-1. Go to **Compliance management** \> **In-place eDiscovery &amp; Hold**, and then click **New**![Add icon](../../media/ITPro_EAC_AddIcon.png).
+1. Go to **Compliance management** \> **In-place eDiscovery & Hold**, and then click **New**![Add icon](../../media/ITPro_EAC_AddIcon.png).
     
-2. In the **New In-Place eDiscovery &amp; Hold** window, on the **Name and description** page, type a name for the search, add an optional description, and then click **Next**.
+2. In the **New In-Place eDiscovery & Hold** window, on the **Name and description** page, type a name for the search, add an optional description, and then click **Next**.
     
 3. On the **Mailboxes and Public folders** page, select the content sources to search: 
     
@@ -70,7 +70,7 @@ As previously explained, to create eDiscovery searches, you have to sign in to a
     
   - **Hold indefinitely**: Select this option to place the returned items on an indefinite hold. Items on hold will be preserved until you remove the content source from the search or if you delete the search.
     
-  - **Specify number of days to hold items relative to their received date** Use this option to hold items for a specific period. For example, you can use this option if your organization requires that all messages be retained for at least seven years. You can use a  *time-based*  In-Place Hold along with a retention policy to make sure items are deleted in seven years. 
+  - **Specify number of days to hold items relative to their received date** Use this option to hold items for a specific period. For example, you can use this option if your organization requires that all messages be retained for at least seven years. You can use a *time-based* In-Place Hold along with a retention policy to make sure items are deleted in seven years. 
     
     > [!IMPORTANT]
     > When placing content sources or specific items on In-Place Hold for legal purposes, it's generally recommended to hold items indefinitely and remove the hold when the case or investigation is completed. 
@@ -109,10 +109,10 @@ New-MailboxSearch "Discovery-CaseId012" -StartDate "01/01/2013" -EndDate "12/31/
 Start-MailboxSearch "Discovery-CaseId012"
 ```
 
-After using the Exchange Management Shell to create an In-Place eDiscovery search, you have to start the search by using the **Start-MailboxSearch** cmdlet to copy messages to the discovery mailbox specified in the  _TargetMailbox_ parameter. For details, see [Copy eDiscovery search results to a discovery mailbox](copy-results-to-discovery-mailboxes.md).
+After using the Exchange Management Shell to create an In-Place eDiscovery search, you have to start the search by using the **Start-MailboxSearch** cmdlet to copy messages to the discovery mailbox specified in the _TargetMailbox_ parameter. For details, see [Copy eDiscovery search results to a discovery mailbox](copy-results-to-discovery-mailboxes.md).
   
 > [!NOTE]
-> When using the  _StartDate_ and  _EndDate_ parameters, you have to use the date format of mm/dd/yyyy, even if your local machine settings are configured to use a different date format, such as dd/mm/yyyy. For example, to search for messages sent between April 1, 2015 and July 1, 2015, you would use **04/01/2015** and **07/01/2015** for the start and end dates. 
+> When using the _StartDate_ and _EndDate_ parameters, you have to use the date format of mm/dd/yyyy, even if your local machine settings are configured to use a different date format, such as dd/mm/yyyy. For example, to search for messages sent between April 1, 2015 and July 1, 2015, you would use **04/01/2015** and **07/01/2015** for the start and end dates. 
   
 ### Example 2
 
@@ -155,7 +155,7 @@ Start-MailboxSearch "Contoso Litigation"
 
 After you create an eDiscovery search, you can use the EAC to get an estimate and preview of the search results. If you created a new search using the **New-MailboxSearch** cmdlet, you can use the Exchange Management Shell to start the search to get an estimate of the search results. 
   
-1. Go to **Compliance management** \> **In-Place eDiscovery &amp; Hold**.
+1. Go to **Compliance management** \> **In-Place eDiscovery & Hold**.
     
 2. In the list view, select the search, and then do one of the following:
     
@@ -173,7 +173,7 @@ After you create an eDiscovery search, you can use the EAC to get an estimate an
 ## Use the Exchange Management Shell to estimate search results
 <a name="estimate"> </a>
 
-You can use the  _EstimateOnly_ switch to get an estimate of the search results and not copy the results to a discovery mailbox. You have to start an estimate-only search with the **Start-MailboxSearch** cmdlet. Then you can retrieve the estimated search results by using the **Get-MailboxSearch** cmdlet. You can't use the Exchange Management Shell to preview messages returned in search results. 
+You can use the _EstimateOnly_ switch to get an estimate of the search results and not copy the results to a discovery mailbox. You have to start an estimate-only search with the **Start-MailboxSearch** cmdlet. Then you can retrieve the estimated search results by using the **Get-MailboxSearch** cmdlet. You can't use the Exchange Management Shell to preview messages returned in search results. 
   
 For example, you would run the following commands to create a new search and then display an estimate of the search results:
   
@@ -207,21 +207,21 @@ Get-MailboxSearch "FY15 Q2 Financial Results" | Format-List Name,Status,LastRunB
     
 - After you run an eDiscovery search estimate (that includes keywords in the search criteria), you can view keyword statistics by clicking **View keyword statistics** in the details pane for the selected search. These statistics show details about the number of items returned for each keyword used in the search query. However, if more than 100 source mailboxes are included in the search, an error will be returned if you try to view keyword statistics. To view keyword statistics, no more than 100 source mailboxes can be included in the search. 
     
-- If you use **Get-MailboxSearch** in Exchange Online to retrieve information about an eDiscovery search, you have to specify the name of a search to return a complete list of the search properties; for example,  `Get-MailboxSearch "Contoso Legal Case"`. If you run the **Get-MailboxSearch** cmdlet without using any parameters, the following properties aren't returned: 
+- If you use **Get-MailboxSearch** in Exchange Online to retrieve information about an eDiscovery search, you have to specify the name of a search to return a complete list of the search properties; for example, `Get-MailboxSearch "Contoso Legal Case"`. If you run the **Get-MailboxSearch** cmdlet without using any parameters, the following properties aren't returned: 
     
-  -  `SourceMailboxes`
+  - `SourceMailboxes`
     
-  -  `Sources`
+  - `Sources`
     
-  -  `PublicFolderSources`
+  - `PublicFolderSources`
     
-  -  `SearchQuery`
+  - `SearchQuery`
     
-  -  `ResultsLink`
+  - `ResultsLink`
     
-  -  `PreviewResultsLink`
+  - `PreviewResultsLink`
     
-  -  `Errors`
+  - `Errors`
     
     The reason is that it requires a lot of resources to return these properties for all eDiscovery searches in your organization.
     

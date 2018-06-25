@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 2/19/2016
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 2d0f31dc-eb32-451a-8852-591269026506
 description: "Summary: Step-by-step guidance for restoring Exchange data from a previous back up."

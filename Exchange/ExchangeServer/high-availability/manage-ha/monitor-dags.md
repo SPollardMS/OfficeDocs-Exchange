@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: f5bdfd6e-e93c-4d96-8bc2-548750d51930
 description: "Summary: Resources and methods for monitoring the health and status of DAGs in Exchange 2016."
@@ -44,7 +44,7 @@ Use the [Get-MailboxDatabaseCopyStatus](http://technet.microsoft.com/library/6ad
 |FailedAndSuspended  <br/> |The Failed and Suspended states have been set simultaneously by the system because a failure was detected, and because resolution of the failure explicitly requires administrator intervention. An example is if the system detects unrecoverable divergence between the active mailbox database and a database copy. Unlike the Failed state, the system won't periodically check whether the problem has been resolved, and automatically recover. Instead, an administrator must intervene to resolve the underlying cause of the failure before the database copy can be transitioned to a healthy state.  <br/> |
 |SinglePageRestore  <br/> |This state indicates that a single page restore operation is occurring on the mailbox database copy.  <br/> |
    
-The **Get-MailboxDatabaseCopyStatus** cmdlet also returns details about the in-use replication networks, including  _IncomingLogCopyingNetwork_, which is returned for passive database copies, and  _OutgoingConnections_, which is returned for active databases that have more than one copy, as well as any database copy being used as a source for a database seeding operation. Outgoing connection information is provided for database copies that are in file mode replication. Outgoing connection information is not provided for database copies that are in block mode replication.
+The **Get-MailboxDatabaseCopyStatus** cmdlet also returns details about the in-use replication networks, including _IncomingLogCopyingNetwork_, which is returned for passive database copies, and _OutgoingConnections_, which is returned for active databases that have more than one copy, as well as any database copy being used as a source for a database seeding operation. Outgoing connection information is provided for database copies that are in file mode replication. Outgoing connection information is not provided for database copies that are in block mode replication.
   
 ### Get-MailboxDatabaseCopyStatus examples
 
@@ -140,7 +140,7 @@ Exchange 2016 Managed Availability monitors hundreds of system metrics and compo
   
 Path: **HKEY_LOCAL_MACHINE\Software\Microsoft\ExchangeServer\v15\Replay\Parameters**
   
-Value:  _SpaceMonitorLowSpaceThresholdInMB_
+Value: _SpaceMonitorLowSpaceThresholdInMB_
   
 For example to configure the threshold to 100 GB, you would configure the following registry value:
   
@@ -165,26 +165,26 @@ Exchange 2016 includes a script called CollectOverMetrics.ps1, which can be foun
     
 The script writes this information to .csv files with one operation per row. It writes a separate .csv file for each DAG.
   
-The script supports parameters that allow you to customize the script's behavior and output. For example, the results can be restricted to a specified subset by using the  _Database_ or  _ReportFilter_ parameters. Only the operations that match these filters will be included in the summary HTML report. The available parameters are listed in the following table. 
+The script supports parameters that allow you to customize the script's behavior and output. For example, the results can be restricted to a specified subset by using the _Database_ or _ReportFilter_ parameters. Only the operations that match these filters will be included in the summary HTML report. The available parameters are listed in the following table. 
   
 **CollectOverMetrics.ps1 script parameters**
 
 |**Parameter**|**Description**|
 |:-----|:-----|
 | _DatabaseAvailabilityGroup_ <br/> |Specifies the name of the DAG from which you want to collect metrics. If this parameter is omitted, the DAG of which the local server is a member will be used. Wildcard characters can be used to collect information from and report on multiple DAGs.  <br/> |
-| _Database_ <br/> |Provides a list of databases for which the report needs to be generated. Wildcard characters are supported, for example,  `-Database:"DB1","DB2"` or  `-Database:"DB*"`.  <br/> |
-| _StartTime_ <br/> |Specifies the duration of the time period to report on. The script gathers only the events logged during this period. As a result, the script may capture partial operation records (for example, only the end of an operation at the start of the period or vice-versa). If neither  _StartTime_ nor  _EndTime_ is specified, the script defaults to the past 24 hours. If only one parameter is specified, the period will be 24 hours, either beginning or ending at the specified time.  <br/> |
-| _EndTime_ <br/> |Specifies the duration of the time period to report on. The script gathers only the events logged during this period. As a result, the script may capture partial operation records (for example, only the end of an operation at the start of the period or vice-versa). If neither  _StartTime_ nor  _EndTime_ is specified, the script defaults to the past 24 hours If only one parameter is specified, the period will be 24 hours, either beginning or ending at the specified time.  <br/> |
+| _Database_ <br/> |Provides a list of databases for which the report needs to be generated. Wildcard characters are supported, for example, `-Database:"DB1","DB2"` or `-Database:"DB*"`.  <br/> |
+| _StartTime_ <br/> |Specifies the duration of the time period to report on. The script gathers only the events logged during this period. As a result, the script may capture partial operation records (for example, only the end of an operation at the start of the period or vice-versa). If neither _StartTime_ nor _EndTime_ is specified, the script defaults to the past 24 hours. If only one parameter is specified, the period will be 24 hours, either beginning or ending at the specified time.  <br/> |
+| _EndTime_ <br/> |Specifies the duration of the time period to report on. The script gathers only the events logged during this period. As a result, the script may capture partial operation records (for example, only the end of an operation at the start of the period or vice-versa). If neither _StartTime_ nor _EndTime_ is specified, the script defaults to the past 24 hours If only one parameter is specified, the period will be 24 hours, either beginning or ending at the specified time.  <br/> |
 | _ReportPath_ <br/> |Specifies the folder used to store the results of event processing. If this parameter is omitted, the Scripts folder will be used. When specified, the script takes a list of .csv files generated by the script and uses them as the source data to generate a summary HTML report. The report is the same one that's generated with the -GenerateHtmlReport option. The files can be generated across multiple DAGs at many different times, or even with overlapping times, and the script will merge all of their data together.  <br/> |
 | _GenerateHtmlReport_ <br/> |Specifies that the script gather all the information it has recorded, group the data by the operation type, and then generate an HTML file that includes statistics for each of these groups. The report includes the total number of operations in each group, the number of operations that failed, and statistics for the time taken within each group. The report also contains a breakdown of the types of errors that resulted in failed operations.  <br/> |
 | _ShowHtmlReport_ <br/> |Specifies that the HTML-generated report should be displayed in a Web browser after it's generated.  <br/> |
-| _SummariseCsvFiles_ <br/> |Specifies that the script read the data from existing .csv files that were previously generated by the script. This data is then used to generate a summary report similar to the report generated by the  _GenerateHtmlReport_ parameter.  <br/> |
-| _ActionType_ <br/> |Specifies the type of operational actions the script should collect. The values for this parameter are  `Move`,  `Mount`,  `Dismount`, and  `Remount`. The  `Move` value refers to any time that the database changes its active server, whether by controlled moves or by failovers. The  `Mount`,  `Dismount`, and  `Remount` values refer to times that the database changes its mounted status without moving to another computer.  <br/> |
-| _ActionTrigger_ <br/> |Specifies which administrative operations should be collected by the script. The values for this parameter are  `Admin` or  `Automatic`. Automatic actions are those performed automatically by the system (for example, a failover when a server goes offline). Admin actions are any actions that were performed by an administrator using either the Exchange Management Shell or the Exchange Administration Center.  <br/> |
+| _SummariseCsvFiles_ <br/> |Specifies that the script read the data from existing .csv files that were previously generated by the script. This data is then used to generate a summary report similar to the report generated by the _GenerateHtmlReport_ parameter.  <br/> |
+| _ActionType_ <br/> |Specifies the type of operational actions the script should collect. The values for this parameter are `Move`, `Mount`, `ismount`, and `Remount`. The `Move` value refers to any time that the database changes its active server, whether by controlled moves or by failovers. The `Mount`, `Dismount`, and `Remount` values refer to times that the database changes its mounted status without moving to another computer.  <br/> |
+| _ActionTrigger_ <br/> |Specifies which administrative operations should be collected by the script. The values for this parameter are `Admin` or `Automatic`. Automatic actions are those performed automatically by the system (for example, a failover when a server goes offline). Admin actions are any actions that were performed by an administrator using either the Exchange Management Shell or the Exchange Administration Center.  <br/> |
 | _RawOutput_ <br/> |Specifies that the script writes the results that would have been written to .csv files directly to the output stream, as would happen with write-output. This information can then be piped to other commands.  <br/> |
 | _IncludedExtendedEvents_ <br/> |Specifies that the script collects the events that provide diagnostic details of times spent mounting databases. This can be a time-consuming stage if the Application event log on the servers is large.  <br/> |
 | _MergeCSVFiles_ <br/> |Specifies that the script takes all the .csv files containing data about each operation and merges them into a single .csv file.  <br/> |
-| _ReportFilter_ <br/> |Specifies that a filter should be applied to the operations using the fields as they appear in the .csv files. This parameter uses the same format as a  `Where` operation, with each element set to  `$_` and returning a Boolean value. For example:  `{$_DatabaseName -notlike "Mailbox Database*"}` can be used to exclude the default databases from the report.  <br/> |
+| _ReportFilter_ <br/> |Specifies that a filter should be applied to the operations using the fields as they appear in the .csv files. This parameter uses the same format as a `Where` operation, with each element set to `$_` and returning a Boolean value. For example: `{$_DatabaseName -notlike "Mailbox Database*"}` can be used to exclude the default databases from the report.  <br/> |
    
 ### CollectOverMetrics.ps1 examples
 
@@ -194,7 +194,7 @@ The following example collects metrics for all databases that match DB\* (which 
 CollectOverMetrics.ps1 -DatabaseAvailabilityGroup DAG1 -Database:"DB*" -GenerateHTMLReport -ShowHTMLReport
 ```
 
-The following examples demonstrate ways that the summary HTML report may be filtered. The first uses the  _Database_ parameter, which takes a list of database names. The summary report then contains data only about those databases. The next two examples use the  _ReportFilter_ option. The last example filters out all the default databases. 
+The following examples demonstrate ways that the summary HTML report may be filtered. The first uses the _Database_ parameter, which takes a list of database names. The summary report then contains data only about those databases. The next two examples use the _ReportFilter_ option. The last example filters out all the default databases. 
   
 ```
 CollectOverMetrics.ps1 -SummariseCsvFiles (dir *.csv) -Database MailboxDatabase123,MailboxDatabase456
@@ -215,7 +215,7 @@ CollectReplicationMetrics.ps1 is another health metric script included in Exchan
   
 You can either specify the servers individually, or you can specify entire DAGs. You can either run the script to first collect the data and then generate the report, or you can run it to just gather the data or to only report on data that's already been collected. You can specify the frequency at which data should be sampled and the total duration to gather data.
   
-The data collected from each server is written to a file named **CounterData.\<ServerName\>.\<TimeStamp\>.csv**. The summary report will be written to a file named **HaReplPerfReport.\<DAGName\>.\<TimeStamp\>.csv**, or **HaReplPerfReport.\<TimeStamp\>.csv** if you didn't run the script with the  _DagName_ parameter. 
+The data collected from each server is written to a file named **CounterData.\<ServerName\>.\<TimeStamp\>.csv**. The summary report will be written to a file named **HaReplPerfReport.\<DAGName\>.\<TimeStamp\>.csv**, or **HaReplPerfReport.\<TimeStamp\>.csv** if you didn't run the script with the _DagName_ parameter. 
   
 The script starts Windows PowerShell jobs to collect the data from each server. These jobs run for the full period in which data is being collected. If you specify a large number of servers, this process can use a considerable amount of memory. The final stage of the process, when data is processed into a summary report, can also be quite time consuming for large amounts of data. It's possible to run the collection stage on one computer, and then copy the data elsewhere for processing.
   
@@ -226,19 +226,19 @@ The CollectReplicationMetrics.ps1 script supports parameters that allow you to c
 |**Parameter**|**Description**|
 |:-----|:-----|
 | _DagName_ <br/> |Specifies the name of the DAG from which you want to collect metrics. If this parameter is omitted, the DAG of which the local server is a member will be used.  <br/> |
-| _DatabaseNames_ <br/> |Provides a list of databases for which the report needs to be generated. Wildcard characters are supported for use, for example,  `-DatabaseNames:"DB1","DB2"` or  `-DatabaseNames:"DB*"`.  <br/> |
+| _DatabaseNames_ <br/> |Provides a list of databases for which the report needs to be generated. Wildcard characters are supported for use, for example, `-DatabaseNames:"DB1","DB2"` or `-DatabaseNames:"DB*"`.  <br/> |
 | _ReportPath_ <br/> |Specifies the folder used to store the results of event processing. If this parameter is omitted, the Scripts folder will be used.  <br/> |
 | _Duration_ <br/> |Specifies the amount of time the collection process should run. Typical values would be one to three hours. Longer durations should be used only with long intervals between each sample or as a series of shorter jobs run by scheduled tasks.  <br/> |
 | _Frequency_ <br/> |Specifies the frequency at which data metrics are collected. Typical values would be 30 seconds, one minute, or five minutes. Under normal circumstances, intervals that are shorter than these won't show significant changes between each sample.  <br/> |
 | _Servers_ <br/> |Specifies the identity of the servers from which to collect statistics. You can specify any value, including wildcard characters or GUIDs.  <br/> |
 | _SummariseFiles_ <br/> |Specifies a list of .csv files to generate a summary report. These files are the files named **CounterData.\<CounterData\>\*** and are generated by the CollectReplicationMetrics.ps1 script.  <br/> |
-| _Mode_ <br/> |Specifies the processing stages that the script executes. You can use the following values:  <br/>  `CollectAndReport`: This is the default value. This value signifies that the script should both collect the data from the servers and then process them to produce the summary report.  <br/>  `CollectOnly`: This value signifies that the script should just collect the data and not produce the report.  <br/>  `ProcessOnly`: This value signifies that the script should import data from a set of .csv files and process them to produce the summary report. The  _SummariseFiles_ parameter is used to provide the script with the list of files to process.  <br/> |
+| _Mode_ <br/> |Specifies the processing stages that the script executes. You can use the following values:  <br/> `CollectAndReport`: This is the default value. This value signifies that the script should both collect the data from the servers and then process them to produce the summary report.  <br/> `CollectOnly`: This value signifies that the script should just collect the data and not produce the report.  <br/> `ProcessOnly`: This value signifies that the script should import data from a set of .csv files and process them to produce the summary report. The _SummariseFiles_ parameter is used to provide the script with the list of files to process.  <br/> |
 | _MoveFilestoArchive_ <br/> |Specifies that the script should move the files to a compressed folder after processing.  <br/> |
 | _LoadExchangeSnapin_ <br/> |Specifies that the script should load the Exchange Management Shell commands. This parameter is useful when the script needs to run from outside the Exchange Management Shell, such as in a scheduled task.  <br/> |
    
 ### CollectReplicationMetrics.ps1 example
 
-The following example gathers one hour's worth of data from all the servers in the DAG DAG1, sampled at one minute intervals, and then generates a summary report. In addition, the  _ReportPath_ parameter is used, which causes the script to place all the files in the current directory. 
+The following example gathers one hour's worth of data from all the servers in the DAG DAG1, sampled at one minute intervals, and then generates a summary report. In addition, the _ReportPath_ parameter is used, which causes the script to place all the files in the current directory. 
   
 ```
 CollectReplicationMetrics.ps1 -DagName DAG1 -Duration "01:00:00" -Frequency "00:01:00" -ReportPath

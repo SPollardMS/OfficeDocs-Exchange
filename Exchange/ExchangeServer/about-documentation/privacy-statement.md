@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: overview
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: f9569bb0-9a65-4121-a354-fa5a394b66c3
 description: "Microsoft is committed to protecting your privacy, while delivering software that brings you the performance, power, and convenience you desire in your personal computing. This privacy statement applies to Microsoft Exchange Server 2016. It focuses on features that communicate with the Internet. It does not apply to any other online or offline Microsoft sites, products, or services."

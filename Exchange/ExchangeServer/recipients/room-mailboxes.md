@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.collection: Strat_EX_Admin
 ms.assetid: f70752ad-fce0-4e14-8428-fc5ac63f6c54
@@ -166,7 +166,7 @@ Use the **Contact Information** section to view or change the contact informatio
 #### Email Address
 <a name="EmailAddress"> </a>
 
-Use the **Email Address** section to view or change the email addresses associated with the room mailbox. This includes the mailbox's primary SMTP address and any associated proxy addresses. The primary SMTP address (also known as the  *reply address*  ) is displayed in bold text in the address list, with the uppercase **SMTP** value in the **Type** column. 
+Use the **Email Address** section to view or change the email addresses associated with the room mailbox. This includes the mailbox's primary SMTP address and any associated proxy addresses. The primary SMTP address (also known as the *reply address* ) is displayed in bold text in the address list, with the uppercase **SMTP** value in the **Type** column. 
   
 - **Add**: Click ** Add **![Add icon](../media/ITPro_EAC_AddIcon.png) to add a new email address for this mailbox. Select one of following address types: 
     

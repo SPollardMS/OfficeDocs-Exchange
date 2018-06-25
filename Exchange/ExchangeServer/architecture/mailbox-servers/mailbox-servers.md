@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 4/19/2018
 ms.audience: ITPro
 ms.topic: overview
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: b6403e43-d263-46b6-bfeb-f70f13c32ff1
 description: "Summary: Learn about the Mailbox server role in Exchange 2016."

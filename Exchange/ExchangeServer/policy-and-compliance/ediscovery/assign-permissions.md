@@ -4,9 +4,9 @@ ms.author: serdars
 author: SerdarSoysal
 manager: serdars
 ms.date: 6/8/2018
-ms.audience: End User
+ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 729e09d8-614b-431f-ae04-ae41fb4c628e
 description: "Summary: Learn how to give users the permissions they need to use In-Place eDiscovery in Exchange 2016."
@@ -29,7 +29,7 @@ If you want users to be able to use Exchange Server 2016 In-Place eDiscovery, yo
     
 - In Exchange 2016, members of the Organization Management role group can create an In-Place Hold to place all mailbox content on hold. However, to create a query-based In-Place Hold, the user must be a member of the Discovery Management role group or have the Mailbox Search role assigned.
     
-- You can only add  *security principals*  to the Discovery Management role group (users or groups that can be assigned permissions). For example: 
+- You can only add *security principals* to the Discovery Management role group (users or groups that can be assigned permissions). For example: 
     
   - User mailboxes
     

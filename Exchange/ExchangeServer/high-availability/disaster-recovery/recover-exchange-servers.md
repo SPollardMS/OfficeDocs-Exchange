@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/12/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.collection: Strat_EX_Admin
 ms.assetid: 46e9a1cf-b64c-43c3-a898-6171176da761
@@ -17,13 +17,13 @@ description: "Summary: Step-by-step guidance for recovering a lost Exchange 2016
 
  **Summary**: Step-by-step guidance for recovering a lost Exchange 2016 Server.
   
-You can recover a lost server by using the **Setup /m:RecoverServer** switch in Microsoft Exchange Server 2016. Most of the settings for a computer running Exchange 2016 are stored in Active Directory. The  _/m:RecoverServer_ switch rebuilds an Exchange server with the same name by using the settings and other information stored in Active Directory. 
+You can recover a lost server by using the **Setup /m:RecoverServer** switch in Microsoft Exchange Server 2016. Most of the settings for a computer running Exchange 2016 are stored in Active Directory. The _/m:RecoverServer_ switch rebuilds an Exchange server with the same name by using the settings and other information stored in Active Directory. 
   
 Recovering a lost Exchange server is often accomplished by using new hardware. However, you can also use an existing server.
   
 This topic shows you how to recover a lost Exchange 2016 server that isn't a member of a database availability group (DAG). For detailed steps about how to recover a server that was a member of a DAG, see [Recover a database availability group member server](recover-dag-member-servers.md).
   
- **Note**: If Exchange is installed in a location other than the default location, you must use the  _/TargetDir_ switch to specify the location of the Exchange binary files. If you don't use the  _/TargetDir_ switch, the Exchange files are installed in the default location (%programfiles%\Microsoft\Exchange Server\V15). 
+ **Note**: If Exchange is installed in a location other than the default location, you must use the _/TargetDir_ switch to specify the location of the Exchange binary files. If you don't use the _/TargetDir_ switch, the Exchange files are installed in the default location (%programfiles%\Microsoft\Exchange Server\V15). 
   
 To determine the install location, follow these steps:
   

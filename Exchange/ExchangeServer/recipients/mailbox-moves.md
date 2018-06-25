@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 9c0a0bc9-2a39-4cf0-aa6e-6e5ef3fd38b5
 description: "Summary: Learn about moving and migrating mailboxes in Exchange 2016, and the enhanced capabilities in the batch move architecture."
@@ -20,9 +20,9 @@ You use mailbox moves to move mailboxes to, from, and within your Exchange organ
   
 - **Local mailbox moves**: You move mailboxes from one mailbox database to another on Exchange servers within a single Active Directory forest. For instructions, see [Manage on-premises mailbox moves in Exchange 2016](../architecture/mailbox-servers/manage-mailbox-moves.md).
     
-- **Cross-forest mailbox moves**: You move mailboxes to Exchange servers in a different Active Directory forest. You can initiate the move from the target forest where you want to move the mailboxes (known as a  *pull*  move type), or from the source forest that currently hosts the mailboxes (known as a  *push*  move type). For more information, see [Prepare mailboxes for cross-forest move requests](../architecture/mailbox-servers/prep-mailboxes-for-cross-forest-moves.md).
+- **Cross-forest mailbox moves**: You move mailboxes to Exchange servers in a different Active Directory forest. You can initiate the move from the target forest where you want to move the mailboxes (known as a *pull* move type), or from the source forest that currently hosts the mailboxes (known as a *push* move type). For more information, see [Prepare mailboxes for cross-forest move requests](../architecture/mailbox-servers/prep-mailboxes-for-cross-forest-moves.md).
     
-- **Remote mailbox moves in hybrid deployments**: In hybrid deployments between on-premises Exchange and Microsoft Office 365, you can move mailboxes from Exchange to Office 365 (known as  *onboarding remote move migrations*  ) and from Office 365 to Exchange (know as  *offboarding remote move migrations*  ). For more information, see [Move Mailboxes Between On-Premises and Exchange Online Organizations in 2013 Hybrid Deployments](http://technet.microsoft.com/library/d6289f7b-f67e-48db-9570-9fd3c9547548.aspx).
+- **Remote mailbox moves in hybrid deployments**: In hybrid deployments between on-premises Exchange and Microsoft Office 365, you can move mailboxes from Exchange to Office 365 (known as *onboarding remote move migrations* ) and from Office 365 to Exchange (know as *offboarding remote move migrations* ). For more information, see [Move Mailboxes Between On-Premises and Exchange Online Organizations in 2013 Hybrid Deployments](http://technet.microsoft.com/library/d6289f7b-f67e-48db-9570-9fd3c9547548.aspx).
     
     **Note**: For more information about migrating on-premises Exchange organizations to Office 365, see [Ways to migrate multiple email accounts to Office 365](https://go.microsoft.com/fwlink/p/?LinkID=524030).
     
@@ -74,9 +74,9 @@ Migration endpoints specify the remote server information, source throttling set
   
 - Cross-forest mailbox moves require an ExchangeRemoteMove migration endpoint.
     
-- Onboarding mailbox move migrations in hybrid organizations (from Exchange to Office 365) require an ExchangeRemoteMove migration endpoint as the  *source*  of the migration batch. 
+- Onboarding mailbox move migrations in hybrid organizations (from Exchange to Office 365) require an ExchangeRemoteMove migration endpoint as the *source* of the migration batch. 
     
-- Offboarding mailbox move migrations in hybrid organizations (from Office 365 to Exchange) require an ExchangeRemoteMove migration endpoint as the  *target*  of the migration batch. 
+- Offboarding mailbox move migrations in hybrid organizations (from Office 365 to Exchange) require an ExchangeRemoteMove migration endpoint as the *target* of the migration batch. 
     
 You can create migration endpoints in the EAC or by using the [New-MigrationEndpoint](http://technet.microsoft.com/library/0383b4ea-10df-4e1d-9470-2eeb9fd1ea68.aspx) cmdlet in the Exchange Management Shell. 
   

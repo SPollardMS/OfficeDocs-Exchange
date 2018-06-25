@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 887c710b-0ec6-4ff0-8065-5f05f74afef3
 description: "Summary: Learn about how S/MIME in Exchange 2016 adds S/MIME-based security and lets you encrypt and digitally sign emails."

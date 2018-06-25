@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 2cea59fb-69b7-4a2f-833f-de4d93cf1810
 description: "Summary: Learn how to manage cross-forest mailbox moves and migrations in Exchange 2016 by using the Prepare-MoveRequest.ps1 script in the Exchange Management Shell."
@@ -58,7 +58,7 @@ To assign a specific authentication credential for the remote forest domain cont
   $RemoteCredentials = Get-Credential
   ```
 
-2. Run the following commands to pass the credential information to the  _LocalForestCredential_ and  _RemoteForestCredential_ parameters in the  `Prepare-MoveRequest.ps1` script. 
+2. Run the following commands to pass the credential information to the _LocalForestCredential_ and _RemoteForestCredential_ parameters in the `Prepare-MoveRequest.ps1` script. 
     
   ```
   Prepare-MoveRequest.ps1 -Identity JohnSmith@Fabrikan.com -RemoteForestDomainController DC001.Fabrikam.com -RemoteForestCredential $RemoteCredentials -LocalForestDomainController DC001.Contoso.com -LocalForestCredential $LocalCredentials
@@ -72,17 +72,17 @@ The following table describes the parameter set for the script.
 
 |**Parameter**|**Required**|**Description**|
 |:-----|:-----|:-----|
-| _Identity_ <br/> |Required  <br/> |The  _Identity_ parameter uniquely identifies a mailbox in the source forest. Identity can be any of the following values: Common name (CN), Alias, **proxyAddress** property, **objectGuid** property, or **DisplayName** property  <br/> |
-| _RemoteForestCredential_ <br/> |Required  <br/> |The  _RemoteForestCredential_ parameter specifies the administrator who has permissions to copy data from the source forest Active Directory.  <br/> |
-| _RemoteForestDomainController_ <br/> |Required  <br/> |The  _RemoteForestDomainController_ parameter specifies a domain controller in the source forest where the mailbox resides.  <br/> |
-| _DisableEmailAddressPolicy_ <br/> |Optional  <br/> |The  _DisableEmailAddressPolicy_ parameter specifies whether the Email Address Policy (EAP) should be disabled when creating a **MailUser** object in the target forest.  <br/> When you specify this parameter, the EAP in the target forest won't be applied.  <br/> **Note**: When you specify this parameter, the **MailUser** object won't have e-mail address mapping in the local forest domain stamped. This is usually stamped by the EAP.  <br/> |
-| _LinkedMailUser_ <br/> |Optional  <br/> |The  _LinkedMailUser_ switch specifies whether to create a linked MailUser in the local forest for the mailbox user in the remote forest.  <br/> If the switch is provided, the script creates a target **MailUser** object linked to the source mailbox. If the switch is omitted, the script creates a regular target **MailUser** object.  <br/> |
-| _LocalForestCredential_ <br/> |Optional  <br/> |The  _LocalForestCredential_ parameter specifies the administrator with permissions to write data to the target forest Active Directory.  <br/> We recommend that you explicitly specify this parameter to avoid Active Directory permission issues.  <br/> If the remote forest and the local forest have a trusted relationship configured, don't use a user account from the remote forest as the local forest credential, even though the remote user account may have permission to modify Active Directory in the local forest.  <br/> |
-| _LocalForestDomainController_ <br/> |Optional  <br/> |The  _LocalForestDomainController_ parameter specifies a domain controller in the target forest where the mail-enabled user will be created.  <br/> We recommend that you specify this parameter to avoid possible domain controller replication delay issues in the local forest that could occur if a random domain controller is selected.  <br/> |
-| _MailboxDeliveryDomain_ <br/> |Optional  <br/> |The  _MailboxDeliveryDomain_ parameter specifies an authoritative domain of the source forest so that the script can select the correct source mailbox user's **proxyAddress** property as the target mail-enabled user's **targetAddress** property.  <br/> By default, the primary SMTP address of the source mailbox user is set as the **targetAddress** property of the target mail-enabled user.  <br/> |
-| _OverWriteLocalObject_ <br/> |Optional  <br/> |The  _OverWriteLocalObject_ parameter is used for users created by the Active Directory Migration Tool. The properties are copied from the existing mail contact to the newly created mail user. However, after this copy, the script also copies the properties from the source forest user to the newly created mail user.  <br/> |
-| _TargetMailUserOU_ <br/> |Optional  <br/> |The  _TargetMailuserOU_ parameter specifies the organizational unit (OU) under which the target mail-enabled user will be created.  <br/> |
-| _UseLocalObject_ <br/> |Optional  <br/> |The  _UseLocalObject_ parameter specifies whether to convert the existing local object to the required target mail-enabled user if the script detects an object in the local forest that conflicts with the to-be-created mail-enabled user.  <br/> |
+| _Identity_ <br/> |Required  <br/> |The _Identity_ parameter uniquely identifies a mailbox in the source forest. Identity can be any of the following values: Common name (CN), Alias, **proxyAddress** property, **objectGuid** property, or **DisplayName** property  <br/> |
+| _RemoteForestCredential_ <br/> |Required  <br/> |The _RemoteForestCredential_ parameter specifies the administrator who has permissions to copy data from the source forest Active Directory.  <br/> |
+| _RemoteForestDomainController_ <br/> |Required  <br/> |The _RemoteForestDomainController_ parameter specifies a domain controller in the source forest where the mailbox resides.  <br/> |
+| _DisableEmailAddressPolicy_ <br/> |Optional  <br/> |The _DisableEmailAddressPolicy_ parameter specifies whether the Email Address Policy (EAP) should be disabled when creating a **MailUser** object in the target forest.  <br/> When you specify this parameter, the EAP in the target forest won't be applied.  <br/> **Note**: When you specify this parameter, the **MailUser** object won't have e-mail address mapping in the local forest domain stamped. This is usually stamped by the EAP.  <br/> |
+| _LinkedMailUser_ <br/> |Optional  <br/> |The _LinkedMailUser_ switch specifies whether to create a linked MailUser in the local forest for the mailbox user in the remote forest.  <br/> If the switch is provided, the script creates a target **MailUser** object linked to the source mailbox. If the switch is omitted, the script creates a regular target **MailUser** object.  <br/> |
+| _LocalForestCredential_ <br/> |Optional  <br/> |The _LocalForestCredential_ parameter specifies the administrator with permissions to write data to the target forest Active Directory.  <br/> We recommend that you explicitly specify this parameter to avoid Active Directory permission issues.  <br/> If the remote forest and the local forest have a trusted relationship configured, don't use a user account from the remote forest as the local forest credential, even though the remote user account may have permission to modify Active Directory in the local forest.  <br/> |
+| _LocalForestDomainController_ <br/> |Optional  <br/> |The _LocalForestDomainController_ parameter specifies a domain controller in the target forest where the mail-enabled user will be created.  <br/> We recommend that you specify this parameter to avoid possible domain controller replication delay issues in the local forest that could occur if a random domain controller is selected.  <br/> |
+| _MailboxDeliveryDomain_ <br/> |Optional  <br/> |The _MailboxDeliveryDomain_ parameter specifies an authoritative domain of the source forest so that the script can select the correct source mailbox user's **proxyAddress** property as the target mail-enabled user's **targetAddress** property.  <br/> By default, the primary SMTP address of the source mailbox user is set as the **targetAddress** property of the target mail-enabled user.  <br/> |
+| _OverWriteLocalObject_ <br/> |Optional  <br/> |The _OverWriteLocalObject_ parameter is used for users created by the Active Directory Migration Tool. The properties are copied from the existing mail contact to the newly created mail user. However, after this copy, the script also copies the properties from the source forest user to the newly created mail user.  <br/> |
+| _TargetMailUserOU_ <br/> |Optional  <br/> |The _TargetMailuserOU_ parameter specifies the organizational unit (OU) under which the target mail-enabled user will be created.  <br/> |
+| _UseLocalObject_ <br/> |Optional  <br/> |The _UseLocalObject_ parameter specifies whether to convert the existing local object to the required target mail-enabled user if the script detects an object in the local forest that conflicts with the to-be-created mail-enabled user.  <br/> |
    
 ## Examples
 
@@ -102,7 +102,7 @@ This example provisions a single linked mail-enabled user in the local forest, w
   $RemoteCredentials = Get-Credential
   ```
 
-2. Run the following command to pass the credential information to the  _LocalForestCredential_ and  _RemoteForestCredential_ parameters in the Prepare-MoveRequest.ps1 script. 
+2. Run the following command to pass the credential information to the _LocalForestCredential_ and _RemoteForestCredential_ parameters in the Prepare-MoveRequest.ps1 script. 
     
   ```
   Prepare-MoveRequest.ps1 -Identity JamesAlvord@Contoso.com -RemoteForestDomainController DC001.Fabrikam.com -RemoteForestCredential $RemoteCredentials -LocalForestDomainController DC001.Contoso.com -LocalForestCredential $LocalCredentials -LinkedMailUser
@@ -118,7 +118,7 @@ This example supports pipelining if you supply a list of mailbox identities.
   $UserCredentials = Get-Credential
   ```
 
-2. Run the following command to pass the credential information to the  _RemoteForestCredential_ parameter in the Prepare-MoveRequest.ps1 script. 
+2. Run the following command to pass the credential information to the _RemoteForestCredential_ parameter in the Prepare-MoveRequest.ps1 script. 
     
   ```
   "IanP@Contoso.com", "JoeAn@Contoso.com" | Prepare-MoveRequest.ps1 -RemoteForestDomainController DC001.Fabrikam.com -RemoteForestCredential $UserCredentials
@@ -145,7 +145,7 @@ This example calls a .csv file to bulk create the target mail-enabled users.
   $UserCredentials = Get-Credential
   ```
 
-2. Run the following command to pass the credential information to the  _RemoteForestCredential_ parameter in the Prepare-MoveRequest.ps1 script. 
+2. Run the following command to pass the credential information to the _RemoteForestCredential_ parameter in the Prepare-MoveRequest.ps1 script. 
     
   ```
   Import-Csv Test.csv | Prepare-MoveRequest.ps1 -RemoteForestDomainController DC001.Fabrikam.com -RemoteForestCredential $UserCredentials
@@ -169,7 +169,7 @@ When the script attempts to create a target mail-enabled user from the source ma
     
 The script prompts the user about the duplicate objects.
   
-If the target mail-enabled object is a mail-enabled user or contact, which is most likely created by a cross-forest (Identity Lifecycle Management 2007 Service Pack 1-based) global address list (GAL) synchronization deployment, the user can run the script again with the  _UseLocalObject_ parameter to use the target mail-enabled object for mailbox migration. 
+If the target mail-enabled object is a mail-enabled user or contact, which is most likely created by a cross-forest (Identity Lifecycle Management 2007 Service Pack 1-based) global address list (GAL) synchronization deployment, the user can run the script again with the _UseLocalObject_ parameter to use the target mail-enabled object for mailbox migration. 
   
 ### Mail-enabled user
 
@@ -181,7 +181,7 @@ If the target object is a mail-enabled user, the script copies the following att
     
 - **msExchArchiveName**
     
-If the  _LinkedMailUser_ parameter is set, the script copies the source **objectSid** / **masterAccountSid** attribute. 
+If the _LinkedMailUser_ parameter is set, the script copies the source **objectSid** / **masterAccountSid** attribute. 
   
 ### Mail-enabled contact
 
@@ -195,11 +195,11 @@ If the target object is a mail-enabled contact, the script deletes the existing 
     
 - **sAMAccountName**
     
-- **userAccountControl** (set to 514; equivalent to  `0x202, ACCOUNTDISABLE | NORMAL_ACCOUNT`)
+- **userAccountControl** (set to 514; equivalent to `0x202, ACCOUNTDISABLE | NORMAL_ACCOUNT`)
     
 - **userPrincipalName**
     
-If the  _LinkedMailUser_ parameter is set, the script copies the source **objectSid** / **masterAccountSid** attribute. 
+If the _LinkedMailUser_ parameter is set, the script copies the source **objectSid** / **masterAccountSid** attribute. 
   
 ### LegacyExchangeDN attribute
 

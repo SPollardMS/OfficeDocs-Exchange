@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: b03c0f21-cbc2-4be8-ad03-73a7dac16ffc
 description: "Summary: Learn about the Autodiscover service in Exchange 2016, which lets client applications and users configure themselves with minimal input."
@@ -20,7 +20,7 @@ The Autodiscover service minimizes user configuration and deployment steps by pr
   
 Exchange 2016 introduced changes to services previously handled by the multiple servers. The Mailbox server now provides Client Access services, so you can't configure a standalone Client Access server like you could in previous versions of Exchange. Autodiscover service in Exchange 2016 is possible because:
   
-- Exchange creates a virtual directory named  `autodiscover` under the default web site in Internet Information Services (IIS). 
+- Exchange creates a virtual directory named `autodiscover` under the default web site in Internet Information Services (IIS). 
     
 - Active Directory stores and provides authoritative URLs for domain-joined computers.
     
@@ -35,7 +35,7 @@ Exchange 2016 introduced changes to services previously handled by the multiple 
 
 Exchange stores in Active Directory the configuration of Exchange servers in the organization as well as information about your users' mailboxes. Before you install Exchange Server 2016, you need to prepare your Active Directory forest and its domains. If you aren't familiar with Exchange 2016 forests or domains, see [3. Prepare Active Directory domains](../../plan-and-deploy/prepare-ad-and-domains.md#Step3).
   
-Exchange automatically creates at installation the virtual directory  `autodiscover` in IIS, the frontend Client Access services web site that clients connect to. This allows Outlook to discover the Exchange mailbox settings so that users don't have to deal with manually configuring advanced settings. 
+Exchange automatically creates at installation the virtual directory `autodiscover` in IIS, the frontend Client Access services web site that clients connect to. This allows Outlook to discover the Exchange mailbox settings so that users don't have to deal with manually configuring advanced settings. 
   
 ![Autodiscover functional process](../../media/AutodiscoverProcess.png)
   
@@ -58,11 +58,11 @@ The SCP object contains the authoritative list of Autodiscover service URLs for 
   
 Client connectivity in Exchange 2016 is like Exchange 2013 and differs from Exchange 2010. In Exchange 2016, MAPI over HTTP is enabled by default, when previously Outlook clients used Outlook Anywhere (RPC over HTTP). Exchange 2016 requires fewer name spaces for site-resilient solutions than Exchange 2010, reducing to two from the previously required seven namespaces. To read more about namespace and Exchange 2016, see the blog [Namespace Planning in Exchange 2016](https://go.microsoft.com/fwlink/p/?linkId=843937).
   
-Depending on whether you configured the Autodiscover service on a separate site, the Autodiscover service URL will be either of the following values, where  `//<SMTP-address-domain>` is the primary SMTP domain address: 
+Depending on whether you configured the Autodiscover service on a separate site, the Autodiscover service URL will be either of the following values, where `//<SMTP-address-domain>` is the primary SMTP domain address: 
   
--  `https://<SMTP-address-domain>/autodiscover/autodiscover.xml`
+- `https://<SMTP-address-domain>/autodiscover/autodiscover.xml`
     
--  `https://autodiscover.<smtp-address-domain>/autodiscover/autodiscover.xml`
+- `https://autodiscover.<smtp-address-domain>/autodiscover/autodiscover.xml`
     
 For example, if the user's email address is tony@contoso.com, the primary SMTP domain address is contoso.com.
   
@@ -100,7 +100,7 @@ Exchange introduced namespace requirements for Autodiscover in Exchange 2010, ce
     
 Exchange 2016 simplifies this server resiliency scenario, reducing the five namespaces to two. This is because Exchange no longer needs the RPC Client Access namespaces and Client Access services proxy requests to the Mailbox server that is hosting the active Mailbox database. A Mailbox server in one Active Directory site can proxy a session to a another Active Directory site's Mailbox server.
   
-What this means is that unique namespaces are no longer required for  *each*  datacenter. For example, instead of mail.contoso.com and mail2.contoso.com, you only need a single namespace, mail.contoso.com, for the datacenter pair. Additionally, failback namespaces are no longer needed in Database Availability Groups (DAG) activation scenarios. To learn more about namespaces, see [Exchange Server 2016 Database Availability Groups](https://go.microsoft.com/fwlink/p/?linkId=846392).
+What this means is that unique namespaces are no longer required for *each* datacenter. For example, instead of mail.contoso.com and mail2.contoso.com, you only need a single namespace, mail.contoso.com, for the datacenter pair. Additionally, failback namespaces are no longer needed in Database Availability Groups (DAG) activation scenarios. To learn more about namespaces, see [Exchange Server 2016 Database Availability Groups](https://go.microsoft.com/fwlink/p/?linkId=846392).
   
 Autodiscover is simple to set up for your domain because it only requires that you create a CNAME resource record in your external (public) DNS. CNAME records let you hide the implementation details of your network from the clients that connect to it. Used internally in your network, CNAME records allow users to use the simpler URI mail.domain.com instead of host.examplemachinename.domain.com.
   
@@ -209,7 +209,7 @@ Creating a certificate request is the first step in installing a new certificate
   
 ## Manage Autodiscover services
 
-In deployments where clients connect to multiple Exchange servers, the Autodiscover SCP object is created for the (frontend) Client Access services on each Mailbox server. The SCP object contains the ServiceBindingInfo attribute with the FQDN of the Exchange server that the client connects to in the form of  `https://<ExchangeServer>/autodiscover/autodiscover.xml` (for example,  `https://cas01/autodiscover/autodiscover.xml)`.
+In deployments where clients connect to multiple Exchange servers, the Autodiscover SCP object is created for the (frontend) Client Access services on each Mailbox server. The SCP object contains the ServiceBindingInfo attribute with the FQDN of the Exchange server that the client connects to in the form of `https://<ExchangeServer>/autodiscover/autodiscover.xml` (for example, `https://cas01/autodiscover/autodiscover.xml)`.
   
 You can run the Exchange ActiveSync Autodiscover and Outlook Autodiscover tests in the Microsoft Remote Connectivity Analyzer. If the user is using a local wireless network to connect to Exchange Online, the user should run both tests to make sure that the local network allows for connections to the ActiveSync endpoints.
   

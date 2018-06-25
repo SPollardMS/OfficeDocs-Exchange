@@ -6,8 +6,8 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: get-started-article
-ms.prod: office-online-server
-localization_priority: Normal
+ms.prod: exchange-server-itpro
+localization_priority: Critical
 ms.collection: Strat_EX_Admin
 ms.assetid: 4acc7f2a-93ce-468c-9ace-d5f7eecbd8d4
 description: "Summary: How to set up mail flow and client access in Exchange 2016."
@@ -135,7 +135,7 @@ To verify that you have successfully configured the default email address policy
   
 1. In the EAC, go to **Recipients** \> **Mailboxes**.
     
-2. Select a mailbox and then, in the recipient details pane, verify that the **User mailbox** field has been set to  _\<alias\>_@ _\<new accepted domain\>_. For example, david@contoso.com.
+2. Select a mailbox and then, in the recipient details pane, verify that the **User mailbox** field has been set to _\<alias\>_@ _\<new accepted domain\>_. For example, david@contoso.com.
     
 3. Optionally, create a new mailbox and verify the mailbox is given an email address with the new accepted domain by doing the following:
     
@@ -143,7 +143,7 @@ To verify that you have successfully configured the default email address policy
     
 2. On the new user mailbox page, provide the information required to create a new mailbox. Click **Save**.
     
-3. Select the new mailbox and then, in the recipient details pane, verify that the **User mailbox** field has been set to  _\<alias\>_@ _\<new accepted domain\>_. For example, david@contoso.com.
+3. Select the new mailbox and then, in the recipient details pane, verify that the **User mailbox** field has been set to _\<alias\>_@ _\<new accepted domain\>_. For example, david@contoso.com.
     
 ## Step 4: Configure external URLs
 <a name="ConfigExternalURL"> </a>
@@ -219,13 +219,13 @@ To verify that you have successfully configured the external URL on the Mailbox 
    
 To verify that you have successfully configured your public DNS records, do the following:
   
-1. Open a command prompt and run  `nslookup.exe`.
+1. Open a command prompt and run `nslookup.exe`.
     
 2. Change to a DNS server that can query your public DNS zone.
     
-3. In  `nslookup`, look up the record of each FQDN you created. Verify that the value that's returned for each FQDN is correct.
+3. In `nslookup`, look up the record of each FQDN you created. Verify that the value that's returned for each FQDN is correct.
     
-4. In  `nslookup`, type  `set type=mx` and then look up the accepted domain you added in Step 1. Verify that the value returned matches the FQDN of the Mailbox server. 
+4. In `nslookup`, type `set type=mx` and then look up the accepted domain you added in Step 1. Verify that the value returned matches the FQDN of the Mailbox server. 
     
 ## Step 5: Configure internal URLs
 <a name="ConfigInternalURL"> </a>
@@ -305,11 +305,11 @@ To verify that you have successfully configured the internal URL on the Mailbox 
    
 To verify that you have successfully configured your private DNS records, do the following:
   
-1. Open a command prompt and run  `nslookup.exe`.
+1. Open a command prompt and run `nslookup.exe`.
     
 2. Change to a DNS server that can query your private DNS zone.
     
-3. In  `nslookup`, look up the record of each FQDN you created. Verify that the value that's returned for each FQDN is correct.
+3. In `nslookup`, look up the record of each FQDN you created. Verify that the value that's returned for each FQDN is correct.
     
 ### Configure different internal and external URLs
 
@@ -321,7 +321,7 @@ To verify that you have successfully configured your private DNS records, do the
     
 4. Select the virtual directory you want to change and click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
-5. In **Internal URL**, replace the host name between **https://** and the first forward slash ( **/** ) with the new FQDN you want to use. For example, if you want to change the EWS virtual directory FQDN from Ex2016MBX.corp.contoso.com to internal.contoso.com, change the internal URL from https://Ex2016MBX.corp.contoso.com/ews/exchange.asmx to https://internal.contoso.com/ews/exchange.asmx. 
+5. In **Internal URL**, replace the host name between **https://** and the first forward slash (**/** ) with the new FQDN you want to use. For example, if you want to change the EWS virtual directory FQDN from Ex2016MBX.corp.contoso.com to internal.contoso.com, change the internal URL from https://Ex2016MBX.corp.contoso.com/ews/exchange.asmx to https://internal.contoso.com/ews/exchange.asmx. 
     
 6. Click **Save**.
     
@@ -360,11 +360,11 @@ To verify that you have successfully configured the internal URL on the Mailbox 
    
 To verify that you have successfully configured your private DNS records, do the following:
   
-1. Open a command prompt and run  `nslookup.exe`.
+1. Open a command prompt and run `nslookup.exe`.
     
 2. Change to a DNS server that can query your private DNS zone.
     
-3. In  `nslookup`, look up the record of each FQDN you created. Verify that the value that's returned for each FQDN is correct.
+3. In `nslookup`, look up the record of each FQDN you created. Verify that the value that's returned for each FQDN is correct.
     
 ## Step 6: Configure an SSL certificate
 <a name="ConfigCert"> </a>

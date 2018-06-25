@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 989a62fc-4bc1-448f-90c8-7c7b56fe1084
 description: "Summary: Learn about the TNEF message conversion and preservation options that are available in Exchange 2016."
@@ -45,7 +45,7 @@ When you configure TNEF conversion options for a remote domain, the settings are
   
 - In the EAC, go to **Mail flow** \> **Remote domains** \> **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png), or select an existing remote domain, and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png) \> **Use rich-text format** section. 
     
-- In the Exchange Management Shell, use the  _TnefEnabled_ parameter on the **Set-RemoteDomain** cmdlet. 
+- In the Exchange Management Shell, use the _TnefEnabled_ parameter on the **Set-RemoteDomain** cmdlet. 
     
 The TNEF conversion options for remote domains are described in this table:
   
@@ -60,18 +60,18 @@ The TNEF conversion options for remote domains are described in this table:
 
 Mail contacts and mail users represent users in your Exchange organization that have external email addresses For more information, see [Recipients](../../recipients/recipients.md).
   
-When you configure TNEF conversion options for a mail contact or a mail user, those options are applied to all messages sent to that specific recipient. You use the  _UseMapiRichTextFormat_ parameter on the **Set-MailUser** and **Set-MailContact** cmdlets in the Exchange Management Shell. Valid values are: 
+When you configure TNEF conversion options for a mail contact or a mail user, those options are applied to all messages sent to that specific recipient. You use the _UseMapiRichTextFormat_ parameter on the **Set-MailUser** and **Set-MailContact** cmdlets in the Exchange Management Shell. Valid values are: 
   
--  `Always`: TNEF is used for all messages sent to the recipient.
+- `Always`: TNEF is used for all messages sent to the recipient.
     
--  `Never`: TNEF is never used for any messages sent to the recipient.
+- `Never`: TNEF is never used for any messages sent to the recipient.
     
--  `UseDefaultSettings`: This is the default value. TNEF messages aren't specifically allowed or prevented for the mail user or mail contact. Whether TNEF messages are sent to the recipient depends on the TNEF conversion setting for the remote domain, or the TNEF conversion setting that's configured by the sender in Outlook.
+- `UseDefaultSettings`: This is the default value. TNEF messages aren't specifically allowed or prevented for the mail user or mail contact. Whether TNEF messages are sent to the recipient depends on the TNEF conversion setting for the remote domain, or the TNEF conversion setting that's configured by the sender in Outlook.
     
 ## TNEF conversion options in Outlook
 <a name="Outlook"> </a>
 
-Senders can control the default conversion options for TNEF messages sent to all external recipients. These options are called  *Internet message format*  options. The options only apply to external recipients, and not to recipients in the Exchange organization. 
+Senders can control the default conversion options for TNEF messages sent to all external recipients. These options are called *Internet message format* options. The options only apply to external recipients, and not to recipients in the Exchange organization. 
   
  **Note**: The following options define how Outlook rich text messages are handled when sent to external recipients. If the messages are HTML or plain text, these settings don't apply.
   
@@ -83,9 +83,9 @@ The following TNEF conversion options are available in Outlook:
     
 - **Send using Outlook Rich Text Format**: Any TNEF messages sent to remote recipients remain TNEF messages.
     
-Senders in Outlook 2010 or earlier can also control the default TNEF message conversion options for TNEF messages sent to specific external recipients. These options are called  *Internet recipient message format*  options. The options only apply to external recipients stored in your Contacts folder, and not to recipients in the Exchange organization. The following list describes the TNEF conversion options for an external recipient in your Contacts folder: 
+Senders in Outlook 2010 or earlier can also control the default TNEF message conversion options for TNEF messages sent to specific external recipients. These options are called *Internet recipient message format* options. The options only apply to external recipients stored in your Contacts folder, and not to recipients in the Exchange organization. The following list describes the TNEF conversion options for an external recipient in your Contacts folder: 
   
-- **Let Outlook decide the best sending format**: This is the default setting. This setting forces Outlook to use the TNEF conversion option that's specified by the default Internet format as described in the previous list ( **Convert to HTML format**, **Convert to Plain Text format**, or **Send using Outlook Rich Text Format**). Therefore, the TNEF message may be left as TNEF, converted to HTML, or converted to plain text (the default result is converted to HTML). If you want to make sure that the TNEF message remains TNEF for the contact, you should change this setting to **Send using Outlook Rich Text format**.
+- **Let Outlook decide the best sending format**: This is the default setting. This setting forces Outlook to use the TNEF conversion option that's specified by the default Internet format as described in the previous list (**Convert to HTML format**, **Convert to Plain Text format**, or **Send using Outlook Rich Text Format**). Therefore, the TNEF message may be left as TNEF, converted to HTML, or converted to plain text (the default result is converted to HTML). If you want to make sure that the TNEF message remains TNEF for the contact, you should change this setting to **Send using Outlook Rich Text format**.
     
 - **Send Plain Text only**: Any TNEF messages sent to the recipient are converted to plain text. Any formatting in the message is lost.
     

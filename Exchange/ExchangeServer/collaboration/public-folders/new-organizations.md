@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 7b419906-8977-47f0-8687-a87911b5ebec
 description: "Summary: Learn how to get public folders configured and running in Exchange 2016 for a new organization or in an organization that has never previously had public folders."

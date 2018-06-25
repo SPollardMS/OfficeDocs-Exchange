@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: overview
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 3311562b-8fd3-4d66-a5f7-8e65a38c6b39
 description: "Summary: An overview of the different collaboration methods available in Exchange: groups, site mailboxes, shared mailboxes, and public folders."

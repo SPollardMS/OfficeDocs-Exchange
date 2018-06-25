@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 03d1e215-518b-4b48-bfcd-8d187ff8f5ef
 description: "Summary: Learn how to configure a virtual machine (VM) as an Exchange 2016 DAG witness server in Azure."
@@ -217,9 +217,9 @@ For example, if you are using a Routing and Remote Access Service (RRAS) VPN dev
   
 1. Open the configuration script in any text editor.
     
-2. Find the  `#Add S2S VPN interface` section. 
+2. Find the `#Add S2S VPN interface` section. 
     
-3. Find the **Add-VpnS2SInterface** command in this section. Verify that the value for the  _SharedSecret_ parameter matches the pre-shared key for the site for which you are configuring the VPN device. 
+3. Find the **Add-VpnS2SInterface** command in this section. Verify that the value for the _SharedSecret_ parameter matches the pre-shared key for the site for which you are configuring the VPN device. 
     
 Other devices might require additional verifications. For example, the configuration scripts for Cisco devices set ACL rules by using the local IP address ranges. You need to review and verify all references to the local site in the configuration script before you use it. See the following topics for more information:
   
@@ -324,15 +324,15 @@ At this point, you have configured your DAG to use the file server on Azure as y
   Get-DatabaseAvailabilityGroup -Identity DAG1 -Status | Format-List Name, WitnessServer, WitnessDirectory, WitnessShareInUse
   ```
 
-    Verify that the  _WitnessServer_ parameter is set to the file server on Azure, the  _WitnessDirectory_ parameter is set to the correct path, and the  _WitnessShareInUse_ parameter shows **Primary**. 
+    Verify that the _WitnessServer_ parameter is set to the file server on Azure, the _WitnessDirectory_ parameter is set to the correct path, and the _WitnessShareInUse_ parameter shows **Primary**. 
     
-2. If the DAG has an even number of nodes, the file share witness will be configured. Validate the file share witness setting in cluster properties by running the following command. The value for the  _SharePath_ parameter should point to the file server and display the correct path. 
+2. If the DAG has an even number of nodes, the file share witness will be configured. Validate the file share witness setting in cluster properties by running the following command. The value for the _SharePath_ parameter should point to the file server and display the correct path. 
     
   ```
   Get-ClusterResource -Cluster MBX1 | Get-ClusterParameter | Format-List
   ```
 
-3. Next, verify the status of the "File Share Witness" cluster resource by running the following command. The  _State_ of the cluster resource should display **Online**. 
+3. Next, verify the status of the "File Share Witness" cluster resource by running the following command. The _State_ of the cluster resource should display **Online**. 
     
   ```
   Get-ClusterResource -Cluster MBX1

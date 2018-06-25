@@ -5,7 +5,7 @@ author: chrisda
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 8ee2672a-3a45-4897-8cc0-fa23c374dbf9
 description: "Summary: Learn about address lists and global address lists (GALs) how administrators can use them to organize recipients in Exchange 2016."
@@ -15,7 +15,7 @@ description: "Summary: Learn about address lists and global address lists (GALs)
 
  **Summary**: Learn about address lists and global address lists (GALs) how administrators can use them to organize recipients in Exchange 2016.
   
-An  *address list*  is a collection of mail-enabled recipient objects from Active Directory. Address lists are based on recipient filters, and are basically unchanged from Exchange 2010. You can filter by recipient type (for example, mailboxes and mail contacts), recipient properties (for example, Company or State or Province), or both. Address lists aren't static; they're updated dynamically. When you create or modify recipients in your organization, they're automatically added to the appropriate address lists. These are the different types of address lists that are available: 
+An *address list* is a collection of mail-enabled recipient objects from Active Directory. Address lists are based on recipient filters, and are basically unchanged from Exchange 2010. You can filter by recipient type (for example, mailboxes and mail contacts), recipient properties (for example, Company or State or Province), or both. Address lists aren't static; they're updated dynamically. When you create or modify recipients in your organization, they're automatically added to the appropriate address lists. These are the different types of address lists that are available: 
   
 - **Global address lists (GALs)**: The built-in GAL that's automatically created by Exchange includes every mail-enabled object in the Active Directory forest. You can create additional GALs to separate users by organization or location, but a user can only see and use one GAL.
     

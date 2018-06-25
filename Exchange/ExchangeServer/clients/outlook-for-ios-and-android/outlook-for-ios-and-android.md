@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 8b46e0bf-334d-44ed-bf20-eab605fdcae6
 description: "Summary: These articles contain architectural and security information for administrators about Outlook for iOS and Android in an Exchange 2016 on-premises environment."

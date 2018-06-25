@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 6deaefa8-1152-40d9-b1ba-9c19bdf8a928
 description: "Summary: Create the Send connector that's required to send mail to the internet."
@@ -83,13 +83,13 @@ After you create the Send connector, it appears in the Send connector list. To c
     
   - The usage type is Internet.
     
-  - The Send connector uses DNS routing. We aren't using the  _DNSRoutingEnabled_ parameter, and the default value is  `$true`.
+  - The Send connector uses DNS routing. We aren't using the _DNSRoutingEnabled_ parameter, and the default value is `$true`.
     
   - The Send connector is for all external domains (\*).
     
-  - The local Exchange server is the source server. We aren't using the  _SourceTransportServer_ parameter, and the default value is the local Exchange server. 
+  - The local Exchange server is the source server. We aren't using the _SourceTransportServer_ parameter, and the default value is the local Exchange server. 
     
-  - The Send connector isn't scoped to the local Active Directory site. We aren't using the  _IsScopedConnector_ parameter, and the default value is  `$false`.
+  - The Send connector isn't scoped to the local Active Directory site. We aren't using the _IsScopedConnector_ parameter, and the default value is `$false`.
     
   ```
   New-SendConnector -Name "To internet" -AddressSpaces * -Internet
@@ -98,7 +98,7 @@ After you create the Send connector, it appears in the Send connector list. To c
     For information about other options, see [New-SendConnector](http://technet.microsoft.com/library/7b315ab0-8778-4835-a252-fb94129d7a8e.aspx).
     
 > [!NOTE]
-> To configure the Send connector to proxy outbound mail through the Front End Transport service, add  `-FrontEndProxyEnabled $true` to the command. For more information, see [Configure Send connectors to proxy outbound mail](proxy-outbound-mail.md). 
+> To configure the Send connector to proxy outbound mail through the Front End Transport service, add `-FrontEndProxyEnabled $true` to the command. For more information, see [Configure Send connectors to proxy outbound mail](proxy-outbound-mail.md). 
   
 #### How do you know this worked?
 

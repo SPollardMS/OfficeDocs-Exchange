@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: get-started-article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.collection: Strat_EX_Admin
 ms.assetid: 71fcbe4c-783b-4f77-aabb-a21aa7a4ef23
@@ -41,7 +41,7 @@ For more information about the Exchange Management Shell and the Exchange Toolbo
     
 1. Open File Explorer, right-click on the Exchange ISO image file that you downloaded, and then select **Mount**.
     
-2. In the resulting virtual DVD drive that appears, start Exchange 2016 Setup by double-clicking  `Setup.exe`.
+2. In the resulting virtual DVD drive that appears, start Exchange 2016 Setup by double-clicking `Setup.exe`.
     
 3. The Exchange Server 2016 Setup wizard opens. On the **Check for Updates?** page, choose one of the following options, and then click **Next** to continue: 
     
@@ -51,7 +51,7 @@ For more information about the Exchange Management Shell and the Exchange Toolbo
     
 ![Exchange 2016 Setup, Check for Updates page](../../media/f0ca225e-b88f-45e9-a8cb-21adaabe984e.png)
   
-4. The **Copying Files** page shows the progress of copying files to the local hard drive. Typically, the files are copied to  `%WinDir%\Temp\ExchangeSetup`, but you can confirm the location in the Exchange Setup log at  `C:\ExchangeSetupLogs\ExchangeSetup.log`.
+4. The **Copying Files** page shows the progress of copying files to the local hard drive. Typically, the files are copied to `%WinDir%\Temp\ExchangeSetup`, but you can confirm the location in the Exchange Setup log at `C:\ExchangeSetupLogs\ExchangeSetup.log`.
     ![Exchange 2016 Setup, Copying Files page](../../media/78813be2-745d-4a58-8da8-883c43aa2650.png)
   
 5. On the **Introduction** page, click **Next** to continue. 
@@ -80,7 +80,7 @@ For more information about the Exchange Management Shell and the Exchange Toolbo
     Click **Next** to continue. 
     ![Exchange 2016 Setup, Server Role Selection page, Management tools selection](../../media/9675432c-9b46-4f95-841d-1cea632a93a9.png)
   
-9. On the **Installation Space and Location** page, either accept the default installation location (  `C:\Program Files\Microsoft\Exchange Server\V15`), or click **Browse** to choose a new location. Make sure that you have enough disk space available in the location where you want to install the management tools. Click **Next** to continue. 
+9. On the **Installation Space and Location** page, either accept the default installation location (`C:\Program Files\Microsoft\Exchange Server\V15`), or click **Browse** to choose a new location. Make sure that you have enough disk space available in the location where you want to install the management tools. Click **Next** to continue. 
     ![Exchange 2016 Setup, Installation Space and Location page](../../media/7ae7f248-3cdc-4453-9d7d-e99edc300d16.png)
   
 10. If this is the first installation of Exchange in your organization (Exchange server or the management tools), you arrive on the **Exchange Organization** page. On this page, configure the following settings: 
@@ -117,7 +117,7 @@ For more information about the Exchange Management Shell and the Exchange Toolbo
     
 1. Open File Explorer, right-click on the Exchange ISO image file that you downloaded, and then select **Mount**.
     
-2. Open an elevated command prompt (a Command Prompt window you open by selecting **Run as administrator**), and go to the resulting virtual DVD drive that appears. For example, if the virtual drive letter is E:, type  `E:` in the command prompt, and then press Enter. 
+2. Open an elevated command prompt (a Command Prompt window you open by selecting **Run as administrator**), and go to the resulting virtual DVD drive that appears. For example, if the virtual drive letter is E:, type `E:` in the command prompt, and then press Enter. 
     
 3. To install the management tools, use the following syntax:
     

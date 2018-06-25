@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 51a8b4c6-a53e-41c5-8bb1-ea4c0eaa0174
 description: "Summary: Learn how to create mailboxes for users in Exchange 2016 ."
@@ -18,13 +18,13 @@ description: "Summary: Learn how to create mailboxes for users in Exchange 2016 
   
 User mailboxes are Exchange mailboxes that are associated with people, typically one mailbox per person. Each user mailbox has an associated Active Directory account that gives the person access to the mailbox to send and receive email messages, and create meetings and appointments.
   
-When you create a new user mailbox in Exchange, you also create the corresponding Active Directory user at the same time. Or, you can create a new mailbox for an existing Active Directory account that doesn't have an associated mailbox. This is known as  *mailbox-enabling*  an existing user. 
+When you create a new user mailbox in Exchange, you also create the corresponding Active Directory user at the same time. Or, you can create a new mailbox for an existing Active Directory account that doesn't have an associated mailbox. This is known as *mailbox-enabling* an existing user. 
   
 You can create user mailboxes in Exchange Server 2016 by using the Exchange admin center (EAC) or the Exchange Management Shell. The following table describes some of the important properties for user mailboxes.
   
 |**Property**|**Required or optional**|**Description**|
 |:-----|:-----|:-----|
-|Alias  <br/> |Optional  <br/> |The Exchange alias (also known as the  *mail nickname*  ) for the mailbox. The maximum length is 64 characters. Valid characters are letters, numbers and ASCII text characters that are allowed in email addresses. For example, periods are allowed, but each period must be surrounded by other valid characters (for example, pilar.pinilla).  <br/>  The alias value is used to generate the primary email address (  _\<alias\>_@ _\<domain\>_). If you don't specify an alias value, the user name part of the account name (user principal name) is used.  <br/> The alias value must be unique.  <br/> **Note**: Don't use apostrophes (') or quotation marks (") in the alias. Although these characters are allowed, they might cause problems later.  <br/> |
+|Alias  <br/> |Optional  <br/> |The Exchange alias (also known as the *mail nickname* ) for the mailbox. The maximum length is 64 characters. Valid characters are letters, numbers and ASCII text characters that are allowed in email addresses. For example, periods are allowed, but each period must be surrounded by other valid characters (for example, pilar.pinilla).  <br/>  The alias value is used to generate the primary email address (_\<alias\>_@ _\<domain\>_). If you don't specify an alias value, the user name part of the account name (user principal name) is used.  <br/> The alias value must be unique.  <br/> **Note**: Don't use apostrophes (') or quotation marks (") in the alias. Although these characters are allowed, they might cause problems later.  <br/> |
 |Display name  <br/> |EAC: Required  <br/> Exchange Management Shell: Optional  <br/> |Identifies the mailbox in the EAC, and in address lists in Outlook and Outlook on the web (formerly known as Outlook Web App). The maximum length is 256 characters. Spaces and other text characters are allowed.  <br/> In the EAC, the display name is populated by the values that you enter for the first name, middle initial, and last name, but you can specify a custom value.  <br/> In the Exchange Management Shell, if you don't specify a value for the display name, the value of the **Name** property is used.  <br/> The display name value doesn't need to be unique, but having multiple mailboxes with the same display name would be confusing.  <br/> |
 |Name  <br/> |Required  <br/> |Species the name of the object in Active Directory. Only administrators see this value in Exchange or Active Directory management tools. The maximum length is 64 characters. Spaces and other text characters are allowed.  <br/> The name value must be unique.  <br/> |
    
@@ -111,19 +111,19 @@ This example creates a new mailbox and Active Directory user account for Pilar P
   
 - **Required parameters**:
     
-  -  _Name_: Pilar Pinilla. This value is also used for the display name, because we aren't using the  _DisplayName_ parameter. 
+  - _Name_: Pilar Pinilla. This value is also used for the display name, because we aren't using the _DisplayName_ parameter. 
     
-  -  _UserPrincipalName_: The Active Directory account name is  `pilarp@contoso.com`.
+  - _UserPrincipalName_: The Active Directory account name is `pilarp@contoso.com`.
     
-  -  _Password_:  `Pa$$word1`
+  - _Password_: `Pa$$word1`
     
 - **Optional parameters**:
     
-  -  _FirstName_: Pilar
+  - _FirstName_: Pilar
     
-  -  _LastName_: Pinilla
+  - _LastName_: Pinilla
     
-  - The alias value is  `pilarp` because we aren't using the  _Alias_ parameter, and  `pilarp` is taken from the  _UserPrincipalName_ parameter value. 
+  - The alias value is `pilarp` because we aren't using the _Alias_ parameter, and `pilarp` is taken from the _UserPrincipalName_ parameter value. 
     
 ```
 New-Mailbox -Name "Pilar Pinilla" -UserPrincipalName pilarp@contoso.com -Password (ConvertTo-SecureString -String 'Pa$$word1' -AsPlainText -Force) -FirstName Pilar -LastName Pinilla 
@@ -138,7 +138,7 @@ To verify that you've successfully created a user mailbox, use either of the fol
   
 - In the EAC, go to **Recipients** \> **Mailboxes**, and verify the mailbox is displayed in the list.
     
-- In the Exchange Management Shell, replace  _\<Name\>_ with the  _Name_ parameter value that you used, and run the following command: 
+- In the Exchange Management Shell, replace _\<Name\>_ with the _Name_ parameter value that you used, and run the following command: 
     
   ```
   Get-Mailbox -Identity <Name> | Format-List Name,DisplayName,Alias,PrimarySmtpAddress,Database
@@ -188,9 +188,9 @@ Enable-Mailbox -Identity <Account> [-Alias <Alias>] [-DisplayName <DisplayName>]
 
 This example creates a mailbox in the mailbox database named UsersMailboxDatabase for the existing user named Kathleen Reiter, whose account name (user principal name) is kreiter@contoso.com.
   
-- Because we aren't using the  _Alias_ parameter, the alias value is  `kreiter`.
+- Because we aren't using the _Alias_ parameter, the alias value is `kreiter`.
     
-- Because we aren't using the  _DisplayName_ parameter, the value of the **name** attribute in Active Directory is used as the display name. 
+- Because we aren't using the _DisplayName_ parameter, the value of the **name** attribute in Active Directory is used as the display name. 
     
 ```
 Enable-Mailbox -Identity kreiter@contoso.com -Database UsersMailboxDatabase
@@ -210,7 +210,7 @@ To verify that you've successfully created a mailbox for an existing user, use e
   
 - In the EAC, go to **Recipients** \> **Mailboxes** and verify the mailbox is displayed in the list. 
     
-- In the Exchange Management Shell, replace  _\<Name\>_ with the name attribute of the user, and run the following command: 
+- In the Exchange Management Shell, replace _\<Name\>_ with the name attribute of the user, and run the following command: 
     
   ```
   Get-Mailbox -Identity <Name> | Format-List Name,DisplayName,Alias,PrimarySmtpAddress,Database

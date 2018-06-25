@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 4/19/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 64437ffd-231b-4c10-84df-232ccbe9538f
 description: "Summary: Learn how to create a public folder mailbox in Exchange 2016."

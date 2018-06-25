@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: d0a916a1-e3ed-49ae-b116-a559be0dcce6
 description: "Summary: Learn how to use address book policies (ABP) to create separate virtual organizations with a segmented global address list in Exchange 2016."
@@ -16,7 +16,7 @@ description: "Summary: Learn how to use address book policies (ABP) to create se
 
  **Summary**: Learn how to use address book policies (ABP) to create separate virtual organizations with a segmented global address list in Exchange 2016.
   
-Address book policies (ABPs) lets administrators segment users into specific groups to provide customized views of the organization's global address list (GAL). The goal of an ABP is to provide a simpler mechanism for GAL segmentation (also known as  *GAL segregation*  ) in on-premises organizations that require multiple GALs. 
+Address book policies (ABPs) lets administrators segment users into specific groups to provide customized views of the organization's global address list (GAL). The goal of an ABP is to provide a simpler mechanism for GAL segmentation (also known as *GAL segregation* ) in on-premises organizations that require multiple GALs. 
   
  An ABP contains these elements: 
   
@@ -24,7 +24,7 @@ Address book policies (ABPs) lets administrators segment users into specific gro
     
 - One offline address book (OAB). For more information about OABs, see [Offline address books in Exchange 2016](../../email-addresses-and-address-books/offline-address-books/offline-address-books.md).
     
-- One room list. Note that this room list is a custom address list that specifies rooms (contains the filter  `RecipientDisplayType -eq 'ConferenceRoomMailbox'`). It's not a room finder that you create with the  _RoomList_ switch on the **New-DistributionGroup** or **Set-DistributionGroup** cmdlet. For more information, see [Create and manage room mailboxes](../../recipients/room-mailboxes.md).
+- One room list. Note that this room list is a custom address list that specifies rooms (contains the filter `RecipientDisplayType -eq 'ConferenceRoomMailbox'`). It's not a room finder that you create with the _RoomList_ switch on the **New-DistributionGroup** or **Set-DistributionGroup** cmdlet. For more information, see [Create and manage room mailboxes](../../recipients/room-mailboxes.md).
     
 - One or more address lists. For more information about address lists, see [Custom address lists](../../email-addresses-and-address-books/address-lists/address-lists.md#CALists).
     

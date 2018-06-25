@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: d948269b-c902-4d8d-8c2b-269473359baa
 description: "Summary: How to designate a passive copy of an Exchange 2016 mailbox database as the new active copy."
@@ -16,7 +16,7 @@ description: "Summary: How to designate a passive copy of an Exchange 2016 mailb
 
  **Summary**: How to designate a passive copy of an Exchange 2016 mailbox database as the new active copy.
   
-Activating a mailbox database copy is the process of designating a specific passive copy as the new active copy of a mailbox database. This process is referred to as a  *database switchover*  . A database switchover involves dismounting the current active database and mounting the database copy on the specified server as the new active mailbox database copy. The database copy that will become the active mailbox database must be healthy and current. 
+Activating a mailbox database copy is the process of designating a specific passive copy as the new active copy of a mailbox database. This process is referred to as a *database switchover* . A database switchover involves dismounting the current active database and mounting the database copy on the specified server as the new active mailbox database copy. The database copy that will become the active mailbox database must be healthy and current. 
   
 Looking for other management tasks related to mailbox database copies? Check out [Managing mailbox database copies](http://technet.microsoft.com/library/06df16b4-f209-4d3a-8c68-0805c745f9b2.aspx).
   
@@ -53,19 +53,19 @@ This example activates and mounts a copy of the database DB4 hosted on MBX3 as t
 Move-ActiveMailboxDatabase DB4 -ActivateOnServer MBX3 -MountDialOverride:None
 ```
 
-This example performs a switchover of the database DB2 to the Mailbox server MBX1. When the command completes, MBX1 hosts the active copy of DB2. Because the  _MountDialOverride_ parameter is set to  `None`, MBX1 mounts the database using its own defined database auto mount dial settings.
+This example performs a switchover of the database DB2 to the Mailbox server MBX1. When the command completes, MBX1 hosts the active copy of DB2. Because the _MountDialOverride_ parameter is set to `None`, MBX1 mounts the database using its own defined database auto mount dial settings.
   
 ```
 Move-ActiveMailboxDatabase DB2 -ActivateOnServer MBX1 -MountDialOverride:None
 ```
 
-This example performs a switchover of the database DB1 to the Mailbox server MBX3. When the command completes, MBX3 hosts the active copy of DB1. Because the  _MountDialOverride_ parameter is specified with a value of  `Good Availability`, MBX3 mounts the database using a database auto mount dial setting of  _GoodAvailability_.
+This example performs a switchover of the database DB1 to the Mailbox server MBX3. When the command completes, MBX3 hosts the active copy of DB1. Because the _MountDialOverride_ parameter is specified with a value of `Good Availability`, MBX3 mounts the database using a database auto mount dial setting of _GoodAvailability_.
   
 ```
 Move-ActiveMailboxDatabase DB1 -ActivateOnServer MBX3 -MountDialOverride:GoodAvailability
 ```
 
-This example performs a switchover of the database DB3 to the Mailbox server MBX4. When the command completes, MBX4 hosts the active copy of DB3. Because the  _MountDialOverride_ parameter isn't specified, MBX4 mounts the database using a database auto mount dial setting of  _Lossless_.
+This example performs a switchover of the database DB3 to the Mailbox server MBX4. When the command completes, MBX4 hosts the active copy of DB3. Because the _MountDialOverride_ parameter isn't specified, MBX4 mounts the database using a database auto mount dial setting of _Lossless_.
   
 ```
 Move-ActiveMailboxDatabase DB3 -ActivateOnServer MBX4
@@ -77,13 +77,13 @@ This example performs a server switchover for the Mailbox server MBX1. All activ
 Move-ActiveMailboxDatabase -Server MBX1
 ```
 
-This example performs a switchover of the database DB4 to the Mailbox server MBX5. In this example, the database copy on MBX5 has a replay queue greater than 6. As a result, the  _SkipLagChecks_ parameter must be specified to activate the database copy on MBX5. 
+This example performs a switchover of the database DB4 to the Mailbox server MBX5. In this example, the database copy on MBX5 has a replay queue greater than 6. As a result, the _SkipLagChecks_ parameter must be specified to activate the database copy on MBX5. 
   
 ```
 Move-ActiveMailboxDatabase DB4 MBX5 -SkipLagChecks
 ```
 
-This example performs a switchover of the database DB5 to the Mailbox server MBX6. In this example, the database copy on MBX6 has a  _ContentIndexState_ of Failed. As a result, the  _SkipClientExperienceChecks_ parameter must be specified to activate the database copy on MBX6. 
+This example performs a switchover of the database DB5 to the Mailbox server MBX6. In this example, the database copy on MBX6 has a _ContentIndexState_ of Failed. As a result, the _SkipClientExperienceChecks_ parameter must be specified to activate the database copy on MBX6. 
   
 ```
 Move-ActiveMailboxDatabase DB5 MBX6 -SkipClientExperienceChecks

@@ -4,9 +4,9 @@ ms.author: dmaguire
 author: msdmaguire
 manager: scotv
 ms.date: 6/8/2018
-ms.audience: End User
+ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.collection: Strat_EX_Admin
 ms.assetid: 056b29f6-e0e9-4974-b763-002518857a93
@@ -89,11 +89,11 @@ There are two configuration objects used for OAuth andExchange 2016 partner appl
     
     Exchange 2016 Setup creates a self-signed certificate with the friendly name Microsoft Exchange Server Auth Certificate and replicates the certificate to all front-end servers in the Exchange organization. The certificate's thumbprint is specified in the authorization configuration for Exchange 2016, along with its service name, which is a well-known GUID that represents on-premises Exchange 2016. Exchange uses the authorization configuration to publish its auth metadata document.
     
-- **Partner applications**: You enable partner applications by creating a partner application configuration to request access tokens from Exchange. Exchange 2016 provides the  `Configure-EnterprisePartnerApplication.ps1` script that lets you quickly and easily create partner application configurations and minimize configuration errors. 
+- **Partner applications**: You enable partner applications by creating a partner application configuration to request access tokens from Exchange. Exchange 2016 provides the `Configure-EnterprisePartnerApplication.ps1` script that lets you quickly and easily create partner application configurations and minimize configuration errors. 
     
     When Exchange 2016 receives an access request from a partner application via Exchange Web Services (EWS), the following events take place.
     
-  - EWS parses the  `www-authenticate` header of the https request that contains the access token signed by the calling server using its private key. 
+  - EWS parses the `www-authenticate` header of the https request that contains the access token signed by the calling server using its private key. 
     
   - The auth module validates the access token using the partner application configuration.
     
@@ -101,13 +101,11 @@ There are two configuration objects used for OAuth andExchange 2016 partner appl
     
     For example, if a user performs an eDiscovery search using the eDiscovery Center in SharePoint 2016, Exchange checks whether the user is a member of the Discovery Management role group or has the Mailbox Search role assigned and the mailboxes being searched are within the scope of the RBAC role assignment. For more details, see [Permissions](../../permissions/permissions.md).
     
-In on-premises deployments, Exchange 2016, SharePoint Server 2016, and Skype for Business Server 2015 do not require an authorization server to issue tokens. Each application issues self-signed tokens to access the resources provided by other applications. The application that provides access to resources, for example Exchange 2016, trusts the self-signed tokens presented by the calling application. Trust is established by creating a  *partner application*  configuration for the calling application, which includes the calling application's ApplicationID, certificate, and AuthMetadataUrl. Exchange 2016, SharePoint 2016, and Skype for Business publish their auth metadata document in a well-known URL. 
+In on-premises deployments, Exchange 2016, SharePoint Server 2016, and Skype for Business Server 2015 do not require an authorization server to issue tokens. Each application issues self-signed tokens to access the resources provided by other applications. The application that provides access to resources, for example Exchange 2016, trusts the self-signed tokens presented by the calling application. Trust is established by creating a *partner application* configuration for the calling application, which includes the calling application's ApplicationID, certificate, and AuthMetadataUrl. Exchange 2016, SharePoint 2016, and Skype for Business publish their auth metadata document in a well-known URL. 
   
 **Auth metadata URLs**
 
-|
-|
-|****Server****|****AuthMetadataUrl****|
+|**Server**|**AuthMetadataUrl**|
 |:-----|:-----|
 | Exchange 2016  <br/> | `https://<serverfqdn>/autodiscover/metadata/json/1` <br/> |
 |SharePoint Server 2016  <br/> | `https://<serverfqdn>/_layouts/15/metadata/json/1` <br/> |
@@ -161,7 +159,7 @@ After you have installed SharePoint Server 2016 in an environment with Exchange 
 ## Manage access to high-resolution user photos
 <a name="BKMK_OAuth"> </a>
 
-The user photos feature lets you store high resolution user photos in Exchange 2016 that can be accessed by client applications, including Outlook, Outlook on the web, SharePoint 2016, Skype for Business, and mobile email clients. A low-resolution photo is also stored in Active Directory. The cmdlet  *Set-UserPhoto*  stores a copy of a high resolution image in the user's Exchange mailbox, and stores a 64×64 pixel copy of the photo as an image in the Active Directory attribute thumbnailPhoto. 
+The user photos feature lets you store high resolution user photos in Exchange 2016 that can be accessed by client applications, including Outlook, Outlook on the web, SharePoint 2016, Skype for Business, and mobile email clients. A low-resolution photo is also stored in Active Directory. The cmdlet *Set-UserPhoto* stores a copy of a high resolution image in the user's Exchange mailbox, and stores a 64×64 pixel copy of the photo as an image in the Active Directory attribute thumbnailPhoto. 
   
 As with UCS, user photos allow your organization to maintain a consistent user profile photo that can be consumed by client applications without requiring each application to have its own user photos and different ways to add and manage them. Users can manage their own photos by using Outlook on the web, SharePoint 2016 or Skype for Business. For detail about managing photos on Outlook on the web, see [My account](https://go.microsoft.com/fwlink/p/?LinkId=269646).
   

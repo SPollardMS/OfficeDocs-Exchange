@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 2e7f1bcd-8395-45ad-86ce-22868bd46af0
 description: "Summary: Learn how to enable or disable single item recovery for user mailboxes in Exchange 2016"

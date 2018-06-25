@@ -5,7 +5,7 @@ author: chrisda
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 236e8530-62dd-4c43-8a5d-8465623252e6
 description: "Summary: Learn the tasks that Exchange 2016 administrators need to know to manage address lists and global address lists (GAL)."
@@ -95,7 +95,7 @@ For detailed syntax and parameter information, see [Update-GlobalAddressList](ht
   
 #### How do you know this worked?
 
-To verify that you've successfully updated the GAL, replace  _\<GALIdentity\>_ with the name of the address list, and run the following command to verify that the **RecipientFilterApplied** property value is present: 
+To verify that you've successfully updated the GAL, replace _\<GALIdentity\>_ with the name of the address list, and run the following command to verify that the **RecipientFilterApplied** property value is present: 
   
 ```
 Get-AddressList -Identity <GALIdentity> | Format-Table -Auto Name,RecipientFilterApplied
@@ -104,9 +104,9 @@ Get-AddressList -Identity <GALIdentity> | Format-Table -Auto Name,RecipientFilte
 ### Use the Exchange Management Shell to view members of global address lists
 <a name="ViewGALMembers"> </a>
 
-- Technically, this procedure returns  *all*  recipients (including hidden recipients) that match the recipient filters for the GAL. The recipients that are actually visible in the GAL have the **HiddenFromAddressListsEnabled** property value  `False`.
+- Technically, this procedure returns *all* recipients (including hidden recipients) that match the recipient filters for the GAL. The recipients that are actually visible in the GAL have the **HiddenFromAddressListsEnabled** property value `False`.
     
-- If the GAL isn't up to date (the **RecipientFilterApplied** property has the value  `False`), you should update the GAL before you view the members. For more information, see the previous section.
+- If the GAL isn't up to date (the **RecipientFilterApplied** property has the value `False`), you should update the GAL before you view the members. For more information, see the previous section.
     
 To view the members of a GAL, use the following syntax:
   
@@ -167,7 +167,7 @@ To verify that you've successfully created a GAL, use either of the following pr
   
 - In the EAC, go to **Organization** \> **Address lists**, select the address list, and click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)) to view the details.
     
-- In the Exchange Management Shell, replace  _\<GAL Name\>_ with the name of the GAL, and run the following command to verify the property values: 
+- In the Exchange Management Shell, replace _\<GAL Name\>_ with the name of the GAL, and run the following command to verify the property values: 
     
   ```
   Get-GlobalAddressList -Identity "<GAL Name>" | Format-List Name,RecipientFilterType,RecipientContainer,RecipientFilter,IncludedRecipients,Conditional*
@@ -188,7 +188,7 @@ To modify a GAL, use the following syntax:
 Set-GlobalAddressList -Identity <GALIdentity>] [-Name <Name>] [<Precanned recipient filter | Custom recipient filter>] [-RecipientContainer <OrganizationalUnit>]
 ```
 
-When you modify the  _Conditional_ parameter values, you can use the following syntax to add or remove values without affecting other existing values:  `@{Add="<Value1>","<Value2>"...; Remove="<Value1>","<Value2>"...}`.
+When you modify the _Conditional_ parameter values, you can use the following syntax to add or remove values without affecting other existing values: `@{Add="<Value1>","<Value2>"...; Remove="<Value1>","<Value2>"...}`.
   
 This example modifies the existing GAL named Contoso GAL by adding the **Company** value Fabrikam to the precanned recipient filter. 
   
@@ -204,7 +204,7 @@ To verify that you've successfully modified a GAL, use either of the following p
   
 - In the EAC, go to **Organization** \> **Address lists**, select the address list, and click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)) to view the details.
     
-- In the Exchange Management Shell, replace  _\<GAL Name\>_ with the name of the GAL, and run the following command to verify the property values: 
+- In the Exchange Management Shell, replace _\<GAL Name\>_ with the name of the GAL, and run the following command to verify the property values: 
     
   ```
   Get-GlobalAddressList -Identity "<GAL Name>" | Format-List Name,RecipientFilterType,RecipientContainer,RecipientFilter,IncludedRecipients,Conditional*
@@ -213,7 +213,7 @@ To verify that you've successfully modified a GAL, use either of the following p
 ### Use the Exchange Management Shell to remove global address lists
 <a name="RemoveGAL"> </a>
 
-- You can't remove the GAL named Default Offline Address Book, the GAL that's automatically created by Exchange, and the only GAL that has the **IsDefaultGlobalAddressList** property value  `True`.
+- You can't remove the GAL named Default Offline Address Book, the GAL that's automatically created by Exchange, and the only GAL that has the **IsDefaultGlobalAddressList** property value `True`.
     
 - You can't remove a GAL that's defined in an offline address book (OAB). To modify the address lists that are defined in an OAB, see [Use the Exchange Management Shell to add and remove address lists from offline address books](../../email-addresses-and-address-books/offline-address-books/oab-procedures.md#OABAddRemoveAddressLists).
     
@@ -298,7 +298,7 @@ To verify that you've successfully updated an address list, use either of the fo
   
 - In the EAC, go to **Organization** \> **Address lists**, select the address list, and verify that you see **This address list is up to date** (instead of **Not up to date** with an **Update** link) in the details pane. 
     
-- In the Exchange Management Shell, replace  _\<AddressListIdentity\>_ with the name of the address list, and run the following command to verify the **RecipientFilterApplied** property value: 
+- In the Exchange Management Shell, replace _\<AddressListIdentity\>_ with the name of the address list, and run the following command to verify the **RecipientFilterApplied** property value: 
     
   ```
   Get-AddressList -Identity <AddressListIdentity> | Format-Table -Auto Name,RecipientFilterApplied
@@ -318,7 +318,7 @@ If the address list isn't up to date, you should update the address list before 
 #### Use the Exchange Management Shell to view members of address lists
 <a name="ViewAddressListMembers"> </a>
 
-- Technically, this procedure returns  *all*  recipients (including hidden recipients) that match the recipient filters for the address list. The recipients that are actually visible in the address list have the **HiddenFromAddressListsEnabled** property value  `False`.
+- Technically, this procedure returns *all* recipients (including hidden recipients) that match the recipient filters for the address list. The recipients that are actually visible in the address list have the **HiddenFromAddressListsEnabled** property value `False`.
     
 To view the members of an address list, use the following syntax:
   
@@ -372,7 +372,7 @@ This example creates an address list with a precanned recipient filter:
   
 - **Name**: Southeast Offices
     
-- **Location**: Under the root (" `\`", also known as All Address Lists) because we didn't use the  _Container_ parameter, and the default value is "  `\`".
+- **Location**: Under the root (" `\`", also known as All Address Lists) because we didn't use the _Container_ parameter, and the default value is " `\`".
     
 - **Precanned recipient filter**: All users with mailboxes where the **State or province** value is GA, AL, or LA (Georgia, Alabama, or Louisiana). 
     
@@ -401,7 +401,7 @@ To verify that you've successfully created an address list, use either of the fo
   
 - In the EAC, go to **Organization** \> **Address lists**, select the address list, and click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)) to view the details.
     
-- In the Exchange Management Shell, replace  _[\<AddressListPath\>_\] _\<AddressListName\>_ with the name and (optionally) location of the address list, and run the following command to verify the property values: 
+- In the Exchange Management Shell, replace _[\<AddressListPath\>_\] _\<AddressListName\>_ with the name and (optionally) location of the address list, and run the following command to verify the property values: 
     
   ```
   Get-AddressList -Identity "[<AddressListPath>\]<AddressListName>" | Format-List Name,RecipientFilterType,RecipientContainer,RecipientFilter,IncludedRecipients,Conditional*
@@ -442,7 +442,7 @@ To modify an existing address list, use the following syntax:
 Set-AddressList -Identity <AddressListIdentity> [-Name <Name>] [<Precanned recipient filter | Custom recipient filter>] [-RecipientContainer <OrganizationalUnit>]
 ```
 
-When you modify the  _Conditional_ parameter values, you can use the following syntax to add or remove values without affecting other existing values:  `@{Add="<Value1>","<Value2>"...; Remove="<Value1>","<Value2>"...}`.
+When you modify the _Conditional_ parameter values, you can use the following syntax to add or remove values without affecting other existing values: `@{Add="<Value1>","<Value2>"...; Remove="<Value1>","<Value2>"...}`.
   
 This example modifies the existing address list named Southeast Offices by adding the **State or province** value TX (Texas) to the precanned recipient filter. 
   
@@ -458,7 +458,7 @@ To verify that you've successfully modified an address list, use either of the f
   
 - In the EAC, go to **Organization** \> **Address lists**, select the address list, and click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)) to view the details.
     
-- In the Exchange Management Shell, replace  _\<AddressListIdentity\>_ with the path\name of the address list, and run the following command to verify the property values: 
+- In the Exchange Management Shell, replace _\<AddressListIdentity\>_ with the path\name of the address list, and run the following command to verify the property values: 
     
   ```
   Get-AddressList -Identity "<AddressListIdentity>" | Format-List Name,RecipientFilterType,RecipientContainer,RecipientFilter,IncludedRecipients,Conditional*
@@ -489,7 +489,7 @@ To verify that you've successfully modified an address list, use either of the f
   
 - In the EAC, go to **Organization** \> **Address lists**, select the address list, and click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)) to view the details.
     
-- In the Exchange Management Shell, replace  _\<AddressListIdentity\>_ with the path\name of the address list, and run the following command to verify the property values: 
+- In the Exchange Management Shell, replace _\<AddressListIdentity\>_ with the path\name of the address list, and run the following command to verify the property values: 
     
   ```
   Get-AddressList -Identity "<AddressListIdentity>" | Format-List Name,RecipientFilterType,RecipientContainer,RecipientFilter,IncludedRecipients,Conditional*
@@ -591,19 +591,19 @@ Set-<RecipientType> -Identity <RecipientIdentity> -HiddenFromAddressListsEnabled
 
  _\<RecipientType\>_ is one of these values: 
   
--  `DistributionGroup`
+- `DistributionGroup`
     
--  `DynamicDistributionGroup`
+- `DynamicDistributionGroup`
     
--  `Mailbox`
+- `Mailbox`
     
--  `MailContact`
+- `MailContact`
     
--  `MailPublicFolder`
+- `MailPublicFolder`
     
--  `MailUser`
+- `MailUser`
     
--  `RemoteMailbox`
+- `RemoteMailbox`
     
 This example hides the distribution group named Internal Affairs from address lists.
   
@@ -619,9 +619,9 @@ Set-Mailbox -Identity michelle@contoso.com -HiddenFromAddressListsEnabled $true
 
  **Notes**:
   
-- To make the recipient visible in address lists again, use the value  `$false` for the  _HiddenFromAddressListsEnabled_ parameter. 
+- To make the recipient visible in address lists again, use the value `$false` for the _HiddenFromAddressListsEnabled_ parameter. 
     
-- By default, arbitration mailboxes and public folder mailboxes are hidden from address lists. If you use the **Set-Mailbox** cmdlet to change this or any other setting for arbitration or public folder mailboxes, you need to include the  _Aribtration_ or  _PublicFolder_ switches. 
+- By default, arbitration mailboxes and public folder mailboxes are hidden from address lists. If you use the **Set-Mailbox** cmdlet to change this or any other setting for arbitration or public folder mailboxes, you need to include the _Aribtration_ or _PublicFolder_ switches. 
     
 ### How do you know this worked?
 
@@ -697,32 +697,32 @@ In the Exchange Management Shell, you can specify **precanned recipient filters*
   
 - **Precanned recipient filters**
     
-  - Uses the required  _IncludedRecipient_ parameter with the  `AllRecipients` value  *or*  one or more of the following values:  `MailboxUsers`,  `MailContacts`,  `MailGroups`,  `MailUsers`, or  `Resources`. You can specify multiple values separated by commas.
+  - Uses the required _IncludedRecipient_ parameter with the `AllRecipients` value *or* one or more of the following values: `MailboxUsers`, `MailContacts`, `MailGroups`, `MailUsers`, or `Resources`. You can specify multiple values separated by commas.
     
-  - You can also use any of the optional  _Conditional_ filter parameters:  _ConditionalCompany_,  _ConditionalCustomAttribute[1to15]_,  _ConditionalDepartment_, and  _ConditionalStateOrProvince_.
+  - You can also use any of the optional _Conditional_ filter parameters: _ConditionalCompany_, _ConditionalCustomAttribute[1to15]_, _ConditionalDepartment_, and _ConditionalStateOrProvince_.
     
-    You specify multiple values for a  _Conditional_ parameter by using the syntax  `"<Value1>","<Value2>"...`. Multiple values of the same property implies the **or** operator. For example, "Department equals Sales or Marketing or Finance". 
+    You specify multiple values for a _Conditional_ parameter by using the syntax `"<Value1>","<Value2>"...`. Multiple values of the same property implies the **or** operator. For example, "Department equals Sales or Marketing or Finance". 
     
-- **Custom recipient filters**: Uses the required  _RecipientFilter_ parameter with an OPATH filter. 
+- **Custom recipient filters**: Uses the required _RecipientFilter_ parameter with an OPATH filter. 
     
-  - The basic OPATH filter syntax is  `{<Property1> -<Operator> '<Value1>' <Property2> -<Operator> '<Value2>'...}`.
+  - The basic OPATH filter syntax is `{<Property1> -<Operator> '<Value1>' <Property2> -<Operator> '<Value2>'...}`.
     
-  - Braces  `{ }` are required around the whole OPATH filter. 
+  - Braces `{ }` are required around the whole OPATH filter. 
     
-  - Hyphens ( `-`) are required before all operators. Here are some of the most frequently used operators:
+  - Hyphens (`-`) are required before all operators. Here are some of the most frequently used operators:
     
-  -  `and`,  `or`, and  `not`.
+  - `and`, `or`, and `not`.
     
-  -  `eq` and  `ne` (equals and does not equal; not case-sensitive). 
+  - `eq` and `ne` (equals and does not equal; not case-sensitive). 
     
-  -  `lt` and  `gt` (less than and greater than). 
+  - `lt` and `gt` (less than and greater than). 
     
-  -  `like` and  `notlike` (string contains and does not contain; requires at least one wildcard in the string. For example,  `{Department -like 'Sales*'}`.
+  - `like` and `notlike` (string contains and does not contain; requires at least one wildcard in the string. For example, `{Department -like 'Sales*'}`.
     
-  - Use parentheses to group  `<Property> -<Operator> '<Value>'` statements together in complex filters. For example,  `{(Department -like 'Sales*' -or Department -like 'Marketing*') -and (Company -eq 'Contoso' -or Company -eq 'Fabrikam')}`. Exchange stores the filter in the **RecipientFilter** property with each individual statement enclosed in parentheses, but you don't need to enter them that way. 
+  - Use parentheses to group `<Property> -<Operator> '<Value>'` statements together in complex filters. For example, `{(Department -like 'Sales*' -or Department -like 'Marketing*') -and (Company -eq 'Contoso' -or Company -eq 'Fabrikam')}`. Exchange stores the filter in the **RecipientFilter** property with each individual statement enclosed in parentheses, but you don't need to enter them that way. 
     
-  - After you use the **New-AddressList** cmdlet to create an address list that uses custom recipient filters, you can't modify the address list in the EAC. You need to use the **Set-AddressList** cmdlet with the  _RecipientFilter_ parameter in the Exchange Management Shell. 
+  - After you use the **New-AddressList** cmdlet to create an address list that uses custom recipient filters, you can't modify the address list in the EAC. You need to use the **Set-AddressList** cmdlet with the _RecipientFilter_ parameter in the Exchange Management Shell. 
     
- **Note**: The  _RecipientContainer_ (organizational unit) recipient filter parameter is available to both precanned recipient filters and custom recipient filters. 
+ **Note**: The _RecipientContainer_ (organizational unit) recipient filter parameter is available to both precanned recipient filters and custom recipient filters. 
   
 

@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 4/19/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 493d9c40-644d-49d6-9291-949acbcfdcb6
 description: "Summary: About lagged mailbox database copies and how to activate them in Exchange 2016."
@@ -95,7 +95,7 @@ For detailed syntax and parameter information, see [Suspend-MailboxDatabaseCopy]
     > [!NOTE]
     > At this point, continuing to perform this procedure on the existing volume would incur a copy on write performance penalty. If this isn't desirable, you can copy the database and log files to another volume to perform the recovery. 
   
-2. This example activates the lagged mailbox database copy using the [Move-ActiveMailboxDatabase](http://technet.microsoft.com/library/755d1ecb-95d1-45e3-9a21-56df9f196f37.aspx) cmdlet with the  _SkipLagChecks_ parameter. 
+2. This example activates the lagged mailbox database copy using the [Move-ActiveMailboxDatabase](http://technet.microsoft.com/library/755d1ecb-95d1-45e3-9a21-56df9f196f37.aspx) cmdlet with the _SkipLagChecks_ parameter. 
     
   ```
   Move-ActiveMailboxDatabase DB1 -ActivateOnServer EX3 -SkipLagChecks

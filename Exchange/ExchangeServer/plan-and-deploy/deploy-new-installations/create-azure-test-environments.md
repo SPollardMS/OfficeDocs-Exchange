@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/12/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.collection:
 - Strat_EX_Admin
@@ -78,7 +78,7 @@ $locName="<location name, such as West US>"
 New-AzureRMResourceGroup -Name $rgName -Location $locName
 ```
 
-Resource Manager-based virtual machines require a Resource Manager-based storage account. You must pick a globally unique name for your storage account  *that contains only lowercase letters and numbers*  . You can use this command to list the existing storage accounts. 
+Resource Manager-based virtual machines require a Resource Manager-based storage account. You must pick a globally unique name for your storage account *that contains only lowercase letters and numbers* . You can use this command to list the existing storage accounts. 
   
 ```
 Get-AzureRMStorageAccount | Sort StorageAccountName | Select StorageAccountName
@@ -220,7 +220,7 @@ To create the Exchange 2016 virtual machine with Azure PowerShell, first log in 
 Login-AzureRmAccount
 ```
 
-You must determine a globally unique DNS name for the exVM virtual machine. You must pick a globally unique DNS name  *that contains only lowercase letters and numbers*  . You can do this with the following PowerShell commands: 
+You must determine a globally unique DNS name for the exVM virtual machine. You must pick a globally unique DNS name *that contains only lowercase letters and numbers* . You can do this with the following PowerShell commands: 
   
 ```
 $vmDNSName="<DNS name to test>"

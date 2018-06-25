@@ -8,7 +8,7 @@ ms.audience: Developer
 ms.topic: reference
 f1_keywords:
 - 'ms.exch.setupreadiness.RebootPending'
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: d5c73280-4e54-473a-b328-9673af11e2c0
 description: "Microsoft Exchange Server 2016 Setup can't continue because it detected that the local computer needs to be restarted to complete the installation of other programs or Windows updates."
@@ -30,7 +30,7 @@ In most cases, you just need to restart the computer to get past this error. The
   
 If you've restarted the computer more than two or three times, and you're still seeing this error, try and reinstall any programs or Windows updates you've installed recently. This might allow a failed installation to complete successfully. 
   
-If, after restarting your computer and reinstalling any recent programs or Windows updates, you  *still*  receive this error, we recommend that you contact Microsoft support. They'll help you find the reason why Windows and other programs think your computer needs to be restarted. To contact Microsoft support, go to [Support for Microsoft Exchange Server](https://go.microsoft.com/fwlink/p/?LinkId=525940).
+If, after restarting your computer and reinstalling any recent programs or Windows updates, you *still* receive this error, we recommend that you contact Microsoft support. They'll help you find the reason why Windows and other programs think your computer needs to be restarted. To contact Microsoft support, go to [Support for Microsoft Exchange Server](https://go.microsoft.com/fwlink/p/?LinkId=525940).
   
 > [!CAUTION]
 > Even though it can be tempting to do so, we strongly recommend that you don't attempt to work around this issue by manually deleting or changing keys or values in the Windows Registry. While doing so might fix this issue now, it might cause issues later on. This is especially important if the failed installation was a Windows update. 

@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 49f4fa77-1722-4703-81c9-8724ae0334fb
 description: "Summary: Learn how to disable access to the Exchange admin center on an Exchange 2016 server."
@@ -18,7 +18,7 @@ description: "Summary: Learn how to disable access to the Exchange admin center 
   
 In Exchange Server 2016, the Exchange admin center is the primary management interface for Exchange. For more information, see [Exchange admin center in Exchange 2016](exchange-admin-center.md). By default, access to the EAC isn't restricted, and access to Outlook on the web (formally known as Outlook Web App) on an on an Internet-facing Exchange server also gives access to the EAC. You still need valid credentials to sign in to the EAC, but organizations may want to restrict access to the EAC for client connections from the Internet.
   
-In Exchange 2016, the EAC virtual directory is named ECP, and is managed by the \*- **ECPVirtualDirectory** cmdlets. When you set the  _AdminEnabled_ parameter to the value  `$false` on the EAC virtual directory, you disable access to the EAC for internal and external client connections, without affecting access to the **Settings** \> **Options** page in Outlook on the web. 
+In Exchange 2016, the EAC virtual directory is named ECP, and is managed by the \*- **ECPVirtualDirectory** cmdlets. When you set the _AdminEnabled_ parameter to the value `$false` on the EAC virtual directory, you disable access to the EAC for internal and external client connections, without affecting access to the **Settings** \> **Options** page in Outlook on the web. 
   
 ![Options menu location in Outlook on the web](../../media/f1227a01-7f83-4af9-abf5-2c3dec6cf3d0.png)
   
@@ -59,7 +59,7 @@ Set-ECPVirtualDirectory -Identity "MBX01\ecp (Default Web Site)" -AdminEnabled $
 
 ### How do you know this step worked?
 
-To verify that you've disabled access to the EAC on the server, replace  _\<Server\>_ with the name of your Exchange server, and run the following command to verify the value of the **AdminEnabled** property: 
+To verify that you've disabled access to the EAC on the server, replace _\<Server\>_ with the name of your Exchange server, and run the following command to verify the value of the **AdminEnabled** property: 
   
 ```
 Get-ECPVirtualDirectory -Identity "MBX01\ecp (Default Web Site)" | Format-List AdminEnabled
@@ -73,13 +73,13 @@ Choose either of the following options.
   
 ### Option 1: Configure a second Exchange 2016 server that's only accessible from the internal network
 
-The default value of the **AdminEnabled** property is  `True` on the default EAC virtual directory. To confirm this value on the second server, replace  _\<Server\>_ with the name of the server, and run the following command: 
+The default value of the **AdminEnabled** property is `True` on the default EAC virtual directory. To confirm this value on the second server, replace _\<Server\>_ with the name of the server, and run the following command: 
   
 ```
 Get-ECPVirtualDirectory -Identity "<Server>\ecp (Default Web Site)" | Format-List AdminEnabled
 ```
 
-If the value is  `False`, replace  _\<Server\>_ with the name of the server, and run the following command: 
+If the value is `False`, replace _\<Server\>_ with the name of the server, and run the following command: 
   
 ```
 Set-ECPVirtualDirectory -Identity "<Server>\ecp (Default Web Site)" -AdminEnabled $true
@@ -110,7 +110,7 @@ The steps to assign a second IP address to the existing network adapter are desc
   
 1. Open the properties of the network adapter. For example:
     
-1. From a Command Prompt window, the Exchange Management Shell, or the Run dialog, run  `ncpa.cpl`.
+1. From a Command Prompt window, the Exchange Management Shell, or the Run dialog, run `ncpa.cpl`.
     
 2. Right-click on the network adapter, and then choose **Properties**.
     
@@ -136,9 +136,9 @@ The steps to assign a second IP address to the existing network adapter are desc
   
 3. In the **Add Website** window that appears, configure the following settings: 
     
-  - **Site name**:  `EAC_Secondary`
+  - **Site name**: `EAC_Secondary`
     
-  - **Physical path**:  `C:\inetpub\EAC_Secondary`
+  - **Physical path**: `C:\inetpub\EAC_Secondary`
     
   - **Binding**
     
@@ -153,22 +153,22 @@ The steps to assign a second IP address to the existing network adapter are desc
     When you're finished, click **OK**.
     ![Website properites for the secondary EAC web site](../../media/a9e7f729-ae71-44ed-b491-3b6197b29cea.png)
   
-4. Create  `ecp` and  `owa` folders in  `C:\inetpub\EAC_Secondary`.
+4. Create `ecp` and `owa` folders in `C:\inetpub\EAC_Secondary`.
     
-1. In IIS Manager, select the  `EAC_Secondary` web site, and in the **Actions** pane, click **Explore**.
+1. In IIS Manager, select the `EAC_Secondary` web site, and in the **Actions** pane, click **Explore**.
     ![In IIS Manager, select the new EAC web site in the Sites pane](../../media/a70abb44-ae70-4c9b-b2d9-27de49c063e5.png)
   
-2. In the File Explorer window that opens, create the following folders in  `C:\inetpub\EAC_Secondary`:
+2. In the File Explorer window that opens, create the following folders in `C:\inetpub\EAC_Secondary`:
     
-  -  `ecp`
+  - `ecp`
     
-  -  `owa`
+  - `owa`
     
     When you're finished, close File Explorer.
     
-5. Assign **Read &amp; Execute** permissions to the local security group named **IIS_IUSRS** on the  `C:\inetpub\EAC_Secondary` folder. 
+5. Assign **Read & Execute** permissions to the local security group named **IIS_IUSRS** on the `C:\inetpub\EAC_Secondary` folder. 
     
-1. In IIS Manger, select the  `EAC_Secondary` web site, and in the **Actions** pane, click **Edit Permissions**.
+1. In IIS Manger, select the `EAC_Secondary` web site, and in the **Actions** pane, click **Edit Permissions**.
     
 2. In the **EAC_Secondary Properties** window that opens, click the **Security** tab, and then click **Edit**.
     
@@ -182,29 +182,29 @@ The steps to assign a second IP address to the existing network adapter are desc
     
 ![Add permissions](../../media/b8787b85-5caa-4c23-b167-088bab11baa7.png)
   
-5. Back on the **Permissions for EAC_Secondary** window, select **IIS_IUSRS**, and in the **Allow** column, select **Read &amp; Execute** (which automatically selects the **List Folder Contents** and **Read** permissions), and then click **OK** twice. 
+5. Back on the **Permissions for EAC_Secondary** window, select **IIS_IUSRS**, and in the **Allow** column, select **Read & Execute** (which automatically selects the **List Folder Contents** and **Read** permissions), and then click **OK** twice. 
     
 #### Step 2c: Copy the contents of the default web sites to the new web site
 
-- Copy all files and folders from the Default Web Site ( `C:\inetpub\wwwroot`) to  `C:\inetpub\EAC_Secondary`. You can skip the following files that can't be copied:
+- Copy all files and folders from the Default Web Site (`C:\inetpub\wwwroot`) to `C:\inetpub\EAC_Secondary`. You can skip the following files that can't be copied:
     
-  -  `MacCertification.asmx`
+  - `MacCertification.asmx`
     
-  -  `MobileDeviceCertification.asmx`
+  - `MobileDeviceCertification.asmx`
     
-  -  `decomission.asmx`
+  - `decomission.asmx`
     
-  -  `editissuancelicense.asmx`
+  - `editissuancelicense.asmx`
     
-- Copy all files and folders from  `%ExchangeInstallPath%FrontEnd\HttpProxy\ecp` to  `C:\inetpub\EAC_Secondary\ecp`.
+- Copy all files and folders from `%ExchangeInstallPath%FrontEnd\HttpProxy\ecp` to `C:\inetpub\EAC_Secondary\ecp`.
     
-- Copy all files and folders from  `%ExchangeInstallPath%FrontEnd\HttpProxy\owa` to  `C:\inetpub\EAC_Secondary\owa`.
+- Copy all files and folders from `%ExchangeInstallPath%FrontEnd\HttpProxy\owa` to `C:\inetpub\EAC_Secondary\owa`.
     
 #### Step 2d: Use the Exchange Management Shell to create new EAC and Outlook on the web virtual directories for the new web site
 
 To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
   
-Replace  _\<Server\>_ with the name of your server, and run the following commands to create the new EAC and Outlook on the web virtual directories for the new web site. 
+Replace _\<Server\>_ with the name of your server, and run the following commands to create the new EAC and Outlook on the web virtual directories for the new web site. 
   
 ```
 New-EcpVirtualDirectory -Server <Server> -Role ClientAccess -WebSiteName EAC_Secondary -Path "C:\inetpub\EAC_Secondary\ecp"

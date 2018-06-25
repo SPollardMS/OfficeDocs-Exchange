@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 4/19/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 67ba838e-031d-4a98-b277-170683b6f520
 description: "Summary: Learn how to clear all data on a user's mobile phone in theExchange admin center inExchange 2016."
@@ -74,7 +74,7 @@ Your users can wipe their own phone using Outlook on the web.
 
 There are several ways to verify that the remote wipe completed.
   
-- Run the **Clear-MobileDevice** cmdlet with the  _-NotificationEmailAddresses_ parameter configured. A message will be sent to the supplied email address when the remote wipe has completed. 
+- Run the **Clear-MobileDevice** cmdlet with the _-NotificationEmailAddresses_ parameter configured. A message will be sent to the supplied email address when the remote wipe has completed. 
     
 - In the EAC, check the status of the mobile device. The status will change from **Wipe Pending** to **Wipe Successful**.
     

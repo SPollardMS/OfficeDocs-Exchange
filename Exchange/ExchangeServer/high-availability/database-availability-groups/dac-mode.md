@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 57e4bf22-eeae-42a5-beb3-d68d06489592
 description: "Summary: How DAC mode, a component of DAGs, works in Exchange 2016."
@@ -18,7 +18,7 @@ description: "Summary: How DAC mode, a component of DAGs, works in Exchange 2016
   
 Datacenter Activation Coordination (DAC) mode is a property of a database availability group (DAG). DAC mode is disabled by default but should be enabled for all DAGs with two or more members that use continuous replication. DAC mode shouldn't be enabled for DAGs that use third-party replication mode unless specified by the third-party vendor.
   
-DAC mode is used to control the database mount on startup behavior of a DAG. This control is designed to prevent split brain from occurring at the database level during a datacenter switchback.  *Split brain*  , also known as split brain syndrome, is a condition that results in a database being mounted as an active copy on two members of the same DAG that are unable to communicate with one another. Split brain is prevented using DAC mode, because DAC mode requires DAG members to obtain permission to mount databases before they can be mounted. 
+DAC mode is used to control the database mount on startup behavior of a DAG. This control is designed to prevent split brain from occurring at the database level during a datacenter switchback. *Split brain*, also known as split brain syndrome, is a condition that results in a database being mounted as an active copy on two members of the same DAG that are unable to communicate with one another. Split brain is prevented using DAC mode, because DAC mode requires DAG members to obtain permission to mount databases before they can be mounted. 
   
 For example, when a primary datacenter contains two DAG members and the witness server, and a second datacenter contains two other DAG members, the DAG is not in DAC mode. The primary datacenter loses power, so you activate the DAG in the second datacenter. Eventually power to the primary datacenter is restored, and the DAG members in the primary datacenter, which had quorum before the power failure, will start up and mount their databases. Because the primary datacenter was restored without network connectivity to the second datacenter, and because the DAG was not in DAC mode, the active databases within the DAG enters a split brain condition.
   

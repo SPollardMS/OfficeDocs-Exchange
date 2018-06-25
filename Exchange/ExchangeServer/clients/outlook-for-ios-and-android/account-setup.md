@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 013dbe8c-30de-4c9c-baa9-75081b9229e8
 description: "Summary: How users in your Exchange 2016 organization can quickly set up their Outlook for iOS and Android accounts using Basic authentication."

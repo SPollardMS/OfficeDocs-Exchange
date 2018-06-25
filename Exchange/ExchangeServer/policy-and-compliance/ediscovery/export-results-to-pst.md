@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: bc47f5f9-d056-4b69-b669-ae65fad541c8
 description: "Summary: Learn how to export the results of In-Place eDiscovery searches to .PST files in Exchange 2016."
@@ -42,7 +42,7 @@ You can use the eDiscovery Export tool in the Exchange admin center (EAC) to exp
     
 ## Use the EAC to export In-Place eDiscovery search results to a PST file
 
-1. In the EAC, go to **Compliance management** \> **In-Place eDiscovery &amp; Hold**.
+1. In the EAC, go to **Compliance management** \> **In-Place eDiscovery & Hold**.
     
 2. In the list view, select the eDiscovery search you want to export the results of, and then click **Export to a PST file**.
     ![Export to a PST File](../../media/ExportToPSTFile.gif)

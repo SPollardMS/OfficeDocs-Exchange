@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/12/2018
 ms.audience: ITPro
 ms.topic: overview
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: b63b63bb-6faf-4337-8441-50bc64b49bb8
 description: "Summary: Learn about email address policies in Exchange 2016."
@@ -18,11 +18,11 @@ description: "Summary: Learn about email address policies in Exchange 2016."
   
 Email address policies define the rules that create email addresses for recipients in your Exchange organization. Email address policies in Exchange Server 2016 are basically unchanged from Exchange Server 2010.
   
-The SMTP domains that are available to use in email address policies are defined by the  *accepted domains*  that are configured in the Exchange organization (specifically, authoritative domains and internal relay domains). For more information about accepted domains, see [Accepted domains in Exchange 2016](../../mail-flow/accepted-domains/accepted-domains.md).
+The SMTP domains that are available to use in email address policies are defined by the *accepted domains* that are configured in the Exchange organization (specifically, authoritative domains and internal relay domains). For more information about accepted domains, see [Accepted domains in Exchange 2016](../../mail-flow/accepted-domains/accepted-domains.md).
   
 The basic components of an email address policy are:
   
-- **Email address templates**: Define the email address format for the recipients (for example  `<firstname>@contoso.com` or  `<lastname>.<firstname>@contoso.com`).
+- **Email address templates**: Define the email address format for the recipients (for example `<firstname>@contoso.com` or `<lastname>.<firstname>@contoso.com`).
     
 - **Recipient filter**: Specifies the recipients whose email addresses are configured by the policy.
     
@@ -32,7 +32,7 @@ To configure email address policies, see [Procedures for email address policies 
   
 ## Email address templates
 
-An email address template contains the **address type** and the **address format**. An email address policy can contain multiple email address templates. One template must define the primary (reply) SMTP email address, and there can be only one primary SMTP email address defined in the policy (it's the **Reply-To:** email address for recipients). Other email address templates in the policy define the additional or  *proxy*  addresses for recipients. 
+An email address template contains the **address type** and the **address format**. An email address policy can contain multiple email address templates. One template must define the primary (reply) SMTP email address, and there can be only one primary SMTP email address defined in the policy (it's the **Reply-To:** email address for recipients). Other email address templates in the policy define the additional or *proxy* addresses for recipients. 
   
 ### Address types
 <a name="AddressType"> </a>
@@ -41,15 +41,15 @@ Although you'll primarily use SMTP email addresses in email address policies, ot
   
 - **SMTP**
     
-- **GWISE**: Novell GroupWise. By default, looks for the missing  `%ExchangeInstallPath%Mailbox\address\gwise\amd64\gwxpxgen.dll` file to validate the email address format. 
+- **GWISE**: Novell GroupWise. By default, looks for the missing `%ExchangeInstallPath%Mailbox\address\gwise\amd64\gwxpxgen.dll` file to validate the email address format. 
     
-- **NOTES**: Lotus Notes. By default, uses the included  `%ExchangeInstallPath%Mailbox\address\notes\amd64\ntspxgen.dll` file to validate the email address format. 
+- **NOTES**: Lotus Notes. By default, uses the included `%ExchangeInstallPath%Mailbox\address\notes\amd64\ntspxgen.dll` file to validate the email address format. 
     
-- **X400**: Lotus Notes. By default, uses the included  `%ExchangeInstallPath%Mailbox\address\notes\amd64\x400prox.dll` file to validate the email address format. 
+- **X400**: Lotus Notes. By default, uses the included `%ExchangeInstallPath%Mailbox\address\notes\amd64\x400prox.dll` file to validate the email address format. 
     
  **Notes**:
   
-- In the Exchange Management Shell, the value  `SMTP` specifies the primary email address, and the value  `smtp` specifies proxy addresses. 
+- In the Exchange Management Shell, the value `SMTP` specifies the primary email address, and the value `smtp` specifies proxy addresses. 
     
     In the EAC, only the **Make this format the reply email address** check box controls whether the email address is the primary address or a proxy address. It doesn't matter whether you type SMTP or smtp in the **Enter a custom address type** field. However, in the list of email address templates in the policy, the EAC shows the value **SMTP** (bold and uppercase) for the primary address, and smtp (not bold and lowercase) for proxy addresses. 
     
@@ -60,7 +60,7 @@ Although you'll primarily use SMTP email addresses in email address policies, ot
 ### Address formats
 <a name="AddressFormat"> </a>
 
-An SMTP email address uses the syntax  `chris@contoso.com`, where the value  `chris` is the  *local part*  of the email address, and the value  `contoso.com` is the SMTP domain (also known as the  *address space*  or  *name space*  ). The available SMTP domain values are determined by the accepted domains that are configured for your organization. 
+An SMTP email address uses the syntax `chris@contoso.com`, where the value `chris` is the *local part* of the email address, and the value `contoso.com` is the SMTP domain (also known as the *address space* or *name space* ). The available SMTP domain values are determined by the accepted domains that are configured for your organization. 
   
 You can use email address policies to assign multiple SMTP email addresses to recipients by using different combinations of the local part and domain values. However, only one SMTP email address in a policy can be configured as the primary address.
   
@@ -73,10 +73,10 @@ All SMTP email address formats in the Exchange Management Shell, or custom SMTP 
 |%i  <br/> |Middle initial  <br/> |
 |%m  <br/> |Exchange alias  <br/> |
 |%s  <br/> |Surname (last name)  <br/> |
-|% _x_g  <br/> |The first  _x_ letters of the first name. For example,  `%2g` uses the first two letters of the first name.  <br/> |
-|% _x_s  <br/> |The first  _x_ letters of the last name. For example,  `%2s` uses the first two letters of the last name.  <br/> |
+|% _x_g  <br/> |The first _x_ letters of the first name. For example, `%2g` uses the first two letters of the first name.  <br/> |
+|% _x_s  <br/> |The first _x_ letters of the last name. For example, `%2s` uses the first two letters of the last name.  <br/> |
    
-In addition to variables, you can also use US ASCII text characters that are allowed in Exchange email addresses (for example, periods ( `.`) or underscores ( `_`). Note that each period needs to be surrounded by other valid characters (for example  `%g.%s`).
+In addition to variables, you can also use US ASCII text characters that are allowed in Exchange email addresses (for example, periods (`.`) or underscores (`_`). Note that each period needs to be surrounded by other valid characters (for example `%g.%s`).
   
 In the EAC, you can selected from a short list of precanned SMTP email address formats. These address formats are described in the following table, where the example user is named John Smith, and the domain is contoso.com:
   
@@ -114,7 +114,7 @@ Recipient filters identify the recipients that the email address policy applies 
     
   - In the EAC, in the properties of the recipient, on the **Email address** tab, clear the check box: **Automatically update email addresses based on the email address policy applied to this recipient**.
     
-  - In the Exchange Management Shell, set the  _EmailAddressPolicyEnabled_ parameter to the value  `$false` on the recipient management cmdlet (for example, **Set-Mailbox** or **Set-DistributionGroup** ). 
+  - In the Exchange Management Shell, set the _EmailAddressPolicyEnabled_ parameter to the value `$false` on the recipient management cmdlet (for example, **Set-Mailbox** or **Set-DistributionGroup** ). 
     
 ## Priority of email address policies
 
@@ -124,7 +124,7 @@ Here are some other issues to consider:
   
 - A recipient can only be affected by one email address policy. After the recipient is matched by the filtering properties of the policy, all other policies are ignored.
     
-- **All** email address policies, including policies that have never been applied, are evaluated based on priority. For example, if you have a priority 1 policy and a priority 2 policy that both identity a recipient, the match in the first policy prevents the second policy from updating the recipient's email addresses,  *even if the first policy has never been applied to the recipient*  . 
+- **All** email address policies, including policies that have never been applied, are evaluated based on priority. For example, if you have a priority 1 policy and a priority 2 policy that both identity a recipient, the match in the first policy prevents the second policy from updating the recipient's email addresses, *even if the first policy has never been applied to the recipient* . 
     
 ## Default email address policy
 
@@ -136,9 +136,9 @@ Exchange setup creates a default email address policy that applies email address
     
 - **Email address format**
     
-  - **Type**:  `SMTP` (primary email address) 
+  - **Type**: `SMTP` (primary email address) 
     
-  - **Domain**:  `<alias>@<ADForestRootFQDN>`. This domain value is used because it's the first accepted domain in the Exchange organization.
+  - **Domain**: `<alias>@<ADForestRootFQDN>`. This domain value is used because it's the first accepted domain in the Exchange organization.
     
 - **Apply to**: All recipient types.
     

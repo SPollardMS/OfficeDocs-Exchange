@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 15c284c0-b8e6-42ca-9913-7c59fdb6885d
 description: "Summary: Learn how to configure, enable, and disable administrator audit logging in Exchange 2016, and how to view the admit audit log settings."
@@ -35,21 +35,21 @@ Administrator audit logging in Exchange Server 2016 enables you to create a log 
 ## Specify the cmdlets to be audited
 <a name="cmdlets"> </a>
 
-By default, audit logging creates a log entry for every cmdlet that's run. If you're enabling audit logging for the first time and want this behavior, you don't have to change the cmdlet audit list. If you've previously specified cmdlets to audit and now want to audit all cmdlets, you can audit all cmdlets by specifying the asterisk (\*) wildcard character with the  _AdminAuditLogCmdlets_ parameter on the **Set-AdminAuditLogConfig** cmdlet, as shown in the following command. 
+By default, audit logging creates a log entry for every cmdlet that's run. If you're enabling audit logging for the first time and want this behavior, you don't have to change the cmdlet audit list. If you've previously specified cmdlets to audit and now want to audit all cmdlets, you can audit all cmdlets by specifying the asterisk (\*) wildcard character with the _AdminAuditLogCmdlets_ parameter on the **Set-AdminAuditLogConfig** cmdlet, as shown in the following command. 
   
 ```
 Set-AdminAuditLogConfig -AdminAuditLogCmdlets *
 ```
 
-You can specify which cmdlets to audit by providing a list of cmdlets using the  _AdminAuditLogCmdlets_ parameter. When you provide the list of cmdlets to audit, you can provide single cmdlets, cmdlets with the asterisk (\*) wildcard characters, or a mix of both. Each entry in the list is separated by commas. The following values are all valid: 
+You can specify which cmdlets to audit by providing a list of cmdlets using the _AdminAuditLogCmdlets_ parameter. When you provide the list of cmdlets to audit, you can provide single cmdlets, cmdlets with the asterisk (\*) wildcard characters, or a mix of both. Each entry in the list is separated by commas. The following values are all valid: 
   
--  `New-Mailbox`
+- `New-Mailbox`
     
--  `*TransportRule`
+- `*TransportRule`
     
--  `*Management*`
+- `*Management*`
     
--  `Set-Transport*`
+- `Set-Transport*`
     
 This example audits the cmdlets specified in the preceding list.
   
@@ -62,24 +62,24 @@ For detailed syntax and parameter information, see [Set-AdminAuditLogConfig](htt
 ## Specify the parameters to be audited
 <a name="parameters"> </a>
 
-By default, audit logging creates a log entry for every cmdlet that's run, regardless of the parameters specified. If you're enabling audit logging for the first time and want this behavior, you don't have to change the parameter audit list. If you've previously specified parameters to audit and now want to audit all parameters, you can do so by specifying the asterisk (\*) wildcard character with the  _AdminAuditLogParameters_ parameter on the **Set-AdminAuditLogConfig** cmdlet, as shown in the following command. 
+By default, audit logging creates a log entry for every cmdlet that's run, regardless of the parameters specified. If you're enabling audit logging for the first time and want this behavior, you don't have to change the parameter audit list. If you've previously specified parameters to audit and now want to audit all parameters, you can do so by specifying the asterisk (\*) wildcard character with the _AdminAuditLogParameters_ parameter on the **Set-AdminAuditLogConfig** cmdlet, as shown in the following command. 
   
 ```
 Set-AdminAuditLogConfig -AdminAuditLogParameters *
 ```
 
-You can specify which parameters you want to audit by using the  _AdminAuditLogParameters_ parameter. When you provide the list of parameters to audit, you can provide single parameters, parameters with the asterisk (\*) wildcard characters, or a mix of both. Each entry in the list is separated by commas. The following values are all valid: 
+You can specify which parameters you want to audit by using the _AdminAuditLogParameters_ parameter. When you provide the list of parameters to audit, you can provide single parameters, parameters with the asterisk (\*) wildcard characters, or a mix of both. Each entry in the list is separated by commas. The following values are all valid: 
   
--  `Database`
+- `Database`
     
--  `*Address*`
+- `*Address*`
     
--  `Custom*`
+- `Custom*`
     
--  `*Region`
+- `*Region`
     
 > [!NOTE]
-> For an audit log entry to be created when a command is run, the command must include at least one or more parameters that exist on at least one or more cmdlets specified with the  _AdminAuditLogCmdlets_ parameter. 
+> For an audit log entry to be created when a command is run, the command must include at least one or more parameters that exist on at least one or more cmdlets specified with the _AdminAuditLogCmdlets_ parameter. 
   
 This example audits the parameters specified in the preceding list.
   

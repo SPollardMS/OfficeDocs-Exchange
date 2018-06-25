@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: get-started-article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.collection: Strat_EX_Admin
 ms.assetid: f2fc8680-0c7c-4a29-b8f5-d77404fec280
@@ -40,7 +40,7 @@ Normally, when Exchange is installed, the people installing it need to be member
     
 - The server is added as a provisioned server in the Exchange Admin Center.
     
-In large companies, the people who install and set up new servers often aren't Exchange administrators. To enable them to install Exchange, an Exchange administrator can  *provision*  the server in Active Directory. When a server is provisioned, all of the changes needed for the new Exchange server to function are made to Active Directory separately from the actual installation of Exchange on a computer. An Exchange administrator can provision a new server in Active Directory hours or even days before Exchange is installed on the new computer. After a server has been provisioned, the person doing the installation needs only to be a member of the [Delegated Setup](http://technet.microsoft.com/library/49362059-e53f-4135-ad2b-9edfbfff9a1e.aspx) role group to install Exchange. The Delegated Setup role group only allows members to install provisioned servers. 
+In large companies, the people who install and set up new servers often aren't Exchange administrators. To enable them to install Exchange, an Exchange administrator can *provision* the server in Active Directory. When a server is provisioned, all of the changes needed for the new Exchange server to function are made to Active Directory separately from the actual installation of Exchange on a computer. An Exchange administrator can provision a new server in Active Directory hours or even days before Exchange is installed on the new computer. After a server has been provisioned, the person doing the installation needs only to be a member of the [Delegated Setup](http://technet.microsoft.com/library/49362059-e53f-4135-ad2b-9edfbfff9a1e.aspx) role group to install Exchange. The Delegated Setup role group only allows members to install provisioned servers. 
   
 Keep the following in mind when thinking about using delegated setup:
   
@@ -100,6 +100,6 @@ If your server is listed as a member of the Exchange Servers security group, it 
   
 Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
   
-Did you find what you're looking for? Please take a minute to [send us feedback](mailto:ExchangeHelpFeedback@microsoft.com&amp;subject=Exchange%202016%20help%20feedback&amp;Body=Thanks%20for%20taking%20the%20time%20to%20send%20us%20feedback!%20We%20strive%20to%20respond%20to%20every%20message%20we%20receive,%20even%20though%20it%20might%20take%20us%20a%20while.%20Let%20us%20know%20what%20you%20think%20about%20Exchange%20content:%20What%20are%20we%20doing%20right%3F%20How%20can%20we%20make%20help%20better%3F%0APlease%20note%20that%20we're%20unable%20to%20respond%20to%20requests%20for%20support%20submitted%20via%20this%20email%20address.%20If%20you%20need%20help,%20please%20contact%20Exchange%20Server%20support%20at%20http://go.microsoft.com/fwlink/p/%3FLinkId=402506.%0AThanks!%0AThe%20Exchange%20Server%20Content%20Publishing%20team) about the information you were hoping to find. 
+Did you find what you're looking for? Please take a minute to [send us feedback](mailto:ExchangeHelpFeedback@microsoft.com&subject=Exchange%202016%20help%20feedback&Body=Thanks%20for%20taking%20the%20time%20to%20send%20us%20feedback!%20We%20strive%20to%20respond%20to%20every%20message%20we%20receive,%20even%20though%20it%20might%20take%20us%20a%20while.%20Let%20us%20know%20what%20you%20think%20about%20Exchange%20content:%20What%20are%20we%20doing%20right%3F%20How%20can%20we%20make%20help%20better%3F%0APlease%20note%20that%20we're%20unable%20to%20respond%20to%20requests%20for%20support%20submitted%20via%20this%20email%20address.%20If%20you%20need%20help,%20please%20contact%20Exchange%20Server%20support%20at%20http://go.microsoft.com/fwlink/p/%3FLinkId=402506.%0AThanks!%0AThe%20Exchange%20Server%20Content%20Publishing%20team) about the information you were hoping to find. 
   
 

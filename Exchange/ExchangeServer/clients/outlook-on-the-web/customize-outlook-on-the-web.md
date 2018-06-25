@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: d8d9f735-7181-428f-9049-b9886dce5159
 description: "Summary: Learn how to customize the color and images of the sign-in, language selection, and error pages for Outlook on the web in Exchange 2016."
@@ -43,11 +43,11 @@ For more information about Outlook on the web, see [Outlook on the web in Exchan
   
 ## Customize the color of the Outlook on the web sign-in page
 
-1. Use Notepad to open the file  `%ExchangeInstallPath%FrontEnd\HttpProxy\owa\auth\<ExchangeVersion>\themes\resources\logon.css`.
+1. Use Notepad to open the file `%ExchangeInstallPath%FrontEnd\HttpProxy\owa\auth\<ExchangeVersion>\themes\resources\logon.css`.
     
-    **Note**: The  _\<ExchangeVersion\>_ subfolder uses the syntax 15.1.  _nnn_. _nn_, and changes every time you install an Exchange Cumulative Update (CU).
+    **Note**: The _\<ExchangeVersion\>_ subfolder uses the syntax 15.1. _nnn_. _nn_, and changes every time you install an Exchange Cumulative Update (CU).
     
-2. In the  `logon.css` file, replace the default blue color value #0072c6 with the HTML RGB value that you want to use. 
+2. In the `logon.css` file, replace the default blue color value #0072c6 with the HTML RGB value that you want to use. 
     
 3. When you are finished, save and close the file.
     
@@ -55,9 +55,9 @@ For more information about Outlook on the web, see [Outlook on the web in Exchan
   
 ## Customize the color of the Outlook on the web error page
 
-1. Use Notepad to open the file  `%ExchangeInstallPath%FrontEnd\HttpProxy\owa\auth\<ExchangeVersion>\themes\resources\errorFE.css`.
+1. Use Notepad to open the file `%ExchangeInstallPath%FrontEnd\HttpProxy\owa\auth\<ExchangeVersion>\themes\resources\errorFE.css`.
     
-2. In the  `errorFE.css` file, replace the default blue color value #0072c6 with the HTML RGB value that you want to use. 
+2. In the `errorFE.css` file, replace the default blue color value #0072c6 with the HTML RGB value that you want to use. 
     
 3. When you are finished, save and close the file.
     
@@ -65,13 +65,13 @@ For more information about Outlook on the web, see [Outlook on the web in Exchan
   
 ## Customize the color of the Outlook on the web language selection page
 
-1. Use Notepad to open the file  `%ExchangeInstallPath%ClientAccess\Owa\Current2\version\resources\styles\languageselection.css`. An easy way to do this is to press the Windows key + R, and run the following command:
+1. Use Notepad to open the file `%ExchangeInstallPath%ClientAccess\Owa\Current2\version\resources\styles\languageselection.css`. An easy way to do this is to press the Windows key + R, and run the following command:
     
   ```
   Notepad.exe %ExchangeInstallPath%ClientAccess\Owa\Current2\version\resources\styles\languageselection.css
   ```
 
-2. In the  `languageselection.css` file, replace the default blue color value #0072c6 with the HTML RGB value that you want to use. 
+2. In the `languageselection.css` file, replace the default blue color value #0072c6 with the HTML RGB value that you want to use. 
     
 3. When you are finished, save and close the file.
     
@@ -88,7 +88,7 @@ You can edit the existing image files, or replace the files with new files that 
 |3  <br/> |owa_text_blue.png  <br/> | `%ExchangeInstallPath%FrontEnd\HttpProxy\owa\auth\<ExchangeVersion>\themes\resources` <br/> |300 x 76  <br/> |32  <br/> |
 |4  <br/> |Sign_in_arrow.png (for left-to-right languages)  <br/> Sign_in_arrow_rtl.png (for right-to-left languages)  <br/> | `%ExchangeInstallPath%FrontEnd\HttpProxy\owa\auth\<ExchangeVersion>\themes\resources` <br/> |22 x 22  <br/> |32  <br/> |
 |5  <br/> |olk_logo_white_cropped.png  <br/> | `%ExchangeInstallPath%FrontEnd\HttpProxy\owa\auth\<ExchangeVersion>\themes\resources` <br/> |265 x 310  <br/> |32  <br/> |
-|6  <br/> |office_logo_white_small.png  <br/> | `%ExchangeInstallPath%ClientAccess\Owa\prem\<ExchangeVersion>\resources\images\0` (for left-to-right languages)  <br/>  `%ExchangeInstallPath%ClientAccess\Owa\prem\<ExchangeVersion>\resources\images\rtl` (for right-to-left languages)  <br/> |81 x 26  <br/> |8  <br/> |
+|6  <br/> |office_logo_white_small.png  <br/> | `%ExchangeInstallPath%ClientAccess\Owa\prem\<ExchangeVersion>\resources\images\0` (for left-to-right languages)  <br/> `%ExchangeInstallPath%ClientAccess\Owa\prem\<ExchangeVersion>\resources\images\rtl` (for right-to-left languages)  <br/> |81 x 26  <br/> |8  <br/> |
    
 ## How do you know this worked?
 

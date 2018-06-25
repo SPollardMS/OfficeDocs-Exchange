@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 74be3f97-ec0f-4d2a-b5d8-7770cc489919
 description: "Summary: Learn how to create, configure, and manage a database availability group (DAG) in Exchange 2016."
@@ -23,7 +23,7 @@ When you create a DAG, it's initially empty. When you add the first server to a 
 ## Creating DAGs
 <a name="Cr"> </a>
 
-A DAG can be created using the New Database Availability Group wizard in the Exchange admin center (EAC), or by running the **New-DatabaseAvailabilityGroup** cmdlet in the Exchange Management Shell. When creating a DAG, you provide a name for the DAG, and optional witness server and witness directory settings. In addition, you can assign one or more IP addresses to the DAG, either by using static IP addresses or by allowing the DAG to be automatically assigned the necessary IP addresses using Dynamic Host Configuration Protocol (DHCP). You can manually assign IP addresses to the DAG by using the  _DatabaseAvailabilityGroupIpAddresses_ parameter. If you omit this parameter, the DAG attempts to obtain an IP address by using a DHCP server on your network. 
+A DAG can be created using the New Database Availability Group wizard in the Exchange admin center (EAC), or by running the **New-DatabaseAvailabilityGroup** cmdlet in the Exchange Management Shell. When creating a DAG, you provide a name for the DAG, and optional witness server and witness directory settings. In addition, you can assign one or more IP addresses to the DAG, either by using static IP addresses or by allowing the DAG to be automatically assigned the necessary IP addresses using Dynamic Host Configuration Protocol (DHCP). You can manually assign IP addresses to the DAG by using the _DatabaseAvailabilityGroupIpAddresses_ parameter. If you omit this parameter, the DAG attempts to obtain an IP address by using a DHCP server on your network. 
   
 If you are creating a DAG that will contain Mailbox servers that are running Windows Server 2012 R2, you also have the option of creating a DAG without a cluster administrative access point. In that case, the cluster will not have a cluster name object (CNO) in Active Directory, and the cluster core resource group will not contain a network name resource or an IP address resource.
   
@@ -85,7 +85,7 @@ When creating a DAG, you must provide a name for the DAG. You can optionally als
   
 When creating a DAG, the following combinations of options and behaviors are available:
   
-- You can specify only a name for the DAG, and leave the **Witness server** and **Witness directory** fields blank. In this scenario, the wizard searches the local Active Directory site for a Client Access server that doesn't have the Mailbox server installed, and it automatically creates the default directory (%SystemDrive%:\DAGFileShareWitnesses\\<  _DAGFQDN_\>) and default share (\< _DAGFQDN_\>) on that server and uses that Client Access server as the witness server. For example, consider the witness server CAS3 on which the operating system has been installed onto drive C. A DAG named DAG1 in the contoso.com domain would use a default witness directory of C:\DAGFileShareWitnesses\DAG1.contoso.com, which would be shared as \\CAS3\DAG1.contoso.com.
+- You can specify only a name for the DAG, and leave the **Witness server** and **Witness directory** fields blank. In this scenario, the wizard searches the local Active Directory site for a Client Access server that doesn't have the Mailbox server installed, and it automatically creates the default directory (%SystemDrive%:\DAGFileShareWitnesses\\< _DAGFQDN_\>) and default share (\< _DAGFQDN_\>) on that server and uses that Client Access server as the witness server. For example, consider the witness server CAS3 on which the operating system has been installed onto drive C. A DAG named DAG1 in the contoso.com domain would use a default witness directory of C:\DAGFileShareWitnesses\DAG1.contoso.com, which would be shared as \\CAS3\DAG1.contoso.com.
     
 - You can specify a name for the DAG, the witness server that you want to use, and the directory you want created and shared on the witness server.
     
@@ -161,7 +161,7 @@ When the second and subsequent servers are added to the DAG, the following occur
 - The cluster database is updated with information about mounted databases.
     
 > [!NOTE]
-> The quorum model change should happen automatically. However, if the quorum model doesn't automatically change to the proper model, you can run the **Set-DatabaseAvailabilityGroup** cmdlet with only the  _Identity_ parameter to correct the quorum settings for the DAG. 
+> The quorum model change should happen automatically. However, if the quorum model doesn't automatically change to the proper model, you can run the **Set-DatabaseAvailabilityGroup** cmdlet with only the _Identity_ parameter to correct the quorum settings for the DAG. 
   
 ### Pre-staging the cluster name object for a DAG
 
@@ -186,7 +186,7 @@ Mailbox servers can be removed from a DAG by using the Manage Database Availabil
   
 There are scenarios in which you must remove a Mailbox server from a DAG before performing certain operations. These scenarios include:
   
-- **Performing a server recovery operation**: If a Mailbox server that's a member of a DAG is lost, or otherwise fails and is unrecoverable and needs replacement, you can perform a server recovery operation using the **Setup /m:RecoverServer** switch. However, before you can perform the recovery operation, you must first remove the server from the DAG using the [Remove-DatabaseAvailabilityGroupServer](http://technet.microsoft.com/library/49290be7-9d3d-4bc3-80ea-f1992fdd1d12.aspx) cmdlet with the  _ConfigurationOnly_ parameter. 
+- **Performing a server recovery operation**: If a Mailbox server that's a member of a DAG is lost, or otherwise fails and is unrecoverable and needs replacement, you can perform a server recovery operation using the **Setup /m:RecoverServer** switch. However, before you can perform the recovery operation, you must first remove the server from the DAG using the [Remove-DatabaseAvailabilityGroupServer](http://technet.microsoft.com/library/49290be7-9d3d-4bc3-80ea-f1992fdd1d12.aspx) cmdlet with the _ConfigurationOnly_ parameter. 
     
 - **Removing the database availability group**: There may be situations in which you need to remove a DAG (for example, when disabling third-party replication mode). If you need to remove a DAG, you must first remove all servers from the DAG. If you attempt to remove a DAG that contains any members, the task fails.
     
@@ -259,9 +259,9 @@ You can use the **Set-DatabaseAvailabilityGroupNetwork** cmdlet in the Exchange 
     
 - **Network description**: An optional description for the DAG network of up to 256 characters.
     
-- **Network subnets**: One or more subnets entered using a format of  _IPAddress/Bitmask_ (for example, 192.168.1.0/24 for Internet Protocol version 4 (IPv4) subnets; 2001:DB8:0:C000::/64 for Internet Protocol version 6 (IPv6) subnets). 
+- **Network subnets**: One or more subnets entered using a format of _IPAddress/Bitmask_ (for example, 192.168.1.0/24 for Internet Protocol version 4 (IPv4) subnets; 2001:DB8:0:C000::/64 for Internet Protocol version 6 (IPv6) subnets). 
     
-- **Enable replication**: In the EAC, select the check box to dedicate the DAG network to replication traffic and block MAPI traffic. Clear the check box to prevent replication from using the DAG network and to enable MAPI traffic. In the Exchange Management Shell, use the  _ReplicationEnabled_ parameter in the [Set-DatabaseAvailabilityGroupNetwork](http://technet.microsoft.com/library/5c6add57-eef9-4af5-9cf3-54fd910dfe93.aspx) cmdlet to enable and disable replication. 
+- **Enable replication**: In the EAC, select the check box to dedicate the DAG network to replication traffic and block MAPI traffic. Clear the check box to prevent replication from using the DAG network and to enable MAPI traffic. In the Exchange Management Shell, use the _ReplicationEnabled_ parameter in the [Set-DatabaseAvailabilityGroupNetwork](http://technet.microsoft.com/library/5c6add57-eef9-4af5-9cf3-54fd910dfe93.aspx) cmdlet to enable and disable replication. 
     
 > [!NOTE]
 > Disabling replication for the MAPI network doesn't guarantee that the system won't use the MAPI network for replication. When all configured replication networks are offline, failed, or otherwise unavailable, and only the MAPI network remains (which is configured as disabled for replication), the system uses the MAPI network for replication. 
@@ -298,7 +298,7 @@ After replication is disabled for MapiDagNetwork, the Microsoft Exchange Replica
   
 ### DAG networks and multiple subnet deployments
 
-In the preceding example, even though there are two different subnets in use by the DAG (192.168.1.0 and 10.0.0.0), the DAG is considered a single-subnet DAG because each member uses the same subnet to form the MAPI network. When DAG members use different subnets for the MAPI network, the DAG is referred to as a  *multi-subnet DAG*  . In a multi-subnet DAG, the proper subnets are automatically associated with each DAG network. 
+In the preceding example, even though there are two different subnets in use by the DAG (192.168.1.0 and 10.0.0.0), the DAG is considered a single-subnet DAG because each member uses the same subnet to form the MAPI network. When DAG members use different subnets for the MAPI network, the DAG is referred to as a *multi-subnet DAG* . In a multi-subnet DAG, the proper subnets are automatically associated with each DAG network. 
   
 For example, consider DAG2, a two-member DAG where each member has two network adapters (one dedicated for the MAPI network and the other for a replication network), and each DAG member is located in a separate Active Directory site, with its MAPI network on a different subnet. Example IP address configuration settings are shown in the following table.
   
@@ -344,19 +344,19 @@ Mailbox servers that are members of a DAG have some properties specific to high 
 ### Automatic database mount dial
 <a name="AutoDBMount"> </a>
 
-The  _AutoDatabaseMountDial_ parameter specifies the automatic database mount behavior after a database failover. You can use the [Set-MailboxServer](http://technet.microsoft.com/library/6a229126-b863-4f07-b024-a39c93b253f7.aspx) cmdlet to configure the  _AutoDatabaseMountDial_ parameter with any of the following values: 
+The _AutoDatabaseMountDial_ parameter specifies the automatic database mount behavior after a database failover. You can use the [Set-MailboxServer](http://technet.microsoft.com/library/6a229126-b863-4f07-b024-a39c93b253f7.aspx) cmdlet to configure the _AutoDatabaseMountDial_ parameter with any of the following values: 
   
--  `BestAvailability`: If you specify this value, the database automatically mounts immediately after a failover if the copy queue length is less than or equal to 12. The copy queue length is the number of logs recognized by the passive copy that needs to be replicated. If the copy queue length is more than 12, the database doesn't automatically mount. When the copy queue length is less than or equal to 12, Exchange attempts to replicate the remaining logs to the passive copy and mounts the database.
+- `BestAvailability`: If you specify this value, the database automatically mounts immediately after a failover if the copy queue length is less than or equal to 12. The copy queue length is the number of logs recognized by the passive copy that needs to be replicated. If the copy queue length is more than 12, the database doesn't automatically mount. When the copy queue length is less than or equal to 12, Exchange attempts to replicate the remaining logs to the passive copy and mounts the database.
     
--  `GoodAvailability`: If you specify this value, the database automatically mounts immediately after a failover if the copy queue length is less than or equal to six. The copy queue length is the number of logs recognized by the passive copy that needs to be replicated. If the copy queue length is more than six, the database doesn't automatically mount. When the copy queue length is less than or equal to six, Exchange attempts to replicate the remaining logs to the passive copy and mounts the database.
+- `GoodAvailability`: If you specify this value, the database automatically mounts immediately after a failover if the copy queue length is less than or equal to six. The copy queue length is the number of logs recognized by the passive copy that needs to be replicated. If the copy queue length is more than six, the database doesn't automatically mount. When the copy queue length is less than or equal to six, Exchange attempts to replicate the remaining logs to the passive copy and mounts the database.
     
--  `Lossless`: If you specify this value, the database doesn't automatically mount until all logs generated on the active copy have been copied to the passive copy. This setting also causes the Active Manager best copy selection algorithm to sort potential candidates for activation based on the database copy's activation preference value and not its copy queue length.
+- `Lossless`: If you specify this value, the database doesn't automatically mount until all logs generated on the active copy have been copied to the passive copy. This setting also causes the Active Manager best copy selection algorithm to sort potential candidates for activation based on the database copy's activation preference value and not its copy queue length.
     
-The default value is  `GoodAvailability`. If you specify either  `BestAvailability` or  `GoodAvailability`, and all the logs from the active copy can't be copied to the passive copy being activated, you may lose some mailbox data. However, the Safety Net feature (which is enabled by default) helps protect against most data loss by resubmitting messages that are in the Safety Net queue.
+The default value is `GoodAvailability`. If you specify either `BestAvailability` or `GoodAvailability`, and all the logs from the active copy can't be copied to the passive copy being activated, you may lose some mailbox data. However, the Safety Net feature (which is enabled by default) helps protect against most data loss by resubmitting messages that are in the Safety Net queue.
   
 #### Example: configuring automatic database mount dial
 
-The following example configures a Mailbox server with an  _AutoDatabaseMountDial_ setting of  `GoodAvailability`.
+The following example configures a Mailbox server with an _AutoDatabaseMountDial_ setting of `GoodAvailability`.
   
 ```
 Set-MailboxServer -Identity EX1 -AutoDatabaseMountDial GoodAvailability
@@ -365,17 +365,17 @@ Set-MailboxServer -Identity EX1 -AutoDatabaseMountDial GoodAvailability
 ### Database copy automatic activation policy
 <a name="DBCopyAutoActivation"> </a>
 
-The  _DatabaseCopyAutoActivationPolicy_ parameter specifies the type of automatic activation available for mailbox database copies on the selected Mailbox servers. You can use the [Set-MailboxServer](http://technet.microsoft.com/library/6a229126-b863-4f07-b024-a39c93b253f7.aspx) cmdlet to configure the  _DatabaseCopyAutoActivationPolicy_ parameter with any of the following values: 
+The _DatabaseCopyAutoActivationPolicy_ parameter specifies the type of automatic activation available for mailbox database copies on the selected Mailbox servers. You can use the [Set-MailboxServer](http://technet.microsoft.com/library/6a229126-b863-4f07-b024-a39c93b253f7.aspx) cmdlet to configure the _DatabaseCopyAutoActivationPolicy_ parameter with any of the following values: 
   
--  `Blocked`: If you specify this value, databases can't be automatically activated on the selected Mailbox servers.
+- `Blocked`: If you specify this value, databases can't be automatically activated on the selected Mailbox servers.
     
--  `IntrasiteOnly`: If you specify this value, the database copy is allowed to be activated on servers in the same Active Directory site. This prevents cross-site failover or activation. This property is for incoming mailbox database copies (for example, a passive copy being made an active copy). Databases can't be activated on this Mailbox server for database copies that are active in another Active Directory site.
+- `IntrasiteOnly`: If you specify this value, the database copy is allowed to be activated on servers in the same Active Directory site. This prevents cross-site failover or activation. This property is for incoming mailbox database copies (for example, a passive copy being made an active copy). Databases can't be activated on this Mailbox server for database copies that are active in another Active Directory site.
     
--  `Unrestricted`: If you specify this value, there are no special restrictions on activating mailbox database copies on the selected Mailbox servers.
+- `Unrestricted`: If you specify this value, there are no special restrictions on activating mailbox database copies on the selected Mailbox servers.
     
 #### Example: configuring database copy automatic activation policy
 
-The following example configures a Mailbox server with a  _DatabaseCopyAutoActivationPolicy_ setting of  `Blocked`.
+The following example configures a Mailbox server with a _DatabaseCopyAutoActivationPolicy_ setting of `Blocked`.
   
 ```
 Set-MailboxServer -Identity EX1 -DatabaseCopyAutoActivationPolicy Blocked
@@ -384,9 +384,9 @@ Set-MailboxServer -Identity EX1 -DatabaseCopyAutoActivationPolicy Blocked
 ### Maximum active databases
 <a name="MaxActiveDB"> </a>
 
-The  _MaximumActiveDatabases_ parameter (also used with the [Set-MailboxServer](http://technet.microsoft.com/library/6a229126-b863-4f07-b024-a39c93b253f7.aspx) cmdlet) specifies the number of databases that can be mounted on a Mailbox server. You can configure Mailbox servers to meet your deployment requirements by ensuring that an individual Mailbox server doesn't become overloaded. 
+The _MaximumActiveDatabases_ parameter (also used with the [Set-MailboxServer](http://technet.microsoft.com/library/6a229126-b863-4f07-b024-a39c93b253f7.aspx) cmdlet) specifies the number of databases that can be mounted on a Mailbox server. You can configure Mailbox servers to meet your deployment requirements by ensuring that an individual Mailbox server doesn't become overloaded. 
   
-The  _MaximumActiveDatabases_ parameter is configured with a whole number numeric value. When the maximum number is reached, the database copies on the server won't be activated if a failover or switchover occurs. If the copies are already active on a server, the server won't allow databases to be mounted. 
+The _MaximumActiveDatabases_ parameter is configured with a whole number numeric value. When the maximum number is reached, the database copies on the server won't be activated if a failover or switchover occurs. If the copies are already active on a server, the server won't allow databases to be mounted. 
   
 #### Example: configuring maximum active databases
 
@@ -405,14 +405,14 @@ Before performing any type of software or hardware maintenance on a DAG member, 
     
 - **StopDagServerMaintenanceScripts.ps1** Assists with taking the DAG member out of maintenance mode, and making it an active target for all databases and all critical DAG support functionality. 
     
-Both of the above scripts accept the  `-ServerName` parameter (which can be either the host name or the fully qualified domain name (FQDN) of the DAG member) and the  `-WhatIf` parameter. Both scripts can be run locally or remotely. The server on which the scripts are executed must have the Windows Failover Cluster Management tools installed (RSAT-Clustering). 
+Both of the above scripts accept the `-ServerName` parameter (which can be either the host name or the fully qualified domain name (FQDN) of the DAG member) and the `-WhatIf` parameter. Both scripts can be run locally or remotely. The server on which the scripts are executed must have the Windows Failover Cluster Management tools installed (RSAT-Clustering). 
   
 > [!NOTE]
 > There is another script available, RedistributeActiveDatabases.ps1, which assists with mounting mailbox databases on specific DAG members, as determined by the Activation Preference number on each database. However, in Exchange 2016 CU2 or later, there is a new DAG property called PreferenceMoveFrequency. This property automatically balances database copies across a DAG, so you will only need RedistributeActiveDatabases.ps1 if you have disabled this new functionality or want to balance database copies manually. For more information, see the section "PreferenceMoveFrequency DAG property" in [Managing mailbox database copies](http://technet.microsoft.com/library/06df16b4-f209-4d3a-8c68-0805c745f9b2.aspx). 
   
 The StartDagServerMaintenance.ps1 script performs the following tasks:
   
-- Sets the value of the  _DatabaseCopyAutoActivationPolicy_ parameter on the DAG member to  `Blocked`, which prevents any database copies from being activated on the server.
+- Sets the value of the _DatabaseCopyAutoActivationPolicy_ parameter on the DAG member to `Blocked`, which prevents any database copies from being activated on the server.
     
 - Pauses the node in the cluster, which prevents the node from being and becoming the PAM.
     
@@ -430,7 +430,7 @@ To begin maintenance procedures on a DAG member, including flushing the transpor
   Set-ServerComponentState <ServerName> -Component HubTransport -State Draining -Requester Maintenance
   ```
 
-2. To initiate the draining of the transport queues, run  `Restart-Service MSExchangeTransport`
+2. To initiate the draining of the transport queues, run `Restart-Service MSExchangeTransport`
     
 3. To begin the process of draining all Unified Messaging calls, run
     
@@ -438,7 +438,7 @@ To begin maintenance procedures on a DAG member, including flushing the transpor
   Set-ServerComponentState <ServerName> -Component UMCallRouter -State Draining -Requester Maintenance
   ```
 
-4. To access the DAG maintenance scripts, run  `CD $ExScripts`.
+4. To access the DAG maintenance scripts, run `CD $ExScripts`.
     
 5. To run the StartDagMaintenance.ps1 script, run
     
@@ -446,7 +446,7 @@ To begin maintenance procedures on a DAG member, including flushing the transpor
   .\StartDagMaintenance.ps1 -serverName <ServerName> -MoveComment Maintenance
   ```
 
-    After the  `-MoveComment` parameter, you can make any notation you want. The above example uses "Maintenance." 
+    After the `-MoveComment` parameter, you can make any notation you want. The above example uses "Maintenance." 
     
     > [!NOTE]
     > This script can take some time to execute, and during this time you may not see any activity on your screen. 
@@ -465,7 +465,7 @@ To begin maintenance procedures on a DAG member, including flushing the transpor
 
 To verify that a server is ready for maintenance, perform the following tasks:
   
-1. To verify the server has been placed into maintenance mode, confirm that only  `Monitoring` and  `RecoveryActionsEnabled` are in an Active state when you run the following: 
+1. To verify the server has been placed into maintenance mode, confirm that only `Monitoring` and `RecoveryActionsEnabled` are in an Active state when you run the following: 
     
   ```
   Get-ServerComponentState <ServerName> | Format-Table Component,State -Autosize
@@ -483,13 +483,13 @@ To verify that a server is ready for maintenance, perform the following tasks:
   Get-ClusterNode <ServerName> | Format-List
   ```
 
-4. To verify that all transport queues have been emptied, run  `Get-Queue`.
+4. To verify that all transport queues have been emptied, run `Get-Queue`.
     
 After the maintenance is complete and the DAG member is ready to return to service, the StopDagServerMaintenance.ps1 script helps takes the DAG member out of maintenance mode and put it back into production. The StopDagServerMaintenance.ps1 script performs the following tasks:
   
 - Resumes the node in the cluster, which enables full cluster functionality for the DAG member.
     
-- Sets the value of the  _DatabaseCopyAutoActivationPolicy_ parameter on the DAG member to  `Unrestricted`.
+- Sets the value of the _DatabaseCopyAutoActivationPolicy_ parameter on the DAG member to `Unrestricted`.
     
 - Runs the [Resume-MailboxDatabaseCopy](http://technet.microsoft.com/library/3d90b006-9914-415b-9a1f-730bd91c8548.aspx) cmdlet for each database copy hosted on the DAG member. 
     
@@ -533,20 +533,20 @@ To verify that a server is ready for production use, perform the following tasks
   Get-ServerComponentState <ServerName> | Format-Table Component,State -Autosize
   ```
 
-If you are installing an Exchange update, and the update process fails, it can leave some server components in an inactive state, which will be displayed in the output of the above  `Get-ServerComponentState` cmdlet. To resolve this, run the following commands: 
+If you are installing an Exchange update, and the update process fails, it can leave some server components in an inactive state, which will be displayed in the output of the above `Get-ServerComponentState` cmdlet. To resolve this, run the following commands: 
   
-1.  `Set-ServerComponentState <ServerName> -Component ServerWideOffline -State Active -Requester Functional`
+1. `Set-ServerComponentState <ServerName> -Component ServerWideOffline -State Active -Requester Functional`
     
-2.  `Set-ServerComponentState <ServerName> -Component Monitoring -State Active -Requester Functional`
+2. `Set-ServerComponentState <ServerName> -Component Monitoring -State Active -Requester Functional`
     
-3.  `Set-ServerComponentState <ServerName> -Component RecoveryActionsEnabled -State Active -Requester Functional`
+3. `Set-ServerComponentState <ServerName> -Component RecoveryActionsEnabled -State Active -Requester Functional`
     
 ## Shutting down DAG members
 <a name="Sh"> </a>
 
 The Exchange 2013 high availability solution is integrated with the Windows shutdown process. If an administrator or application initiates a shutdown of a Windows server in a DAG that has a mounted database that's replicated to one or more DAG members, the system attempts to activate another copy of the mounted database prior to allowing the shutdown process to complete.
   
-However, this new behavior doesn't guarantee that all of the databases on the server being shut down will experience a  `lossless` activation. As a result, it's a best practice to perform a server switchover prior to shutting down a server that's a member of a DAG. 
+However, this new behavior doesn't guarantee that all of the databases on the server being shut down will experience a `lossless` activation. As a result, it's a best practice to perform a server switchover prior to shutting down a server that's a member of a DAG. 
   
 ## Installing updates on DAG members
 <a name="In"> </a>

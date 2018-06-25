@@ -4,9 +4,9 @@ ms.author: serdars
 author: SerdarSoysal
 manager: serdars
 ms.date: 6/8/2018
-ms.audience: Admin
+ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: bff2ce89-9e6f-494a-bd6a-2f2011507845
 description: "Summary: Learn how to copy the results of an In-Place eDiscovery search to a discovery mailbox in Exchange 2016."
@@ -32,7 +32,7 @@ After you create an In-Place eDiscovery search in Exchange Server 2016, you can 
     
 ## Use the EAC to copy search results
 
-1. In the EAC, go to **Compliance management** \> **In-Place eDiscovery &amp; Hold**.
+1. In the EAC, go to **Compliance management** \> **In-Place eDiscovery & Hold**.
     
 2. In the list view, select an eDiscovery search.
     
@@ -59,19 +59,19 @@ After you create an In-Place eDiscovery search in Exchange Server 2016, you can 
     
 ## Use the Exchange Management Shell to copy search results
 
-After using the **New-MailboxSearch** cmdlet to create an In-Place eDiscovery search, you need to start the search to copy messages to the discovery mailbox you specified in the  _TargetMailbox_ parameter. For information about creating eDiscovery searches by using the Exchange Management Shell, see: 
+After using the **New-MailboxSearch** cmdlet to create an In-Place eDiscovery search, you need to start the search to copy messages to the discovery mailbox you specified in the _TargetMailbox_ parameter. For information about creating eDiscovery searches by using the Exchange Management Shell, see: 
   
 - [Create an In-Place eDiscovery search in Exchange 2016](create-searches.md)
     
 - [New-MailboxSearch](http://technet.microsoft.com/library/74303b47-bb49-407c-a43b-590356eae35c.aspx)
     
-In the following example, you would run the following command to start an eDiscovery search named  *Fabrikam Investigation*  to copy the search results to the discovery mailbox that was specified by the  _TargetMailbox_ parameter when the search was created. 
+In the following example, you would run the following command to start an eDiscovery search named *Fabrikam Investigation* to copy the search results to the discovery mailbox that was specified by the _TargetMailbox_ parameter when the search was created. 
   
 ```
 Start-MailboxSearch "Fabrikam Investigation"
 ```
 
-If you used the  _EstimateOnly_ switch to get an estimate of the search results, you have to remove the switch before you can copy the search results. You also have to specify a discovery mailbox to copy to search results to. For example, say you created an estimate-only search by using the following command: 
+If you used the _EstimateOnly_ switch to get an estimate of the search results, you have to remove the switch before you can copy the search results. You also have to specify a discovery mailbox to copy to search results to. For example, say you created an estimate-only search by using the following command: 
   
 ```
 New-MailboxSearch "FY15 Q2 Financial Results" -StartDate "04/01/2015" -EndDate "06/30/2015" -SourceMailboxes "DG-Finance" -SearchQuery '"Financial" AND "Fabrikam"' -EstimateOnly -IncludeUnsearchableItems

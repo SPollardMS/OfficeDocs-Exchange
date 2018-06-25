@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: conceptual
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 4663b5db-5b30-4a5a-a302-be6fef7fe5da
 description: "Summary: Learn about the benefits and requirements for MAPI over HTTP in Exchange Server 2016."

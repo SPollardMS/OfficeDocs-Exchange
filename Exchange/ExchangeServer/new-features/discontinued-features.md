@@ -6,8 +6,8 @@ manager: scotv
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: overview
-ms.prod: office-online-server
-localization_priority: Normal
+ms.prod: exchange-server-itpro
+localization_priority: Priority
 ms.assetid: 0ac0001c-b314-4108-b895-d9c0e271b489
 description: "This topic discusses the components, features, or functionality that have been removed, discontinued, or replaced in Exchange 2016."
 ---
@@ -80,7 +80,7 @@ This section lists the Exchange 2010 features that are no longer available in Ex
 
 |**Feature**|**Comments and mitigation**|
 |:-----|:-----|
-|Linked connectors  <br/> |The ability to link a Send connector to a Receive connector has been removed. Specifically, the  _LinkedReceiveConnector_ parameter has been removed from [New-SendConnector](http://technet.microsoft.com/library/7b315ab0-8778-4835-a252-fb94129d7a8e.aspx) and [Set-SendConnector](http://technet.microsoft.com/library/5b9cf002-848a-4f35-b51f-e1ede131b136.aspx).  <br/> |
+|Linked connectors  <br/> |The ability to link a Send connector to a Receive connector has been removed. Specifically, the _LinkedReceiveConnector_ parameter has been removed from [New-SendConnector](http://technet.microsoft.com/library/7b315ab0-8778-4835-a252-fb94129d7a8e.aspx) and [Set-SendConnector](http://technet.microsoft.com/library/5b9cf002-848a-4f35-b51f-e1ede131b136.aspx).  <br/> |
    
 ### Antispam and antimalware
 
@@ -94,7 +94,7 @@ This section lists the Exchange 2010 features that are no longer available in Ex
 |**Feature**|**Comments and mitigation**|
 |:-----|:-----|
 |Managed Folders  <br/> |In Exchange 2010, you use managed folders for messaging retention management (MRM). In Exchange 2016, managed folders aren't supported. You must use retention policies for MRM.  <br/> **Note**: Cmdlets related to managed folders are still available. You can create managed folders, managed content settings and managed folder mailbox policies, and apply a managed folder mailbox policy to a user, but the MRM assistant skips processing of mailboxes that have a managed folder mailbox policy applied.  <br/> |
-|Port Managed Folder wizard  <br/> |In Exchange 2010, you use the Port Managed Folder wizard to create retention tags based on managed folder and managed content settings. In Exchange 2016, the Exchange admin center doesn't include this functionality. You can use the **New-RetentionPolicyTag** cmdlet with the  _ManagedFolderToUpgrade_ parameter to create a retention tag based on a managed folder.  <br/> |
+|Port Managed Folder wizard  <br/> |In Exchange 2010, you use the Port Managed Folder wizard to create retention tags based on managed folder and managed content settings. In Exchange 2016, the Exchange admin center doesn't include this functionality. You can use the **New-RetentionPolicyTag** cmdlet with the _ManagedFolderToUpgrade_ parameter to create a retention tag based on a managed folder.  <br/> |
    
 ### Unified Messaging and voice mail
 
@@ -106,6 +106,6 @@ This section lists the Exchange 2010 features that are no longer available in Ex
 
 |**Feature**|**Comments and mitigation**|
 |:-----|:-----|
-|**Update-MailboxDatabaseCopy** <br/> Update Mailbox Database Copy wizard  <br/> |Content index catalog seeding is no longer possible over the replication network; it can only be done over a MAPI network. This is true even when you use the  `-Network` parameter in the **Update-MailboxDatabaseCopy** cmdlet.  <br/> |
+|**Update-MailboxDatabaseCopy** <br/> Update Mailbox Database Copy wizard  <br/> |Content index catalog seeding is no longer possible over the replication network; it can only be done over a MAPI network. This is true even when you use the `-Network` parameter in the **Update-MailboxDatabaseCopy** cmdlet.  <br/> |
    
 

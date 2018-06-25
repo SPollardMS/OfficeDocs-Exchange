@@ -4,9 +4,9 @@ ms.author: dmaguire
 author: msdmaguire
 manager: serdars
 ms.date: 6/8/2018
-ms.audience: End User
+ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.collection: Strat_EX_Admin
 ms.assetid: ca3c78a3-80cc-4df2-859f-0106bbd57a07
@@ -17,7 +17,7 @@ description: "Summary: Learn how to use the Open Authorization (OAuth) authentic
 
  **Summary**: Learn how to use the Open Authorization (OAuth) authentication protocol to authenticate applications to Exchange. The other applications need to be configured as partner applications in Exchange 2016.
   
-Exchange 2016 supports partner applications such as SharePoint Server 2016 and Skype for Business Server 2015 by using OAuth configuration with the script,  `Configure-EnterpriseApplication.ps1`. You can automate the task using the script to more easily configure authentication with partner applications and reduce configuration errors. The script performs the following tasks:
+Exchange 2016 supports partner applications such as SharePoint Server 2016 and Skype for Business Server 2015 by using OAuth configuration with the script, `Configure-EnterpriseApplication.ps1`. You can automate the task using the script to more easily configure authentication with partner applications and reduce configuration errors. The script performs the following tasks:
   
 1. Configures an Enterprise partner application that self-issues OAuth tokens to successfully authenticate to Exchange.
     
@@ -29,7 +29,7 @@ Exchange 2016 supports partner applications such as SharePoint Server 2016 and S
     
 - The partner application needs to publish an authentication metadata document for Exchange 2016 to establish a direct trust to this application and accept authentication requests.
     
-- Examples in this topic use the following default location of the  `\Scripts` directory:  `C:\Program Files\Microsoft\Exchange Server\V15\Scripts`.
+- Examples in this topic use the following default location of the `\Scripts` directory: `C:\Program Files\Microsoft\Exchange Server\V15\Scripts`.
     
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Partner applications - configure" entry in the [Sharing and collaboration permissions](../../permissions/feature-permissions/sharing-and-collaboration-permissions.md) topic. 
     
@@ -40,7 +40,7 @@ Exchange 2016 supports partner applications such as SharePoint Server 2016 and S
   
 ## Configure OAuth authentication with a partner application
 
-This procedure uses the  `Configure-EntepriseApplication.ps1` script to configure OAuth authentication with partner applications. Access to resources depends on the permissions assigned to the partner application and/or the user it impersonates by using RBAC. After configuring OAuth authentication from Exchange, the partner application can use Exchange 2016 resources. 
+This procedure uses the `Configure-EntepriseApplication.ps1` script to configure OAuth authentication with partner applications. Access to resources depends on the permissions assigned to the partner application and/or the user it impersonates by using RBAC. After configuring OAuth authentication from Exchange, the partner application can use Exchange 2016 resources. 
   
 1. This example configures OAuth authentication for SharePoint 2016.
     

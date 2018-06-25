@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 93a949e7-b3ef-43ea-ae0c-6698826fc8d2
 description: "Summary: Learn about how Exchange ActiveSync lets enabled mobile devices access a user's Microsoft Exchange mailbox data any time, anywhere."
@@ -18,7 +18,7 @@ description: "Summary: Learn about how Exchange ActiveSync lets enabled mobile d
   
 There are many different mobile phones and devices enabled for Exchange ActiveSync. These include Windows Phones, Nokia mobile phones, Android phones and tablets, and the Apple iPhone, iPod, and iPad.
   
-Both phone and non-phone mobile devices support Exchange ActiveSync, and in most Exchange ActiveSync documentation, we use the term  *mobile device*  . Unless the feature or features we're discussing require a cellular telephone signal, such as SMS message notification, the term mobile device applies to both mobile phones and other mobile devices such as tablets. 
+Both phone and non-phone mobile devices support Exchange ActiveSync, and in most Exchange ActiveSync documentation, we use the term *mobile device* . Unless the feature or features we're discussing require a cellular telephone signal, such as SMS message notification, the term mobile device applies to both mobile phones and other mobile devices such as tablets. 
   
 ## What Exchange ActiveSync does
 

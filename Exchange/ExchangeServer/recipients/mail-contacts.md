@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: ed0438ea-f396-480e-b661-9f704b0a04e6
 description: "Summary: Learn how use Exchange admin center (EAC) or the Exchange Management Shell to create and change mail contacts for people outside your organization."
@@ -142,7 +142,7 @@ Use the **Organization** section to record detailed information about the mail c
     
 - **Manager**: To add a manager, click **Browse**. In **Select Manager**, select a person, and then click **OK**.
     
-- **Direct reports**: You can't modify this box. A  *direct report*  is a recipient who reports to a specific manager. If you've specified a manager for the recipient, that recipient appears as a direct report in the details of the manager's mailbox. For example, Toby manages Ann and Spencer, who are mail contacts, so Toby is specified in the **Manager** box in the organization properties for Ann and Spencer, and Ann and Spencer appear in the **Direct reports** box in the properties of Toby's mailbox. 
+- **Direct reports**: You can't modify this box. A *direct report* is a recipient who reports to a specific manager. If you've specified a manager for the recipient, that recipient appears as a direct report in the details of the manager's mailbox. For example, Toby manages Ann and Spencer, who are mail contacts, so Toby is specified in the **Manager** box in the organization properties for Ann and Spencer, and Ann and Spencer appear in the **Direct reports** box in the properties of Toby's mailbox. 
     
 #### Email Options
 <a name="EmailOptions"> </a>

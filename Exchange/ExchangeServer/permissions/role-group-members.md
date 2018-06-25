@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: c064729d-7cda-47fc-b105-acf4b300d430
 description: "Summary: Learn how to add, remove and view members of a management role group in Microsoft Exchange Server 2016."

@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 9f0f4a3d-de9a-4d8a-9172-2edf4288d766
 description: "Summary: Learn how to run a script to create an In-Place eDiscovery search that uses the list of source mailboxes and search query from a Compliance Search."
@@ -41,7 +41,7 @@ Start-ComplianceSearch -Identity "Search All-Financial Report"
 For more information, see [New-ComplianceSearch](http://technet.microsoft.com/library/433d1602-a026-4d63-be5e-605dd6b7b0d0.aspx).
   
 > [!IMPORTANT]
-> When you create a compliance search by using the **New-ComplianceSearch** cmdlet, a shadow In-Place eDiscovery search is created (but not started) and displayed on the **In-Place eDiscovery &amp; Hold** page in the Exchange admin center (EAC). It's also returned by using the **Get-MailboxSearch** cmdlet. This mailbox search is named ** *ComplianceSearchName*  -shadow **. We recommend that you delete the shadow In-Place eDiscovery search, and use the script in Step 3 to create the In-Place eDiscovery search. The functionality of creating a shadow search will be removed in a cumulative update for Exchange 2016. 
+> When you create a compliance search by using the **New-ComplianceSearch** cmdlet, a shadow In-Place eDiscovery search is created (but not started) and displayed on the **In-Place eDiscovery & Hold** page in the Exchange admin center (EAC). It's also returned by using the **Get-MailboxSearch** cmdlet. This mailbox search is named ** *ComplianceSearchName* -shadow **. We recommend that you delete the shadow In-Place eDiscovery search, and use the script in Step 3 to create the In-Place eDiscovery search. The functionality of creating a shadow search will be removed in a cumulative update for Exchange 2016. 
   
 ## (Optional) Step 2: Verify the number of source mailboxes in the compliance search
 <a name="step2"> </a>
@@ -107,7 +107,7 @@ The next step is to run a script that will convert an existing compliance search
     
 - Creates a new In-Place eDiscovery search, with the following properties. Note that the new search isn't started. You'll start it in step 4.
     
-  - **Name**: The name of the new search uses this format:  *\<Name of compliance search\>*  _MBSearch1. If you run the script again and use the same source compliance search, the search will be named  *\<Name of compliance search\>*  _MBSearch2. 
+  - **Name**: The name of the new search uses this format: *\<Name of compliance search\>* _MBSearch1. If you run the script again and use the same source compliance search, the search will be named *\<Name of compliance search\>* _MBSearch2. 
     
   - **Source mailboxes**: All mailboxes from the compliance search that contain search results.
     
@@ -191,14 +191,14 @@ The next step is to run a script that will convert an existing compliance search
 
 3. When prompted by the script, type the name of the compliance search that you want to covert to an In-Place eDiscovery search (for example, the search that you created in Step 1) , and then press **Enter**.
     
-    If the script is successful, a new In-Place eDiscovery search is created with a status of **NotStarted**. Run the command  `Get-MailboxSearch <Name of compliance search>_MBSearch1 | FL` to display the properties of the new search. 
+    If the script is successful, a new In-Place eDiscovery search is created with a status of **NotStarted**. Run the command `Get-MailboxSearch <Name of compliance search>_MBSearch1 | FL` to display the properties of the new search. 
     
 ## Step 4: Start the In-Place eDiscovery search
 <a name="step4"> </a>
 
 The script that you run in Step 3 creates a new In-Place eDiscovery search, but doesn't start it. The next step is to start the search so you can get an estimate of the search results.
   
-1. In the Exchange admin center (EAC), go to **Compliance management** \> **In-Place eDiscovery &amp; Hold**.
+1. In the Exchange admin center (EAC), go to **Compliance management** \> **In-Place eDiscovery & Hold**.
     
 2. In the list view, select the In-Place eDiscovery search that you created in Step 3.
     
@@ -209,7 +209,7 @@ The script that you run in Step 3 creates a new In-Place eDiscovery search, but 
 4. To preview the results after the search is completed, click **Preview search results** in the details pane. 
     
 > [!TIP]
-> Alternatively, you can use the Exchange Management Shell to start the In-Place eDiscovery search; for example  `Start-MailboxSearch -Identity <Name of compliance search>_MBSearch1`. 
+> Alternatively, you can use the Exchange Management Shell to start the In-Place eDiscovery search; for example `Start-MailboxSearch -Identity <Name of compliance search>_MBSearch1`. 
   
 ## Next steps after creating and running the In-Place eDiscovery search
 <a name="nextsteps"> </a>
@@ -218,7 +218,7 @@ After you create and start the In-Place eDiscovery search that was created by th
   
 ### Create an In-Place Hold
 
-1. In the EAC, go to **Compliance management** \> **In-Place eDiscovery &amp; Hold**.
+1. In the EAC, go to **Compliance management** \> **In-Place eDiscovery & Hold**.
     
 2. In the list view, select the In-Place eDiscovery search that you created in Step 3, and then click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)).
     
@@ -232,7 +232,7 @@ After you create and start the In-Place eDiscovery search that was created by th
     
 ### Copy the search results
 
-1. In the EAC, go to **Compliance management** \> **In-Place eDiscovery &amp; Hold**.
+1. In the EAC, go to **Compliance management** \> **In-Place eDiscovery & Hold**.
     
 2. In the list view, select the In-Place eDiscovery search that you created in Step 3.
     
@@ -258,7 +258,7 @@ After you create and start the In-Place eDiscovery search that was created by th
     
 ### Export the search results
 
-1. In the EAC, go to **Compliance management** \> **In-Place eDiscovery &amp; Hold**.
+1. In the EAC, go to **Compliance management** \> **In-Place eDiscovery & Hold**.
     
 2. In the list view, select the In-Place eDiscovery search that you created in Step 3, and then click **Export to a PST file**.
     

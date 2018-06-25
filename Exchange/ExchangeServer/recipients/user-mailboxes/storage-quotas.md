@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.collection: Strat_EX_Admin
 ms.assetid: 5f5fe292-c80e-4a0b-b3e6-e193ea5171d0
@@ -60,7 +60,7 @@ This topic shows you how to customize storage settings for a specific mailbox in
 This example sets the issue warning, prohibit send, and prohibit send and receive quotas for Joe Healy's mailbox to 24.5 GB, 24.75 GB, and 25 GB respectively.
   
 > [!NOTE]
-> To ensure that the custom settings for the mailbox are used rather than the mailbox database defaults, you must set the  _UseDatabaseQuotaDefaults_ parameter to  `$false`. 
+> To ensure that the custom settings for the mailbox are used rather than the mailbox database defaults, you must set the _UseDatabaseQuotaDefaults_ parameter to `$false`. 
   
 ```
 Set-Mailbox -Identity "Joe Healy" -IssueWarningQuota 24.5gb -ProhibitSendQuota 24.75gb -ProhibitSendReceiveQuota 25gb -UseDatabaseQuotaDefaults $false

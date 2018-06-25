@@ -4,9 +4,9 @@ ms.author: serdars
 author: SerdarSoysal
 manager: serdars
 ms.date: 6/8/2018
-ms.audience: End User
+ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: a7daf7aa-0411-4b26-a422-eefd1b113f9f
 description: "Summary: Learn how retention age is calculated in Exchange 2016."
@@ -31,9 +31,9 @@ Items in the Deleted Items folder and items which may have a start and end date,
 |Email message  <br/> Document  <br/> Fax  <br/> Journal item  <br/> Meeting request, response, or cancellation  <br/> Missed call  <br/> |Not in the Deleted Items folder  <br/> |Delivery date or date of creation  <br/> |
 |Email message  <br/> Document  <br/> Fax  <br/> Journal item  <br/> Meeting request, response, or cancellation  <br/> Missed call  <br/> |In the Deleted Items folder  <br/> |Date of delivery or creation unless the item was deleted from a folder that does not have an inherited or implicit retention tag.  <br/> If an item is in a folder that doesn't have an inherited or implicit retention tag applied, the item isn't processed by the MFA and therefore doesn't have a start date stamped by it. When the user deletes such an item, and the MFA processes it for the first time in the Deleted Items folder, it stamps the current date as the start date.  <br/> |
 |Calendar  <br/> |Not in the Deleted Items folder  <br/> |Non-recurring calendar items expire according to their end date.  <br/> Recurring calendar items expire according to the end date of their last occurrence. Recurring calendar items with no end date don't expire.  <br/> |
-|Calendar  <br/> |In the Deleted Items folder  <br/> |A calendar item expires according to its  `message-received date`, if one exists.  <br/> If a calendar item doesn't have a  `message-received date`, it expires according to its  `message-creation date`.  <br/> If a calendar item has neither a  `message-received date` nor a  `message-creation date`, it doesn't expire.  <br/> |
-|Task  <br/> |Not in the Deleted Items folder  <br/> |Non-recurring tasks:  <br/> • A non-recurring task expires according to its  `message-received date`, if one exists.  <br/> • If a non-recurring task doesn't have a  `message-received date`, it expires according to its  `message-creation date`.  <br/> • If a non-recurring task has neither a  `message-received date` nor a  `message-creation date`, it doesn't expire.  <br/> A recurring task expires according to the  `end date` of its last occurrence. If a recurring task doesn't have an  `end date`, it doesn't expire.  <br/> A regenerating task (which is a recurring task that regenerates a specified time after the preceding instance of the task is completed) doesn't expire.  <br/> |
-|Task  <br/> |In the Deleted Items folder  <br/> |A task expires according to its  `message-received date`, if one exists.  <br/> If a task doesn't have a  `message-received date`, it expires according to its  `message-creation date`.  <br/> If a task has neither a  `message-received date` nor a  `message-creation date`, it doesn't expire.  <br/> |
+|Calendar  <br/> |In the Deleted Items folder  <br/> |A calendar item expires according to its `message-received date`, if one exists.  <br/> If a calendar item doesn't have a `message-received date`, it expires according to its `message-creation date`.  <br/> If a calendar item has neither a `message-received date` nor a `message-creation date`, it doesn't expire.  <br/> |
+|Task  <br/> |Not in the Deleted Items folder  <br/> |Non-recurring tasks:  <br/> • A non-recurring task expires according to its `message-received date`, if one exists.  <br/> • If a non-recurring task doesn't have a `message-received date`, it expires according to its `message-creation date`.  <br/> • If a non-recurring task has neither a `message-received date` nor a `message-creation date`, it doesn't expire.  <br/> A recurring task expires according to the `end date` of its last occurrence. If a recurring task doesn't have an `end date`, it doesn't expire.  <br/> A regenerating task (which is a recurring task that regenerates a specified time after the preceding instance of the task is completed) doesn't expire.  <br/> |
+|Task  <br/> |In the Deleted Items folder  <br/> |A task expires according to its `message-received date`, if one exists.  <br/> If a task doesn't have a `message-received date`, it expires according to its `message-creation date`.  <br/> If a task has neither a `message-received date` nor a `message-creation date`, it doesn't expire.  <br/> |
 |Contact  <br/> |In any folder  <br/> |Contacts aren't stamped with a start date or an expiration date, so they're skipped by the Managed Folder Assistant and don't expire.  <br/> |
 |Corrupted  <br/> |In any folder  <br/> |Corrupted items are skipped by the Managed Folder Assistant and don't expire.  <br/> |
    

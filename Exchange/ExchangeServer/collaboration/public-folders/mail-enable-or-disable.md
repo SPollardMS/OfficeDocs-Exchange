@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 4/19/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 3d69f76d-ff3c-46c1-b962-6a1baa425d8a
 description: "Summary: Learn how to mail-enable or mail-disable a public folder with the Exchange admin center (EAC) or with the Exchange Management Shell."
@@ -26,7 +26,7 @@ For additional management tasks related to managing public folders, see [Public 
 
 - Estimated time to complete: 5 minutes
     
-- To ensure that users on the Internet can send e-mail messages to a mail-enabled public folder, the public folder needs to have at least the  _CreateItems_ access right granted to the Anonymous account. If you want to learn how to do this, see [Allow anonymous users to send email to a mail-enabled public folder](#CreateItems.md) later in this article. 
+- To ensure that users on the Internet can send e-mail messages to a mail-enabled public folder, the public folder needs to have at least the _CreateItems_ access right granted to the Anonymous account. If you want to learn how to do this, see [Allow anonymous users to send email to a mail-enabled public folder](#CreateItems.md) later in this article. 
     
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Public folders" entry in the [Sharing and collaboration permissions](../../permissions/feature-permissions/sharing-and-collaboration-permissions.md) topic. 
     
@@ -94,7 +94,7 @@ You can use either Outlook or the Exchange Management Shell to set permissions o
     
  **Use the Exchange Management Shell to set permissions for the Anonymous account**
   
-This example sets the  `CreateItems` permission for the Anonymous account on the "Customer Feedback" mail-enabled public folder. 
+This example sets the `CreateItems` permission for the Anonymous account on the "Customer Feedback" mail-enabled public folder. 
   
 ```
 Add-PublicFolderClientPermission "\Customer Feedback" -AccessRights CreateItems -User Anonymous

@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 9317b3bc-44a1-4e54-bc51-4f0b194b6a55
 description: "Summary: Learn about managing mobile device mailbox policies in Exchange 2016."
@@ -85,29 +85,29 @@ The following table summarizes the settings you can specify using mobile device 
 |**Setting**|**Description**|
 |:-----|:-----|
 |Allow Bluetooth  <br/> |This setting specifies whether a mobile device allows Bluetooth connections. The available options are Disable, HandsFree Only, and Allow. The default value is Allow.  <br/> |
-|Allow Browser  <br/> |This setting specifies whether Pocket Internet Explorer is allowed on the mobile device. This setting doesn't affect third-party browsers installed on the mobile device. The default value is  `$true`.  <br/> |
-|Allow Camera  <br/> |This setting specifies whether the mobile device camera can be used. The default value is  `$true`.  <br/> |
-|Allow Consumer EMail  <br/> |This setting specifies whether the mobile device user can configure a personal email account (either POP3 or IMAP4) on the mobile device. The default value is  `$true`. This setting doesn't control access to email accounts that are using third-party mobile device email programs.  <br/> |
-|Allow Desktop Sync  <br/> |This setting specifies whether the mobile device can synchronize with a computer through a cable, Bluetooth, or IrDA connection. The default value is  `$true`.  <br/> |
+|Allow Browser  <br/> |This setting specifies whether Pocket Internet Explorer is allowed on the mobile device. This setting doesn't affect third-party browsers installed on the mobile device. The default value is `$true`.  <br/> |
+|Allow Camera  <br/> |This setting specifies whether the mobile device camera can be used. The default value is `$true`.  <br/> |
+|Allow Consumer EMail  <br/> |This setting specifies whether the mobile device user can configure a personal email account (either POP3 or IMAP4) on the mobile device. The default value is `$true`. This setting doesn't control access to email accounts that are using third-party mobile device email programs.  <br/> |
+|Allow Desktop Sync  <br/> |This setting specifies whether the mobile device can synchronize with a computer through a cable, Bluetooth, or IrDA connection. The default value is `$true`.  <br/> |
 |Allow External Device Management  <br/> |This setting specifies whether an external device management program is allowed to manage the mobile device.  <br/> |
-|Allow HTML Email  <br/> |This setting specifies whether email synchronized to the mobile device can be in HTML format. If this setting is set to  `$false`, all email is converted to plain text.  <br/> |
-|Allow Internet Sharing  <br/> |This setting specifies whether the mobile device can be used as a modem for a desktop or a portable computer. The default value is  `$true`.  <br/> |
+|Allow HTML Email  <br/> |This setting specifies whether email synchronized to the mobile device can be in HTML format. If this setting is set to `$false`, all email is converted to plain text.  <br/> |
+|Allow Internet Sharing  <br/> |This setting specifies whether the mobile device can be used as a modem for a desktop or a portable computer. The default value is `$true`.  <br/> |
 |AllowIrDA  <br/> |This setting specifies whether infrared connections are allowed to and from the mobile device.  <br/> |
-|Allow Mobile OTA Update  <br/> |This setting specifies whether the mobile device mailbox policy settings can be sent to the mobile device over a cellular data connection. The default value is  `$true`.  <br/> |
+|Allow Mobile OTA Update  <br/> |This setting specifies whether the mobile device mailbox policy settings can be sent to the mobile device over a cellular data connection. The default value is `$true`.  <br/> |
 |Allow non-provisionable devices  <br/> |This setting specifies whether mobile devices that may not support application of all policy settings are allowed to connect to Exchange 2016 by using Exchange ActiveSync. Allowing non-provisionable mobile devices has security implications. For example, some non-provisionable devices may not be able to implement an organization's password requirements.  <br/> |
-|Allow POPIMAPEmail  <br/> |This setting specifies whether the user can configure a POP3 or an IMAP4 email account on the mobile device. The default value is  `$true`. This setting doesn't control access by third-party email programs.  <br/> |
-|Allow Remote Desktop  <br/> |This setting specifies whether the mobile device can initiate a remote desktop connection. The default value is  `$true`.  <br/> |
-|Allow simple password  <br/> |This setting enables or disables the ability to use a simple password such as 1111 or 1234. The default value is  `$true`.  <br/> |
+|Allow POPIMAPEmail  <br/> |This setting specifies whether the user can configure a POP3 or an IMAP4 email account on the mobile device. The default value is `$true`. This setting doesn't control access by third-party email programs.  <br/> |
+|Allow Remote Desktop  <br/> |This setting specifies whether the mobile device can initiate a remote desktop connection. The default value is `true`.  <br/> |
+|Allow simple password  <br/> |This setting enables or disables the ability to use a simple password such as 1111 or 1234. The default value is `$true`.  <br/> |
 |Allow S/MIME encryption algorithm negotiation  <br/> |This setting specifies whether the messaging application on the mobile device can negotiate the encryption algorithm if a recipient's certificate doesn't support the specified encryption algorithm.  <br/> |
 |Allow S/MIME software certificates  <br/> |This setting specifies whether S/MIME software certificates are allowed on the mobile device.  <br/> |
 |Allow storage card  <br/> |This setting specifies whether the mobile device can access information that's stored on a storage card.  <br/> |
-|Allow text messaging  <br/> |This setting specifies whether text messaging is allowed from the mobile device. The default value is  `$true`.  <br/> |
-|Allow unsigned applications  <br/> |This setting specifies whether unsigned applications can be installed on the mobile device. The default value is  `$true`.  <br/> |
-|Allow unsigned installation packages  <br/> |This setting specifies whether an unsigned installation package can be run on the mobile device. The default value is  `$true`.  <br/> |
-|Allow Wi-Fi  <br/> |This setting specifies whether wireless Internet access is allowed on the mobile device. The default value is  `$true`.  <br/> |
-|Alphanumeric password required  <br/> |This setting requires that a password contains numeric and non-numeric characters. The default value is  `$true`.  <br/> |
+|Allow text messaging  <br/> |This setting specifies whether text messaging is allowed from the mobile device. The default value is `$true`.  <br/> |
+|Allow unsigned applications  <br/> |This setting specifies whether unsigned applications can be installed on the mobile device. The default value is `$true`.  <br/> |
+|Allow unsigned installation packages  <br/> |This setting specifies whether an unsigned installation package can be run on the mobile device. The default value is `$true`.  <br/> |
+|Allow Wi-Fi  <br/> |This setting specifies whether wireless Internet access is allowed on the mobile device. The default value is `$true`.  <br/> |
+|Alphanumeric password required  <br/> |This setting requires that a password contains numeric and non-numeric characters. The default value is `$true`.  <br/> |
 |Approved Application List  <br/> |This setting stores a list of approved applications that can be run on the mobile device.  <br/> |
-|Attachments enabled  <br/> |This setting enables attachments to be downloaded to the mobile device. The default value is  `$true`.  <br/> |
+|Attachments enabled  <br/> |This setting enables attachments to be downloaded to the mobile device. The default value is `$true`.  <br/> |
 |Device encryption enabled  <br/> |This setting enables encryption on the mobile device. Not all mobile devices can enforce encryption. For more information, see the device and mobile operating system documentation.  <br/> |
 |Device policy refresh interval  <br/> |This setting specifies how often the mobile device mailbox policy is sent from the server to the mobile device.  <br/> |
 |IRM enabled  <br/> |This setting specifies whether Information Rights Management (IRM) is enabled on the mobile device.  <br/> |
@@ -124,8 +124,8 @@ The following table summarizes the settings you can specify using mobile device 
 |Password expiration  <br/> |This setting enables the administrator to configure a length of time after which a mobile device password must be changed.  <br/> |
 |Password history  <br/> |This setting specifies the number of past passwords that can be stored in a user's mailbox. A user can't reuse a stored password.  <br/> |
 |Password recovery enabled  <br/> |When this setting is enabled, the mobile device generates a recovery password that's sent to the server. If the user forgets their mobile device password, the recovery password can be used to unlock the mobile device and enable the user to create a new mobile device password.  <br/> |
-|Require device encryption  <br/> |This setting specifies whether device encryption is required. If set to  `$true`, the mobile device must be able to support and implement encryption to synchronize with the server.  <br/> |
-|Require encrypted S/MIME messages  <br/> |This setting specifies whether S/MIME messages must be encrypted. The default value is  `$false`.  <br/> |
+|Require device encryption  <br/> |This setting specifies whether device encryption is required. If set to `$true`, the mobile device must be able to support and implement encryption to synchronize with the server.  <br/> |
+|Require encrypted S/MIME messages  <br/> |This setting specifies whether S/MIME messages must be encrypted. The default value is `$false`.  <br/> |
 |Require encryption S/MIME algorithm  <br/> |This setting specifies what required algorithm must be used when encrypting S/MIME messages.  <br/> |
 |Require manual synchronization while roaming  <br/> |This setting specifies whether the mobile device must synchronize manually while roaming. Allowing automatic synchronization while roaming will frequently lead to larger-than-expected data costs for the mobile device data plan.  <br/> |
 |Require signed S/MIME algorithm  <br/> |This setting specifies what required algorithm must be used when signing a message.  <br/> |

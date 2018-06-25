@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: a14e4e62-08ca-4a7b-92e1-d39fe3e0a9e5
 description: "Learn how administrators use Delivery Reports to search for the delivery status of email messages in an Exchange 2016 organization."

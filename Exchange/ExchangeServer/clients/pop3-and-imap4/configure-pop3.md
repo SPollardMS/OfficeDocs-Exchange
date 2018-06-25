@@ -4,9 +4,9 @@ ms.author: chrisda
 author: chrisda
 manager: serdars
 ms.date: 6/8/2018
-ms.audience: End User
+ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: e226a5f1-429d-4046-b925-da6cc151709e
 description: "Summary: Learn how to enable and configure POP3 on an Exchange 2016 server for access by POP3 clients."
@@ -28,9 +28,9 @@ By default, POP3 client connectivity isn't enabled in Exchange. To enable POP3 c
     
     By default, Exchange uses the following settings for **internal** POP3 connections: 
     
-  - **POP3 server FQDN**:  `<ServerFQDN>`. For example,  `mailbox01.contoso.com`.
+  - **POP3 server FQDN**: `<ServerFQDN>`. For example, `mailbox01.contoso.com`.
     
-  - **TCP port and encryption method**: 995 for always TLS encrypted connections, and 110 for unencrypted connections, or for opportunistic TLS ( **STARTTLS** ) that results in an encrypted connection after the initial plain text protocol handshake. 
+  - **TCP port and encryption method**: 995 for always TLS encrypted connections, and 110 for unencrypted connections, or for opportunistic TLS (**STARTTLS** ) that results in an encrypted connection after the initial plain text protocol handshake. 
     
     To allow **external** POP3 clients to connect to mailboxes, you need to configure the POP3 server FQDN, TCP port, and encryption method for external connections. This step causes the external POP3 settings to be displayed in Outlook on the web (formerly known as Outlook Web App) at **Settings** \> **Options** \> **Mail** \> **Accounts** \> **POP and IMAP**.
     ![POP settings in Outlook on the web](../../media/8c89500e-90ad-4fb5-9334-7013de6607a2.png)
@@ -64,7 +64,7 @@ You can perform this step by using the Windows Services console, or the Exchange
 
 1. On the Exchange server, open the Windows Services console. For example:
     
-  - Run the command  `services.msc` from the **Run** dialog, a Command Prompt window, or the Exchange Management Shell. 
+  - Run the command `services.msc` from the **Run** dialog, a Command Prompt window, or the Exchange Management Shell. 
     
   - Open Server Manager, and then click **Tools** \> **Services**.
     
@@ -130,9 +130,9 @@ This example allows configures the following settings for external POP3 connecti
     
 - **TCP port**: 995 for always TLS encrypted connections, and 110 for unencrypted connections or opportunistic TLS (STARTTLS) encrypted connections.
     
-- **Internal Exchange server IP address and TCP port for always TLS encrypted connections**: All available IPv4 and IPv6 addresses on the server on port 995 (we aren't using the  _SSLBindings_ parameter, and the default value is  `[::]:995,0.0.0.0:995`).
+- **Internal Exchange server IP address and TCP port for always TLS encrypted connections**: All available IPv4 and IPv6 addresses on the server on port 995 (we aren't using the _SSLBindings_ parameter, and the default value is `[::]:995,0.0.0.0:995`).
     
-- **Internal Exchange server IP address and TCP port for unencrypted or opportunistic TLS (STARTTLS) encrypted connections**: All available IPv4 and IPv6 addresses on the server on port 110 (we aren't using the  _UnencryptedOrTLSBindings_ parameter, and the default value is  `[::]:110,0.0.0.0:110`).
+- **Internal Exchange server IP address and TCP port for unencrypted or opportunistic TLS (STARTTLS) encrypted connections**: All available IPv4 and IPv6 addresses on the server on port 110 (we aren't using the _UnencryptedOrTLSBindings_ parameter, and the default value is `[::]:110,0.0.0.0:110`).
     
 - **FQDN used for encryption**: mail.contoso.com. This value identifies the certificate that matches or contains the POP3 server FQDN.
     
@@ -146,7 +146,7 @@ Set-PopSettings -ExternalConnectionSettings "mail.contoso.com:995:SSL","mail.con
     
 - The external POP3 server FQDN that you configure needs to have a corresponding record in your public DNS, and the TCP port (110 or 995) needs to be allowed through your firewall to the Exchange server.
     
-- The combination of encryption methods and TCP ports that you use for the  _ExternalConnectionSettings_ parameter need to match the corresponding TCP ports and encryption methods that you use for the  _SSLBindings_ or  _UnencryptedOrTLSBindings_ parameters. 
+- The combination of encryption methods and TCP ports that you use for the _ExternalConnectionSettings_ parameter need to match the corresponding TCP ports and encryption methods that you use for the _SSLBindings_ or _UnencryptedOrTLSBindings_ parameters. 
     
 - Although you can use a separate certificate for POP3, we recommend that you use the same certificate as the other Exchange IIS (HTTP) services, which is likely a wildcard certificate or a subject alternative name (SAN) certificate from a commercial certification authority that's automatically trusted by all clients. For more information, see [Certificate requirements for Exchange services](../../architecture/client-access/certificates.md#CertRequirements).
     
@@ -204,13 +204,13 @@ To verify that you have enabled and configured POP3 on the Exchange server, perf
 2. Click **Mail** \> **Accounts** \> **POP and IMAP** and verify the correct POP3 settings are displayed. 
     ![POP settings in Outlook on the web](../../media/8c89500e-90ad-4fb5-9334-7013de6607a2.png)
   
-    **Note**: If you configured 995/SSL **and** 110/TLS values for the  _ExternalConnectionSettings_ parameter on the **Set-PopSettings** cmdlet, only the 995/SSL value is displayed in Outlook on the web. Also, if the external POP3 settings that you configured don't appear as expected in Outlook on the web after you restart the POP3 services, run the command  `iisreset.exe /noforce` to restart Internet Information Services (IIS). 
+    **Note**: If you configured 995/SSL **and** 110/TLS values for the _ExternalConnectionSettings_ parameter on the **Set-PopSettings** cmdlet, only the 995/SSL value is displayed in Outlook on the web. Also, if the external POP3 settings that you configured don't appear as expected in Outlook on the web after you restart the POP3 services, run the command `iisreset.exe /noforce` to restart Internet Information Services (IIS). 
     
 3. You can test POP3 client connectivity to the Exchange server by using the following methods:
     
-  - **Internal clients**: Use the **Test-PopConnectivity** cmdlet. For example,  `Test-PopConnectivity -ClientAccessServer <ServerName> -Lightmode -MailboxCredential (Get-Credential)`. For more information, see [Test-PopConnectivity](http://technet.microsoft.com/library/73f0ce87-e723-43e5-a32c-29cd2d899ff9.aspx).
+  - **Internal clients**: Use the **Test-PopConnectivity** cmdlet. For example, `Test-PopConnectivity -ClientAccessServer <ServerName> -Lightmode -MailboxCredential (Get-Credential)`. For more information, see [Test-PopConnectivity](http://technet.microsoft.com/library/73f0ce87-e723-43e5-a32c-29cd2d899ff9.aspx).
     
-    **Note**: The  _Lightmode_ switch tells the command test POP3 logons to the server. To test sending (SMTP) and receiving (POP3) a message, you need to configure the authenticated SMTP settings as described in [Configure authenticated SMTP settings for POP3 and IMAP4 clients in Exchange 2016](configure-authenticated-smtp.md).
+    **Note**: The _Lightmode_ switch tells the command test POP3 logons to the server. To test sending (SMTP) and receiving (POP3) a message, you need to configure the authenticated SMTP settings as described in [Configure authenticated SMTP settings for POP3 and IMAP4 clients in Exchange 2016](configure-authenticated-smtp.md).
     
   - **External clients**: Use the **Exchange Server** \> **POP Email** test in the Microsoft Remote Connectivity Analyzer at [https://go.microsoft.com/fwlink/p/?LinkID=313839](https://go.microsoft.com/fwlink/p/?LinkID=313839).
     

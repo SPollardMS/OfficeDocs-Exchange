@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 4/19/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 51ebf2f6-8a02-44ef-a489-ca361cb0f63a
 description: "Summary: Pre-stage and provision a cluster name object (CNO) for an Exchange 2016 database availability group (DAG)."

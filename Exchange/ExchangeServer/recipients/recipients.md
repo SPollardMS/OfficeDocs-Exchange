@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: overview
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: abad5939-8826-4df1-94bf-2d734f07e929
 description: "Summary: All about recipients, such as mailboxes and mail users, in Exchange Server 2016."
@@ -16,11 +16,11 @@ description: "Summary: All about recipients, such as mailboxes and mail users, i
 
  **Summary**: All about recipients, such as mailboxes and mail users, in Exchange Server 2016.
   
-The people and resources that send and receive messages are the core of any messaging and collaboration system. In an Exchange organization, these people and resources are referred to as  *recipients*  . A recipient is any mail-enabled object in Active Directory to which Microsoft Exchange can deliver or route messages. 
+The people and resources that send and receive messages are the core of any messaging and collaboration system. In an Exchange organization, these people and resources are referred to as *recipients* . A recipient is any mail-enabled object in Active Directory to which Microsoft Exchange can deliver or route messages. 
   
 ## Exchange recipient types
 
-Exchange includes several explicit recipient types. Each recipient type is identified in the Exchange admin center (EAC) and has a unique value in the  _RecipientTypeDetails_ property in the Exchange Management Shell. The use of explicit recipient types has the following benefits: 
+Exchange includes several explicit recipient types. Each recipient type is identified in the Exchange admin center (EAC) and has a unique value in the _RecipientTypeDetails_ property in the Exchange Management Shell. The use of explicit recipient types has the following benefits: 
   
 - At a glance, you can differentiate between various recipient types.
     
@@ -104,7 +104,7 @@ System mailboxes are created by Exchange in the root domain of the Active Direct
 |**Mailbox**|**Name**|
 |:-----|:-----|
 |Organization  <br/> |SystemMailbox {bb558c35-97f1-4cb9-8ff7-d53741dc928c}  <br/> |
-|Message approval  <br/> |SystemMailbox {1f05a927- _xxxx_- _ xxxx _ -  _ xxxx _ -  _xxxxxxxxxxxx_}  <br/> where  _x_ is a randomly assigned and unique number for each Exchange forest  <br/> |
+|Message approval  <br/> |SystemMailbox {1f05a927- _xxxx_- _ xxxx _ - _ xxxx _ - _xxxxxxxxxxxx_}  <br/> where _x_ is a randomly assigned and unique number for each Exchange forest  <br/> |
 |UM data storage  <br/> |SystemMailbox {e0dc1c29-89c3-4034-b678-e6c29d823ed9}  <br/> |
 |Discovery  <br/> |DiscoverySearchMailbox {D919BA05-46A6-415f-80AD-7E09334BB852}  <br/> |
 |Federated email  <br/> |FederatedEmail.4c1f4d8b-8179-4148-93bf-00a95fa1e042  <br/> |
@@ -143,7 +143,7 @@ Unlike regular distribution groups, the membership list for dynamic distribution
 > [!IMPORTANT]
 > A dynamic distribution group includes any recipient in Active Directory that has attributes that match the group's filter at the time a message is sent. If a recipient's properties are modified to match the group's filter, that recipient could inadvertently become a group member and start receiving messages that are sent to the dynamic distribution group. Well-defined, consistent account provisioning processes can reduce the chances of this issue occurring. 
   
-To help you create recipient filters for dynamic distribution groups, you can use precanned filters. A  *precanned filter*  is a commonly used filter that you can use to meet a variety of recipient-filtering criteria. You can use these filters to specify the recipient types that you want to include in a dynamic distribution group. In addition, you can also specify a list of conditions that the recipients must meet. You can create precanned conditions based on the following properties: 
+To help you create recipient filters for dynamic distribution groups, you can use precanned filters. A *precanned filter* is a commonly used filter that you can use to meet a variety of recipient-filtering criteria. You can use these filters to specify the recipient types that you want to include in a dynamic distribution group. In addition, you can also specify a list of conditions that the recipients must meet. You can create precanned conditions based on the following properties: 
   
 - Custom attributes 1-15
     
@@ -190,7 +190,7 @@ The Microsoft Exchange recipient is a special recipient object that provides a u
 The Microsoft Exchange recipient isn't a typical recipient object, such as a mailbox, mail user, or mail contact, and it isn't managed by using the typical recipient tools. However, you can use the [set-OrganizationConfig](http://technet.microsoft.com/library/3b6df0fe-27c8-415f-ad0c-8b265f234c1a.aspx) cmdlet in the Exchange Management Shell to configure the Microsoft Exchange recipient. 
   
 > [!NOTE]
-> When system-generated messages are sent to an external sender, the Microsoft Exchange recipient isn't used as the sender of the message. Instead, the email address specified by the  _ExternalPostmasterAddress_ parameter in the [Set-TransportConfig](http://technet.microsoft.com/library/ad3910a5-2227-47a2-8ccc-a208ce6210bb.aspx) cmdlet is used. 
+> When system-generated messages are sent to an external sender, the Microsoft Exchange recipient isn't used as the sender of the message. Instead, the email address specified by the _ExternalPostmasterAddress_ parameter in the [Set-TransportConfig](http://technet.microsoft.com/library/ad3910a5-2227-47a2-8ccc-a208ce6210bb.aspx) cmdlet is used. 
   
 ## Recipients documentation
 

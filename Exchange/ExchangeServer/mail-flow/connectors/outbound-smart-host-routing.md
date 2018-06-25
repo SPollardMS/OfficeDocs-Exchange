@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 4a9ef08e-bd62-4c6b-8790-d24fb0f8f24b
 description: "Summary: Create a Send connector in Exchange 2016 that's configured to route outbound mail through a smart host."
@@ -103,13 +103,13 @@ After you create the Send connector, it appears in the Send connector list.
     
   - The usage type is Custom.
     
-  - The Send connector uses smart host routing (the  _DNSRoutingEnabled_ parameter is set to the value  `$false`). The smart host's IP address is 192.168.3.2, and the authentication method is None, because the smart host is configured to listen for connections only from a restricted list of source servers.
+  - The Send connector uses smart host routing (the _DNSRoutingEnabled_ parameter is set to the value `$false`). The smart host's IP address is 192.168.3.2, and the authentication method is None, because the smart host is configured to listen for connections only from a restricted list of source servers.
     
-  - The Send connector is for all external domains (\*). The value  `*` is equivalent to the value  `"SMTP:*;1"`, where the address space type is  `SMTP`, and the address space cost value is  `1`.
+  - The Send connector is for all external domains (\*). The value `*` is equivalent to the value `"SMTP:*;1"`, where the address space type is `SMTP`, and the address space cost value is `1`.
     
-  - The local Exchange server is the source server. We aren't using the  _SourceTransportServer_ parameter, and the default value is the local Exchange server. 
+  - The local Exchange server is the source server. We aren't using the _SourceTransportServer_ parameter, and the default value is the local Exchange server. 
     
-  - The Send connector isn't scoped to the local Active Directory site. We aren't using the  _IsScopedConnector_ parameter, and the default value is  `$false`. The Send connector is useable by all Exchange transport servers in the Active Directory forest.
+  - The Send connector isn't scoped to the local Active Directory site. We aren't using the _IsScopedConnector_ parameter, and the default value is `$false`. The Send connector is useable by all Exchange transport servers in the Active Directory forest.
     
   ```
   New-SendConnector -Name "Smart host to Internet" -AddressSpaces * -Custom -DNSRoutingEnabled $false -SmartHosts 192.168.3.2 -SmartHostAuthMechanism None

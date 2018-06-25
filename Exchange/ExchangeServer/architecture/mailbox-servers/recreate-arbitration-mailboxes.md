@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: b9004562-b0f2-4460-a623-94883834f73f
 description: "Summary: About arbitration mailboxes in Exchange 2016 and how to re-create them."
@@ -16,7 +16,7 @@ description: "Summary: About arbitration mailboxes in Exchange 2016 and how to r
 
  **Summary**: About arbitration mailboxes in Exchange 2016 and how to re-create them.
   
-Exchange 2016 comes with five system mailboxes known as  *arbitration mailboxes*  . Arbitration mailboxes are used for storing different types of system data and for managing messaging approval workflow. The below chart lists each type of arbitration mailbox and their responsibilities. 
+Exchange 2016 comes with five system mailboxes known as *arbitration mailboxes* . Arbitration mailboxes are used for storing different types of system data and for managing messaging approval workflow. The below chart lists each type of arbitration mailbox and their responsibilities. 
   
 |**Arbitration mailbox Name**|**Display name**|**Persisted capabilities**|**Function**|
 |:-----|:-----|:-----|:-----|
@@ -129,7 +129,7 @@ To re-create the arbitration mailbox SystemMailbox{bb558c35-97f1-4cb9-8ff7-d5374
   Get-Mailbox "SystemMailbox{bb558c35-97f1-4cb9-8ff7-d53741dc928c}" -Arbitration | Set-Mailbox -Arbitration -UMGrammar:$True -OABGen:$True -GMGen:$True -ClientExtensions:$True -MessageTracking:$True -PstProvider:$True -MaxSendSize 1GB -Force
   ```
 
-When finished, if you run the command  `$OABMBX = Get-Mailbox "SystemMailbox{bb558c35-97f1-4cb9-8ff7-d53741dc928c}" -Arbitration (Get-ADUser $OABMBX.SamAccountName -Properties *).msExchCapabilityIdentifiers` you will see that 46, 47, and 51 are missing. Run the following command to add all of the capabilities back: 
+When finished, if you run the command `$OABMBX = Get-Mailbox "SystemMailbox{bb558c35-97f1-4cb9-8ff7-d53741dc928c}" -Arbitration (Get-ADUser $OABMBX.SamAccountName -Properties *).msExchCapabilityIdentifiers` you will see that 46, 47, and 51 are missing. Run the following command to add all of the capabilities back: 
   
 ```
 Set-ADUser $OABMBX.SamAccountName -Add @{"msExchCapabilityIdentifiers"="40","42","43","44","47","51","52","46"}
@@ -137,7 +137,7 @@ Set-ADUser $OABMBX.SamAccountName -Add @{"msExchCapabilityIdentifiers"="40","42"
 
 ## How do I know this worked?
 
-To verify that you have successfully re-created the arbitration mailbox, use the **Get-Mailbox** cmdlet with the  _Arbitration_ switch to retrieve system mailboxes. 
+To verify that you have successfully re-created the arbitration mailbox, use the **Get-Mailbox** cmdlet with the _Arbitration_ switch to retrieve system mailboxes. 
   
 ```
 Get-Mailbox -Arbitration | Format-Table Name, DisplayName

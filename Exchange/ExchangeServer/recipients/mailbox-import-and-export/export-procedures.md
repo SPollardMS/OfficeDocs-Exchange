@@ -5,7 +5,7 @@ author: chrisda
 ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 8c578226-ce38-4f33-846a-9f47c0177def
 description: "Summary: Learn how administrators can view, create, modify, delete, suspend and resume requests to export mailboxes to .pst files in Exchange 2016."
@@ -89,7 +89,7 @@ New-MailboxExportRequest  [-Name <UniqueName>] -Mailbox <TargetMailboxIdentity> 
 
 This example creates a new mailbox export request with these settings:
   
-- **Mailbox export request name**: The default value  `MailboxExport` is used, because we aren't using the  _Name_ parameter. The unique identity of the mailbox export request is  `<MailboxIdentity>\MailboxExportX` (  _X_ is either not present, or has the value 0 to 9). 
+- **Mailbox export request name**: The default value `MailboxExport` is used, because we aren't using the _Name_ parameter. The unique identity of the mailbox export request is `<MailboxIdentity>\MailboxExportX` (_X_ is either not present, or has the value 0 to 9). 
     
 - **Source mailbox**: Valeria Barrios
     
@@ -97,7 +97,7 @@ This example creates a new mailbox export request with these settings:
     
 - **Content and folders**: Content in all folder paths in the source mailbox is replicated in the target .pst file.
     
-- **Priority**:  `Normal`, because we aren't using the  _Priority_ parameter. 
+- **Priority**: `Normal`, because we aren't using the _Priority_ parameter. 
     
 ```
 New-MailboxExportRequest -Mailbox "Valeria Barrios" -FilePath \\SERVER01\PSTFiles\Vbarrios.pst
@@ -105,7 +105,7 @@ New-MailboxExportRequest -Mailbox "Valeria Barrios" -FilePath \\SERVER01\PSTFile
 
 This example creates a new mailbox export request with these settings:
   
-- **Mailbox export request name**: The custom name Kathleen Reiter Export is specified by the  _Name_ parameter. Specifying a custom name allows more than 10 mailbox export requests for the mailbox. The unique identity value of the mailbox export request is  `<MailboxIdentity>\<MailboxExportRequestName>` (for example,  `kreiter\Kathleen Reiter Export`).
+- **Mailbox export request name**: The custom name Kathleen Reiter Export is specified by the _Name_ parameter. Specifying a custom name allows more than 10 mailbox export requests for the mailbox. The unique identity value of the mailbox export request is `<MailboxIdentity>\<MailboxExportRequestName>` (for example, `kreiter\Kathleen Reiter Export`).
     
 - **Source mailbox**: The archive mailbox for Kathleen Reiter (Kathleen's primary mailbox alias is kreiter).
     
@@ -113,7 +113,7 @@ This example creates a new mailbox export request with these settings:
     
 - **Content and folders**: Only content in the Inbox folder of the mailbox is exported (regardless of the localized name of the folder).
     
-- **Priority**:  `High`
+- **Priority**: `High`
     
 ```
 New-MailboxExportRequest -Name "Kathleen Reiter Export" -Mailbox kreiter -FilePath "\\SERVER01\PSTFiles\Kathleen Reiter.pst" -IsArchive -IncludeFolders "#Inbox#" -Priority Hight
@@ -127,15 +127,15 @@ To verify that you've successfully created a mailbox export request, do any of t
   
 - In the EAC, click the notification viewer ![Notifications icon](../../media/6f2591b8-d0dc-4665-ab0b-b91a549e5b37.png) to view the status of the request. 
     
-- If you created the mailbox export request in the EAC, and selected the option to send notification email messages, check the notification messages. The sender is Microsoft Exchange. The first message has the subject  `Your Export PST request has been received`. If the export request completed successfully, you'll receive another message with the subject  `Export PST has finished`.
+- If you created the mailbox export request in the EAC, and selected the option to send notification email messages, check the notification messages. The sender is Microsoft Exchange. The first message has the subject `Your Export PST request has been received`. If the export request completed successfully, you'll receive another message with the subject `Export PST has finished`.
     
-- Replace  _\<MailboxIdentity\>_ with the name, email address, or alias of the source mailbox, and run this command in the Exchange Management Shell to verify the basic property values: 
+- Replace _\<MailboxIdentity\>_ with the name, email address, or alias of the source mailbox, and run this command in the Exchange Management Shell to verify the basic property values: 
     
   ```
   Get-MailboxExportRequest -Mailbox "<MailboxIdentity>" | Format-List Name,FilePath,Mailbox,Status
   ```
 
-- Replace  _\<MailboxIdentity\>_ and  _\<MailboxExportRequestName\>_ with the appropriate values, and run this command in the Exchange Management Shell to verify the details: 
+- Replace _\<MailboxIdentity\>_ and _\<MailboxExportRequestName\>_ with the appropriate values, and run this command in the Exchange Management Shell to verify the details: 
     
   ```
   Get-MailboxExportRequestStatistics -Identity "<MailboxIdentity>\<MailboxExportRequestName>"
@@ -153,7 +153,7 @@ By default, the **Get-MailboxExportRequest** cmdlet returns the name, source mai
     
 - **BatchName**: The optional batch name for the mailbox export request. 
     
-- **Identity**: The unique identity value of the mailbox export request (  _\<MailboxIdentity\>_\ _\<MailboxExportRequestName\>_).
+- **Identity**: The unique identity value of the mailbox export request (_\<MailboxIdentity\>_\ _\<MailboxExportRequestName\>_).
     
 By default, the **Get-MailboxExportRequestStatistics** cmdlet returns the name, status, alias of the source mailbox, and the completion percentage of mailbox export requests. If you pipeline the command to the **Format-List** cmdlet, you'll see detailed information about the mailbox export request. 
   
@@ -189,7 +189,7 @@ To view detailed information about a mailbox export request, use this syntax:
 Get-MailboxExportRequestStatistics -Identity <MailboxExportRequestIdentity> [-IncludeReport] | Format-List
 ```
 
-Where  _\<MailboxExportRequestIdentity\>_ is the identity value of the mailbox export request (  _\<MailboxIdentity\>_\ _\<MailboxExportRequestName\>_ or  _\<RequestGUID\>_).
+Where _\<MailboxExportRequestIdentity\>_ is the identity value of the mailbox export request (_\<MailboxIdentity\>_\ _\<MailboxExportRequestName\>_ or _\<RequestGUID\>_).
   
 This example returns detailed information for the mailbox export request named MailboxExport for Akia Al-Zuhairi's mailbox, including the log of actions in the **Report** property. 
   
@@ -221,7 +221,7 @@ For detailed syntax and parameter information, see [Set-MailboxExportRequest](ht
   
 ### How do you know this worked?
 
-To verify that you've successfully modified a mailbox export request, replace  _\<MailboxIdentity\>_ and  _\<MailboxExportRequestName\>_ with the appropriate values, and run this command in the Exchange Management Shell to verify the details: 
+To verify that you've successfully modified a mailbox export request, replace _\<MailboxIdentity\>_ and _\<MailboxExportRequestName\>_ with the appropriate values, and run this command in the Exchange Management Shell to verify the details: 
   
 ```
 Get-MailboxExportRequestStatistics -Identity "<MailboxIdentity>\<MailboxExportRequestName>" | Format-List
@@ -253,7 +253,7 @@ For detailed syntax and parameter information, see [Suspend-MailboxExportRequest
   
  **Notes**:
   
-- You can also use the **New-MailboxExportRequest** cmdlet with the  _Suspend_ switch to create a suspended mailbox export request. 
+- You can also use the **New-MailboxExportRequest** cmdlet with the _Suspend_ switch to create a suspended mailbox export request. 
     
 - You use the **Resume-MailboxExportRequest** parameter to resume suspended mailbox export requests. 
     
@@ -261,7 +261,7 @@ For detailed syntax and parameter information, see [Suspend-MailboxExportRequest
 
 To verify that you've successfully suspended a mailbox export request, do any of these steps:
   
-- Replace  _\<MailboxIdentity\>_ with the name, email address, or alias of the source mailbox, run this command in the Exchange Management Shell, and verify that the **Status** property has the value  `Suspended`:
+- Replace _\<MailboxIdentity\>_ with the name, email address, or alias of the source mailbox, run this command in the Exchange Management Shell, and verify that the **Status** property has the value `Suspended`:
     
   ```
   Get-MailboxExportRequest -Mailbox "<MailboxIdentity>" | Format-List Name,FilePath,Mailbox,Status
@@ -299,7 +299,7 @@ For detailed syntax and parameter information, see [Resume-MailboxExportRequest]
   
 ### How do you know this worked?
 
-To verify that you've successfully resumed a mailbox export request, replace  _\<MailboxIdentity\>_ with the name, email address, or alias of the source mailbox, run this command in the Exchange Management Shell, and verify that the **Status** property doesn't have the value  `Suspended`:
+To verify that you've successfully resumed a mailbox export request, replace _\<MailboxIdentity\>_ with the name, email address, or alias of the source mailbox, run this command in the Exchange Management Shell, and verify that the **Status** property doesn't have the value `Suspended`:
   
 ```
 Get-MailboxExportRequest -Mailbox <MailboxIdentity> | Format-List Name,FilePath,Mailbox,Status
@@ -311,11 +311,11 @@ You can remove fully or partially completed mailbox export requests.
   
 - If you remove a partially completed mailbox export request, the request is removed from the MRS job queue. Any content that's already been exported from the source mailbox isn't removed from the target .pst file.
     
-- By default, completed mailbox export request are removed after 30 days (you can override this value with the  _CompletedRequestAgeLimit_ parameter), and failed requests aren't automatically removed. But, if you use the  _RequestExpiryInterval_ parameter when you create or modify a mailbox export request, these results are available: 
+- By default, completed mailbox export request are removed after 30 days (you can override this value with the _CompletedRequestAgeLimit_ parameter), and failed requests aren't automatically removed. But, if you use the _RequestExpiryInterval_ parameter when you create or modify a mailbox export request, these results are available: 
     
   - ** _RequestExpiryInterval_ with a timespan value **: Completed and failed requests are automatically removed after the specified timespan.
     
-  - ** _RequestExpiryInterval_ with the value  `unlimited`**: Completed and failed requests aren't automatically removed.
+  - ** _RequestExpiryInterval_ with the value `unlimited`**: Completed and failed requests aren't automatically removed.
     
 This example removes the mailbox export request named MailboxExport for Akia Al-Zuhairi's mailbox.
   
@@ -333,7 +333,7 @@ For detailed syntax and parameter information, see [Remove-MailboxExportRequest]
   
 ### How do you know this worked?
 
-To verify that you've successfully removed a mailbox export request, replace  _\<MailboxIdentity\>_ with the name, email address, or alias of the source mailbox, run this command in the Exchange Management Shell, and verify that the mailbox export request isn't listed: 
+To verify that you've successfully removed a mailbox export request, replace _\<MailboxIdentity\>_ with the name, email address, or alias of the source mailbox, run this command in the Exchange Management Shell, and verify that the mailbox export request isn't listed: 
   
 ```
 Get-MailboxExportRequest -Mailbox <MailboxIdentity> | Format-List Name,FilePath,Mailbox,Status

@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 11801f73-4934-4025-a1c1-3935dada7e9b
 description: "Summary: Learn how to create, modify, and remove accepted domains in Exchange 2016."
@@ -90,7 +90,7 @@ This example creates a new authoritative domain named Contoso Corp for contoso.c
 New-AcceptedDomain -Name "Contoso Corp" -DomainName contoso.com
 ```
 
- **Note**: We didn't need to use the  _DomainType_ parameter, because the default value is  `Authoritative`.
+ **Note**: We didn't need to use the _DomainType_ parameter, because the default value is `Authoritative`.
   
 For detailed syntax and parameter information, see [new-AcceptedDomain](http://technet.microsoft.com/library/08bcaaec-51e3-447d-b3bf-406a705c64b4.aspx).
   
@@ -109,7 +109,7 @@ To verify that you've successfully created an accepted domain, use either of the
 ## Modify accepted domains
 <a name="ModifyAcceptedDomain"> </a>
 
-- You can only  *replace*  the default domain with a new default domain (one accepted domain is always configured as the default domain). For more information about the default domain, see [Default domain](accepted-domains.md#DefaultDomain).
+- You can only *replace* the default domain with a new default domain (one accepted domain is always configured as the default domain). For more information about the default domain, see [Default domain](accepted-domains.md#DefaultDomain).
     
 - You can enable and disable Recipient Lookup for an accepted domain only in the Exchange Management Shell. For more information, see [Recipient Lookup in accepted domains](accepted-domains.md#RecipientLookup).
     
@@ -227,7 +227,7 @@ These are some scenarios that require multiple authoritative domains:
     
 After you configure one or more authoritative domains, you need to decide how to use those domains in your organization. For example:
   
-- Do you want to replace the existing primary ( **Reply-To:** ) address for the recipients, or add the new email address as a proxy address? 
+- Do you want to replace the existing primary (**Reply-To:** ) address for the recipients, or add the new email address as a proxy address? 
     
 - Do you want to keep old email addresses as a proxy addresses so the recipients continue to receive mail that's sent to their old email addresses?
     
@@ -243,7 +243,7 @@ These are the steps that are required to configure Exchange to accept mail for m
     
   - Modify the default email address policy so all recipients get the required primary and proxy email addresses.
     
-    For example, modify the default policy so  _\<alias\>_@fourthcoffee.com is the primary SMTP email address, and  _\<alias\>_@contoso.com is kept as a proxy address. For instructions, see [Modify email address policies](../../email-addresses-and-address-books/email-address-policies/eap-procedures.md#ModifyEAP).
+    For example, modify the default policy so _\<alias\>_@fourthcoffee.com is the primary SMTP email address, and _\<alias\>_@contoso.com is kept as a proxy address. For instructions, see [Modify email address policies](../../email-addresses-and-address-books/email-address-policies/eap-procedures.md#ModifyEAP).
     
   - Create a new email address policy that applies the required primary and proxy email addresses to a filtered set of recipients.
     
@@ -251,7 +251,7 @@ These are the steps that are required to configure Exchange to accept mail for m
     
   - **Precanned recipient filter**: All users with mailboxes where the **Company** value is Fourth Coffee. 
     
-  - **Primary SMTP email address**:  _\<alias\>_@fourthcoffee.com.
+  - **Primary SMTP email address**: _\<alias\>_@fourthcoffee.com.
     
   - **Additional proxy email addresses**: None. The affected recipients can no longer receive messages sent to their old @contoso.com primary email address.
     

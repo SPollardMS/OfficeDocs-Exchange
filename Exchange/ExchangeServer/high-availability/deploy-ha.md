@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 4c4e00a4-1f57-4fdb-b9b2-2779abf381a9
 description: "Summary: How to deploy Exchange Server 2016 with high availability and site resilience."
@@ -16,7 +16,7 @@ description: "Summary: How to deploy Exchange Server 2016 with high availability
 
  **Summary**: How to deploy Exchange Server 2016 with high availability and site resilience.
   
-Microsoft Exchange Server 2016 uses the concept known as  *incremental deployment*  for both high availability and site resilience. You simply install two or more Exchange 2016 Mailbox servers as stand-alone servers, and then incrementally configure them and mailbox databases for high availability and site resilience, as needed. 
+Microsoft Exchange Server 2016 uses the concept known as *incremental deployment* for both high availability and site resilience. You simply install two or more Exchange 2016 Mailbox servers as stand-alone servers, and then incrementally configure them and mailbox databases for high availability and site resilience, as needed. 
   
 ## Overview of the deployment process
 
@@ -201,14 +201,14 @@ Update-MailboxDatabaseCopy -Identity DB4\MBX2 -SourceServer MBX1
 Suspend-MailboxDatabaseCopy -Identity DB4\MBX2 -ActivationOnly
 ```
 
-In the preceding examples for the **Add-MailboxDatabaseCopy** cmdlet, the  _ActivationPreference_ parameter wasn't specified. The task automatically increments the activation preference number with each copy that's added. The original database always has a preference number of 1. The first copy added with the **Add-MailboxDatabaseCopy** cmdlet is automatically assigned a preference number of 2. Assuming no copies are removed, the next copy added is automatically assigned a preference number of 3, and so forth. Thus, in the preceding examples, the passive copy in the same datacenter as the active copy has an activation preference number of 2; the non-lagged passive copy in the remote datacenter has an activation preference number of 3, and the lagged passive copy in the remote datacenter has an activation preference number of 4. 
+In the preceding examples for the **Add-MailboxDatabaseCopy** cmdlet, the _ActivationPreference_ parameter wasn't specified. The task automatically increments the activation preference number with each copy that's added. The original database always has a preference number of 1. The first copy added with the **Add-MailboxDatabaseCopy** cmdlet is automatically assigned a preference number of 2. Assuming no copies are removed, the next copy added is automatically assigned a preference number of 3, and so forth. Thus, in the preceding examples, the passive copy in the same datacenter as the active copy has an activation preference number of 2; the non-lagged passive copy in the remote datacenter has an activation preference number of 3, and the lagged passive copy in the remote datacenter has an activation preference number of 4. 
   
-Although there are two copies of each active database across the WAN in the other location, seeding over the WAN was only performed once. This is because Contoso is leveraging the Exchange 2016 ability to use a passive copy of a database as the source for seeding. Using the [Add-MailboxDatabaseCopy](http://technet.microsoft.com/library/84198fa9-ac8e-44ea-bd7b-64fe1e83e709.aspx) cmdlet with the  _SeedingPostponed_ parameter prevents the task from automatically seeding the new database copy being created. Then, the administrator can suspend the un-seeded copy, and by using the [Update-MailboxDatabaseCopy](http://technet.microsoft.com/library/37ebb66a-382e-4fd9-81f8-795f776a87b1.aspx) cmdlet with the  _SourceServer_ parameter, the administrator can specify the local copy of the database as the source of the seeding operation. As a result, seeding of the second database copy added to each location happens locally and not over the WAN. 
+Although there are two copies of each active database across the WAN in the other location, seeding over the WAN was only performed once. This is because Contoso is leveraging the Exchange 2016 ability to use a passive copy of a database as the source for seeding. Using the [Add-MailboxDatabaseCopy](http://technet.microsoft.com/library/84198fa9-ac8e-44ea-bd7b-64fe1e83e709.aspx) cmdlet with the _SeedingPostponed_ parameter prevents the task from automatically seeding the new database copy being created. Then, the administrator can suspend the un-seeded copy, and by using the [Update-MailboxDatabaseCopy](http://technet.microsoft.com/library/37ebb66a-382e-4fd9-81f8-795f776a87b1.aspx) cmdlet with the _SourceServer_ parameter, the administrator can specify the local copy of the database as the source of the seeding operation. As a result, seeding of the second database copy added to each location happens locally and not over the WAN. 
   
 > [!NOTE]
 > In the preceding example, the non-lagged database copy is seeded over the WAN, and that copy is then used to seed the lagged copy of the database that's in the same datacenter as the non-lagged copy. 
   
-Contoso has configured one of the passive copies of each mailbox database as a lagged database copy to provide protection against the extremely rare but catastrophic case of database logical corruption. As a result, the administrator is configuring the lagged copies as blocked for activation by using the [Suspend-MailboxDatabaseCopy](http://technet.microsoft.com/library/b6e03402-706e-40c6-b392-92e3da21b5c0.aspx) cmdlet with the  _ActivationOnly_ parameter. This ensures that the lagged database copies won't be activated if a database or server failover occurs. 
+Contoso has configured one of the passive copies of each mailbox database as a lagged database copy to provide protection against the extremely rare but catastrophic case of database logical corruption. As a result, the administrator is configuring the lagged copies as blocked for activation by using the [Suspend-MailboxDatabaseCopy](http://technet.microsoft.com/library/b6e03402-706e-40c6-b392-92e3da21b5c0.aspx) cmdlet with the _ActivationOnly_ parameter. This ensures that the lagged database copies won't be activated if a database or server failover occurs. 
   
 ### Validating the solution
 

@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: overview
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 29b67d58-eef9-4ad4-863f-562405ea8794
 description: "Summary: Learn about the specific logon types and user actions that can be audited when you enable mailbox audit logging for user mailboxes in Exchange 2016."
@@ -16,9 +16,9 @@ description: "Summary: Learn about the specific logon types and user actions tha
 
  **Summary**: Learn about the specific logon types and user actions that can be audited when you enable mailbox audit logging for user mailboxes in Exchange 2016.
   
-Because mailboxes can contain sensitive, high business impact (HBI) information and personally identifiable information (PII), it's important that you track who logs on to the mailboxes in your organization and what actions are taken. It's especially important to track access to mailboxes by users other than the mailbox owner. These users are referred to as  *delegate users*  . 
+Because mailboxes can contain sensitive, high business impact (HBI) information and personally identifiable information (PII), it's important that you track who logs on to the mailboxes in your organization and what actions are taken. It's especially important to track access to mailboxes by users other than the mailbox owner. These users are referred to as *delegate users* . 
   
-By using  *mailbox audit logging*  , you can log mailbox access by mailbox owners, delegates (including administrators with full access permissions to mailboxes), and administrators. 
+By using *mailbox audit logging*, you can log mailbox access by mailbox owners, delegates (including administrators with full access permissions to mailboxes), and administrators. 
   
 When you enable audit logging for a mailbox, you can specify which user actions (for example, accessing, moving, or deleting a message) will be logged for a logon type (administrator, delegate user, or owner). Audit log entries also include important information such as the client IP address, host name, and process or client used to access the mailbox. For items that are moved, the entry includes the name of the destination folder.
   
@@ -27,7 +27,7 @@ When you enable audit logging for a mailbox, you can specify which user actions 
 
 Mailbox audit logs are generated for each mailbox that has mailbox audit logging enabled. Log entries are stored in the Recoverable Items folder in the audited mailbox, in the Audits subfolder. This ensures that all audit log entries are available from a single location, regardless of which client access method was used to access the mailbox or which server or computer an administrator uses to access the mailbox audit log. If you move a mailbox to another Mailbox server, the mailbox audit logs for that mailbox are also moved because they're located in the mailbox.
   
-By default, mailbox audit log entries are retained in the mailbox for 90 days and then deleted. You can modify this retention period by using the  _AuditLogAgeLimit_ parameter with the [Set-Mailbox](http://technet.microsoft.com/library/a0d413b9-d949-4df6-ba96-ac0906dedae2.aspx) cmdlet. If a mailbox is on In-Place Hold or Litigation Hold, audit log entries are only retained until the audit log retention period for the mailbox is reached. To retain audit log entries longer, you have to increase the retention period by changing the value for the  _AuditLogAgeLimit_ parameter. You can also export audit log entries before the retention period is reached. For more information, see: 
+By default, mailbox audit log entries are retained in the mailbox for 90 days and then deleted. You can modify this retention period by using the _AuditLogAgeLimit_ parameter with the [Set-Mailbox](http://technet.microsoft.com/library/a0d413b9-d949-4df6-ba96-ac0906dedae2.aspx) cmdlet. If a mailbox is on In-Place Hold or Litigation Hold, audit log entries are only retained until the audit log retention period for the mailbox is reached. To retain audit log entries longer, you have to increase the retention period by changing the value for the _AuditLogAgeLimit_ parameter. You can also export audit log entries before the retention period is reached. For more information, see: 
   
 - [Export Mailbox Audit Logs](http://technet.microsoft.com/library/b458a95a-3321-4647-8884-cf97f8e7186a.aspx)
     
@@ -117,7 +117,7 @@ The following table describes the fields logged in a mailbox audit log entry.
 |**ItemId** <br/> |Item ID.  <br/> |
 |**ItemSubject** <br/> |Item subject.  <br/> |
 |**MailboxGuid** <br/> |Mailbox GUID.  <br/> |
-|**MailboxResolvedOwnerName** <br/> |Mailbox user resolved name in the format  _DOMAIN_\ _SamAccountName_.  <br/> |
+|**MailboxResolvedOwnerName** <br/> |Mailbox user resolved name in the format _DOMAIN_\ _SamAccountName_.  <br/> |
 |**LastAccessed** <br/> |Time when the operation was performed.  <br/> |
 |**Identity** <br/> |Audit log entry ID.  <br/> |
    

@@ -4,9 +4,9 @@ ms.author: serdars
 author: SerdarSoysal
 manager: serdars
 ms.date: 6/12/2018
-ms.audience: End User
+ms.audience: ITPro
 ms.topic: reference
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: ec4d3b9f-b85a-4cb9-95f5-6fc149c3899b
 description: "Summary: Learn about permissions that are required to manage policy and compliance features in Exchange Server 2016."
@@ -40,7 +40,7 @@ Users who are assigned the View-Only Management role group can view the configur
 |**Feature**|**Permissions required**|
 |:-----|:-----|
 |Data loss prevention (DLP)  <br/> |[Compliance Management](http://technet.microsoft.com/library/b91b23a4-e9c7-4bd0-9ee3-ec5cb498da15.aspx) <br/> |
-|Delete mailbox content (using the [Search-Mailbox](http://technet.microsoft.com/library/9ee3b02c-d343-4816-a583-a90b1fad4b26.aspx) cmdlet with the  _DeleteContent_ switch)  <br/> |[Discovery Management](http://technet.microsoft.com/library/b8bc5922-a8c9-4707-906d-fa38bb87da8f.aspx) **and** <br/> [Mailbox Import Export Role](http://technet.microsoft.com/library/d7cdce7a-6c46-4750-b237-d1c1773e8d28.aspx) <br/> **Note**: By default, the Mailbox Import Export role isn't assigned to any role group. You can assign a management role to a built-in or custom role group, a user, or a universal security group. Assigning a role to a role group is recommended. For more information, see [Add a Role to a User or USG](http://technet.microsoft.com/library/ae5608de-a141-4714-8876-bce7d2a22cb5.aspx).  <br/> |
+|Delete mailbox content (using the [Search-Mailbox](http://technet.microsoft.com/library/9ee3b02c-d343-4816-a583-a90b1fad4b26.aspx) cmdlet with the _DeleteContent_ switch)  <br/> |[Discovery Management](http://technet.microsoft.com/library/b8bc5922-a8c9-4707-906d-fa38bb87da8f.aspx) **and** <br/> [Mailbox Import Export Role](http://technet.microsoft.com/library/d7cdce7a-6c46-4750-b237-d1c1773e8d28.aspx) <br/> **Note**: By default, the Mailbox Import Export role isn't assigned to any role group. You can assign a management role to a built-in or custom role group, a user, or a universal security group. Assigning a role to a role group is recommended. For more information, see [Add a Role to a User or USG](http://technet.microsoft.com/library/ae5608de-a141-4714-8876-bce7d2a22cb5.aspx).  <br/> |
 |Discovery mailboxes - Create  <br/> |[Organization Management](http://technet.microsoft.com/library/0bfd21c1-86ac-4369-86b7-aeba386741c8.aspx) <br/> [Recipient Management](http://technet.microsoft.com/library/669d602e-68e3-41f9-a455-b942d212d130.aspx) <br/> |
 |Information Rights Management (IRM) configuration  <br/> |[Compliance Management](http://technet.microsoft.com/library/b91b23a4-e9c7-4bd0-9ee3-ec5cb498da15.aspx) <br/> [Organization Management](http://technet.microsoft.com/library/0bfd21c1-86ac-4369-86b7-aeba386741c8.aspx) <br/> |
 |In-Place Archive  <br/> |[Organization Management](http://technet.microsoft.com/library/0bfd21c1-86ac-4369-86b7-aeba386741c8.aspx) <br/> [Recipient Management](http://technet.microsoft.com/library/669d602e-68e3-41f9-a455-b942d212d130.aspx) <br/> |

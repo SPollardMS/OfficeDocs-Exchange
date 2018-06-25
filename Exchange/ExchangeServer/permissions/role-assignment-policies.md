@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/7/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: f93d502e-5df4-4ba0-b68d-01a17ccffb4d
 description: "Summary: Learn how to manage and customize role assignment policies in Exchange Server 2016."
@@ -58,7 +58,7 @@ To create an explicit assignment policy that can be manually assigned to mailbox
 New-RoleAssignmentPolicy <assignment policy name> -Roles <roles to assign>
 ```
 
-This example creates the explicit assignment policy Limited Mailbox Configuration and assigns the  `MyBaseOptions`,  `MyAddressInformation`, and  `MyDisplayName` roles to it. 
+This example creates the explicit assignment policy Limited Mailbox Configuration and assigns the `MyBaseOptions`, `MyAddressInformation`, and `MyDisplayName` roles to it. 
   
 ```
 New-RoleAssignmentPolicy "Limited Mailbox Configuration" -Roles MyBaseOptions, MyAddressInformation, MyDisplayName
@@ -74,7 +74,7 @@ To create a default assignment policy assigned to new mailboxes, use the followi
 New-RoleAssignmentPolicy <assignment policy name> -Roles <roles to assign> -IsDefault
 ```
 
-This example creates the default assignment policy Limited Mailbox Configuration and assigns the  `MyBaseOptions`,  `MyAddressInformation`, and  `MyDisplayName` roles to it. 
+This example creates the default assignment policy Limited Mailbox Configuration and assigns the `MyBaseOptions`, `MyAddressInformation`, and `MyDisplayName` roles to it. 
   
 ```
 New-RoleAssignmentPolicy "Limited Mailbox Configuration" -Roles MyBaseOptions, MyAddressInformation, MyDisplayName -IsDefault
@@ -184,7 +184,7 @@ For detailed syntax and parameter information, see [Get-Mailbox](http://technet.
   
 #### Use the Exchange Management Shell to find the default assignment policy
 
-You can find the default assignment policy by piping the output of the **Get-RoleAssignmentPolicy** cmdlet to the **Where** cmdlet. With the **Where** cmdlet, filter the data returned to display only the assignment policy that has its  _IsDefault_ property set to  `$True`.
+You can find the default assignment policy by piping the output of the **Get-RoleAssignmentPolicy** cmdlet to the **Where** cmdlet. With the **Where** cmdlet, filter the data returned to display only the assignment policy that has its _IsDefault_ property set to `$True`.
   
 This procedure makes use of pipelining and the **Where** cmdlet. For more information about these concepts, see the following topics: 
   
@@ -202,7 +202,7 @@ For detailed syntax and parameter information, see [Get-Mailbox](http://technet.
   
 #### Use the Exchange Management Shell to view mailboxes that are assigned a specific policy
 
-You can find all the mailboxes assigned a specific assignment policy by piping the output of the **Get-Mailbox** cmdlet to the **Where** cmdlet. With the **Where** cmdlet, filter the data returned to display only the mailboxes that have their  _RoleAssignmentPolicy_ property set to the assignment policy name you specify. 
+You can find all the mailboxes assigned a specific assignment policy by piping the output of the **Get-Mailbox** cmdlet to the **Where** cmdlet. With the **Where** cmdlet, filter the data returned to display only the mailboxes that have their _RoleAssignmentPolicy_ property set to the assignment policy name you specify. 
   
 This procedure makes use of pipelining and the **Where** cmdlet. For more information about these concepts, see the following topics: 
   

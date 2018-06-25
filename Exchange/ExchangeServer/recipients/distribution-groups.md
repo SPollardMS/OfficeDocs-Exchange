@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 8e98f141-81d3-4d07-b36e-fcd2dbcc9572
 description: "Summary: Learn about distribution groups, and also, how to create and manage them."
@@ -20,9 +20,9 @@ Use the Exchange admin center (EAC) or the Exchange Management Shell to create a
   
 There are two types of groups that can be used to distribute messages:
   
--  *Mail-enabled universal distribution groups*  (also called  *distribution groups*  ) can be used only to distribute messages. 
+- *Mail-enabled universal distribution groups* (also called *distribution groups* ) can be used only to distribute messages. 
     
--  *Mail-enabled universal security groups*  (also called  *security groups*  ) can be used to distribute messages as well as to grant access permissions to resources in Active Directory. For more information, see [Manage mail-enabled security groups in Exchange 2016](mail-enabled-security-groups.md).
+- *Mail-enabled universal security groups* (also called *security groups* ) can be used to distribute messages as well as to grant access permissions to resources in Active Directory. For more information, see [Manage mail-enabled security groups in Exchange 2016](mail-enabled-security-groups.md).
     
 It's important to note the terminology differences between Active Directory and Exchange. In Active Directory, a distribution group refers to any group that doesn't have a security context, whether it's mail-enabled or not. In contrast, in Exchange, all mail-enabled groups are referred to as distribution groups, whether they have a security context or not.
   
@@ -35,7 +35,7 @@ It's important to note the terminology differences between Active Directory and 
     
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Distribution groups" entry in the [Recipients Permissions](../permissions/feature-permissions/recipient-permissions.md) topic. 
     
-- If your organization has configured a group naming policy, it's applied only to groups created by users. When you or other administrators use the EAC to create distribution groups, the group naming policy is ignored and isn't applied to the group name. However, if you use the Exchange Management Shell to create or rename a distribution group, the policy is applied unless you use the  _IgnoreNamingPolicy_ parameter to override the group naming policy. For more information, see: 
+- If your organization has configured a group naming policy, it's applied only to groups created by users. When you or other administrators use the EAC to create distribution groups, the group naming policy is ignored and isn't applied to the group name. However, if you use the Exchange Management Shell to create or rename a distribution group, the policy is applied unless you use the _IgnoreNamingPolicy_ parameter to override the group naming policy. For more information, see: 
     
   - [Create a Distribution Group Naming Policy](http://technet.microsoft.com/library/b2ffb654-345d-4be1-be8e-83d28901373e.aspx)
     
@@ -232,7 +232,7 @@ Use this section to set options for moderating the group. Moderators approve or 
 #### Email options
 <a name="emailoptions"> </a>
 
-Use this section to view or change the email addresses associated with the group. This includes the group's primary SMTP addresses and any associated proxy addresses. The primary SMTP address (also known as the  *reply address*  ) is displayed in bold text in the address list, with the uppercase **SMTP** value in the **Type** column. 
+Use this section to view or change the email addresses associated with the group. This includes the group's primary SMTP addresses and any associated proxy addresses. The primary SMTP address (also known as the *reply address* ) is displayed in bold text in the address list, with the uppercase **SMTP** value in the **Type** column. 
   
 - **Add**: Click **Add**![Add icon](../media/ITPro_EAC_AddIcon.png) to add a new email address for this mailbox. Select one of following address types: 
     
@@ -260,7 +260,7 @@ Use this section to add a MailTip to alert users of potential issues if they sen
 #### Group delegation
 <a name="groupdelegation"> </a>
 
-Use this section to assign permissions to a user (called a  *delegate*  ) to allow them to send messages as the group or send messages on behalf of the group. You can assign the following permissions: 
+Use this section to assign permissions to a user (called a *delegate* ) to allow them to send messages as the group or send messages on behalf of the group. You can assign the following permissions: 
   
 - **Send As**: This permission allows the delegate to send messages as the group. After this permission is assigned, the delegate has the option to add the group to the **From** line to indicate that the message was sent by the group. 
     
@@ -296,7 +296,7 @@ This example enables moderation for the distribution group Customer Support and 
 Set-DistributionGroup -Identity "Customer Support" -ModeratedBy "Amy" -ModerationEnabled $true -SendModerationNotifications 'Internal'
 ```
 
-This example changes the user-created distribution group Dog Lovers to require the group manager to approve users' requests to join the group. In addition, by using the  _BypassSecurityGroupManagerCheck_ parameter, the group manager will not be notified that a change was made to the distribution group's settings. 
+This example changes the user-created distribution group Dog Lovers to require the group manager to approve users' requests to join the group. In addition, by using the _BypassSecurityGroupManagerCheck_ parameter, the group manager will not be notified that a change was made to the distribution group's settings. 
   
 ```
 Set-DistributionGroup -Identity "Dog Lovers" -MemberJoinRestriction 'ApprovalRequired' -BypassSecurityGroupManagerCheck

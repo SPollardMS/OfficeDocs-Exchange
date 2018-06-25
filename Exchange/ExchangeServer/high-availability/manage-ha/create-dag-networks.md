@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 4/19/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: 6caec7be-788a-4058-87a7-f31c575b870c
 description: "Summary: Create additional networks, if needed, for use in a database availability group (DAG)."

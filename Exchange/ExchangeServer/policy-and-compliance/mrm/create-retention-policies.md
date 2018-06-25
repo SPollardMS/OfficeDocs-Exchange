@@ -4,9 +4,9 @@ ms.author: serdars
 author: SerdarSoysal
 manager: serdars
 ms.date: 6/8/2018
-ms.audience: End User
+ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: d8806c98-fea5-492f-906d-f514e25361b2
 description: "Learn how to use retention policies to manage an email lifecycle in Exchange 2016. Retention policies are applied by creating retention tags, adding them to a retention policy, and applying the policy to mailbox users."
@@ -73,7 +73,7 @@ You need to be assigned permissions before you can perform this procedure or pro
     
  **Use the Exchange Management Shell to create a retention tag**
   
-Use the **New-RetentionPolicyTag** cmdlet to create a retention tag. Different options available in the cmdlet allow you to create different types of retention tags. Use the  _Type_ parameter to create a DPT (  `All`), RPT (specify a default folder type, such as  `Inbox`) or a personal tag ( `Personal`).
+Use the **New-RetentionPolicyTag** cmdlet to create a retention tag. Different options available in the cmdlet allow you to create different types of retention tags. Use the _Type_ parameter to create a DPT (`All`), RPT (specify a default folder type, such as `Inbox`) or a personal tag (`Personal`).
   
 This example creates a DPT to delete all messages in the mailbox after 7 years (2,556 days).
   
@@ -138,7 +138,7 @@ You need to be assigned permissions before you can perform this procedure or pro
     
  **Use the Exchange Management Shell to create a retention policy**
   
-This example creates the retention policy RetentionPolicy-Corp and uses the  _RetentionPolicyTagLinks_ parameter to associate five tags to the policy. 
+This example creates the retention policy RetentionPolicy-Corp and uses the _RetentionPolicyTagLinks_ parameter to associate five tags to the policy. 
   
 ```
 New-RetentionPolicy "RetentionPolicy-Corp"  -RetentionPolicyTagLinks "DPT-Corp-Delete","DPT-Corp-Move","DPT-Corp-Voicemail","RPT-Corp-JunkMail","Never Delete"
