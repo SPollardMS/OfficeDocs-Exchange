@@ -3,7 +3,7 @@ title: "Voice mail in Exchange Online Unified Messaging"
 ms.author: tonysmit
 author: tonysmit
 manager: scotv
-ms.date: 6/24/2018
+ms.date: 6/25/2018
 ms.audience: ITPro
 ms.topic: article
 ms.prod: office-online-server
