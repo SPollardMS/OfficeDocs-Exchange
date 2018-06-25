@@ -6,11 +6,10 @@ manager: laurawi
 ms.date: 5/5/2017
 ms.audience: ITPro
 ms.topic: get-started-article
-ms.prod: office-online-server
+ms.prod: office-perpetual-itpro
 localization_priority: Normal
-ms.collection: Ent_O365
-ms.assetid: 9eabd5ec-3f76-4048-b98b-f11aa85cc544
-description: "Summary : Learn about what you should consider when you deploy Microsoft Outlook 2016 for Windows."
+ms.collection: Ent_Office_Outlook
+description: "Learn about what you should consider when you deploy Microsoft Outlook 2016 for Windows."
 ---
 
 # Overview of Outlook 2016 for Windows planning
@@ -19,20 +18,6 @@ description: "Summary : Learn about what you should consider when you deploy Mic
   
 A close review of the organization's messaging requirements will help you plan the optimal Outlook 2016 deployment.
   
-In this article:
-  
-- [Determining an organization's needs](overview-outlook-2016-planning.md#BKMK_Determining)
-    
-- [Choosing when and how to install Outlook](overview-outlook-2016-planning.md#BKMK_Choosing)
-    
-- [Outlook security considerations](overview-outlook-2016-planning.md#BKMK_Security)
-    
-- [Upgrading from an earlier version of Outlook](overview-outlook-2016-planning.md#BKMK_UpgradeOutlook)
-    
-- [Additional considerations when planning an Outlook upgrade](overview-outlook-2016-planning.md#BKMK_Additional)
-    
-- [Considerations for 32-bit Outlook applications when upgrading to a 64-bit platform ](overview-outlook-2016-planning.md#BKMK_OutlookConsiderations)
-    
 ## Determining an organization's needs
 <a name="BKMK_Determining"> </a>
 

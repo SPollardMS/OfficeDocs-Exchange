@@ -1,18 +1,18 @@
 ---
-title: "Use Outlook 2016 for Mac with Kerberos authentication"
+title: "Use Kerberos authentication with Outlook 2016 for Mac"
 ms.author: danbrown
 author: DHB-MSFT
 manager: laurawi
 ms.date: 9/24/2015
 ms.audience: ITPro
-ms.topic: get-started-article
-ms.prod: office-online-server
+ms.topic: reference
+ms.prod: office-perpetual-itpro
 localization_priority: Normal
-ms.collection: Ent_O365
-description: "Outlook 2016 for Mac supports Kerberos protocol as a method of authentication with Microsoft Exchange Server and standalone LDAP accounts. Kerberos protocol uses cryptography to help provide secure mutual authentication for a network connection between a client and a server, or between two servers."
+ms.collection: Ent_Office_Outlook
+description: "Provides information for IT Pros about using Kerberos authentication with Outlook 2016 for Mac"
 ---
 
-# Use Outlook 2016 for Mac with Kerberos authentication
+# Use Kerberos authentication with Outlook 2016 for Mac
 
 Outlook 2016 for Mac supports Kerberos protocol as a method of authentication with Microsoft Exchange Server and standalone LDAP accounts. Kerberos protocol uses cryptography to help provide secure mutual authentication for a network connection between a client and a server, or between two servers. 
   
