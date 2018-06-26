@@ -16,7 +16,7 @@ description: "The following attributes can be copied from an on-premises Exchang
 
 The following attributes can be copied from an on-premises Exchange organization to Exchange Online when the Organization Configuration Transfer option is selected in the Hybrid Configuration Wizard.
   
- ** OWA Mailbox Policy **
+ **OWA Mailbox Policy**
   
 |||
 |:-----|:-----|
@@ -93,7 +93,7 @@ The following attributes can be copied from an on-premises Exchange organization
 | RetentionId  <br/> | Exchange 2010, 2013, 2016  <br/> |
 | RetentionPolicyTagLinks  <br/> | Exchange 2010, 2013, 2016  <br/> |
    
- ** Retention Policy Tags **
+ **Retention Policy Tags**
   
 |||
 |:-----|:-----|
