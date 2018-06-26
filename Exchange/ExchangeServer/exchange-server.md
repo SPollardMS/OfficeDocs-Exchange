@@ -132,7 +132,7 @@ Welcome to Microsoft Exchange Server 2016! Here's some fundamental and essential
 
 ---  
 <h2>Exchange Server Deployment Assistant</h2>
-<p>Have you heard about the Exchange Server Deployment Assistant? This free online tool helps you quickly deploy Exchange 2016 in your organization by asking you a few questions and creating a customized deployment checklist just for you. Try out the **Exchange Server Deployment Assistant**.</p>
+<p>Have you heard about the Exchange Server Deployment Assistant? This free online tool helps you quickly deploy Exchange 2016 in your organization by asking you a few questions and creating a customized deployment checklist just for you. Try out the <a href="https://go.microsoft.com/fwlink/?linkid=626978&clcid=0x409">Exchange Server Deployment Assistant</a>.</p>
 
 <h2>Planning and deployment</h2>
 <ul class="panelContent cardsW">
