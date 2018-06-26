@@ -169,7 +169,7 @@ Welcome to Microsoft Exchange Server 2016! Here's some fundamental and essential
                     <div class="cardText">
                         <p><a href="/Exchange/plan-and-deploy/install-cumulative-updates">Upgrade Exchange 2016 to the latest cumulative update</a>
                         <p><a href="/Exchange/plan-and-deploy/post-installation-tasks/post-installation-tasks">Exchange 2016 post-installation tasks</a>
-                        <p>Read <a href="/Exchange/release-notes">Release notes for Exchange 2016</a>
+                        <p>Read <a href="/Exchange/release-notes">Release notes for Exchange 2016</a> before you begin deployment.
                     </div>
                 </div>
             </div>
