@@ -34,7 +34,7 @@ description: Exchange
                                 </a>
                             </li>
                             <li>
-                                <a href="https://go.microsoft.com/fwlink/p/?linkid=825607">
+                                <a href="https://docs.microsoft.com/Exchange/exchange-online">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -53,7 +53,7 @@ description: Exchange
                                 </a>
                             </li>
                             <li>
-                                <a href="https://go.microsoft.com/fwlink/p/?linkid=252652">
+                                <a href="https://docs.microsoft.com/Exchange/exchange-hybrid">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
