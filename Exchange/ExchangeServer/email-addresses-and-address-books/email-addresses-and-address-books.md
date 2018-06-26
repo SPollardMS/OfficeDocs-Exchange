@@ -15,9 +15,9 @@ description: "Summary: Learn about the different methods that Exchange 2016 uses
 # Email addresses and address books in Exchange 2016
 
  **Summary**: Learn about the different methods that Exchange 2016 uses to organize and configure email addresses.
-  
+
 Exchange uses address books to organize and store email address information for recipients in the organization. The topics that will help you learn about and configure email addresses and address books in Exchange Server 2016 are described in the following table.
-  
+
 |**Key terminology**|**Description**|**Topic**|
 |:-----|:-----|:-----|
 |**Address book policies** <br/> |The global address list (GAL) is the master list of all recipients in your Exchange organization. Address book policies (ABPs) provide a simpler mechanism for GAL segmentation in organizations that require multiple GALs. An ABP defines a GAL, an offline address book (OAB), a room list, and one or more address lists. You can then assign the ABP to users.  <br/> |[Address book policies in Exchange 2016](address-book-policies/address-book-policies.md) <br/> |
@@ -26,9 +26,9 @@ Exchange uses address books to organize and store email address information for 
 |**Email address policies** <br/> |Email address policies are the rules that create email addresses for Exchange recipients.  <br/> |[Email address policies in Exchange 2016](email-address-policies/email-address-policies.md) <br/> |
 |**Hierarchical address books** <br/> |The hierarchical address book (HAB) presents recipients in the GAL by using your organization's unique business structure (for example, seniority or management hierarchy), which provides an efficient method for locating internal recipients.  <br/> |[Hierarchical Address Books](http://technet.microsoft.com/library/a1d277a0-5437-40af-aade-e4730a0d1308.aspx) <br/> |
 |**Offline address books** <br/> |An offline address book (OAB) is a collection of address lists that can be downloaded and used in Outlook by users that are disconnected from the Exchange organization.  <br/> |[Offline address books in Exchange 2016](offline-address-books/offline-address-books.md) <br/> |
-   
+ 
 ## Email address and address book documentation
 
 The following table contains links to topics that will help you learn about and manage email addresses and address books in Exchange.
-  
+
 

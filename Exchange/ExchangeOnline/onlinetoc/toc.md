@@ -3,7 +3,7 @@
 
 # [Exchange Online](../exchange-online.md)
 ## [Exchange admin center](../exchange-admin-center.md)
-## [Permissions-exo](../permissions-exo/permissions-exo.md)
+## [Permissions](../permissions-exo/permissions-exo.md)
 ### [Feature permissions](../permissions-exo/feature-permissions.md)
 ## [Security and compliance](../security-and-compliance/security-and-compliance.md)
 ### [Modify archive policies](../security-and-compliance/modify-archive-policies.md)
@@ -121,7 +121,7 @@
 ### [Manage LinkedIn contact sync](../recipients-in-exchange-online/manage-linkedin-contact-sync.md)
 ### [Configure a moderated recipient](../recipients-in-exchange-online/configure-a-moderated-recipient.md)
 ## [Mailbox migration](../mailbox-migration.md)
-## [Collaboration-exo](../collaboration-exo/collaboration-exo.md)
+## [Collaboration](../collaboration-exo/collaboration-exo.md)
 ### [Public folders](../collaboration-exo/public-folders/public-folders.md)
 #### [Public folder procedures](../collaboration-exo/public-folders/public-folder-procedures.md)
 ##### [Batch migration of legacy public folders](../collaboration-exo/public-folders/batch-migration-of-legacy-public-folders.md)

@@ -76,7 +76,7 @@ Unsupported characters in a search query typically cause a search error or retur
   
 Here's a list of the unsupported characters for an In-Place eDiscovery search query.
   
-- **Smart quotation marks**: Smart single and double quotation marks (also called *curly quotes* ) aren't supported. Only straight quotation marks can be used in a search query. 
+- **Smart quotation marks**: Smart single and double quotation marks (also called *curly quotes*) aren't supported. Only straight quotation marks can be used in a search query. 
     
 - **Non-printable and control characters**: Non-printable and control characters don't represent a written symbol, such as a alpha-numeric character. Examples of non-printable and control characters include characters that format text or separate lines of text.
     

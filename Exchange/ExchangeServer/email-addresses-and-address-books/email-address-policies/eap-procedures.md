@@ -58,7 +58,7 @@ After you create an email address policy, you need to apply the policy to recipi
     
     **Notes**:
     
-  - The first SMTP email address template that you create here defines the primary (**Reply-To:** ) SMTP email address. This template has the **Type** value **SMTP** (bold and uppercase), while other SMTP templates for proxy addresses have the **Type** value smtp (not bold and lowercase). 
+  - The first SMTP email address template that you create here defines the primary (**Reply-To:**) SMTP email address. This template has the **Type** value **SMTP** (bold and uppercase), while other SMTP templates for proxy addresses have the **Type** value smtp (not bold and lowercase). 
     
   - You can't delete the email address template that defines the primary SMTP email address in the policy. Instead, you can add or modify another template, configure it to as the primary email address, and then delete the original template.
     

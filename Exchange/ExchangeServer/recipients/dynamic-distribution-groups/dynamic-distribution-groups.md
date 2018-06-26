@@ -235,7 +235,7 @@ Use this section to set options for moderating the group. Moderators approve or 
 #### Email options
 <a name="emailoptions"> </a>
 
-Use this section to view or change the email addresses associated with the group. This includes the group's primary SMTP addresses and any associated proxy addresses. The primary SMTP address (also known as the *reply address* ) is displayed in bold text in the address list, with the uppercase **SMTP** value in the **Type** column. 
+Use this section to view or change the email addresses associated with the group. This includes the group's primary SMTP addresses and any associated proxy addresses. The primary SMTP address (also known as the *reply address*) is displayed in bold text in the address list, with the uppercase **SMTP** value in the **Type** column. 
   
 - **Add**: Click **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png) to add a new email address for this mailbox. Select one of following address types: 
     
@@ -269,7 +269,7 @@ Use this section to add a MailTip to alert users of potential issues before they
 #### Group delegation
 <a name="groupdelegation"> </a>
 
-Use this section to assign permissions to a user (called a *delegate* ) to allow them to send messages as the group or send messages on behalf of the group. You can assign the following permissions: 
+Use this section to assign permissions to a user (called a *delegate*) to allow them to send messages as the group or send messages on behalf of the group. You can assign the following permissions: 
   
 - **Send As**: This permission allows the delegate to send messages as the group. After this permission is assigned, the delegate has the option to add the group to the **From** line to indicate that the message was sent by the group. 
     
