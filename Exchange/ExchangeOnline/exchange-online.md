@@ -128,7 +128,8 @@ Exchange Online is part of the Office 365 suite of products.
 <ol>
 <li><p><a href="https://go.microsoft.com/fwlink/p/?LinkID=529144">Sign in</a> to Office 365 using your work or school account, and then choose the <b>Admin</b> tile. </p></li>
 <li><p>In the Office 365 admin center, choose <b>Admin centers</b> / <b>Exchange</b>.</p>
-    <p>For an introduction, see <a href="/exchange-admin-center">Exchange admin center in Exchange Online</a></p>
+    <p>For an introduction, see <a href="/exchange-admin-center">Exchange admin center in Exchange Online</a></p></li>
+</ol>
 
 <h2>Help for Office 365 Admins</h2>
 <p>We're consolidating our content on the <a href="https://go.microsoft.com/fwlink/?LinkId=827695">Office help and training site</a>. See the following:
