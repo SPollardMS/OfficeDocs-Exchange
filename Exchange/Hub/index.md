@@ -15,7 +15,7 @@ description: Exchange
                         <a href="#home-all"></a>
                         <ul id="home-all" class="cardsC">
                             <li>
-                                <a href="https://docs.microsoft.com/Exchange/exchange-server">
+                                <a href="/Exchange/exchange-server">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -34,7 +34,7 @@ description: Exchange
                                 </a>
                             </li>
                             <li>
-                                <a href="https://docs.microsoft.com/Exchange/exchange-online">
+                                <a href="/Exchange/exchange-online">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -53,7 +53,7 @@ description: Exchange
                                 </a>
                             </li>
                             <li>
-                                <a href="https://docs.microsoft.com/Exchange/exchange-hybrid">
+                                <a href="/Exchange/exchange-hybrid">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
