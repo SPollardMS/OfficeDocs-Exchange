@@ -27,15 +27,15 @@ Q: What versions of Exchange support the new Hybrid Configuration wizard?
   
 > A: You need to have at least one server that meets the following requirements: 
     
-    - **Exchange 2010** Exchange 2010 SP3 needs to be installed on at least one server running the Mailbox, Hub Transport, and Client Access server roles. We also strongly recommend that you install the latest available Update Rollup available for Exchange 2010 SP3. 
+- **Exchange 2010** Exchange 2010 SP3 needs to be installed on at least one server running the Mailbox, Hub Transport, and Client Access server roles. We also strongly recommend that you install the latest available Update Rollup available for Exchange 2010 SP3. 
     
-    - **Exchange 2013** The latest Exchange 2013 CU needs to be installed on at least one server running both the Mailbox and Client Access server roles. If you can't install the latest CU, the immediately previous release is also supported. Older CUs aren't supported. 
+- **Exchange 2013** The latest Exchange 2013 CU needs to be installed on at least one server running both the Mailbox and Client Access server roles. If you can't install the latest CU, the immediately previous release is also supported. Older CUs aren't supported. 
     
-    - **Exchange 2016** The latest release of Exchange 2016 needs to be installed on at least one server running the Mailbox server role. 
+- **Exchange 2016** The latest release of Exchange 2016 needs to be installed on at least one server running the Mailbox server role. 
     
-    For example, assume you've installed Exchange 2013 CU8 in your on-premises organization, and the latest available release of Exchange 2013 is CU10. To remain in a supported hybrid configuration, you need to upgrade your Exchange 2013 servers to at least CU9. However, we'd strongly recommend you upgrade to CU10. 
+For example, assume you've installed Exchange 2013 CU8 in your on-premises organization, and the latest available release of Exchange 2013 is CU10. To remain in a supported hybrid configuration, you need to upgrade your Exchange 2013 servers to at least CU9. However, we'd strongly recommend you upgrade to CU10. 
     
-    Cumulative updates are released on a quarterly cadence. Keeping your servers on the latest cumulative update gives you some additional flexibility if you periodically need extra time to complete upgrades. 
+Cumulative updates are released on a quarterly cadence. Keeping your servers on the latest cumulative update gives you some additional flexibility if you periodically need extra time to complete upgrades. 
     
 Q: Will this Hybrid Configuration wizard work with Exchange 2007? 
   
