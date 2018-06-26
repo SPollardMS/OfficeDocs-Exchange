@@ -76,13 +76,6 @@ Exchange Online is part of the Office 365 suite of products.
 
 ---  
   
-<h2>To manage Exchange Online</h2>    
-<p>As an administrator for your Office 365 tenant, you manage your organization's Exchange Online service in the Exchange admin center. Here's how you get there:
-<ol>
-<li><p><a href="https://go.microsoft.com/fwlink/p/?LinkID=529144">Sign in</a> to Office 365 using your work or school account, and then choose the <b>Admin</b> tile. </p></li>
-<li><p>In the Office 365 admin center, choose <b>Admin centers</b> / <b>Exchange</b>.</p>
-    <p>For an introduction, see <a href="/exchange-admin-center">Exchange admin center in Exchange Online</a></p>
-
 <h2>Table of contents</h2>
 <ul class="panelContent cardsW">
     <li>
@@ -129,6 +122,13 @@ Exchange Online is part of the Office 365 suite of products.
         </div>
     </li>
 </ul>  
+
+<h2>To manage Exchange Online</h2>    
+<p>As an administrator for your Office 365 tenant, you manage your organization's Exchange Online service in the Exchange admin center. Here's how you get there:
+<ol>
+<li><p><a href="https://go.microsoft.com/fwlink/p/?LinkID=529144">Sign in</a> to Office 365 using your work or school account, and then choose the <b>Admin</b> tile. </p></li>
+<li><p>In the Office 365 admin center, choose <b>Admin centers</b> / <b>Exchange</b>.</p>
+    <p>For an introduction, see <a href="/exchange-admin-center">Exchange admin center in Exchange Online</a></p>
 
 <h2>Help for Office 365 Admins</h2>
 <p>We're consolidating our content on the <a href="https://go.microsoft.com/fwlink/?LinkId=827695">Office help and training site</a>. See the following:
