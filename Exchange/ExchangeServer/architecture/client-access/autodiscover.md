@@ -175,14 +175,54 @@ Through the Autodiscover service, Outlook finds a new connection point made up o
     
 You'll need to make sure that you have configured the correct external URLs for the virtual directories of the following services. The examples in the table that follows show values required for the contoso.com email domain. In addition, you may need to set IIS Authentication Methods. You can learn more about that in [Setting Up Standard Authentication Methods for Outlook Web App](http://technet.microsoft.com/library/f4ae771b-de25-47e4-963f-4b1e43f8b3d4.aspx).
   
-****
+<table style="text-align: left; width: 100%;" border="1"
+ cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <th>Service</th>
+      <th>Exchange Management Shell</th>
+      <th>Modifies</th>
+    </tr>
+    <tr>
+      <td><a
+ href="https://technet.microsoft.com/en-us/library/bb124707">Offline
+Address Book</a></td>
+      <td><code>Get-OabVirtualDirectory |
+Set-OabVirtualDirectory
+–ExternalURL https://mail.companycontoso.com/oab</code></td>
+      <td>OAB virtual directories used in IIS</td>
+    </tr>
+    <tr>
+      <td><a
+ href="https://technet.microsoft.com/en-us/library/aa997233.aspx">Exchange
+Web Services</a></td>
+      <td><code>Get-WebServicesVirtualDirectory |
+Set-WebServicesVirtualDirectory –ExternalURL
+https://mail.companycontoso.com/ews/exchange.asmx</code></td>
+      <td>Exchange Web Servicesvirtual directories in IIS</td>
+    </tr>
+    <tr>
+      <td><a
+ href="https://technet.microsoft.com/en-us/library/bb123545">Outlook
+Anywhere (RPC over HTTP)</a></td>
+      <td><code>Get-OutlookAnywhere | Set-OutlookAnywhere
+–ExternalHostname mail.contoso.com –ExternalClientsRequireSsl $true</code></td>
+      <td>Outlook Anywhere virtual directories in IIS</td>
+    </tr>
+    <tr>
+      <td><a
+ href="https://technet.microsoft.com/en-us/library/dn595082">Messaging
+Application Programming Interface (MAPI) over HTTP</a> (Exchange
+2013 SP1 or later)</td>
+      <td><code>Get-MapiVirtualDirectory |
+Set-MapiVirtualDirectory –ExternalURL
+https://mail.companycontoso.com/mapi Set-OrganizationConfig
+-MapiHttpEnabled $true</code></td>
+      <td>MAPI virtual directories in IIS</td>
+    </tr>
+  </tbody>
+</table>
 
-|**Service**|**Exchange Management Shell**|**Modifies**|
-|:-----|:-----|:-----|
-|[Offline Address Book](https://technet.microsoft.com/library/bb124707) <br/> | `Get-OabVirtualDirectory | Set-OabVirtualDirectory -ExternalURL https://mail.companycontoso.com/oab` <br/> |OAB virtual directories used in IIS  <br/> |
-|[Exchange Web Services](https://technet.microsoft.com/library/aa997233.aspx) <br/> | `Get-WebServicesVirtualDirectory | Set-WebServicesVirtualDirectory -ExternalURL https://mail.companycontoso.com/ews/exchange.asmx` <br/> |Exchange Web Servicesvirtual directories in IIS  <br/> |
-|[Outlook Anywhere (RPC over HTTP)](https://technet.microsoft.com/library/bb123545) <br/> | `Get-OutlookAnywhere | Set-OutlookAnywhere -ExternalHostname mail.contoso.com -ExternalClientsRequireSsl $true` <br/> | Outlook Anywhere virtual directories in IIS  <br/> |
-|[Messaging Application Programming Interface (MAPI) over HTTP](https://technet.microsoft.com/library/dn595082)(Exchange 2013 SP1 or later)  <br/> | `Get-MapiVirtualDirectory | Set-MapiVirtualDirectory -ExternalURL https://mail.companycontoso.com/mapi Set-OrganizationConfig -MapiHttpEnabled $true` <br/> |MAPI virtual directories in IIS  <br/> |
    
 Click the Service name in the preceding table for more information about how to obtain or reconfigure these URLs.
   
