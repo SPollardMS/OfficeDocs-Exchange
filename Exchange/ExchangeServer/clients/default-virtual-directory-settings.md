@@ -15,13 +15,13 @@ description: "Summary: Learn about default settings for Client Access services o
 # Default settings for Exchange virtual directories
 
  **Summary**: Learn about default settings for Client Access services on Mailbox servers in Exchange 2016.
-  
+
 Exchange 2016 automatically configures multiple Internet Information Services (IIS) virtual directories during installation. The tables that follow show the Exchange 2016 settings for the Client Access services on Mailbox servers and the default IIS authentication and Secure Sockets Layer (SSL) settings.
-  
+
 ## Client Access services on Mailbox servers
 
 The following table lists the default settings on a stand-alone Exchange 2016 Mailbox server running Client Access services.
-  
+
 **Default Mailbox server running Client Access services IIS authentication and SSL settings**
 
 |**Virtual directory**|**Authentication method**|**SSL settings**|**Management method**|
@@ -37,18 +37,18 @@ The following table lists the default settings on a stand-alone Exchange 2016 Ma
 |PowerShell  <br/> |Anonymous authentication  <br/> |Not required  <br/> |Exchange Management Shell  <br/> |
 |Rpc  <br/> |Basic authentication  <br/> Windows authentication  <br/> |SSL required  <br/> Requires 128-bit encryption  <br/> |Exchange Management Shell  <br/> |
 |RpcWithCert  <br/> |By default, all authentication methods are disabled.  <br/> |Required  <br/> ||
-   
+ 
 ## Mailbox server
 
 The following table lists the default settings on a stand-alone Exchange 2016 Mailbox server.
-  
+
 **Default Mailbox server IIS authentication and SSL settings**
 
 |**Virtual directory**|**Authentication method**|**SSL settings**|**Management method**|
 |:-----|:-----|:-----|:-----|
 |Default website  <br/> |Anonymous authentication  <br/> |SSL required  <br/> Requires 128-bit encryption  <br/> |This virtual directory can't be configured by the user.  <br/> |
 |PowerShell  <br/> |Anonymous authentication  <br/> |Not required  <br/> |Exchange Management Shell  <br/> |
-   
+ 
 ## See also
 
 [Virtual directory management](http://technet.microsoft.com/library/1af30fd5-621c-4acb-b6df-d8fa64d719ba.aspx)

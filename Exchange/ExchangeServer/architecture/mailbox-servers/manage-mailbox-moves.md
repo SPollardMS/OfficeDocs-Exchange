@@ -46,7 +46,7 @@ You can create local move requests for:
   
 - A single mailbox.
     
-- Multiple mailboxes (also known as a *batch move request* ). 
+- Multiple mailboxes (also known as a *batch move request*). 
     
 - Multiple mailboxes that you specify in a comma-separated value (CSV) file (also known as a _migration batch_).
     

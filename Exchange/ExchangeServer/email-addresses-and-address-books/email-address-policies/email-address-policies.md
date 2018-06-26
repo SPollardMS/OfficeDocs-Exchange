@@ -60,7 +60,7 @@ Although you'll primarily use SMTP email addresses in email address policies, ot
 ### Address formats
 <a name="AddressFormat"> </a>
 
-An SMTP email address uses the syntax `chris@contoso.com`, where the value `chris` is the *local part* of the email address, and the value `contoso.com` is the SMTP domain (also known as the *address space* or *name space* ). The available SMTP domain values are determined by the accepted domains that are configured for your organization. 
+An SMTP email address uses the syntax `chris@contoso.com`, where the value `chris` is the *local part* of the email address, and the value `contoso.com` is the SMTP domain (also known as the *address space* or *name space*). The available SMTP domain values are determined by the accepted domains that are configured for your organization. 
   
 You can use email address policies to assign multiple SMTP email addresses to recipients by using different combinations of the local part and domain values. However, only one SMTP email address in a policy can be configured as the primary address.
   
@@ -114,7 +114,7 @@ Recipient filters identify the recipients that the email address policy applies 
     
   - In the EAC, in the properties of the recipient, on the **Email address** tab, clear the check box: **Automatically update email addresses based on the email address policy applied to this recipient**.
     
-  - In the Exchange Management Shell, set the _EmailAddressPolicyEnabled_ parameter to the value `$false` on the recipient management cmdlet (for example, **Set-Mailbox** or **Set-DistributionGroup** ). 
+  - In the Exchange Management Shell, set the _EmailAddressPolicyEnabled_ parameter to the value `$false` on the recipient management cmdlet (for example, **Set-Mailbox** or **Set-DistributionGroup**). 
     
 ## Priority of email address policies
 

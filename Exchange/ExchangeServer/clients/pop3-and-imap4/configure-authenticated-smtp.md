@@ -24,7 +24,7 @@ The default Receive connector named "Client Frontend _\<Server name\>_" in the C
     
 - **TCP port**: 587
     
-- **Encryption method**: TLS. Note that this is opportunistic TLS (**STARTTLS** ) that results in an encrypted connection after the initial plain text protocol handshake. 
+- **Encryption method**: TLS. Note that this is opportunistic TLS (**STARTTLS**) that results in an encrypted connection after the initial plain text protocol handshake. 
     
 For more information, see [Default Receive connectors created during setup](../../mail-flow/connectors/receive-connectors.md#DefaultConnectors) and [Client access protocol architecture](../../architecture/architecture.md#ClientAccessProtocol).
   

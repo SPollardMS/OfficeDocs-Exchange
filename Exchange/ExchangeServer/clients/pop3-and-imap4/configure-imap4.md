@@ -30,7 +30,7 @@ By default, IMAP4 client connectivity isn't enabled in Exchange. To enable IMAP4
     
   - **IMAP4 server FQDN**: `<ServerFQDN>`. For example, `mailbox01.contoso.com`.
     
-  - **TCP port and encryption method**: 993 for always TLS encrypted connections, and 143 for unencrypted connections, or for opportunistic TLS (**STARTTLS** ) that results in an encrypted connection after the initial plain text protocol handshake. 
+  - **TCP port and encryption method**: 993 for always TLS encrypted connections, and 143 for unencrypted connections, or for opportunistic TLS (**STARTTLS**) that results in an encrypted connection after the initial plain text protocol handshake. 
     
     To allow **external** IMAP4 clients to connect to mailboxes, you need to configure the IMAP4 server FQDN, TCP port, and encryption method for external connections. This step causes the external IMAP4 settings to be displayed in Outlook on the web (formerly known as Outlook Web App) at **Settings** \> **Options** \> **Mail** \> **Accounts** \> **POP and IMAP**.
     ![IMAP settings in Outlook on the web](../../media/2fc6813d-0b2e-4813-8bbc-bc3dfaf4c261.png)

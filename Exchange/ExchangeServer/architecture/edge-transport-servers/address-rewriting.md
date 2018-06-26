@@ -57,7 +57,7 @@ The following scenarios are examples of how you can use address rewriting:
 ## Message properties modified by address rewriting
 <a name="SMTP"> </a>
 
-A standard SMTP email message consists of a *message envelope* and message content. The message envelope contains information that's required for transmitting and delivering the message between SMTP messaging servers. The message content contains message header fields (collectively called the *message header* ) and the message body. The message envelope is described in RFC 2821, and the message header is described in RFC 2822. 
+A standard SMTP email message consists of a *message envelope* and message content. The message envelope contains information that's required for transmitting and delivering the message between SMTP messaging servers. The message content contains message header fields (collectively called the *message header*) and the message body. The message envelope is described in RFC 2821, and the message header is described in RFC 2822. 
   
 When a sender composes an email message and submits it for delivery, the message contains the basic information that's required to comply with SMTP standards, such as a sender, a recipient, the date and time that the message was composed, an optional subject line, and an optional message body. This information is contained in the message itself and, by definition, in the message header.
   

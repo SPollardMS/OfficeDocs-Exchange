@@ -30,7 +30,7 @@ If you need to create a custom Receive connector, consider these issues:
     
   - **Edge Transport servers**: The Transport service.
     
-- Each Receive connector on an Exchange server requires a unique combination of network adapter bindings (the combination of **local IP address** and **TCP port** ) and **remote network settings** (remote IP addresses). 
+- Each Receive connector on an Exchange server requires a unique combination of network adapter bindings (the combination of **local IP address** and **TCP port**) and **remote network settings** (remote IP addresses). 
     
   - A default Receive connector that listens on port 25 on all available local IP addresses from all remote IP addresses already exists on all Mailbox servers and Edge Transport servers.
     

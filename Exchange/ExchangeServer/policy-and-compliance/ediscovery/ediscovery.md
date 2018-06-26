@@ -48,7 +48,7 @@ For authorized users to perform In-Place eDiscovery searches, you need to add th
 By default, permissions to perform In-Place eDiscovery-related tasks aren't assigned to any user or Exchange administrators. Exchange administrators who are members of the Organization Management role group can add users to the Discovery Management role group and create custom role groups to narrow the scope of a discovery manager to a subset of users. To learn more about adding users to the Discovery Management role group, see [Assign eDiscovery permissions in Exchange 2016](assign-permissions.md).
   
 > [!IMPORTANT]
-> If a user isn't added to the Discovery Management role group or isn't assigned the Mailbox Search role, the **In-Place eDiscovery & Hold** user interface isn't displayed in the EAC, and the In-Place eDiscovery (**\*MailboxSearch** ) cmdlets aren't available in the Exchange Management Shell. 
+> If a user isn't added to the Discovery Management role group or isn't assigned the Mailbox Search role, the **In-Place eDiscovery & Hold** user interface isn't displayed in the EAC, and the In-Place eDiscovery (**\*MailboxSearch**) cmdlets aren't available in the Exchange Management Shell. 
   
 Auditing of RBAC role changes, which is enabled by default, makes sure that adequate records are kept to track assignment of the Discovery Management role group. You can use the administrator role group report to search for changes made to administrator role groups. For more information, see [Search the role group changes or administrator audit logs](http://technet.microsoft.com/library/c7188d53-e672-492b-b57d-cd711379ddb3.aspx).
   
