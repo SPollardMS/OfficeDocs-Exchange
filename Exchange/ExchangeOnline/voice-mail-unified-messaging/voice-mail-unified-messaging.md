@@ -14,19 +14,11 @@ description: "Unified Messaging (UM) enables users to use voice mail features, i
 
 # Voice mail in Exchange Online: Unified Messaging
 
-Unified Messaging (UM) enables users to use voice mail features, including Outlook Voice Access and Call Answering Rules. UM combines voice messaging and email messaging into one mailbox that can be accessed from many different devices. Users can read or listen to their messages from their email Inbox or by using Outlook Voice Access from any telephone. You have control over how users place outgoing calls, and the experience callers have when they call in to your organization. 
+Unified Messaging (UM) enables users to use voice mail features, including Outlook Voice Access and Call Answering Rules. UM combines voice messaging and email messaging into one mailbox that can be accessed from many different devices. Users can read or listen to their messages from their email Inbox or by using Outlook Voice Access from any telephone. You have control over how users place outgoing calls, and the experience callers have when they call in to your organization.
   
-Today, messaging administrators in organizations frequently manage the voice mail and email systems for their organizations as separate systems. Voice mail and email messages are located in separate mailboxes that are hosted on separate servers. Users can access messages through the desktop for email and through the telephone for voice mail. 
+Today, messaging administrators in organizations frequently manage the voice mail and email systems for their organizations as separate systems. Voice mail and email messages are located in separate mailboxes that are hosted on separate servers. Users can access messages through the desktop for email and through the telephone for voice mail.
   
 UM in Office 365 makes it possible for online administrators to combine voice messaging and email messaging into one mailbox so their users can read or listen to their voice mail messages in their Inbox or by using Outlook Voice Access from any telephone. UM uses a user's mailbox to store both email and voice mail messages.
-  
- **Contents**
-  
-[Unified Messaging features](#umfeatures.md)
-  
-[Planning and deploying UM](#planningUM.md)
-  
-[Managing UM with the EAC and the Shell](#managing.md)
   
 ## Unified Messaging features
 <a name="umfeatures"> </a>
@@ -90,8 +82,6 @@ When you configure UM for your organization, users can access voice mail, email,
     
 - **Group addressing using Outlook Voice Access** Users can send a single email message to a single user in their personal Contacts, to multiple recipients from the directory by adding each recipient individually, or by adding the name of a distribution list from the directory for your organization. In UM in Office 365, when a user signs in to their mailbox using Outlook Voice Access, they can also send email and voice messages to users in a group stored in their personal Contacts. 
     
-[Unified Messaging (UM) enables users to use voice mail features, including Outlook Voice Access and Call Answering Rules. UM combines voice messaging and email messaging into one mailbox that can be accessed from many different devices. Users can read or listen to their messages from their email Inbox or by using Outlook Voice Access from any telephone. You have control over how users place outgoing calls, and the experience callers have when they call in to your organization. Today, messaging administrators in organizations frequently manage the voice mail and email systems for their organizations as separate systems. Voice mail and email messages are located in separate mailboxes that are hosted on separate servers. Users can access messages through the desktop for email and through the telephone for voice mail. UM in Office 365 makes it possible for online administrators to combine voice messaging and email messaging into one mailbox so their users can read or listen to their voice mail messages in their Inbox or by using Outlook Voice Access from any telephone. UM uses a user's mailbox to store both email and voice mail messages.ContentsUnified Messaging featuresPlanning and deploying UMManaging UM with the EAC and the Shell](#rtt.md)
-  
 ### Administrative features
 <a name="admin"> </a>
 
@@ -109,6 +99,9 @@ Office 365 UM offers administrators:
   
 - **Consolidation of voice mail systems** Currently, most voice messaging systems require that all the voice messaging components be installed in every physical office location in an organization. In this kind of arrangement, the voice messaging systems in branch offices are located outside the central office and must be administered onsite. This frequently results in increased administration costs and complexity. UM lets you manage your voice mail system from a central location. To create a centralized management system for UM, you integrate your VoIP gateways, IP PBXs or PBXs, and your phone system and then deploy session border controllers (SBCs) to connect your phone system with your Office 365 deployment. Deploying a centralized voice messaging system this way can result in a significant savings in hardware and administrative costs. 
     
+    > [!NOTE]
+    > Exchange Online UM support for third-party PBX systems via direct connections from customer operated SBCs will end in July 2018. Please see the Exchange team blog [Discontinuation of support for Session Border Controllers in Exchange Online Unified Messaging](https://blogs.technet.microsoft.com/exchange/2017/07/18/discontinuation-of-support-for-session-border-controllers-in-exchange-online-unified-messaging/) for more information. 
+  
 - **Built-in UM administrative roles** The set of UM-specific administrative roles for managing UM and voice mail features includes the following: 
     
   - UM Mailboxes
@@ -139,12 +132,13 @@ Office 365 UM offers administrators:
     
   - Enable external users to call the operator.
     
-[Unified Messaging (UM) enables users to use voice mail features, including Outlook Voice Access and Call Answering Rules. UM combines voice messaging and email messaging into one mailbox that can be accessed from many different devices. Users can read or listen to their messages from their email Inbox or by using Outlook Voice Access from any telephone. You have control over how users place outgoing calls, and the experience callers have when they call in to your organization. Today, messaging administrators in organizations frequently manage the voice mail and email systems for their organizations as separate systems. Voice mail and email messages are located in separate mailboxes that are hosted on separate servers. Users can access messages through the desktop for email and through the telephone for voice mail. UM in Office 365 makes it possible for online administrators to combine voice messaging and email messaging into one mailbox so their users can read or listen to their voice mail messages in their Inbox or by using Outlook Voice Access from any telephone. UM uses a user's mailbox to store both email and voice mail messages.ContentsUnified Messaging featuresPlanning and deploying UMManaging UM with the EAC and the Shell](#rtt.md)
-  
 ## Planning and deploying UM
 <a name="planningum"> </a>
 
 Unified Messaging requires that you integrate your existing telephony system for your organization within Office 365 by using SBCs. A successful deployment requires you to make a careful analysis of your existing telephony infrastructure and to perform the correct planning steps to deploy and manage voice mail in UM.
+  
+> [!NOTE]
+> Exchange Online UM support for third-party PBX systems via direct connections from customer operated SBCs will end in July 2018. Please see the Exchange team blog [Discontinuation of support for Session Border Controllers in Exchange Online Unified Messaging](https://blogs.technet.microsoft.com/exchange/2017/07/18/discontinuation-of-support-for-session-border-controllers-in-exchange-online-unified-messaging/) for more information. 
   
 When you plan to use UM in Office 365, you need to consider design and other issues that may affect your ability to reach your organizational goals when you configure UM. Generally, the simpler the UM setup is, the easier UM is to configure and maintain. As a general rule, create as few UM components like UM dial plans, auto attendants, and UM mailbox policies as you need to support your business and organizational goals. Large enterprises with complex network and telephony environments, multiple business units, or other complexities will require more planning than smaller organizations with relatively straightforward UM needs.
   
@@ -166,8 +160,6 @@ You need to consider and evaluate many areas to be able to successfully deploy U
     
 - The storage requirements for voice mail users.
     
-[Unified Messaging (UM) enables users to use voice mail features, including Outlook Voice Access and Call Answering Rules. UM combines voice messaging and email messaging into one mailbox that can be accessed from many different devices. Users can read or listen to their messages from their email Inbox or by using Outlook Voice Access from any telephone. You have control over how users place outgoing calls, and the experience callers have when they call in to your organization. Today, messaging administrators in organizations frequently manage the voice mail and email systems for their organizations as separate systems. Voice mail and email messages are located in separate mailboxes that are hosted on separate servers. Users can access messages through the desktop for email and through the telephone for voice mail. UM in Office 365 makes it possible for online administrators to combine voice messaging and email messaging into one mailbox so their users can read or listen to their voice mail messages in their Inbox or by using Outlook Voice Access from any telephone. UM uses a user's mailbox to store both email and voice mail messages.ContentsUnified Messaging featuresPlanning and deploying UMManaging UM with the EAC and the Shell](#rtt.md)
-  
 ## Managing UM with the EAC and the Shell
 <a name="managing"> </a>
 
@@ -190,7 +182,5 @@ Office 365 provides a single unified management console for your organization th
  **Shell management**
   
 The Shell, built on Windows PowerShell technology, is a powerful command-line interface that enables automation of administrative tasks. With the Shell, you can manage every aspect of Exchange. You can enable new email accounts, create Send and Receive connectors, configure database properties, manage all aspects of UM, and more. The Shell can perform every task that can be performed by the EAC plus tasks that can't be done in the EAC. In fact, when you do something in the EAC, it's the Shell that's doing the work behind the scenes. 
-  
-[Unified Messaging (UM) enables users to use voice mail features, including Outlook Voice Access and Call Answering Rules. UM combines voice messaging and email messaging into one mailbox that can be accessed from many different devices. Users can read or listen to their messages from their email Inbox or by using Outlook Voice Access from any telephone. You have control over how users place outgoing calls, and the experience callers have when they call in to your organization. Today, messaging administrators in organizations frequently manage the voice mail and email systems for their organizations as separate systems. Voice mail and email messages are located in separate mailboxes that are hosted on separate servers. Users can access messages through the desktop for email and through the telephone for voice mail. UM in Office 365 makes it possible for online administrators to combine voice messaging and email messaging into one mailbox so their users can read or listen to their voice mail messages in their Inbox or by using Outlook Voice Access from any telephone. UM uses a user's mailbox to store both email and voice mail messages.ContentsUnified Messaging featuresPlanning and deploying UMManaging UM with the EAC and the Shell](#rtt.md)
   
 
