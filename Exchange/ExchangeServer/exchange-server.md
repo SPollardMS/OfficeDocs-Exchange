@@ -131,7 +131,7 @@ Welcome to Microsoft Exchange Server 2016! Here's some fundamental and essential
 </ul>
 
 ---  
-<h2>Exchange Server Deployment Assistant</h3>
+<h2>Exchange Server Deployment Assistant</h2>
 <p>Have you heard about the Exchange Server Deployment Assistant? This free online tool helps you quickly deploy Exchange 2016 in your organization by asking you a few questions and creating a customized deployment checklist just for you. Try out the **Exchange Server Deployment Assistant**</p>
 
 <h2>Planning and deployment</h2>
@@ -177,11 +177,9 @@ Welcome to Microsoft Exchange Server 2016! Here's some fundamental and essential
     </li>
 </ul>  
   
-    > [!IMPORTANT]
-    > Make sure you read [Release notes for Exchange 2016](release-notes.md) before you begin your deployment. The release notes contain important information about issues you might run into during and after your deployment. 
   
-Looking for information on prior versions of Exchange Server? Documentation for [Exchange Server 2010](https://technet.microsoft.com/library/bb124558%28EXCHG.141%29.aspx) and [Exchange Server 2013](https://technet.microsoft.com/library/bb124558%28v=exchg.150%29.aspx) is also available on TechNet. 
+<p>Looking for information on prior versions of Exchange Server? Documentation for <a href="https://technet.microsoft.com/library/bb124558%28EXCHG.141%29.aspx">Exchange Server 2010</a> and <a href="https://technet.microsoft.com/library/bb124558%28v=exchg.150%29.aspx">Exchange Server 2013</a> is also available on TechNet. 
   
- Did you find what you're looking for? Please take a minute to [send us feedback](mailto:ExchangeHelpFeedback@microsoft.com&subject=Exchange%202016%20help%20feedback&Body=Thanks%20for%20taking%20the%20time%20to%20send%20us%20feedback!%20We%20strive%20to%20respond%20to%20every%20message%20we%20receive,%20even%20though%20it%20might%20take%20us%20a%20while.%20Let%20us%20know%20what%20you%20think%20about%20Exchange%20content:%20What%20are%20we%20doing%20right%3F%20How%20can%20we%20make%20help%20better%3F%0APlease%20note%20that%20we're%20unable%20to%20respond%20to%20requests%20for%20support%20submitted%20via%20this%20email%20address.%20If%20you%20need%20help,%20please%20contact%20Exchange%20Server%20support%20at%20http://go.microsoft.com/fwlink/p/%3FLinkId=402506.%0AThanks!%0AThe%20Exchange%20Server%20Content%20Publishing%20team) about the information you were hoping to find. 
+ <p>Did you find what you're looking for? Please take a minute to <a href="mailto:ExchangeHelpFeedback@microsoft.com&subject=Exchange%202016%20help%20feedback&Body=Thanks%20for%20taking%20the%20time%20to%20send%20us%20feedback!%20We%20strive%20to%20respond%20to%20every%20message%20we%20receive,%20even%20though%20it%20might%20take%20us%20a%20while.%20Let%20us%20know%20what%20you%20think%20about%20Exchange%20content:%20What%20are%20we%20doing%20right%3F%20How%20can%20we%20make%20help%20better%3F%0APlease%20note%20that%20we're%20unable%20to%20respond%20to%20requests%20for%20support%20submitted%20via%20this%20email%20address.%20If%20you%20need%20help,%20please%20contact%20Exchange%20Server%20support%20at%20http://go.microsoft.com/fwlink/p/%3FLinkId=402506.%0AThanks!%0AThe%20Exchange%20Server%20Content%20Publishing%20team">send us feedback</a> about the information you were hoping to find. 
   
 
