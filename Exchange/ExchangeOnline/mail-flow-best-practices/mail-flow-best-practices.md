@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/23/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 0e6cd9d5-ad3e-418a-8ea9-3bf33332c491
 description: "Use Microsoft Exchange Online and Office 365 to manage mail flow. Find out how, and get tips and best practices for setting up and managing your email."

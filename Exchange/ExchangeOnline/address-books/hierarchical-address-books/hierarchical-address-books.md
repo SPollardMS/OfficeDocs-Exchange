@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 11/17/2014
 ms.audience: ITPro
 ms.topic: overview
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: a1d277a0-5437-40af-aade-e4730a0d1308
 description: "The hierarchical address book (HAB) allows end users to look for recipients in their address book using an organizational hierarchy. Normally, users are limited to the default global address list (GAL) and its recipient properties and the structure of the GAL often doesn't reflect the management or seniority relationships of recipients in your organization. Being able to customize an HAB that maps to your organization's unique business structure provides your users with an efficient method for locating internal recipients."

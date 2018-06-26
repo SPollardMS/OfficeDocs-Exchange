@@ -5,7 +5,7 @@ author: chrisda
 ms.date: 6/23/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 4c5bee1b-58b5-4152-baef-86fa103050ae
 description: "To help your users comply with your organization's email policies, you can use Exchange transport rules to determine how email containing specific words or patterns is routed. For a short list of words or phrases, you can use the Exchange admin center. For a longer list, you might want to use the Exchange Module for Windows PowerShell to read the list from a text file."

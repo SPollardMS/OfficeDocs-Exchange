@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 12/13/2017
 ms.audience: End User
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 510524c6-6d3e-416f-9e27-fa25446b099a
 description: "Email has become a reliable and ubiquitous communication medium for information workers in organizations of all sizes. Messaging stores and mailboxes have become repositories of valuable data. It's important for organizations to formulate messaging policies that dictate the fair use of their messaging systems, provide user guidelines for how to act on the policies, and where required, provide details about the types of communication that may not be allowed."

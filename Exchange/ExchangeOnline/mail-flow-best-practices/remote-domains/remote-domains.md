@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 1/9/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: f191e052-658d-4c74-bfe7-bcb1d525e4e3
 

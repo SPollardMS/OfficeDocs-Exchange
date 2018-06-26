@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 3/1/2018
 ms.audience: Admin
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.collection: Ent_O365
 ms.assetid: e09b354c-1e3e-4bbf-a865-035d28d1a388

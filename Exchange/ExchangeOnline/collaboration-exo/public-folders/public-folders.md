@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 10/3/2017
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: bf65842b-a4db-49a8-bb3a-d0bafb7d3e45
 

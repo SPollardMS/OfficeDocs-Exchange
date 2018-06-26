@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 1/26/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 874d1c78-a8ec-4938-b388-d3208c2fa971
 description: "You can inspect email attachments in your Office 365 organization by setting up mail flow rules (also known as transport rules). Exchange Online offers mail flow rules that provide the ability to examine email attachments as a part of your messaging security and compliance needs. When you inspect attachments, you can then take action on the messages that were inspected based on the content or characteristics of those attachments. Here are some attachment-related tasks you can do by using mail flow rules:"

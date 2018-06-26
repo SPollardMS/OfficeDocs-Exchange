@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 4/7/2015
 ms.audience: Admin
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: fa762d14-f942-4728-8813-887d11441a68
 description: "Have a discovery mailbox that's exceeded the 50 GB limit? You can fix this issue by creating new discovery mailboxes and copying the search results from the large discovery mailbox to the new ones."

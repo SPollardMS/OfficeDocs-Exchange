@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 5/5/2016
 ms.audience: Admin
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 4bde0b00-bdf7-44b4-ba64-aa062bc10ca2
 description: "You can use the Exchange Management Shell to delete the default discovery mailbox, re-create it, and then assign permissions to it."

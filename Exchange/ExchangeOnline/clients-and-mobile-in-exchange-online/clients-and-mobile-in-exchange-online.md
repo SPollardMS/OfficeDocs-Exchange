@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 3/9/2015
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 4b2256d7-2250-40f4-b25f-4ac52c8c9647
 description: "Many different clients can be used to access information in an Office 365 mailbox. These clients include desktop programs such as Microsoft Outlook, Outlook Web App, and mobile clients such as mobile phones, tablets, and other mobile devices. Each of these clients offers a variety of features."

@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 4/2/2018
 ms.audience: ITPro
 ms.topic: overview
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: b5cf21f4-57d2-4bfc-abc6-1f0689826af8
 description: "Summary: This article contains architectural and security information for administrators about Outlook for iOS and Android."

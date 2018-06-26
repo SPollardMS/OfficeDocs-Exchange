@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 6/22/2018
 ms.audience: ITPro
 ms.topic: hub-page
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: d0f509be-ee4b-46a2-9dc6-3bc3512a0a2d
 description: "Exchange Online is part of the Office 365 suite of products."

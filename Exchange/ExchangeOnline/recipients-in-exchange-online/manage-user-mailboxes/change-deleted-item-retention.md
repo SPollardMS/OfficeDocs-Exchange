@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 12/9/2016
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: ce17f1ec-b96c-4c9e-b20a-507fe0afc684
 description: "If you've permanently deleted an item in Microsoft Outlook or Outlook Web App, the item is moved to a folder (Recoverable Items \> Deletions) and kept there for 14 days, by default. You can change how long items are kept, up to a maximum of 30 days."

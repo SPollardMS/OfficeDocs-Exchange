@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 4/8/2015
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 0976f8f2-3449-44f1-b0d1-20c91622e827
 description: "You can use the Shell to create one or more call answering rules for a user. You can also use the New-UMCallAnsweringRule cmdlet in an Exchange Management Shell script to create call answering rules for multiple users."

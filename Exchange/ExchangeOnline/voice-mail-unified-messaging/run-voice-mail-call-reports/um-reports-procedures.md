@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 11/17/2014
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 5b58a2ed-3780-4a0e-87f6-e19e6e49640c
 description: "Review the voice mail calls in your organization"

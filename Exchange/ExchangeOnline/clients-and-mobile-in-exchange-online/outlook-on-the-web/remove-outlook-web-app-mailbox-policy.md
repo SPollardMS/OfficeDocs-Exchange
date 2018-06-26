@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 11/17/2014
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: edab7bac-b62c-4b82-8f21-dcac77cf0e8f
 description: "You can remove a Microsoft Outlook Web App mailbox policy from an Exchange organization by using either the EAC or the Shell."

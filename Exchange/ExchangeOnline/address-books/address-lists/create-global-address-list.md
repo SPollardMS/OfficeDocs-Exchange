@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 12/16/2014
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 59e4955a-8999-4d17-be9f-23a41a23b929
 description: "The global address list (GAL) is a directory that contains entries for every group, user, and contact within an organization's implementation of Microsoft Exchange. If your organization uses address book policies, you may want to create additional GALs. To learn more, see Address book policies."

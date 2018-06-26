@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 11/17/2014
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 347207fa-cfb7-40a6-b19a-831dcdb54ad5
 description: "You can create an Outlook Web App mailbox policy to apply a common set of policy settings. Outlook Web App mailbox policies are useful for applying and standardizing settings, for example, attachment settings, for specific groups of users."

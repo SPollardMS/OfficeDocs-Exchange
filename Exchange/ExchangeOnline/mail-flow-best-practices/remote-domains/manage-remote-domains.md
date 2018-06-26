@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 4/29/2016
 ms.audience: End User
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: d3dca7b0-c84c-429a-9698-0e92a95a0985
 description: "You can control the types and format of messages that are sent to domains outside your Exchange organization. Follow the procedures in this topic to create and configure a remote domain in Exchange Online, or to modify the default remote domain. For information about when to configure remote domains, descriptions of the available settings, and information about how remote domain settings override per-user settings, see Remote domains in Exchange Online."

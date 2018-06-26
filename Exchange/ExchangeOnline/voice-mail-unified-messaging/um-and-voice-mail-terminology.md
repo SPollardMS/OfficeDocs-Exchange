@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 6/24/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 3a6d93f2-1802-4aed-8b83-35c7fd004d0c
 description: "This topic contains the terms and definitions that are used with Unified Messaging."

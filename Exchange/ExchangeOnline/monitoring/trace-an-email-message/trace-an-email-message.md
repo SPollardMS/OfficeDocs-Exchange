@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 11/17/2014
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 0c83cde6-5b09-4106-8587-c200cdc59094
 description: "Sometimes an email message gets lost in transit, or it can take a lot longer than expected for delivery, and your users can wonder what happened. As an administrator, you can use the message trace feature to follow messages as they pass through your Exchange Online or Exchange Online Protection service. With message tracing, you can determine whether a targeted email message was received, rejected, deferred, or delivered by the service. It also shows what events have occurred to the message before reaching its final status. Getting detailed information about a specific message lets you efficiently answer your user's questions, troubleshoot mail flow issues, validate policy changes, and alleviates the need to contact technical support for assistance."

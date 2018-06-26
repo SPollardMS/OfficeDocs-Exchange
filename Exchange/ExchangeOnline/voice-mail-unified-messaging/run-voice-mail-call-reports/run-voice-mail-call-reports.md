@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 11/17/2014
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 3a292d85-ce0f-4c15-b8f2-d1fc92965437
 description: "Unified Messaging (UM) call reports provide information about the calls forwarded to or placed by UM. Use these reports to monitor, troubleshoot, and report on UM for your organization. You can access Unified Messaging call statistic reports by using the Call Statistics tool and access call logs for UM-enabled users by using the User Call Logs tool."

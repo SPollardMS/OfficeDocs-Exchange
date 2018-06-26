@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 3/12/2015
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 8d6e2cea-265a-43d9-a074-076f35658436
 description: "You can configure a mobile phone, such as a Windows Phone, to use Microsoft Exchange ActiveSync. You should perform this procedure on each mobile phone in your organization."

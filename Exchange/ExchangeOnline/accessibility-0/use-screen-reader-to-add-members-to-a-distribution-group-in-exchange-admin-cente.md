@@ -5,7 +5,7 @@ author: v-maleo
 ms.date: 6/6/2016
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.custom: A11y_UseSR
 ms.assetid: 86de703c-5c8e-477e-9a52-f466e5f66778

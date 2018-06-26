@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 4/28/2017
 ms.audience: Developer
 ms.topic: overview
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 9c989167-cc0c-40a6-82ba-383f573bd2d5
 

@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 3/9/2015
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 66023a62-1fd3-4019-be2b-4e7147db148a
 description: "The following character sets can be specified for messages sent to remote domains."

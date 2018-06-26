@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 3/8/2016
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 595e1f02-4398-4a7a-b4a4-768af8b9e42e
 description: "Manage address lists in Exchange Online"

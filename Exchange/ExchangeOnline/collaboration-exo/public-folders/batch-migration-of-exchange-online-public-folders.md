@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 3/26/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.collection: Strat_EX_EXOBlocker
 ms.assetid: e0be0727-f27f-4673-8a6f-af6ab5dbdace

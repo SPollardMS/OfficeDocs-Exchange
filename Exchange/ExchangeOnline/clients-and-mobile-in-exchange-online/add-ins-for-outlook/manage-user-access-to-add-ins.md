@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 4/17/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: e5833dec-a23a-439e-ac03-92671817bff8
 description: "You can use the Exchange admin center (EAC) or Exchange PowerShell to manage user access to add-ins for Outlook."

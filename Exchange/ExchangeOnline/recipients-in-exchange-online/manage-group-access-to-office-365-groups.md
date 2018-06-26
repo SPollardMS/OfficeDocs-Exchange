@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 12/11/2017
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: a86bb46f-0e5b-43a3-b6ef-7394f344a8da
 description: "You can allow or block guest users who are using a specific domain. For example, let's say your business (Contoso) has a partnership with another business (Fabrikam). You can add Fabrikam to your Allow list so your users can add those guests to their groups."

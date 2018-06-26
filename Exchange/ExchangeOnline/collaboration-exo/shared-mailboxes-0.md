@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 6/24/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: fdce3587-ed95-4433-9931-4cf74b52e8e0
 description: "Summary: About shared mailboxes in Exchange Online, and how to create them."

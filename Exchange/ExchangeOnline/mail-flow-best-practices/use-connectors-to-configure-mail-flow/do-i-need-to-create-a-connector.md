@@ -8,7 +8,7 @@ ms.audience: ITPro
 ms.topic: article
 f1_keywords:
 - 'ms.exch.eac.ConnectorIsConnectorNeeded'
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 16731ae9-c909-49dd-bffc-a46e6151fc29
 

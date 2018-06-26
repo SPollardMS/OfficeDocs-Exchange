@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 6/24/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 5fd2c96f-fe93-4b5a-8495-70c450511a37
 description: "This topic explains how to modify the settings of a global address list (GAL)."

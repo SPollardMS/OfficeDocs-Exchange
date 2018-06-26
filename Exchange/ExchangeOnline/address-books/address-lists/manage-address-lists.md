@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 3/8/2016
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: cac74760-7bd1-482c-8d43-b0165e988ec0
 description: "Address lists are a collection of mail-enabled objects in your organization. Mail-enabled objects are any object in your organization that has an email address. Each address list can contain one or more types of objects (for example, users, contacts, groups, public folders, and room and equipment mailboxes). Address lists also provide a way to partition mail-enabled objects for the benefit of specific groups of users. This topic explains how to manage address lists in Exchange Online."

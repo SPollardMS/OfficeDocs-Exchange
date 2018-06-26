@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 11/17/2014
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 00fc797d-1247-41ca-a144-d287c56476bb
 description: "Office 365 users can synchronize their Outlook Web App contacts with the address book on their iPhone or iPad using the OWA for Devices contact sync feature. It's already turned on for Outlook Web App users. And as the Office 365 admin, you can turn it off if you have issues with allowing the user's contacts to be sync'd for their iPhone or iPad. This setting is applied to all mailboxes."

@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 3/7/2017
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 82d105e2-e955-4e03-99c3-3314a5d21a4c
 description: "There might be times you need to route mail differently depending on who the mail is sent to or from, where it's being sent, the contents of the message, and so on. For example, if you have multiple sites around the world, you might want to route mail to a specific site. You can do this using connectors and mail flow rules (sometimes called transport rules)."

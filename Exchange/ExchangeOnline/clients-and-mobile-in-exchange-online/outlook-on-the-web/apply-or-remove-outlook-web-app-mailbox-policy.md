@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 11/17/2014
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 51d8e269-b0d5-4bc7-9b3d-0460871e54fa
 description: "You can apply an Outlook Web App mailbox policy to one or more mailboxes or remove one using either the EAC or the Shell."

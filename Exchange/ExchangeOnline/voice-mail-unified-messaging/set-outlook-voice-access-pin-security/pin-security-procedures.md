@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 6/24/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 58e4b02e-dc99-46b8-a65d-d441bbfee8a9
 description: "Set Outlook Voice Access PIN policies"

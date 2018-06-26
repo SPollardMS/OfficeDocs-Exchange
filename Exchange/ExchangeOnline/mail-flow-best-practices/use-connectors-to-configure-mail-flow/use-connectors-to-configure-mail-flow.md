@@ -8,7 +8,7 @@ ms.audience: Developer
 ms.topic: article
 f1_keywords:
 - 'ms.exch.eac.ConnectorSelection'
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 854b5a50-4462-4836-a092-37e208d29624
 

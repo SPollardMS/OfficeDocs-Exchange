@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 6/23/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 2e93fd60-a5ef-4e64-8e62-2b862b2d1033
 description: "This topic helps you set up the connectors you need for the following two scenarios:"

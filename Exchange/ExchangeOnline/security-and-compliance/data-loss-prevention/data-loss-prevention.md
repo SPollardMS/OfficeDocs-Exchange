@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 6/23/2018
 ms.audience: ITPro
 ms.topic: overview
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 7c8ed3c1-ca91-4d9b-b16b-0a2b8ac89730
 description: "Learn about DLP policies in Exchange Server 2013 and Exchange Online, including what they contain and how to test them. You'll also learn about a new feature in Exchange DLP."

@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 12/9/2016
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: b5d022b9-043a-4324-87fb-074d5e2c2ca3
 description: "Prevent a Unified Messaging (UM) user from receiving faxes. Find out how to alter fax settings for new and existing UM users."

@@ -8,7 +8,7 @@ ms.audience: Developer
 ms.topic: article
 f1_keywords:
 - 'ms.exch.eac.EditOwaMailboxPolicy_Facebook'
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 0f7e88eb-2b47-41ef-aedf-add22937c658
 description: "Facebook contact synchronization lets people set up a connection between their Facebook account and their Office 365 account by using Outlook Web App. After they set up a Facebook connection, all their Facebook friends are listed as contacts in People in Office 365. They can then interact with their Facebook friends as they do with their other contacts. Facebook contact sync is turned on by default if the feature is available in your region."

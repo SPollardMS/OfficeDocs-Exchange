@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 4/29/2016
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: ece00da0-743b-4e26-83f5-a2eb68c7de4e
 description: "Use the procedure here to change your organization's external postmaster address. The external postmaster address is used as the sender for system-generated messages and notifications sent to message senders that exist outside your Microsoft Exchange Online organization. An external sender is any sender that has an email address in a domain that isn't configured as an accepted domain in your organization."

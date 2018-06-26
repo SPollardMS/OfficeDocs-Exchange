@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 6/24/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: fce4cf21-02b4-4b42-82c8-ddb3c7eed4dc
 description: "Summary: An overview of POP3 and IMAP4, and the differences between them."

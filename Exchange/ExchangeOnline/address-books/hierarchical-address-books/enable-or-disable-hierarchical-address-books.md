@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 12/9/2016
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: b4c3a175-ce5e-4bfb-a4a0-92d25f3644b3
 description: "You can configure a hierarchical address book (HAB), which is a feature available to end users in Microsoft Outlook 2010 or later. With an HAB, users can look for recipients in their Exchange organization by using an organizational hierarchy based on seniority or management structure. To learn more about HABs, see Hierarchical address books."

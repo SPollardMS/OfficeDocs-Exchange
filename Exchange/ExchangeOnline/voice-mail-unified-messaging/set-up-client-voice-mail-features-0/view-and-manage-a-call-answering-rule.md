@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 4/8/2015
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: de6d9fa1-7878-49a9-bddb-e3317d94f4d8
 description: "You can use the Shell to view or configure one or more call answering rules for a user. You can also use the Get-UMCallAnsweringRule or Set-UMCallAnsweringRule cmdlets in an Exchange Management Shell script to view or manage call answering rules for multiple users."

@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 11/17/2014
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 6732a834-c9d2-4757-8ad9-44aeff6be9f7
 description: "Set the partner fax server URI to allow faxing"

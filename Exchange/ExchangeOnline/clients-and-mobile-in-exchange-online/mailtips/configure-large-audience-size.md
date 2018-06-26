@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 4/8/2015
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 8a37911c-4339-4921-b5d3-0a5a774d4517
 description: "You can use the Exchange Management Shell to configure various settings that define how you use MailTips in your organization."

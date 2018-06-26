@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 10/19/2016
 ms.audience: End User
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 3033715d-a6d0-485e-af0d-15876550fd4d
 description: "Journaling allows you to meet your organization's archiving requirements. You can create journal rules and have messages matching the rule's conditions delivered to the journaling address specified in the rule. Here are two things you need to know before you start creating journal rules."

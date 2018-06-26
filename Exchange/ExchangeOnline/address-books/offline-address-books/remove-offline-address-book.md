@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 12/16/2014
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: d69f1e8a-b3cb-4739-90cd-85ea450d06f3
 description: "This topic explains how to remove an offline address book (OAB)."

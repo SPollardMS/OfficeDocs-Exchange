@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 12/9/2016
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 7c90d413-f978-4af5-8bc5-6b86d897edc3
 description: "Exchange Online can deliver or route messages to any recipient that has an email address. People, resources (such as a business device or a conference room), and groups can all have email addresses. Address books help you find the email address that you need and can be organized in multiple ways to suit your business. This topic helps Office 365 administrators who manage email address books for an organization. See Key terminology for descriptions of address book features."

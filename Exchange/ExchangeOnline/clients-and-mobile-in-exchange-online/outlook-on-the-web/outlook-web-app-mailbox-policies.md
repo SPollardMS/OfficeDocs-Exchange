@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 6/25/2018
 ms.audience: ITPro
 ms.topic: overview
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 213b8b7a-1c29-49ee-8c98-d0364ddf4f9d
 description: "Use Microsoft Outlook Web App mailbox policies to create organization-level policies to manage access to features in Outlook Web App."

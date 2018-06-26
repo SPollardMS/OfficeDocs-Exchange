@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 6/19/2017
 ms.audience: ITPro
 ms.topic: overview
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 3f4b2c64-6cbc-445f-bf65-05b8fdfe9a0b
 description: "Learn about offline address books in Exchange Online (Office 365 for Business)."

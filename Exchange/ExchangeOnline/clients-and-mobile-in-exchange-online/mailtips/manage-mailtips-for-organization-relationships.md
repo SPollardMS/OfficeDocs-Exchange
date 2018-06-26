@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 4/8/2015
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 6e6b48ef-c41c-47ad-8063-66901765c2a5
 description: "You can use the Exchange Management Shell to configure custom settings for MailTips between various organizations."

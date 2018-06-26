@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 3/13/2017
 ms.audience: ITPro
 ms.topic: overview
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 28b6f2a1-a235-4023-b561-6fd304962775
 description: "Summary: An overview of add-ins for Outlook, which work with Outlook on Windows and MacIntosh computers, on mobile devices, and in Outlook Web App and Outlook on the web."

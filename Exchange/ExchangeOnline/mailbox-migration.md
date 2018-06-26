@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 12/9/2016
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: b4dfaaa2-1caa-46fe-8c05-93fb930da5fa
 description: "This content has moved to https://support.office.com/."

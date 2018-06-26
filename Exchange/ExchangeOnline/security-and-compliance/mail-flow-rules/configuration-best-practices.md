@@ -5,7 +5,7 @@ author: chrisda
 ms.date: 6/23/2018
 ms.audience: End User
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: abd863c3-c0ce-42f3-9470-a573adc3cbba
 description: "Follow these best practice recommendations for Exchange transport rules in order to avoid common configuration errors. Each recommendation links to a topic with an example and step-by-step instructions."

@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 5/19/2017
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: bc9b8226-bd8b-4edc-882b-4f19cfe118eb
 description: "Summary: The most recent supported Exchange topologies that allow users to access public folders with Outlook 2016 for Mac."

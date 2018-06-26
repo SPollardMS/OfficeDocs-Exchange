@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 6/24/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: f70752ad-fce0-4e14-8428-fc5ac63f6c54
 description: "Estimated time to complete: 5 minutes."

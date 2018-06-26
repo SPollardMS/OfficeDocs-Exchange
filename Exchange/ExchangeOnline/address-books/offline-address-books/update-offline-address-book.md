@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 11/17/2014
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 448a207e-41b4-4cef-9fe9-a68b81e2ec4e
 description: "After you create an OAB or modify OAB settings, the changes aren't available to users until the OAB generation (OABGen) process has completed."
