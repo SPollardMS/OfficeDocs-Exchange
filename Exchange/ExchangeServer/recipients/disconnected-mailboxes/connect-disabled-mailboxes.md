@@ -16,7 +16,7 @@ description: "Summary: Learn how you can use the Exchange admin center(EAC) or t
 
  **Summary**: Learn how you can use the Exchange admin center(EAC) or the Exchange Management Shell in Exchange to connect a disabled mailbox to an Active Directory user account.
   
- When you disable a mailbox, Exchange retains the mailbox in the mailbox database and switches the mailbox to a disabled state. The Exchange attributes are also removed from the corresponding Active Directory user account, but the user account is retained. The mailbox is retained until the deleted mailbox retention period expires, which is 30 days by default, before it's then deleted permanently (or *purged* ) from the mailbox database. 
+ When you disable a mailbox, Exchange retains the mailbox in the mailbox database and switches the mailbox to a disabled state. The Exchange attributes are also removed from the corresponding Active Directory user account, but the user account is retained. The mailbox is retained until the deleted mailbox retention period expires, which is 30 days by default, before it's then deleted permanently (or *purged*) from the mailbox database. 
   
 Until a disabled mailbox is permanently deleted from the Exchange mailbox database, you can use the EAC or the Exchange Management Shell to reconnect it to the original Active Directory user account.
   

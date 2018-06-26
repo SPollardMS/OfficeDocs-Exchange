@@ -321,7 +321,7 @@ To verify that you have successfully configured your private DNS records, do the
     
 4. Select the virtual directory you want to change and click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
-5. In **Internal URL**, replace the host name between **https://** and the first forward slash (**/** ) with the new FQDN you want to use. For example, if you want to change the EWS virtual directory FQDN from Ex2016MBX.corp.contoso.com to internal.contoso.com, change the internal URL from https://Ex2016MBX.corp.contoso.com/ews/exchange.asmx to https://internal.contoso.com/ews/exchange.asmx. 
+5. In **Internal URL**, replace the host name between **https://** and the first forward slash (**/**) with the new FQDN you want to use. For example, if you want to change the EWS virtual directory FQDN from Ex2016MBX.corp.contoso.com to internal.contoso.com, change the internal URL from https://Ex2016MBX.corp.contoso.com/ews/exchange.asmx to https://internal.contoso.com/ews/exchange.asmx. 
     
 6. Click **Save**.
     

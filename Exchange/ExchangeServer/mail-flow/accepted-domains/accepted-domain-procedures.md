@@ -227,7 +227,7 @@ These are some scenarios that require multiple authoritative domains:
     
 After you configure one or more authoritative domains, you need to decide how to use those domains in your organization. For example:
   
-- Do you want to replace the existing primary (**Reply-To:** ) address for the recipients, or add the new email address as a proxy address? 
+- Do you want to replace the existing primary (**Reply-To:**) address for the recipients, or add the new email address as a proxy address? 
     
 - Do you want to keep old email addresses as a proxy addresses so the recipients continue to receive mail that's sent to their old email addresses?
     

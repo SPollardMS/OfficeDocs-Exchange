@@ -15,16 +15,16 @@ description: "Summary: Learn about the clients and client access methods you can
 # Clients and mobile
 
  **Summary**: Learn about the clients and client access methods you can use to access your Exchange 2016 mailbox, and the topics available to assist you.
-  
+
 There are many different clients that you can use to access information in an Outlook 2016 mailbox. These clients include desktop programs such as Outlook 2016, Outlook on the web, and mobile clients such as mobile phones, tablets, and other mobile devices. Each of these clients offers a variety of features.
-  
+
 Looking for a list of all clients and mobile topics? See [Clients and mobile documentation](clients.md#doc).
-  
+
 ## Clients and mobile documentation
 <a name="doc"> </a>
 
 The following table contains links to topics that will help you learn about and manage some of the clients and client access methods that you can use to access your Outlook 2016 mailbox.
-  
+
 |**Topic**|**Description**|
 |:-----|:-----|
 |[Outlook Anywhere](http://technet.microsoft.com/library/9026d461-ec6a-4ef5-ba9d-de33030858f3.aspx) <br/> |Learn about Outlook Anywhere, the client access method that provides connectivity to Outlook 2016, Outlook 2013 and Outlook 2010. (This feature was formerly known as RPC/HTTP.)  <br/> |
@@ -35,5 +35,5 @@ The following table contains links to topics that will help you learn about and 
 |[Client Protocol Management](http://technet.microsoft.com/library/89ba6d24-d1d3-46d5-a0ae-61f0d4c6df21.aspx) <br/> |Learn about management of the client protocols of Exchange ActiveSync, Outlook on the web, POP3, IMAP4, the Autodiscover service, Exchange Web Services, and the Availability service.  <br/> |
 |[Outlook on the web in Exchange 2016](outlook-on-the-web/outlook-on-the-web.md) <br/> |Learn about Outlook on the web (formerly known as Outlook Web App), which provides users access to their Outlook 2016 mailbox through a web browser.  <br/> |
 |[MailTips](http://technet.microsoft.com/library/9c989167-cc0c-40a6-82ba-383f573bd2d5.aspx) <br/> |Learn about MailTips, the informative messages displayed to users while they're composing a message.  <br/> |
-   
+ 
 

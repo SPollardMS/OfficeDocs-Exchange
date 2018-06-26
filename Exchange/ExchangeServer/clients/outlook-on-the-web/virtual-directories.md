@@ -240,7 +240,7 @@ This example returns the authentication methods and settings for the same virtua
 Get-OWAVirtualDirectory -Identity "Mailbox01\owa (Default Web Site)" | Format-List *Authentication*
 ```
 
- **Note**: Not every setting is applicable to Exchange 2016 (for example, **SpellCheckerEnabled** ). 
+ **Note**: Not every setting is applicable to Exchange 2016 (for example, **SpellCheckerEnabled**). 
   
 For detailed syntax and parameter information, see [Get-OWAVirtualDirectory](http://technet.microsoft.com/library/63c48908-1116-4bab-8e5a-6c4dccbf3574.aspx).
   

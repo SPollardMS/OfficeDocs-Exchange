@@ -16,7 +16,7 @@ description: "Summary: Learn how administrators can use the Exchange Management 
 
  **Summary**: Learn how administrators can use the Exchange Management Shell to clean up or delete items from the Recoverable Items folder in Exchange 2016.
   
-The Recoverable Items folder (known in earlier versions of Exchange as *the dumpster* ) exists to protect from accidental or malicious deletions and to facilitate discovery efforts commonly undertaken before or during litigation or investigations. 
+The Recoverable Items folder (known in earlier versions of Exchange as *the dumpster*) exists to protect from accidental or malicious deletions and to facilitate discovery efforts commonly undertaken before or during litigation or investigations. 
   
 How you clean up a user's Recoverable Items folder depends on whether the mailbox is placed on In-Place Hold or Litigation Hold, or had single item recovery enabled:
   

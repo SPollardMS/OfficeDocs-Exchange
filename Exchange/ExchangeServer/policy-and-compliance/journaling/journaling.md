@@ -68,7 +68,7 @@ The following list shows some of the more well-known U.S. and international regu
 
 The *Journaling agent* is the built-in Exchange transport agent that processes messages as they flow through the Transport service on Mailbox servers. The journaling configuration settings are stored in Active Directory, and are read by the Journaling agent. The Journaling agent is registered on the **OnSubmittedMessage** and **OnRoutedMessage** categorizer events in the transport pipeline. For more information about the transport pipeline, see [Mail flow and the transport pipeline](../../mail-flow/mail-flow.md).
   
-Note that built-in transport agents like the Journaling agent are invisible and unmanageable by the transport agent management cmdlets (**\*-TransportAgent** ). 
+Note that built-in transport agents like the Journaling agent are invisible and unmanageable by the transport agent management cmdlets (**\*-TransportAgent**). 
   
 ## Journal reports
 <a name="report"> </a>
