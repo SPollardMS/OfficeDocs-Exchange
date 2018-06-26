@@ -20,7 +20,7 @@ Sharing policies control how your users share their calendars with people outsid
 
 - Estimated time to complete: 5 minutes.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the [Permissions in Exchange Online](../../permissions/permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the [Permissions in Exchange Online](../../permissions-exo/permissions-exo.md) topic. 
     
 - A sharing policy must exist. For details, see [Create a sharing policy in Exchange Online](create-a-sharing-policy.md).
     

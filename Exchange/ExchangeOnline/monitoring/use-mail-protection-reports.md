@@ -69,7 +69,7 @@ You can access the following mail protection reports from the **REPORTS** page i
 
 - You need to be assigned permissions before you can perform this procedure or procedures:
     
-  - For Exchange Online admins, in order to view Office 365 admin center reports, you need the "global admin" Office 365 admin role, and the Exchange admin roles listed for the "View reports" entry in the [Feature permissions in Exchange Online](../permissions/feature-permissions.md) topic. 
+  - For Exchange Online admins, in order to view Office 365 admin center reports, you need the "global admin" Office 365 admin role, and the Exchange admin roles listed for the "View reports" entry in the [Feature permissions in Exchange Online](../permissions-exo/feature-permissions.md) topic. 
     
   - For EOP admins, in order to view Office 365 admin center reports, you need the "global admin" Office 365 admin role, and the Exchange admin roles listed for the "View reports" entry in the [Feature Permissions in EOP](http://technet.microsoft.com/library/34674847-a6b7-4a7e-9eaa-b64f22bc150d.aspx) topic. 
     

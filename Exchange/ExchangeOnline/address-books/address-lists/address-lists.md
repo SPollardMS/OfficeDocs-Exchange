@@ -35,7 +35,7 @@ When users want to use their client application to find recipient information, t
     
 - **Default Global Address List** This address list contains all mail-enabled users, contacts, groups, or rooms in the organization. During setup, Exchange creates various default address lists. The most familiar address list is the GAL. By default, the GAL contains all recipients in an Exchange organization. In other words, any mailbox-enabled or mail-enabled object in an Active Directory forest that has Exchange installed is listed in the GAL. For ease of use, the GAL is organized by name, not by email address. For more information, see [Create a global address list](create-global-address-list.md).
     
-- **Public Folders** This address list contains all public folders in your organization. Access permissions determine who can view and use the folders. Public folders are stored on computers running Exchange. For more information about public folders in Exchange Online, see [Public folders in Office 365 and Exchange Online](../../collaboration/public-folders/public-folders.md). 
+- **Public Folders** This address list contains all public folders in your organization. Access permissions determine who can view and use the folders. Public folders are stored on computers running Exchange. For more information about public folders in Exchange Online, see [Public folders in Office 365 and Exchange Online](../../collaboration-exo/public-folders/public-folders.md). 
     
 ## Custom Address Lists
 <a name="CALists"> </a>
