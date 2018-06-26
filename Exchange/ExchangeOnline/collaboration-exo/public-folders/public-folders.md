@@ -28,7 +28,7 @@ Public folders aren't designed for the following purposes:
     
 - **Document sharing and collaboration**. Public folders don't provide versioning or other document management features, such as controlled check-in and check-out functionality and automatic notifications of content changes. Instead, we recommend that you use [SharePoint Online](https://www.microsoft.com/en-us/office365/sharepoint-online.aspx) as your documentation sharing solution. 
     
-For more information about public folders and other collaboration methods in Office 365 and Exchange Online, see [Collaboration in Exchange Online](../../collaboration/collaboration.md).
+For more information about public folders and other collaboration methods in Office 365 and Exchange Online, see [Collaboration in Exchange Online](../../collaboration-exo/collaboration-exo.md).
   
 For a list of frequently asked questions regarding public folders in Office 365 and Exchange Online, see [FAQ: Public folders](http://technet.microsoft.com/library/1cdcdcb7-f11b-45ca-ad23-7c38f640208c.aspx).
   

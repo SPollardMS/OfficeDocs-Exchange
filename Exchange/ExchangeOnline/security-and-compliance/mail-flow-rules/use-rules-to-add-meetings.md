@@ -36,7 +36,7 @@ For more information about mail flow rules, see [Mail flow rules (transport rule
 
 - Estimated time to complete: 10 minutes
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Mail flow" entry in the [Feature permissions in Exchange Online](../../permissions/feature-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Mail flow" entry in the [Feature permissions in Exchange Online](../../permissions-exo/feature-permissions.md) topic. 
     
 - The designated accounts for sending Direct to Calendar meeting invitations need to exist.
     

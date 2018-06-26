@@ -32,7 +32,7 @@ As an administrator for your Office 365 tenant, you manage your organization's E
     
 ## Table of Contents
 
-- [Permissions in Exchange Online](permissions/permissions.md)
+- [Permissions in Exchange Online](permissions-exo/permissions-exo.md)
     
 - [Security and compliance for Exchange Online](security-and-compliance/security-and-compliance.md)
     
@@ -42,7 +42,7 @@ As an administrator for your Office 365 tenant, you manage your organization's E
     
 - [Ways to migrate multiple email accounts to Office 365](https://go.microsoft.com/fwlink/p/?LinkID=524030)
     
-- [Collaboration in Exchange Online](collaboration/collaboration.md)
+- [Collaboration in Exchange Online](collaboration-exo/collaboration-exo.md)
     
 - [Address books in Exchange Online](address-books/address-books.md)
     

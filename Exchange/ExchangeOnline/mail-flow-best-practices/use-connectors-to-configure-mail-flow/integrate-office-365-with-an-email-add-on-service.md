@@ -43,7 +43,7 @@ The rest of this topic explains how to configure mail flow in Office 365 to work
 
 - Estimated time to complete: 15 minutes
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Mail flow" entry in the [Feature permissions in Exchange Online](../../permissions/feature-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Mail flow" entry in the [Feature permissions in Exchange Online](../../permissions-exo/feature-permissions.md) topic. 
     
 - To open the Exchange admin center (EAC), go to the Office 365 admin center at [https://portal.office.com/adminportal/home](https://portal.office.com/adminportal/home), and then click **Admin centers** \> **Exchange**. For more information about the EAC, see [Exchange admin center in Exchange Online](../../exchange-admin-center.md).
     
