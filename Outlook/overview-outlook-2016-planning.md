@@ -100,25 +100,21 @@ Outlook 2016 includes features that let you easily subscribe to new sources of c
   
 Really Simple Syndication (RSS) is another sharing feature that enables users to subscribe to internal or Internet-based sources of syndicated content (.xml files) to avoid having to check a site for new information. You can deploy specific RSS feeds or calendar subscriptions to users, configure settings to manage how users can share these subscriptions or content, specify how often the servers update users' copies of the data, and more.
   
-### Using Outlook with Remote Desktop Services (formerly known as Terminal Services)
+### Using Outlook with Remote Desktop Services
 
- Remote Desktop Services in Windows Server enables you to install a single volume licensed copy of an MSI version of Outlook 2016 on a Remote Desktop Services-enabled computer. Instead of running Outlook on local computers, multiple users connect to the server and run Outlook from that server. For more information, see [Cached Exchange Mode in a Remote Desktop Session Host environment: planning considerations (Outlook 2010) (white paper)](http://technet.microsoft.com/library/1b4d1c70-1e1c-4481-ba3c-99df766c85e6.aspx). Although this article is for Outlook 2010, the content still applies to Outlook 2016.
+ Remote Desktop Services (RDS), formerly known as Terminal Services, in Windows Server enables you to install a single volume licensed copy of Outlook 2016, which uses Windows Installer (MSI), on an RDS-enabled computer. Instead of running Outlook on local computers, multiple users connect to the server and run Outlook from that server. For more information, see [Office 2016 in RDSH and VDI Deployments](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/rds-office-vdi-rdsh) and [Dealing with Outlook search in non-persistent environments](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/rds-outlook-data-fslogix).
   
 ### AutoArchive in Outlook
 
-Outlook mailboxes grow as users create and receive items. To keep mailboxes manageable, users need another place to store or archive older items that are important but rarely used. It is typically most convenient to automatically move these older items to the archive folder and to discard items whose content has expired and is no longer valid. AutoArchive in Outlook 2016 can manage this process automatically for users. However, we recommend that you use the Personal Archive feature in Exchange Server 2016 Messaging Records Management (MRM) (or in Exchange Online) because it eliminates the need for Personal Folder files (.pst). By using Personal Archive, users can view an archive mailbox and move or copy messages between their primary mailboxes and the archive.
-  
-Note that when Personal Archive is enabled, AutoArchive is not available to the user and does not archive messages.
-  
-If you plan to use Outlook 2016 together with Exchange Server 2010, Exchange Server 2013, Exchange Server 2016 or Exchange Online, use the Exchange Server Personal Archive feature instead of AutoArchive in Outlook 2016. For more information, see [Understanding Personal Archive: Exchange 2010 Help](https://go.microsoft.com/fwlink/p/?LinkId=169269), [Plan for compliance and archiving in Outlook 2010](http://technet.microsoft.com/library/9a55f94f-e22a-49df-8e2c-4a11bb52f2f5.aspx), and [Microsoft Exchange Online Archiving](https://go.microsoft.com/fwlink/p/?LinkId=218120).
-  
+Outlook mailboxes grow as users create and receive items. To keep mailboxes manageable, users need another place to store or archive older items that are important but rarely used. It is typically most convenient to automatically move these older items to the archive folder and to discard items whose content has expired and is no longer valid. [AutoArchive](https://support.office.com/article/444BD6AA-06D0-4D8F-9D84-903163439114) in Outlook 2016 can manage this process automatically for users. However, we recommend that you use the In-Place Archiving feature in Exchange Server 2016 because it eliminates the need for Personal Folder files (.pst). By using In-Place Archiving, users can view an archive mailbox and move or copy messages between their primary mailboxes and the archive. For more information, see [In-Place Archiving in Exchange 2016](https://docs.microsoft.com/Exchange/policy-and-compliance/in-place-archiving/in-place-archiving).
+    
 ### Retention policies in Outlook
 
-Retention policy settings can help users follow retention policy guidelines that your organization establishes for document retention. You cannot deploy AutoArchive-based retention settings through Outlook 2016 by using Group Policy. If you must deploy retention policies, explore the Messaging Records Management (MRM) features in Exchange Server. For more information, see [Messaging records management](https://technet.microsoft.com/en-us/library/dd335093(v=exchg.160).aspx).
+Retention policy settings can help users follow retention policy guidelines that your organization establishes for document retention. You cannot deploy AutoArchive-based retention settings through Outlook 2016 by using Group Policy. If you must deploy retention policies, explore the Messaging Records Management (MRM) features in Exchange Server. For more information, see [Messaging records management in Exchange Server 2016](https://docs.microsoft.com/Exchange/policy-and-compliance/mrm/mrm).
   
 ## Outlook security considerations
 
-Outlook includes many security features, some of which are highlighted in the following sections. F
+Outlook includes many security features, some of which are highlighted in the following sections.
   
 ### Virus prevention
 
