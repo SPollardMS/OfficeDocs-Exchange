@@ -5,7 +5,8 @@ author: dstrome
 manager: serdars
 ms.date: 6/8/2018
 ms.audience: ITPro
-ms.topic: article
+layout: LandingPage
+ms.topic: landing-page
 ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.assetid: d2ce4e55-208e-46b0-a775-e7e266132100
@@ -15,44 +16,167 @@ description: "Summary: All the information and resources you need to get started
 # Exchange Server 2016
 
  **Summary**: All the information and resources you need to get started with Exchange Server 2016.
-  
+
 Welcome to Microsoft Exchange Server 2016! Here's some fundamental and essential information to help you dig in.
+
+<ul class="panelContent cardsFTitle">
+    <li>
+        <a href="https://go.microsoft.com/fwlink/p/?linkId=836306">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="https://docs.microsoft.com/en-us/office/media/icons/sign-up-blue.svg" alt="Sign up" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Buy Exchange or download a trial version</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+    <li>
+        <a href="https://review.docs.microsoft.com/en-us/Exchange/new-features/updates">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="https://docs.microsoft.com/en-us/office/media/icons/download-blue.svg" alt="Download" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Download full versions, including updates</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+    <li>
+        <a href="https://go.microsoft.com/fwlink/p/?linkId=836274">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="https://docs.microsoft.com/en-us/office/media/icons/success.svg" alt="Success" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Set up Outlook</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+    <li>
+        <a href="/Exchange/new-features/new-features">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="https://docs.microsoft.com/en-us/office/media/icons/whats-new-megaphone-blue.svg" alt="What's new" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>What's new</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+    <li>
+        <a href="/Exchange/plan-and-deploy/virtualization">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="https://docs.microsoft.com/en-us/office/media/icons/deploy-blue.svg" alt="Deploy" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Deploy in a virtualized environment</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+    <li>
+        <a href="https://go.microsoft.com/fwlink/p/?linkId=60612">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="https://docs.microsoft.com/en-us/office/media/icons/globe-internet.svg" alt="Community" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Exchange Server forums</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+</ul>
+
+---  
+<h2>Exchange Server Deployment Assistant</h3>
+<p>Have you heard about the Exchange Server Deployment Assistant? This free online tool helps you quickly deploy Exchange 2016 in your organization by asking you a few questions and creating a customized deployment checklist just for you. Try out the **Exchange Server Deployment Assistant**</p>
+
+<h2>Planning and deployment</h2>
+<ul class="panelContent cardsW">
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <p><a href="/Exchange/plan-and-deploy/system-requirements">Exchange 2016 system requirements</a>
+                        <p><a href="/Exchange/plan-and-deploy/prerequisites">Exchange 2016 prerequisites</a>
+                        <p><a href="/Exchange/plan-and-deploy/prepare-ad-and-domains">Prepare Active Directory and domains</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <p><a href="/Exchange/plan-and-deploy/deploy-new-installations/install-mailbox-role">Install the Exchange 2016 Mailbox role using the Setup wizard</a>
+                        <p><a href="/Exchange/plan-and-deploy/deploy-new-installations/unattended-installs">Install Exchange 2016 using unattended mode</a>
+                        <p><a href="/Exchange/plan-and-deploy/deploy-new-installations/install-edge-transport-role">Install the Exchange 2016 Edge Transport role using the Setup wizard</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <p><a href="/Exchange/plan-and-deploy/install-cumulative-updates">Upgrade Exchange 2016 to the latest cumulative update</a>
+                        <p><a href="/Exchange/plan-and-deploy/post-installation-tasks/post-installation-tasks">Exchange 2016 post-installation tasks</a>
+                        <p>Read <a href="/Exchange/release-notes">Release notes for Exchange 2016</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>  
   
-> [!TIP]
-> Have you heard about the Exchange Server Deployment Assistant? It's a free online tool that helps you quickly deploy Exchange 2016 in your organization by asking you a few questions and creating a customized deployment checklist just for you. If you want to learn more about it, go to **Exchange Server Deployment Assistant**. 
-  
-- For information on buying Exchange 2016 or downloading a free trial version, [go here](https://go.microsoft.com/fwlink/p/?linkId=836306).
-    
-- To download full versions of Exchange 2016, including the latest Cumulative Updates (CUs), use the information provided in [Updates for Exchange 2016](new-features/updates.md).
-    
-- For information about setting up Outlook with Exchange, or using Outlook on a mobile device, you can [start here](https://go.microsoft.com/fwlink/p/?linkId=836274).
-    
-- If you want a quick overview of what's new in Exchange 2016, check out [What's new in Exchange 2016](new-features/new-features.md).
-    
-- If you want to learn more about Exchange 2016, check out the [Exchange Server TechCenter](https://go.microsoft.com/fwlink/p/?linkId=266622).
-    
-- If you want to learn about deploying Exchange 2016 in a virtualized environment, see [Exchange 2016 virtualization](plan-and-deploy/virtualization.md).
-    
-- If you need more help or want to share ideas, the [Exchange Server forums](https://go.microsoft.com/fwlink/p/?linkId=60612) are a great place to start. 
-    
-- To get started with Exchange 2016, head for [Planning and deployment](plan-and-deploy/plan-and-deploy.md). It lays out the recommended sequence for preparing for and then installing Exchange 2016 and includes the following important topics:
-    
-  - [Exchange 2016 system requirements](plan-and-deploy/system-requirements.md)
-    
-  - [Exchange 2016 prerequisites](plan-and-deploy/prerequisites.md)
-    
-  - [Prepare Active Directory and domains](plan-and-deploy/prepare-ad-and-domains.md)
-    
-  - [Install the Exchange 2016 Mailbox role using the Setup wizard](plan-and-deploy/deploy-new-installations/install-mailbox-role.md)
-    
-  - [Install Exchange 2016 using unattended mode](plan-and-deploy/deploy-new-installations/unattended-installs.md)
-    
-  - [Install the Exchange 2016 Edge Transport role using the Setup wizard](plan-and-deploy/deploy-new-installations/install-edge-transport-role.md)
-    
-  - [Upgrade Exchange 2016 to the latest cumulative update](plan-and-deploy/install-cumulative-updates.md)
-    
-  - [Exchange 2016 post-installation tasks](plan-and-deploy/post-installation-tasks/post-installation-tasks.md)
-    
     > [!IMPORTANT]
     > Make sure you read [Release notes for Exchange 2016](release-notes.md) before you begin your deployment. The release notes contain important information about issues you might run into during and after your deployment. 
   
