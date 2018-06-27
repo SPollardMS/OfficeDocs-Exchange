@@ -22,13 +22,13 @@ Welcome to Microsoft Exchange Server 2016! This topic contains important informa
 ## Setup
 <a name="Setup"> </a>
 
-- **Installing Exchange using Delegate Admin permissions causes Setup to fail**: When a user who's a member of only the Delegated Setup role group attempts to install Exchange on a pre-provisioned server, Setup will fail. This happens because the Delegated Setup group lacks the permissions required to create and configure certain objects in Active Directory.
+- **Installing Exchange using Delegate Admin permissions causes Setup to fail**: When a user who is a member of only the Delegated Setup role group attempts to install Exchange on a pre-provisioned server, Setup will fail. This happens because the Delegated Setup group lacks the permissions required to create and configure certain objects in Active Directory.
 
     To work around this issue, do one of the following:
 
   - Add the user installing Exchange to the Domain Admins Active Directory security group.
 
-  - Install Exchange using a user that's a member of the Organization Management role group.
+  - Install Exchange using a user that is a member of the Organization Management role group.
 
 ## Mailbox
 <a name="Mailbox"> </a>

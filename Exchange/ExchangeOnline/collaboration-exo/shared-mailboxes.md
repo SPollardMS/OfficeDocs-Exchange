@@ -1,5 +1,5 @@
 ---
-title: "Shared mailboxes in Exchange Online [Online]"
+title: "Shared mailboxes in Exchange Online"
 ms.author: kwekua
 author: kwekua
 manager: scotv
@@ -12,14 +12,14 @@ ms.assetid: fdce3587-ed95-4433-9931-4cf74b52e8e0
 description: "Summary: About shared mailboxes in Exchange Online, and how to create them."
 ---
 
-# Shared mailboxes in Exchange Online [Online]
+# Shared mailboxes in Exchange Online
 
  **Summary**: About shared mailboxes in Exchange Online, and how to create them.
   
 Shared mailboxes makes it easy for a group of people in your company to monitor and send email from a common account, such as info@contoso.com or support@contoso.com. When a person in the group replies to a message sent to the shared mailbox, the email looks like it was sent by the shared mailbox, not from the individual user.
   
 > [!IMPORTANT]
->  If you're using Office 365 for business, you should create your shared mailbox in the Office 365 admin center. > [Create shared mailboxes in Office 365](https://go.microsoft.com/fwlink/p/?LinkId=834766)
+>  If you're using Office 365 for business, you should create your shared mailbox in the Office 365 admin center. See [Create shared mailboxes in Office 365](https://go.microsoft.com/fwlink/p/?LinkId=834766).
   
 If your organization uses a hybrid Exchange environment, you should use the on-premises Exchange admin center (EAC) to create and manage shared mailboxes. To learn more about shared mailboxes, see [Shared Mailboxes](http://technet.microsoft.com/library/1d71c01b-e261-408e-a633-1d1c9d00032a.aspx).
   
