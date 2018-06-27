@@ -14,7 +14,7 @@ description: "Helps IT Pros learn about what they should consider when they depl
 
 # Overview of Outlook 2016 for Windows planning
 
-A close review of the organization's messaging requirements will help you plan the optimal Outlook 2016 deployment.
+A close review of the organization's messaging requirements will help you plan your Outlook 2016 deployment to users in your enterprise.
   
 ## Determining an organization's needs
 
@@ -204,7 +204,7 @@ With Outlook, if you're using the volume licensed version (MSI-based installatio
 
 To prepare for an upgrade, you must answer the following additional questions: 
   
-- Should you change Outlook user profiles as part of an upgrade? For example, you might define a new Exchange Server (like Exchange Online) or enable new features of Outlook 2016. For more information about how to customize Outlook profiles for the MSI version of Outlook 2016, see [Office Customization Tool (OCT) in Office 2013 Preview](http://technet.microsoft.com/library/8faae8a0-a12c-4f7b-839c-24a66a531bb5.aspx) and [Plan feature customizations in Outlook 2013](http://technet.microsoft.com/library/2c1b3ef5-50f9-472f-bc93-ef4b50a226b0.aspx). These articles apply to Outlook 2016 with Exchange Server 2007 and Exchange Server 2010.
+- Should you change Outlook user profiles as part of an upgrade? For example, you might define a new Exchange Server (like Exchange Online) or enable new features of Outlook 2016.
     
 - How should you create and store a backup of your existing installation? Before you upgrade to any new release, we recommend that you back up existing data.
     
