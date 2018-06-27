@@ -15,6 +15,44 @@ description: "Helps IT Pros learn about planning and configuring Cached Exchange
 # Plan and configure Cached Exchange Mode in Outlook 2016 for Windows
 
 
+> [!NOTE]
+> This article is for IT Pros and admins that are deploying and configuring Outlook 2016 for Windows for users in their enterprises. If you're a user trying to configure your Outlook settings, see [Turn on Cached Exchange Mode](https://support.office.com/article/7885af08-9a60-4ec3-850a-e221c1ed0c1c).  
+
+## Comparison of Cached Exchange Mode and Online Mode
+
+Cached Exchange Mode gives users a seamless online and offline Outlook experience by caching the user's mailbox and the Offline Address Book (OAB) locally. With Cached Exchange Mode, which is the default setting for users, Outlook no longer depends on continuous network connectivity for access to user information. When a user is connected, Outlook continuously updates users' mailboxes so that the mailboxes are kept up to date. If a user disconnects from the network, for example, by moving to an area without Wi-Fi access, the user can continue to access the last available email data.
+
+> [!IMPORTANT]
+> We recommend always using Cached Exchange Mode with an Office 365 account.
+  
+Online Mode works by using information directly from the server, and, as the name implies, it requires a connection. Mailbox data is only cached in memory and never written to disk.
+
+Cached Exchange Mode is the preferred configuration in Outlook 2016 and is useful in the following situations:
+
+- Users who frequently move in and out of connectivity.
+- Users who frequently work offline or without connectivity.
+- Users who have high-latency connections (greater than 500 ms) to the Exchange Server.
+
+Online mode is useful in the following situations:
+
+- Kiosk scenarios, where a particular computer has many users who access different Outlook accounts—and the delay to download email messages to a local cache is unacceptable.
+- Heavily regulated compliance or secure environments where it is a risk to store data locally. In addition, we recommend that you consider using Encrypting File System (EFS) or BitLocker as a robust solution.
+- Large mailboxes on computers that don’t have sufficient hard disk space for a local copy of the mailbox.
+
+Even when it is configured in Cached Exchange Mode, Outlook 2016 must contact the server directly to do certain operations. These operations won't function when Outlook is not connected and can take longer to complete on high-latency connections. These operations include the following:
+
+- Working with Shared Folders that were not made available offline.
+- Retrieving Free/Busy information.
+- Setting, changing, or canceling an Out of Office message.
+- Accessing public folders that were not made available offline.
+- Retrieving rights to a rights-protected message.
+- Editing rules.
+- Retrieving MailTips.
+- Retrieving Policy Tips.
+
+Delayed delivery options are client side in cached mode and server side in online mode. So, when you use Cached Exchange Mode, Outlook must be connected and open at the assigned delivery time for the delayed delivery message to be sent.
+
+ Outlook 2016 supports running in Cached Exchange Mode in a Remote Desktop Services (RDS), formerly known as Terminal Services, environment that has multiple users. When you configure a computer running RDS to use Cached Exchange Mode, be sure to consider the additional storage space and disk I/O that are required for multiple client access. New Exchange accounts set up on computers running RDS use Online Mode by default. At setup, the user can decide to enable Cached Exchange Mode.
 
 
 ## Configure Cached Exchange Mode in Outlook 2016 for Windows
@@ -31,7 +69,7 @@ If a user upgrades from an earlier version of Outlook to Outlook 2016 and you pr
 
 The **Mail to keep offline** slider in the Server Settings dialog box in Outlook 2016 has been updated to apply to shared folders and lets you set a smaller synchronization window, available by default with Cached Exchange Mode in Outlook 2016. 
 
-The slider allows an Outlook 2016 user to limit the email messages that are locally synchronized in an Microsoft Outlook data file (.ost). By default, if Cached Exchange Mode is enabled, Outlook 2016 caches email messages only from the last 12 months and removes anything older from the *local* cache for the PC. These default settings depend on the device, with mobile devices having smaller default settings. Users can view messages that were removed from the local cache by scrolling to the end of a message list in a folder and clicking the message **Click here to view more on Microsoft Exchange**. Users can also change how much email to keep offline. You, the administrator, can change the default age or enforce the age of email messages that are removed from the local cache.
+The slider allows an Outlook 2016 user to limit the email messages that are locally synchronized in an Microsoft Outlook data file (.ost). By default, if Cached Exchange Mode is enabled, Outlook 2016 caches email messages only from the last 12 months and removes anything older from the *local* cache for the PC. These default settings depend on the device, with mobile devices having smaller default settings. The email messages that are removed from the local cache are still available for users to view, but they’ll need to be connected to the Exchange Server to view them. Users can view messages that were removed from the local cache by scrolling to the end of a message list in a folder and clicking the message **Click here to view more on Microsoft Exchange**. Users can also change how much email to keep offline. You, the administrator, can change the default age or enforce the age of email messages that are removed from the local cache.
 
 ### Using Group Policy and the Office Customization Tool (OCT)
 
