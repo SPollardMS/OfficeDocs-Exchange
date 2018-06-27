@@ -18,7 +18,7 @@ description: "Summary: About dial tone portability, which enables users to have 
   
 Dial tone portability is a feature of Exchange Server 2016 that provides a limited business continuity solution for failures that affect a mailbox database, a server, or an entire site. A temporary mailbox maintains users' ability to send email, and this mailbox can be on the same Exchange 2016 Mailbox server or on any other Exchange 2016 Mailbox server in your organization, provided they contain databases with the same database schema version. This allows an alternative server to host the mailboxes of users who were previously on a server that is no longer available. Clients that support Autodiscover are automatically redirected to the new server without having to manually update the user's desktop profile. After the user's original mailbox data has been restored, an administrator can merge a user's recovered mailbox and the user's dial tone mailbox into a single, up-to-date mailbox.
   
-The process for using dial tone portability is called a *dial tone recovery* . A dial tone recovery involves creating an empty database on a Mailbox server to replace a failed database. This empty database, referred to as a *dial tone database*, allows users to send and receive email messages while the failed database is recovered. 
+The process for using dial tone portability is called a *dial tone recovery*. A dial tone recovery involves creating an empty database on a Mailbox server to replace a failed database. This empty database, referred to as a *dial tone database*, allows users to send and receive email messages while the failed database is recovered.
   
 There are three options for performing a dial tone recovery:
   
@@ -44,7 +44,7 @@ All three options follow the same basic steps:
     
 4. **Merge the databases.**
     
-    To get the data from the dial tone database into the restored database, you merge the data using the [New-MailboxRestoreRequest](http://technet.microsoft.com/library/0b67defd-3c6c-4470-acfa-7f22a6c1d2bd.aspx) cmdlet. 
+    To get the data from the dial tone database into the restored database, you merge the data using the [New-MailboxRestoreRequest](http://technet.microsoft.com/library/0b67defd-3c6c-4470-acfa-7f22a6c1d2bd.aspx) cmdlet.
     
 For detailed steps about how to perform a dial tone recovery, see [Perform a dial tone recovery](dial-tone-recovery.md).
   

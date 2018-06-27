@@ -22,30 +22,30 @@ Email forwarding lets you to set up a mailbox to forward email messages sent to 
 
 You can use either the Exchange Admin Center (EAC) or Exchange Management Shell to set up email forwarding.
   
-You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" entry in the [Recipients Permissions](../../permissions/feature-permissions/recipient-permissions.md) topic. 
+You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" entry in the [Recipients Permissions](../../permissions/feature-permissions/recipient-permissions.md) topic.
   
 ### Use the Exchange admin center to set up email forwarding
 
 1. In the Exchange Admin Center, navigate to **Recipients** \> **Mailboxes**.
     
-2. In the list of user mailboxes, click or tap the mailbox that you want to set up mail forwarding for, and then click or tap **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
+2. In the list of user mailboxes, click or tap the mailbox that you want to set up mail forwarding for, and then click or tap **Edit** ![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
 3. On the mailbox properties page, click **Mailbox Features**.
     
-4. Under **Mail Flow**, select **View details** to view or change the setting for forwarding email messages. 
+4. Under **Mail Flow**, select **View details** to view or change the setting for forwarding email messages.
     
-    On this page, you can set the maximum number of recipients that the user can send a message to. The recipient limit is unlimited by default. If you want to specify a limit, click the **Maximum recipients** check box and then type the limit in the text box beneath the check box. 
+    On this page, you can set the maximum number of recipients that the user can send a message to. The recipient limit is unlimited by default. If you want to specify a limit, click the **Maximum recipients** check box and then type the limit in the text box beneath the check box.
     
 5. Check the **Enable forwarding** check box, and then click or tap **Browse**.
     
 6. On the **Select Recipient** page, select a user you want to forward all email to. Select the **Deliver message to both forwarding address and mailbox** check box if you want both the recipient and the forwarding email address to get copies of the emails sent. Click or tap **OK**, and then click or tap **Save**.
     
 > [!NOTE]
-> What if you want to forward emails to an email address outside your organization? You can use the Exchange Management Shell to do this. See the following example in "Use the Exchange Management Shell to configure mail forwarding". 
+> What if you want to forward emails to an email address outside your organization? You can use the Exchange Management Shell to do this. See the following example in "Use the Exchange Management Shell to configure mail forwarding".
   
 ### Use the Exchange Management Shell to set up mail forwarding
 
-Haven't used Exchange Management Shell much? Check out the [Exchange Management Shell](http://technet.microsoft.com/library/925ad66f-2f05-4269-9923-c353d9c19312.aspx) topic to learn more. Take a look at the [Get-Mailbox](http://technet.microsoft.com/library/8a5a6eb9-4a75-47f9-ae3b-a3ba251cf9a8.aspx) and [Set-Mailbox](http://technet.microsoft.com/library/a0d413b9-d949-4df6-ba96-ac0906dedae2.aspx) topics for more details on the cmdlets used here. 
+Haven't used Exchange Management Shell much? Check out the [Exchange Management Shell](http://technet.microsoft.com/library/925ad66f-2f05-4269-9923-c353d9c19312.aspx) topic to learn more. Take a look at the [Get-Mailbox](http://technet.microsoft.com/library/8a5a6eb9-4a75-47f9-ae3b-a3ba251cf9a8.aspx) and [Set-Mailbox](http://technet.microsoft.com/library/a0d413b9-d949-4df6-ba96-ac0906dedae2.aspx) topics for more details on the cmdlets used here.
   
 This example delivers email to the mailbox of Douglas Kohn and, at the same time, forwards all mail sent to Douglas Kohn to douglaskohn.parents@fineartschool.net.
   
@@ -67,11 +67,11 @@ To make sure that you've successfully set up email forwarding, do one of the fol
   
 1. In the Exchange admin center, go to **Recipients** \> **Mailboxes**.
     
-2. In the list of user mailboxes, click or tap the mailbox that you configured email forwarding for, and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
+2. In the list of user mailboxes, click or tap the mailbox that you configured email forwarding for, and then click **Edit** ![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
 3. On the mailbox properties page, click or tap **Mailbox Features**.
     
-4. Under **Mail Flow**, click or tap **View details** to view the mail forwarding settings. 
+4. Under **Mail Flow**, click or tap **View details** to view the mail forwarding settings.
     
 Or
   

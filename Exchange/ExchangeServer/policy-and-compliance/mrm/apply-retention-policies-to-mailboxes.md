@@ -19,19 +19,19 @@ description: "Summary: Learn how to use the Exchange Management Shell or the Exc
 You can use retention policies to group one or more retention tags and apply them to mailboxes to enforce message retention settings. A mailbox can't have more than one retention policy.
   
 > [!CAUTION]
-> Messages are expired based on settings defined in the retention tags linked to the policy. These settings include actions such moving messages to the archive or permanently deleting them. Before applying a retention policy to one or more mailboxes, we recommended that you test the policy and inspect each retention tag associated with it. 
+> Messages are expired based on settings defined in the retention tags linked to the policy. These settings include actions such moving messages to the archive or permanently deleting them. Before applying a retention policy to one or more mailboxes, we recommended that you test the policy and inspect each retention tag associated with it.
   
 ## What do you need to know before you begin?
 
 - Estimated time to complete: 5 minutes.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Applying retention policies" entry in the [Messaging policy and compliance permissions in Exchange 2016](../../permissions/feature-permissions/policy-and-compliance-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Applying retention policies" entry in the [Messaging policy and compliance permissions in Exchange 2016](../../permissions/feature-permissions/policy-and-compliance-permissions.md) topic.
     
 ## Use the Exchange admin center to apply a retention policy to a single mailbox
 
 1. Go to **Recipients** \> **Mailboxes**.
     
-2. In the list view, select the mailbox to which you want to apply the retention policy, and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
+2. In the list view, select the mailbox to which you want to apply the retention policy, and then click **Edit** ![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
 3. In **User Mailbox**, click **Mailbox features**.
     
@@ -84,7 +84,7 @@ For detailed syntax and parameter information, see [Get-Mailbox](http://technet.
   
 ## How do you know this worked?
 
-To verify that you have applied the retention policy, run the [Get-Mailbox](http://technet.microsoft.com/library/8a5a6eb9-4a75-47f9-ae3b-a3ba251cf9a8.aspx) cmdlet to retrieve the retention policy for the mailbox or mailboxes. 
+To verify that you have applied the retention policy, run the [Get-Mailbox](http://technet.microsoft.com/library/8a5a6eb9-4a75-47f9-ae3b-a3ba251cf9a8.aspx) cmdlet to retrieve the retention policy for the mailbox or mailboxes.
   
 This example retrieves the retention policy for Morris's mailbox.
   

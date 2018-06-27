@@ -24,7 +24,7 @@ IT administrators of the Microsoft Exchange Server 2016 may choose to enable or 
 
 ## Collection and Use of Your Information
 
-The information we collect from you will be used by Microsoft and its controlled subsidiaries and affiliates to enable the features you are using and to provide the service(s) or carry out the transaction(s) you have requested or authorized. It may also be used to analyze and improve Microsoft products and services.
+The information we collect from you will be used by Microsoft and its controlled subsidiaries and affiliates to enable the features you're using and to provide the service(s) or carry out the transaction(s) you have requested or authorized. It may also be used to analyze and improve Microsoft products and services.
 
 We may send standard service communications such as welcome letters, billing reminders, information on technical service issues, and security announcements. Some Microsoft services may send periodic member letters that are considered part of the service. We may occasionally request your feedback, invite you to participate in surveys, or send you promotional mailings to inform you of other products or services available from Microsoft and its affiliates.
 
@@ -60,7 +60,7 @@ Microsoft is committed to helping protect the security of your information. We u
 
 In rare cases, such as problems that are especially difficult to solve, Microsoft may request additional data, including sections of memory (which may include memory shared by any or all applications running at the time the problem occurred), some registry settings, and one or more files from your computer. Your current documents may also be included. When additional data is requested, you will have an opportunity to view the information contained in the error report before choosing whether or not to send the report to Microsoft.
 
- **Important Information**: Enterprise customers can use Group Policy to configure how Microsoft Error Reporting works on their computers. Configuration options include the ability to turn off Microsoft Error Reporting. If you are an administrator and want to configure Group Policy for Microsoft Error Reporting, technical details are available at the [Group Policy Settings Reference for Windows and Windows Server](https://go.microsoft.com/fwlink/p/?linkid=279978).
+ **Important Information**: Enterprise customers can use Group Policy to configure how Microsoft Error Reporting works on their computers. Configuration options include the ability to turn off Microsoft Error Reporting. If you're an administrator and want to configure Group Policy for Microsoft Error Reporting, technical details are available at the [Group Policy Settings Reference for Windows and Windows Server](https://go.microsoft.com/fwlink/p/?linkid=279978).
 
 ## Specific Feature: Online Feedback
 

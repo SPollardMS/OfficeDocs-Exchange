@@ -255,4 +255,3 @@ You can run the Exchange ActiveSync Autodiscover and Outlook Autodiscover tests 
   
 You can get help for planning and deploying Autodiscover services as part of your Exchange 2016 deployment in [Deploying Exchange 2016](../../plan-and-deploy/plan-and-deploy.md#Deployment).
   
-

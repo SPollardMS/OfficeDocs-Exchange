@@ -66,7 +66,7 @@ However, IRM in Exchange can't prevent the disclosure of information by using th
 IRM uses Active Directory Rights Management Services (AD RMS), an information protection technology in Windows Server that uses extensible rights markup language (XrML)-based certificates and licenses to certify computers and users, and to protect content. When a document or message is protected using AD RMS, an XrML license containing the rights that authorized users have to the content is attached. To access IRM-protected content, AD RMS-enabled applications must procure a use license for the authorized user from the AD RMS server. Office applications, such as Word, Excel, PowerPoint and Outlook are RMS-enabled and can be used to create and consume protected content.
 
 > [!NOTE]
-> The Exchange Prelicense Agent attaches a use license to messages that are protected by the AD RMS server in your organization. For more information, see the [Prelicensing](#prelicensing.md) section later in this topic. 
+> The Exchange Prelicense Agent attaches a use license to messages that are protected by the AD RMS server in your organization. For more information, see the [Prelicensing](#prelicensing.md) section later in this topic.
 
 To learn more about Active Directory Rights Management Services, see [Active Directory Rights Management Services](https://go.microsoft.com/fwlink/p/?linkId=129823).
 
@@ -74,7 +74,7 @@ To learn more about Active Directory Rights Management Services, see [Active Dir
 
 AD RMS servers provide a Web service that's used to enumerate and acquire the XrML-based rights policy templates that you use to apply IRM protection to messages. By applying the appropriate rights policy template, you can control whether a recipient is allowed to reply to, reply to all, forward, extract information from, save, or print the message.
 
-By default, Exchange ships with the **Do Not Forward** template. When this template is applied to a message, only the recipients addressed in the message can decrypt the message. The recipients can't forward the message, copy content from the message, or print the message. You can create additional RMS templates on the AD RMS servers in your organization to meet your requirements. 
+By default, Exchange ships with the **Do Not Forward** template. When this template is applied to a message, only the recipients addressed in the message can decrypt the message. The recipients can't forward the message, copy content from the message, or print the message. You can create additional RMS templates on the AD RMS servers in your organization to meet your requirements.
 
 For more information about rights policy templates, see [AD RMS Policy Template Considerations](https://go.microsoft.com/fwlink/p/?linkId=179455).
 
@@ -96,7 +96,7 @@ By default, an Exchange organization is enabled for IRM, but to apply IRM protec
 - **Automatically on Mailbox servers**: Administrators can create mail flow rules (also known as transport rules) to automatically IRM-protect messages that match specified conditions. For more information, see [Understanding Transport Protection Rules](http://technet.microsoft.com/library/9bd6d049-165e-4e51-a79f-3b8ff409da55.aspx).
 
     > [!NOTE]
-    > IRM protection isn't applied again to messages that are already IRM-protected. For example, if a user IRM-protects a message in Outlook or Outlook on the web, a transport protection rule won't apply IRM protection to the same message. 
+    > IRM protection isn't applied again to messages that are already IRM-protected. For example, if a user IRM-protects a message in Outlook or Outlook on the web, a transport protection rule won't apply IRM protection to the same message.
 
 ## Scenarios for IRM protection
 <a name="scenarios"> </a>
@@ -131,7 +131,7 @@ To allow authorized users to view IRM-protected messages and attachments, Exchan
 ## IRM agents
 <a name="agents"> </a>
 
-IRM features use the built-in transport agents that exist in the Transport service on Mailbox servers. Most of the built-in transport agents are invisible and unmanageable by the transport agent management cmdlets in the Exchange Management Shell (**\*-TransportAgent**). 
+IRM features use the built-in transport agents that exist in the Transport service on Mailbox servers. Most of the built-in transport agents are invisible and unmanageable by the transport agent management cmdlets in the Exchange Management Shell (**\*-TransportAgent**).
 
 The built-in transport agents that are associated with IRM are described in this table:
 

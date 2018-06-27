@@ -19,13 +19,13 @@ Learn how administrators use Delivery Reports to search for the delivery status 
 Delivery Reports is a message tracking tool in the Exchange admin center (EAC) that you can use to search for delivery status on email messages that were sent to or from users in your organization's address book. You can track delivery information about messages sent by or received from any specific mailbox in your organization. The message's content isn't returned in the delivery report, but the subject line is displayed in the results. You can track messages for up to 14 days after they were sent or received.
   
 > [!NOTE]
-> Delivery Reports tracks messages that were sent by people using Microsoft Outlook or Outlook on the web. It doesn't track messages sent from POP3 or IMAP4 email clients, such as Windows Live Mail or Mozilla Thunderbird. 
+> Delivery Reports tracks messages that were sent by people using Microsoft Outlook or Outlook on the web. It doesn't track messages sent from POP3 or IMAP4 email clients, such as Windows Live Mail or Mozilla Thunderbird.
   
 ## What do you need to know before you begin?
 
 - Estimated time to complete each procedure: Time to complete will vary based on the scope of your search.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Message tracking" entry in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Message tracking" entry in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic.
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
@@ -42,18 +42,18 @@ Delivery Reports is a message tracking tool in the Exchange admin center (EAC) t
     
   - Select one of the following:
     
-  - **Search for messages sent to**: Use this option to search for messages that were sent to specific users from the mailbox you selected in **Mailbox to search**. Click **Select users** and then pick users from the address book by selecting a user from the list and clicking **Add**. You can select more than one user here. When you're finished selecting users, click **OK** to return to the **Delivery Reports** page. If you select this option, you can also leave the field blank to find messages sent to anyone. 
+  - **Search for messages sent to**: Use this option to search for messages that were sent to specific users from the mailbox you selected in **Mailbox to search**. Click **Select users** and then pick users from the address book by selecting a user from the list and clicking **Add**. You can select more than one user here. When you're finished selecting users, click **OK** to return to the **Delivery Reports** page. If you select this option, you can also leave the field blank to find messages sent to anyone.
     
-  - **Search for messages received from**: Use this option to search for messages that were sent by specific user to the mailbox you selected in **Mailbox to search**. Again, select the user from the address book and click **OK** to return to the **Delivery Reports** page. If you select this option, you have to specify a sender. 
+  - **Search for messages received from**: Use this option to search for messages that were sent by specific user to the mailbox you selected in **Mailbox to search**. Again, select the user from the address book and click **OK** to return to the **Delivery Reports** page. If you select this option, you have to specify a sender.
     
   - **Search for these words in the subject line**: Enter subject line information here, or leave it blank.
     
-3. When you are finished, click **Search**. If you want to start over, click **Clear**.
+3. When you're finished, click **Search**. If you want to start over, click **Clear**.
     
 ## Use the EAC to review a delivery report
 <a name="viewreport"> </a>
 
-To view delivery information, select a message in the **Search results** pane and click **Details**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
+To view delivery information, select a message in the **Search results** pane and click **Details** ![Edit icon](../../media/ITPro_EAC_EditIcon.png).
   
 The delivery report shows delivery status and detailed delivery information for the message you have selected from the **Search results** pane. At the top of the report, you'll see the following fields: 
   
@@ -79,7 +79,7 @@ This section appears in the delivery report if a message was sent to more than o
     
 ### Detailed report information
 
-This section contains detailed delivery information for a message sent to the recipient you select in the **Summary to date** section. 
+This section contains detailed delivery information for a message sent to the recipient you select in the **Summary to date** section.
   
 - **Delivery Report for**: The email address of the selected recipient is shown here.
     
@@ -104,6 +104,6 @@ When you're done reviewing the report, click **Close**. Delivery reports aren't 
 ## How do you know this worked?
 <a name="viewreport"> </a>
 
-If your search was successful, messages that fit the search criteria are listed in the **Search results** pane. To view the delivery information for a specific message, select it and then click **Details**![Edit icon](../../media/ITPro_EAC_EditIcon.png). If no messages are displayed in the **Search results** pane, change the search criteria and then re-run the search. 
+If your search was successful, messages that fit the search criteria are listed in the **Search results** pane. To view the delivery information for a specific message, select it and then click **Details** ![Edit icon](../../media/ITPro_EAC_EditIcon.png). If no messages are displayed in the **Search results** pane, change the search criteria and then re-run the search.
   
 

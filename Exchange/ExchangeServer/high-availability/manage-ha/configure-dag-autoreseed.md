@@ -19,7 +19,7 @@ description: "Summary: AutoReseed is a feature for quickly restoring database re
 Use the steps in this topic to configure AutoReseed for a database availability group (DAG) in Exchange 2016.
   
 > [!CAUTION]
-> The AutoReseed feature doesn't perform any prerequisite configuration tasks for you. Installing disks correctly, adding spare disks to the system, replacing bad disks, and formatting new disks must be done manually by an administrator. 
+> The AutoReseed feature doesn't perform any prerequisite configuration tasks for you. Installing disks correctly, adding spare disks to the system, replacing bad disks, and formatting new disks must be done manually by an administrator.
   
 For additional management tasks related to DAGs, see [Managing database availability groups](http://technet.microsoft.com/library/4abde67b-4995-4a57-894f-ba76aa72341c.aspx).
   
@@ -29,7 +29,7 @@ For additional management tasks related to DAGs, see [Managing database availabi
     
 - To open the Exchange Management Shell, see [Open the Exchange Management Shell](http://technet.microsoft.com/library/63976059-25f8-4b4f-b597-633e78b803c0.aspx).
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Database availability groups" entry in the [High availability and site resilience permissions](../../permissions/feature-permissions/ha-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Database availability groups" entry in the [High availability and site resilience permissions](../../permissions/feature-permissions/ha-permissions.md) topic.
     
 - A single logical disk/partition per physical disk must be created.
     
@@ -38,7 +38,7 @@ For additional management tasks related to DAGs, see [Managing database availabi
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).. 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351)..
   
 ## Step 1: Configure the root paths for databases and volumes
 
@@ -64,7 +64,7 @@ To verify that you've successfully configured the root paths for databases and v
 Get-DatabaseAvailabilityGroup DAG1 | Format-List *auto*
 ```
 
-The output for _AutoDagDatabasesRootFolderPath_ and _AutoDagVolumesRootFolderPath_ should reflect the configured paths. 
+The output for _AutoDagDatabasesRootFolderPath_ and _AutoDagVolumesRootFolderPath_ should reflect the configured paths.
   
 ## Step 2: Configure the number of databases per volume
 
@@ -84,7 +84,7 @@ To verify that you've successfully configured the number of databases per volume
 Get-DatabaseAvailabilityGroup DAG1 | Format-List *auto*
 ```
 
-The output for _AutoDagDatabaseCopiesPerVolume_ should reflect the configured value. 
+The output for _AutoDagDatabaseCopiesPerVolume_ should reflect the configured value.
   
 ## Step 3: Create the root directories for databases and volumes
 
@@ -179,9 +179,9 @@ The mounted volume should appear in the mount point list.
 
 Next, create two directories underneath the folders you created in Step 5, one for each database and one for each of the database's log stream that will be stored on the same volume. You must use the following format for your directory structure:
   
-C:\\< *DatabaseFolderName* \>\ *DatabaseName* \\< *DatabaseName* \>.db 
+C:\\<*DatabaseFolderName* \>\ *DatabaseName* \\<*DatabaseName* \>.db 
   
-C:\\< *DatabaseFolderName* \>\ *DatabaseName* \\< *DatabaseName* \>.log 
+C:\\<*DatabaseFolderName* \>\ *DatabaseName* \\<*DatabaseName* \>.log 
   
 This example illustrates how to create directories for 4 databases that will be stored on Volume 1:
   

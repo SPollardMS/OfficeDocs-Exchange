@@ -16,14 +16,14 @@ description: "Summary: Learn how message rate limits affect mail flow and connec
 
  **Summary**: Learn how message rate limits affect mail flow and connections in Exchange 2016.
 
- *Message throttling* refers to a group of limits that are set on the number of messages and connections that can be processed by an Exchange server. These limits include message processing rates, SMTP connection rates, and SMTP session timeout values. These limits work together to protect an Exchange server from being overwhelmed by accepting and delivering messages. Although a large backlog of messages and connections may be waiting to be processed, the message throttling limits enable the Exchange server to process the messages and connections in an orderly manner. 
+ *Message throttling* refers to a group of limits that are set on the number of messages and connections that can be processed by an Exchange server. These limits include message processing rates, SMTP connection rates, and SMTP session timeout values. These limits work together to protect an Exchange server from being overwhelmed by accepting and delivering messages. Although a large backlog of messages and connections may be waiting to be processed, the message throttling limits enable the Exchange server to process the messages and connections in an orderly manner.
 
 > [!NOTE]
-> *Back pressure* is another feature that helps to avoid overwhelming the system resources of an Exchange server. Key resources, such as available hard disk space and memory utilization are monitored, and when the utilization level exceeds the specified threshold, the server gradually stops accepting new connections and messages. For more information, see [Understanding back pressure](back-pressure.md). There are also static limits that are available on messages, such as the maximum message size, the size of individual attachments, and the number of recipients. For more information about message size limits, see [Message size limits in Exchange 2016](message-size-limits.md). 
+> *Back pressure* is another feature that helps to avoid overwhelming the system resources of an Exchange server. Key resources, such as available hard disk space and memory utilization are monitored, and when the utilization level exceeds the specified threshold, the server gradually stops accepting new connections and messages. For more information, see [Understanding back pressure](back-pressure.md). There are also static limits that are available on messages, such as the maximum message size, the size of individual attachments, and the number of recipients. For more information about message size limits, see [Message size limits in Exchange 2016](message-size-limits.md).
 
 You can set the message rate limits and throttling options in the following locations:
 
-- Mailbox servers and Edge Transport servers. Collectively, we'll refer to these as *transport servers* . 
+- Mailbox servers and Edge Transport servers. Collectively, we'll refer to these as *transport servers*.
 
 - Send connectors
 
@@ -38,11 +38,11 @@ The following table shows the message throttling options that are available on M
 
 |**Rate limit**|**Default value**|**Exchange Management Shell configuration**|**EAC configuration**|
 |:-----|:-----|:-----|:-----|
-|**Maximum concurrent mailbox deliveries**: The maximum number of delivery threads that the Transport service and the Mailbox Transport Delivery service can have open at the same time to deliver message to mailboxes.  <br/> |20  <br/>  We recommend that you don't modify this value unless you are directed to do so by Microsoft Customer Service and Support.  <br/> |Cmdlet: **Set-TransportService** and **Set-MailboxTransportService** <br/> Parameter: _MaxConcurrentMailboxDeliveries_ <br/> |Not available  <br/> |
-|**Maximum concurrent mailbox submissions**: The maximum number of submission threads that the Transport service and the Mailbox Transport Submission service can have open at the same time to send messages from mailboxes.  <br/> |20  <br/>  We recommend that you don't modify this value unless you are directed to do so by Microsoft Customer Service and Support.  <br/> |Cmdlet: **Set-TransportService** and **Set-MailboxTransportService** <br/> Parameter: _MaxConcurrentMailboxSubmissions_ <br/> |Not available  <br/> |
+|**Maximum concurrent mailbox deliveries**: The maximum number of delivery threads that the Transport service and the Mailbox Transport Delivery service can have open at the same time to deliver message to mailboxes.  <br/> |20  <br/>  We recommend that you don't modify this value unless you're directed to do so by Microsoft Customer Service and Support.  <br/> |Cmdlet: **Set-TransportService** and **Set-MailboxTransportService** <br/> Parameter: _MaxConcurrentMailboxDeliveries_ <br/> |Not available  <br/> |
+|**Maximum concurrent mailbox submissions**: The maximum number of submission threads that the Transport service and the Mailbox Transport Submission service can have open at the same time to send messages from mailboxes.  <br/> |20  <br/>  We recommend that you don't modify this value unless you're directed to do so by Microsoft Customer Service and Support.  <br/> |Cmdlet: **Set-TransportService** and **Set-MailboxTransportService** <br/> Parameter: _MaxConcurrentMailboxSubmissions_ <br/> |Not available  <br/> |
 |**Maximum connection rate per minute**: The maximum rate that connections are allowed to be opened with the Transport service.  <br/> |1200  <br/> |Cmdlet: **Set-TransportService** <br/> Parameter: _MaxConnectionRatePerMinute_ <br/> |Not available  <br/> |
-|**Maximum concurrent connections**: The maximum number of outbound connections that the Transport service can have open at a time.  <br/> |1000  <br/> This value must be greater than or equal to the _MaxPerDomainOutboundConnections_ value.  <br/> |Cmdlet: **Set-TransportService** <br/> Parameter: _MaxOutboundConnections_ <br/> |**Servers** \> **Servers** \> **Properties**![Edit icon](../media/ITPro_EAC_EditIcon.png) \> **Transport limits** section \> **Maximum concurrent connections**.  <br/> **Note**: In the EAC, you can only set the values 100, 1000, 5000, or unlimited.  <br/> |
-|**Maximum concurrent connections per domain**: The maximum number of outbound connections that the Transport service can have open to a single domain at a time.  <br/> |20  <br/> This value must be less than or equal to the _MaxOutboundConnections_ value.  <br/> |Cmdlet: **Set-TransportService** <br/> Parameter: _MaxPerDomainOutboundConnections_ <br/> |**Servers** \> **Servers** \> **Properties**![Edit icon](../media/ITPro_EAC_EditIcon.png) \> **Transport limits** section \> **Maximum concurrent connections per domain**.  <br/> **Note**: In the EAC, you can only set the values 100, 1000, 5000, or unlimited.  <br/> |
+|**Maximum concurrent connections**: The maximum number of outbound connections that the Transport service can have open at a time.  <br/> |1000  <br/> This value must be greater than or equal to the _MaxPerDomainOutboundConnections_ value.  <br/> |Cmdlet: **Set-TransportService** <br/> Parameter: _MaxOutboundConnections_ <br/> |**Servers** \> **Servers** \> **Properties** ![Edit icon](../media/ITPro_EAC_EditIcon.png) \> **Transport limits** section \> **Maximum concurrent connections**.  <br/> **Note**: In the EAC, you can only set the values 100, 1000, 5000, or unlimited.  <br/> |
+|**Maximum concurrent connections per domain**: The maximum number of outbound connections that the Transport service can have open to a single domain at a time.  <br/> |20  <br/> This value must be less than or equal to the _MaxOutboundConnections_ value.  <br/> |Cmdlet: **Set-TransportService** <br/> Parameter: _MaxPerDomainOutboundConnections_ <br/> |**Servers** \> **Servers** \> **Properties** ![Edit icon](../media/ITPro_EAC_EditIcon.png) \> **Transport limits** section \> **Maximum concurrent connections per domain**.  <br/> **Note**: In the EAC, you can only set the values 100, 1000, 5000, or unlimited.  <br/> |
  
 To see the values of these server message throttling settings, run the following command in the Exchange Management Shell:
 
@@ -51,7 +51,7 @@ Write-Host "Transport service:" -ForegroundColor yellow; Get-TransportService | 
 ```
 
 > [!NOTE]
-> The Pickup directory and the Replay directory that are available on Edge Transport servers and Mailbox servers also have messages rate limits that you can configure. Typically, the Pickup directory and the Replay directory aren't used in everyday mail flow. For more information, see [Configure the Pickup Directory and the Replay Directory](http://technet.microsoft.com/library/c9ca7358-9a08-4f57-89d0-910e4438df8a.aspx). The maximum number of message files per minute that can be processed by the Pickup directory and the Replay directory is 100. Each directory can independently process message files at this rate. 
+> The Pickup directory and the Replay directory that are available on Edge Transport servers and Mailbox servers also have messages rate limits that you can configure. Typically, the Pickup directory and the Replay directory aren't used in everyday mail flow. For more information, see [Configure the Pickup Directory and the Replay Directory](http://technet.microsoft.com/library/c9ca7358-9a08-4f57-89d0-910e4438df8a.aspx). The maximum number of message files per minute that can be processed by the Pickup directory and the Replay directory is 100. Each directory can independently process message files at this rate.
 
 ## Message throttling on Send connectors
 <a name="SendConn"> </a>
@@ -94,9 +94,9 @@ Get-ReceiveConnector | Format-List Name,Connection*,MaxInbound*,MessageRate*,Tar
 ## Message throttling on users
 <a name="Policies"> </a>
 
-The Microsoft Exchange Throttling service tracks resource settings for specific uses and caches the information in memory. Mail flow throttling settings are also known as a *budget* . Restarting the Microsoft Exchange Throttling service resets the mail flow throttling budgets. 
+The Microsoft Exchange Throttling service tracks resource settings for specific uses and caches the information in memory. Mail flow throttling settings are also known as a *budget*. Restarting the Microsoft Exchange Throttling service resets the mail flow throttling budgets.
 
-Each mailbox has a _ThrottlingPolicy_ setting. The default value for this setting is blank (`$null`). You can use the _ThrottlingPolicy_ parameter on the **Set-Mailbox** cmdlet to configure a throttling policy for a mailbox. 
+Each mailbox has a _ThrottlingPolicy_ setting. The default value for this setting is blank (`$null`). You can use the _ThrottlingPolicy_ parameter on the **Set-Mailbox** cmdlet to configure a throttling policy for a mailbox.
 
 For more information, see the following topics:
 

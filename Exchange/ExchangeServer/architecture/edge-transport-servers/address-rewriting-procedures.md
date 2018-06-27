@@ -22,7 +22,7 @@ You can create address rewrite entries on Edge Transport servers that apply to a
     
 - Only literal strings are supported in the email address values.
     
-- The wildcard character (\*) is supported only in the internal address (the addresses you want to change). Valid syntax for using the wildcard character is **\*.contoso.com**. The values **\*contoso.com** or **sales.\*.com** are not allowed. 
+- The wildcard character (\*) is supported only in the internal address (the addresses you want to change). Valid syntax for using the wildcard character is **\*.contoso.com**. The values **\*contoso.com** or **sales.\*.com** are not allowed.
     
 - When you use the wildcard character, you need to configure the address rewriting as outbound only (you need to set the _OutboundOnly_ parameter to the value `$true`), and outbound only address rewriting requires that you configure the rewritten email address as a proxy address on the affected recipients.
     
@@ -34,7 +34,7 @@ For more information about address rewriting, see [Address rewriting on Edge Tra
 
 - Estimated time to complete each procedure: 10 minutes.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Edge Transport servers" section in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Edge Transport servers" section in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic.
     
 - You can only use PowerShell to perform this procedure. To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
     
@@ -43,7 +43,7 @@ For more information about address rewriting, see [Address rewriting on Edge Tra
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
   
 ## Use the Exchange Management Shell to enable or disable address rewriting
 
@@ -101,7 +101,7 @@ To rewrite the email address for a single recipient, use the following syntax:
 New-AddressRewriteEntry -Name "<Descriptive Name>" -InternalAddress <internal email address> -ExternalAddress <external email address> [-OutboundOnly <$true | $false>]
 ```
 
-This example rewrites the email address of all messages entering and leaving the Exchange organization for joe@contoso.com. Outbound messages are rewritten so they appear to come from support@nortwindtraders.com. Inbound messages sent to support@northwindtraders.com are rewritten to joe@contoso.com for delivery to the recipient (the _OutboundOnly_ parameter is `$false` by default). 
+This example rewrites the email address of all messages entering and leaving the Exchange organization for joe@contoso.com. Outbound messages are rewritten so they appear to come from support@nortwindtraders.com. Inbound messages sent to support@northwindtraders.com are rewritten to joe@contoso.com for delivery to the recipient (the _OutboundOnly_ parameter is `$false` by default).
   
 ```
 New-AddressRewriteEntry -Name "joe@contoso.com to support@northwindtraders.com" -InternalAddress joe@contoso.com -ExternalAddress support@northwindtraders.com
@@ -115,7 +115,7 @@ To rewrite the email addresses in a single domain or subdomain, use the followin
 New-AddressRewriteEntry -Name "<Descriptive Name>" -InternalAddress <domain or subdomain> -ExternalAddress <domain> [-OutboundOnly <$true | $false>]
 ```
 
-This example rewrites the email addresses of all messages entering and leaving the Exchange organization for the contoso.com domain. Outbound messages are rewritten so they appear to come from the fabrikam.com domain. Inbound messages sent to fabrikam.com email addresses are rewritten to contoso.com for delivery to the recipients (the _OutboundOnly_ parameter is `$false` by default). 
+This example rewrites the email addresses of all messages entering and leaving the Exchange organization for the contoso.com domain. Outbound messages are rewritten so they appear to come from the fabrikam.com domain. Inbound messages sent to fabrikam.com email addresses are rewritten to contoso.com for delivery to the recipients (the _OutboundOnly_ parameter is `$false` by default).
   
 ```
 New-AddressRewriteEntry -Name "Contoso to Fabrikam" -InternalAddress contoso.com -ExternalAddress fabrikam.com
@@ -135,7 +135,7 @@ To rewrite the email addresses in a domain and all subdomains, use the following
 New-AddressRewriteEntry -Name "<Descriptive Name>" -InternalAddress *.<domain> -ExternalAddress <domain> -OutboundOnly $true [-ExceptionList <domain1,domain2...>]
 ```
 
-This example rewrites the email addresses of all messages leaving the Exchange organization for the contoso.com domain and all subdomains. Outbound messages are rewritten so they appear to come from the contoso.com domain. Inbound messages sent to contoso.com recipients can't be rewritten, because a wildcard is used in the _InternalAddress_ parameter. 
+This example rewrites the email addresses of all messages leaving the Exchange organization for the contoso.com domain and all subdomains. Outbound messages are rewritten so they appear to come from the contoso.com domain. Inbound messages sent to contoso.com recipients can't be rewritten, because a wildcard is used in the _InternalAddress_ parameter.
   
 ```
 New-AddressRewriteEntry -Name "Rewrite all contoso.com subdomains" -InternalAddress *.contoso.com -ExternalAddress contoso.com -OutboundOnly $true
@@ -275,13 +275,13 @@ This example removes all address rewrite entries:
 Get-AddressRewriteEntry | Remove-AddressRewriteEntry
 ```
 
-This example simulates the removal of address rewrite entries that contain the text "to contoso.com" in the name. The _WhatIf_ switch allows you to preview the result without committing any changes. 
+This example simulates the removal of address rewrite entries that contain the text "to contoso.com" in the name. The _WhatIf_ switch allows you to preview the result without committing any changes.
   
 ```
 Get-AddressRewriteEntry "*to contoso.com" | Remove-AddressRewriteEntry -WhatIf
 ```
 
-If you are satisfied with the result, run the command again without the _WhatIf_ switch to remove the address rewrite entries. 
+If you're satisfied with the result, run the command again without the _WhatIf_ switch to remove the address rewrite entries.
   
 ```
 Get-AddressRewriteEntry "*to contoso.com" | Remove-AddressRewriteEntry

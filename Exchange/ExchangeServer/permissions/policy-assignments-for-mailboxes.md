@@ -24,18 +24,18 @@ Looking for other management tasks related to permissions? Check out [Permission
 
 - Estimated time to complete each procedure: 5 minutes
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Role groups" entry in the [Role management permissions](feature-permissions/rbac-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Role groups" entry in the [Role management permissions](feature-permissions/rbac-permissions.md) topic.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
 
 ## Use the EAC to change the assignment policy on a mailbox
 
 1. In the Exchange admin center (EAC), navigate to **Recipients** \> **Mailboxes**.
 
-2. Select the user or resource mailbox you want to change the assignment policy on and then click **Edit**![Edit icon](../media/ITPro_EAC_EditIcon.png).
+2. Select the user or resource mailbox you want to change the assignment policy on and then click **Edit** ![Edit icon](../media/ITPro_EAC_EditIcon.png).
 
 3. Select **Mailbox Features**.
 
@@ -58,7 +58,7 @@ Set-Mailbox Brian -RoleAssignmentPolicy "Unified Messaging Users"
 ## Use the Exchange Management Shell to change the assignment policy on a group of mailboxes assigned a specific assignment policy
 
 > [!NOTE]
-> You can't use the EAC to change the assignment policy on a group of mailboxes all at once. 
+> You can't use the EAC to change the assignment policy on a group of mailboxes all at once.
 
 This procedure makes use of pipelining, the **Where** cmdlet, and the _WhatIf_ parameter. For more information about these concepts, see the following topics: 
 
@@ -80,7 +80,7 @@ This example finds all the mailboxes assigned to the Redmond Users - No Voicemai
 Get-Mailbox | Where { $_.RoleAssignmentPolicy -Eq "Redmond Users - No Voicemail" } | Set-Mailbox -RoleAssignmentPolicy "Redmond Users - Voicemail Enabled"
 ```
 
-This example includes the _WhatIf_ parameter so that you can see all the mailboxes that would be changed without committing any changes. 
+This example includes the _WhatIf_ parameter so that you can see all the mailboxes that would be changed without committing any changes.
 
 ```
 Get-Mailbox | Where { $_.RoleAssignmentPolicy -Eq "Redmond Users - No Voicemail" } | Set-Mailbox -RoleAssignmentPolicy "Redmond Users - Voicemail Enabled" -WhatIf

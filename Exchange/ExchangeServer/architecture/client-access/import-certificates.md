@@ -43,18 +43,18 @@ These are the types of certificate files that you can import on an Exchange serv
     
 - To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Client Access services security" entry in the [Clients and mobile devices permissions](../../permissions/feature-permissions/client-and-mobile-device-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Client Access services security" entry in the [Clients and mobile devices permissions](../../permissions/feature-permissions/client-and-mobile-device-permissions.md) topic.
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).. 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351)..
   
 ## Use the EAC to import a certificate on one or more Exchange servers
 
 1. Open the EAC and navigate to **Servers** \> **Certificates**.
     
-2. In the **Select server** list, select the Exchange server where you want to install the certificate, click **More options**![More Options icon](../../media/ITPro_EAC_MoreOptionsIcon.png), and select **Import Exchange certificate**.
+2. In the **Select server** list, select the Exchange server where you want to install the certificate, click **More options** ![More Options icon](../../media/ITPro_EAC_MoreOptionsIcon.png), and select **Import Exchange certificate**.
     
 3. The **Import Exchange certificate** wizard opens. On the **This wizard will import a certificate from a file** page, enter the following information: 
     
@@ -62,13 +62,13 @@ These are the types of certificate files that you can import on an Exchange serv
     
   - **Password**: If the certificate file contains the private key or chain of trust, the file is protected by a password. Enter the password here.
     
-    When you are finished, click **Next**.
+    When you're finished, click **Next**.
     
-4. In the **Specify the servers you want to apply this certificate to** page, click **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png)
+4. In the **Specify the servers you want to apply this certificate to** page, click **Add** ![Add icon](../../media/ITPro_EAC_AddIcon.png)
   
-> On the **Select a server** page that opens, select the Exchange server where you want to install the certificate, and click **Add - \>**. Repeat this step as many times as necessary. When you are finished selecting servers, click **OK**.
+   On the **Select a server** page that opens, select the Exchange server where you want to install the certificate, and click **Add - \>**. Repeat this step as many times as necessary. When you're finished selecting servers, click **OK**.
     
-    When you are finished, click **Finish**. For next steps, see the [Next steps](import-certificates.md#NextSteps) section. 
+   When you're finished, click **Finish**. For next steps, see the [Next steps](import-certificates.md#NextSteps) section.
     
 ## Use the Exchange Management Shell to import a certificate on an Exchange server
 
@@ -78,7 +78,7 @@ To import a binary certificate file (PKCS #12 files that have .cer, .crt, .der, 
 Import-ExchangeCertificate -FileName "<FilePathOrUNCPath>\<FileName>" -Password (ConvertTo-SecureString -String '<Password> ' -AsPlainText -Force) [-PrivateKeyExportable <$true | $false>] [-Server <ServerIdentity>]
 ```
 
-This example imports the certificate file `\\FileServer01\Data\Fabrikam.pfx` that's protected by the password P@ssw0rd1 on the local Exchange server. 
+This example imports the certificate file `\\FileServer01\Data\Fabrikam.pfx` that's protected by the password P@ssw0rd1 on the local Exchange server.
   
 ```
 Import-ExchangeCertificate -FileName "Import-ExchangeCertificate -FileName "\\FileServer01\Data\Fabrikam.pfx" -Password (ConvertTo-SecureString -String 'P@ssw0rd1' -AsPlainText -Force)
@@ -98,9 +98,9 @@ Import-ExchangeCertificate -FileData "Import-ExchangeCertificate -FileData ([Byt
 
  **Notes:**
   
-- You need to repeat this procedure on each Exchange server where you want to import the certificate (run the command on the server, or use the _Server_ parameter). 
+- You need to repeat this procedure on each Exchange server where you want to import the certificate (run the command on the server, or use the _Server_ parameter).
     
-- The _FileName_ and _FileData_ parameters accept local paths if the certificate file is located on the Exchange server where you're running the command, and this is the same server where you want to import the certificate. Otherwise, use a UNC path. 
+- The _FileName_ and _FileData_ parameters accept local paths if the certificate file is located on the Exchange server where you're running the command, and this is the same server where you want to import the certificate. Otherwise, use a UNC path.
     
 - If you want to be able to export the certificate from the server where you're importing it, you need to use the _PrivateKeyExportable_ parameter with the value `$true`.
     

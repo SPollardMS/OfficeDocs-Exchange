@@ -34,7 +34,7 @@ Protocol logging records the SMTP conversations that occur between messaging ser
     
 By default, protocol logging is enabled on the following connectors:
   
-- The default Receive connector named Default Frontend _\<ServerName\>_ in the Front End Transport service on Mailbox servers. 
+- The default Receive connector named Default Frontend _\<ServerName\>_ in the Front End Transport service on Mailbox servers.
     
 - The implicit and invisible Send connector in the Front End Transport service on Mailbox servers.
     
@@ -73,9 +73,9 @@ By default, the protocol log files exist in the following locations:
     
 The naming convention for log files is `SENDyyyymmdd-nnnn.log` for Send connectors and `RECVyyyymmdd-nnnn.log` for Receive connectors. The placeholders represent the following information: 
   
-- _yyyymmdd_ is the coordinated universal time (UTC) date when the log file was created. _yyyy_ = year, _mm_ = month, and _dd_ = day. 
+- _yyyymmdd_ is the coordinated universal time (UTC) date when the log file was created. _yyyy_ = year, _mm_ = month, and _dd_ = day.
     
-- _nnnn_ is an instance number that starts at the value 1 every day. 
+- _nnnn_ is an instance number that starts at the value 1 every day.
     
 Information is written to the log file until the file reaches its maximum size. Then, a new log file that has an incremented instance number is opened (the first log file is -1, the next is -2, and so on). Circular logging deletes the oldest log files when either of the following conditions is true:
   
@@ -91,7 +91,7 @@ The protocol log files are text files that contain data in the comma-separated v
     
 - **#Log-Type**: The value is either `SMTP Receive Protocol Log` or `SMTP Send Protocol Log`.
     
-- **#Date**: UTC date-time when the log file was created. The UTC date-time is represented in the ISO 8601 date-time format: _yyyy-mm-dd_T _hh:mm:ss.fff_Z, where _yyyy_ = year, _mm_ = month, _dd_ = day, T indicates the beginning of the time component, _hh_ = hour, _mm_ = minute, _ss_ = second, _fff_ = fractions of a second, and Z signifies Zulu, which is another way to denote UTC. 
+- **#Date**: UTC date-time when the log file was created. The UTC date-time is represented in the ISO 8601 date-time format: *yyyy-mm-dd*T*hh:mm:ss.fff*Z, where _yyyy_ = year, _mm_ = month, _dd_ = day, T indicates the beginning of the time component, _hh_ = hour, _mm_ = minute, _ss_ = second, _fff_ = fractions of a second, and Z signifies Zulu, which is another way to denote UTC.
     
 - **#Fields**: Comma-delimited field names that are used in the protocol log files.
     
@@ -102,7 +102,7 @@ The protocol log stores each SMTP protocol event on a single line in the log. Th
   
 |**Field name**|**Description**|
 |:-----|:-----|
-|**date-time** <br/> |UTC date-time of the protocol event. The UTC date-time is represented in the ISO 8601 date-time format: _yyyy-mm-dd_T _hh:mm:ss.fff_Z, where _yyyy_ = year, _mm_ = month, _dd_ = day, T indicates the beginning of the time component, _hh_ = hour, _mm_ = minute, _ss_ = second, _fff_ = fractions of a second, and Z signifies Zulu, which is another way to denote UTC.  <br/> |
+|**date-time** <br/> |UTC date-time of the protocol event. The UTC date-time is represented in the ISO 8601 date-time format: *yyyy-mm-dd*T*hh:mm:ss.fff*Z, where _yyyy_ = year, _mm_ = month, _dd_ = day, T indicates the beginning of the time component, _hh_ = hour, _mm_ = minute, _ss_ = second, _fff_ = fractions of a second, and Z signifies Zulu, which is another way to denote UTC.  <br/> |
 |**connector-id** <br/> |Distinguished name (DN) of the connector that's associated with the SMTP event.  <br/> |
 |**session-id** <br/> |GUID value that's unique for each SMTP session, but is the same for every event that's associated with that SMTP session.  <br/> |
 |**sequence-number** <br/> |Counter that starts at 0 and is incremented for each event in the same SMTP session.  <br/> |
@@ -112,6 +112,6 @@ The protocol log stores each SMTP protocol event on a single line in the log. Th
 |**data** <br/> |Text information associated with the SMTP event.  <br/> |
 |**context** <br/> |Additional contextual information that may be associated with the SMTP event.  <br/> |
    
-One SMTP conversation that represents sending or receiving a single email message generates multiple SMTP events. Each event is recorded on a separate line in the protocol log. An Exchange server has many SMTP conversations going on at any given time. This creates protocol log entries from different SMTP conversations that are mixed together. You can use the **session-id** and **sequence-number** fields to sort the protocol log entries by each individual SMTP conversation. 
+One SMTP conversation that represents sending or receiving a single email message generates multiple SMTP events. Each event is recorded on a separate line in the protocol log. An Exchange server has many SMTP conversations going on at any given time. This creates protocol log entries from different SMTP conversations that are mixed together. You can use the **session-id** and **sequence-number** fields to sort the protocol log entries by each individual SMTP conversation.
   
 

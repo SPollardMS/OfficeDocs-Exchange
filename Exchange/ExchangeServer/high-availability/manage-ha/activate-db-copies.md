@@ -16,7 +16,7 @@ description: "Summary: How to designate a passive copy of an Exchange 2016 mailb
 
  **Summary**: How to designate a passive copy of an Exchange 2016 mailbox database as the new active copy.
   
-Activating a mailbox database copy is the process of designating a specific passive copy as the new active copy of a mailbox database. This process is referred to as a *database switchover* . A database switchover involves dismounting the current active database and mounting the database copy on the specified server as the new active mailbox database copy. The database copy that will become the active mailbox database must be healthy and current. 
+Activating a mailbox database copy is the process of designating a specific passive copy as the new active copy of a mailbox database. This process is referred to as a *database switchover*. A database switchover involves dismounting the current active database and mounting the database copy on the specified server as the new active mailbox database copy. The database copy that will become the active mailbox database must be healthy and current.
   
 Looking for other management tasks related to mailbox database copies? Check out [Managing mailbox database copies](http://technet.microsoft.com/library/06df16b4-f209-4d3a-8c68-0805c745f9b2.aspx).
   
@@ -26,12 +26,12 @@ Looking for other management tasks related to mailbox database copies? Check out
     
 - To open the EAC, see [Exchange admin center in Exchange 2016](../../architecture/client-access/exchange-admin-center.md). To open the Exchange Management Shell, see [Open the Exchange Management Shell](http://technet.microsoft.com/library/63976059-25f8-4b4f-b597-633e78b803c0.aspx).
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Mailbox database copies" entry in the [High availability and site resilience permissions](../../permissions/feature-permissions/ha-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Mailbox database copies" entry in the [High availability and site resilience permissions](../../permissions/feature-permissions/ha-permissions.md) topic.
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
   
 ## Use the EAC to move the active mailbox database
 <a name="UseEMC"> </a>
@@ -40,9 +40,9 @@ Looking for other management tasks related to mailbox database copies? Check out
     
 2. Select the database whose copy you want to activate.
     
-3. In the Details pane, under **Database Copies**, click **Activate** under the database copy you want to activate. 
+3. In the Details pane, under **Database Copies**, click **Activate** under the database copy you want to activate.
     
-4. Click **yes** to activate the database copy. 
+4. Click **yes** to activate the database copy.
     
 ## Use the Exchange Management Shell to move the active mailbox database
 <a name="UseShell"> </a>
@@ -77,13 +77,13 @@ This example performs a server switchover for the Mailbox server MBX1. All activ
 Move-ActiveMailboxDatabase -Server MBX1
 ```
 
-This example performs a switchover of the database DB4 to the Mailbox server MBX5. In this example, the database copy on MBX5 has a replay queue greater than 6. As a result, the _SkipLagChecks_ parameter must be specified to activate the database copy on MBX5. 
+This example performs a switchover of the database DB4 to the Mailbox server MBX5. In this example, the database copy on MBX5 has a replay queue greater than 6. As a result, the _SkipLagChecks_ parameter must be specified to activate the database copy on MBX5.
   
 ```
 Move-ActiveMailboxDatabase DB4 MBX5 -SkipLagChecks
 ```
 
-This example performs a switchover of the database DB5 to the Mailbox server MBX6. In this example, the database copy on MBX6 has a _ContentIndexState_ of Failed. As a result, the _SkipClientExperienceChecks_ parameter must be specified to activate the database copy on MBX6. 
+This example performs a switchover of the database DB5 to the Mailbox server MBX6. In this example, the database copy on MBX6 has a _ContentIndexState_ of Failed. As a result, the _SkipClientExperienceChecks_ parameter must be specified to activate the database copy on MBX6.
   
 ```
 Move-ActiveMailboxDatabase DB5 MBX6 -SkipClientExperienceChecks
@@ -94,7 +94,7 @@ Move-ActiveMailboxDatabase DB5 MBX6 -SkipClientExperienceChecks
 
 To verify that you've successfully activated a mailbox database copy, do one of the following:
   
-- In the EAC, navigate to **Servers** \> **Databases**. Select the appropriate database, and in the Details pane, click **View details** to view the database copy properties. 
+- In the EAC, navigate to **Servers** \> **Databases**. Select the appropriate database, and in the Details pane, click **View details** to view the database copy properties.
     
 - In the Exchange Management Shell, run the following command to display status information for a database copy.
     

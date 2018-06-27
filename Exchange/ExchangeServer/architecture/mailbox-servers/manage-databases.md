@@ -24,12 +24,12 @@ A mailbox database is a unit of granularity where mailboxes are created and stor
     
 - To open the Exchange admin center (EAC), see [Exchange admin center in Exchange 2016](../../architecture/client-access/exchange-admin-center.md). To open the Exchange Management Shell, see [Open the Exchange Management Shell](http://technet.microsoft.com/library/63976059-25f8-4b4f-b597-633e78b803c0.aspx).
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Mailbox databases" entry in the [Recipients Permissions](../../permissions/feature-permissions/recipient-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Mailbox databases" entry in the [Recipients Permissions](../../permissions/feature-permissions/recipient-permissions.md) topic.
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
   
 ## Create a mailbox database
 <a name="BKMK_Create"> </a>
@@ -38,7 +38,7 @@ A mailbox database is a unit of granularity where mailboxes are created and stor
 
 1. From the Exchange admin center (EAC), navigate to **Servers**.
     
-2. Select **Databases**, and then click the **+** symbol to create a database. 
+2. Select **Databases**, and then click the **+** symbol to create a database.
     
 3. Use the new database wizard to create your database.
     
@@ -50,7 +50,7 @@ For an example of how to create a mailbox database, see Example 1 in [New-Mailbo
 
 To verify that you have successfully created a database, do the following:
   
-- From the EAC, verify that the mailbox database you created is listed in the **Databases** page. 
+- From the EAC, verify that the mailbox database you created is listed in the **Databases** page.
     
 - From the Exchange Management Shell, verify that the database was created on server Mailbox01 by running the following command.
     
@@ -82,11 +82,11 @@ From the Exchange Management Shell, verify that all your mailbox database inform
     
 2. Select **Databases**, and then click to select the mailbox database you want to configure.
     
-3. Click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png)to configure the attributes of a mailbox database.
+3. Click **Edit** ![Edit icon](../../media/ITPro_EAC_EditIcon.png) to configure the attributes of a mailbox database.
     
 4. Use the **General** tab to view status about the mailbox database, including the mailbox database path, last backup, and mailbox database status: 
     
-  - **Database path**: This read-only field displays the full path to the Exchange 2016 database (.edb) file for the selected mailbox database. To view the entire path, you may have to click the path and use the Right Arrow key. You can't use this field to change the path. To change the location of the database files, use the [Move-DatabasePath](http://technet.microsoft.com/library/d6873ded-d521-428f-821f-d10ea2c44b7e.aspx) cmdlet. 
+  - **Database path**: This read-only field displays the full path to the Exchange 2016 database (.edb) file for the selected mailbox database. To view the entire path, you may have to click the path and use the Right Arrow key. You can't use this field to change the path. To change the location of the database files, use the [Move-DatabasePath](http://technet.microsoft.com/library/d6873ded-d521-428f-821f-d10ea2c44b7e.aspx) cmdlet.
     
   - **Last full backup**: This read-only field displays the date and time of the last complete backup of the mailbox database.
     
@@ -106,7 +106,7 @@ From the Exchange Management Shell, verify that all your mailbox database inform
     
 5. Use the **Maintenance** tab to configure mailbox database settings, including specifying a journal recipient, setting a maintenance schedule, and mounting the database at startup: 
     
-  - **Journal Recipient**: Click **Browse** to specify a recipient to enable journaling on this mailbox database. Remove the recipient listed to disable journaling. 
+  - **Journal Recipient**: Click **Browse** to specify a recipient to enable journaling on this mailbox database. Remove the recipient listed to disable journaling.
     
   - **Maintenance schedule**: Use this list to select one of the preset maintenance schedules. You can also configure a custom schedule. To configure a custom schedule, click **Customize**.
     
@@ -167,7 +167,7 @@ To verify that you have successfully moved the database path, do the following:
   
 1. From the EAC, select **Servers** \> **Databases**, and then click to select the appropriate mailbox.
     
-2. Click the **pen** symbol and verify that the database path is correct. 
+2. Click the **pen** symbol and verify that the database path is correct.
     
 ## Mount a mailbox database
 <a name="BKMK_Mount"> </a>
@@ -212,7 +212,7 @@ To verify that you have successfully dismounted the database, do the following:
 
 1. From the EAC, select **Servers** \> **Databases**, and then click to select the appropriate mailbox.
     
-2. Click **Delete**![Delete icon](../../media/ITPro_EAC_DeleteIcon.png)to remove the mailbox database.
+2. Click **Delete** ![Delete icon](../../media/ITPro_EAC_DeleteIcon.png) to remove the mailbox database.
     
 ### Use the Exchange Management Shell to remove a mailbox database
 

@@ -14,20 +14,20 @@ description: "Summary: How to use Kerberos authentication with load-balanced Exc
 
 # Configure Kerberos authentication for load-balanced Client Access services
 
- **Summary:** How to use Kerberos authentication with load-balanced Exchange 2016 servers running Client Access services. 
+ **Summary:** How to use Kerberos authentication with load-balanced Exchange 2016 servers running Client Access services.
   
 In order for you to use Kerberos authentication with load-balanced Mailbox servers running Client Access services, you have to complete the configuration steps described in this article.
   
 ## Create the alternate service account credential in Active Directory Domain Services
 <a name="CreateAltService"> </a>
 
-All Exchange servers that run Client Access services that share the same namespaces and URLs must use the same alternate service account credentials. In general, it's sufficient to have a single account for a forest for each version of Exchange. *alternate service account credential* or *ASA credential* . 
+All Exchange servers that run Client Access services that share the same namespaces and URLs must use the same *alternate service account credential* or (ASA credential). In general, it's sufficient to have a single account for a forest for each version of Exchange.
   
 > [!IMPORTANT]
-> Exchange 2010 and Exchange 2016 can't share the same ASA credential. If your ASA credential was created for Exchange 2010, you have to create a new one for Exchange 2016. 
+> Exchange 2010 and Exchange 2016 can't share the same ASA credential. If your ASA credential was created for Exchange 2010, you have to create a new one for Exchange 2016.
   
 > [!IMPORTANT]
-> While CNAME records are supported for shared namespaces, Microsoft recommends using A records. This ensures that the client correctly issues a Kerberos ticket request based on the shared name, and not the server FQDN. 
+> While CNAME records are supported for shared namespaces, Microsoft recommends using A records. This ensures that the client correctly issues a Kerberos ticket request based on the shared name, and not the server FQDN.
   
 When you set up the ASA credential, keep these guidelines in mind:
   
@@ -35,7 +35,7 @@ When you set up the ASA credential, keep these guidelines in mind:
     
 - **Account name**: There are no requirements for the name of the account. You can use any name that conforms to your naming scheme.
     
-- **Account group**: The account you use for the ASA credential doesn't need special security privileges. If you are using a computer account then the account needs only to be a member of the Domain Computers security group. If you are using a user account then the account needs only to be a member of the Domain Users security group.
+- **Account group**: The account you use for the ASA credential doesn't need special security privileges. If you're using a computer account then the account needs only to be a member of the Domain Computers security group. If you're using a user account then the account needs only to be a member of the Domain Users security group.
     
 - **Account password**: The password you provide when you create the account will be used. So when you create the account, you should use a complex password and ensure that the password conforms to your organization's password requirements.
     
@@ -43,7 +43,7 @@ When you set up the ASA credential, keep these guidelines in mind:
 
 1. On a domain-joined computer, run Windows PowerShell or the Exchange Management Shell.
     
-    Use the **Import-Module** cmdlet to import the Active Directory module. 
+    Use the **Import-Module** cmdlet to import the Active Directory module.
     
   ```
   Import-Module ActiveDirectory
@@ -75,7 +75,7 @@ When you set up the ASA credential, keep these guidelines in mind:
   Set-ADComputer EXCH2016ASA -add @{"msDS-SupportedEncryptionTypes"="28"}
   ```
 
-    Where _EXCH2016ASA_ is the name of the account and the attribute to be modified is _msDS-SupportedEncryptionTypes_ with a decimal value of 28, which enables the following ciphers: RC4-HMAC, AES128-CTS-HMAC-SHA1-96, AES256-CTS-HMAC-SHA1-96. 
+    Where _EXCH2016ASA_ is the name of the account and the attribute to be modified is _msDS-SupportedEncryptionTypes_ with a decimal value of 28, which enables the following ciphers: RC4-HMAC, AES128-CTS-HMAC-SHA1-96, AES256-CTS-HMAC-SHA1-96.
     
 For more information about these cmdlets, see [Import-Module](https://technet.microsoft.com/library/hh849725.aspx) and [New-ADComputer](https://technet.microsoft.com/library/ee617245.aspx).
   
@@ -281,9 +281,9 @@ AlternateServiceAccountConfiguration : Latest: 1/12/2016 10:19:22 AM, tailspin\E
 <a name="associateSPN"> </a>
 
 > [!IMPORTANT]
-> Don't associate SPNs with an ASA credential until you have deployed that credential to at least one Exchange 2016 Server, as described earlier in [Deploy the ASA Credential to the first Exchange 2016 server running Client Access services](kerberos-auth-for-load-balanced-client-access.md#DeployASACred). Otherwise, you will experience Kerberos authentication errors. 
+> Don't associate SPNs with an ASA credential until you have deployed that credential to at least one Exchange 2016 Server, as described earlier in [Deploy the ASA Credential to the first Exchange 2016 server running Client Access services](kerberos-auth-for-load-balanced-client-access.md#DeployASACred). Otherwise, you will experience Kerberos authentication errors.
   
-Before you associate the SPNs with the ASA credential, you have to verify that the target SPNs aren't already associated with a different account in the forest. The ASA credential must be the only account in the forest with which these SPNs are associated. You can verify that no other account in the forest is associated with the SPNs by running the **setspn** command from the command line. 
+Before you associate the SPNs with the ASA credential, you have to verify that the target SPNs aren't already associated with a different account in the forest. The ASA credential must be the only account in the forest with which these SPNs are associated. You can verify that no other account in the forest is associated with the SPNs by running the **setspn** command from the command line.
   
 ### Verify an SPN is not already associated with an account in a forest by running the setspn command
 
@@ -305,7 +305,7 @@ Before you associate the SPNs with the ASA credential, you have to verify that t
     
 ### Associate an SPN with an ASA credential by using the setspn command
 
-1. Press **Start**. In the **Search** box, type **Command Prompt**, and then select **Command Prompt** in the list of results. 
+1. Press **Start**. In the **Search** box, type **Command Prompt**, and then select **Command Prompt** in the list of results.
     
 2. At the command prompt, type the following command:
     
@@ -323,7 +323,7 @@ Before you associate the SPNs with the ASA credential, you have to verify that t
     
 ### Verify you associated the SPNs with the ASA credentials by using the setspn command
 
-1. Press **Start**. In the **Search** box, type **Command Prompt**, and then select **Command Prompt** in the list of results. 
+1. Press **Start**. In the **Search** box, type **Command Prompt**, and then select **Command Prompt** in the list of results.
     
 2. At the command prompt, type the following command:
     
@@ -369,15 +369,15 @@ The Microsoft Exchange Service Host service (MSExchangeServiceHost) on the serve
   
 ### To verify the Microsoft Exchange Service Host service is started
 
-1. Click **Start**, type **services.msc**, and then select **services.msc** from the list. 
+1. Click **Start**, type **services.msc**, and then select **services.msc** from the list.
     
-2. In the **Services** window, locate the **Microsoft Exchange Service Host** service in the list of services. 
+2. In the **Services** window, locate the **Microsoft Exchange Service Host** service in the list of services.
     
 3. The status of the service should be **Running**. If the status is not **Running**, right-click the service, and then click **Start**.
     
 #### Verify Kerberos from the server running Client Access services
 
-When you configured the ASA credential on each server running Client Access services, you ran the **set-ClientAccessServer** cmdlet. After you run this cmdlet, you can use the logs to verify successful Kerberos connections. 
+When you configured the ASA credential on each server running Client Access services, you ran the **Set-ClientAccessServer** cmdlet. After you run this cmdlet, you can use the logs to verify successful Kerberos connections.
   
 ### Verify that Kerberos is working correctly by using the HttpProxy log file
 

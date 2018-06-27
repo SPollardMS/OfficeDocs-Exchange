@@ -18,7 +18,7 @@ description: "Summary: This article describes how passwords and security work in
   
 ## Creating an account and protecting passwords
 
-The first time the Outlook app for iOS and Android is run in an Exchange on-premises environment, Outlook generates a random AES-128 key. This key is known as the *device key* and is stored only on the user's device. 
+The first time the Outlook app for iOS and Android is run in an Exchange on-premises environment, Outlook generates a random AES-128 key. This key is known as the *device key* and is stored only on the user's device.
   
 When a user logs onto Exchange with Basic authentication, the username, password, and a unique AES-128 device key are sent from the user's device to the Outlook cloud service over a TLS connection, where the device key is held in runtime compute memory. After verifying the password with the Exchange server, the Outlook service uses the device key to encrypt the password, and the encrypted password is then stored in the service. The device key, meanwhile, is wiped from memory and never stored in the Outlook service (the key is only stored on the user's device).
   
@@ -39,7 +39,7 @@ There are three ways a user account can become inactive:
 - No internet connection is available on the device, preventing Outlook from synchronizing with Exchange.
     
 > [!NOTE]
-> Outlook will not become inactive simply because the user does not open the app for a period of time, such as over a weekend or while on vacation. As long as background app refresh is enabled (which is the default setting for Outlook for iOS and Android), functions like push notifications and background synchronization of email will count as activity. 
+> Outlook will not become inactive simply because the user does not open the app for a period of time, such as over a weekend or while on vacation. As long as background app refresh is enabled (which is the default setting for Outlook for iOS and Android), functions like push notifications and background synchronization of email will count as activity.
   
  **Flushing encrypted password and message cache from hard disk**
   
@@ -81,7 +81,7 @@ If a user uninstalls the app from their device without first using the **Delete 
   
 ### Is a user password less secure in Outlook for iOS and Android than when using other Exchange ActiveSync clients?
 
-No. EAS clients generally save user credentials locally on the user's device. This means a stolen or compromised device could result in a malicious party gaining access to the user's password. With the security design of Outlook for iOS and Android, a malicious party would need unauthorized access to the Outlook service **and** have physical access to a user's device. 
+No. EAS clients generally save user credentials locally on the user's device. This means a stolen or compromised device could result in a malicious party gaining access to the user's password. With the security design of Outlook for iOS and Android, a malicious party would need unauthorized access to the Outlook service **and** have physical access to a user's device.
   
 ### What happens if a user attempts to use Outlook for iOS and Android after their data has been deleted from the Outlook cloud service?
 

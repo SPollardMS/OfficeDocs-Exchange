@@ -22,14 +22,14 @@ You can use Windows Server Backup to back up and restore Exchange databases. Exc
 
 - Estimated time to complete: 1 minute, plus the time it takes to restore the data
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Mailbox recovery" entry in the [Recipients Permissions](../../permissions/feature-permissions/recipient-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Mailbox recovery" entry in the [Recipients Permissions](../../permissions/feature-permissions/recipient-permissions.md) topic.
     
 - The Windows Server Backup feature must be installed on the local computer.
     
 - When restoring a database to its original location, the database can remain in a dirty shutdown state and be mountable by the system. When restoring to an alternate location (for example, in preparation to use a recovery database), the database must be manually brought into a clean shutdown state by using Exchange Server Database Utilities (Eseutil.exe).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).. 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351)..
   
 ## Use Windows Server Backup to restore a backup of Exchange
 
@@ -37,7 +37,7 @@ You can use Windows Server Backup to back up and restore Exchange databases. Exc
     
 2. Select **Local Backup**.
     
-3. In the Actions pane, click **Recover…** to start the Recovery Wizard. 
+3. In the Actions pane, click **Recover…** to start the Recovery Wizard.
     
 4. On the **Getting Started** page, do either of the following: 
     
@@ -50,21 +50,21 @@ You can use Windows Server Backup to back up and restore Exchange databases. Exc
 6. On the **Select Recovery Type** page, select **Applications**, and then click **Next**.
     
     > [!NOTE]
-    > If **Applications** is not available as a selection, it indicates that the backup selected for restore was a folder-level backup, and not a volume level backup. You must perform backups at the volume level when backing up Exchange data with Windows Server Backup. 
+    > If **Applications** is not available as a selection, it indicates that the backup selected for restore was a folder-level backup, and not a volume level backup. You must perform backups at the volume level when backing up Exchange data with Windows Server Backup.
   
 7. On the **Select Application** page, verify that Exchange is selected in the **Applications** field. Click **View Details** to view the application components of the backups. If the backup that you're recovering is the most recent, the **Do not perform a roll-forward recovery of the application database** check box is displayed. Select this check box if you want to prevent Windows Server Backup from rolling forward the database being recovered by committing all uncommitted transaction logs. Click **Next**.
     
 8. On the **Specify Recovery Options** page, specify where you want to recover the data, and then click **Next**:
     
-  - Choose **Recover to original location** if you want to restore the Exchange data directly to its original location. If you use this option, you can't choose which databases are restored; all backed up databases on the volume will be restored to their original locations. 
+  - Choose **Recover to original location** if you want to restore the Exchange data directly to its original location. If you use this option, you can't choose which databases are restored; all backed up databases on the volume will be restored to their original locations.
     
   - Choose **Recover to another location** if you want to restore individual databases and their files to a specified location. Click **Browse** to specify the alternate location. If you use this option, you can choose which databases are restored. After being restored, the data files can then be moved into a recovery database, manually moved back to their original location, or mounted somewhere else in the Exchange organization using [Database Portability](http://technet.microsoft.com/library/387b727a-ce51-4910-b5c4-613c693fa5bd.aspx). When you restore a database to an alternate location, the restored database will be in a dirty shutdown state. After the restore process has completed, you will need to manually put the database into a clean shutdown state using Eseutil.exe.
     
 9. On the **Confirmation** page, review the recovery settings, and then click **Recover**.
     
-10. On the **Recovery Progress** page, you can view the status and progress of the recovery operation. 
+10. On the **Recovery Progress** page, you can view the status and progress of the recovery operation.
     
-11. Click **Close** when the recovery operation has completed. 
+11. Click **Close** when the recovery operation has completed.
     
 ## How do you know this worked?
 

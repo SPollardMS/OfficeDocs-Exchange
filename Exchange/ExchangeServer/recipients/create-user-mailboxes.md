@@ -18,7 +18,7 @@ description: "Summary: Learn how to create mailboxes for users in Exchange 2016 
 
 User mailboxes are Exchange mailboxes that are associated with people, typically one mailbox per person. Each user mailbox has an associated Active Directory account that gives the person access to the mailbox to send and receive email messages, and create meetings and appointments.
 
-When you create a new user mailbox in Exchange, you also create the corresponding Active Directory user at the same time. Or, you can create a new mailbox for an existing Active Directory account that doesn't have an associated mailbox. This is known as *mailbox-enabling* an existing user. 
+When you create a new user mailbox in Exchange, you also create the corresponding Active Directory user at the same time. Or, you can create a new mailbox for an existing Active Directory account that doesn't have an associated mailbox. This is known as *mailbox-enabling* an existing user.
 
 You can create user mailboxes in Exchange Server 2016 by using the Exchange admin center (EAC) or the Exchange Management Shell. The following table describes some of the important properties for user mailboxes.
 
@@ -35,12 +35,12 @@ You can create user mailboxes in Exchange Server 2016 by using the Exchange admi
 
 - For more information about the EAC, see [Exchange admin center in Exchange 2016](../architecture/client-access/exchange-admin-center.md). To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" section in the [Recipients Permissions](../permissions/feature-permissions/recipient-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" section in the [Recipients Permissions](../permissions/feature-permissions/recipient-permissions.md) topic.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).. 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351)..
 
 ## Create user mailboxes
 <a name="introduction"> </a>
@@ -51,12 +51,12 @@ The procedures in this section describe how to create a new mailbox and the asso
 
 1. In the EAC, go to **Recipients** \> **Mailboxes**.
 
-2. Click **New** ( ![Add icon](../media/ITPro_EAC_AddIcon.png)) and then select **User mailbox**.
+2. Click **New** (![Add icon](../media/ITPro_EAC_AddIcon.png)) and then select **User mailbox**.
     ![In the EAC, click Recipients, Mailboxes, New](../media/a90059a8-f77c-475d-b6b7-32dea2046e6c.png)
 
     **Note**: A linked mailbox is a local mailbox that's associated with a user account in a different (trusted) Active Directory forest. For more information, see [Manage linked mailboxes](linked-mailboxes.md).
 
-3. On the **New user mailbox** page, configure the following settings. Settings marked with an asterisk (\*) are required. 
+3. On the **New user mailbox** page, configure the following settings. Settings marked with an asterisk (\*) are required.
 
   - **Alias**
 
@@ -68,19 +68,19 @@ The procedures in this section describe how to create a new mailbox and the asso
 
   - **Last name**
 
-  - **\* Display name**: By default, this field is populated with the names you enter in the **First name**, **Initials**, and **Last name** fields, but you can override it. The maximum length is 256 characters. 
+  - **\* Display name**: By default, this field is populated with the names you enter in the **First name**, **Initials**, and **Last name** fields, but you can override it. The maximum length is 256 characters.
 
-  - **\* Name**: By default, this field is populated with the names you enter in the **First name**, **Initials**, and **Last name** field, but you can override it. The maximum length is 64 characters, and the value must be unique in your organization. 
+  - **\* Name**: By default, this field is populated with the names you enter in the **First name**, **Initials**, and **Last name** field, but you can override it. The maximum length is 64 characters, and the value must be unique in your organization.
 
-  - **Organizational unit**: Typically, the default location for the user account is the Users container. To change it, click **Browse** and select the OU or container where you want to create the account. 
+  - **Organizational unit**: Typically, the default location for the user account is the Users container. To change it, click **Browse** and select the OU or container where you want to create the account.
 
-  - **\* User logon name**: This is the Active Directory user account that's created and associated with the mailbox. 
+  - **\* User logon name**: This is the Active Directory user account that's created and associated with the mailbox.
 
     **Notes**:
 
   - Don't use apostrophes (') or quotation marks ("). Although these characters are allowed, they might cause problems later (for example, assigning access permissions to the mailbox).
 
-  - If this value is different than the **Alias** value, the user's email address and account name will be different (important if the email domain and the Active Directory domain are the same). 
+  - If this value is different than the **Alias** value, the user's email address and account name will be different (important if the email domain and the Active Directory domain are the same).
 
   - **\* New Password**: Verify the value complies with your organization's password length, complexity, and history requirements.
 
@@ -90,7 +90,7 @@ The procedures in this section describe how to create a new mailbox and the asso
 
 4. You can click **Save** to create the mailbox and the associated Active Directory user account, or you can click **More options** to configure the following additional settings: 
 
-  - **Mailbox database**: Click **Browse** to select the mailbox database that holds the mailbox. 
+  - **Mailbox database**: Click **Browse** to select the mailbox database that holds the mailbox.
 
   - **Create an on-premises archive mailbox for this user**: Select this check box to create an archive mailbox for the mailbox, and then click **Browse** to select the mailbox database that holds the archive mailbox. Items are automatically moved from the primary mailbox to the archive based on the retention policy settings. For more information, see [In-Place Archiving in Exchange 2016](../policy-and-compliance/in-place-archiving/in-place-archiving.md).
 
@@ -111,7 +111,7 @@ This example creates a new mailbox and Active Directory user account for Pilar P
 
 - **Required parameters**:
 
-  - _Name_: Pilar Pinilla. This value is also used for the display name, because we aren't using the _DisplayName_ parameter. 
+  - _Name_: Pilar Pinilla. This value is also used for the display name, because we aren't using the _DisplayName_ parameter.
 
   - _UserPrincipalName_: The Active Directory account name is `pilarp@contoso.com`.
 
@@ -123,7 +123,7 @@ This example creates a new mailbox and Active Directory user account for Pilar P
 
   - _LastName_: Pinilla
 
-  - The alias value is `pilarp` because we aren't using the _Alias_ parameter, and `pilarp` is taken from the _UserPrincipalName_ parameter value. 
+  - The alias value is `pilarp` because we aren't using the _Alias_ parameter, and `pilarp` is taken from the _UserPrincipalName_ parameter value.
 
 ```
 New-Mailbox -Name "Pilar Pinilla" -UserPrincipalName pilarp@contoso.com -Password (ConvertTo-SecureString -String 'Pa$$word1' -AsPlainText -Force) -FirstName Pilar -LastName Pinilla 
@@ -153,10 +153,10 @@ When you mailbox-enable a user account, you can only select existing Active Dire
 
 1. In the EAC, go to **Recipients** \> **Mailboxes**.
 
-2. Click **New** ( ![Add icon](../media/ITPro_EAC_AddIcon.png)) and then select **User mailbox**.
+2. Click **New** (![Add icon](../media/ITPro_EAC_AddIcon.png)) and then select **User mailbox**.
     ![In the EAC, click Recipients, Mailboxes, New](../media/a90059a8-f77c-475d-b6b7-32dea2046e6c.png)
 
-3. On the **New user mailbox** page, configure the following settings. 
+3. On the **New user mailbox** page, configure the following settings.
 
   - **Alias**: This setting is optional.
 
@@ -166,11 +166,11 @@ When you mailbox-enable a user account, you can only select existing Active Dire
 
   - If this value is different than the user name part of the user principal name, the user's email address and account name will be different (important if the email domain and the Active Directory domain are the same).
 
-  - **Existing user** or **New user**: Verify **Existing user** is selected, and then click **Browse** to select an available account. 
+  - **Existing user** or **New user**: Verify **Existing user** is selected, and then click **Browse** to select an available account.
 
 4. You can click **Save** to create the mailbox, or you can click **More options** to configure the following additional settings: 
 
-  - **Mailbox database**: Click **Browse** to select the mailbox database that holds the mailbox. 
+  - **Mailbox database**: Click **Browse** to select the mailbox database that holds the mailbox.
 
   - **Create an on-premises archive mailbox for this user**: Select this check box to create an archive mailbox for the mailbox, and then click **Browse** to select the mailbox database that holds the archive mailbox. Items are automatically moved from the primary mailbox to the archive based on the retention policy settings. For more information, see [In-Place Archiving in Exchange 2016](../policy-and-compliance/in-place-archiving/in-place-archiving.md).
 
@@ -190,13 +190,13 @@ This example creates a mailbox in the mailbox database named UsersMailboxDatabas
 
 - Because we aren't using the _Alias_ parameter, the alias value is `kreiter`.
 
-- Because we aren't using the _DisplayName_ parameter, the value of the **name** attribute in Active Directory is used as the display name. 
+- Because we aren't using the _DisplayName_ parameter, the value of the **name** attribute in Active Directory is used as the display name.
 
 ```
 Enable-Mailbox -Identity kreiter@contoso.com -Database UsersMailboxDatabase
 ```
 
-This example finds all user accounts that aren't mail-enabled and that aren't system accounts (the **userPrincipalName** attribute isn't blank), and then creates mailboxes for those accounts. 
+This example finds all user accounts that aren't mail-enabled and that aren't system accounts (the **userPrincipalName** attribute isn't blank), and then creates mailboxes for those accounts.
 
 ```
 Get-User -RecipientTypeDetails User -Filter {UserPrincipalName -ne $null} -ResultSize unlimited | Enable-Mailbox
@@ -208,7 +208,7 @@ For detailed syntax and parameter information, see [Enable-Mailbox](http://techn
 
 To verify that you've successfully created a mailbox for an existing user, use either of the following procedures:
 
-- In the EAC, go to **Recipients** \> **Mailboxes** and verify the mailbox is displayed in the list. 
+- In the EAC, go to **Recipients** \> **Mailboxes** and verify the mailbox is displayed in the list.
 
 - In the Exchange Management Shell, replace _\<Name\>_ with the name attribute of the user, and run the following command: 
 

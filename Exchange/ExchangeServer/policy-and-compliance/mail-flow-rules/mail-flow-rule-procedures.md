@@ -21,7 +21,7 @@ Mail flow rules (also known as transport rules) identify and take action on mess
 On Mailbox servers, you can manage mail flow rules in the Exchange admin center (EAC) and in the Exchange Management Shell. On Edge Transport servers, you can only use the Exchange Management Shell.
   
 > [!TIP]
-> Verify that your rules work the way you expect. Be sure to thoroughly test each rule and the interactions between rules. 
+> Verify that your rules work the way you expect. Be sure to thoroughly test each rule and the interactions between rules.
   
 ## What do you need to know before you begin?
 
@@ -34,7 +34,7 @@ On Mailbox servers, you can manage mail flow rules in the Exchange admin center 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
   
 ## Create mail flow rules
 <a name="Create"> </a>
@@ -56,11 +56,11 @@ The EAC allows you to create mail flow rules by using a template (a filtered lis
   
 1. In the EAC, go to **Mail flow** \> **Rules**, and then select one of the following options:
     
-  - To create a rule from a template, click **Add** ( ![Add icon](../../media/ITPro_EAC_AddIcon.png)) and select a template (a value other than **Create new rule**).
+  - To create a rule from a template, click **Add** (![Add icon](../../media/ITPro_EAC_AddIcon.png)) and select a template (a value other than **Create new rule**).
     
-  - To copy a rule, select the rule, and then select **Copy** ( ![Copy icon](../../media/ITPro_EAC_CopyIcon.png)). Note that the option to copy a rule is only available in the EAC.
+  - To copy a rule, select the rule, and then select **Copy** (![Copy icon](../../media/ITPro_EAC_CopyIcon.png)). Note that the option to copy a rule is only available in the EAC.
     
-  - To create a new rule from scratch, **Add** ( ![Add icon](../../media/ITPro_EAC_AddIcon.png)) and then select **Create a new rule**.
+  - To create a new rule from scratch, **Add** (![Add icon](../../media/ITPro_EAC_AddIcon.png)) and then select **Create a new rule**.
     
 2. In the **New rule** page that opens, configure the following settings: 
     
@@ -80,7 +80,7 @@ The EAC allows you to create mail flow rules by using a template (a filtered lis
     
   - **Test with Policy Tips**: This turns on the rule, and any Policy Tip actions (**Notify the sender with a Policy Tip**) will be sent, but no actions related to message delivery will be performed. DLP is required to use this mode. To learn more, see [Policy Tips](http://technet.microsoft.com/library/4266b83c-dd8a-4b3d-99ff-402e68fc810c.aspx).
     
-  - **Test without Policy Tips**: For DLP policies, only the **Generate incident report and send it to** action will be enforced. No actions related to message delivery are performed. 
+  - **Test without Policy Tips**: For DLP policies, only the **Generate incident report and send it to** action will be enforced. No actions related to message delivery are performed.
     
 3. You can create the rule by clicking **Save**, or you can click **More options** to configure the following additional settings: 
     
@@ -171,10 +171,10 @@ Mail flow rules that you create on a Mailbox server are stored in Active Directo
 
 1. In the EAC, go to **Mail flow** \> **Rules**.
     
-2. When you select a rule, information about the rule is displayed in the details pane. To see more information about the rule, click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)).
+2. When you select a rule, information about the rule is displayed in the details pane. To see more information about the rule, click **Edit** (![Edit icon](../../media/ITPro_EAC_EditIcon.png)).
     ![In the EAC, go to Mail flow \> Rules and select a rule](../../media/37502067-8f3f-49d1-aaea-91c7f3eb8e8a.png)
   
-    In the EAC, the **Version** property is only visible in the details pane. This property indicates the compatibility of the rule with previous versions of Exchange (14. *n* . *n* . *n* is Exchange 2010, 15.0. *n* . *n* is Exchange 2013). 
+    In the EAC, the **Version** property is only visible in the details pane. This property indicates the compatibility of the rule with previous versions of Exchange (14. *n*. *n*. *n* is Exchange 2010, 15.0. *n*. *n* is Exchange 2013).
     
 ### Use the Exchange Management Shell to view mail flow rules
 
@@ -206,7 +206,7 @@ For detailed syntax and parameter information, see [Get-TransportRule](http://te
   
 ### Use the Exchange Management Shell to view the available conditions and exceptions (predicates) for mail flow rules
 
-The conditions and exceptions in mail flow rules are collectively known as *predicates* because for every condition, there's a corresponding exception that uses the exact same settings and syntax. The only difference is: conditions specify messages to include, while exceptions specify messages to exclude. You can only view the list of conditions and exceptions in the Exchange Management Shell. 
+The conditions and exceptions in mail flow rules are collectively known as *predicates* because for every condition, there's a corresponding exception that uses the exact same settings and syntax. The only difference is: conditions specify messages to include, while exceptions specify messages to exclude. You can only view the list of conditions and exceptions in the Exchange Management Shell.
   
 To view the conditions and exceptions that are available in mail flow rules, run the following command:
   
@@ -222,11 +222,11 @@ For detailed syntax and parameter information, see [Get-TransportRulePredicate](
     
 - The predicates that are available on Edge Transport servers are a small subset of those available on Mailbox servers. For more information, see [Mail flow rule conditions and exceptions (predicates) in Exchange 2016](conditions-and-exceptions.md).
     
-- Some of the predicate names are different than the corresponding condition and exception parameter names on the **New-TransportRule** and **Set-TransportRule** cmdlets. And, some predicates require multiple parameters. 
+- Some of the predicate names are different than the corresponding condition and exception parameter names on the **New-TransportRule** and **Set-TransportRule** cmdlets. And, some predicates require multiple parameters.
     
 ### Use the Exchange Management Shell to view the available actions for mail flow rules
 
- You can only view the list of actions in the Exchange Management Shell. 
+ You can only view the list of actions in the Exchange Management Shell.
   
 To view the actions that are available in mail flow rules, run the following command:
   
@@ -240,7 +240,7 @@ For detailed syntax and parameter information, see [Get-TransportRuleAction](htt
   
 - A small subset of actions that are available on Mailbox servers are also available on Edge Transport servers, but some actions are only available on Edge Transport servers. For more information, see [Mail flow rule actions in Exchange 2016](actions.md).
     
-- Some of the action names are different than the corresponding action parameter names on the **New-TransportRule** and **Set-TransportRule** cmdlets. And, some actions require multiple parameters. 
+- Some of the action names are different than the corresponding action parameter names on the **New-TransportRule** and **Set-TransportRule** cmdlets. And, some actions require multiple parameters.
     
 ## Modify mail flow rules
 <a name="ModifyRule"> </a>
@@ -251,11 +251,11 @@ No additional settings are available when you modify a mail flow rule in the EAC
   
 1. In the EAC, go to **Mail flow** \> **Rules**.
     
-2. Select the rule, and then click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)). Note that the properties of the rule are fully expanded (there's no **More options** link available). For more information about the rule properties, see the [Use the EAC to create mail flow rules](mail-flow-rule-procedures.md#CreateEAC) section in this topic. 
+2. Select the rule, and then click **Edit** (![Edit icon](../../media/ITPro_EAC_EditIcon.png)). Note that the properties of the rule are fully expanded (there's no **More options** link available). For more information about the rule properties, see the [Use the EAC to create mail flow rules](mail-flow-rule-procedures.md#CreateEAC) section in this topic.
     
 ### Use the Exchange Management Shell to modify mail flow rules
 
-When you modify a mail flow rule in the Exchange Management Shell, you can't disable or enable the rule (there's no _Enabled_ parameter on the **Set-TransportRule** cmdlet). Instead, you use the **Disable-TransportRule** and **Enable-TransportRule** cmdlets as describe later in this topic. 
+When you modify a mail flow rule in the Exchange Management Shell, you can't disable or enable the rule (there's no _Enabled_ parameter on the **Set-TransportRule** cmdlet). Instead, you use the **Disable-TransportRule** and **Enable-TransportRule** cmdlets as describe later in this topic.
   
 To modify a mail flow rule in the Exchange Management Shell, use the following syntax:
   
@@ -275,7 +275,7 @@ For detailed syntax and parameter information, see [Set-TransportRule](http://te
 
 To verify that you have successfully modified a mail flow rule, use either of the following procedures:
   
-- In the EAC, go to **Mail flow** \> **Rules**, select the rule, and view the information in details pane. To see more settings, click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)).
+- In the EAC, go to **Mail flow** \> **Rules**, select the rule, and view the information in details pane. To see more settings, click **Edit** (![Edit icon](../../media/ITPro_EAC_EditIcon.png)).
     
 - In the Exchange Management Shell, replace _\<RuleName\>_ with the name of the rule, and run the following command: 
     
@@ -296,11 +296,11 @@ By default, mail flow rules are given a priority that's based on the order they 
     
 ### Use the EAC to set the priority of mail flow rules
 
-In the EAC, rules are processed in the order that they're displayed (the first rule has the **Priority** value 0). To change the priority of a rule, move the rule up or down in the list (you can't directly modify the **Priority** number in the EAC). 
+In the EAC, rules are processed in the order that they're displayed (the first rule has the **Priority** value 0). To change the priority of a rule, move the rule up or down in the list (you can't directly modify the **Priority** number in the EAC).
   
 1. In the EAC, go to **Mail flow** \> **Rules**.
     
-2. Select a rule, and then click **Move up** ( ![Up Arrow Icon](../../media/ITPro_EAC_UpArrowIcon.png)) or **Move down** ( ![Down Arrow Icon](../../media/ITPro_EAC_DownArrowIcon.png)) to move the rule up or down in the list.
+2. Select a rule, and then click **Move up** (![Up Arrow Icon](../../media/ITPro_EAC_UpArrowIcon.png)) or **Move down** (![Down Arrow Icon](../../media/ITPro_EAC_DownArrowIcon.png)) to move the rule up or down in the list.
     
 ### Use the Exchange Management Shell to set the priority of mail flow rules
 
@@ -318,13 +318,13 @@ This example sets the priority of the rule named "Sender is a member of marketin
 Set-TransportRule -Identity "Sender is a member of marketing" -Priority 2
 ```
 
- **Note**: To set the priority of a new rule when you create it, use the _Priority_ parameter on the **New-TransportRule** cmdlet. 
+ **Note**: To set the priority of a new rule when you create it, use the _Priority_ parameter on the **New-TransportRule** cmdlet.
   
 ### How do you know this worked?
 
 To verify that you have successfully modified the priority of a mail flow rule, use either of the following procedures:
   
-- In the EAC, go to **Mail flow** \> **Rules**, and verify the **Priority** value of the rule in the list. 
+- In the EAC, go to **Mail flow** \> **Rules**, and verify the **Priority** value of the rule in the list.
     
 - In the Exchange Management Shell, use either of the following procedures:
     
@@ -353,9 +353,9 @@ By default, mail flow rules are enabled when you create them in the EAC or the E
     
 2. Select the rule from the list, and then configure one of the following settings:
     
-  - **Disable the rule**: Clear the check box in the **On** column. 
+  - **Disable the rule**: Clear the check box in the **On** column.
     
-  - **Enable the rule**: Select the check box in the **On** column. 
+  - **Enable the rule**: Select the check box in the **On** column.
     
 ### Use the Exchange Management Shell to enable or disable mail flow rules
 
@@ -383,7 +383,7 @@ For detailed syntax and parameter information, see [Enable-TransportRule](http:/
 
 To verify that you have successfully enabled or disabled a mail flow rule, use either of the following procedures:
   
-- In the EAC, go to **Mail flow** \> **Rules**, and in the list of rules verify the status of the check box in the **On** column. 
+- In the EAC, go to **Mail flow** \> **Rules**, and in the list of rules verify the status of the check box in the **On** column.
     
 - In the Exchange Management Shell, use either of the following procedures:
     
@@ -406,7 +406,7 @@ To verify that you have successfully enabled or disabled a mail flow rule, use e
 
 1. From the EAC, go to **Mail flow** \> **Rules**.
     
-2. Select the rule you want to remove from the list, and then click **Delete** ( ![Delete icon](../../media/ITPro_EAC_DeleteIcon.png)).
+2. Select the rule you want to remove from the list, and then click **Delete** (![Delete icon](../../media/ITPro_EAC_DeleteIcon.png)).
     
 ### Use the Exchange Management Shell to remove mail flow rules
 

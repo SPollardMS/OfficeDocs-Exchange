@@ -22,14 +22,14 @@ You can use Windows Server Backup to back up and restore Exchange databases. Exc
 
 - Estimated time to complete: 1 minute, plus the time it takes to back up the data
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Mailbox recovery" entry in the [Recipients Permissions](../../permissions/feature-permissions/recipient-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Mailbox recovery" entry in the [Recipients Permissions](../../permissions/feature-permissions/recipient-permissions.md) topic.
     
 - The Windows Server Backup feature must be installed on the local computer.
     
 - During the backup operation, a consistency check of the Exchange data files is run to make sure that the files are in a good state and can be used for recovery. If the consistency check succeeds, Exchange data is available for recovery from that backup. If the consistency check fails, the Exchange data isn't available for recovery. Windows Server Backup runs the consistency check on the snapshot taken for the backup. As a result, before copying files from the snapshot to backup media, the consistency of the backup is known, and the user is notified of the consistency check results.
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).. 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351)..
   
 ## Use Windows Server Backup to back up Exchange
 
@@ -37,7 +37,7 @@ You can use Windows Server Backup to back up and restore Exchange databases. Exc
     
 2. Select **Local Backup**.
     
-3. In the Actions pane, click **Backup Once…** to start the Backup Once Wizard. 
+3. In the Actions pane, click **Backup Once…** to start the Backup Once Wizard.
     
 4. On the **Backup Options** page, select **Different options**, and then click **Next**.
     
@@ -46,12 +46,12 @@ You can use Windows Server Backup to back up and restore Exchange databases. Exc
 6. On the **Select Items for Backup** page, click **Add Items** to select the volume(s) to be backed up, and then click **OK**.
     
     > [!NOTE]
-    > Choose volumes and not individual folders. The only way to perform an application-level backup or restore is to select an entire volume. 
+    > Choose volumes and not individual folders. The only way to perform an application-level backup or restore is to select an entire volume.
   
-7. Click **Advanced Settings**. On the **Exclusions** tab, click **Add Exclusion** to add any files or file types you want to exclude from the backup. 
+7. Click **Advanced Settings**. On the **Exclusions** tab, click **Add Exclusion** to add any files or file types you want to exclude from the backup.
     
     > [!NOTE]
-    > By default, volumes that contain operating system components or applications are included in the backup and can't be excluded. 
+    > By default, volumes that contain operating system components or applications are included in the backup and can't be excluded.
   
 8. On the **VSS Settings tab**, select **VSS full Backup**, and then click **OK**, and then click **Next**.
     
@@ -63,9 +63,9 @@ You can use Windows Server Backup to back up and restore Exchange databases. Exc
     
 10. On the **Confirmation** page, review the backup settings, and then click **Backup**.
     
-11. On the **Backup Progress** page, you can view the status and progress of the backup operation. 
+11. On the **Backup Progress** page, you can view the status and progress of the backup operation.
     
-12. Click **Close** to exit the **Backup Progress** page at any time. Any backup in progress will continue to run in the background. 
+12. Click **Close** to exit the **Backup Progress** page at any time. Any backup in progress will continue to run in the background.
     
 ## How do you know this worked?
 
@@ -81,6 +81,6 @@ To verify that you've successfully backed up the data, do any of the following:
   Get-MailboxDatabase -Server <ServerName> -Status | Format-List Name,*FullBackup
   ```
 
-    The _SnapshotLastFullBackup_ and _LastFullBackup_ properties of the database indicate when the last successful backup was taken, and if it was a VSS full backup. 
+    The _SnapshotLastFullBackup_ and _LastFullBackup_ properties of the database indicate when the last successful backup was taken, and if it was a VSS full backup.
     
 

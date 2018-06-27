@@ -18,10 +18,10 @@ description: "Summary: Learn how address rewriting on Edge Transport servers in 
   
 Address rewriting in Exchange Server 2016 modifies the email addresses of senders and recipients in messages that enter or leave your organization through an Edge Transport server. Two transport agents on the Edge Transport server provide the rewriting functionality: the Address Rewriting Inbound Agent and the Address Rewriting Outbound Agent. The primary reason for address rewriting on outbound messages is to present a single, consistent email domain to external recipients. The primary reason for address rewriting on inbound messages is to deliver messages to the correct recipient.
   
-The *address rewrite entry*, which you create, specifies the internal addresses (the email addresses you want to change) and the external addresses (the final email addresses you want). You can specify whether email addresses are rewritten in inbound and outbound messages, or in outbound messages only. You can create address writing entries for a single user (chris@contoso.com to support@contoso.com), a single domain (contoso.com to fabrikam.com), or for multiple subdomains with exceptions (\*.fabrikam.com to contoso.com, except legal.fabrikam.com). 
+The *address rewrite entry*, which you create, specifies the internal addresses (the email addresses you want to change) and the external addresses (the final email addresses you want). You can specify whether email addresses are rewritten in inbound and outbound messages, or in outbound messages only. You can create address writing entries for a single user (chris@contoso.com to support@contoso.com), a single domain (contoso.com to fabrikam.com), or for multiple subdomains with exceptions (\*.fabrikam.com to contoso.com, except legal.fabrikam.com).
   
 > [!IMPORTANT]
-> Regardless of how you plan to use address rewriting, you need to verify that the resulting email addresses are unique in your organization so you don't end up with duplicates. Address rewriting doesn't verify the uniqueness of a rewritten email address. 
+> Regardless of how you plan to use address rewriting, you need to verify that the resulting email addresses are unique in your organization so you don't end up with duplicates. Address rewriting doesn't verify the uniqueness of a rewritten email address.
   
 To configure address rewriting, see [Address rewriting procedures on Edge Transport servers](address-rewriting-procedures.md).
   
@@ -57,7 +57,7 @@ The following scenarios are examples of how you can use address rewriting:
 ## Message properties modified by address rewriting
 <a name="SMTP"> </a>
 
-A standard SMTP email message consists of a *message envelope* and message content. The message envelope contains information that's required for transmitting and delivering the message between SMTP messaging servers. The message content contains message header fields (collectively called the *message header*) and the message body. The message envelope is described in RFC 2821, and the message header is described in RFC 2822. 
+A standard SMTP email message consists of a *message envelope* and message content. The message envelope contains information that's required for transmitting and delivering the message between SMTP messaging servers. The message content contains message header fields (collectively called the *message header*) and the message body. The message envelope is described in RFC 2821, and the message header is described in RFC 2822.
   
 When a sender composes an email message and submits it for delivery, the message contains the basic information that's required to comply with SMTP standards, such as a sender, a recipient, the date and time that the message was composed, an optional subject line, and an optional message body. This information is contained in the message itself and, by definition, in the message header.
   
@@ -112,7 +112,7 @@ The rewritten email address needs to be configured as a proxy address on the aff
 ## Considerations for inbound and outbound address rewriting
 <a name="Consid2"> </a>
 
-Inbound and outbound, or *bidirectional* address rewriting on an Edge Transport server modifies the sender's email address as messages leave the Exchange organization, and the recipient's email address as messages enter the Exchange organization. 
+Inbound and outbound, or *bidirectional* address rewriting on an Edge Transport server modifies the sender's email address as messages leave the Exchange organization, and the recipient's email address as messages enter the Exchange organization.
   
 You can configure bidirectional address rewriting for a single user (chris@contoso.com to support@contoso.com), and a single domain (contoso.com to fabrikam.com). You can't configure bidirectional address rewriting for multiple subdomains (\*.fabrikam.com to contoso.com).
   

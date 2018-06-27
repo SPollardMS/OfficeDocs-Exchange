@@ -15,7 +15,7 @@ description: "Welcome to Microsoft Exchange Server 2016! This topic contains imp
 # Release notes for Exchange 2016
 
 > [!TIP]
-> Coming from the Exchange Deployment Assistant? Click [Release notes for Exchange 2013](https://technet.microsoft.com/library/jj150489%28v=exchg.150%29.aspx). 
+> Coming from the Exchange Deployment Assistant? Click [Release notes for Exchange 2013](https://technet.microsoft.com/library/jj150489%28v=exchg.150%29.aspx).
 
 Welcome to Microsoft Exchange Server 2016! This topic contains important information that you need to know to successfully deploy Exchange 2016. Please read this topic completely before beginning your deployment.
 
@@ -37,21 +37,21 @@ Welcome to Microsoft Exchange Server 2016! This topic contains important informa
 
     Before you can move mailboxes to Exchange 2016 CU5 or later using a migration batch request, you need to move the migration mailbox to an Exchange server running CU5 or later using the following steps.
 
-1. Open the Exchange Management Shell on your Exchange 2016 Mailbox server.
+  1. Open the Exchange Management Shell on your Exchange 2016 Mailbox server.
 
-2. Run the following command to get a list of mailbox databases that are located on your Exchange 2016 servers. Copy the name of the mailbox database where you want to move the migration mailbox to the clipboard.
+  2. Run the following command to get a list of mailbox databases that are located on your Exchange 2016 servers. Copy the name of the mailbox database where you want to move the migration mailbox to the clipboard.
 
-  ```
-  Get-MailboxDatabase | Where {$_.AdminDisplayVersion -Like "*15.1*"} | Format-Table Name, ServerName
-  ```
+      ```
+      Get-MailboxDatabase | Where {$_.AdminDisplayVersion -Like "*15.1*"} | Format-Table Name, ServerName
+      ```
 
-3. Run the following command to move the migration mailbox to your Exchange 2016 server. Paste the mailbox database name you copied in the previous step after _TargetDatabase_.
+  3. Run the following command to move the migration mailbox to your Exchange 2016 server. Paste the mailbox database name you copied in the previous step after _TargetDatabase_.
 
-  ```
-  New-MoveRequest "Migration.8f3e7716-2011-43e4-96b1-aba62d229136" -TargetDatabase "<mailbox database name>"
-  ```
+      ```
+      New-MoveRequest "Migration.8f3e7716-2011-43e4-96b1-aba62d229136" -TargetDatabase "<mailbox database name>"
+      ```
 
-- **Mailbox servers running different versions of Exchange can be added to the same database availability group**: The **Add-DatabaseAvailabilityGroupServer** cmdlet and the Exchange admin center incorrectly allow an Exchange 2013 server to be added to an Exchange 2016-based database availability group (DAG), and vice versa. Exchange supports adding only Mailbox servers running the same version (Exchange 2013 versus Exchange 2016, for example) to a DAG. Additionally, the Exchange admin center displays both Exchange 2013 and Exchange 2016 servers in the list of servers available to add to a DAG. This could allow an administrator to inadvertently add a server running an incompatible version of Exchange to a DAG (for example, adding an Exchange 2013 server to an Exchange 2016-based DAG). 
+- **Mailbox servers running different versions of Exchange can be added to the same database availability group**: The **Add-DatabaseAvailabilityGroupServer** cmdlet and the Exchange admin center incorrectly allow an Exchange 2013 server to be added to an Exchange 2016-based database availability group (DAG), and vice versa. Exchange supports adding only Mailbox servers running the same version (Exchange 2013 versus Exchange 2016, for example) to a DAG. Additionally, the Exchange admin center displays both Exchange 2013 and Exchange 2016 servers in the list of servers available to add to a DAG. This could allow an administrator to inadvertently add a server running an incompatible version of Exchange to a DAG (for example, adding an Exchange 2013 server to an Exchange 2016-based DAG).
 
     There is currently no workaround for this issue. Administrators must be diligent when adding a Mailbox server to a DAG. Add only Exchange 2013 servers to Exchange 2013-based DAGs, and only Exchange 2016 servers to Exchange 2016-based DAGs. You can differentiate each version of Exchange by looking at the **Version** column in the list of servers in the Exchange admin center. The following are the server versions for Exchange 2013 and Exchange 2016: 
 
@@ -73,13 +73,13 @@ Welcome to Microsoft Exchange Server 2016! This topic contains important informa
 
   - Disable MAPI over HTTP on the mailbox by running the following command.
 
-  ```
-  Set-CasMailbox <email address> -MapiHttpEnabled $False
-  ```
+    ```
+    Set-CasMailbox <email address> -MapiHttpEnabled $False
+    ```
 
-- **Notifications Broker service stops after 30 seconds** When you start your Exchange server, you might notice the **Notifications Broker** service start and then stop after approximately 30 seconds. If you attempt to start the service manually, it will successfully start and then stop, again after approximately 30 seconds. No errors or warnings are included in the Event log. 
+- **Notifications Broker service stops after 30 seconds** When you start your Exchange server, you might notice the **Notifications Broker** service start and then stop after approximately 30 seconds. If you attempt to start the service manually, it will successfully start and then stop, again after approximately 30 seconds. No errors or warnings are included in the Event log.
 
-    This behavior is expected in on-premises deployments of Exchange 2016. The **Notifications Broker** service performs a configuration check on each time the server starts. If there is nothing for the **Notifications Broker** service to do, it stops automatically until the next time the server is restarted. 
+    This behavior is expected in on-premises deployments of Exchange 2016. The **Notifications Broker** service performs a configuration check on each time the server starts. If there is nothing for the **Notifications Broker** service to do, it stops automatically until the next time the server is restarted.
 
 ## Mail flow
 <a name="MailFlow"> </a>
@@ -96,18 +96,18 @@ Welcome to Microsoft Exchange Server 2016! This topic contains important informa
 
   - Disable recipient validation on the affected Edge Transport server(s) by running the following command.
 
-  ```
-  Set-RecipientFilterConfig -RecipientValidationEnabled $False
-  ```
+    ```
+    Set-RecipientFilterConfig -RecipientValidationEnabled $False
+    ```
 
   - Disable the recipient validation cache on the affected Edge Transport server(s) by running the following command.
 
-  ```
-  Get-TransportService | Set-TransportService -RecipientValidationCacheEnabled $False
-  ```
+    ```
+    Get-TransportService | Set-TransportService -RecipientValidationCacheEnabled $False
+    ```
 
     > [!CAUTION]
-    > Disabling the recipient validation cache causes Exchange to verify that recipients on inbound messages are valid by querying the local instance of Active Directory Lightweight Directory Services. This can significantly increase the resources Exchange needs to process messages. Before you disable the recipient validation cache, verify that your server has sufficient capacity to handle the additional demand. 
+    > Disabling the recipient validation cache causes Exchange to verify that recipients on inbound messages are valid by querying the local instance of Active Directory Lightweight Directory Services. This can significantly increase the resources Exchange needs to process messages. Before you disable the recipient validation cache, verify that your server has sufficient capacity to handle the additional demand.
 
 - Configure your firewall or external mail exchanger (MX) DNS record to send mail to an Edge Transport server that doesn't have Exchange 2016 Cumulative Update 1 installed. You might need to configure your firewall to allow TCP port 25 to connect to the new Internet-facing server.
 

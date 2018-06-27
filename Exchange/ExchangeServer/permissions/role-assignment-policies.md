@@ -26,12 +26,12 @@ Looking for other management tasks related to managing permissions? Check out [P
 
 - To open the EAC, see [Exchange admin center in Exchange 2016](../architecture/client-access/exchange-admin-center.md). To open the Exchange Management Shell, see [Open the Exchange Management Shell](http://technet.microsoft.com/library/63976059-25f8-4b4f-b597-633e78b803c0.aspx).
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Assignment policies" entry in the [Role management permissions](feature-permissions/rbac-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Assignment policies" entry in the [Role management permissions](feature-permissions/rbac-permissions.md) topic.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
 
 ## Add an assignment policy
 
@@ -40,15 +40,15 @@ After you've created the new assignment policy, you assign users to it. For more
 ### Use the EAC to create a new assignment policy
 
 > [!NOTE]
-> You can only create explicit assignment policies using the Exchange admin center (EAC). If you want to create a new default assignment policy, you must use the Exchange Management Shell. For more information, see the "Use the Exchange Management Shell to create a default assignment policy" section later in this topic. 
+> You can only create explicit assignment policies using the Exchange admin center (EAC). If you want to create a new default assignment policy, you must use the Exchange Management Shell. For more information, see the "Use the Exchange Management Shell to create a default assignment policy" section later in this topic.
 
-1. In the EAC, navigate to **Permissions** \> **User Roles** and then click **Add**![Add icon](../media/ITPro_EAC_AddIcon.png).
+1. In the EAC, navigate to **Permissions** \> **User Roles** and then click **Add** ![Add icon](../media/ITPro_EAC_AddIcon.png).
 
 2. In the role assignment policy window, provide a name for the new assignment policy.
 
 3. Select the check box next to the role or roles you want to add to the assignment policy. You can select multiple roles, including end-user roles you've added. If you select a role that has child roles, the child roles are automatically selected.
 
-4. Click **Save** to save the changes to the assignment policy. 
+4. Click **Save** to save the changes to the assignment policy.
 
 ### Use the Exchange Management Shell to create an explicit assignment policy
 
@@ -58,7 +58,7 @@ To create an explicit assignment policy that can be manually assigned to mailbox
 New-RoleAssignmentPolicy <assignment policy name> -Roles <roles to assign>
 ```
 
-This example creates the explicit assignment policy Limited Mailbox Configuration and assigns the `MyBaseOptions`, `MyAddressInformation`, and `MyDisplayName` roles to it. 
+This example creates the explicit assignment policy Limited Mailbox Configuration and assigns the `MyBaseOptions`, `MyAddressInformation`, and `MyDisplayName` roles to it.
 
 ```
 New-RoleAssignmentPolicy "Limited Mailbox Configuration" -Roles MyBaseOptions, MyAddressInformation, MyDisplayName
@@ -74,7 +74,7 @@ To create a default assignment policy assigned to new mailboxes, use the followi
 New-RoleAssignmentPolicy <assignment policy name> -Roles <roles to assign> -IsDefault
 ```
 
-This example creates the default assignment policy Limited Mailbox Configuration and assigns the `MyBaseOptions`, `MyAddressInformation`, and `MyDisplayName` roles to it. 
+This example creates the default assignment policy Limited Mailbox Configuration and assigns the `MyBaseOptions`, `MyAddressInformation`, and `MyDisplayName` roles to it.
 
 ```
 New-RoleAssignmentPolicy "Limited Mailbox Configuration" -Roles MyBaseOptions, MyAddressInformation, MyDisplayName -IsDefault
@@ -90,7 +90,7 @@ If you no longer need a management role assignment policy, you can remove it.
 
 - All users assigned the assignment policy must be changed to another assignment policy. For more information about how to change an assignment policy on a mailbox, see [Change the assignment policy on a mailbox](policy-assignments-for-mailboxes.md).
 
-- All the management role assignments between the assignment policy and the assigned management roles must be removed. For more information about how to remove a role assignment from an assignment policy, see the [Use the Exchange Management Shell to remove a role from an assignment policy](#RemoveRole.md) section later in this topic. 
+- All the management role assignments between the assignment policy and the assigned management roles must be removed. For more information about how to remove a role assignment from an assignment policy, see the [Use the Exchange Management Shell to remove a role from an assignment policy](#RemoveRole.md) section later in this topic.
 
 - If you want to remove a default assignment policy, it must be the last assignment policy in the Exchange 2016 organization.
 
@@ -98,7 +98,7 @@ If you no longer need a management role assignment policy, you can remove it.
 
 1. In the EAC, navigate to **Permissions** \> **User Roles**.
 
-2. Select the assignment policy you want to remove, and then click **Delete**![Delete icon](../media/ITPro_EAC_DeleteIcon.png).
+2. Select the assignment policy you want to remove, and then click **Delete** ![Delete icon](../media/ITPro_EAC_DeleteIcon.png).
 
 #### Use the Exchange Management Shell to remove an assignment policy
 
@@ -130,7 +130,7 @@ In the EAC, you can view the list of assignment policies and the roles assigned 
 
 #### Use the Exchange Management Shell to view a list of assignment policies
 
-You can view a list of all the assignment policies in your organization by not specifying any assignment policies when you run the **Get-RoleAssignmentPolicy** cmdlet. 
+You can view a list of all the assignment policies in your organization by not specifying any assignment policies when you run the **Get-RoleAssignmentPolicy** cmdlet.
 
 This procedure makes use of pipelining and the **Format-Table** cmdlet. For more information about these concepts, see the following topics: 
 
@@ -144,13 +144,13 @@ To return a list of all assignment policies in your organization, use the follow
 Get-RoleAssignmentPolicy
 ```
 
-To return a list of specific properties for all the assignment policies in your organization, you can pipe the results to the **Format-Table** cmdlet and specify the properties you want in the list of results. Use the following syntax. 
+To return a list of specific properties for all the assignment policies in your organization, you can pipe the results to the **Format-Table** cmdlet and specify the properties you want in the list of results. Use the following syntax.
 
 ```
 Get-RoleAssignmentPolicy | Format-Table <property 1>, <property 2...>
 ```
 
-This example returns a list of all the assignment policies in your organization and includes the **Name** and **IsDefault** properties. 
+This example returns a list of all the assignment policies in your organization and includes the **Name** and **IsDefault** properties.
 
 ```
 Get-RoleAssignmentPolicy | Format-Table Name, IsDefault
@@ -160,7 +160,7 @@ For detailed syntax and parameter information, see [Get-Mailbox](http://technet.
 
 #### Use the Exchange Management Shell to view the details of a single assignment policy
 
-You can view the details of a specific assignment policy by using the **Get-RoleAssignmentPolicy** cmdlet and piping the output to the **Format-List** cmdlet. 
+You can view the details of a specific assignment policy by using the **Get-RoleAssignmentPolicy** cmdlet and piping the output to the **Format-List** cmdlet.
 
 This procedure makes use of pipelining and the **Format-List** cmdlet. For more information about these concepts, see the following topics: 
 
@@ -202,7 +202,7 @@ For detailed syntax and parameter information, see [Get-Mailbox](http://technet.
 
 #### Use the Exchange Management Shell to view mailboxes that are assigned a specific policy
 
-You can find all the mailboxes assigned a specific assignment policy by piping the output of the **Get-Mailbox** cmdlet to the **Where** cmdlet. With the **Where** cmdlet, filter the data returned to display only the mailboxes that have their _RoleAssignmentPolicy_ property set to the assignment policy name you specify. 
+You can find all the mailboxes assigned a specific assignment policy by piping the output of the **Get-Mailbox** cmdlet to the **Where** cmdlet. With the **Where** cmdlet, filter the data returned to display only the mailboxes that have their _RoleAssignmentPolicy_ property set to the assignment policy name you specify.
 
 This procedure makes use of pipelining and the **Where** cmdlet. For more information about these concepts, see the following topics: 
 
@@ -229,7 +229,7 @@ For detailed syntax and parameter information, see [Get-Mailbox](http://technet.
 You can change the management role assignment policy assigned to new mailboxes that are created. Changing the default role assignment policy doesn't change the assignment policy assigned to existing mailboxes. To change the assignment policy assigned to existing mailboxes, see [Change the assignment policy on a mailbox](policy-assignments-for-mailboxes.md).
 
 > [!NOTE]
-> You can't use the EAC to change the default assignment policy. You need to use the Exchange Management Shell. 
+> You can't use the EAC to change the default assignment policy. You need to use the Exchange Management Shell.
 
 #### Use the Exchange Management Shell to change the default assignment policy
 
@@ -246,7 +246,7 @@ Set-RoleAssignmentPolicy "Vancouver End Users" -IsDefault
 ```
 
 > [!IMPORTANT]
-> New mailboxes are assigned the default assignment policy even if the policy hasn't been assigned management roles. Mailboxes assigned assignment policies with no assigned management roles can't access any mailbox configuration features in Outlook on the web. 
+> New mailboxes are assigned the default assignment policy even if the policy hasn't been assigned management roles. Mailboxes assigned assignment policies with no assigned management roles can't access any mailbox configuration features in Outlook on the web.
 
 For detailed syntax and parameter information, see [Set-RoleAssignmentPolicy](http://technet.microsoft.com/library/1c7a9d2a-db55-4bfb-82d2-60c859b8646c.aspx).
 
@@ -256,11 +256,11 @@ For detailed syntax and parameter information, see [Set-RoleAssignmentPolicy](ht
 
 1. In the EAC, navigate to **Permissions** \> **User Roles**.
 
-2. Select the assignment policy you want to add one or more roles to, and then click **Edit**![Edit icon](../media/ITPro_EAC_EditIcon.png).
+2. Select the assignment policy you want to add one or more roles to, and then click **Edit** ![Edit icon](../media/ITPro_EAC_EditIcon.png).
 
 3. Select the check box next to the role or roles you want to add to the assignment policy. You can select multiple roles, including end-user roles you've added. If you select a role that has child roles, the child roles are automatically selected.
 
-4. Click **Save** to save the changes to the assignment policy. 
+4. Click **Save** to save the changes to the assignment policy.
 
 #### Use the Exchange Management Shell to add a role to an assignment policy
 
@@ -286,16 +286,16 @@ If you don't want end users to have permissions to manage certain features of th
 
 1. In the EAC, navigate to **Permissions** \> **User Roles**.
 
-2. Select the assignment policy you want to remove one or more roles from, and then click **Edit**![Edit icon](../media/ITPro_EAC_EditIcon.png) . 
+2. Select the assignment policy you want to remove one or more roles from, and then click **Edit** ![Edit icon](../media/ITPro_EAC_EditIcon.png) .
 
 3. Clear the check box next to the role or roles you want to remove from the assignment policy. If you clear the check box for a role that has child roles, the check boxes for the child roles are also cleared.
 
-4. Click **Save** to save the changes to the assignment policy. 
+4. Click **Save** to save the changes to the assignment policy.
 
 #### Use the Exchange Management Shell to remove a role from an assignment policy
 <a name="RemoveRole"> </a>
 
-You can remove roles from assignment policies by retrieving the associated management role assignment using the **Get-ManagementRoleAssignment** cmdlet and then piping the role assignment returned to the **Remove-ManagementRoleAssignment** cmdlet. 
+You can remove roles from assignment policies by retrieving the associated management role assignment using the **Get-ManagementRoleAssignment** cmdlet and then piping the role assignment returned to the **Remove-ManagementRoleAssignment** cmdlet.
 
 For more information about regular and delegating role assignments, see [Understanding Management Role Assignments](http://technet.microsoft.com/library/1dc33dd6-52fb-4852-a5ce-027bc73e1d8f.aspx).
 

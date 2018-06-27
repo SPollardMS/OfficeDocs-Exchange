@@ -20,10 +20,10 @@ After you've subscribed an Edge Transport server to an Active Directory site in 
 
 - Estimated time to complete each procedure: 10 minutes.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "EdgeSync" entry and the "Edge Transport servers" section in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "EdgeSync" entry and the "Edge Transport servers" section in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic.
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
   
 ## Remove an Edge Subscription
 <a name="Remove2"> </a>
@@ -72,7 +72,7 @@ When you remove an Edge Subscription from the Exchange organization:
     
 - The ESRA accounts are removed from both Active Directory and AD LDS.
     
-- The Edge Transport server is removed from the _SourceTransportServers_ property of any Send connector. 
+- The Edge Transport server is removed from the _SourceTransportServers_ property of any Send connector.
     
 - The automatic inbound Send connector from the Edge Transport server to the Exchange organization is removed from AD LDS.
     
@@ -96,7 +96,7 @@ Occasionally you may have to resubscribe an Edge Transport server to an Active D
 - The ESRA credentials are compromised.
     
     > [!IMPORTANT]
-    > To resubscribe an Edge Transport server, export a new Edge Subscription file on the Edge Transport server and then import the XML file on a Mailbox server. You will need to resubscribe the Edge Transport server to the same Active Directory site where it was originally subscribed. You don't need to first remove the original Edge Subscription; the resubscription process will overwrite the existing Edge Subscription. 
+    > To resubscribe an Edge Transport server, export a new Edge Subscription file on the Edge Transport server and then import the XML file on a Mailbox server. You will need to resubscribe the Edge Transport server to the same Active Directory site where it was originally subscribed. You don't need to first remove the original Edge Subscription; the resubscription process will overwrite the existing Edge Subscription.
   
 ## Add or Remove a Mailbox server
 <a name="AddMailbox4"> </a>
@@ -145,11 +145,11 @@ Start-EdgeSynchronization -TargetServer Edge03 -ForceFullSync
 ## Verify EdgeSync results
 <a name="Verify6"> </a>
 
-You can use the **Test-EdgeSynchronization** cmdlet to verify that the Edge synchronization is working. This cmdlet reports synchronization status of subscribed Edge Transport servers. 
+You can use the **Test-EdgeSynchronization** cmdlet to verify that the Edge synchronization is working. This cmdlet reports synchronization status of subscribed Edge Transport servers.
   
 The output of this cmdlet lets you view objects that have not been synchronized to the Edge Transport server. The task compares data stored in Active Directory against data stored in AD LDS and reports any data inconsistencies.
   
-You can use the _ExcludeRecipientTest_ parameter on the **Test-EdgeSynchronization** cmdlet to exclude validation of recipient data synchronization. If you include this parameter, only the synchronization of configuration objects is validated. Validating recipient data will take longer than validating only configuration data. 
+You can use the _ExcludeRecipientTest_ parameter on the **Test-EdgeSynchronization** cmdlet to exclude validation of recipient data synchronization. If you include this parameter, only the synchronization of configuration objects is validated. Validating recipient data will take longer than validating only configuration data.
   
 ## Verify EdgeSync results for a single recipient
 <a name="Verfiy6A"> </a>

@@ -90,7 +90,7 @@ The recommended configuration for an operating system, system or pagefile volume
   
  **Separated Mailbox Database and Log Volumes**
   
-If you are deploying a standalone Mailbox server role architecture, RAID technology is required for the mailbox database and log volumes. The recommended RAID configuration for mailbox volumes is RAID-1/0 (especially if you are using 5.4K or 7.2K disks); however all RAID types are supported. For log volumes, RAID-1 or RAID-1/0 is the recommended RAID configuration.
+If you're deploying a standalone Mailbox server role architecture, RAID technology is required for the mailbox database and log volumes. The recommended RAID configuration for mailbox volumes is RAID-1/0 (especially if you're using 5.4K or 7.2K disks); however all RAID types are supported. For log volumes, RAID-1 or RAID-1/0 is the recommended RAID configuration.
   
 When using RAID-5 or RAID-6 configurations for the operating system, pagefile, or Exchange data volumes, note the following:
   
@@ -142,7 +142,7 @@ The following table provides guidance about storage array configurations for Exc
 
 |**RAID type**|**Description**|**Supported or best practice**|
 |:-----|:-----|:-----|
-|Disk array RAID stripe size (KB)  <br/> |The stripe size is the per disk unit of data distribution within a RAID set. Stripe size is also referred to as *block size* .  <br/> |Best practice: 256 KB or greater. Follow storage vendor best practices.  <br/> |
+|Disk array RAID stripe size (KB)  <br/> |The stripe size is the per disk unit of data distribution within a RAID set. Stripe size is also referred to as *block size*.  <br/> |Best practice: 256 KB or greater. Follow storage vendor best practices.  <br/> |
 |Storage array cache settings  <br/> |The cache settings are provided by a battery-backed caching array controller.  <br/> |Best practice: 100 percent write cache (battery or flash backed cache) for DAS storage controllers in either a RAID or JBOD configuration. 75 percent write cache, 25 percent read cache (battery or flash backed cache) for other types of storage solutions such as SAN. If your SAN vendor has different best practices for cache configuration on their platform, follow the guidance of your SAN vendor.  <br/> |
 |Physical disk write caching  <br/> |The settings for the cache are on each individual disk.  <br/> |Supported: Physical disk write caching must be disabled when used without a UPS.  <br/> |
    

@@ -28,7 +28,7 @@ Connectivity logging records the outbound connection activity that's used to tra
     
 For more information about these transport services, and where they can transmit messages, see [Mail flow and the transport pipeline](../../mail-flow/mail-flow.md).
   
- Connectivity logging doesn't track the transmission of individual messages. Instead, it tracks the number and size of messages that were transmitted over a connection, DNS resolution information for the destination, and informational messages that are related to the connection. 
+ Connectivity logging doesn't track the transmission of individual messages. Instead, it tracks the number and size of messages that were transmitted over a connection, DNS resolution information for the destination, and informational messages that are related to the connection.
   
 By default, connectivity logging is enabled, and Exchange uses circular logging to limit the connectivity log files based on size and age to help control the hard disk space that's used. To configure connectivity logging, see [Configure connectivity logging in Exchange 2016](configure-connectivity-logging.md).
   
@@ -53,9 +53,9 @@ By default, the connectivity log files exist in these locations:
     
 The naming convention for the connectivity log files is `CONNECTLOGyyymmdd-nnnn.log`. The placeholders represent the following information:
   
-- _yyyymmdd_ is the Coordinated Universal Time (UTC) when the log file was created. _yyyy_ = year, _mm_ = month, and _dd_ = day. 
+- _yyyymmdd_ is the Coordinated Universal Time (UTC) when the log file was created. _yyyy_ = year, _mm_ = month, and _dd_ = day.
     
-- _nnnn_ is an instance number that starts at the value of 1 for each day. 
+- _nnnn_ is an instance number that starts at the value of 1 for each day.
     
 Information is written to the log file until the file reaches its maximum size. Then, a new log file that has an incremented instance number is opened (the first log file is -1, the next is -2, and so on). Circular logging deletes the oldest log files when either of the following conditions are true:
   
@@ -71,7 +71,7 @@ The connectivity log files are text files that contain data in the comma-separat
     
 - **#Log-Type**: The value is `Transport Connectivity Log`.
     
-- **#Date**: The UTC date-time when the log file was created. The UTC date-time is represented in the ISO 8601 date-time format: _yyyy-mm-dd_T _hh:mm:ss.fff_Z, where _yyyy_ = year, _mm_ = month, _dd_ = day, T indicates the beginning of the time component, _hh_ = hour, _mm_ = minute, _ss_ = second, _fff_ = fractions of a second, and Z signifies Zulu, which is another way to denote UTC. 
+- **#Date**: The UTC date-time when the log file was created. The UTC date-time is represented in the ISO 8601 date-time format: *yyyy-mm-dd*T*hh:mm:ss.fff*Z, where _yyyy_ = year, _mm_ = month, _dd_ = day, T indicates the beginning of the time component, _hh_ = hour, _mm_ = minute, _ss_ = second, _fff_ = fractions of a second, and Z signifies Zulu, which is another way to denote UTC.
     
 - **#Fields**: Comma delimited field names that are used in the connectivity log files. These values are described in the next section.
     
@@ -82,13 +82,13 @@ Connectivity logging stores each outbound connection event on a single line in t
   
 |**Field name**|**Description**|
 |:-----|:-----|
-|**date-time** <br/> |UTC date-time of the connection event. The UTC date-time is represented in the ISO 8601 date-time format: _yyyy-mm-dd_T _hh:mm:ss.fff_Z, where _yyyy_ = year, _mm_ = month, _dd_ = day, T indicates the beginning of the time component, _hh_ = hour, _mm_ = minute, _ss_ = second, _fff_ = fractions of a second, and Z signifies Zulu, which is another way to denote UTC.  <br/> |
+|**date-time** <br/> |UTC date-time of the connection event. The UTC date-time is represented in the ISO 8601 date-time format: *yyyy-mm-dd*T*hh:mm:ss.fff*Z, where _yyyy_ = year, _mm_ = month, _dd_ = day, T indicates the beginning of the time component, _hh_ = hour, _mm_ = minute, _ss_ = second, _fff_ = fractions of a second, and Z signifies Zulu, which is another way to denote UTC.  <br/> |
 |**session** <br/> |A GUID value. The value is the same for every event that's associated with the session, but different for each session.  <br/> |
 |**source** <br/> |One of these values:  <br/> **SMTP** for SMTP connections.  <br/> **MapiDelivery** for connections from the local mailbox database by the Mailbox Transport Delivery service.  <br/> **MapiSubmission** for connections from the local mailbox database by the Mailbox Transport Submission service.  <br/> |
 |**destination** <br/> |These are some examples of values you'll see here:  <br/> **In the Transport service**:  <br/> • The FQDN of the destination messaging server  <br/> • `shadowredundancy` (on Mailbox servers only)  <br/> **In the Front End Transport service**:  <br/> • `internalproxy` <br/> • `client proxy` <br/> **In the Mailbox Transport Delivery service**: The GUID of the destination mailbox database.  <br/> **In the Mailbox Transport Submission service**:  <br/> • The GUID of the destination mailbox database.  <br/> • `mailboxtransportsubmissioninternalproxy` <br/> |
 |**direction** <br/> |Single character that represents the start, middle, or end of the connection. The values you'll see here are:  <br/> `+`: Connect  <br/> `-`: Disconnect  <br/> `>`: Send  <br/> |
 |**description** <br/> |Text information that's associated with the connection event. For example:  <br/> Number and size of messages that were transmitted.  <br/> DNS MX resource record resolution information for destination domains.  <br/> DNS resolution information for destination Mailbox servers.  <br/> Connection establishment messages.  <br/> Connection failure messages.  <br/> |
    
-The transport services connect to and transmit messages to multiple destinations simultaneously. Entries in the log file from different connection events are interlaced (they typically aren't grouped together as one uninterrupted series of connection events). However you can use the fields (in particular, the unique **session** field value for a connection) to organize and arrange the log entries for each separate connection from start to finish. 
+The transport services connect to and transmit messages to multiple destinations simultaneously. Entries in the log file from different connection events are interlaced (they typically aren't grouped together as one uninterrupted series of connection events). However you can use the fields (in particular, the unique **session** field value for a connection) to organize and arrange the log entries for each separate connection from start to finish.
   
 

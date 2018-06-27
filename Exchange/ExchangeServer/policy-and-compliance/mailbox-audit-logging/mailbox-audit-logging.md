@@ -16,9 +16,9 @@ description: "Summary: Learn about the specific logon types and user actions tha
 
  **Summary**: Learn about the specific logon types and user actions that can be audited when you enable mailbox audit logging for user mailboxes in Exchange 2016.
   
-Because mailboxes can contain sensitive, high business impact (HBI) information and personally identifiable information (PII), it's important that you track who logs on to the mailboxes in your organization and what actions are taken. It's especially important to track access to mailboxes by users other than the mailbox owner. These users are referred to as *delegate users* . 
+Because mailboxes can contain sensitive, high business impact (HBI) information and personally identifiable information (PII), it's important that you track who logs on to the mailboxes in your organization and what actions are taken. It's especially important to track access to mailboxes by users other than the mailbox owner. These users are referred to as *delegate users*.
   
-By using *mailbox audit logging*, you can log mailbox access by mailbox owners, delegates (including administrators with full access permissions to mailboxes), and administrators. 
+By using *mailbox audit logging*, you can log mailbox access by mailbox owners, delegates (including administrators with full access permissions to mailboxes), and administrators.
   
 When you enable audit logging for a mailbox, you can specify which user actions (for example, accessing, moving, or deleting a message) will be logged for a logon type (administrator, delegate user, or owner). Audit log entries also include important information such as the client IP address, host name, and process or client used to access the mailbox. For items that are moved, the entry includes the name of the destination folder.
   
@@ -62,11 +62,11 @@ If you no longer require certain types of mailbox actions to be audited, you sho
 |SoftDelete  <br/> |An item is deleted from the Deleted Items folder.  <br/> |Yes<sup>1</sup> <br/> |Yes<sup>1</sup> <br/> |Yes  <br/> |
 |Update  <br/> |An item's properties are updated.  <br/> |Yes<sup>1</sup> <br/> |Yes<sup>1</sup> <br/> |Yes  <br/> |
    
-<sup>1</sup> Audited by default if auditing is enabled for a mailbox. 
+<sup>1</sup> Audited by default if auditing is enabled for a mailbox.
   
-<sup>2</sup> Entries for folder bind actions performed by delegates are consolidated. One log entry is generated for individual folder access within a time span of 24 hours. 
+<sup>2</sup> Entries for folder bind actions performed by delegates are consolidated. One log entry is generated for individual folder access within a time span of 24 hours.
   
-<sup>3</sup> Auditing for owner logins to a mailbox works only for POP3, IMAP4, or OAuth logins. It doesn't work for NTLM or Kerberos logins to the mailbox. 
+<sup>3</sup> Auditing for owner logins to a mailbox works only for POP3, IMAP4, or OAuth logins. It doesn't work for NTLM or Kerberos logins to the mailbox.
   
 ## Searching the mailbox audit log
 <a name="Search"> </a>
@@ -128,9 +128,9 @@ The following table describes the fields logged in a mailbox audit log entry.
     
   - In-Place eDiscovery is used to search a mailbox.
     
-  - The [New-MailboxExportRequest](http://technet.microsoft.com/library/1625c25a-7cc9-459c-97ea-281ac421bbce.aspx) cmdlet is used to export a mailbox. 
+  - The [New-MailboxExportRequest](http://technet.microsoft.com/library/1625c25a-7cc9-459c-97ea-281ac421bbce.aspx) cmdlet is used to export a mailbox.
     
-  - [Microsoft Exchange Server MAPI Editor](https://go.microsoft.com/fwlink/p/?linkId=204086) is used to access the mailbox. 
+  - [Microsoft Exchange Server MAPI Editor](https://go.microsoft.com/fwlink/p/?linkId=204086) is used to access the mailbox.
     
 - **Bypassing mailbox auditing logging**: Mailbox access by authorized automated processes such as accounts used by third-party tools or accounts used for lawful monitoring can create a large number of mailbox audit log entries and may not be of interest to your organization. You can configure such accounts to bypass mailbox audit logging. For details, see [Bypass a User Account From Mailbox Audit Logging](http://technet.microsoft.com/library/98a87071-fe31-4b67-beb8-a73799e54df2.aspx).
     

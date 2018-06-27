@@ -22,14 +22,14 @@ A server switchover is part of preparing for a scheduled outage for the current 
 
 - Estimated time to complete: 30 seconds per database
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Database availability groups" entry in the [High availability and site resilience permissions](../../permissions/feature-permissions/ha-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Database availability groups" entry in the [High availability and site resilience permissions](../../permissions/feature-permissions/ha-permissions.md) topic.
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
   
 ## Use the EAC to perform a server switchover
 
-You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the"Mailbox database copies" entry in the [High availability and site resilience permissions](../../permissions/feature-permissions/ha-permissions.md) topic. 
+You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the"Mailbox database copies" entry in the [High availability and site resilience permissions](../../permissions/feature-permissions/ha-permissions.md) topic.
   
 1. In the EAC, go to **Servers** \> **servers**.
     
@@ -43,7 +43,7 @@ You need to be assigned permissions before you can perform this procedure or pro
     
 2. Click **Use the specified server as the target for switchover**, click **Browse** to select a Mailbox server, and then click **save**.
     
-5. When the switchover has completed, click **close** to exit the **Server Switchover** page. 
+5. When the switchover has completed, click **close** to exit the **Server Switchover** page.
     
 ## Use the Exchange Management Shell to perform a server switchover
 

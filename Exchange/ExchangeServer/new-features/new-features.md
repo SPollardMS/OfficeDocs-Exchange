@@ -65,7 +65,7 @@ The Mailbox server in Exchange 2016 includes all of the server components from t
 
 - Mailbox services include all the traditional server components found in the Exchange 2013 Mailbox server role: the backend client access protocols, Transport service, Mailbox databases, and Unified Messaging. The Mailbox server handles all activity for the active mailboxes on that server.
 
- The Edge Transport role is typically deployed in your perimeter network, outside your internal Active Directory forest, and is designed to minimize the attack surface of your Exchange deployment. By handling all Internet-facing mail flow, it also adds additional layers of message protection and security against viruses and spam, and can apply mail flow rules (also known as transport rules) to control message flow. 
+ The Edge Transport role is typically deployed in your perimeter network, outside your internal Active Directory forest, and is designed to minimize the attack surface of your Exchange deployment. By handling all Internet-facing mail flow, it also adds additional layers of message protection and security against viruses and spam, and can apply mail flow rules (also known as transport rules) to control message flow.
 
 For more information about the Exchange 2016 architecture, see [Exchange 2016 architecture](../architecture/architecture.md).
 
@@ -80,35 +80,35 @@ Along with the new Mailbox role, Exchange 2016 now allows you to proxy traffic f
 Outlook Web App is now known as Outlook on the web, which continues to let users access their Exchange mailbox from almost any web browser.
 
 > [!NOTE]
-> Supported Web browsers for Outlook on the web in Exchange 2016 are Microsoft Edge, Internet Explorer 11, and the most recent versions of Mozilla Firefox, Google Chrome, and Apple Safari. 
+> Supported Web browsers for Outlook on the web in Exchange 2016 are Microsoft Edge, Internet Explorer 11, and the most recent versions of Mozilla Firefox, Google Chrome, and Apple Safari.
 
 The former Outlook Web App user interface has been updated and optimized for tablets and smart phones, in addition to desktop and laptop computers. New Exchange 2016 features include:
 
-- **Platform-specific experiences for phones** for both iOS and Android. 
+- **Platform-specific experiences for phones** for both iOS and Android.
 
-- **Premium Android experience** using Chrome on devices running Android version 4.2 or later. 
+- **Premium Android experience** using Chrome on devices running Android version 4.2 or later.
 
 - **Email improvements**, including a new single-line view of the Inbox with an optimized reading pane, archiving, emojis, and the ability to undo mailbox actions like deleting a message or moving a message.
 
-- **Contact linking** the ability for users to add contacts from their LinkedIn accounts. 
+- **Contact linking** the ability for users to add contacts from their LinkedIn accounts.
 
-- **Calendar** has an updated look and new features, including email reminders for Calendar events, ability to propose a new time in meeting invitations, improved search, and birthday calendars. 
+- **Calendar** has an updated look and new features, including email reminders for Calendar events, ability to propose a new time in meeting invitations, improved search, and birthday calendars.
 
-- **Search suggestions and refiners** for an improved search experience that helps users find the information they want, faster. Search suggestions try to anticipate what the user's looking for and returns results that might be what the user is looking for. Search refiners will help a user more easily find the information they're looking for by providing contextually-aware filters. Filters might include date ranges, related senders, and so on. 
+- **Search suggestions and refiners** for an improved search experience that helps users find the information they want, faster. Search suggestions try to anticipate what the user's looking for and returns results that might be what the user is looking for. Search refiners will help a user more easily find the information they're looking for by providing contextually-aware filters. Filters might include date ranges, related senders, and so on.
 
-- **New themes** Thirteen new themes with graphic designs. 
+- **New themes** Thirteen new themes with graphic designs.
 
-- **Options** for individual mailboxes have been overhauled. 
+- **Options** for individual mailboxes have been overhauled.
 
-- **Link preview** which enables users to paste a link into messages, and Outlook on the web automatically generates a rich preview to give recipients a peek into the contents of the destination. This works with video links as well. 
+- **Link preview** which enables users to paste a link into messages, and Outlook on the web automatically generates a rich preview to give recipients a peek into the contents of the destination. This works with video links as well.
 
-- **Inline video** player saves the user time by keeping them in the context of their conversations. An inline preview of a video automatically appears after inserting a video URL. 
+- **Inline video** player saves the user time by keeping them in the context of their conversations. An inline preview of a video automatically appears after inserting a video URL.
 
-- **Pins and Flags** which allow users to keep essential emails at the top of their inbox (Pins) and mark others for follow-up (Flags). Pins are now folder specific, great for anyone who uses folders to organize their email. Quickly find and manage flagged items with inbox filters or the new Task module, accessible from the app launcher. 
+- **Pins and Flags** which allow users to keep essential emails at the top of their inbox (Pins) and mark others for follow-up (Flags). Pins are now folder specific, great for anyone who uses folders to organize their email. Quickly find and manage flagged items with inbox filters or the new Task module, accessible from the app launcher.
 
-- **Performance improvements** in a number of areas across Outlook on the web, including creating calendar events, composing, loading messages in the reading pane, popouts, search, startup, and switching folders. 
+- **Performance improvements** in a number of areas across Outlook on the web, including creating calendar events, composing, loading messages in the reading pane, popouts, search, startup, and switching folders.
 
-- **New Outlook on the web action pane** that allows you to quickly click those actions you most commonly use such as New, Reply all, and Delete. A few new actions have been added as well including Archive, Sweep, and Undo. 
+- **New Outlook on the web action pane** that allows you to quickly click those actions you most commonly use such as New, Reply all, and Delete. A few new actions have been added as well including Archive, Sweep, and Undo.
 
 #### MAPI over HTTP
 <a name="MAPIHTTP2013"> </a>
@@ -173,7 +173,7 @@ To comply with business standards and industry regulations, organizations need t
 
 - With the new action **Notify the recipient with a message**, a mail flow rule can send a notification to the recipient with the text you specify. For example, you can inform the recipient that the message was rejected by a mail flow rule, or that it was marked as spam and will be delivered to their Junk Email folder.
 
-- The action **Generate incident report and send it to** has been updated to enable the notification of multiple recipients by allowing a group address to be configured as the recipient. 
+- The action **Generate incident report and send it to** has been updated to enable the notification of multiple recipients by allowing a group address to be configured as the recipient.
 
 To learn more about DLP, see [Data loss prevention in Exchange 2016](../policy-and-compliance/data-loss-prevention/data-loss-prevention.md).
 
@@ -201,7 +201,7 @@ Exchange 2016 includes the following improvements to In-Place Archiving, retenti
   - [Stop-ComplianceSearch](http://technet.microsoft.com/library/675934e6-8a55-4615-8c46-a20bc656afdc.aspx)
 
     > [!NOTE]
-    > To have access to the Compliance Search cmdlets, an administrator or eDiscovery manager must be assigned the Mailbox Search management role or be a member of the Discovery Management role group. 
+    > To have access to the Compliance Search cmdlets, an administrator or eDiscovery manager must be assigned the Mailbox Search management role or be a member of the Discovery Management role group.
 
 For more information, see [Messaging policy and compliance in Exchange 2016](../policy-and-compliance/policy-and-compliance.md).
 
@@ -266,7 +266,7 @@ Exchange 2016 provides a single unified management console that allows for ease 
 
   - Mailbox moves and migrations (Mailbox Replication Service or MRS tasks). Notifications are displayed when migrations are started, in process, and completed.
 
-     You can also configure email addresses to receive these notifications in the EAC, or all events by using the **Set-Notification** cmdlet in the Exchange Management Shell. 
+     You can also configure email addresses to receive these notifications in the EAC, or all events by using the **Set-Notification** cmdlet in the Exchange Management Shell.
 
 - **Groups enhancements**: By default, up to 500 recipients are returned when you open the **Select Members** window, however, you can choose to list up to 10,000 recipients by clicking **Get All Results** beneath the recipient list. We now support browsing more than 500 recipients by using the scroll bar, and we've also added enhanced search features so you can filter recipients in the recipient list. You can filter by: 
 
@@ -394,11 +394,11 @@ Exchange 2016 includes the following improvements to In-Place Archiving, retenti
 
 - **In-Place eDiscovery**: In-Place eDiscovery allows authorized users to search mailbox data across all mailboxes and In-Place Archives in an Exchange 2016 organization and copy messages to a discovery mailbox for review. In Exchange 2016, In-Place eDiscovery allows discovery managers to perform more efficient searches and hold.
 
-  - **Federated search** allows you to search and preserve data across multiple data repositories. With Exchange 2016, you can perform in-place eDiscovery searches across Exchange, SharePoint, and Skype for Business. You can use the eDiscovery Center in SharePoint 2013 to perform In-Place eDiscovery search and hold. 
+  - **Federated search** allows you to search and preserve data across multiple data repositories. With Exchange 2016, you can perform in-place eDiscovery searches across Exchange, SharePoint, and Skype for Business. You can use the eDiscovery Center in SharePoint 2013 to perform In-Place eDiscovery search and hold.
 
-  - **Query-based In-Place Hold** allows you to save the results of the query, which allows for scoped immutability across mailboxes. 
+  - **Query-based In-Place Hold** allows you to save the results of the query, which allows for scoped immutability across mailboxes.
 
-  - **Export search results** Discovery Managers can export mailbox content to a .pst file from the SharePoint 2013 eDiscovery Console. Mailbox export request cmdlets are no longer required to export a mailbox to a .pst file. 
+  - **Export search results** Discovery Managers can export mailbox content to a .pst file from the SharePoint 2013 eDiscovery Console. Mailbox export request cmdlets are no longer required to export a mailbox to a .pst file.
 
   - **Keyword statistics**: Search statistics are offered on a per search term basis. This enables a Discovery Manager to quickly make intelligent decisions about how to further refine the search query to provide better results. eDiscovery search results are sorted by relevance.
 
@@ -407,7 +407,7 @@ Exchange 2016 includes the following improvements to In-Place Archiving, retenti
   - **In-Place eDiscovery and Hold wizard**: Discovery Managers can use the In-Place eDiscovery and Hold wizard to perform eDiscovery and hold operations.
 
     > [!NOTE]
-    > If SharePoint 2013 isn't available, a subset of the eDiscovery functionality is available in the Exchange admin center. 
+    > If SharePoint 2013 isn't available, a subset of the eDiscovery functionality is available in the Exchange admin center.
 
   - **Public folder support for In-Place eDiscovery and In-Place Hold**: Exchange 2016 has integrated public folders into the In-Place eDiscovery and Hold workflow. You can use In-Place eDiscovery to search public folders in your organization, and you can put a In-Place Hold on public folders. And similar to placing a mailbox on hold, you can place a query-based and a time-based hold on public folders. Currently, you can only search and place a hold on all public folders. In later releases, you'll be able to choose specific public folders to search and place on hold. For more information, see [Search and place a hold on public folders using In-Place eDiscovery](../policy-and-compliance/ediscovery/search-public-folders.md).
 
@@ -428,7 +428,7 @@ Exchange 2016 includes the following improvements to In-Place Archiving, retenti
   - [Stop-ComplianceSearch](http://technet.microsoft.com/library/675934e6-8a55-4615-8c46-a20bc656afdc.aspx)
 
     > [!NOTE]
-    > To have access to the Compliance Search cmdlets, an administrator or eDiscovery manager must be assigned the Mailbox Search management role or be a member of the Discovery Management role group. 
+    > To have access to the Compliance Search cmdlets, an administrator or eDiscovery manager must be assigned the Mailbox Search management role or be a member of the Discovery Management role group.
 
 - **Search across primary and archive mailboxes in Outlook on the web**: Users can search across their primary and archive mailboxes in Outlook on the web. Two separate searches are no longer necessary.
 
@@ -505,39 +505,39 @@ For more information, see [Plan Exchange 2016 integration with SharePoint and Sk
 Outlook Web App is now known as Outlook on the web, which continues to let users access their Exchange mailbox from almost any web browser.
 
 > [!NOTE]
-> Supported Web browsers for Outlook on the web in Exchange 2016 are Microsoft Edge, Internet Explorer 11, and the most recent versions of Mozilla Firefox, Google Chrome, and Apple Safari. 
+> Supported Web browsers for Outlook on the web in Exchange 2016 are Microsoft Edge, Internet Explorer 11, and the most recent versions of Mozilla Firefox, Google Chrome, and Apple Safari.
 
 In Exchange 2016, the former Outlook Web App user interface is updated and optimized for tablets and smart phones, in addition to desktop and laptop computers. New Exchange 2016 features include:
 
-- **Platform-specific experiences for phones** for both iOS and Android. 
+- **Platform-specific experiences for phones** for both iOS and Android.
 
-- **Premium Android experience** using Chrome on devices running Android version 4.2 or later. 
+- **Premium Android experience** using Chrome on devices running Android version 4.2 or later.
 
-- **Apps for Outlook** which allow users and administrators to extend the capabilities of Outlook on the web. 
+- **Apps for Outlook** which allow users and administrators to extend the capabilities of Outlook on the web.
 
 - **Email improvements**, including a new single-line view of the Inbox with an optimized reading pane, archiving, emojis, and the ability to undo mailbox actions like deleting a message or moving a message.
 
-- **Contact linking** the ability for users to add contacts from their LinkedIn accounts. 
+- **Contact linking** the ability for users to add contacts from their LinkedIn accounts.
 
-- **Calendar** has an updated look and new features, including email reminders for Calendar events, ability to propose a new time in meeting invitations, improved search, and birthday calendars. 
+- **Calendar** has an updated look and new features, including email reminders for Calendar events, ability to propose a new time in meeting invitations, improved search, and birthday calendars.
 
-- **Search suggestions and refiners** for an improved search experience that helps users find the information they want, faster. Search suggestions try to anticipate what the user's looking for and returns results that might be what the user is looking for. Search refiners will help a user more easily find the information they're looking for by providing contextually-aware filters. Filters might include date ranges, related senders, and so on. 
+- **Search suggestions and refiners** for an improved search experience that helps users find the information they want, faster. Search suggestions try to anticipate what the user's looking for and returns results that might be what the user is looking for. Search refiners will help a user more easily find the information they're looking for by providing contextually-aware filters. Filters might include date ranges, related senders, and so on.
 
-- **Themes** Exchange 2016 provides over 50 built-in themes. 
+- **Themes** Exchange 2016 provides over 50 built-in themes.
 
-- **Options** for individual mailboxes have been overhauled. 
+- **Options** for individual mailboxes have been overhauled.
 
-- **Link preview** which enables users to paste a link into messages, and Outlook on the web automatically generates a rich preview to give recipients a peek into the contents of the destination. This works with video links as well. 
+- **Link preview** which enables users to paste a link into messages, and Outlook on the web automatically generates a rich preview to give recipients a peek into the contents of the destination. This works with video links as well.
 
-- **Inline video** player saves the user time by keeping them in the context of their conversations. An inline preview of a video automatically appears after inserting a video URL. 
+- **Inline video** player saves the user time by keeping them in the context of their conversations. An inline preview of a video automatically appears after inserting a video URL.
 
-- **Link preview** which enables users to paste a link into messages, and Outlook on the web automatically generates a rich preview to give recipients a peek into the contents of the destination. This works with video links as well. 
+- **Link preview** which enables users to paste a link into messages, and Outlook on the web automatically generates a rich preview to give recipients a peek into the contents of the destination. This works with video links as well.
 
-- **Pins and Flags** which allow users to keep essential emails at the top of their inbox (Pins) and mark others for follow-up (Flags). Pins are now folder specific, great for anyone who uses folders to organize their email. Quickly find and manage flagged items with inbox filters or the new Task module, accessible from the app launcher. 
+- **Pins and Flags** which allow users to keep essential emails at the top of their inbox (Pins) and mark others for follow-up (Flags). Pins are now folder specific, great for anyone who uses folders to organize their email. Quickly find and manage flagged items with inbox filters or the new Task module, accessible from the app launcher.
 
-- **Performance improvements** in a number of areas across Outlook on the web, including creating calendar events, composing, loading messages in the reading pane, popouts, search, startup, and switching folders. 
+- **Performance improvements** in a number of areas across Outlook on the web, including creating calendar events, composing, loading messages in the reading pane, popouts, search, startup, and switching folders.
 
-- **New Outlook on the web action pane** that allows you to quickly click those actions you most commonly use such as New, Reply all, and Delete. A few new actions have been added as well including Archive, Sweep, and Undo. 
+- **New Outlook on the web action pane** that allows you to quickly click those actions you most commonly use such as New, Reply all, and Delete. A few new actions have been added as well including Archive, Sweep, and Undo.
 
 #### Offline Outlook on the web
 <a name="OutlookAppfrom2010"> </a>
@@ -614,7 +614,7 @@ Exchange 2016 uses DAGs and mailbox database copies, along with other features s
 
 - **Managed availability**: With managed availability, internal monitoring and recovery-oriented features are tightly integrated to help prevent failures, proactively restore services, and initiate server failovers automatically or alert administrators to take action. The focus is on monitoring and managing the end user experience rather than just server and component uptime to help keep the service continuously available.
 
-- **Managed Store**: See the [Managed Store](new-features.md#ManagedStore) section. 
+- **Managed Store**: See the [Managed Store](new-features.md#ManagedStore) section.
 
 - **Support for multiple databases per disk**: Exchange 2016 includes enhancements that enable you to support multiple databases (mixtures of active and passive copies) on the same disk, thereby leveraging larger disks in terms of capacity and IOPS as efficiently as possible.
 
@@ -622,7 +622,7 @@ Exchange 2016 uses DAGs and mailbox database copies, along with other features s
 
 - **Automatic recovery from storage failures**: This feature continues the innovation that was introduced in Exchange 2010 to allow the system to recover from failures that affect resiliency or redundancy. In addition to the Exchange 2010 bugcheck behaviors, Exchange 2016 includes additional recovery behaviors for long I/O times, excessive memory consumption by `MSExchangeRepl.exe`, and severe cases where the system is in such a bad state that threads can't be scheduled.
 
-- **Lagged copy enhancements**: Lagged copies can now use automatic log play down to care for themselves (to a certain extent). Lagged copies will automatically play down log files in a variety of situations, such as single page restore and low disk space scenarios. If the system detects that page patching is required for a lagged copy, the logs will be automatically replayed into the lagged copy. Lagged copies will also invoke this auto replay feature when a low disk space threshold has been reached, and when the lagged copy has been detected as the only available copy for a specific period of time. In addition, lagged copies can leverage Safety Net, making recovery or activation much easier. *Safety Net* is improved functionality in Exchange 2016 based on the transport dumpster of Exchange 2010. 
+- **Lagged copy enhancements**: Lagged copies can now use automatic log play down to care for themselves (to a certain extent). Lagged copies will automatically play down log files in a variety of situations, such as single page restore and low disk space scenarios. If the system detects that page patching is required for a lagged copy, the logs will be automatically replayed into the lagged copy. Lagged copies will also invoke this auto replay feature when a low disk space threshold has been reached, and when the lagged copy has been detected as the only available copy for a specific period of time. In addition, lagged copies can leverage Safety Net, making recovery or activation much easier. *Safety Net* is improved functionality in Exchange 2016 based on the transport dumpster of Exchange 2010.
 
 - **Single copy alert enhancements**: The single copy alert that was introduced in Exchange 2010 is no longer a separate scheduled script. It's now integrated into the managed availability components within the system and is a native function within Exchange.
 

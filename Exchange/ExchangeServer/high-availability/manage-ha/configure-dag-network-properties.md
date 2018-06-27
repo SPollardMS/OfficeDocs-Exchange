@@ -24,14 +24,14 @@ Looking for other management tasks related to DAGs? Check out [Managing database
 
 - Estimated time to complete: 1 minute
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Database availability groups" entry in the [High availability and site resilience permissions](../../permissions/feature-permissions/ha-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Database availability groups" entry in the [High availability and site resilience permissions](../../permissions/feature-permissions/ha-permissions.md) topic.
     
 - You can configure a DAG network only when automatic network configuration has been disabled for a DAG. For detailed steps about how to disable automatic network configuration for a DAG, see [Configure database availability group properties](configure-dag-properties.md).
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).. 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351)..
   
 ## Use the EAC to configure database availability group network properties
 <a name="UseEMC"> </a>
@@ -41,7 +41,7 @@ Looking for other management tasks related to DAGs? Check out [Managing database
 2. Select the DAG you want to configure, and in the Details pane, under the DAG network you want to configure, choose from the following configuration options.
     
     > [!NOTE]
-    > These options will only be visible if you have selected **Configure database availability group networks manually** on the DAG properties page. 
+    > These options will only be visible if you have selected **Configure database availability group networks manually** on the DAG properties page.
   
   - **Disable Replication** or **Enable Replication**: Configures the replication settings for the DAG network.
     

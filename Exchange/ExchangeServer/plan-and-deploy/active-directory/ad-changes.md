@@ -41,7 +41,7 @@ After Exchange is finished extending the schema, it sets the schema version, whi
 ## Prepare Active Directory containers, objects, and other items
 <a name="PrepAD"> </a>
 
-With the schema extended, the next step is to add all of the containers, objects, attributes, and other items that Exchange uses to store information in Active Directory. Most of the changes made in this step are applied to the entire Active Directory forest. A smaller set of changes are made to the local Active Directory domain where the _PrepareAD_ command was run during Setup. 
+With the schema extended, the next step is to add all of the containers, objects, attributes, and other items that Exchange uses to store information in Active Directory. Most of the changes made in this step are applied to the entire Active Directory forest. A smaller set of changes are made to the local Active Directory domain where the _PrepareAD_ command was run during Setup.
   
 These are the changes that are made to the Active Directory forest:
   
@@ -192,7 +192,7 @@ These are the changes that are made to the Active Directory forest:
 ## Prepare Active Directory domains
 <a name="PrepDomains"> </a>
 
-The final step of preparing Active Directory for Exchange is to prepare all of the Active Directory domains where Exchange servers will be installed or where mailbox-enabled users will be located. This step is done automatically in the domain where the _PrepareAD_ command was run. 
+The final step of preparing Active Directory for Exchange is to prepare all of the Active Directory domains where Exchange servers will be installed or where mailbox-enabled users will be located. This step is done automatically in the domain where the _PrepareAD_ command was run.
   
 These are the changes that are made to the Active Directory domains:
   

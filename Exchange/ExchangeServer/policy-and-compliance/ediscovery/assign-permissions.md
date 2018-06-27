@@ -16,14 +16,14 @@ description: "Summary: Learn how to give users the permissions they need to use 
 
  **Summary**: Learn how to give users the permissions they need to use In-Place eDiscovery in Exchange 2016.
   
-If you want users to be able to use Exchange Server 2016 In-Place eDiscovery, you first need to add them to the Discovery Management role group. Members of the Discovery Management role group have Full Access mailbox permissions to the default discovery mailbox, which is called **Discovery Search Mailbox**. 
+If you want users to be able to use Exchange Server 2016 In-Place eDiscovery, you first need to add them to the Discovery Management role group. Members of the Discovery Management role group have Full Access mailbox permissions to the default discovery mailbox, which is called **Discovery Search Mailbox**.
   
 > [!CAUTION]
-> Members of the Discovery Management role group can access sensitive message content. Specifically, these members can use In-Place eDiscovery to search all mailboxes in your Exchange organization, preview the search results (and other mailbox items), copy them to a discovery mailbox, and export the search results to a .pst file. In most organizations, this permission is assigned to legal, compliance, or Human Resources personnel. 
+> Members of the Discovery Management role group can access sensitive message content. Specifically, these members can use In-Place eDiscovery to search all mailboxes in your Exchange organization, preview the search results (and other mailbox items), copy them to a discovery mailbox, and export the search results to a .pst file. In most organizations, this permission is assigned to legal, compliance, or Human Resources personnel.
   
 ## What do you need to know before you begin?
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Role groups" entry in the [Role management permissions](../../permissions/feature-permissions/rbac-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Role groups" entry in the [Role management permissions](../../permissions/feature-permissions/rbac-permissions.md) topic.
     
 - By default, the Discovery Management role group doesn't contain any members. Therefore, administrators that have the Organization Management role assigned can't create or manage discovery searches without being added to the Discovery Management role group.
     
@@ -43,11 +43,11 @@ If you want users to be able to use Exchange Server 2016 In-Place eDiscovery, yo
     
 ## Use the EAC to add a user to the Discovery Management role group
 
-1. In the EAC, go to **Permissions** \> **Admin roles**, select the **Discovery Management** role group, and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
+1. In the EAC, go to **Permissions** \> **Admin roles**, select the **Discovery Management** role group, and then click **Edit** ![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
-2. On the resulting **Role Group** page, in the **Members** section, click **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png).
+2. On the resulting **Role Group** page, in the **Members** section, click **Add** ![Add icon](../../media/ITPro_EAC_AddIcon.png).
     
-3. In the resulting **Select Members** dialog, select an available user or group, and then click **Add**. Repeat this step as many times as necessary. When you are finished, click **OK**.
+3. In the resulting **Select Members** dialog, select an available user or group, and then click **Add**. Repeat this step as many times as necessary. When you're finished, click **OK**.
     
 4. Back on the **Role Group** page, click **Save**.
     
@@ -77,7 +77,7 @@ For more information, see [Add-RoleGroupMember](http://technet.microsoft.com/lib
 
 To verify that you've added the user to the Discovery Management role group, use either of the following procedures:
   
-- In the EAC, go to **Permissions** \> **Admin roles**, and select the **Discovery Management** role group. In the details pane, verify that the user is listed in the **Members** section. 
+- In the EAC, go to **Permissions** \> **Admin roles**, and select the **Discovery Management** role group. In the details pane, verify that the user is listed in the **Members** section.
     
 - In the Exchange Management Shell, run the following command to view the members of the Discovery Management role group.
     

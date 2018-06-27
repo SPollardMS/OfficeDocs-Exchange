@@ -22,7 +22,7 @@ After you've installed Microsoft Exchange Server 2016 in your organization, you 
 The steps in this topic assume a basic Exchange deployment with a single Active Directory site and a single simple mail transport protocol (SMTP) namespace.
   
 > [!IMPORTANT]
-> This topic uses example values such as Ex2016MBX, contoso.com, mail.contoso.com, and 172.16.10.11. Replace the example values with the server names, FQDNs, and IP addresses for your organization. 
+> This topic uses example values such as Ex2016MBX, contoso.com, mail.contoso.com, and 172.16.10.11. Replace the example values with the server names, FQDNs, and IP addresses for your organization.
   
 For additional management tasks related to mail flow and clients and devices, see [Mail flow and the transport pipeline](../../mail-flow/mail-flow.md) and [Clients and mobile](../../clients/clients.md).
   
@@ -37,12 +37,12 @@ For additional management tasks related to mail flow and clients and devices, se
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
   
 ## Step 1: Create a Send connector
 <a name="CreateConnector"> </a>
 
-You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Send connectors" entry in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic. 
+You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Send connectors" entry in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic.
   
 Before you can send mail to the Internet, you need to create a Send connector on the Mailbox server. Do the following.
   
@@ -50,22 +50,22 @@ Before you can send mail to the Internet, you need to create a Send connector on
     
 2. Enter your user name and password in **Domain\user name** and **Password** and then click **Sign in**.
     
-3. Go to **Mail flow** \> **Send connectors**. On the **Send connectors** page, click **New**![Add icon](../../media/ITPro_EAC_AddIcon.png).
+3. Go to **Mail flow** \> **Send connectors**. On the **Send connectors** page, click **New** ![Add icon](../../media/ITPro_EAC_AddIcon.png).
     
 4. In the **New send connector** wizard, specify a name for the Send connector and then select **Internet**. Click **Next**.
     
 5. Verify that **MX record associated with recipient domain** is selected. Click **Next**.
     
-6. Under **Address space**, click **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png). In the **Add domain** window, make sure **SMTP** is selected in the **Type** field. In the **Fully Qualified Domain Name (FQDN)** field, enter \*. Click **Save**.
+6. Under **Address space**, click **Add** ![Add icon](../../media/ITPro_EAC_AddIcon.png). In the **Add domain** window, make sure **SMTP** is selected in the **Type** field. In the **Fully Qualified Domain Name (FQDN)** field, enter \*. Click **Save**.
     
 7. Make sure **Scoped send connector** isn't selected and then click **Next**.
     
-8. Under **Source server**, click **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png). In the **Select a Server** window, select a Mailbox server. After you've selected the server, click **Add** and then click **OK**.
+8. Under **Source server**, click **Add** ![Add icon](../../media/ITPro_EAC_AddIcon.png). In the **Select a Server** window, select a Mailbox server. After you've selected the server, click **Add** and then click **OK**.
     
 9. Click **Finish**.
     
 > [!NOTE]
-> A default inbound Receive connector is created when Exchange 2016 is installed. This Receive connector accepts anonymous SMTP connections from external servers. You don't need to do any additional configuration if this is the functionality you want. If you want to restrict inbound connections from external servers, modify the **Default Frontend \<Mailbox server\>** Receive connector on the Mailbox server. 
+> A default inbound Receive connector is created when Exchange 2016 is installed. This Receive connector accepts anonymous SMTP connections from external servers. You don't need to do any additional configuration if this is the functionality you want. If you want to restrict inbound connections from external servers, modify the **Default Frontend \<Mailbox server\>** Receive connector on the Mailbox server.
   
 ### How do you know this step worked?
 
@@ -78,22 +78,22 @@ To verify that you have successfully created an outbound Send connector, do the 
 ## Step 2: Add additional accepted domains
 <a name="AddAcceptedDomain"> </a>
 
-You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Accepted domains" entry in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic. 
+You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Accepted domains" entry in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic.
   
 By default, when you deploy a new Exchange 2016 organization in an Active Directory forest, Exchange uses the domain name of the Active Directory domain where Setup /PrepareAD was run. If you want recipients to receive and send messages to and from another domain, you must add the domain as an accepted domain. This domain is also added as the primary SMTP address on the default email address policy in the next step.
   
 > [!IMPORTANT]
-> A public Domain Name System (DNS) MX resource record is required for each SMTP domain for which you accept email from the Internet. Each MX record should resolve to the Internet-facing server that receives email for your organization. 
+> A public Domain Name System (DNS) MX resource record is required for each SMTP domain for which you accept email from the Internet. Each MX record should resolve to the Internet-facing server that receives email for your organization.
   
 1. Open the EAC by browsing to the URL of your Mailbox server. For example, https://Ex2016MBX/ECP.
     
 2. Enter your user name and password in **Domain\user name** and **Password** and then click **Sign in**.
     
-3. Go to **Mail flow** \> **Accepted domains**. On the **Accepted domains** page, click **New**![Add icon](../../media/ITPro_EAC_AddIcon.png).
+3. Go to **Mail flow** \> **Accepted domains**. On the **Accepted domains** page, click **New** ![Add icon](../../media/ITPro_EAC_AddIcon.png).
     
-4. In the **New accepted domain** wizard, specify a name for the accepted domain. 
+4. In the **New accepted domain** wizard, specify a name for the accepted domain.
     
-5. In the **Accepted domain** field, specify the SMTP recipient domain you want to add. For example, contoso.com. 
+5. In the **Accepted domain** field, specify the SMTP recipient domain you want to add. For example, contoso.com.
     
 6. Select **Authoritative domain** and then click **Save**.
     
@@ -106,7 +106,7 @@ To verify that you have successfully created an accepted domain, do the followin
 ## Step 3: Configure the default email address policy
 <a name="ConfigEAP"> </a>
 
-You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Email address policies" entry in the [Email address and address book permissions](../../permissions/feature-permissions/address-book-permissions.md) topic. 
+You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Email address policies" entry in the [Email address and address book permissions](../../permissions/feature-permissions/address-book-permissions.md) topic.
   
 If you added an accepted domain in the previous step and you want that domain to be added to every recipient in the organization, you need to update the default email address policy.
   
@@ -114,11 +114,11 @@ If you added an accepted domain in the previous step and you want that domain to
     
 2. Enter your user name and password in **Domain\user name** and **Password** and then click **Sign in**.
     
-3. Go to **Mail flow** \> **Email address policies**. On the **Email address policies** page, select **Default Policy** and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
+3. Go to **Mail flow** \> **Email address policies**. On the **Email address policies** page, select **Default Policy** and then click **Edit** ![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
 4. On the **Default Policy Email Address Policy** page, click **Email Address Format**.
     
-5. Under **Email address format**, click the SMTP address you want to change and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
+5. Under **Email address format**, click the SMTP address you want to change and then click **Edit** ![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
 6. On the **Email address format** page in the **Email address parameters** field, specify the SMTP recipient domain you want to apply to all recipients in the Exchange organization. This domain must match the accepted domain you added in the previous step. For example, @contoso.com. Click **Save**.
     
@@ -127,7 +127,7 @@ If you added an accepted domain in the previous step and you want that domain to
 8. In the **Default Policy** details pane, click **Apply**.
     
 > [!NOTE]
-> We recommend that you configure a user principal name (UPN) that matches the primary email address of each user. If you don't provide a UPN that matches the email address of a user, the user will be required to manually provide their domain\user name or UPN in addition to their email address. If their UPN matches their email address, Outlook Web App, ActiveSync, and Outlook will automatically match their email address to their UPN. 
+> We recommend that you configure a user principal name (UPN) that matches the primary email address of each user. If you don't provide a UPN that matches the email address of a user, the user will be required to manually provide their domain\user name or UPN in addition to their email address. If their UPN matches their email address, Outlook Web App, ActiveSync, and Outlook will automatically match their email address to their UPN.
   
 ### How do you know this step worked?
 
@@ -139,7 +139,7 @@ To verify that you have successfully configured the default email address policy
     
 3. Optionally, create a new mailbox and verify the mailbox is given an email address with the new accepted domain by doing the following:
     
-1. Go to **Recipients** \> **Mailboxes**, click **New**![Add icon](../../media/ITPro_EAC_AddIcon.png) and then select **User mailbox**.
+1. Go to **Recipients** \> **Mailboxes**, click **New** ![Add icon](../../media/ITPro_EAC_AddIcon.png) and then select **User mailbox**.
     
 2. On the new user mailbox page, provide the information required to create a new mailbox. Click **Save**.
     
@@ -148,7 +148,7 @@ To verify that you have successfully configured the default email address policy
 ## Step 4: Configure external URLs
 <a name="ConfigExternalURL"> </a>
 
-You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the " _\<Service\>_ virtual directory settings" entry in the [Clients and mobile devices permissions](../../permissions/feature-permissions/client-and-mobile-device-permissions.md) topic. 
+You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the " _\<Service\>_ virtual directory settings" entry in the [Clients and mobile devices permissions](../../permissions/feature-permissions/client-and-mobile-device-permissions.md) topic.
   
 Before clients can connect to your new server from the Internet, you need to configure the external domains, or URLs, on the Mailbox server's virtual directories and then configure your public domain name service (DNS) records. The steps below configure the same external domain on the external URL of each virtual directory. If you want to configure different external domains on one or more virtual directory external URLs, you need to configure the external URLs manually. For more information, see [Virtual Directory Management](http://technet.microsoft.com/library/1af30fd5-621c-4acb-b6df-d8fa64d719ba.aspx).
   
@@ -156,19 +156,19 @@ Before clients can connect to your new server from the Internet, you need to con
     
 2. Enter your user name and password in **Domain\user name** and **Password** and then click **Sign in**.
     
-3. Go to **Servers** \> **Servers**, select the name of the Internet-facing Mailbox and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
+3. Go to **Servers** \> **Servers**, select the name of the Internet-facing Mailbox and then click **Edit** ![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
 4. Click **Outlook Anywhere**.
     
-5. In the **Specify the external hostname** field, specify the externally accessible FQDN of the Mailbox server. For example, mail.contoso.com. 
+5. In the **Specify the external hostname** field, specify the externally accessible FQDN of the Mailbox server. For example, mail.contoso.com.
     
-6. While you're here, let's also set the internally accessible FQDN of the Mailbox server. In the **Specify the internal hostname** field, insert the FQDN you used in the previous step. For example, mail.contoso.com. 
+6. While you're here, let's also set the internally accessible FQDN of the Mailbox server. In the **Specify the internal hostname** field, insert the FQDN you used in the previous step. For example, mail.contoso.com.
     
 7. Click **Save**.
     
-8. Go to **Servers** \> **Virtual directories** and then click **Configure external access domain**![Configure icon](../../media/ITPro_EAC_ConfigureIcon.png).
+8. Go to **Servers** \> **Virtual directories** and then click **Configure external access domain** ![Configure icon](../../media/ITPro_EAC_ConfigureIcon.png).
     
-9. Under **Select the Mailbox servers to use with the external URL**, click **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png)
+9. Under **Select the Mailbox servers to use with the external URL**, click **Add** ![Add icon](../../media/ITPro_EAC_AddIcon.png)
   
 10. Select the Mailbox servers you want to configure and then click **Add**. After you've added all of the Mailbox servers you want to configure, click **OK**.
     
@@ -176,13 +176,13 @@ Before clients can connect to your new server from the Internet, you need to con
     
     **Note**: Some organizations make the Outlook Web App FQDN unique to protect users against changes to underlying server FQDN changes. Many organizations use owa.contoso.com for their Outlook Web App FQDN instead of mail.contoso.com. If you want to configure a unique Outlook Web App FQDN, do the following after you completed the previous step. This checklist assumes you have configured a unique Outlook Web App FQDN.
     
-1. Select **owa (Default Web Site)** and click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
+1. Select **owa (Default Web Site)** and click **Edit** ![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
 2. In **External URL**, type https://, then the unique Outlook Web App FQDN you want to use, and then append /owa. For example, https://owa.contoso.com/owa.
     
 3. Click **Save**.
     
-4. Select **ecp (Default Web Site)** and click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
+4. Select **ecp (Default Web Site)** and click **Edit** ![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
 5. In **External URL**, type https://, then the same Outlook Web App FQDN that you specified in the previous step, and then append /ecp. For example, https://owa.contoso.com/ecp.
     
@@ -203,7 +203,7 @@ To verify that you have successfully configured the external URL on the Mailbox 
   
 1. In the EAC, go to **Servers** \> **Virtual directories**.
     
-2. In the **Select server** field, select the Internet-facing Mailbox server. 
+2. In the **Select server** field, select the Internet-facing Mailbox server.
     
 3. Select a virtual directory and then, in the virtual directory details pane, verify that the **External URL** field is populated with the correct FQDN and service as shown below: 
     
@@ -225,12 +225,12 @@ To verify that you have successfully configured your public DNS records, do the 
     
 3. In `nslookup`, look up the record of each FQDN you created. Verify that the value that's returned for each FQDN is correct.
     
-4. In `nslookup`, type `set type=mx` and then look up the accepted domain you added in Step 1. Verify that the value returned matches the FQDN of the Mailbox server. 
+4. In `nslookup`, type `set type=mx` and then look up the accepted domain you added in Step 1. Verify that the value returned matches the FQDN of the Mailbox server.
     
 ## Step 5: Configure internal URLs
 <a name="ConfigInternalURL"> </a>
 
-You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the " _\<Service\>_ virtual directory settings" entry in the [Clients and mobile devices permissions](../../permissions/feature-permissions/client-and-mobile-device-permissions.md) topic. 
+You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the " _\<Service\>_ virtual directory settings" entry in the [Clients and mobile devices permissions](../../permissions/feature-permissions/client-and-mobile-device-permissions.md) topic.
   
 Before clients can connect to your new server from your intranet, you need to configure the internal domains, or URLs, on the Mailbox server's virtual directories and then configure your private domain name service (DNS) records.
   
@@ -255,7 +255,7 @@ For more information about internal and external URLs on virtual directories, se
   ```
 
   ```
-  Set-WebServicesVirtualDirectory "$HostName\EWS (Default Web Site)" -InternalUrl ((get-WebServicesVirtualDirectory "$HostName\EWS (Default Web Site)").ExternalUrl)
+  Set-WebServicesVirtualDirectory "$HostName\EWS (Default Web Site)" -InternalUrl ((Get-WebServicesVirtualDirectory "$HostName\EWS (Default Web Site)").ExternalUrl)
   ```
 
   ```
@@ -287,9 +287,9 @@ To verify that you have successfully configured the internal URL on the Mailbox 
   
 1. In the EAC, go to **Servers** \> **Virtual directories**.
     
-2. In the **Select server** field, select the Internet-facing Mailbox server. 
+2. In the **Select server** field, select the Internet-facing Mailbox server.
     
-3. Select a virtual directory and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
+3. Select a virtual directory and then click **Edit** ![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
 4. Verify that the **Internal URL** field is populated with the correct FQDN and service as shown below: 
     
@@ -317,18 +317,18 @@ To verify that you have successfully configured your private DNS records, do the
     
 2. Go to **Servers** \> **Virtual directories**.
     
-3. In the **Select server** field, select the Internet-facing Mailbox server. 
+3. In the **Select server** field, select the Internet-facing Mailbox server.
     
-4. Select the virtual directory you want to change and click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
+4. Select the virtual directory you want to change and click **Edit** ![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
-5. In **Internal URL**, replace the host name between **https://** and the first forward slash (**/**) with the new FQDN you want to use. For example, if you want to change the EWS virtual directory FQDN from Ex2016MBX.corp.contoso.com to internal.contoso.com, change the internal URL from https://Ex2016MBX.corp.contoso.com/ews/exchange.asmx to https://internal.contoso.com/ews/exchange.asmx. 
+5. In **Internal URL**, replace the host name between **https://** and the first forward slash (**/**) with the new FQDN you want to use. For example, if you want to change the EWS virtual directory FQDN from Ex2016MBX.corp.contoso.com to internal.contoso.com, change the internal URL from https://Ex2016MBX.corp.contoso.com/ews/exchange.asmx to https://internal.contoso.com/ews/exchange.asmx.
     
 6. Click **Save**.
     
 7. Repeat steps 5 and 6 for each virtual directory you want to change.
     
     > [!NOTE]
-    > The ECP and OWA virtual directory internal URLs must be the same. You can't set an internal URL on the Autodiscover virtual directory. 
+    > The ECP and OWA virtual directory internal URLs must be the same. You can't set an internal URL on the Autodiscover virtual directory.
   
 After you've configured the internal URL on the Mailbox server virtual directories, you need to configure your private DNS records for Outlook Web App, and other connectivity. Depending on your configuration, you'll need to configure your private DNS records to point to the internal or external IP address or FQDN of your Mailbox server. The following is an example of recommended DNS record that you should create to enable internal client connectivity if you've configured your virtual directory internal URLs to use internal.contoso.com.
   
@@ -342,11 +342,11 @@ To verify that you have successfully configured the internal URL on the Mailbox 
   
 1. In the EAC, go to **Servers** \> **Virtual directories**.
     
-2. In the **Select server** field, select the Internet-facing Mailbox server. 
+2. In the **Select server** field, select the Internet-facing Mailbox server.
     
-3. Select a virtual directory and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
+3. Select a virtual directory and then click **Edit** ![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
-4. Verify that the **Internal URL** field is populated with the correct FQDN. For example, you may have set the internal URLs to use internal.contoso.com. 
+4. Verify that the **Internal URL** field is populated with the correct FQDN. For example, you may have set the internal URLs to use internal.contoso.com.
     
 |**Virtual directory**|**Internal URL value**|
 |:-----|:-----|
@@ -369,7 +369,7 @@ To verify that you have successfully configured your private DNS records, do the
 ## Step 6: Configure an SSL certificate
 <a name="ConfigCert"> </a>
 
-You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Certificate management" entry in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic. 
+You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Certificate management" entry in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic.
   
 Some services, such as Outlook Anywhere and Exchange ActiveSync, require certificates to be configured on your Exchange 2016 server. The following steps show you how to configure an SSL certificate from a third-party certificate authority (CA):
   
@@ -377,7 +377,7 @@ Some services, such as Outlook Anywhere and Exchange ActiveSync, require certifi
     
 2. Enter your user name and password in **Domain\user name** and **Password** and then click **Sign in**.
     
-3. Go to **Servers** \> **Certificates**. On the **Certificates** page, make sure your Mailbox server is selected in the **Select server** field, and then click **New**![Add icon](../../media/ITPro_EAC_AddIcon.png).
+3. Go to **Servers** \> **Certificates**. On the **Certificates** page, make sure your Mailbox server is selected in the **Select server** field, and then click **New** ![Add icon](../../media/ITPro_EAC_AddIcon.png).
     
 4. In the **New Exchange certificate** wizard, select **Create a request for a certificate from a certification authority** and then click **Next**.
     
@@ -389,9 +389,9 @@ Some services, such as Outlook Anywhere and Exchange ActiveSync, require certifi
     
 8. For each service in the list shown, verify that the external or internal server names that users will use to connect to the Exchange server are correct. For example:
     
-  - If you configured your internal and external URLs to be the same, **Outlook Web App (when accessed from the Internet)** and **Outlook Web App (when accessed from the Intranet)** should show owa.contoso.com. **OAB (when accessed from the Internet)** and **OAB (when accessed from the Intranet)** should show mail.contoso.com. 
+  - If you configured your internal and external URLs to be the same, **Outlook Web App (when accessed from the Internet)** and **Outlook Web App (when accessed from the Intranet)** should show owa.contoso.com. **OAB (when accessed from the Internet)** and **OAB (when accessed from the Intranet)** should show mail.contoso.com.
     
-  - If you configured the internal URLs to be internal.contoso.com, **Outlook Web App (when accessed from the Internet)** should show owa.contoso.com and **Outlook Web App (when accessed from the Intranet)** should show internal.contoso.com. 
+  - If you configured the internal URLs to be internal.contoso.com, **Outlook Web App (when accessed from the Internet)** should show owa.contoso.com and **Outlook Web App (when accessed from the Intranet)** should show internal.contoso.com.
     
     These domains will be used to create the SSL certificate request. Click **Next**.
     
@@ -405,13 +405,13 @@ Some services, such as Outlook Anywhere and Exchange ActiveSync, require certifi
     
 After you've saved the certificate request, submit the request to your certificate authority (CA). This can be an internal CA or a third-party CA, depending on your organization. Clients that connect to the Mailbox server must trust the CA that you use. After you receive the certificate from the CA, complete the following steps:
   
-1. On the **Server** \> **Certificates** page in the EAC, select the certificate request you created in the previous steps. 
+1. On the **Server** \> **Certificates** page in the EAC, select the certificate request you created in the previous steps.
     
 2. In the certificate request details pane, click **Complete** under **Status**.
     
 3. On the complete pending request page, specify the path to the SSL certificate file and then click **OK**.
     
-4. Select the new certificate you just added, and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
+4. Select the new certificate you just added, and then click **Edit** ![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
 5. On the certificate page, click **Services**.
     

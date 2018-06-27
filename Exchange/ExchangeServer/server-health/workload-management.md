@@ -16,9 +16,9 @@ description: "Summary: Learn about user workload management and throttling in Ex
 
  **Summary**: Learn about user workload management and throttling in Exchange 2016.
 
-User workload management allows you to control how Exchange system resources are consumed by users. This feature was available in Exchange 2010 (known as *user throttling*), and was expanded to its current level in Exchange 2013. 
+User workload management allows you to control how Exchange system resources are consumed by users. This feature was available in Exchange 2010 (known as *user throttling*), and was expanded to its current level in Exchange 2013.
 
-A *workload* is a feature, protocol, or service that's been explicitly defined to manage system resources on Exchange servers. Each workload consumes system resources on the Exchange server (for example CPU, memory, network, and disk bandwidth). Examples of workloads include Outlook on the web (formerly known as Outlook Web App), Exchange ActiveSync, mailbox migration, and mailbox assistants. 
+A *workload* is a feature, protocol, or service that's been explicitly defined to manage system resources on Exchange servers. Each workload consumes system resources on the Exchange server (for example CPU, memory, network, and disk bandwidth). Examples of workloads include Outlook on the web (formerly known as Outlook Web App), Exchange ActiveSync, mailbox migration, and mailbox assistants.
 
 ## Control the user consumption of Exchange system resources
 
@@ -42,9 +42,9 @@ You manage user workload settings with these cmdlets in the Exchange Management 
 
 By default, there's one throttling policy named `GlobalThrottlingPolicy`. This policy has the scope value Global, which means it applies to all users in the organization. Typically, the settings in the default throttling policy are adequate for users in most Exchange organizations. Instead of customizing the default throttling policy, you can create custom throttling policies that have different settings that the default policy. The scopes that are available in custom throttling policies are:
 
-- **Organization**: The throttling settings apply to *all* users in the organization. 
+- **Organization**: The throttling settings apply to *all* users in the organization.
 
-- **Regular**: The throttling settings that apply only to *specific* users in the organization. 
+- **Regular**: The throttling settings that apply only to *specific* users in the organization.
 
 The order of precedence for throttling polices are:
 
@@ -57,7 +57,7 @@ The order of precedence for throttling polices are:
 If you create custom throttling policies, the settings should be different than the default throttling policy, and you should plan for the difference in settings from Regular policies to Organization policies to the default policy (for example, least restrictive to most restrictive, or vice-versa).
 
 > [!NOTE]
-> We strongly recommend that you don't modify the default throttling policy, because changes to the default policy could be overwritten by future Exchange updates. Instead, you should create custom throttling policies that contain customized settings. 
+> We strongly recommend that you don't modify the default throttling policy, because changes to the default policy could be overwritten by future Exchange updates. Instead, you should create custom throttling policies that contain customized settings.
 
 ## User throttling in Exchange coexistence environments
 

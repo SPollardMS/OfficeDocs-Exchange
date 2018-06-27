@@ -19,7 +19,7 @@ description: "Summary: Learn how to retrieve Exchange statistics for public fold
 You can use the the Exchange Management Shell to retrieve statistics about a public folder, such as the display name, creation time, last user modified time, last user access, and item size. You can use this information to make decisions about deleting or retaining public folders.
   
 > [!NOTE]
-> While you can view some of the quota and usage information in the Exchange admin center (EAC), this information is incomplete, and we recommend that you use the Exchange Management Shell to view public folder statistics. To view quota and usage information for public folders by navigating to **Public Folders** \> **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png) \> **Mailbox usage**. 
+> While you can view some of the quota and usage information in the Exchange admin center (EAC), this information is incomplete, and we recommend that you use the Exchange Management Shell to view public folder statistics. To view quota and usage information for public folders by navigating to **Public Folders** \> **Edit** ![Edit icon](../../media/ITPro_EAC_EditIcon.png) \> **Mailbox usage**.
   
 For additional management tasks related to managing public folders, see [Public Folder Procedures](http://technet.microsoft.com/library/afa54c8e-f3ab-4f5f-85ad-fb2a905ecfa9.aspx).
   
@@ -29,12 +29,12 @@ For additional management tasks related to public folders, see [Public Folder Pr
 
 - Estimated time to complete: 1 minute.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Public folders" entry in the [Sharing and collaboration permissions](../../permissions/feature-permissions/sharing-and-collaboration-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Public folders" entry in the [Sharing and collaboration permissions](../../permissions/feature-permissions/sharing-and-collaboration-permissions.md) topic.
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
   
 ## Use the Exchange Management Shell to retrieve public folder statistics
 

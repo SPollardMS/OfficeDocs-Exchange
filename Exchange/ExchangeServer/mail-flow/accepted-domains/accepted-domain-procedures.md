@@ -42,7 +42,7 @@ For more information about accepted domains, see [Accepted domains in Exchange 2
 
 - Estimated time to complete each task: 5 minutes.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Accepted domains" entry in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic and the "Email address policies" entry in the [Recipients Permissions](../../permissions/feature-permissions/recipient-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Accepted domains" entry in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic and the "Email address policies" entry in the [Recipients Permissions](../../permissions/feature-permissions/recipient-permissions.md) topic.
     
 - If you have a subscribed Edge Transport server in your perimeter network, you configure accepted domains on a Mailbox server in your Exchange organization. The accepted domains configuration is replicated to the Edge Transport server during EdgeSync synchronization. For more information, see [Edge Subscriptions](../../architecture/edge-transport-servers/edge-subscriptions.md).
     
@@ -55,7 +55,7 @@ For more information about accepted domains, see [Accepted domains in Exchange 2
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
   
 ## Create accepted domains
 <a name="CreateAcceptedDomain"> </a>
@@ -64,7 +64,7 @@ After you create an accepted domain, you can't change the domain value (for exam
   
 ### Use the EAC to create accepted domains
 
-1. In the EAC, go to **Mail flow** \> **Accepted domains**, and then click **Add** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)).
+1. In the EAC, go to **Mail flow** \> **Accepted domains**, and then click **Add** (![Edit icon](../../media/ITPro_EAC_EditIcon.png)).
     
 2. In the **New accepted domain** window that opens, configure the following settings: 
     
@@ -92,7 +92,7 @@ New-AcceptedDomain -Name "Contoso Corp" -DomainName contoso.com
 
  **Note**: We didn't need to use the _DomainType_ parameter, because the default value is `Authoritative`.
   
-For detailed syntax and parameter information, see [new-AcceptedDomain](http://technet.microsoft.com/library/08bcaaec-51e3-447d-b3bf-406a705c64b4.aspx).
+For detailed syntax and parameter information, see [New-AcceptedDomain](http://technet.microsoft.com/library/08bcaaec-51e3-447d-b3bf-406a705c64b4.aspx).
   
 ### How do you know this worked?
 
@@ -115,7 +115,7 @@ To verify that you've successfully created an accepted domain, use either of the
     
 ### Use the EAC to modify accepted domains
 
-1. In the EAC, go to **Mail flow** \> **Accepted domains**, select the accepted domain from the list, and then click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)).
+1. In the EAC, go to **Mail flow** \> **Accepted domains**, select the accepted domain from the list, and then click **Edit** (![Edit icon](../../media/ITPro_EAC_EditIcon.png)).
     
 2. In the properties window that opens, you can configure the following settings:
     
@@ -147,7 +147,7 @@ This example enables Recipient Lookup on a Edge Transport server for the interna
 Set-AcceptedDomain -Identity "Fabrikam Corp" -AddressBookEnabled $true
 ```
 
-For detailed syntax and parameter information, see [set-AcceptedDomain](http://technet.microsoft.com/library/2ef9a20b-0974-45d0-9dae-23bab22d736e.aspx).
+For detailed syntax and parameter information, see [Set-AcceptedDomain](http://technet.microsoft.com/library/2ef9a20b-0974-45d0-9dae-23bab22d736e.aspx).
   
 ### How do you know this worked?
 
@@ -157,7 +157,7 @@ To verify that you've successfully modified an accepted domain, use either of th
     
     **Notes**:
     
-  - To verify that the accepted domain is the default domain, you need to select the accepted domain from the list, and then click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)). If **Make this the default domain** is selected, it's the default domain. 
+  - To verify that the accepted domain is the default domain, you need to select the accepted domain from the list, and then click **Edit** (![Edit icon](../../media/ITPro_EAC_EditIcon.png)). If **Make this the default domain** is selected, it's the default domain.
     
   - You can't use the EAC to verify that Recipient Lookup is enabled or disabled for the accepted domain. You need to use the Exchange Management Shell.
     
@@ -182,9 +182,9 @@ To verify that you've successfully modified an accepted domain, use either of th
     
 ### Use the EAC to remove accepted domains
 
-1. In the EAC, go to **Mail flow** \> **Accepted domains**, select the accepted domain from the list, and then click **Remove** ( ![Remove icon](../../media/ITPro_EAC_RemoveIcon.png)).
+1. In the EAC, go to **Mail flow** \> **Accepted domains**, select the accepted domain from the list, and then click **Remove** (![Remove icon](../../media/ITPro_EAC_RemoveIcon.png)).
     
-2. In the **Warning** dialog that appears, click **Yes** to confirm. 
+2. In the **Warning** dialog that appears, click **Yes** to confirm.
     
 ### Use the Exchange Management Shell to remove accepted domains
 
@@ -235,7 +235,7 @@ After you configure one or more authoritative domains, you need to decide how to
     
 These are the steps that are required to configure Exchange to accept mail for multiple authoritative domains:
   
-1. Create one or more authoritative domains as described in the [Create accepted domains](accepted-domain-procedures.md#CreateAcceptedDomain) section. 
+1. Create one or more authoritative domains as described in the [Create accepted domains](accepted-domain-procedures.md#CreateAcceptedDomain) section.
     
     For example, if you already have contoso.com configured as an authoritative domain, add fourthcoffee.com as an authoritative domain.
     
@@ -249,7 +249,7 @@ These are the steps that are required to configure Exchange to accept mail for m
     
     For example, create a new policy named Fourth Coffee Recipients with the following settings:
     
-  - **Precanned recipient filter**: All users with mailboxes where the **Company** value is Fourth Coffee. 
+  - **Precanned recipient filter**: All users with mailboxes where the **Company** value is Fourth Coffee.
     
   - **Primary SMTP email address**: _\<alias\>_@fourthcoffee.com.
     

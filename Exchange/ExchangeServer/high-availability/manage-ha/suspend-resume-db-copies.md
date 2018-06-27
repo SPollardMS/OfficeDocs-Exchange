@@ -26,12 +26,12 @@ Looking for other management tasks related to mailbox database copies? Check out
     
 - To open the EAC, see [Exchange admin center in Exchange 2016](../../architecture/client-access/exchange-admin-center.md). To open the Exchange Management Shell, see [Open the Exchange Management Shell](http://technet.microsoft.com/library/63976059-25f8-4b4f-b597-633e78b803c0.aspx).
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Mailbox database copies" entry in the [High availability and site resilience permissions](../../permissions/feature-permissions/ha-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Mailbox database copies" entry in the [High availability and site resilience permissions](../../permissions/feature-permissions/ha-permissions.md) topic.
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
   
 ## Suspend a mailbox database copy
 
@@ -41,13 +41,13 @@ Looking for other management tasks related to mailbox database copies? Check out
     
 2. Select the database whose copy you want to suspend.
     
-3. In the Details pane, under **Database Copies**, click **Suspend** under the database copy you want to suspend. 
+3. In the Details pane, under **Database Copies**, click **Suspend** under the database copy you want to suspend.
     
-4. In the **Comments** field, add an optional comment of up to 512 characters specifying the reason for the suspension. 
+4. In the **Comments** field, add an optional comment of up to 512 characters specifying the reason for the suspension.
     
-5. To suspend the database copy from automatic activation, select the **This copy can only be activated by manual intervention** check box. 
+5. To suspend the database copy from automatic activation, select the **This copy can only be activated by manual intervention** check box.
     
-6. Click **save** to suspend the database copy. 
+6. Click **save** to suspend the database copy.
     
 ### Use the Exchange Management Shell to suspend a mailbox database copy
 
@@ -73,9 +73,9 @@ For detailed syntax and parameter information, see [Suspend-MailboxDatabaseCopy]
     
 2. Select the database whose copy you want to resume.
     
-3. In the Details pane, under **Database Copies**, click **Resume** under the database copy you want to resume. 
+3. In the Details pane, under **Database Copies**, click **Resume** under the database copy you want to resume.
     
-4. Click **yes** to resume the database copy. 
+4. Click **yes** to resume the database copy.
     
 ### Use the Exchange Management Shell to resume a mailbox database copy
 <a name="UseShellResume"> </a>

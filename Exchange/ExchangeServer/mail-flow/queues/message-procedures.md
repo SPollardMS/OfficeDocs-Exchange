@@ -54,12 +54,12 @@ For information about exporting messages from queues, see [Export messages from 
     
 - For more information about using filters and identity values in the Exchange Management Shell, see [Find queues and messages in queues in the Exchange Management Shell](queues-and-messages-in-powershell.md).
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Queues" entry in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Queues" entry in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic.
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
   
 ## Remove messages from queues
 <a name="Remove"> </a>
@@ -72,9 +72,9 @@ For information about exporting messages from queues, see [Export messages from 
     
 ### Use Queue Viewer to remove messages from queues
 
-1. In the **Exchange Toolbox**, in the **Mail flow tools** section, double-click **Queue Viewer** to open the tool in a new window. 
+1. In the **Exchange Toolbox**, in the **Mail flow tools** section, double-click **Queue Viewer** to open the tool in a new window.
     
-2. In Queue Viewer, click the **Messages** tab. A list of all messages on the server that you're connected to is displayed. To adjust the action to a single queue, click the **Queues** tab, double-click the queue name, and then click the _Server\Queue_ tab that appears. 
+2. In Queue Viewer, click the **Messages** tab. A list of all messages on the server that you're connected to is displayed. To adjust the action to a single queue, click the **Queues** tab, double-click the queue name, and then click the _Server\Queue_ tab that appears.
     
 3. Select one or more messages from the list, right-click, and then select **Remove Messages (with NDR)** or **Remove Messages (without NDR)**. A dialog box appears that confirms the selected action and displays, **Do you want to continue?**. Click **Yes**.
     
@@ -132,13 +132,13 @@ To verify that you have successfully removed messages from queues, use either of
   
 - A message that's being sent to multiple recipients might be located in more than one queue. To suspend a message in more than one queue in a single operation, you need to use a filter. For more information, see [Properties of messages in queues](message-properties.md) and [Message filtering parameters](queues-and-messages-in-powershell.md#MessagesFilters).
     
-- If you suspend a message that's in the act of being transmitted to the next hop, delivery of the message will continue, and the message status will be **PendingSuspend**. If delivery fails, the message will re-enter the queue, and then the message will be suspended. 
+- If you suspend a message that's in the act of being transmitted to the next hop, delivery of the message will continue, and the message status will be **PendingSuspend**. If delivery fails, the message will re-enter the queue, and then the message will be suspended.
     
 ### Use Queue Viewer to suspend messages
 
-1. In the **Exchange Toolbox**, in the **Mail flow tools** section, double-click **Queue Viewer** to open the tool in a new window. 
+1. In the **Exchange Toolbox**, in the **Mail flow tools** section, double-click **Queue Viewer** to open the tool in a new window.
     
-2. In Queue Viewer, click the **Messages** tab. A list of all messages on the server that you're connected to is displayed. To limit the view to a single queue, click the **Queues** tab, double-click the queue name, and then click the _Server\Queue_ tab that appears. 
+2. In Queue Viewer, click the **Messages** tab. A list of all messages on the server that you're connected to is displayed. To limit the view to a single queue, click the **Queues** tab, double-click the queue name, and then click the _Server\Queue_ tab that appears.
     
 3. Select one or more messages, right-click, and then select **Suspend**.
     
@@ -207,17 +207,17 @@ To verify that you have successfully suspended messages in queues, use either of
     
 ### Use Queue Viewer to resume messages
 
-1. In the **Exchange Toolbox**, in the **Mail flow tools** section, double-click **Queue Viewer** to open the tool in a new window. 
+1. In the **Exchange Toolbox**, in the **Mail flow tools** section, double-click **Queue Viewer** to open the tool in a new window.
     
-2. In Queue Viewer, click the **Messages** tab. A list of all messages on the server that you're connected to is displayed. To adjust the action to focus on a single queue, click the **Queues** tab, double-click the queue name, and then click the _Server\Queue_ tab that appears. 
+2. In Queue Viewer, click the **Messages** tab. A list of all messages on the server that you're connected to is displayed. To adjust the action to focus on a single queue, click the **Queues** tab, double-click the queue name, and then click the _Server\Queue_ tab that appears.
     
 3. Click **Create Filter**, and enter your filter expression as follows:
     
-1. Select **Status** from the message property drop-down list. 
+1. Select **Status** from the message property drop-down list.
     
-2. Select **Equals** from the comparison operator drop-down list. 
+2. Select **Equals** from the comparison operator drop-down list.
     
-3. Select **Suspended** from the value drop-down list. 
+3. Select **Suspended** from the value drop-down list.
     
 4. Click **Apply Filter**. All messages that have a status of Suspended are displayed.
     
@@ -300,9 +300,9 @@ For more information, see [Redirect-Message](http://technet.microsoft.com/librar
 
 To verify that you have successfully redirected messages in queues, use either of the following procedures:
   
-- In Queue Viewer, verify that the **Message Count** value on delivery queues on the source server is empty or decreasing. 
+- In Queue Viewer, verify that the **Message Count** value on delivery queues on the source server is empty or decreasing.
     
-- In the Exchange Management Shell, run the following command to verify that the **MessageCount** property value for the delivery queues on the source server is decreasing or empty. 
+- In the Exchange Management Shell, run the following command to verify that the **MessageCount** property value for the delivery queues on the source server is decreasing or empty.
     
   ```
   Get-Queue

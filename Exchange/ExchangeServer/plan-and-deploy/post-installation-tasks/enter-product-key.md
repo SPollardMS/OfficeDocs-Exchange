@@ -43,7 +43,7 @@ If you want to enter a product key on an Exchange 2016 server, you're in the rig
     
 - To open the EAC, see [Exchange admin center in Exchange 2016](../../architecture/client-access/exchange-admin-center.md). To open the Exchange Management Shell, see [Open the Exchange Management Shell](http://technet.microsoft.com/library/63976059-25f8-4b4f-b597-633e78b803c0.aspx).
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Product key" entry in the [Exchange infrastructure and PowerShell permissions](../../permissions/feature-permissions/infrastructure-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Product key" entry in the [Exchange infrastructure and PowerShell permissions](../../permissions/feature-permissions/infrastructure-permissions.md) topic.
     
 - If you're licensing an Exchange server that's running the Mailbox server role, you'll need to restart the Microsoft Exchange Information Store service on the server after you enter the product key.
     
@@ -54,7 +54,7 @@ If you want to enter a product key on an Exchange 2016 server, you're in the rig
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
   
 ## Use the EAC to enter the product key
 
@@ -62,11 +62,11 @@ If you want to enter a product key on an Exchange 2016 server, you're in the rig
     
 2. Enter your user name and password in **Domain\user name** and **Password**, and then click **Sign in**.
     
-3. Go to **Servers** \> **Servers**. Select the server you want to license, and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
+3. Go to **Servers** \> **Servers**. Select the server you want to license, and then click **Edit** ![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
 4. (Optional) If you want to upgrade the server from a Standard Edition license to an Enterprise Edition license, on the **General** page, select **Change product key**. You'll only see this option if the server is already licensed.
     
-5. On the **General** page, enter your product key in the **Enter a valid product key** text boxes. 
+5. On the **General** page, enter your product key in the **Enter a valid product key** text boxes.
     
 6. Click **Save**.
     
@@ -78,7 +78,7 @@ If you want to enter a product key on an Exchange 2016 server, you're in the rig
     
 ## Use the Exchange Management Shell to enter the product key
 
-This example uses the **Set-ExchangeServer** cmdlet to enter the product key. 
+This example uses the **Set-ExchangeServer** cmdlet to enter the product key.
   
 ```
 Set-ExchangeServer ExServer01 -ProductKey XXXXX-XXXXX-XXXXX-XXXXX-XXXXX
@@ -102,7 +102,7 @@ To use the EAC to verify that you've successfully licensed the server as Standar
     
 2. Go to **Servers** \> **Servers**.
     
-3. Select the server you want to view, and then look in the server details pane. If the product key has been accepted, **Licensed** will appear along with the Exchange 2016 edition. 
+3. Select the server you want to view, and then look in the server details pane. If the product key has been accepted, **Licensed** will appear along with the Exchange 2016 edition.
     
 To use the Exchange Management Shell to verify that you've successfully licensed the server as Standard Edition or Enterprise Edition, do the following:
   

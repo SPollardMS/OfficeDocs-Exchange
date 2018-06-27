@@ -24,12 +24,12 @@ You can configure mailbox policies in Exchange 2016 for Outlook on the web throu
     
 - To open the EAC, see [Exchange admin center in Exchange 2016](../../architecture/client-access/exchange-admin-center.md). To open the Exchange Management Shell, see [Open the Exchange Management Shell](http://technet.microsoft.com/library/63976059-25f8-4b4f-b597-633e78b803c0.aspx).
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Outlook on the web mailbox policies" entry in the [Clients and mobile devices permissions](../../permissions/feature-permissions/client-and-mobile-device-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Outlook on the web mailbox policies" entry in the [Clients and mobile devices permissions](../../permissions/feature-permissions/client-and-mobile-device-permissions.md) topic.
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).. 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351)..
   
 ## Use the EAC to view or configure Outlook on the web mailbox policies
 
@@ -39,29 +39,29 @@ You can configure mailbox policies in Exchange 2016 for Outlook on the web throu
     
 3. Click **Edit**.
     
-4. On the **General** tab, you can view and edit the name of the policy. 
+4. On the **General** tab, you can view and edit the name of the policy.
     
 5. On the **Features** tab, use the check boxes to enable or disable features. By default, the most common features are displayed. To see all features that can be enabled or disabled, click **More options**.
     
-    > [!NOTE]
-    > Features settings for Outlook on the web mailbox policies override Outlook on the web virtual directory settings. You can change segmentation settings for individual users by using the **Set-CASMailbox** cmdlet in the Exchange Management Shell. 
+    **Notes**:
+
+    - Features settings for Outlook on the web mailbox policies override Outlook on the web virtual directory settings. You can change segmentation settings for individual users by using the **Set-CASMailbox** cmdlet in the Exchange Management Shell.
   
-    > [!NOTE]
-    > The option to enable or disable the standard version of Outlook on the web by using the **Premium client** check box has been deprecated and will be removed from the settings. The standard version of Outlook on the web is always enabled. 
+    - The option to enable or disable the standard version of Outlook on the web by using the **Premium client** check box has been deprecated and will be removed from the settings. The standard version of Outlook on the web is always enabled.
   
-6. On the **File Access** tab, use the check boxes to configure the file access and viewing options for users. File access lets a user open or view the contents of files attached to an email message. 
+6. On the **File Access** tab, use the check boxes to configure the file access and viewing options for users. File access lets a user open or view the contents of files attached to an email message.
     
     File access can be controlled based on whether a user has signed in on a public or private computer. The option for users to select private computer access or public computer access is available only when you're using forms-based authentication. All other forms of authentication default to private computer access.
     
-  - **Direct file access**: Select this check box if you want to enable direct file access. Direct file access lets users open files attached to email messages.
+    - **Direct file access**: Select this check box if you want to enable direct file access. Direct file access lets users open files attached to email messages.
     
-  - ** WebReady Document Viewing **: Select this check box if you want to enable supported documents to be converted to HTML and displayed in a web browser.
+    - **WebReady Document Viewing**: Select this check box if you want to enable supported documents to be converted to HTML and displayed in a web browser.
     
-  - **Force WebReady Document Viewing when a converter is available**: Select this check box if you want to force documents to be converted to HTML and displayed in a web browser before users can open them in the viewing application. Documents can be opened in the viewing application only if direct file access has been enabled.
+    - **Force WebReady Document Viewing when a converter is available**: Select this check box if you want to force documents to be converted to HTML and displayed in a web browser before users can open them in the viewing application. Documents can be opened in the viewing application only if direct file access has been enabled.
     
-7. On the **Offline access** tab, use the option buttons to configure offline access availability. 
+7. On the **Offline access** tab, use the option buttons to configure offline access availability.
     
-8. Click **Save** to update the policy. 
+8. Click **Save** to update the policy.
     
 ## Use the Exchange Management Shell to view Outlook on the web mailbox policies
 
@@ -89,9 +89,9 @@ To verify that you've successfully edited an Outlook on the web mailbox policy:
   
 1. In the EAC, click **Permissions** \> **Outlook Web App Policies**, and then choose a specific Outlook on the web mailbox policy.
     
-2. Click **Edit** to view the properties of the mailbox policy. 
+2. Click **Edit** to view the properties of the mailbox policy.
     
-3. Click **Save** or **Cancel** to close the properties page. 
+3. Click **Save** or **Cancel** to close the properties page.
     
 ## See also
 

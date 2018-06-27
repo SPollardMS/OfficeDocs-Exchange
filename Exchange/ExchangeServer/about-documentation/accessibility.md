@@ -45,7 +45,7 @@ Every figure in Help for Microsoft Exchange, including screenshots, diagrams, fl
 The following sections provide information about the features, products, and services that make Microsoft Windows more accessible for people with disabilities.
 
 > [!NOTE]
-> The information in this section applies only to users who license Microsoft products in the United States. If you obtained this product outside of the United States, visit the [Microsoft Accessibility website](https://go.microsoft.com/fwlink/p/?linkId=18139) for a list of telephone numbers and addresses for Microsoft support services. You can contact your subsidiary to find out whether the type of products and services described in this section are available in your area. You can learn more about the accessibility features included in Microsoft products on the Accessibility in Microsoft Products web site. 
+> The information in this section applies only to users who license Microsoft products in the United States. If you obtained this product outside of the United States, visit the [Microsoft Accessibility website](https://go.microsoft.com/fwlink/p/?linkId=18139) for a list of telephone numbers and addresses for Microsoft support services. You can contact your subsidiary to find out whether the type of products and services described in this section are available in your area. You can learn more about the accessibility features included in Microsoft products on the Accessibility in Microsoft Products web site.
 
 ### Accessibility features of Windows
 

@@ -21,9 +21,9 @@ Certificate based authentication (CBA) in Exchange allows Outlook on the web (fo
   
 Before you configure Exchange, you need to issue a client certificate to each user. Because of the sheer number of certificates involved, you should use an automated internal public key infrastructure (PKI) to issue and manage the client certificates. An example of an automated internal PKI is Active Directory Certificate Services (AD CS). For more information about AD CS, see [Active Directory Certificate Services Overview](https://go.microsoft.com/fwlink/p/?LinkID=392697). Here's more information about the certificate requirements:
   
-- The client certificate must be issued for client authentication (for example, the default **User** certificate template in AD CS). 
+- The client certificate must be issued for client authentication (for example, the default **User** certificate template in AD CS).
     
-- The client certificate must contain the user principal name (UPN) of the user (in the certificate's **Subject** or **Subject Alternative Name** fields). 
+- The client certificate must contain the user principal name (UPN) of the user (in the certificate's **Subject** or **Subject Alternative Name** fields).
     
 - The client certificate must be associated with the user account in Active Directory.
     
@@ -35,14 +35,14 @@ For CBA in Outlook on the web, the client certificate needs to be installed on t
 
 - Estimated time to complete this task: 20 minutes
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "IIS Manager" entry in the Outlook on the web permissions section of the [Clients and mobile devices permissions](../../permissions/feature-permissions/client-and-mobile-device-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "IIS Manager" entry in the Outlook on the web permissions section of the [Clients and mobile devices permissions](../../permissions/feature-permissions/client-and-mobile-device-permissions.md) topic.
     
 - To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
   
 ## Step 1: Use the Exchange Management Shell to install the Client Certificate Mapping Authentication feature on all of your Exchange servers
 
@@ -58,34 +58,37 @@ For detailed syntax and parameter information, see [Install-WindowsFeature](http
   
 ## Step 2: Use IIS Manager to enable Active Directory Client Certificate Authentication for the Exchange server
 
-1. Open IIS Manager on the Exchange server. An easy way to do this in Windows Server 2012 or later is to press Windows key + Q, type inetmgr, and select **Internet Information Services (IIS) Manager** in the results. 
+1. Open IIS Manager on the Exchange server. An easy way to do this in Windows Server 2012 or later is to press Windows key + Q, type inetmgr, and select **Internet Information Services (IIS) Manager** in the results.
     
-2. Select the server, and verify **Features View** is selected at the bottom of the page. 
+2. Select the server, and verify **Features View** is selected at the bottom of the page.
     
 3. In the **IIS** section, double-click **Authentication**.
+
     ![In IIS, select the Server, then select Authentication](../../media/5847bc3c-c461-4929-87e8-00265bec1030.png)
   
 4. On the **Authentication** page that opens, select **Active Directory Client Certificate Authentication** from the list, and in the **Actions** pane, click **Enable**.
+
     ![Authentication page of the server in IIS](../../media/03acd98e-ad2b-4b6d-b8b0-196d5f36ea9a.png)
   
     You'll see a warning that SSL must be enabled to use Active Directory Client Certificate Mapping.
     
 ## Step 3: Use IIS Manager to configure the Outlook on the web and ActiveSync virtual directories to require client certificates
 
- **Note**: You need to *require* client certificates, because *accepting* client certificates (to support both CBA and regular user name and password authentication) doesn't work consistently across all types of ActiveSync devices. 
+ **Note**: You need to *require* client certificates, because *accepting* client certificates (to support both CBA and regular user name and password authentication) doesn't work consistently across all types of ActiveSync devices.
   
 1. In IIS Manager, expand the server, expand **Sites**, and then expand **Default Web Site**.
     
-2. Select the **owa** virtual directory, and verify **Features View** is selected at the bottom of the page. 
+2. Select the **owa** virtual directory, and verify **Features View** is selected at the bottom of the page.
     
 3.  In the **IIS** section, double-click **SSL Settings**.
     
 4. On the **SSL Settings** page, verify **Require SSL** is checked, and select the **Client certificates** value **Require**.
     
 5. In the **Actions** pane, click **Apply**.
+
     ![In IIS, in the SSL settings of the virtual directory, select Require under Client certificates](../../media/56869b49-abc4-4506-a287-79e9e21cef86.png)
   
-6. Select the **Microsoft-Server-ActiveSync** virtual directory. 
+6. Select the **Microsoft-Server-ActiveSync** virtual directory.
     
 7.  In the **IIS** section, double-click **SSL Settings**.
     
@@ -109,38 +112,40 @@ After you require client certificates for authentication, you need to disable al
   
 1. In the Exchange Management Shell, replace _\<ServerName\>_ with the name of your Exchange server, and run the following command to disable all other authentication methods on the Outlook on the web virtual directory: 
     
-  ```
-  Set-OwaVirtualDirectory "<ServerName>\owa (Default Web Site)" -BasicAuthentication $false -WindowsAuthentication $false -DigestAuthentication $false -FormsAuthentication $false -AdfsAuthentication $false -OAuthAuthentication $false
-  ```
+    ```
+    Set-OwaVirtualDirectory "<ServerName>\owa (Default Web Site)" -BasicAuthentication $false -WindowsAuthentication $false -DigestAuthentication $false -FormsAuthentication $false -AdfsAuthentication $false -OAuthAuthentication $false
+    ```
 
     For detailed syntax and parameter information, see [Set-OwaVirtualDirectory](http://technet.microsoft.com/library/7fadcc2e-6339-48b1-b15c-c89e45d4e430.aspx).
     
 2. Replace _\<ServerName\>_ with the name of your Exchange server, and run the following command to disable all other authentication methods on the ActiveSync virtual directory: 
     
-  ```
-  Set-ActiveSyncVirtualDirectory "<ServerName>\Microsoft-Server-ActiveSync (Default Web Site)" -BasicAuthEnabled $false -WindowsAuthEnabled $false
-  ```
+    ```
+    Set-ActiveSyncVirtualDirectory "<ServerName>\Microsoft-Server-ActiveSync (Default Web Site)" -BasicAuthEnabled $false -WindowsAuthEnabled $false
+    ```
 
     For detailed syntax and parameter information, see [Set-ActiveSyncVirtualDirectory](http://technet.microsoft.com/library/899fa80c-41e9-4fc0-b28e-5ca2f55e6369.aspx).
     
 ## Step 5: Use IIS Manager to enable client certificate mapping for the Outlook on the web and ActiveSync virtual directories
 
 > [!IMPORTANT]
-> After you perform this step, running the **Set-ActiveSyncVirtualDirectory** cmdlet might disable the client certificate mapping for ActiveSync. 
+> After you perform this step, running the **Set-ActiveSyncVirtualDirectory** cmdlet might disable the client certificate mapping for ActiveSync.
   
 1. In IIS Manager, expand the server, expand **Sites**, and then expand **Default Web Site**.
     
-2. Select the **owa** virtual directory, and verify **Features View** is selected at the bottom of the page. 
+2. Select the **owa** virtual directory, and verify **Features View** is selected at the bottom of the page.
     
 3.  In the **Management** section, double-click **Configuration Editor**.
     
 4. On the **Configuration Editor** page, click the drop down on **Section**, and navigate to **system.webServer** \> **security** \> **authentication** \> **clientCertificateMappingAuthentication**.
+
     ![Select clientCertificateMappingAuthentication in Configuration Manager in IIS for the owa virtual directory](../../media/fc0266d4-fe7b-4415-9880-733603190b09.png)
   
 5. Set the **enabled** value to **True**, and in the **Actions** pane, click **Apply**.
+
     ![Enable clientCertificateMappingAuthentication value in Configuration Editor in IIS for the owa virtual directory](../../media/bc39a8e8-a314-41c4-93c9-1a50ab8d8301.png)
   
-6. Select the **Microsoft-Server-ActiveSync** virtual directory. 
+6. Select the **Microsoft-Server-ActiveSync** virtual directory.
     
 7.  In the **Management** section, double-click **Configuration Editor**.
     
@@ -166,11 +171,11 @@ You only need to perform this step if you aren't using AD CS to issue the client
     
 2. On any domain member server (for example, a domain controller or an Exchange server), open an elevated command prompt run the following command:
     
-  ```
-  %windir%\system32\certutil.exe -enterprise -addstore NTAuth "C:\Data\CARoot.cer"
-  ```
+    ```
+    %windir%\system32\certutil.exe -enterprise -addstore NTAuth "C:\Data\CARoot.cer"
+    ```
 
-    Note that this step requires membership in the **Enterprise Admins** group. 
+    Note that this step requires membership in the **Enterprise Admins** group.
     
 ## Step 7 (Optional): Use IIS Manager to increase the UploadReadAheadSize value for the Outlook on the web and ActiveSync virtual directories
 
@@ -178,17 +183,19 @@ If your clients receive errors, you might need to increase the **uploadReadAhead
   
 1. In IIS Manager, expand the server, expand **Sites**, and then expand **Default Web Site**.
     
-2. Select the **owa** virtual directory, and verify **Features View** is selected at the bottom of the page. 
+2. Select the **owa** virtual directory, and verify **Features View** is selected at the bottom of the page.
     
 3.  In the **Management** section, double-click **Configuration Editor**.
     
 4. On the **Configuration Editor** page, click the drop down on **Section**, and navigate to **systemwebServer** \> **serverRuntime**.
+
     ![Select serverRuntime in Configuration Editor in IIS for the owa virtual directory](../../media/3db4cef0-ae03-4c14-ad7e-4269ace1bdec.png)
   
 5. Set the **uploadReadAheadSize** value to 49152, and in the **Actions** pane, click **Apply**.
+
     ![Change the uploadReadAheadSize value in Configuration Editor in IIS for the owa virtual directory](../../media/ec3521fa-6e15-401d-8c72-7810e72cfef1.png)
   
-6. Select the **Microsoft-Server-ActiveSync** virtual directory. 
+6. Select the **Microsoft-Server-ActiveSync** virtual directory.
     
 7.  In the **Management** section, double-click **Configuration Editor**.
     

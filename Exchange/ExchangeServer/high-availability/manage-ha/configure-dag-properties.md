@@ -22,7 +22,7 @@ The Shell enables you to configure DAG properties that aren't available in the E
 
 - Estimated time to complete: 1 minute
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Database availability groups" entry in the [High availability and site resilience permissions](../../permissions/feature-permissions/ha-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Database availability groups" entry in the [High availability and site resilience permissions](../../permissions/feature-permissions/ha-permissions.md) topic.
     
 - DAG property values are stored in both Active Directory and the cluster database. However, some properties are stored only in the cluster database. As a result, the underlying cluster for the DAG must be running and have quorum to set the properties for:
     
@@ -37,7 +37,7 @@ The Shell enables you to configure DAG properties that aren't available in the E
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).. 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351)..
   
 ## Use the EAC to configure database availability group properties
 <a name="UseEMC"> </a>
@@ -54,17 +54,17 @@ The Shell enables you to configure DAG properties that aren't available in the E
     
   - **Database availability group members**: A read-only field that displays a list of DAG members and their current operational status.
     
-  - **Configure database availability group networks manually**: A check box that you select when you want to configure all DAG networks manually. When the check box is clear, the system configures DAG networks automatically based on network interface configuration, and the **Set-DatabaseAvailabilityGroupNetwork** and **New-DatabaseAvailabilityGroupNetwork** cmdlets are disabled for the DAG. 
+  - **Configure database availability group networks manually**: A check box that you select when you want to configure all DAG networks manually. When the check box is clear, the system configures DAG networks automatically based on network interface configuration, and the **Set-DatabaseAvailabilityGroupNetwork** and **New-DatabaseAvailabilityGroupNetwork** cmdlets are disabled for the DAG.
     
 4. Use the **IP addresses** page to view and modify the IP addresses assigned to the DAG: 
     
-  - Select an existing IP address and click ![Edit icon](../../media/ITPro_EAC_EditIcon.png) to modify it. 
+  - Select an existing IP address and click ![Edit icon](../../media/ITPro_EAC_EditIcon.png) to modify it.
     
   - Select an existing IP address and click the minus icon (delete) to remove it.
     
-  - Enter an IP address and click ![Add icon](../../media/ITPro_EAC_AddIcon.png) to add it to the DAG. 
+  - Enter an IP address and click ![Add icon](../../media/ITPro_EAC_AddIcon.png) to add it to the DAG.
     
-5. Click **Save** to save any changes that were made. 
+5. Click **Save** to save any changes that were made.
     
 ## Use the Exchange Management Shell to configure database availability group properties
 <a name="UseShell"> </a>
@@ -112,7 +112,7 @@ Set-DatabaseAvailabilityGroup -Identity DAG1 -ReplicationPort 63132
 ```
 
 > [!NOTE]
-> After changing the default replication port for a DAG, you must manually modify the Windows Firewall exceptions on each member of the DAG to allow communication to occur over the specified port. 
+> After changing the default replication port for a DAG, you must manually modify the Windows Firewall exceptions on each member of the DAG to allow communication to occur over the specified port.
   
 ## How do you know this worked?
 <a name="UseShell"> </a>

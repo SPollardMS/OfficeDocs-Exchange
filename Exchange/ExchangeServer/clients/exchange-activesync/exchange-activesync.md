@@ -14,14 +14,14 @@ description: "Summary: Exchange ActiveSync is a client protocol that lets you sy
 
 # Exchange ActiveSync
 
- **Summary:** Exchange ActiveSync is a client protocol that lets you synchronize a mobile device with your Exchange mailbox. Exchange ActiveSync is enabled by default when you install Exchange 2016. 
+ **Summary:** Exchange ActiveSync is a client protocol that lets you synchronize a mobile device with your Exchange mailbox. Exchange ActiveSync is enabled by default when you install Exchange 2016.
   
 Exchange ActiveSync is an Exchange synchronization protocol that's optimized to work together with high-latency and low-bandwidth networks. The protocol, based on HTTP and XML, lets mobile phones access an organization's information on a server that's running Microsoft Exchange.
   
 ## Overview of Exchange ActiveSync
 <a name="overview"> </a>
 
- Exchange ActiveSync lets mobile phone users access their email, calendar, contacts, and tasks, and lets them continue to access this information when they're working offline. 
+ Exchange ActiveSync lets mobile phone users access their email, calendar, contacts, and tasks, and lets them continue to access this information when they're working offline.
   
 Standard encryption services add security to mobile communication with the server. You can configure Exchange ActiveSync to use Secure Sockets Layer (SSL) encryption for communications between the Exchange server and the mobile device.
   
@@ -92,7 +92,7 @@ In addition to the ability to configure security options for communications betw
 - **Device password policies**: Exchange ActiveSync lets you configure several options for device passwords.
     
     > [!CAUTION]
-    > The iOS fingerprint reader technology cannot be used as a device password. If you choose to use the iOS fingerprint reader, you'll still need to create and enter a device password if the mobile device mailbox policy for your organization requires a device password. 
+    > The iOS fingerprint reader technology cannot be used as a device password. If you choose to use the iOS fingerprint reader, you'll still need to create and enter a device password if the mobile device mailbox policy for your organization requires a device password.
   
     The device password options include the following:
     
@@ -106,7 +106,7 @@ In addition to the ability to configure security options for communications betw
     
   - **Enforce password history**: Select this check box to force the mobile phone to prevent the user from reusing their previous passwords. The number that you set determines the number of past passwords that the user won't be allowed to reuse.
     
-  - **Enable password recovery**: Select this check box to enable password recovery for the mobile device. Administrators can use the **Get-ActiveSyncDeviceStatistics** cmdlet to look up the user's recovery password. 
+  - **Enable password recovery**: Select this check box to enable password recovery for the mobile device. Administrators can use the **Get-ActiveSyncDeviceStatistics** cmdlet to look up the user's recovery password.
     
   - **Wipe device after failed (attempts)**: This option lets you specify whether you want the phone's memory to be wiped after multiple failed password attempts.
     

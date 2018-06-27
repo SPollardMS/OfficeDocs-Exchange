@@ -55,14 +55,14 @@ These are the address list and GAL procedures that you'll find in this topic:
 
 - Estimated time to complete each procedure: 5 minutes.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Address lists" entry in the [Email address and address book permissions](../../permissions/feature-permissions/address-book-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Address lists" entry in the [Email address and address book permissions](../../permissions/feature-permissions/address-book-permissions.md) topic.
     
 - You can do some of the procedures in this topic by using the EAC. For more information about the EAC, see [Exchange admin center in Exchange 2016](../../architecture/client-access/exchange-admin-center.md). Some procedures require the Exchange Management Shell. To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
   
 ## Global address list procedures
 
@@ -131,7 +131,7 @@ $GAL = Get-GlobalAddressList -Identity "Humongous Insurance"; Get-Recipient -Res
 
 For more information about the requirements and implications of having multiple GALs in your organization, see [Global address lists](address-lists.md#GALs).
   
-For details about recipient filters in the Exchange Management Shell, see the [Recipient filters in the Exchange Management Shell](../../email-addresses-and-address-books/email-address-policies/eap-procedures.md#Shell_RecipientFilters) section in this topic. 
+For details about recipient filters in the Exchange Management Shell, see the [Recipient filters in the Exchange Management Shell](../../email-addresses-and-address-books/email-address-policies/eap-procedures.md#Shell_RecipientFilters) section in this topic.
   
 To create a GAL, use the following syntax:
   
@@ -143,7 +143,7 @@ This example creates a GAL with a precanned recipient filter:
   
 - **Name**: Contoso GAL
     
-- **Precanned recipient filter**: All recipient types where the **Company** value is Contoso. 
+- **Precanned recipient filter**: All recipient types where the **Company** value is Contoso.
     
 ```
 New-GlobalAddressList -Name "Contoso GAL" -IncludedRecipients AllRecipients -ConditionalCompany Contoso
@@ -165,7 +165,7 @@ For detailed syntax and parameter information, see [New-GlobalAddressList](http:
 
 To verify that you've successfully created a GAL, use either of the following procedures:
   
-- In the EAC, go to **Organization** \> **Address lists**, select the address list, and click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)) to view the details.
+- In the EAC, go to **Organization** \> **Address lists**, select the address list, and click **Edit** (![Edit icon](../../media/ITPro_EAC_EditIcon.png)) to view the details.
     
 - In the Exchange Management Shell, replace _\<GAL Name\>_ with the name of the GAL, and run the following command to verify the property values: 
     
@@ -178,7 +178,7 @@ To verify that you've successfully created a GAL, use either of the following pr
 
 - The same settings are available as when you created the GAL. For more information, see the previous section.
     
-- After you modify the GAL, you need to update its membership. For more information, see the [Use the Exchange Management Shell to update global address lists](address-list-procedures.md#UpdateGAL) section in this topic. 
+- After you modify the GAL, you need to update its membership. For more information, see the [Use the Exchange Management Shell to update global address lists](address-list-procedures.md#UpdateGAL) section in this topic.
     
 - You can't replace a custom recipient filter with a precanned recipient filter or vice-versa in an existing GAL.
     
@@ -190,7 +190,7 @@ Set-GlobalAddressList -Identity <GALIdentity>] [-Name <Name>] [<Precanned recipi
 
 When you modify the _Conditional_ parameter values, you can use the following syntax to add or remove values without affecting other existing values: `@{Add="<Value1>","<Value2>"...; Remove="<Value1>","<Value2>"...}`.
   
-This example modifies the existing GAL named Contoso GAL by adding the **Company** value Fabrikam to the precanned recipient filter. 
+This example modifies the existing GAL named Contoso GAL by adding the **Company** value Fabrikam to the precanned recipient filter.
   
 ```
 Set-GlobalAddressList -Identity "Contoso GAL" -ConditionalCompany @{Add="Fabrikam"}
@@ -202,7 +202,7 @@ For detailed syntax and parameter information, see [Set-GlobalAddressList](http:
 
 To verify that you've successfully modified a GAL, use either of the following procedures:
   
-- In the EAC, go to **Organization** \> **Address lists**, select the address list, and click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)) to view the details.
+- In the EAC, go to **Organization** \> **Address lists**, select the address list, and click **Edit** (![Edit icon](../../media/ITPro_EAC_EditIcon.png)) to view the details.
     
 - In the Exchange Management Shell, replace _\<GAL Name\>_ with the name of the GAL, and run the following command to verify the property values: 
     
@@ -260,7 +260,7 @@ After you create or modify an address list in the EAC or the Exchange Management
     
   - If the address list needs to be updated, you'll see a **Not up to date** section with an **Update** link in the details pane. Click **Update**.
     
-  - If the address list is already up to date, you'll see **This address list is up to date** in the details pane. 
+  - If the address list is already up to date, you'll see **This address list is up to date** in the details pane.
     
 2. After you click **Update**, a warning message that appears. Click **Yes** to update the address list by using the EAC. A progress bar allows you to monitor the update process. When the update is complete, click **Close**.
     
@@ -296,7 +296,7 @@ For detailed syntax and parameter information, see [Update-AddressList](http://t
 
 To verify that you've successfully updated an address list, use either of the following procedures:
   
-- In the EAC, go to **Organization** \> **Address lists**, select the address list, and verify that you see **This address list is up to date** (instead of **Not up to date** with an **Update** link) in the details pane. 
+- In the EAC, go to **Organization** \> **Address lists**, select the address list, and verify that you see **This address list is up to date** (instead of **Not up to date** with an **Update** link) in the details pane.
     
 - In the Exchange Management Shell, replace _\<AddressListIdentity\>_ with the name of the address list, and run the following command to verify the **RecipientFilterApplied** property value: 
     
@@ -311,7 +311,7 @@ If the address list isn't up to date, you should update the address list before 
   
 #### Use the EAC to view the members of address lists
 
-1. In the EAC, go to **Organization** \> **Address lists**, and select the address list, and then click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)).
+1. In the EAC, go to **Organization** \> **Address lists**, and select the address list, and then click **Edit** (![Edit icon](../../media/ITPro_EAC_EditIcon.png)).
     
 2. Click **Preview recipients the address list includes**.
     
@@ -341,11 +341,11 @@ $AL = Get-AddressList -Identity "Southeast Offices"; Get-Recipient -ResultSize u
 ### Create address lists
 <a name="CreateAddressList"> </a>
 
-You can create address lists by using the EAC or the Exchange Management Shell. In the EAC, when you create an address list, you are required to include a recipient filter that's based on the recipient type (specific types or all recipients). In the Exchange Management Shell, you aren't required to include a recipient filter that's based on recipient type.
+You can create address lists by using the EAC or the Exchange Management Shell. In the EAC, when you create an address list, you're required to include a recipient filter that's based on the recipient type (specific types or all recipients). In the Exchange Management Shell, you aren't required to include a recipient filter that's based on recipient type.
   
 #### Use the EAC to create address lists
 
-1. In the EAC, go to **Organization** \> **Address lists**, and then click **New** ( ![Add icon](../../media/ITPro_EAC_AddIcon.png)).
+1. In the EAC, go to **Organization** \> **Address lists**, and then click **New** (![Add icon](../../media/ITPro_EAC_AddIcon.png)).
     
 2. In the **Address list** windows that opens, configure the following settings: 
     
@@ -353,14 +353,14 @@ You can create address lists by using the EAC or the Exchange Management Shell. 
     
   - **Address list path**: You can create the address list in the root (" **\**", also known as All Address Lists), or you can create the address list under an existing address list. To create the address list under an existing address list, click **Browse**, select the address list in the picker window, and then click **OK**.
     
-  - For details about the recipient filters and preview options that are available here, see the [Recipient filters in the EAC](../../email-addresses-and-address-books/email-address-policies/eap-procedures.md#EAC_RecipientFilters) section in this topic. 
+  - For details about the recipient filters and preview options that are available here, see the [Recipient filters in the EAC](../../email-addresses-and-address-books/email-address-policies/eap-procedures.md#EAC_RecipientFilters) section in this topic.
     
-3. When you're finished, click **Save**. You'll receive a warning message that tells you to click **Update** in the details pane to update the membership of the address list. For more information, see the [Update address lists](address-list-procedures.md#UpdateAddressList) section in this topic. 
+3. When you're finished, click **Save**. You'll receive a warning message that tells you to click **Update** in the details pane to update the membership of the address list. For more information, see the [Update address lists](address-list-procedures.md#UpdateAddressList) section in this topic.
     
 #### Use the Exchange Management Shell to create address lists
 <a name="Shell_CreateAddressList"> </a>
 
- You can create address lists with or without recipient filters. For details about recipient filters in the Exchange Management Shell, see the [Recipient filters in the Exchange Management Shell](../../email-addresses-and-address-books/email-address-policies/eap-procedures.md#Shell_RecipientFilters) section in this topic. 
+ You can create address lists with or without recipient filters. For details about recipient filters in the Exchange Management Shell, see the [Recipient filters in the Exchange Management Shell](../../email-addresses-and-address-books/email-address-policies/eap-procedures.md#Shell_RecipientFilters) section in this topic.
   
 To create an address list, use the following syntax:
   
@@ -374,7 +374,7 @@ This example creates an address list with a precanned recipient filter:
     
 - **Location**: Under the root (" `\`", also known as All Address Lists) because we didn't use the _Container_ parameter, and the default value is " `\`".
     
-- **Precanned recipient filter**: All users with mailboxes where the **State or province** value is GA, AL, or LA (Georgia, Alabama, or Louisiana). 
+- **Precanned recipient filter**: All users with mailboxes where the **State or province** value is GA, AL, or LA (Georgia, Alabama, or Louisiana).
     
 ```
 New-AddressList -Name "Southeast Offices" -IncludedRecipients MailboxUsers -ConditionalStateorProvince "GA","AL","LA"
@@ -386,7 +386,7 @@ This example creates an address list with a custom recipient filter:
     
 - **Location**: Under the existing address list named North America.
     
-- **Custom recipient filter**: All users with mailboxes where the **Title** value contains Director or Manager, and the **State or province** value is WA, OR, or ID (Washington, Oregon, or Idaho). 
+- **Custom recipient filter**: All users with mailboxes where the **Title** value contains Director or Manager, and the **State or province** value is WA, OR, or ID (Washington, Oregon, or Idaho).
     
 ```
 New-AddressList -Name "Northwest Executives" -Container "\North America"-RecipientFilter {(RecipientType -eq 'UserMailbox') -and (Title -like '*Director*' -or Title -like '*Manager*') -and (StateOrProvince -eq 'WA' -or StateOrProvince -eq 'OR' -or StateOrProvince -eq 'ID')}
@@ -399,7 +399,7 @@ For detailed syntax and parameter information, see [New-AddressList](http://tech
 
 To verify that you've successfully created an address list, use either of the following procedures:
   
-- In the EAC, go to **Organization** \> **Address lists**, select the address list, and click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)) to view the details.
+- In the EAC, go to **Organization** \> **Address lists**, select the address list, and click **Edit** (![Edit icon](../../media/ITPro_EAC_EditIcon.png)) to view the details.
     
 - In the Exchange Management Shell, replace _[\<AddressListPath\>_\] _\<AddressListName\>_ with the name and (optionally) location of the address list, and run the following command to verify the property values: 
     
@@ -412,7 +412,7 @@ To verify that you've successfully created an address list, use either of the fo
 
 - If you created an address list with no recipient filters or a custom recipient filter in the Exchange Management Shell, you can't modify the address list in the EAC. You need to use the Exchange Management Shell.
     
-- After you modify an address list, you need to update its membership. For more information, see the [Update address lists](address-list-procedures.md#UpdateAddressList) section in this topic. 
+- After you modify an address list, you need to update its membership. For more information, see the [Update address lists](address-list-procedures.md#UpdateAddressList) section in this topic.
     
 - You can't replace a custom recipient filter with a precanned recipient filter or vice-versa in an existing address list.
     
@@ -420,21 +420,21 @@ To verify that you've successfully created an address list, use either of the fo
     
 #### Modify address lists in the EAC
 
-1. In the EAC, go to **Organization** \> **Address lists**, select the address list, and then click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)).
+1. In the EAC, go to **Organization** \> **Address lists**, select the address list, and then click **Edit** (![Edit icon](../../media/ITPro_EAC_EditIcon.png)).
     
 2. In **Address list** windows that opens, configure the following settings: 
     
   - **Display name**: Enter a unique, descriptive name for the address list.
     
-  - For details about the recipient filters and preview options that are available here, see the [Recipient filters in the EAC](../../email-addresses-and-address-books/email-address-policies/eap-procedures.md#EAC_RecipientFilters) section in this topic. 
+  - For details about the recipient filters and preview options that are available here, see the [Recipient filters in the EAC](../../email-addresses-and-address-books/email-address-policies/eap-procedures.md#EAC_RecipientFilters) section in this topic.
     
-3. When you're finished, click **Save**. You'll receive a warning message that tells you to click **Update** in the details pane to update the membership of the address list. For more information, see the [Update address lists](address-list-procedures.md#UpdateAddressList) section in this topic. 
+3. When you're finished, click **Save**. You'll receive a warning message that tells you to click **Update** in the details pane to update the membership of the address list. For more information, see the [Update address lists](address-list-procedures.md#UpdateAddressList) section in this topic.
     
 #### Modify address lists in the Exchange Management Shell
 
-- The same basic settings are available as when you created the address list. For more information, see the [Use the Exchange Management Shell to create address lists](address-list-procedures.md#Shell_CreateAddressList) section in this topic. 
+- The same basic settings are available as when you created the address list. For more information, see the [Use the Exchange Management Shell to create address lists](address-list-procedures.md#Shell_CreateAddressList) section in this topic.
     
-- You can't use this procedure to move an address list. For more information, see the [Use the Exchange Management Shell to move address lists](address-list-procedures.md#MoveAddressList) section in this topic. 
+- You can't use this procedure to move an address list. For more information, see the [Use the Exchange Management Shell to move address lists](address-list-procedures.md#MoveAddressList) section in this topic.
     
 To modify an existing address list, use the following syntax:
   
@@ -444,7 +444,7 @@ Set-AddressList -Identity <AddressListIdentity> [-Name <Name>] [<Precanned recip
 
 When you modify the _Conditional_ parameter values, you can use the following syntax to add or remove values without affecting other existing values: `@{Add="<Value1>","<Value2>"...; Remove="<Value1>","<Value2>"...}`.
   
-This example modifies the existing address list named Southeast Offices by adding the **State or province** value TX (Texas) to the precanned recipient filter. 
+This example modifies the existing address list named Southeast Offices by adding the **State or province** value TX (Texas) to the precanned recipient filter.
   
 ```
 Set-AddressList -Identity "Southeast Offices" -ConditionalStateOrProvince @{Add="TX"}
@@ -456,7 +456,7 @@ For detailed syntax and parameter information, see [Set-AddressList](http://tech
 
 To verify that you've successfully modified an address list, use either of the following procedures:
   
-- In the EAC, go to **Organization** \> **Address lists**, select the address list, and click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)) to view the details.
+- In the EAC, go to **Organization** \> **Address lists**, select the address list, and click **Edit** (![Edit icon](../../media/ITPro_EAC_EditIcon.png)) to view the details.
     
 - In the Exchange Management Shell, replace _\<AddressListIdentity\>_ with the path\name of the address list, and run the following command to verify the property values: 
     
@@ -467,7 +467,7 @@ To verify that you've successfully modified an address list, use either of the f
 ### Use the Exchange Management Shell to move address lists
 <a name="MoveAddressList"> </a>
 
-You can select the location of an address list when you create an address list in the EAC or the Exchange Management Shell. But, you can only move an existing address list by using the **Move-AddressList** cmdlet in the Exchange Management Shell. If the source address list contains child address lists under it, the address list hierarchy is moved to the target location that you specify. 
+You can select the location of an address list when you create an address list in the EAC or the Exchange Management Shell. But, you can only move an existing address list by using the **Move-AddressList** cmdlet in the Exchange Management Shell. If the source address list contains child address lists under it, the address list hierarchy is moved to the target location that you specify.
   
 To move an address list, use the following syntax:
   
@@ -487,7 +487,7 @@ For detailed syntax and parameter information, see [Move-AddressList](http://tec
 
 To verify that you've successfully modified an address list, use either of the following procedures:
   
-- In the EAC, go to **Organization** \> **Address lists**, select the address list, and click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)) to view the details.
+- In the EAC, go to **Organization** \> **Address lists**, select the address list, and click **Edit** (![Edit icon](../../media/ITPro_EAC_EditIcon.png)) to view the details.
     
 - In the Exchange Management Shell, replace _\<AddressListIdentity\>_ with the path\name of the address list, and run the following command to verify the property values: 
     
@@ -506,13 +506,13 @@ If the address list contains more than 3000 recipients, we recommend that you us
     
   - Use the EAC to remove the parent and all child address lists at the same time.
     
-  - Use the Exchange Management Shell to move all child address lists to another location by using the **Move-AddressList** cmdlet. 
+  - Use the Exchange Management Shell to move all child address lists to another location by using the **Move-AddressList** cmdlet.
     
 #### Use the EAC to remove address lists
 
 1. In the EAC, go to **Organization** \> **Address lists**.
     
-2. Select the address list or lists that you want to remove, and then click **Remove** ( ![Delete icon](../../media/ITPro_EAC_DeleteIcon.png)). You can select multiple address lists by pressing the CTRL key while selecting each list.
+2. Select the address list or lists that you want to remove, and then click **Remove** (![Delete icon](../../media/ITPro_EAC_DeleteIcon.png)). You can select multiple address lists by pressing the CTRL key while selecting each list.
     
 3. Click **Yes** in the warning message that appears. A progress bar allows you to monitor the removal process. When the removal is complete, click **Close**.
     
@@ -547,7 +547,7 @@ To verify that you've successfully removed an address list, use either of the fo
 ## Hide recipients from address lists
 <a name="HideRecipients"> </a>
 
-Hiding a recipient from address lists doesn't prevent the recipient from receiving email messages; it prevents users from finding the recipient in address lists. The recipient is hidden from **all** address lists and GALs (effectively, they're exceptions to the recipient filters in all address lists). If you want to selectively include the recipient in some address lists but not others, you need to adjust the recipient filters in the address lists to include or exclude the recipient. 
+Hiding a recipient from address lists doesn't prevent the recipient from receiving email messages; it prevents users from finding the recipient in address lists. The recipient is hidden from **all** address lists and GALs (effectively, they're exceptions to the recipient filters in all address lists). If you want to selectively include the recipient in some address lists but not others, you need to adjust the recipient filters in the address lists to include or exclude the recipient.
   
 Hiding a mailbox from address lists also prevents Outlook from finding the mailbox in GAL when you create a new profile, or add an additional mailbox to an existing profile. To add the hidden mailbox in Outlook, you can temporarily make the mailbox visible in address lists, configure Outlook, and then hide the mailbox from address lists again.
   
@@ -567,7 +567,7 @@ Hiding a mailbox from address lists also prevents Outlook from finding the mailb
     
   - **Public folders** \> **Public folders**: Mail-enabled public folders.
     
-2. Select the recipient that you want to hide from address lists, and then click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)).
+2. Select the recipient that you want to hide from address lists, and then click **Edit** (![Edit icon](../../media/ITPro_EAC_EditIcon.png)).
     
 3. The recipient properties window opens. What you do next depends on the recipient type:
     
@@ -619,15 +619,15 @@ Set-Mailbox -Identity michelle@contoso.com -HiddenFromAddressListsEnabled $true
 
  **Notes**:
   
-- To make the recipient visible in address lists again, use the value `$false` for the _HiddenFromAddressListsEnabled_ parameter. 
+- To make the recipient visible in address lists again, use the value `$false` for the _HiddenFromAddressListsEnabled_ parameter.
     
-- By default, arbitration mailboxes and public folder mailboxes are hidden from address lists. If you use the **Set-Mailbox** cmdlet to change this or any other setting for arbitration or public folder mailboxes, you need to include the _Aribtration_ or _PublicFolder_ switches. 
+- By default, arbitration mailboxes and public folder mailboxes are hidden from address lists. If you use the **Set-Mailbox** cmdlet to change this or any other setting for arbitration or public folder mailboxes, you need to include the _Aribtration_ or _PublicFolder_ switches.
     
 ### How do you know this worked?
 
 You can verify that you've successfully hidden a recipient from address lists by using any of the following procedures:
   
-- In the EAC, select the recipient, click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)) and verify the hide from address lists setting is selected.
+- In the EAC, select the recipient, click **Edit** (![Edit icon](../../media/ITPro_EAC_EditIcon.png)) and verify the hide from address lists setting is selected.
     
 - In the Exchange Management Shell, run the following command and verify the recipient is listed:
     
@@ -676,9 +676,9 @@ When you create or modify address lists in the EAC, the following recipient filt
     
 2. Enter a value for the property you selected:
     
-  - If you selected **Recipient container**, a **Select an organizational unit** dialog box appears that allows you to select the container or OU in Active Directory. 
+  - If you selected **Recipient container**, a **Select an organizational unit** dialog box appears that allows you to select the container or OU in Active Directory.
     
-  - For other recipient properties, a **Specify words or phrases** dialog appears that allows you to add, edit and remove text values. 
+  - For other recipient properties, a **Specify words or phrases** dialog appears that allows you to add, edit and remove text values.
     
   - Property values require an exact match. Wildcards and partial matches aren't supported. For example, the value "Sales" doesn't match "Sales and Marketing".
     
@@ -686,14 +686,14 @@ When you create or modify address lists in the EAC, the following recipient filt
     
 3. After you've selected a property and value, click **Add rule**.
     
-4. Repeat the previous steps to configure more filters. Note that multiple properties use the **and** operator. For example, "Department equals Sales and Company equals Contoso". 
+4. Repeat the previous steps to configure more filters. Note that multiple properties use the **and** operator. For example, "Department equals Sales and Company equals Contoso".
     
-- **Preview recipients the address list includes**: When you click this setting, a **Preview** dialog appears that shows you the recipients that are identified by the filters you configured. 
+- **Preview recipients the address list includes**: When you click this setting, a **Preview** dialog appears that shows you the recipients that are identified by the filters you configured.
     
 ## Recipient filters in the Exchange Management Shell
 <a name="Shell_RecipientFilters"> </a>
 
-In the Exchange Management Shell, you can specify **precanned recipient filters**, or **custom recipient filters**, but not both at the same time. 
+In the Exchange Management Shell, you can specify **precanned recipient filters**, or **custom recipient filters**, but not both at the same time.
   
 - **Precanned recipient filters**
     
@@ -701,28 +701,28 @@ In the Exchange Management Shell, you can specify **precanned recipient filters*
     
   - You can also use any of the optional _Conditional_ filter parameters: _ConditionalCompany_, _ConditionalCustomAttribute[1to15]_, _ConditionalDepartment_, and _ConditionalStateOrProvince_.
     
-    You specify multiple values for a _Conditional_ parameter by using the syntax `"<Value1>","<Value2>"...`. Multiple values of the same property implies the **or** operator. For example, "Department equals Sales or Marketing or Finance". 
+    You specify multiple values for a _Conditional_ parameter by using the syntax `"<Value1>","<Value2>"...`. Multiple values of the same property implies the **or** operator. For example, "Department equals Sales or Marketing or Finance".
     
-- **Custom recipient filters**: Uses the required _RecipientFilter_ parameter with an OPATH filter. 
+- **Custom recipient filters**: Uses the required _RecipientFilter_ parameter with an OPATH filter.
     
   - The basic OPATH filter syntax is `{<Property1> -<Operator> '<Value1>' <Property2> -<Operator> '<Value2>'...}`.
     
-  - Braces `{ }` are required around the whole OPATH filter. 
+  - Braces `{ }` are required around the whole OPATH filter.
     
   - Hyphens (`-`) are required before all operators. Here are some of the most frequently used operators:
     
   - `and`, `or`, and `not`.
     
-  - `eq` and `ne` (equals and does not equal; not case-sensitive). 
+  - `eq` and `ne` (equals and does not equal; not case-sensitive).
     
-  - `lt` and `gt` (less than and greater than). 
+  - `lt` and `gt` (less than and greater than).
     
   - `like` and `notlike` (string contains and does not contain; requires at least one wildcard in the string. For example, `{Department -like 'Sales*'}`.
     
-  - Use parentheses to group `<Property> -<Operator> '<Value>'` statements together in complex filters. For example, `{(Department -like 'Sales*' -or Department -like 'Marketing*') -and (Company -eq 'Contoso' -or Company -eq 'Fabrikam')}`. Exchange stores the filter in the **RecipientFilter** property with each individual statement enclosed in parentheses, but you don't need to enter them that way. 
+  - Use parentheses to group `<Property> -<Operator> '<Value>'` statements together in complex filters. For example, `{(Department -like 'Sales*' -or Department -like 'Marketing*') -and (Company -eq 'Contoso' -or Company -eq 'Fabrikam')}`. Exchange stores the filter in the **RecipientFilter** property with each individual statement enclosed in parentheses, but you don't need to enter them that way.
     
-  - After you use the **New-AddressList** cmdlet to create an address list that uses custom recipient filters, you can't modify the address list in the EAC. You need to use the **Set-AddressList** cmdlet with the _RecipientFilter_ parameter in the Exchange Management Shell. 
+  - After you use the **New-AddressList** cmdlet to create an address list that uses custom recipient filters, you can't modify the address list in the EAC. You need to use the **Set-AddressList** cmdlet with the _RecipientFilter_ parameter in the Exchange Management Shell.
     
- **Note**: The _RecipientContainer_ (organizational unit) recipient filter parameter is available to both precanned recipient filters and custom recipient filters. 
+ **Note**: The _RecipientContainer_ (organizational unit) recipient filter parameter is available to both precanned recipient filters and custom recipient filters.
   
 

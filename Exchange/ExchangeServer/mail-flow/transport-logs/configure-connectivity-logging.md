@@ -34,18 +34,18 @@ Connectivity logging records outbound connection activity (source, destination, 
     
     If the folder doesn't exist, but the parent folder has these permissions, the new folder is created automatically.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Transport service", "Front End Transport service", and "Mailbox Transport service" entries in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Transport service", "Front End Transport service", and "Mailbox Transport service" entries in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic.
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
   
 ## Use the EAC to configure connectivity logging in the Transport service on Mailbox servers
 
 1. In the EAC, go to **Servers** \> **Servers**.
     
-2. Select the Mailbox server you want to configure, and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
+2. Select the Mailbox server you want to configure, and then click **Edit** ![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
 3. On the server properties page that opens, click **Transport Logs**.
     
@@ -61,13 +61,13 @@ Connectivity logging records outbound connection activity (source, destination, 
 
 On Mailbox servers, connectivity logging is available on the following transport services:
   
-- The Transport service (use the **Set-TransportService** cmdlet). 
+- The Transport service (use the **Set-TransportService** cmdlet).
     
-- The Front End Transport service (use the **Set-FrontEndTransportService** cmdlet). 
+- The Front End Transport service (use the **Set-FrontEndTransportService** cmdlet).
     
-- The Mailbox Transport Delivery and Mailbox Transport Submission services (use the **Set-MailboxTransportService** cmdlet to configure both). 
+- The Mailbox Transport Delivery and Mailbox Transport Submission services (use the **Set-MailboxTransportService** cmdlet to configure both).
     
-On Edge Transport servers, connectivity logging is available on the Transport service (use the **Set-TransportService** cmdlet). 
+On Edge Transport servers, connectivity logging is available on the Transport service (use the **Set-TransportService** cmdlet).
   
 To configure connectivity logging, use the following syntax:
   
@@ -77,13 +77,13 @@ To configure connectivity logging, use the following syntax:
 
 This example sets the following connectivity log settings in the Transport service on the Mailbox server named Mailbox01:
   
-> **Location of the connectivity log**: D:\Connectivity Log\Hub. Note that if the folder doesn't exist, it will be created for you if the parent folder has the required permissions.
+- **Location of the connectivity log**: D:\Connectivity Log\Hub. Note that if the folder doesn't exist, it will be created for you if the parent folder has the required permissions.
     
-> **Maximum size of a connectivity log file**: Sets the maximum size of a connectivity log file to 20 MB.
+- **Maximum size of a connectivity log file**: Sets the maximum size of a connectivity log file to 20 MB.
     
-> **Maximum size of the connectivity log folder**: Sets the maximum size of the connectivity log directory to 1.5 GB.
+- **Maximum size of the connectivity log folder**: Sets the maximum size of the connectivity log directory to 1.5 GB.
     
-> **Maximum age of a connectivity log file**: Sets the maximum age of a connectivity log file to 45 days.
+- **Maximum age of a connectivity log file**: Sets the maximum age of a connectivity log file to 45 days.
     
 ```
 Set-TransportService -Identity Mailbox01 -ConnectivityLogPath "D:\Connectivity Log\Hub" -ConnectivityLogMaxFileSize 20MB -ConnectivityLogMaxDirectorySize 1.5GB -ConnectivityLogMaxAge 45.00:00:00
@@ -97,11 +97,11 @@ For detailed syntax and parameter information, see [Set-TransportService](http:/
     
 - When you use the _ConnectivityLogPath_ parameter on the **Set-MailboxTransportService** cmdlet, two subfolders are automatically created in the folder you specify: 
     
-  - `Delivery` for the Mailbox Transport Delivery service. 
+  - `Delivery` for the Mailbox Transport Delivery service.
     
-  - `Submission` for the Mailbox Transport Submission service. 
+  - `Submission` for the Mailbox Transport Submission service.
     
-- Setting the _ConnectivityLogMaxAge_ parameter to the value `00:00:00` prevents the automatic removal of connectivity log files because of their age. 
+- Setting the _ConnectivityLogMaxAge_ parameter to the value `00:00:00` prevents the automatic removal of connectivity log files because of their age.
     
 ## How do you know this worked?
 

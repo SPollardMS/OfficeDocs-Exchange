@@ -18,7 +18,7 @@ description: "Summary: Learn how to disable access to the Exchange admin center 
   
 In Exchange Server 2016, the Exchange admin center is the primary management interface for Exchange. For more information, see [Exchange admin center in Exchange 2016](exchange-admin-center.md). By default, access to the EAC isn't restricted, and access to Outlook on the web (formally known as Outlook Web App) on an on an Internet-facing Exchange server also gives access to the EAC. You still need valid credentials to sign in to the EAC, but organizations may want to restrict access to the EAC for client connections from the Internet.
   
-In Exchange 2016, the EAC virtual directory is named ECP, and is managed by the \*- **ECPVirtualDirectory** cmdlets. When you set the _AdminEnabled_ parameter to the value `$false` on the EAC virtual directory, you disable access to the EAC for internal and external client connections, without affecting access to the **Settings** \> **Options** page in Outlook on the web. 
+In Exchange 2016, the EAC virtual directory is named ECP, and is managed by the \*- **ECPVirtualDirectory** cmdlets. When you set the _AdminEnabled_ parameter to the value `$false` on the EAC virtual directory, you disable access to the EAC for internal and external client connections, without affecting access to the **Settings** \> **Options** page in Outlook on the web.
   
 ![Options menu location in Outlook on the web](../../media/f1227a01-7f83-4af9-abf5-2c3dec6cf3d0.png)
   
@@ -28,22 +28,22 @@ But, this configuration introduces a new problem: access to the EAC is completel
     
 - On the existing Exchange 2016, create a new Internet Information Services (IIS) web site with new virtual directories for the EAC and Outlook on the web that's only accessible from the internal network.
     
-    **Note**: You need to configure the EAC **and** Outlook Web App in the new web site, because the EAC requires the Outlook Web App authentication module from the same web site. 
+    **Note**: You need to configure the EAC **and** Outlook Web App in the new web site, because the EAC requires the Outlook Web App authentication module from the same web site.
     
 ## What do you need to know before you begin?
 
 - Estimated time to complete each procedure: 5 minutes.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Exchange admin center connectivity" entry in the [Exchange infrastructure and PowerShell permissions](../../permissions/feature-permissions/infrastructure-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Exchange admin center connectivity" entry in the [Exchange infrastructure and PowerShell permissions](../../permissions/feature-permissions/infrastructure-permissions.md) topic.
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
   
 ## Step 1: Use the Exchange Management Shell to disable access to the EAC
 
-Remember, this step disables access to the EAC on the server for internal and external connections, but still allows users to access their own **Settings** \> **Options** page in Outlook on the web. 
+Remember, this step disables access to the EAC on the server for internal and external connections, but still allows users to access their own **Settings** \> **Options** page in Outlook on the web.
   
 To disable access to the EAC on an Exchange server, use the following syntax:
   
@@ -65,7 +65,7 @@ To verify that you've disabled access to the EAC on the server, replace _\<Serve
 Get-ECPVirtualDirectory -Identity "MBX01\ecp (Default Web Site)" | Format-List AdminEnabled
 ```
 
-When you open https://\<servername\>/ecp or from the internal network, your own **Settings** \> **Options** page in Outlook on the web opens instead of the EAC. 
+When you open https://\<servername\>/ecp or from the internal network, your own **Settings** \> **Options** page in Outlook on the web opens instead of the EAC.
   
 ## Step 2: Give access to the EAC on the internal network
 
@@ -100,7 +100,7 @@ The required steps are:
 5. Restart IIS for the changes to take effect.
     
 > [!IMPORTANT]
-> When you install an Exchange 2016 Cumulative Update (CU), the CU won't update files in the new web site and virtual directories. After you apply the CU, you need to completely remove the new web site, virtual directories, and content in the folders and then re-create the new web site, virtual directories, and content in the folders. 
+> When you install an Exchange 2016 Cumulative Update (CU), the CU won't update files in the new web site and virtual directories. After you apply the CU, you need to completely remove the new web site, virtual directories, and content in the folders and then re-create the new web site, virtual directories, and content in the folders.
   
 #### Step 2a: Add a second IP address to the Exchange server
 
@@ -109,80 +109,84 @@ You can add a second network adapter and assign the IP address to the second net
 The steps to assign a second IP address to the existing network adapter are described below.
   
 1. Open the properties of the network adapter. For example:
+
+    a. From a Command Prompt window, the Exchange Management Shell, or the **Run** dialog, run `ncpa.cpl`.
+
+    b. Right-click on the network adapter, and then choose **Properties**.
     
-1. From a Command Prompt window, the Exchange Management Shell, or the Run dialog, run `ncpa.cpl`.
-    
-2. Right-click on the network adapter, and then choose **Properties**.
-    
-![Properties of the network adapter in Windows](../../media/98864995-a130-4c7c-89c8-ffa05953721a.png)
+    ![Properties of the network adapter in Windows](../../media/98864995-a130-4c7c-89c8-ffa05953721a.png)
   
 2. In the properties of the network adapter, select **Internet Protocol Version 4 (TCP/IPv4)**, and then click **Properties**.
     
 3. In the **Internet Protocol Version 4 (TCP/IPv4) Properties** window that opens, on the **General** tab, click **Advanced**.
     
-4. In the **Advanced TCP/IP Settings** window that opens, on the **IP Settings** tab, in the **IP addresses** section, click **Add** and enter the IP address. 
+4. In the **Advanced TCP/IP Settings** window that opens, on the **IP Settings** tab, in the **IP addresses** section, click **Add** and enter the IP address.
+
     ![Advanced TCP/IP Settings window of the network adapter properties](../../media/68ecb9d6-5fda-4a9c-bffc-e514186ddf47.png)
   
- **Note**: If you add a second network adapter, in the **Advanced TCP/IP Settings** window, on the **DNS** tab, un-check **Register this connection's address in DNS**.
+    **Note**: If you add a second network adapter, in the **Advanced TCP/IP Settings** window, on the **DNS** tab, un-check **Register this connection's address in DNS**.
   
-![DNS tab on Advanced TCP/IP Settings window](../../media/38024c13-ddcb-44fa-a751-b7c812037a6b.png)
+    ![DNS tab on Advanced TCP/IP Settings window](../../media/38024c13-ddcb-44fa-a751-b7c812037a6b.png)
   
 #### Step 2b: Create a new web site in IIS that uses the second IP address, and assign file and folder permissions
 
-1. Open IIS Manager on the Exchange server. An easy way to do this in Windows Server 2012 or later is to press Windows key + Q, type inetmgr, and select **Internet Information Services (IIS) Manager** in the results. 
+1. Open IIS Manager on the Exchange server. An easy way to do this in Windows Server 2012 or later is to press Windows key + Q, type inetmgr, and select **Internet Information Services (IIS) Manager** in the results.
     
 2. In the **Connections** pane, expand the server, select **Sites**, and in the **Actions** pane, click **Add Website**.
+
     ![In IIS Manager, expand the server, and select Sites](../../media/f74f0bf6-50a2-4870-afda-4a6d49321f52.png)
   
 3. In the **Add Website** window that appears, configure the following settings: 
     
-  - **Site name**: `EAC_Secondary`
+    - **Site name**: `EAC_Secondary`
     
-  - **Physical path**: `C:\inetpub\EAC_Secondary`
+    - **Physical path**: `C:\inetpub\EAC_Secondary`
     
-  - **Binding**
+    - **Binding**
     
-  - **Type**: https
+      - **Type**: https
     
-  - **IP address**: Select the second IP address that you added in the previous step.
+      - **IP address**: Select the second IP address that you added in the previous step.
     
-  - **Port**: 443
+      - **Port**: 443
     
-  - **SSL certificate**: Choose the certificate that you want to use (for example, the default Exchange certificate named Microsoft Exchange).
-    
+    - **SSL certificate**: Choose the certificate that you want to use (for example, the default Exchange certificate named Microsoft Exchange).
+
     When you're finished, click **OK**.
+
     ![Website properites for the secondary EAC web site](../../media/a9e7f729-ae71-44ed-b491-3b6197b29cea.png)
-  
+
 4. Create `ecp` and `owa` folders in `C:\inetpub\EAC_Secondary`.
     
-1. In IIS Manager, select the `EAC_Secondary` web site, and in the **Actions** pane, click **Explore**.
+    a. In IIS Manager, select the `EAC_Secondary` web site, and in the **Actions** pane, click **Explore**.
+
     ![In IIS Manager, select the new EAC web site in the Sites pane](../../media/a70abb44-ae70-4c9b-b2d9-27de49c063e5.png)
   
-2. In the File Explorer window that opens, create the following folders in `C:\inetpub\EAC_Secondary`:
+    b. In the File Explorer window that opens, create the following folders in `C:\inetpub\EAC_Secondary`:
     
-  - `ecp`
+    - `ecp`
     
-  - `owa`
+    - `owa`
     
     When you're finished, close File Explorer.
     
-5. Assign **Read & Execute** permissions to the local security group named **IIS_IUSRS** on the `C:\inetpub\EAC_Secondary` folder. 
+5. Assign **Read & Execute** permissions to the local security group named **IIS_IUSRS** on the `C:\inetpub\EAC_Secondary` folder.
     
-1. In IIS Manger, select the `EAC_Secondary` web site, and in the **Actions** pane, click **Edit Permissions**.
+    a. In IIS Manger, select the `EAC_Secondary` web site, and in the **Actions** pane, click **Edit Permissions**.
     
-2. In the **EAC_Secondary Properties** window that opens, click the **Security** tab, and then click **Edit**.
+    b. In the **EAC_Secondary Properties** window that opens, click the **Security** tab, and then click **Edit**.
     
-3. In the **Permissions for EAC_Secondary** window that opens, click **Add**.
+    c. In the **Permissions for EAC_Secondary** window that opens, click **Add**.
     
-4. In the **Select Users, Computers, Service Accounts or Groups** window that opens, perform the following steps: 
+    d. In the **Select Users, Computers, Service Accounts or Groups** window that opens, perform the following steps: 
     
-1. Click **Locations**, and in the **Locations** dialog box that opens, select the local server, and then click **OK**.
+       i. Click **Locations**, and in the **Locations** dialog box that opens, select the local server, and then click **OK**.
     
-2. In the **Enter the object names to select** field, type IIS_IUSRS, click **Check Names**, and then click **OK**.
+       ii. In the **Enter the object names to select** field, type IIS_IUSRS, click **Check Names**, and then click **OK**.
     
-![Add permissions](../../media/b8787b85-5caa-4c23-b167-088bab11baa7.png)
+    ![Add permissions](../../media/b8787b85-5caa-4c23-b167-088bab11baa7.png)
   
-5. Back on the **Permissions for EAC_Secondary** window, select **IIS_IUSRS**, and in the **Allow** column, select **Read & Execute** (which automatically selects the **List Folder Contents** and **Read** permissions), and then click **OK** twice. 
+    e. Back on the **Permissions for EAC_Secondary** window, select **IIS_IUSRS**, and in the **Allow** column, select **Read & Execute** (which automatically selects the **List Folder Contents** and **Read** permissions), and then click **OK** twice.
     
 #### Step 2c: Copy the contents of the default web sites to the new web site
 
@@ -204,7 +208,7 @@ The steps to assign a second IP address to the existing network adapter are desc
 
 To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
   
-Replace _\<Server\>_ with the name of your server, and run the following commands to create the new EAC and Outlook on the web virtual directories for the new web site. 
+Replace _\<Server\>_ with the name of your server, and run the following commands to create the new EAC and Outlook on the web virtual directories for the new web site.
   
 ```
 New-EcpVirtualDirectory -Server <Server> -Role ClientAccess -WebSiteName EAC_Secondary -Path "C:\inetpub\EAC_Secondary\ecp"
@@ -216,11 +220,11 @@ New-OwaVirtualDirectory -Server <Server> -Role ClientAccess -WebSiteName EAC_Sec
 
 #### Step 2e: Restart IIS
 
-1. In IIS Manager, in the **Connections** pane, select the server. 
+1. In IIS Manager, in the **Connections** pane, select the server.
     
 2. In the **Actions** pane, click **Restart**.
     
- **Note**: To restart IIS from the command line, open an elevated command prompt (a Command Prompt window that you opened by selecting **Run as administrator**) and run the following command:
+**Note**: To restart IIS from the command line, open an elevated command prompt (a Command Prompt window that you opened by selecting **Run as administrator**) and run the following command:
   
 ```
 iisreset.exe /noforce
@@ -232,13 +236,13 @@ To verify that you have successfully disabled access to the EAC on an Exchange s
   
 1. Test your organization's internal and external URL for Outlook on the web. For example, if the external URL is https://mail.contoso.com/owa, and the internal URL is https://mbx01.contoso.com/owa use the following procedures to verify your configuration:
     
-  - Verify that internal and external users can open their mailboxes by using Outlook on the web, including the **Settings** \> **Options** page. 
+  - Verify that internal and external users can open their mailboxes by using Outlook on the web, including the **Settings** \> **Options** page.
     
   - Verify that https://mail.contoso.com/ecp and https://mbx01.contoso.com/ecp return either of the following results:
     
   - **404 - website not found**
     
-  - The user is redirected to their **Settings** \> **Options** page in Outlook on the web. 
+  - The user is redirected to their **Settings** \> **Options** page in Outlook on the web.
     
 2. Verify that administrators can access the EAC on the internal network based on your configuration selection:
     

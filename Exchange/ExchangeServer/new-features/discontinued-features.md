@@ -27,7 +27,7 @@ This section lists the Exchange 2013 features that are no longer available in Ex
 |Client Access server role  <br/> |The Client Access server role has been replaced by Client Access services that run on the Mailbox server role. The Mailbox server role now performs all functionality that was previously included with the Client Access server role. For more information about the new Mailbox server role, see [Exchange 2016 architecture](../architecture/architecture.md).  <br/> |
 |MAPI/CDO library  <br/> |The MAPI/CDO library has been replaced by Exchange Web Services (EWS), Exchange ActiveSync (EAS), and Representational State Transfer (REST)<sup>\*</sup> APIs. If an application uses the MAPI/CDO library, it needs to move to EWS, EAS, or the REST APIs to communicate with Exchange 2016.  <br/> |
  
-<sup>\*</sup>: REST APIs will be included in a future release of Exchange 2016.
+<sup>\*</sup> REST APIs will be included in a future release of Exchange 2016.
 
 ## De-emphasized features in Exchange 2016
 
@@ -51,7 +51,7 @@ This section lists the Exchange 2010 features that are no longer available in Ex
 |Unified Messaging server role  <br/> |The Unified Messaging server role has been replaced by Unified Messaging services which run on the Mailbox and Client Access server roles. The Mailbox server role includes the Microsoft Exchange Unified Messaging service and the Client Access server role includes the Microsoft Exchange Unified Messaging Call Router service. For more information, see [Voice Architecture Changes](http://technet.microsoft.com/library/55d5ca4a-b0cd-45f1-9f47-e745ef208698.aspx).  <br/> |
 |MAPI/CDO library  <br/> |The MAPI/CDO library has been replaced by Exchange Web Services (EWS), Exchange ActiveSync (EAS), and Representational State Transfer (REST)<sup>\*</sup> APIs. If an application uses the MAPI/CDO library, it needs to move to EWS, EAS, or the REST APIs to communicate with Exchange 2016.  <br/> |
  
-<sup>\*</sup>: REST APIs will be included in a future release of Exchange 2016.
+<sup>\*</sup> REST APIs will be included in a future release of Exchange 2016.
 
 ### Management interfaces
 

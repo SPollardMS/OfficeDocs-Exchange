@@ -18,7 +18,7 @@ You can use In-Place eDiscovery to search for content in public folders and plac
   
 ## Before you begin
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "In-Place eDiscovery" entry in the [Messaging policy and compliance permissions in Exchange 2016](../../permissions/feature-permissions/policy-and-compliance-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "In-Place eDiscovery" entry in the [Messaging policy and compliance permissions in Exchange 2016](../../permissions/feature-permissions/policy-and-compliance-permissions.md) topic.
     
 - You can include mailboxes and public folders in the same eDiscovery search.
     
@@ -28,7 +28,7 @@ You can use In-Place eDiscovery to search for content in public folders and plac
 
 1. Go to **Compliance management** \> **In-place eDiscovery & hold**.
     
-2. Click **New**![Add icon](../../media/ITPro_EAC_AddIcon.png).
+2. Click **New** ![Add icon](../../media/ITPro_EAC_AddIcon.png).
     
 3. On the **Name and description** page, type a name for the search, add an optional description, and then click **Next**.
     
@@ -39,7 +39,7 @@ You can use In-Place eDiscovery to search for content in public folders and plac
   - To include specific mailboxes in the search, click **Specify mailboxes to search**, and then add that mailboxes that you want to search.
     
     > [!NOTE]
-    > As previously explained, if you select the **Search all mailboxes**option, you won't be able to enable an In-Place Hold for the search. 
+    > As previously explained, if you select the **Search all mailboxes**option, you won't be able to enable an In-Place Hold for the search.
   
 ![Use In-Place eDiscovery to search and place a hold on public folders](../../media/TA_MRM_SearchPublicFolders.gif)
   
@@ -55,9 +55,9 @@ You can use In-Place eDiscovery to search for content in public folders and plac
     
   - **Specify number of days to hold items relative to their received date**: Click this button to hold items in public folders for a specific period. For example, you can use this option if your organization requires that public folder content be retained for at least seven years.
     
-7. Click **Finish** to save the search and return an estimate of the total size and number of items that will be returned by the search or placed on hold based on the criteria you specified. 
+7. Click **Finish** to save the search and return an estimate of the total size and number of items that will be returned by the search or placed on hold based on the criteria you specified.
     
-    Estimates are displayed in the details pane on the **In-Place eDiscovery & Hold** page. Select a search and then click **Refresh**![Refresh icon](../../media/ITPro_EAC_RefreshIcon.png) to update the information about the search that's displayed in the details pane. 
+    Estimates are displayed in the details pane on the **In-Place eDiscovery & Hold** page. Select a search and then click **Refresh** ![Refresh icon](../../media/ITPro_EAC_RefreshIcon.png) to update the information about the search that's displayed in the details pane.
     
 ## Use the Exchange Management Shell to search and place a hold on public folders
 
@@ -65,7 +65,7 @@ Here are three examples of using the Exchange Management Shell to search and pla
   
 ### Example 1
 
-This example creates an estimate-only search that searches all public folders in the organization for items sent between January 1, 2015 and June 30, 2015 and that contain the phrase "patent infringement". The search doesn't include any mailboxes. The **Start-MailboxSearch** cmdlet is used to start the estimate-only search. 
+This example creates an estimate-only search that searches all public folders in the organization for items sent between January 1, 2015 and June 30, 2015 and that contain the phrase "patent infringement". The search doesn't include any mailboxes. The **Start-MailboxSearch** cmdlet is used to start the estimate-only search.
   
 ```
 New-MailboxSearch -Name "Northwind Subpoena-All PFs" -AllPublicFolderSources $true -AllSourceMailboxes $false -SearchQuery "patent infringement" -StartDate "01/01/2015" -EndDate "06/30/2015" -TargetMailbox "Discovery Search Mailbox" -EstimateOnly
@@ -77,7 +77,7 @@ Start-MailboxSearch "Northwind Subpoena-All PFs"
 
 ### Example 2
 
-This example places all content in all public folders on In-Place hold, with an unlimited hold duration. The **Start-MailboxSearch** cmdlet is use to run the search and place the content on hold. 
+This example places all content in all public folders on In-Place hold, with an unlimited hold duration. The **Start-MailboxSearch** cmdlet is use to run the search and place the content on hold.
   
 ```
 New-MailboxSearch -Name "Hold for all PFs" -AllPublicFolderSources $true -AllSourceMailboxes $false -EstimateOnly -InPlaceHoldEnabled $true
@@ -89,7 +89,7 @@ Start-MailboxSearch "Hold for all PFs"
 
 ### Example 3
 
-This example searches all mailboxes and public folders for any content that contains the words "price list" and "Contoso" and that was sent after January 1, 2015. The **Start-MailboxSearch** cmdlet is use to run the search and copy the search results to the discovery mailbox. 
+This example searches all mailboxes and public folders for any content that contains the words "price list" and "Contoso" and that was sent after January 1, 2015. The **Start-MailboxSearch** cmdlet is use to run the search and copy the search results to the discovery mailbox.
   
 ```
 New-MailboxSearch -Name "Contoso Litigation" -AllSourceMailboxes $true -AllPublicFolderSources $true -SearchQuery '"price list" AND "contoso"' -StartDate "01/01/2015" -TargetMailbox "Discovery Search Mailbox"

@@ -29,7 +29,7 @@ Cmdlets, regardless of where they're run, are audited if a cmdlet is on the cmdl
   
  **Notes**:
   
-- A cmdlet might not be logged if an error occurs before the cmdlet calls the Admin Audit Log cmdlet extension agent. If an error occurs after the Admin Audit Log agent is called, the cmdlet is logged along with the associated error. For more information, see the [Admin Audit Log agent](#Agent.md) section later in this topic. 
+- A cmdlet might not be logged if an error occurs before the cmdlet calls the Admin Audit Log cmdlet extension agent. If an error occurs after the Admin Audit Log agent is called, the cmdlet is logged along with the associated error. For more information, see the [Admin Audit Log agent](#Agent.md) section later in this topic.
     
 - Changes to the audit log configuration are refreshed every 60 minutes on computers that have the Exchange Management Shell open at the time a configuration change is made. If you want to apply the changes immediately, close and then open the Exchange Management Shell again on each computer.
     
@@ -38,12 +38,12 @@ Cmdlets, regardless of where they're run, are audited if a cmdlet is on the cmdl
 ## Admin audit logging configuration
 <a name="AuditLogConfig"> </a>
 
-By default, when admin audit logging is enabled, a log entry is created every time any cmdlet is run. If you don't want to audit every cmdlet that's run, you can configure audit logging to audit only the cmdlets and parameters you're interested in. You configure audit logging with the **Set-AdminAuditLogConfig** cmdlet. The parameters referenced in the following sections are used with this cmdlet. 
+By default, when admin audit logging is enabled, a log entry is created every time any cmdlet is run. If you don't want to audit every cmdlet that's run, you can configure audit logging to audit only the cmdlets and parameters you're interested in. You configure audit logging with the **Set-AdminAuditLogConfig** cmdlet. The parameters referenced in the following sections are used with this cmdlet.
   
 > [!IMPORTANT]
-> Changes to the administrator audit log configuration are always logged, regardless of whether the **Set-AdminAuditLogConfig** cmdlet is included in the list of cmdlets being audited or whether audit logging is enabled or disabled. 
+> Changes to the administrator audit log configuration are always logged, regardless of whether the **Set-AdminAuditLogConfig** cmdlet is included in the list of cmdlets being audited or whether audit logging is enabled or disabled.
   
-When a command is run, Exchange inspects the cmdlet that was used. If the cmdlet that was run matches any of the cmdlets provided with the _AdminAuditLogCmdlets_ parameter, Exchange then checks the parameters specified in the _AdminAuditLogParameters_ parameter. If at least one or more parameters from the parameters list are matched, Exchange logs the cmdlet that was run. The following sections contain more information about each aspect of the audit logging configuration. 
+When a command is run, Exchange inspects the cmdlet that was used. If the cmdlet that was run matches any of the cmdlets provided with the _AdminAuditLogCmdlets_ parameter, Exchange then checks the parameters specified in the _AdminAuditLogParameters_ parameter. If at least one or more parameters from the parameters list are matched, Exchange logs the cmdlet that was run. The following sections contain more information about each aspect of the audit logging configuration.
   
 For more information about managing audit logging configuration, see [Manage administrator audit logging](manage-admin-audit-logging.md).
   
@@ -96,14 +96,14 @@ Each time a cmdlet is logged, an admin audit log entry is created. The audit log
   
 - What's included in the admin audit log.
     
-- Reports available on the EAC **Auditing** page. 
+- Reports available on the EAC **Auditing** page.
     
 - Admin audit log search cmdlets.
     
 ### Audit log contents
 <a name="LogContents"> </a>
 
-Each audit log entry contains the information described in the following table. The audit log contains one or more audit log entries. The number of audit log entries is controlled by the audit log age limit specified using the `Set-AdminAuditLogConfig -AdminAuditLogAgeLimit` command. Any audit log entry that exceeds the age limit is deleted. 
+Each audit log entry contains the information described in the following table. The audit log contains one or more audit log entries. The number of audit log entries is controlled by the audit log age limit specified using the `Set-AdminAuditLogConfig -AdminAuditLogAgeLimit` command. Any audit log entry that exceeds the age limit is deleted.
   
 **Audit log entry fields**
 
@@ -128,7 +128,7 @@ Each audit log entry contains the information described in the following table. 
 
 The **Auditing** page in the EAC has several reports that provide information about various types of compliance and administrative configuration changes. The following reports provide information about configuration changes in your organization: 
   
-- **Administrator role group report**: This report enables you to search for changes to management role groups that you specify within a specified timeframe. The results that are returned include the role groups that have been changed, who changed them and when, and what changes were made. A maximum of 3,000 entries can be returned. If your search might return more than 3,000 entries, use the **Administrator audit log** report or the **Search-AdminAuditLog** cmdlet. 
+- **Administrator role group report**: This report enables you to search for changes to management role groups that you specify within a specified timeframe. The results that are returned include the role groups that have been changed, who changed them and when, and what changes were made. A maximum of 3,000 entries can be returned. If your search might return more than 3,000 entries, use the **Administrator audit log** report or the **Search-AdminAuditLog** cmdlet.
     
 - **Admin audit log report**: This report enables you to view entries in the admin audit log recorded within a specified time frame. You can also export admin audit log entries to a XML file and then send the file via email to a recipient you specify. For more information about the contents of the XML file, see [Administrator audit log structure](log-structure.md).
     
@@ -153,21 +153,21 @@ When you run the **Search-AdminAuditLog** cmdlet, all the audit log entries that
     
 - **Successful completion**: Specifies whether only admin audit log entries that indicated a success or failure should be returned.
     
-Each audit log entry contains the information described in the table in [Audit log contents](#LogContents.md). By default, only the first 1,000 log entries that match the search criteria are returned. However, you can override this default and return more or fewer entries using the _ResultSize_ parameter. You can specify a value of `Unlimited` with the _ResultSize_ parameter to return all log entries that match the specified criteria. 
+Each audit log entry contains the information described in the table in [Audit log contents](#LogContents.md). By default, only the first 1,000 log entries that match the search criteria are returned. However, you can override this default and return more or fewer entries using the _ResultSize_ parameter. You can specify a value of `Unlimited` with the _ResultSize_ parameter to return all log entries that match the specified criteria.
   
 For information about how to use the **Search-AdminAuditLog** cmdlet, see [Search the Administrator Audit Log](http://technet.microsoft.com/library/c7188d53-e672-492b-b57d-cd711379ddb3.aspx).
   
 ### New-AdminAuditLogSearch cmdlet
 <a name="SearchAdminAuditLog"> </a>
 
-The **New-AdminAuditLogSearch** cmdlet searches the admin audit log just like the **Search-AdminAuditLog** cmdlet. However, instead of displaying the results of the search in the Exchange Management Shell, the **New-AdminAuditLogSearch** cmdlet performs the search and then sends the results to a recipient you specify via an email message. The results are included as an XML attachment to the email message. 
+The **New-AdminAuditLogSearch** cmdlet searches the admin audit log just like the **Search-AdminAuditLog** cmdlet. However, instead of displaying the results of the search in the Exchange Management Shell, the **New-AdminAuditLogSearch** cmdlet performs the search and then sends the results to a recipient you specify via an email message. The results are included as an XML attachment to the email message.
   
 You can use the same search criteria with the **New-AdminAuditLogSearch** cmdlet that's used on the **Search-AdminAuditLog** cmdlet. For a list of the search criteria, see [Search-AdminAuditLog cmdlet](#SearchAdminAuditLog.md).
   
 After you run the **New-AdminAuditLogSearch** cmdlet, Exchange may take up to 15 minutes to deliver the report to the specified recipient. The XML file attached report can be a maximum of 10 MB. The XML file contains the same information described in the table in [Audit log contents](#LogContents.md). For more information about the structure of the XML file, see [Administrator audit log structure](log-structure.md).
   
 > [!NOTE]
-> Outlook Web App doesn't allow you to open XML attachments by default. You can either configure Exchange to allow XML attachments to be viewed using Outlook Web App, or you can use another email client, such as Microsoft Outlook, to view the attachment. For information about how to configure Outlook Web App to allow you to view an XML attachment, see [View or configure Outlook on the web virtual directories in Exchange 2016](../../clients/outlook-on-the-web/virtual-directories.md). 
+> Outlook Web App doesn't allow you to open XML attachments by default. You can either configure Exchange to allow XML attachments to be viewed using Outlook Web App, or you can use another email client, such as Microsoft Outlook, to view the attachment. For information about how to configure Outlook Web App to allow you to view an XML attachment, see [View or configure Outlook on the web virtual directories in Exchange 2016](../../clients/outlook-on-the-web/virtual-directories.md).
   
 For information about how to use the **New-AdminAuditLogSearch** cmdlet, see [Search the Administrator Audit Log](http://technet.microsoft.com/library/c7188d53-e672-492b-b57d-cd711379ddb3.aspx).
   
@@ -184,7 +184,7 @@ In addition to logging Exchange cmdlets when they're run, Exchange 2016 enables 
     
 With the **Write-AdminAuditLog** cmdlet, you specify a string of text to include in the audit log using the _Comment_ parameter. The _Comment_ parameter accepts an alphanumeric string up to 500 characters. Included in the manual audit log entry along with the comment string is all of the same information captured when an Exchange cmdlet is logged. For a description of each field included in the audit log, see the table in [Audit log contents](#LogContents.md).
   
-You can retrieve manual audit log entries the same way as any other log entry, using the EAC **Auditing** page or using the **Search-AdminAuditLog** or **New-AdminAuditLogSearch** cmdlets. 
+You can retrieve manual audit log entries the same way as any other log entry, using the EAC **Auditing** page or using the **Search-AdminAuditLog** or **New-AdminAuditLogSearch** cmdlets.
   
 To view the contents of the _Comment_ parameter on the **Write-AdminAuditLog** cmdlet in a manual audit log entry, see [Search the Administrator Audit Log](http://technet.microsoft.com/library/c7188d53-e672-492b-b57d-cd711379ddb3.aspx).
   

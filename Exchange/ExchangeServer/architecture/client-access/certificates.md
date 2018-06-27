@@ -19,7 +19,7 @@ description: "Summary: Learn about SSL, TLS, encryption, and digital certificate
 Encryption and digital certificates are important considerations in any organization. By default, Exchange Server 2016 is configured to use Transport Layer Security (TLS) to encrypt communication between internal Exchange servers, and between Exchange services on the local server. But, Exchange administrators need to consider their encryption requirements for communication with internal and external clients (computers and mobile devices), and external messaging servers.
   
 > [!NOTE]
-> Secure Sockets Layer (SSL) is being replaced by Transport Layer Security (TLS) as the protocol that's used to encrypt data sent between computer systems. They're so closely related that the terms "SSL" and "TLS" (without versions) are often used interchangeably. Because of this similarity, references to "SSL" in Exchange topics, the Exchange admin center, and the Exchange Management Shell have often been used to encompass both the SSL and TLS protocols. Typically, "SSL" refers to the actual SSL protocol only when a version is also provided (for example, SSL 3.0). To find out why you should disable the SSL protocol and switch to TLS, check out [Protecting you against the SSL 3.0 vulnerability](https://blogs.office.com/2014/10/29/protecting-ssl-3-0-vulnerability/). 
+> Secure Sockets Layer (SSL) is being replaced by Transport Layer Security (TLS) as the protocol that's used to encrypt data sent between computer systems. They're so closely related that the terms "SSL" and "TLS" (without versions) are often used interchangeably. Because of this similarity, references to "SSL" in Exchange topics, the Exchange admin center, and the Exchange Management Shell have often been used to encompass both the SSL and TLS protocols. Typically, "SSL" refers to the actual SSL protocol only when a version is also provided (for example, SSL 3.0). To find out why you should disable the SSL protocol and switch to TLS, check out [Protecting you against the SSL 3.0 vulnerability](https://blogs.office.com/2014/10/29/protecting-ssl-3-0-vulnerability/).
   
 This topic describes the different types of certificates that are available, the default configuration for certificates in Exchange, and recommendations for additional certificates that you'll need to use with Exchange.
   
@@ -69,7 +69,7 @@ When you install Exchange 2016 on a server, two self-signed certificates are cre
 |Microsoft Exchange Server Auth Certificate  <br/> |This Exchange self-signed certificate is used for server-to-server authentication and integration by using OAuth. For more information, see [Plan Exchange 2016 integration with SharePoint and Skype for Business](../../plan-and-deploy/integration-with-sharepoint-and-skype/integration-with-sharepoint-and-skype.md).  <br/> |
 |WMSVC  <br/> |This Windows self-signed certificate is used by the Web Management service in IIS to enable remote management of the web server and its associated web sites and applications.  <br/> If you remove this certificate, the Web Management service will fail to start if no valid certificate is selected. Having the service in this state can prevent you from installing Exchange updates, or uninstalling Exchange from the server. For instructions on how to correct this issue, see [Event ID 1007 — IIS Web Management Service Authentication](https://go.microsoft.com/fwlink/p/?LinkId=746383) <br/> |
    
-The properties of these self-signed certificates are described in the [Properties of the default self-signed certificates](certificates.md#DefaultCertificateProperties) section. 
+The properties of these self-signed certificates are described in the [Properties of the default self-signed certificates](certificates.md#DefaultCertificateProperties) section.
   
 These are the key issues that you need to consider when it comes to certificates in Exchange:
   
@@ -109,7 +109,7 @@ The Exchange services that certificates can be assigned to are described in the 
 |Hybrid deployment with Microsoft Office 365  <br/> |For more information, see [Certificate Requirements for Hybrid Deployments](http://technet.microsoft.com/library/48d532cc-29f9-4009-9d2d-f19a9c13c320.aspx).  <br/> |
 |Secure/Multipurpose Internet Mail Extensions (S/MIME)  <br/> |For more information, see [S/MIME for message signing and encryption](../../policy-and-compliance/smime.md).  <br/> |
    
-<sup>\*</sup> Kerberos authentication and Kerberos encryption are used for remote PowerShell access, from both the Exchange admin center and the Exchange Management Shell. Therefore, you don't need to configure your certificates for use with remote PowerShell, as long as you connect directly to an Exchange server (not to a load balanced namespace). To use remote PowerShell to connect to an Exchange server from a computer that isn't a member of the domain, or to connect from the Internet, you need to configure your certificates for use with remote PowerShell. 
+<sup>\*</sup> Kerberos authentication and Kerberos encryption are used for remote PowerShell access, from both the Exchange admin center and the Exchange Management Shell. Therefore, you don't need to configure your certificates for use with remote PowerShell, as long as you connect directly to an Exchange server (not to a load balanced namespace). To use remote PowerShell to connect to an Exchange server from a computer that isn't a member of the domain, or to connect from the Internet, you need to configure your certificates for use with remote PowerShell.
   
 ## Best practices for Exchange certificates
 <a name="BestPractices"> </a>
@@ -153,29 +153,29 @@ Some of the more interesting properties of the default self-signed certificates 
   
 ****
 
-|**Name** (`FriendlyName`)  <br/> |**Microsoft Exchange** <br/> |**Microsoft Exchange Server Auth Certificate** <br/> |**WMSVC** <br/> |
+|**Name (FriendlyName)**  <br/> |**Microsoft Exchange** <br/> |**Microsoft Exchange Server Auth Certificate** <br/> |**WMSVC** <br/> |
 |:-----|:-----|:-----|:-----|
-|**Subject** <br/> | `CN=<ServerName>`: For example, `CN=Mailbox01`.  <br/> | `CN=Microsoft Exchange Server Auth Certificate` <br/> | `CN=WMSvc-<ServerName>`: For example, `CN=WMSvc-Mailbox01`.  <br/> |
-|**Subject Alternative Names** (`CertificateDomains`)  <br/> | _\<ServerName\>_: For example, Mailbox01.  <br/> _\<ServerFQDN\>_: For example, Mailbox01.contoso.com.  <br/> |none  <br/> |WMSvc- _\<ServerName\>_: For example, WMSvc-Mailbox01.  <br/> |
-|**Has private key** (`HasPrivateKey`)  <br/> |**Yes** (True)  <br/> |**Yes** (True)  <br/> |**Yes** (True)  <br/> |
-| `PrivateKeyExportable`\* <br/> |False  <br/> |True  <br/> |True  <br/> |
-| `EnhancedKeyUsageList`\* <br/> |Server Authentication (1.3.6.1.5.5.7.3.1)  <br/> |Server Authentication (1.3.6.1.5.5.7.3.1)  <br/> |Server Authentication (1.3.6.1.5.5.7.3.1)  <br/> |
-| `IISServices`\* <br/> | `IIS://<ServerName>/W3SVC/1, IIS://<ServerName>/W3SVC/2`: For example, `IIS://Mailbox01/W3SVC/1, IIS://Mailbox01/W3SVC/2`.  <br/> |none  <br/> |none  <br/> |
-| `IsSelfSigned` <br/> |True  <br/> |True  <br/> |True  <br/> |
-|**Issuer** <br/> | `CN=<ServerName>`: For example, `CN=Mailbox01`.  <br/> | `CN=Microsoft Exchange Server Auth Certificate` <br/> | `CN=WMSvc-<ServerName>`: For example, `CN=WMSvc-Mailbox01`.  <br/> |
-| `NotBefore` <br/> |The date/time that Exchange was installed.  <br/> |The date/time that Exchange was installed.  <br/> |The date/time that the IIS Web Manager service was installed.  <br/> |
-|**Expires on** (`NotAfter`)  <br/> |5 years after `NotBefore`.  <br/> |5 years after `NotBefore`.  <br/> |10 years after `NotBefore`.  <br/> |
-|**Public key size** (`PublicKeySize`)  <br/> |2048  <br/> |2048  <br/> |2048  <br/> |
-| `RootCAType` <br/> |Registry  <br/> |None  <br/> |Registry  <br/> |
+|**Subject** <br/> | `CN=<ServerName>` (for example, `CN=Mailbox01`)  <br/> | `CN=Microsoft Exchange Server Auth Certificate` <br/> | `CN=WMSvc-<ServerName>` (for example, `CN=WMSvc-Mailbox01`)  <br/> |
+|**Subject Alternative Names (CertificateDomains)**  <br/> | • _\<ServerName\>_ (for example, Mailbox01)  <br/> • _\<ServerFQDN\>_ (for example, Mailbox01.contoso.com)  <br/> |none  <br/> |`WMSvc-<ServerName>` (for example, `WMSvc-Mailbox01`)  <br/> |
+|**Has private key (HasPrivateKey)**  <br/> |**Yes** (True)  <br/> |**Yes** (True)  <br/> |**Yes** (True)  <br/> |
+| **PrivateKeyExportable**<sup>*</sup> <br/> |False  <br/> |True  <br/> |True  <br/> |
+|**EnhancedKeyUsageList**<sup>*</sup> <br/> |Server Authentication (1.3.6.1.5.5.7.3.1)  <br/> |Server Authentication (1.3.6.1.5.5.7.3.1)  <br/> |Server Authentication (1.3.6.1.5.5.7.3.1)  <br/> |
+|**IISServices**<sup>*</sup> <br/> | `IIS://<ServerName>/W3SVC/1, IIS://<ServerName>/W3SVC/2` (for example, `IIS://Mailbox01/W3SVC/1, IIS://Mailbox01/W3SVC/2`)  <br/> |none  <br/> |none  <br/> |
+|**IsSelfSigned** <br/> |True  <br/> |True  <br/> |True  <br/> |
+|**Issuer** <br/> | `CN=<ServerName>` (for example, `CN=Mailbox01`)  <br/> | `CN=Microsoft Exchange Server Auth Certificate` <br/> | `CN=WMSvc-<ServerName>` (for example, `CN=WMSvc-Mailbox01)  <br/> |
+|**NotBefore** <br/> |The date/time that Exchange was installed.  <br/> |The date/time that Exchange was installed.  <br/> |The date/time that the IIS Web Manager service was installed.  <br/> |
+|**Expires on (NotAfter)**  <br/> |5 years after `NotBefore`.  <br/> |5 years after `NotBefore`.  <br/> |10 years after `NotBefore`.  <br/> |
+|**Public key size (PublicKeySize)**  <br/> |2048  <br/> |2048  <br/> |2048  <br/> |
+|**RootCAType** <br/> |Registry  <br/> |None  <br/> |Registry  <br/> |
 |**Services** <br/> |IMAP, POP, IIS, SMTP  <br/> |SMTP  <br/> |None  <br/> |
    
-\* These properties aren't visible in the standard view in the Exchange Management Shell. To see them, you need to specify the property name (exact name or wildcard match) with the **Format-Table** or **Format-List** cmdlets. For example: 
+<sup>*</sup> These properties aren't visible in the standard view in the Exchange Management Shell. To see them, you need to specify the property name (exact name or wildcard match) with the **Format-Table** or **Format-List** cmdlets. For example: 
   
 - `Get-ExchangeCertificate -Thumbprint <Thumbprint> | Format-List *`
     
 - `Get-ExchangeCertificate -Thumbprint <Thumbprint> | Format-Table -Auto FriendlyName,*PrivateKey*`
     
-For more information, see [get-ExchangeCertificate](http://technet.microsoft.com/library/e368589a-6510-4209-9f10-171d1990cd7d.aspx).
+For more information, see [Get-ExchangeCertificate](http://technet.microsoft.com/library/e368589a-6510-4209-9f10-171d1990cd7d.aspx).
   
 Further details about the default self-signed certificates that are visible in Windows Certificate Manger are described in the following table.
   
@@ -186,7 +186,7 @@ Further details about the default self-signed certificates that are visible in W
 |**Signature algorithm** <br/> |sha1RSA  <br/> |sha1RSA  <br/> |sha1RSA  <br/> |
 |**Signature hash algorithm** <br/> |sha1  <br/> |sha1  <br/> |sha1  <br/> |
 |**Key usage** <br/> |Digital Signature, Key Encipherment (a0)  <br/> |Digital Signature, Key Encipherment (a0)  <br/> |Digital Signature, Key Encipherment (a0), Data Encipherment (b0 00 00 00)  <br/> |
-|**Basic constraints** <br/> | `Subject Type=End Entity`.  <br/> `Path Length Constraint=None`.  <br/> | `Subject Type=End Entity`.  <br/> `Path Length Constraint=None`.  <br/> |n/a  <br/> |
+|**Basic constraints** <br/> |• `Subject Type=End Entity`  <br/> • `Path Length Constraint=None`.  <br/> |• `Subject Type=End Entity`  <br/> • `Path Length Constraint=None`  <br/> |n/a  <br/> |
 |**Thumbprint algorithm** <br/> |sha1  <br/> |sha1  <br/> |sha1  <br/> |
    
 Typically, you don't use Windows Certificate Manger to manage Exchange certificates (use the Exchange admin center or the Exchange Management Shell). Note that the WMSVC certificate isn't an Exchange certificate.

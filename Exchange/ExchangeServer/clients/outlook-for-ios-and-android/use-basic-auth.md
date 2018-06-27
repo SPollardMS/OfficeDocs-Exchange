@@ -22,7 +22,7 @@ Note that this article is about using the app in an Exchange 2016 environment. F
   
 ## Outlook for iOS and Android architecture
 
-Outlook for iOS and Android consists of a front-end app that is installed on mobile devices and a secure and scalable cloud service on the back end, known as the *Outlook service* . Processing information in the Outlook service enables advanced features and capabilities that enhance the Outlook experience, as well as improved performance and stability. This architecture relies on the Outlook service for intensive processing, minimizing the resources required from users' devices. 
+Outlook for iOS and Android consists of a front-end app that is installed on mobile devices and a secure and scalable cloud service on the back end, known as the *Outlook service*. Processing information in the Outlook service enables advanced features and capabilities that enhance the Outlook experience, as well as improved performance and stability. This architecture relies on the Outlook service for intensive processing, minimizing the resources required from users' devices.
   
 ![Architecture of Basic authentication in Outlook for iOS and Android](../../media/08b57616-7479-4577-b5de-1fc48dd059a1.PNG)
   

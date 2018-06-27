@@ -21,7 +21,7 @@ In-Place eDiscovery uses Keyword Query Language (KQL). For more details, see [Ke
 ## Searchable properties in Exchange
 <a name="properties"> </a>
 
-The following table lists email message properties that can be searched using an In-Place eDiscovery search or by using the **New-MailboxSearch** or the **Set-MailboxSearch** cmdlet. The table includes an example of the _property:value_ syntax for each property and a description of the search results returned by the examples. 
+The following table lists email message properties that can be searched using an In-Place eDiscovery search or by using the **New-MailboxSearch** or the **Set-MailboxSearch** cmdlet. The table includes an example of the _property:value_ syntax for each property and a description of the search results returned by the examples.
   
 |**Property**|**Property description**|**Examples**|**Search results returned by the examples**|
 |:-----|:-----|:-----|:-----|
@@ -45,7 +45,7 @@ The following table lists email message properties that can be searched using an
 ## Supported search operators
 <a name="boolean"> </a>
 
-Boolean search operators, such as **AND**, **OR**, and **NOT**, help you define more-precise mailbox searches by including or excluding specific words in the search query. Other techniques, such as using property operators (such as \>= or ..), quotation marks, parentheses, and wildcards, help you refine eDiscovery search queries. The following table lists the operators that you can use to narrow or broaden search results. 
+Boolean search operators, such as **AND**, **OR**, and **NOT**, help you define more-precise mailbox searches by including or excluding specific words in the search query. Other techniques, such as using property operators (such as \>= or ..), quotation marks, parentheses, and wildcards, help you refine eDiscovery search queries. The following table lists the operators that you can use to narrow or broaden search results.
   
 |**Operator**|**Usage**|**Description**|
 |:-----|:-----|:-----|
@@ -67,7 +67,7 @@ Boolean search operators, such as **AND**, **OR**, and **NOT**, help you define 
    
 <sup>1</sup>: Use this operator for properties that have date or numeric values.
   
-<sup>2</sup>: Boolean search operators must be uppercase; for example, **AND**. Using lowercase operators in search queries will return an error. 
+<sup>2</sup>: Boolean search operators must be uppercase; for example, **AND**. Using lowercase operators in search queries will return an error.
   
 ## Unsupported characters in search queries
 <a name="unsupportedcharacters"> </a>
@@ -76,7 +76,7 @@ Unsupported characters in a search query typically cause a search error or retur
   
 Here's a list of the unsupported characters for an In-Place eDiscovery search query.
   
-- **Smart quotation marks**: Smart single and double quotation marks (also called *curly quotes*) aren't supported. Only straight quotation marks can be used in a search query. 
+- **Smart quotation marks**: Smart single and double quotation marks (also called *curly quotes*) aren't supported. Only straight quotation marks can be used in a search query.
     
 - **Non-printable and control characters**: Non-printable and control characters don't represent a written symbol, such as a alpha-numeric character. Examples of non-printable and control characters include characters that format text or separate lines of text.
     
@@ -84,23 +84,23 @@ Here's a list of the unsupported characters for an In-Place eDiscovery search qu
     
 - **Lowercase Boolean operators**: As previous explained, you have to use uppercase Boolean operators, such as **AND** and **OR**, in a search query. Note that the query syntax will often indicate that a Boolean operator is being used even though lowercase operators might be used; for example, `(WordA or WordB) and (WordC or WordD)`.
     
- **How to prevent unsupported characters in your search queries?** The best way to prevent unsupported characters is to just type the query in the keyword box. Alternatively, you can copy a query from Word or Excel and then paste it to file in a plain text editor, such as Microsoft Notepad. Then save the text file and select **ANSI** in the **Encoding** drop-down list. This will remove any formatting and unsupported characters. Then you can copy and paste the query from the text file to the keyword query box. 
+ **How to prevent unsupported characters in your search queries?** The best way to prevent unsupported characters is to just type the query in the keyword box. Alternatively, you can copy a query from Word or Excel and then paste it to file in a plain text editor, such as Microsoft Notepad. Then save the text file and select **ANSI** in the **Encoding** drop-down list. This will remove any formatting and unsupported characters. Then you can copy and paste the query from the text file to the keyword query box.
   
 ## Search tips and tricks
 <a name="tips"> </a>
 
-- Keyword searches are not case sensitive. For example, **cat** and **CAT** return the same results. 
+- Keyword searches are not case sensitive. For example, **cat** and **CAT** return the same results.
     
-- A space between two keywords or two `property:value` expressions is the same as using **AND**. For example, `from:"Sara Davis" subject:reorganization` returns all messages sent by Sara Davis that contain the word ** reorganization ** in the subject line. 
+- A space between two keywords or two `property:value` expressions is the same as using **AND**. For example, `from:"Sara Davis" subject:reorganization` returns all messages sent by Sara Davis that contain the word ** reorganization ** in the subject line.
     
-- Use syntax that matches the `property:value` format. Values are not case-sensitive, and they can't have a space after the operator. If there is a space, your intended value will just be full-text searched. For example, **to: pilarp** searches for "pilarp" as a keyword, rather than for messages that were sent to pilarp. 
+- Use syntax that matches the `property:value` format. Values are not case-sensitive, and they can't have a space after the operator. If there is a space, your intended value will just be full-text searched. For example, **to: pilarp** searches for "pilarp" as a keyword, rather than for messages that were sent to pilarp.
     
 - When searching a recipient property, such as To, From, Cc, or Recipients, you can use an SMTP address, alias, or display name to denote a recipient. For example, you can use pilarp@contoso.com, pilarp, or "Pilar Pinilla".
     
-- You can use only prefix wildcard searches—for example, **cat\*** or ** set\* **. Suffix wildcard searches (\*cat) or substring wildcard searches (\*cat\*) aren't supported. 
+- You can use only prefix wildcard searches—for example, **cat\*** or ** set\* **. Suffix wildcard searches (\*cat) or substring wildcard searches (\*cat\*) aren't supported.
     
-- When searching a property, use double quotation marks (" ") if the search value consists of multiple words. For example **subject:budget Q1** returns messages that contain **budget** in the in the subject line and that contain **Q1** anywhere in the message or in any of the message properties. Using **subject:"budget Q1"** returns all messages that contain **budget Q1** anywhere in the subject line. 
+- When searching a property, use double quotation marks (" ") if the search value consists of multiple words. For example **subject:budget Q1** returns messages that contain **budget** in the in the subject line and that contain **Q1** anywhere in the message or in any of the message properties. Using **subject:"budget Q1"** returns all messages that contain **budget Q1** anywhere in the subject line.
     
-- To exclude content marked with a certain property value from your search results, place a minus sign (-) before the name of the property. For example, **-from:"Sara Davis"** will exclude any messages sent by Sara Davis. 
+- To exclude content marked with a certain property value from your search results, place a minus sign (-) before the name of the property. For example, **-from:"Sara Davis"** will exclude any messages sent by Sara Davis.
     
 
