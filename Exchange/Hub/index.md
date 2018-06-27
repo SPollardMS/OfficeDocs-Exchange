@@ -90,6 +90,25 @@ description: Exchange
                                     </div>
                                 </a>
                             </li>                            
+                            <li>
+                                <a href="https://docs.microsoft.com/en-us/Office365/SecurityCompliance/eop/exchange-online-protection-overview">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter">
+                                                    <div class="cardImage bgdAccent1"> 
+                                                        <img src="https://docs.microsoft.com/en-us/office/media/hub-tiles/Exchange-ExchangeOnlineProtection-400x140.svg" alt="A shield symbol with a checkmark and clouds" />
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>Exchange Online Protection</h3>
+                                                    <p>Learn how Exchange Online Protection helps protect your organization against spam &amp; malware, and use safeguard features that protect your organization from messaging-policy violations.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>                            
                         </ul>
                     </li>
                 </ul>
