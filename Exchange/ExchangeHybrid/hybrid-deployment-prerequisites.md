@@ -79,7 +79,7 @@ The following prerequisites are required for configuring a hybrid deployment:
     > [!IMPORTANT]
     > Although EdgeSync is a requirement in deployments with Edge Transport servers, additional manual transport configuration settings will be required when you configure Edge Transport servers for hybrid secure mail transport. 
   
-    Learn more at [Edge Transport servers with hybrid deployments](edge-transport-servers-0.md).
+    Learn more at [Edge Transport servers with hybrid deployments](edge-transport-servers.md).
     
 - **Unified Messaging-enabled (UM) mailboxes** If you have UM-enabled mailboxes and you want to move them to Office 365, you need the following in addition to an Exchange hybrid deployment. These requirements need to be met **before** you move any UM-enabled mailboxes to Office 365. 
     

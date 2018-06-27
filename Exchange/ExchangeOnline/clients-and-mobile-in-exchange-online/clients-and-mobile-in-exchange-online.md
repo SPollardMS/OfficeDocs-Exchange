@@ -24,7 +24,7 @@ The following table contains links to topics that will help you learn about and 
 |**Topic**|**Description**|
 |:-----|:-----|
 |[Exchange ActiveSync](http://technet.microsoft.com/library/5fafaff3-eb37-4fdb-95f0-e56c45ea5884.aspx) <br/> |Learn about Exchange ActiveSync, the protocol that provides connectivity to a wide variety of mobile phones and tablets. Using Exchange ActiveSync, users can access email, calendar, contact, and task information.  <br/> |
-|[POP3 and IMAP4](pop3-and-imap4-0/pop3-and-imap4-0.md) <br/> |Learn about how you can use the POP3 and IMAP4 protocols to provide users access to a number of the features in their Office 365 mailbox. These client protocols can be used on desktop email applications and on many mobile phones and devices.  <br/> |
+|[POP3 and IMAP4](pop3-and-imap4/pop3-and-imap4.md) <br/> |Learn about how you can use the POP3 and IMAP4 protocols to provide users access to a number of the features in their Office 365 mailbox. These client protocols can be used on desktop email applications and on many mobile phones and devices.  <br/> |
 |[Outlook Web App](http://technet.microsoft.com/library/3814b665-01e8-4881-9a44-163f14789ee4.aspx) <br/> |Learn about Outlook Web App, which provides users access to their Office 365 mailbox through a web browser.  <br/> |
 |[MailTips](mailtips/mailtips.md) <br/> |Learn about MailTips, the informative messages displayed to users while they're composing a message.  <br/> |
    

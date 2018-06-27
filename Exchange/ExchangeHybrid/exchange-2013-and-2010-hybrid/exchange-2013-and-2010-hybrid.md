@@ -21,11 +21,11 @@ Select a topic below to get started and learn more:
   
 [Server roles in Exchange 2013/Exchange 2010 hybrid deployments](server-roles.md)
   
-[Hybrid management in Exchange 2013/Exchange 2010 hybrid deployments](hybrid-management-0.md)
+[Hybrid management in Exchange 2013/Exchange 2010 hybrid deployments](hybrid-management.md)
   
 [Edge Transport servers in Exchange 2013/Exchange 2010 hybrid deployments](edge-transport.md)
   
-[Transport options in Exchange 2013/Exchange 2010 hybrid deployments](transport-options-0.md)
+[Transport options in Exchange 2013/Exchange 2010 hybrid deployments](transport-options.md)
   
 [Transport routing in Exchange 2013/Exchange 2010 hybrid deployments](transport-routing.md)
   

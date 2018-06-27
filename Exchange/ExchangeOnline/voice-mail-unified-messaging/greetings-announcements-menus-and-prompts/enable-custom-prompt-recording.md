@@ -55,7 +55,7 @@ To record custom prompts and greetings by using the telephone user interface (TU
     > [!NOTE]
     > MP3 files can't be used for custom prompts. 
   
-6. Use the EAC or the Shell to configure the dial plan to use the custom welcome greeting or configure the auto attendant to use the business or non-business hours greeting. For details about configuring a dial plan, see [Enable a customized greeting for Outlook Voice Access users](../../voice-mail-unified-messaging/set-up-client-voice-mail-features-0/enable-a-customized-greeting.md). For details about configuring an auto attendant, see [Enable a customized business hours greeting](../../voice-mail-unified-messaging/automatically-answer-and-route-calls/enable-a-customized-business-hours-greeting.md) or [Enable a customized non-business hours greeting](../../voice-mail-unified-messaging/automatically-answer-and-route-calls/enable-a-customized-non-business-hours-greeting.md).
+6. Use the EAC or the Shell to configure the dial plan to use the custom welcome greeting or configure the auto attendant to use the business or non-business hours greeting. For details about configuring a dial plan, see [Enable a customized greeting for Outlook Voice Access users](../../voice-mail-unified-messaging/set-up-client-voice-mail-features/enable-a-customized-greeting.md). For details about configuring an auto attendant, see [Enable a customized business hours greeting](../../voice-mail-unified-messaging/automatically-answer-and-route-calls/enable-a-customized-business-hours-greeting.md) or [Enable a customized non-business hours greeting](../../voice-mail-unified-messaging/automatically-answer-and-route-calls/enable-a-customized-non-business-hours-greeting.md).
     
 7. Run the following cmdlet:
     

@@ -19,14 +19,14 @@ Configuring and managing Exchange 2013-based hybrid deployments with Exchange 20
   
 Select a topic below to get started and learn more:
   
-[Server roles in Exchange 2013/Exchange 2007 hybrid deployments](server-roles-1.md)
+[Server roles in Exchange 2013/Exchange 2007 hybrid deployments](server-roles.md)
   
-[Hybrid management in Exchange 2013/Exchange 2007 hybrid deployments](hybrid-management-1.md)
+[Hybrid management in Exchange 2013/Exchange 2007 hybrid deployments](hybrid-management.md)
   
 [Edge Transport servers in Exchange 2013/Exchange 2007 hybrid deployments](edge-transport-serverrs.md)
   
 [Transport options in Exchange 2013/Exchange 2007 hybrid deployments](transport-options.md)
   
-[Transport routing in Exchange 2013/Exchange 2007 hybrid deployments](transport-routing-0.md)
+[Transport routing in Exchange 2013/Exchange 2007 hybrid deployments](transport-routing.md)
   
 

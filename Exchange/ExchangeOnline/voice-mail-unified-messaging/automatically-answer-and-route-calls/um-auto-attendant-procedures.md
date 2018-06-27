@@ -38,7 +38,7 @@ description: "Set up a UM auto attendant"
   
 [Enable a customized non-business hours menu prompt](enable-a-customized-non-business-hours-menu-prompt.md)
   
-[Enable an informational announcement](enable-an-informational-announcement-0.md)
+[Enable an informational announcement](enable-an-informational-announcement.md)
   
 [Create menu navigation](create-menu-navigation.md)
   
@@ -58,9 +58,9 @@ description: "Set up a UM auto attendant"
   
 [Enable or disable automatic speech recognition](enable-or-disable-speech-recognition.md)
   
-[Enable or prevent transferring calls from an auto attendant](enable-or-prevent-transferring-calls-0.md)
+[Enable or prevent transferring calls from an auto attendant](enable-or-prevent-transferring-calls.md)
   
-[Enable or disable sending voice messages to users](enable-or-disable-sending-voice-messages-0.md)
+[Enable or disable sending voice messages to users](enable-or-disable-sending-voice-messages.md)
   
 [Enable or disable directory lookups](enable-or-disable-directory-lookups.md)
   

@@ -220,7 +220,7 @@ The following list provides you with definitions of the core components associat
   
  **centralized mail transport**
   
-> The hybrid configuration option in which all Exchange Online inbound and outbound Internet messages are routed via the on-premises Exchange organization. This routing option is configured in the Hybrid Configuration wizard. For more information, see [Transport options in Exchange hybrid deployments](transport-options-1.md).
+> The hybrid configuration option in which all Exchange Online inbound and outbound Internet messages are routed via the on-premises Exchange organization. This routing option is configured in the Hybrid Configuration wizard. For more information, see [Transport options in Exchange hybrid deployments](transport-options.md).
     
  **coexistence domain**
   
@@ -264,14 +264,14 @@ The following table contains links to topics that will help you learn about and 
 |[Hybrid Configuration wizard](hybrid-configuration-wizard.md) <br/> |Learn how the Hybrid Configuration wizard and the Hybrid Configuration Engine configure a hybrid deployment.  <br/> |
 |[Hybrid deployment prerequisites](hybrid-deployment-prerequisites.md) <br/> |Learn more about hybrid deployment prerequisites, including compatible Exchange Server organizations, Office 365 requirements, and other on-premises configuration requirements.  <br/> |
 |[Certificate requirements for hybrid deployments](certificate-requirements.md) <br/> |Learn more about the requirements for digital certificates in hybrid deployments.  <br/> |
-|[Transport options in Exchange hybrid deployments](transport-options-1.md) <br/> |Learn more about the inbound and outbound message transport options in hybrid deployments.  <br/> |
-|[Transport routing in Exchange hybrid deployments](transport-routing-1.md) <br/> |Learn more about inbound and outbound message routing options in a hybrid deployment.  <br/> |
+|[Transport options in Exchange hybrid deployments](transport-options.md) <br/> |Learn more about the inbound and outbound message transport options in hybrid deployments.  <br/> |
+|[Transport routing in Exchange hybrid deployments](transport-routing.md) <br/> |Learn more about inbound and outbound message routing options in a hybrid deployment.  <br/> |
 |[Hybrid management in Exchange hybrid deployments](hybrid-management.md) <br/> |Learn more about managing your hybrid deployment with the Exchange admin center and Exchange Management Shell.  <br/> |
 |[Shared free/busy in Exchange hybrid deployments](shared-free-busy.md) <br/> |Learn more about calendar free/busy sharing between on-premises and Exchange Online organizations in a hybrid deployment.  <br/> |
-|[Server roles in Exchange hybrid deployments](server-roles-0.md) <br/> |Learn more about how the Exchange server roles function in a hybrid deployment.  <br/> |
+|[Server roles in Exchange hybrid deployments](server-roles.md) <br/> |Learn more about how the Exchange server roles function in a hybrid deployment.  <br/> |
 |[IRM in Exchange hybrid deployments](irm.md) <br/> |Learn more about how Information Rights Management functions in a hybrid deployment.  <br/> |
 |[Permissions in Exchange hybrid deployments](permissions.md) <br/> |Learn more about how a hybrid deployment uses Role Based Access Control (RBAC) to control permissions.  <br/> |
-|[Edge Transport servers with hybrid deployments](edge-transport-servers-0.md) <br/> |Learn more about Exchange Edge Transport servers and how they are deployed and operate in a hybrid deployment.  <br/> |
+|[Edge Transport servers with hybrid deployments](edge-transport-servers.md) <br/> |Learn more about Exchange Edge Transport servers and how they are deployed and operate in a hybrid deployment.  <br/> |
 |[Single sign-on with hybrid deployments](single-sign-on.md) <br/> |Learn more about how single sign-on using password synchronization and AD FS function in a hybrid deployment.  <br/> |
 |[Hybrid Deployment procedures](hybrid-deployment/hybrid-deployment.md) <br/> |Explore procedures for creating and modifying hybrid deployments for your Exchange on-premises and Exchange Online organizations.  <br/> |
 |[Hybrid deployments with Exchange 2013 and Exchange 2010](exchange-2013-and-2010-hybrid/exchange-2013-and-2010-hybrid.md) <br/> |Learn more about Exchange 2013-based hybrid deployments with Exchange 2010 organizations.  <br/> |

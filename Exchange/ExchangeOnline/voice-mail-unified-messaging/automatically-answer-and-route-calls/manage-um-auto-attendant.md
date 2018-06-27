@@ -256,7 +256,7 @@ For additional management tasks related to UM auto attendants, see [UM auto atte
     
     To add in-country/region dialing rule groups, you must first create the appropriate in-country/region dialing rule groups on the dial plan associated with the UM auto attendant, and then add the appropriate dialing rule group.
     
-    In-country/region dialing rule groups can be used by Unified Messaging to allow or restrict access to telephone numbers within a country or region. This is applied to any user who has called in to an auto attendant. For more information about outdialing, see [Allow users to make calls](../../voice-mail-unified-messaging/set-up-client-voice-mail-features-0/allow-users-to-make-calls.md).
+    In-country/region dialing rule groups can be used by Unified Messaging to allow or restrict access to telephone numbers within a country or region. This is applied to any user who has called in to an auto attendant. For more information about outdialing, see [Allow users to make calls](../../voice-mail-unified-messaging/set-up-client-voice-mail-features/allow-users-to-make-calls.md).
     
   - **Authorized international dialing rule groups** Use this section to add or remove allowed international dialing rule groups. By default, there are no international dialing rule groups configured on UM auto attendants. 
     
@@ -264,7 +264,7 @@ For additional management tasks related to UM auto attendants, see [UM auto atte
     
     To add international dialing rule groups, you must first create the appropriate international dialing rule groups on the dial plan associated with the UM auto attendant. After you create the required dialing rule groups on the dial plan, you must then add the dialing rule groups to the list of authorized dialing rule groups on the UM auto attendant.
     
-    International dialing rule groups can be used by Unified Messaging to allow or restrict access to telephone numbers outside a country or region. This is applied to any user who has called in to an auto attendant. For more information about outdialing, see [Allow users to make calls](../../voice-mail-unified-messaging/set-up-client-voice-mail-features-0/allow-users-to-make-calls.md).
+    International dialing rule groups can be used by Unified Messaging to allow or restrict access to telephone numbers outside a country or region. This is applied to any user who has called in to an auto attendant. For more information about outdialing, see [Allow users to make calls](../../voice-mail-unified-messaging/set-up-client-voice-mail-features/allow-users-to-make-calls.md).
     
 10. Click **OK** to create the new menu navigation. 
     

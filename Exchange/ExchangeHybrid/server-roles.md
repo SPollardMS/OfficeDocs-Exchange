@@ -61,7 +61,7 @@ Exchange servers provide several important functions for your on-premises organi
     
 - **Message transport** Exchange servers with the Client Access and Mailbox server roles are responsible for message transport in a hybrid deployment. Using Send and Receive connectors, they serve as the connection endpoints for incoming external messages and also provide outbound message delivery to the Internet and the Exchange Online organization. 
     
-    Learn more at [Transport options in Exchange hybrid deployments](transport-options-1.md).
+    Learn more at [Transport options in Exchange hybrid deployments](transport-options.md).
     
 - **Message transport security** Exchange servers with the Client Access and Mailbox server roles help to secure message communication between the on-premises and Exchange Online organizations by using the Domain Security functionality in Exchange. Security can be increased by using mutual transport layer security authentication and encryption for message communications. 
     

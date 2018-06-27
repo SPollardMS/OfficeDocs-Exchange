@@ -23,7 +23,7 @@ You use the **Set-CASMailbox** cmdlet to configure the PO3 and IMAP4 options for
 | _PopMessagesRetrievalMimeFormat_ <br/>  _ImapMessagesRetrievalMimeFormat_ <br/> |Sets the preferred format for received messages.  <br/> The default is to use the best format based on the message.  <br/> |Use a numeral or a text value.  <br/>  `0` or  `TextOnly` Text only  <br/>  `1` or  `HtmlOnly` HTML  <br/>  `2` or  `HtmlAndTextAlternative` HTML and alternative text  <br/>  `3` or  `TextEnriched` Enriched text  <br/>  `4` or  `TextEnrichedAndTextAlternative` Enriched text and alternative text  <br/>  `5` or  `BestBodyFormat` Best body format. This is the default value.  <br/>  `6` or  `Tnef` Transport-Neutral Encapsulation Format (TNEF). Also known as rich text format, Outlook rich text format, or MAPI rich text format.  <br/> |
 | _PopEnableExactRFC822Size_ <br/>  _ImapEnableExactRFC822Size_ <br/> |Sets whether to calculate the exact size of messages.  <br/> Changing this value is not recommended unless the default value causes problems for your email client. By default, the estimated message size, rather than the exact message size, is sent to the email client.  <br/> | `$true` Use actual message size.  <br/>  `$false` Use estimated message size. This is the default.  <br/> |
    
-For additional information related to POP3 and IMAP4, see [POP3 and IMAP4](pop3-and-imap4-0.md).
+For additional information related to POP3 and IMAP4, see [POP3 and IMAP4](pop3-and-imap4.md).
   
 ## What do you need to know before you begin?
 
@@ -136,7 +136,7 @@ Get-CASMailbox USER01 | format-list *EnableExact*,*UseProtocolDefaults
 
 [Connect to Exchange Online Using Remote PowerShell](http://technet.microsoft.com/library/c8bea338-6c1a-4bdf-8de0-7895d427ee5b.aspx)
   
-[POP3 and IMAP4](pop3-and-imap4-0.md)
+[POP3 and IMAP4](pop3-and-imap4.md)
   
 [Enable or Disable POP3 or IMAP4 access for a user](enable-or-disable-pop3-or-imap4-access.md)
   

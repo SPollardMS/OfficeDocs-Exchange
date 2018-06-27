@@ -34,7 +34,7 @@ The following table contains links to topics that will help you learn about and 
   
 |**Topic**|**Description**|
 |:-----|:-----|
-|[Organization relationships in Exchange Online](organization-relationships-0/organization-relationships-0.md) <br/> |Learn more about the one-to-one relationships between organizations that enable calendar free/busy sharing.  <br/> |
+|[Organization relationships in Exchange Online](organization-relationships/organization-relationships.md) <br/> |Learn more about the one-to-one relationships between organizations that enable calendar free/busy sharing.  <br/> |
 |[Sharing policies in Exchange Online](sharing-policies/sharing-policies.md) <br/> |Learn more about the person-to-person policies that enable calendar sharing.  <br/> |
    
 

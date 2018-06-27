@@ -97,6 +97,6 @@ ABPs won't function for Entourage users or Outlook for Mac users who are connect
 
 [Scenario: Deploying Address Book Policies](http://technet.microsoft.com/library/6ac3c87d-161f-447b-afb2-149ae7e3f1dc.aspx)
   
-[Address book policy procedures](address-book-policy-procedures-0.md)
+[Address book policy procedures](address-book-policy-procedures.md)
   
 

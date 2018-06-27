@@ -16,7 +16,7 @@ description: "An organization relationship lets users in your Office 365 organiz
 
 An organization relationship lets users in your Office 365 organization share calendar free/busy information with other Office 365 or on-premises Exchange organizations. You can remove an organization relationship to disable calendar sharing with the other organization.
   
-To learn more about organization relationships, see [Organization relationships in Exchange Online](organization-relationships-0.md).
+To learn more about organization relationships, see [Organization relationships in Exchange Online](organization-relationships.md).
   
 ## What do you need to know before you begin?
 
