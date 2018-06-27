@@ -1,7 +1,7 @@
 ---
 title: "Use a screen reader to manage anti-spam protection in Exchange Online"
 ms.author: v-maleo
-Maggsl
+author: maggsl
 ms.date: 12/9/2016
 ms.audience: ITPro
 ms.topic: article

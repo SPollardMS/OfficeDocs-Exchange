@@ -1,7 +1,7 @@
 ---
 title: "Use a screen reader to work with mobile clients in the Exchange admin center"
 ms.author: v-maleo
-Maggsl
+author: maggsl
 ms.date: 12/9/2016
 ms.audience: ITPro
 ms.topic: article

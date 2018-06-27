@@ -1,7 +1,7 @@
 ---
 title: "Mail flow rule conditions and exceptions (predicates) in Exchange Online"
 ms.author: stephow
-stephow-msft
+author: stephow-msft
 manager: scotv
 ms.date: 6/23/2018
 ms.audience: ITPro

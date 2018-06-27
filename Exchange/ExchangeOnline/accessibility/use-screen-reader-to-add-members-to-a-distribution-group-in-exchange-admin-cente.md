@@ -1,7 +1,7 @@
 ---
 title: "Use a screen reader to add members to a distribution group in the Exchange admin center"
 ms.author: v-maleo
-Maggsl
+author: maggsl
 ms.date: 6/6/2016
 ms.audience: ITPro
 ms.topic: article

@@ -1,7 +1,7 @@
 ---
 title: "Organization-wide message disclaimers, signatures, footers, or headers in Office 365"
 ms.author: stephow
-stephow-msft
+author: stephow-msft
 manager: scotv
 ms.date: 6/23/2018
 ms.audience: ITPro

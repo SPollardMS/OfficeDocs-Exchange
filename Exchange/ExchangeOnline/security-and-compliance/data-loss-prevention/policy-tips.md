@@ -1,7 +1,7 @@
 ---
 title: "Policy Tips"
 ms.author: stephow
-stephow-msft
+author: stephow-msft
 manager: laurawi
 ms.date: 7/22/2015
 ms.audience: ITPro

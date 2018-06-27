@@ -1,7 +1,7 @@
 ---
 title: "Data loss prevention"
 ms.author: stephow
-stephow-msft
+author: stephow-msft
 manager: scotv
 ms.date: 6/23/2018
 ms.audience: ITPro

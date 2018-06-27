@@ -1,7 +1,7 @@
 ---
 title: "Use a screen reader to define rules that encrypt or decrypt email messages in the Exchange admin center 2016"
 ms.author: v-maleo
-Maggsl
+author: maggsl
 ms.date: 12/9/2016
 ms.audience: ITPro
 ms.topic: article

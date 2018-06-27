@@ -1,7 +1,7 @@
 ---
 title: "DLP policy templates supplied in Exchange"
 ms.author: stephow
-stephow-msft
+author: stephow-msft
 manager: laurawi
 ms.date: 3/9/2015
 ms.audience: ITPro

@@ -1,7 +1,7 @@
 ---
 title: "Mail flow rule procedures in Exchange Online"
 ms.author: stephow
-stephow-msft
+author: stephow-msft
 manager: scotv
 ms.date: 5/31/2017
 ms.audience: ITPro
