@@ -3,7 +3,7 @@ title: "Overview of Outlook 2016 for Windows planning"
 ms.author: danbrown
 author: DHB-MSFT
 manager: laurawi
-ms.date: 5/5/2017
+ms.date: 6/27/2018
 ms.audience: ITPro
 ms.topic: get-started-article
 ms.prod: office-perpetual-itpro
@@ -26,12 +26,10 @@ The organization's messaging environment helps shape the Outlook 2016 deployment
   
 ### MSI versus Click-to-Run deployment methods
 
-Office is available in two delivery formats: Windows Installer-based (MSI) and Click-to-Run. Traditional Windows Installer-based deployments of Office 2016, such as with Office Standard 2016, are available for enterprise organizations through volume licensing. Office 2016 Click-to-Run is available with an Office subscription of Office 365 ProPlus. For more information, see [Overview of Office 365 ProPlus Preview](http://technet.microsoft.com/library/702d62a6-d808-4a51-98a6-3b30ae7e14f4.aspx).
+There are two primary installation technologies for Office: Windows Installer (MSI) and Click-to-Run. Volume licensed versions of Office, such as Office Standard 2016, use Windows Installer (MSI), while Office 365 subscriptions plans that include Office, such as [Office 365 ProPlus](https://docs.microsoft.com/DeployOffice/about-office-365-proplus-in-the-enterprise), uses Click-to-Run.
   
-Administrators who have signed up for Office 365 can also stage and deploy Click-to-Run products from an on-premises location. This is useful in scenarios where administrators want to minimize the demand on the network or to prevent users from installing products from the Internet because of corporate security requirements. To stage a deployment on-premises, administrators use the Office Deployment Tool for Click-to-Run. For more information, see [Office Deployment Tool for Click-to-Run](http://technet.microsoft.com/library/43419d08-4517-45e8-8cb6-ccec1b8b85bf.aspx). 
-  
-The MSI and Click-to-Run versions of Office and Outlook 2016 have different configuration options and administration tools. For MSI-based deployments, use the Office Customization Tool (OCT) before installation to set your users' default settings, then perform the installation of users' custom defaults, install Outlook 2016, then enforce those settings and prevent users changing them after installation by using Group Policy. For Click-to-Run deployments, first use the Office Deployment Tool to set a small number of settings, install Outlook 2016, then set the full range of customization settings and prevent users changing them after installation by using Group Policy. For more information, see [Office Customization Tool in Office 2013](http://technet.microsoft.com/library/8faae8a0-a12c-4f7b-839c-24a66a531bb5.aspx) and [Customization overview for Click-to-Run](http://technet.microsoft.com/library/e5e0c0c8-a243-42e7-be20-87ac162a9d9f.aspx).
-  
+The MSI and Click-to-Run versions of Office and Outlook 2016 have different configuration options and administration tools. For MSI-based deployments, use the [Office Customization Tool (OCT)](https://docs.microsoft.com/deployoffice/oct/oct-2016-help-overview) before installation to set your users' default settings, install Outlook 2016, then enforce those settings and prevent users changing them after installation by using [Group Policy](https://www.microsoft.com/download/details.aspx?id=49030). For Click-to-Run deployments, first use the [Office Deployment Tool](https://docs.microsoft.com/DeployOffice/overview-of-the-office-2016-deployment-tool) to set a small number of settings, install Outlook, then set the full range of customization settings and prevent users changing them after installation by using [Group Policy](https://www.microsoft.com/download/details.aspx?id=49030).
+
 ### Upgrade or initial installation of Outlook
 
 If you are upgrading to Outlook 2016 from an earlier version of Outlook, consider whether you will migrate previous settings, change user profiles, and use new customization options. By default, user settings are migrated automatically, except for security settings. Customization of Outlook settings is optional and only needed if you want to change the default settings. Also Outlook can automatically create a new Outlook profile by using the [Autodiscover service](https://docs.microsoft.com/Exchange/architecture/client-access/autodiscover). 
