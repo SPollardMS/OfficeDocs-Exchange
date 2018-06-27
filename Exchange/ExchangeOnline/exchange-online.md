@@ -5,7 +5,8 @@ author: msdmaguire
 manager: laurawi
 ms.date: 6/22/2018
 ms.audience: ITPro
-ms.topic: hub-page
+layout: LandingPage
+ms.topic: landing-page
 ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: d0f509be-ee4b-46a2-9dc6-3bc3512a0a2d
