@@ -42,7 +42,7 @@ When you upgrade from Outlook 2003, Outlook 2007, Outlook 2010, or Outlook 2013 
   
 ### Remote and roaming users
 
-Cached Exchange Mode is recommended for all configurations, but it especially benefits remote users. Cached Exchange Mode creates a local copy of users' mailboxes. This gives users more reliable access to their Outlook data, whether or not they are connected to a network. For more information, see [Plan a Cached Exchange Mode deployment in Outlook 2016 for Windows](plan-cached-exchange-mode-deployment-outlook-2016.md).
+Cached Exchange Mode is recommended for all configurations, but it especially benefits remote users. Cached Exchange Mode creates a local copy of users' mailboxes. This gives users more reliable access to their Outlook data, whether or not they are connected to a network. For more information, see [Plan and configure Cached Exchange Mode in Outlook 2016 for Windows](cached-exchange-mode.md).
   
 You can customize Outlook to optimize the experience for remote and roaming users and to set up Outlook for multiple users on the same computer. When multiple users share the same computer, use Windows logon features on the computer's operating system to manage user logon verification. 
   
@@ -191,7 +191,7 @@ The process of upgrading users who currently have Cached Exchange Mode enabled i
   
 By default, when Outlook 2016 is installed, a new compressed version of the Outlook data file (.ost) is created. This compressed version of the .ost is up to 40% smaller than the size of the .ost files that were created in earlier versions of Outlook. If you must keep Outlook 2016 from creating a new compressed Outlook data file (.ost), use the Outlook Group Policy template (Outlk16.admx) to enable the **Do not create new OST file on upgrade** policy. You can find this setting under User Configuration\Policies\Administrative Templates\Microsoft Outlook 2016\Account Settings\Exchange. 
   
-For additional Cached Exchange Mode planning considerations, see [Plan a Cached Exchange Mode deployment in Outlook 2016 for Windows](plan-cached-exchange-mode-deployment-outlook-2016.md).
+For additional Cached Exchange Mode planning considerations, see [Plan and configure Cached Exchange Mode in Outlook 2016 for Windows](cached-exchange-mode.md).
   
 ## Installing multiple versions of Outlook on the same computer
 
