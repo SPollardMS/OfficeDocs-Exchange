@@ -28,7 +28,7 @@ Welcome to Microsoft Exchange Server 2016! This topic contains important informa
 
   - Add the user installing Exchange to the Domain Admins Active Directory security group.
 
-  - Install Exchange using a user that's a member of the Organization Management role group.
+  - Install Exchange using a user that is a member of the Organization Management role group.
 
 ## Mailbox
 <a name="Mailbox"> </a>
