@@ -15,7 +15,7 @@ description: Exchange
                         <a href="#home-all"></a>
                         <ul id="home-all" class="cardsC">
                             <li>
-                                <a href="https://go.microsoft.com/fwlink/p/?LinkId=619423">
+                                <a href="/Exchange/exchange-server">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -34,7 +34,7 @@ description: Exchange
                                 </a>
                             </li>
                             <li>
-                                <a href="https://go.microsoft.com/fwlink/p/?linkid=825607">
+                                <a href="/Exchange/exchange-online">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -53,7 +53,7 @@ description: Exchange
                                 </a>
                             </li>
                             <li>
-                                <a href="https://go.microsoft.com/fwlink/p/?linkid=252652">
+                                <a href="/Exchange/exchange-hybrid">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
