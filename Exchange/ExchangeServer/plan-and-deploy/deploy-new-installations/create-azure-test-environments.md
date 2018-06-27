@@ -17,7 +17,7 @@ description: "Summary: Create a single-server Exchange 2016 dev/test environment
 
 # Exchange 2016 dev/test environment in Azure
 
- **Summary:** Create a single-server Exchange 2016 dev/test environment in Microsoft Azure infrastructure services. 
+ **Summary:** Create a single-server Exchange 2016 dev/test environment in Microsoft Azure infrastructure services.
   
 This article steps you through creating an Exchange 2016 dev/test deployment in Microsoft Azure. Here is the resulting configuration.
   
@@ -36,120 +36,120 @@ There are three major phases to setting up this dev/test environment:
 If you do not already have an Azure subscription, you can sign up for an [Azure Free Trial](https://azure.microsoft.com/pricing/free-trial/). If you have an MSDN or Visual Studio subscription, see [Monthly Azure credit for Visual Studio subscribers](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/).
   
 > [!NOTE]
-> Because Exchange 2016 makes changes to the schema in Windows Server AD, this configuration cannot use Azure Active Directory Domain Services. 
+> Because Exchange 2016 makes changes to the schema in Windows Server AD, this configuration cannot use Azure Active Directory Domain Services.
   
 ## Phase 1: Deploy the virtual network and a domain controller
 
 You can create a new Azure virtual network with a domain controller with Azure PowerShell. You can run the following PowerShell commands from a Windows PowerShell command prompt or in the PowerShell Integrated Script Environment (ISE). If you have not installed Azure PowerShell, see [Get started with Azure PowerShell cmdlets](https://docs.microsoft.com/powershell/azureps-cmdlets-docs/).
   
 > [!NOTE]
-> These commands are for Azure PowerShell 1.0.0 and later. For a text file that contains all the PowerShell commands in this article, click [here](https://gallery.technet.microsoft.com/scriptcenter/PowerShell-commands-for-5d0b899d). 
+> These commands are for Azure PowerShell 1.0.0 and later. For a text file that contains all the PowerShell commands in this article, click [here](https://gallery.technet.microsoft.com/scriptcenter/PowerShell-commands-for-5d0b899d).
   
-First, sign into your Azure account.
+1. Sign into your Azure account.
   
-```
-Login-AzureRMAccount
-```
+    ```
+    Login-AzureRMAccount
+    ```
 
-Get your subscription name using the following command.
+2. Get your subscription name using the following command.
   
-```
-Get-AzureRMSubscription | Sort SubscriptionName | Select SubscriptionName
-```
+    ```
+    Get-AzureRMSubscription | Sort SubscriptionName | Select SubscriptionName
+    ```
 
-Set your Azure subscription with the following commands. Set the **$subscr** variable by replacing everything within the quotes, including the \< and \> characters, with the correct name. 
+3. Set your Azure subscription with the following commands. Set the **$subscr** variable by replacing everything within the quotes, including the \< and \> characters, with the correct name.
   
-```
-$subscr="<subscription name>"
-Get-AzureRmSubscription -SubscriptionName $subscr | Select-AzureRmSubscription
-```
+    ```
+    $subscr="<subscription name>"
+    Get-AzureRmSubscription -SubscriptionName $subscr | Select-AzureRmSubscription
+    ```
 
-Next, create a new resource group. To determine a unique resource group name, use this command to list your existing resource groups.
+4. Create a new resource group. To determine a unique resource group name, use this command to list your existing resource groups.
   
-```
-Get-AzureRMResourceGroup | Sort ResourceGroupName | Select ResourceGroupName
-```
+    ```
+    Get-AzureRMResourceGroup | Sort ResourceGroupName | Select ResourceGroupName
+    ```
 
-Create your new resource group with these commands. Set the variables by replacing everything within the quotes, including the \< and \> characters, with the correct names.
+    Create your new resource group with these commands. Set the variables by replacing everything within the quotes, including the \< and \> characters, with the correct names.
   
-```
-$rgName="<resource group name>"
-$locName="<location name, such as West US>"
-New-AzureRMResourceGroup -Name $rgName -Location $locName
-```
+    ```
+    $rgName="<resource group name>"
+    $locName="<location name, such as West US>"
+    New-AzureRMResourceGroup -Name $rgName -Location $locName
+    ```
 
-Resource Manager-based virtual machines require a Resource Manager-based storage account. You must pick a globally unique name for your storage account *that contains only lowercase letters and numbers* . You can use this command to list the existing storage accounts. 
+5. Resource Manager-based virtual machines require a Resource Manager-based storage account. You must pick a globally unique name for your storage account *that contains only lowercase letters and numbers*. You can use this command to list the existing storage accounts.
   
-```
-Get-AzureRMStorageAccount | Sort StorageAccountName | Select StorageAccountName
-```
+    ```
+    Get-AzureRMStorageAccount | Sort StorageAccountName | Select StorageAccountName
+    ```
 
-Use this command to test whether a proposed storage account name is unique.
+    Use this command to test whether a proposed storage account name is unique.
   
-```
-Get-AzureRmStorageAccountNameAvailability "<proposed name>"
-```
+    ```
+    Get-AzureRmStorageAccountNameAvailability "<proposed name>"
+    ```
 
-Create a new storage account for your new test environment with these commands.
+    Create a new storage account for your new test environment with these commands.
   
-```
-$rgName="<your new resource group name>"
-$saName="<storage account name>"
-$locName=(Get-AzureRmResourceGroup -Name $rgName).Location
-New-AzureRMStorageAccount -Name $saName -ResourceGroupName $rgName -Type Standard_LRS -Location $locName
-```
+    ```
+    $rgName="<your new resource group name>"
+    $saName="<storage account name>"
+    $locName=(Get-AzureRmResourceGroup -Name $rgName).Location
+    New-AzureRMStorageAccount -Name $saName -ResourceGroupName $rgName -Type Standard_LRS -Location $locName
+    ```
 
-Next, you create the EX2016Vnet Azure Virtual Network that will host the EX2016Subnet subnet and protect it with a network security group.
+6. Create the EX2016Vnet Azure Virtual Network that will host the EX2016Subnet subnet and protect it with a network security group.
   
-```
-$rgName="<name of your new resource group>"
-$locName=(Get-AzureRmResourceGroup -Name $rgName).Location
-$exSubnet=New-AzureRMVirtualNetworkSubnetConfig -Name EX2016Subnet -AddressPrefix 10.0.0.0/24
-New-AzureRMVirtualNetwork -Name EX2016Vnet -ResourceGroupName $rgName -Location $locName -AddressPrefix 10.0.0.0/16 -Subnet $exSubnet -DNSServer 10.0.0.4
-$rule1 = New-AzureRMNetworkSecurityRuleConfig -Name "RDPTraffic" -Description "Allow RDP to all VMs on the subnet" -Access Allow -Protocol Tcp -Direction Inbound -Priority 100 -SourceAddressPrefix Internet -SourcePortRange * -DestinationAddressPrefix * -DestinationPortRange 3389
-$rule2 = New-AzureRMNetworkSecurityRuleConfig -Name "ExchangeSecureWebTraffic" -Description "Allow HTTPS to the Exchange server" -Access Allow -Protocol Tcp -Direction Inbound -Priority 101 -SourceAddressPrefix Internet -SourcePortRange * -DestinationAddressPrefix "10.0.0.5/32" -DestinationPortRange 443
-New-AzureRMNetworkSecurityGroup -Name EX2016Subnet -ResourceGroupName $rgName -Location $locName -SecurityRules $rule1, $rule2
-$vnet=Get-AzureRMVirtualNetwork -ResourceGroupName $rgName -Name EX2016Vnet
-$nsg=Get-AzureRMNetworkSecurityGroup -Name EX2016Subnet -ResourceGroupName $rgName
-Set-AzureRMVirtualNetworkSubnetConfig -VirtualNetwork $vnet -Name EX2016Subnet -AddressPrefix "10.0.0.0/24" -NetworkSecurityGroup $nsg
-```
+    ```
+    $rgName="<name of your new resource group>"
+    $locName=(Get-AzureRmResourceGroup -Name $rgName).Location
+    $exSubnet=New-AzureRMVirtualNetworkSubnetConfig -Name EX2016Subnet -AddressPrefix 10.0.0.0/24
+    New-AzureRMVirtualNetwork -Name EX2016Vnet -ResourceGroupName $rgName -Location $locName -AddressPrefix 10.0.0.0/16 -Subnet $exSubnet -DNSServer 10.0.0.4
+    $rule1 = New-AzureRMNetworkSecurityRuleConfig -Name "RDPTraffic" -Description "Allow RDP to all VMs on the subnet" -Access Allow -Protocol Tcp -Direction Inbound -Priority 100 -SourceAddressPrefix Internet -SourcePortRange * -DestinationAddressPrefix * -DestinationPortRange 3389
+    $rule2 = New-AzureRMNetworkSecurityRuleConfig -Name "ExchangeSecureWebTraffic" -Description "Allow HTTPS to the Exchange server" -Access Allow -Protocol Tcp -Direction Inbound -Priority 101 -SourceAddressPrefix Internet -SourcePortRange * -DestinationAddressPrefix "10.0.0.5/32" -DestinationPortRange 443
+    New-AzureRMNetworkSecurityGroup -Name EX2016Subnet -ResourceGroupName $rgName -Location $locName -SecurityRules $rule1, $rule2
+    $vnet=Get-AzureRMVirtualNetwork -ResourceGroupName $rgName -Name EX2016Vnet
+    $nsg=Get-AzureRMNetworkSecurityGroup -Name EX2016Subnet -ResourceGroupName $rgName
+    Set-AzureRMVirtualNetworkSubnetConfig -VirtualNetwork $vnet -Name EX2016Subnet -AddressPrefix "10.0.0.0/24" -NetworkSecurityGroup $nsg
+    ```
 
-Next, we create the adVM virtual machine in Azure. adVM is a domain controller for the corp.contoso.com Windows Server AD domain and a DNS server for the virtual machines of the EX2016Vnet virtual network.
+7. Create the adVM virtual machine in Azure. adVM is a domain controller for the corp.contoso.com Windows Server AD domain and a DNS server for the virtual machines of the EX2016Vnet virtual network.
   
-First, fill in the name of your resource group, Azure location, and storage account name and run these commands at the Azure PowerShell command prompt on your local computer to create an Azure virtual machine for adVM.
+    First, fill in the name of your resource group, Azure location, and storage account name and run these commands at the Azure PowerShell command prompt on your local computer to create an Azure virtual machine for adVM.
   
-```
-$rgName="<resource group name>"
-# Create an availability set for domain controller virtual machines
-New-AzureRMAvailabilitySet -ResourceGroupName $rgName -Name dcAvailabilitySet -Location $locName -Sku Aligned  -PlatformUpdateDomainCount 5 -PlatformFaultDomainCount 2
-# Create the domain controller virtual machine
-$vnet=Get-AzureRMVirtualNetwork -Name EX2016Vnet -ResourceGroupName $rgName
-$pip = New-AzureRMPublicIpAddress -Name adVM-NIC -ResourceGroupName $rgName -Location $locName -AllocationMethod Dynamic
-$nic = New-AzureRMNetworkInterface -Name adVM-NIC -ResourceGroupName $rgName -Location $locName -SubnetId $vnet.Subnets[0].Id -PublicIpAddressId $pip.Id -PrivateIpAddress 10.0.0.4
-$avSet=Get-AzureRMAvailabilitySet -Name dcAvailabilitySet -ResourceGroupName $rgName 
-$vm=New-AzureRMVMConfig -VMName adVM -VMSize Standard_D1_v2 -AvailabilitySetId $avSet.Id
-$vm=Set-AzureRmVMOSDisk -VM $vm -Name adVM-OS -DiskSizeInGB 128 -CreateOption FromImage -StorageAccountType "StandardLRS"
-$diskConfig=New-AzureRmDiskConfig -AccountType "StandardLRS" -Location $locName -CreateOption Empty -DiskSizeGB 20
-$dataDisk1=New-AzureRmDisk -DiskName adVM-DataDisk1 -Disk $diskConfig -ResourceGroupName $rgName
-$vm=Add-AzureRmVMDataDisk -VM $vm -Name adVM-DataDisk1 -CreateOption Attach -ManagedDiskId $dataDisk1.Id -Lun 1
-$cred=Get-Credential -Message "Type the name and password of the local administrator account for adVM."
-$vm=Set-AzureRMVMOperatingSystem -VM $vm -Windows -ComputerName adVM -Credential $cred -ProvisionVMAgent -EnableAutoUpdate
-$vm=Set-AzureRMVMSourceImage -VM $vm -PublisherName MicrosoftWindowsServer -Offer WindowsServer -Skus 2012-R2-Datacenter -Version "latest"
-$vm=Add-AzureRMVMNetworkInterface -VM $vm -Id $nic.Id
-New-AzureRMVM -ResourceGroupName $rgName -Location $locName -VM $vm
-```
+    ```
+    $rgName="<resource group name>"
+    # Create an availability set for domain controller virtual machines
+    New-AzureRMAvailabilitySet -ResourceGroupName $rgName -Name dcAvailabilitySet -Location $locName -Sku Aligned  -PlatformUpdateDomainCount 5 -PlatformFaultDomainCount 2
+    # Create the domain controller virtual machine
+    $vnet=Get-AzureRMVirtualNetwork -Name EX2016Vnet -ResourceGroupName $rgName
+    $pip = New-AzureRMPublicIpAddress -Name adVM-NIC -ResourceGroupName $rgName -Location $locName -AllocationMethod Dynamic
+    $nic = New-AzureRMNetworkInterface -Name adVM-NIC -ResourceGroupName $rgName -Location $locName -SubnetId $vnet.Subnets[0].Id -PublicIpAddressId $pip.Id -PrivateIpAddress 10.0.0.4
+    $avSet=Get-AzureRMAvailabilitySet -Name dcAvailabilitySet -ResourceGroupName $rgName 
+    $vm=New-AzureRMVMConfig -VMName adVM -VMSize Standard_D1_v2 -AvailabilitySetId $avSet.Id
+    $vm=Set-AzureRmVMOSDisk -VM $vm -Name adVM-OS -DiskSizeInGB 128 -CreateOption FromImage -StorageAccountType "StandardLRS"
+    $diskConfig=New-AzureRmDiskConfig -AccountType "StandardLRS" -Location $locName -CreateOption Empty -DiskSizeGB 20
+    $dataDisk1=New-AzureRmDisk -DiskName adVM-DataDisk1 -Disk $diskConfig -ResourceGroupName $rgName
+    $vm=Add-AzureRmVMDataDisk -VM $vm -Name adVM-DataDisk1 -CreateOption Attach -ManagedDiskId $dataDisk1.Id -Lun 1
+    $cred=Get-Credential -Message "Type the name and password of the local administrator account for adVM."
+    $vm=Set-AzureRMVMOperatingSystem -VM $vm -Windows -ComputerName adVM -Credential $cred -ProvisionVMAgent -EnableAutoUpdate
+    $vm=Set-AzureRMVMSourceImage -VM $vm -PublisherName MicrosoftWindowsServer -Offer WindowsServer -Skus 2012-R2-Datacenter -Version "latest"
+    $vm=Add-AzureRMVMNetworkInterface -VM $vm -Id $nic.Id
+    New-AzureRMVM -ResourceGroupName $rgName -Location $locName -VM $vm
+    ```
 
-You will be prompted for a user name and password. This article will refer to this user name as ADMIN_NAME. Use a strong password and record both in a secure location.
+    You will be prompted for a user name and password. This article will refer to this user name as ADMIN_NAME. Use a strong password and record both in a secure location.
   
- **Note**: The password that you specify cannot be "pass@word1". It must be between 8-123 characters long and must satisfy at least 3 of the following password complexity requirements:
+     **Note**: The password that you specify cannot be "pass@word1". It must be between 8-123 characters long and must satisfy at least 3 of the following password complexity requirements:
   
-- Contains an uppercase letter
+    - Contains an uppercase letter
     
-- Contains an lowercase letter
+    - Contains an lowercase letter
     
-- Contains a numeric digit
+    - Contains a numeric digit
     
-- Contains a special character
+    - Contains a special character
     
 It can take a few minutes for Azure to build the virtual machine.
   
@@ -165,23 +165,22 @@ It can take a few minutes for Azure to build the virtual machine.
     
 5. When prompted, click **Yes**.
     
-Next, add an extra data disk as a new volume with the drive letter F: with these commands at an administrator-level Windows PowerShell command prompt on adVM.
+6. Add an extra data disk as a new volume with the drive letter F: with these commands at an administrator-level Windows PowerShell command prompt on adVM.
   
-```
-$disk=Get-Disk | where {$_.PartitionStyle -eq "RAW"}
-$diskNumber=$disk.Number
-Initialize-Disk -Number $diskNumber
-New-Partition -DiskNumber $diskNumber -UseMaximumSize -AssignDriveLetter
-Format-Volume -DriveLetter F
-```
+    ```
+    $disk=Get-Disk | where {$_.PartitionStyle -eq "RAW"}
+    $diskNumber=$disk.Number
+    Initialize-Disk -Number $diskNumber
+    New-Partition -DiskNumber $diskNumber -UseMaximumSize -AssignDriveLetter
+    Format-Volume -DriveLetter F
+    ```
 
-Next, configure adVM as a domain controller and DNS server for the corp.contoso.com domain. Run these commands at an administrator-level Windows PowerShell command prompt on adVM.
+7. Configure adVM as a domain controller and DNS server for the corp.contoso.com domain. Run these commands at an administrator-level Windows PowerShell command prompt on adVM.
   
-```
-Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
-Install-ADDSForest -DomainName corp.contoso.com -DatabasePath "F:\NTDS" -SysvolPath "F:\SYSVOL" -LogPath "F:\Logs"
-
-```
+    ```
+   Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
+    Install-ADDSForest -DomainName corp.contoso.com -DatabasePath "F:\NTDS" -SysvolPath "F:\SYSVOL" -LogPath "F:\Logs"
+    ```
 
 Note that these commands can take a few minutes to complete.
   
@@ -199,12 +198,11 @@ After adVM restarts, reconnect to the adVM virtual machine.
     
 5. When prompted, click **Yes**.
     
-From the desktop, open an administrator-level Windows PowerShell command prompt and run the following command:
+6. From the desktop, open an administrator-level Windows PowerShell command prompt and run the following command:
   
-```
-Add-WindowsFeature RSAT-ADDS-Tools
-
-```
+    ```
+    Add-WindowsFeature RSAT-ADDS-Tools
+    ```
 
 Here is the result of Phase 1.
   
@@ -220,7 +218,7 @@ To create the Exchange 2016 virtual machine with Azure PowerShell, first log in 
 Login-AzureRmAccount
 ```
 
-You must determine a globally unique DNS name for the exVM virtual machine. You must pick a globally unique DNS name *that contains only lowercase letters and numbers* . You can do this with the following PowerShell commands: 
+You must determine a globally unique DNS name for the exVM virtual machine. You must pick a globally unique DNS name *that contains only lowercase letters and numbers*. You can do this with the following PowerShell commands: 
   
 ```
 $vmDNSName="<DNS name to test>"
@@ -263,11 +261,10 @@ $vm=Set-AzureRMVMOperatingSystem -VM $vm -Windows -ComputerName $vmName -Credent
 $vm=Set-AzureRMVMSourceImage -VM $vm -PublisherName MicrosoftWindowsServer -Offer WindowsServer -Skus 2012-R2-Datacenter -Version "latest"
 $vm=Add-AzureRMVMNetworkInterface -VM $vm -Id $nic.Id
 New-AzureRMVM -ResourceGroupName $rgName -Location $locName -VM $vm
-
 ```
 
 > [!NOTE]
-> This command block uses a standard storage account created in phase 1 to reduce costs for this dev/test environment. For a production Exchange 2016 server, you must use a premium storage account. 
+> This command block uses a standard storage account created in phase 1 to reduce costs for this dev/test environment. For a production Exchange 2016 server, you must use a premium storage account.
   
 From the Azure portal, connect to the exVM virtual machine using the credentials of the local administrator account.
   
@@ -278,7 +275,7 @@ Add-Computer -DomainName "corp.contoso.com"
 Restart-Computer
 ```
 
-Note that you must supply domain account credentials after entering the **Add-Computer** command. Use the CORP\\<ADMIN_NAME\> account and password. 
+Note that you must supply domain account credentials after entering the **Add-Computer** command. Use the CORP\\<ADMIN_NAME\> account and password.
   
 Here is the result of Phase 2.
   
@@ -332,7 +329,7 @@ In this phase, you configure Exchange 2016 on exVM and test mail delivery betwee
     
 8. From Internet Explorer, download the latest version of Exchange 2016 at [Updates for Exchange 2016](../../new-features/updates.md).
     
-9. Click **Save** to store the ISO file in the Downloads folder. 
+9. Click **Save** to store the ISO file in the Downloads folder.
     
 10. Click **Open Folder**, right-click the Exchange ISO file, and then click **Mount**.
     
@@ -352,7 +349,7 @@ Wait until Exchange setup completes, which can take some time, and exVM restarts
     
 2. From the Start screen, type **Exchange**, and then click **Exchange Management Shell**.
     
-3. Copy the following commands to Notepad, insert the Internet DNS name of the exVM virtual machine for the **$dnsName** variable, and then copy and paste the resulting commands into the Exchange Management Shell. 
+3. Copy the following commands to Notepad, insert the Internet DNS name of the exVM virtual machine for the **$dnsName** variable, and then copy and paste the resulting commands into the Exchange Management Shell.
     
   ```
   $dnsName="<Internet DNS name of the exVM virtual machine>"

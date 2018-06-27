@@ -38,7 +38,7 @@ MAPI over HTTP offers the following benefits to clients that support it:
     
 ## Upgrading MAPI over HTTP to Exchange 2016
 
-In Exchange Server 2016, MAPI over HTTP is enabled by default at the organization level, although you still need to configure virtual directories as described in [Configure MAPI over HTTP](configure-mapi-over-http.md) for users to take advantage of it . The same is true if you are upgrading to Exchange 2016 from Exchange 2010, or if you have a mixed environment consisting of both Exchange 2010 and Exchange 2016 servers. 
+In Exchange Server 2016, MAPI over HTTP is enabled by default at the organization level, although you still need to configure virtual directories as described in [Configure MAPI over HTTP](configure-mapi-over-http.md) for users to take advantage of it . The same is true if you're upgrading to Exchange 2016 from Exchange 2010, or if you have a mixed environment consisting of both Exchange 2010 and Exchange 2016 servers.
   
 While upgrading from Exchange 2013 to Exchange 2016, or from a mixed Exchange 2010 and Exchange 2013 environment to Exchange 2016, administrators will receive a readiness check warning them that [MAPI over HTTP isn't enabled [WarnMapiHttpNotEnabled]](../../plan-and-deploy/deployment-ref/ms-exch-setupreadiness-warnmapihttpnotenabled.md), and it is recommended that they enable it post-installation. In any organization containing Exchange 2013 servers, MAPI over HTTP won't be enabled by default, and administrators will have to follow the steps in [Configure MAPI over HTTP](configure-mapi-over-http.md).
   
@@ -61,7 +61,7 @@ Use the following matrix to verify that your clients and servers support MAPI ov
    
 ### Prerequisites
 
-The following software and conditions are required for clients and servers to support MAPI over HTTP with Exchange Server 2016. Once the following prerequisites are in place, see [Configure MAPI over HTTP](configure-mapi-over-http.md) to enable it in your organization. 
+The following software and conditions are required for clients and servers to support MAPI over HTTP with Exchange Server 2016. Once the following prerequisites are in place, see [Configure MAPI over HTTP](configure-mapi-over-http.md) to enable it in your organization.
   
 - Supported Outlook clients are Outlook 2016, Outlook 2013 SP1 or later, or Outlook 2010 SP2 with updates KB2956191 and KB2965295 (April 14, 2015).
     

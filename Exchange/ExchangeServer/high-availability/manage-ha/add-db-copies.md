@@ -25,7 +25,7 @@ Looking for other management tasks related to mailbox database copies? Check out
 
 - Estimated time to complete this task: 2 minutes, plus the time to seed the database copy, which depends on a variety of factors, such as the size of the database, the speed, available bandwidth and latency of the network, and storage speeds.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Mailbox database copies" entry in the [High availability and site resilience permissions](../../permissions/feature-permissions/ha-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Mailbox database copies" entry in the [High availability and site resilience permissions](../../permissions/feature-permissions/ha-permissions.md) topic.
     
 - The active copy of the database must be mounted.
     
@@ -40,7 +40,7 @@ Looking for other management tasks related to mailbox database copies? Check out
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).. 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351)..
   
 ## Use the EAC to add a mailbox database copy
 <a name="UseEMC"> </a>
@@ -51,13 +51,13 @@ Looking for other management tasks related to mailbox database copies? Check out
     
 3. On the **add mailbox database copy** page, click **Browse...**, select the Mailbox server that will host the database copy, and then click **OK**.
     
-4. Optionally, configure the **Activation preference number** for the database copy. 
+4. Optionally, configure the **Activation preference number** for the database copy.
     
-5. Click **More options…** to designate the database copy as a lagged database copy by configuring a replay lag time, or to postpone automatic seeding of the database copy. 
+5. Click **More options…** to designate the database copy as a lagged database copy by configuring a replay lag time, or to postpone automatic seeding of the database copy.
     
-6. Click **Save** to save the configuration changes and add the mailbox database copy. 
+6. Click **Save** to save the configuration changes and add the mailbox database copy.
     
-7. Click **OK** to acknowledge any messages that appear. 
+7. Click **OK** to acknowledge any messages that appear.
     
 ## Use the Exchange Management Shell to add a mailbox database copy
 <a name="UseShell"> </a>

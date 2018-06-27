@@ -17,7 +17,7 @@ description: "Summary: Overview of Exchange installation options."
 
  **Summary**: Overview of Exchange installation options.
   
-Before you begin your installation of Microsoft Exchange Server 2016, see [Planning and deployment](../../plan-and-deploy/plan-and-deploy.md) for important planning information, and information about system requirements and prerequisites. 
+Before you begin your installation of Microsoft Exchange Server 2016, see [Planning and deployment](../../plan-and-deploy/plan-and-deploy.md) for important planning information, and information about system requirements and prerequisites.
   
 The following topics provide information about deploying a new installation of Exchange 2016 in your organization:
   

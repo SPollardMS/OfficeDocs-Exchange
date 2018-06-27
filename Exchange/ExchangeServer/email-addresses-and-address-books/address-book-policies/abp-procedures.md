@@ -26,7 +26,7 @@ Address book policies (ABPs) allow you to segment users into specific groups to 
 
 - You can assign ABPs to mailboxes in the Exchange admin center (EAC), but all other ABP procedures require the Exchange Management Shell. For more information about accessing and using the EAC, see [Exchange admin center in Exchange 2016](../../architecture/client-access/exchange-admin-center.md). To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Address book policies" entry in the [Email address and address book permissions](../../permissions/feature-permissions/address-book-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Address book policies" entry in the [Email address and address book permissions](../../permissions/feature-permissions/address-book-permissions.md) topic.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
@@ -58,9 +58,9 @@ For detailed syntax and parameter information, see [Get-AddressBookPolicy](http:
 ## Use the Exchange Management Shell to create address book policies
 <a name="CreateABP"> </a>
 
-An ABP requires one global address list (GAL), one offline address book (OAB), one room list, and one or more address lists. To view the available objects, use the **Get-GlobalAddressList**, **Get-OfflineAddressBook**, and **Get-AddressList** cmdlets. 
+An ABP requires one global address list (GAL), one offline address book (OAB), one room list, and one or more address lists. To view the available objects, use the **Get-GlobalAddressList**, **Get-OfflineAddressBook**, and **Get-AddressList** cmdlets.
 
- **Note**: The room list that's required for an ABP is an address list that specifies rooms (contains the filter `RecipientDisplayType -eq 'ConferenceRoomMailbox'`). It's not a room finder distribution group that you create with the _RoomList_ switch on the **New-DistributionGroup** or **Set-DistributionGroup** cmdlets. 
+ **Note**: The room list that's required for an ABP is an address list that specifies rooms (contains the filter `RecipientDisplayType -eq 'ConferenceRoomMailbox'`). It's not a room finder distribution group that you create with the _RoomList_ switch on the **New-DistributionGroup** or **Set-DistributionGroup** cmdlets.
 
 To create an ABP, use this syntax:
 
@@ -103,9 +103,9 @@ To verify that you've successfully created an ABP, use either of these procedure
 ## Use the Exchange Management Shell to modify address book policies
 <a name="ModifyABP"> </a>
 
-You use the **Set-AddressBookPolicy** cmdlet to modify an existing ABP. The settings are identical to the settings that are available when you create an ABP. 
+You use the **Set-AddressBookPolicy** cmdlet to modify an existing ABP. The settings are identical to the settings that are available when you create an ABP.
 
-- The _Name_, _GlobalAddressList_, _OfflineAddressBook_, and _RoomList_ parameters all take single values, so the value you specify replaces the existing value. 
+- The _Name_, _GlobalAddressList_, _OfflineAddressBook_, and _RoomList_ parameters all take single values, so the value you specify replaces the existing value.
 
     This example modifies the ABP named "All Fabrikam ABP" by replacing the OAB with the specified OAB.
 
@@ -113,7 +113,7 @@ You use the **Set-AddressBookPolicy** cmdlet to modify an existing ABP. The sett
   Set-AddressBookPolicy -Identity "All Fabrikam ABP" -OfflineAddressBook \Fabrikam-OAB-2
   ```
 
-- The _AddressLists_ parameter takes multiple values, so you need to decide whether you want to *replace* the existing address lists in the ABP, or *add and remove* address lists without affecting the other address lists in the ABP. 
+- The _AddressLists_ parameter takes multiple values, so you need to decide whether you want to *replace* the existing address lists in the ABP, or *add and remove* address lists without affecting the other address lists in the ABP.
 
     This example replaces the existing address lists in the ABP named Government Agency A with the specified address lists.
 
@@ -121,7 +121,7 @@ You use the **Set-AddressBookPolicy** cmdlet to modify an existing ABP. The sett
   Set-AddressBookPolicy -Identity "Government Agency A" -AddressLists "GovernmentAgencyA-Atlanta","GovernmentAgencyA-Moscow"
   ```
 
-    To add address lists to an ABP, you need to specify the new address lists *and* any existing address lists that you want to keep. 
+    To add address lists to an ABP, you need to specify the new address lists *and* any existing address lists that you want to keep.
 
     This example adds the address list named Contoso-Chicago to the ABP named ABP Contoso, which is already configured to use the address list named Contoso-Seattle.
 
@@ -158,7 +158,7 @@ Get-AddressBookPolicy -Identity "<ABPIdenity>" | Format-List
 
      `Get-Mailbox -ResultSize unlimited -Filter {AddressBookPolicy -eq '<DistinguishedName>'}`
 
-- To remove ABP assignments from mailboxes, see the [Assign address book policies to mailboxes](abp-procedures.md#AssignABP) section in this topic. 
+- To remove ABP assignments from mailboxes, see the [Assign address book policies to mailboxes](abp-procedures.md#AssignABP) section in this topic.
 
 To remove an ABP, use this syntax:
 
@@ -201,7 +201,7 @@ To verify that you've successfully removed an ABP, use either of these procedure
 
   - To assign ABPs to mailboxes, you select the ABP in EAC, or specify the ABP in the Exchange Management Shell.
 
-  - To remove the ABP assignments from mailboxes, you select the value **[No Policy]** in the EAC, or use the value `$null` in the Exchange Management Shell. 
+  - To remove the ABP assignments from mailboxes, you select the value **[No Policy]** in the EAC, or use the value `$null` in the Exchange Management Shell.
 
 ### Use the Exchange admin center (EAC) to assign an ABP to a single mailbox
 
@@ -211,11 +211,11 @@ To verify that you've successfully removed an ABP, use either of these procedure
 
   - Scroll through the list of mailboxes.
 
-  - Click **Search**![Search icon](../../media/ITPro_EAC_.png) and enter part of the user's name, email address, or alias. 
+  - Click **Search** ![Search icon](../../media/ITPro_EAC_.png) and enter part of the user's name, email address, or alias.
 
-  - Click **More options**![More Options icon](../../media/ITPro_EAC_MoreOptionsIcon.png) \> **Advanced search** to find the mailbox. 
+  - Click **More options** ![More Options icon](../../media/ITPro_EAC_MoreOptionsIcon.png) \> **Advanced search** to find the mailbox.
 
-    Once you've found the mailbox that you want to modify, select it, and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
+    Once you've found the mailbox that you want to modify, select it, and then click **Edit** ![Edit icon](../../media/ITPro_EAC_EditIcon.png).
 
 3. On the mailbox properties page that opens, click **Mailbox features**.
 
@@ -250,13 +250,13 @@ For detailed syntax and parameter information, see [Set-Mailbox](http://technet.
 
 2. In the list of mailboxes, find the mailboxes that you want to modify. For example:
 
-1. Click **More options**![More Options icon](../../media/ITPro_EAC_MoreOptionsIcon.png) \> **Advanced search**.
+1. Click **More options** ![More Options icon](../../media/ITPro_EAC_MoreOptionsIcon.png) \> **Advanced search**.
 
 2. In the **Advanced search** window that opens, select **Recipient types** and verify the default value **User mailbox**.
 
 3. Click **More options**, and then click **Add a condition**.
 
-4. In the **Select one** drop down box that appears, select the appropriate **Custom attribute 1** to **Custom attribute 15** values that defines your virtual organizations. 
+4. In the **Select one** drop down box that appears, select the appropriate **Custom attribute 1** to **Custom attribute 15** values that defines your virtual organizations.
 
 5. In the **Specify words or phrases** dialog that appears, enter the value that you want to search for, and then click **OK**.
 
@@ -291,7 +291,7 @@ You can use the **Get-Mailbox** or **Get-Content** cmdlets to identify the user 
   hrim@tailspintoys.com
   ```
 
-This example assigns the ABP named ABP_EngineeringDepartment to all user mailboxes where the `CustomAttribute11` attribute contains the value Engineering Department. 
+This example assigns the ABP named ABP_EngineeringDepartment to all user mailboxes where the `CustomAttribute11` attribute contains the value Engineering Department.
 
 ```
 Get-Mailbox -Filter {RecipientType -eq 'UserMailbox' -and CustomAttribute11 -like '*Engineering Department'} | Set-Mailbox -AddressBookPolicy "ABP_EngineeringDepartment"
@@ -309,7 +309,7 @@ For detailed syntax and parameter information, see [Get-Mailbox](http://technet.
 
 To verify that you've successfully assigned an ABP to a mailbox, do any of these steps:
 
-- In the EAC, go to **Recipients** \> **Mailboxes** \> select the mailbox \> click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png) \> **Mailbox features** and verify the **Address Book Policy** value. 
+- In the EAC, go to **Recipients** \> **Mailboxes** \> select the mailbox \> click **Edit** ![Edit icon](../../media/ITPro_EAC_EditIcon.png) \> **Mailbox features** and verify the **Address Book Policy** value.
     ![Address book policy settings for a mailbox in the EAC at Recipients \> select mailbox \> Edit \> Mailbox features](../../media/2b219961-4664-40b3-873c-5892f1fcf2b6.png)
 
 - In the Exchange Management Shell, replace _\<MailboxIdentity\>_ with the identity of the mailbox (for example, name, alias, or email address), and run this command: 
@@ -343,7 +343,7 @@ Address Book Policy routing (ABP routing) controls how recipients are resolved i
 
 ABP routing requires that you install and enable the Address Book Policy Routing Agent (ABP Routing Agent) on all Mailbox servers in your organization, and enable ABP routing globally in your organization. After you do this, it might take up to 30 minutes for messages to be processed by the ABP Routing Agent.
 
-You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Transport Agents" entry in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic. 
+You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Transport Agents" entry in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic.
 
 ### Step 1: Install the ABP Routing agent
 

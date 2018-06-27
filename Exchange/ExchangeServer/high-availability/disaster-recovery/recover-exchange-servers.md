@@ -17,13 +17,13 @@ description: "Summary: Step-by-step guidance for recovering a lost Exchange 2016
 
  **Summary**: Step-by-step guidance for recovering a lost Exchange 2016 Server.
   
-You can recover a lost server by using the **Setup /m:RecoverServer** switch in Microsoft Exchange Server 2016. Most of the settings for a computer running Exchange 2016 are stored in Active Directory. The _/m:RecoverServer_ switch rebuilds an Exchange server with the same name by using the settings and other information stored in Active Directory. 
+You can recover a lost server by using the **Setup /m:RecoverServer** switch in Microsoft Exchange Server 2016. Most of the settings for a computer running Exchange 2016 are stored in Active Directory. The _/m:RecoverServer_ switch rebuilds an Exchange server with the same name by using the settings and other information stored in Active Directory.
   
 Recovering a lost Exchange server is often accomplished by using new hardware. However, you can also use an existing server.
   
 This topic shows you how to recover a lost Exchange 2016 server that isn't a member of a database availability group (DAG). For detailed steps about how to recover a server that was a member of a DAG, see [Recover a database availability group member server](recover-dag-member-servers.md).
   
- **Note**: If Exchange is installed in a location other than the default location, you must use the _/TargetDir_ switch to specify the location of the Exchange binary files. If you don't use the _/TargetDir_ switch, the Exchange files are installed in the default location (%programfiles%\Microsoft\Exchange Server\V15). 
+ **Note**: If Exchange is installed in a location other than the default location, you must use the _/TargetDir_ switch to specify the location of the Exchange binary files. If you don't use the _/TargetDir_ switch, the Exchange files are installed in the default location (%programfiles%\Microsoft\Exchange Server\V15).
   
 To determine the install location, follow these steps:
   
@@ -33,7 +33,7 @@ To determine the install location, follow these steps:
     
 3. Right-click the Exchange server object, and then click **Properties**.
     
-4. Locate the **msExchInstallPath** attribute. This attribute stores the current installation path. 
+4. Locate the **msExchInstallPath** attribute. This attribute stores the current installation path.
     
 Looking for other management tasks related to backing up and restoring data? Check out [Backup, Restore, and Disaster Recovery](http://technet.microsoft.com/library/394fc4ed-fa02-41fa-9159-cc2754ff8875.aspx).
   
@@ -41,7 +41,7 @@ Looking for other management tasks related to backing up and restoring data? Che
 
 - Estimated time to complete: 20 minutes
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Exchange infrastructure permissions" section in the [Exchange infrastructure and PowerShell permissions](../../permissions/feature-permissions/infrastructure-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Exchange infrastructure permissions" section in the [Exchange infrastructure and PowerShell permissions](../../permissions/feature-permissions/infrastructure-permissions.md) topic.
     
 - You must recover the server to the same Cumulative Update version as it was at the time of failure. It is not possible to recover a server and update it at the same time.
     
@@ -54,7 +54,7 @@ Looking for other management tasks related to backing up and restoring data? Che
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).. 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351)..
   
 ## Recover a Lost Exchange Server
 

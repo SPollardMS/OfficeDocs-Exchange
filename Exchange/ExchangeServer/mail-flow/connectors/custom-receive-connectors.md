@@ -30,7 +30,7 @@ If you need to create a custom Receive connector, consider these issues:
     
   - **Edge Transport servers**: The Transport service.
     
-- Each Receive connector on an Exchange server requires a unique combination of network adapter bindings (the combination of **local IP address** and **TCP port**) and **remote network settings** (remote IP addresses). 
+- Each Receive connector on an Exchange server requires a unique combination of network adapter bindings (the combination of **local IP address** and **TCP port**) and **remote network settings** (remote IP addresses).
     
   - A default Receive connector that listens on port 25 on all available local IP addresses from all remote IP addresses already exists on all Mailbox servers and Edge Transport servers.
     
@@ -50,26 +50,26 @@ Read more about Receive connectors in Exchange 2016 see, [Receive connectors](re
     
 - The Exchange Management Shell procedures are available on Mailbox servers and Edge Transport servers. To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Receive connectors" entry in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Receive connectors" entry in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic.
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
   
 ## Scenario 1: Receive email from the Internet
 
 For this scenario, the Receive connector listens for anonymous SMTP connections on port 25 from all remote IP addresses. Typically, you don't need to manually configure a Receive connector to receive mail from the Internet. A Receive connector with these settings is automatically created by the installation of a Mailbox server or an Edge Transport server:
   
-- The Receive connector named Default Frontend _\<ServerName\>_ in the Front End Transport service on Mailbox servers. 
+- The Receive connector named Default Frontend _\<ServerName\>_ in the Front End Transport service on Mailbox servers.
     
-- The Receive connector named Default internal receive connector _\<ServerName\>_ on Edge Transport servers. 
+- The Receive connector named Default internal receive connector _\<ServerName\>_ on Edge Transport servers.
     
 If one of these connectors exists, and you try to create a custom Receive connector on the server that also listens for anonymous SMTP connections on port 25 from all remote IP addresses, you'll get an error. You'll need to change the network adapter binding on the conflicting Receive connector to a specific local IP address. When you create the custom Internet Receive connector, you'll need to specify a different network adapter binding.
   
 ### Use the EAC to create an Internet Receive connector on Mailbox servers
 
-1. In the EAC, go to **Mail flow** \> **Receive connectors**, and then click **Add** ( ![Add icon](../../media/ITPro_EAC_AddIcon.png)).
+1. In the EAC, go to **Mail flow** \> **Receive connectors**, and then click **Add** (![Add icon](../../media/ITPro_EAC_AddIcon.png)).
     
 2. The **New receive connector** wizard opens. On the first page, configure these settings: 
     
@@ -87,18 +87,18 @@ If one of these connectors exists, and you try to create a custom Receive connec
     
   - If you're creating an Internet Receive connector while the default Receive connector named Default Frontend _\<ServerName\>_ still exists on the Mailbox server, do these steps: 
     
-1. Select the default entry **IP addresses**: **(All available IPv4)** and **Port**: **25**, and then click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)).
+1. Select the default entry **IP addresses**: **(All available IPv4)** and **Port**: **25**, and then click **Edit** (![Edit icon](../../media/ITPro_EAC_EditIcon.png)).
     
 2. In the **Edit IP address** dialog that opens, configure these settings: 
     
   - **Address**: Select **Specify an IPv4 address or an IPv6 address**, and type in a valid local IP address to use for the connector.
     
-  - **Port**: Leave the default value **25** selected. 
+  - **Port**: Leave the default value **25** selected.
     
     When you're finished, click **Save**.
     
     > [!NOTE]
-    > After you've created the new Internet Receive connector on the Mailbox server, be sure to modify the local IP address settings in the properties of the default Receive connector named Default Frontend _\<ServerName\>_. You'll need to go to **Scoping** \> **Network adapter bindings** in the properties of the connector, and then select a different local IP address to replace the default **IP addresses**: **(All available IPv4)** and **Port**: **25** entry. 
+    > After you've created the new Internet Receive connector on the Mailbox server, be sure to modify the local IP address settings in the properties of the default Receive connector named Default Frontend _\<ServerName\>_. You'll need to go to **Scoping** \> **Network adapter bindings** in the properties of the connector, and then select a different local IP address to replace the default **IP addresses**: **(All available IPv4)** and **Port**: **25** entry.
   
     When you're finished, click **Finish**.
     
@@ -118,9 +118,9 @@ New-ReceiveConnector -Name "Internet Receive Connector" -TransportRole Frontend 
 
  **Notes**:
   
-- To run this command on an Edge Transport server, omit the _TransportRole_ parameter. 
+- To run this command on an Edge Transport server, omit the _TransportRole_ parameter.
     
-- If another Receive connector is configured to listen on port 25 using all available local IP addresses on the server, you'll need to use the _Bindings_ parameter on the **Set-ReceiveConnector** cmdlet to specify a unique local IP address for the other connector after you create the new Internet Receive connector. 
+- If another Receive connector is configured to listen on port 25 using all available local IP addresses on the server, you'll need to use the _Bindings_ parameter on the **Set-ReceiveConnector** cmdlet to specify a unique local IP address for the other connector after you create the new Internet Receive connector.
     
 This example creates a new Receive connector named Internet Receive Connector that listens on port 25 from all remote IP addresses, but on all available local IP addresses. You can only run this command if the server has no other Receive connectors that are configured to listen on port 25 using all available local IP addresses.
   
@@ -128,7 +128,7 @@ This example creates a new Receive connector named Internet Receive Connector th
 New-ReceiveConnector -Name "Internet Receive Connector" -TransportRole Frontend -Internet -Bindings "0.0.0.0","[::]:"
 ```
 
- **Notes**: To run this command on an Edge Transport server, omit the _TransportRole_ parameter. 
+ **Notes**: To run this command on an Edge Transport server, omit the _TransportRole_ parameter.
   
 For detailed syntax and parameter information, see [New-ReceiveConnector](http://technet.microsoft.com/library/eb527447-ed68-4a55-943b-aad8c8a94d01.aspx).
   
@@ -136,7 +136,7 @@ For detailed syntax and parameter information, see [New-ReceiveConnector](http:/
 
 To verify that you've successfully created a Receive connector to receive messages from the Internet, do any of these steps:
   
-- In the EAC, go to **Mail flow** \> **Receive connectors**, select the Receive connector, select **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)), and verify the property values
+- In the EAC, go to **Mail flow** \> **Receive connectors**, select the Receive connector, select **Edit** (![Edit icon](../../media/ITPro_EAC_EditIcon.png)), and verify the property values
     
 - In the Exchange Management Shell, run this command on the server, and verify the property values:
     
@@ -156,7 +156,7 @@ For this scenario, the Receive connector listens for TLS authenticated SMTP conn
   
 ### Use the EAC to create a Receive connector to encrypt messages from a partner on Mailbox servers
 
-1. In the EAC, go to **Mail flow** \> **Receive connectors**, and then click **Add** ( ![Add icon](../../media/ITPro_EAC_AddIcon.png)).
+1. In the EAC, go to **Mail flow** \> **Receive connectors**, and then click **Add** (![Add icon](../../media/ITPro_EAC_AddIcon.png)).
     
 2. The **New receive connector** wizard opens. On the first page, configure these settings: 
     
@@ -174,13 +174,13 @@ For this scenario, the Receive connector listens for TLS authenticated SMTP conn
     
   - If it's required for your scenario, you can restrict the Receive connector to a valid local IP address on the server:
     
-1. Select the default entry **IP addresses**: **(All available IPv4)** and **Port**: **25**, and then click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)).
+1. Select the default entry **IP addresses**: **(All available IPv4)** and **Port**: **25**, and then click **Edit** (![Edit icon](../../media/ITPro_EAC_EditIcon.png)).
     
 2. In the **Edit IP address** dialog that opens, configure these settings: 
     
   - **Address**: Select **Specify an IPv4 address or an IPv6 address**, and type in a valid local IP address to use for the connector.
     
-  - **Port**: Leave the default value **25** selected. 
+  - **Port**: Leave the default value **25** selected.
     
     When you're finished, click **Save**.
     
@@ -188,9 +188,9 @@ For this scenario, the Receive connector listens for TLS authenticated SMTP conn
     
 4. On the last page of the wizard, configure these settings in the **Remote network settings** section: 
     
-1. Select the default entry **0.0.0.0-255.255.255.255**, and then click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)).
+1. Select the default entry **0.0.0.0-255.255.255.255**, and then click **Edit** (![Edit icon](../../media/ITPro_EAC_EditIcon.png)).
     
-2. In the **Edit IP address** dialog that opens, enter the IP address or IP address range of the remote partner organization. 
+2. In the **Edit IP address** dialog that opens, enter the IP address or IP address range of the remote partner organization.
     
     When you're finished, click **Save**.
     
@@ -210,7 +210,7 @@ This example creates a Receive connector named Fabrikam.com TLS on a Mailbox ser
 New-ReceiveConnector -Name "Fabrikam.com TLS" -TransportRole Frontend -Partner -RemoteIPRanges 17.17.17.1/24 -Bindings 0.0.0.0:25
 ```
 
- **Note**: To run this command on an Edge Transport server, omit the _TransportRole_ parameter. 
+ **Note**: To run this command on an Edge Transport server, omit the _TransportRole_ parameter.
   
 For detailed syntax and parameter information, see [New-ReceiveConnector](http://technet.microsoft.com/library/eb527447-ed68-4a55-943b-aad8c8a94d01.aspx).
   
@@ -218,7 +218,7 @@ For detailed syntax and parameter information, see [New-ReceiveConnector](http:/
 
 To verify that you've successfully created a Receive connector to receive TLS encrypted messages from a partner, do any of these steps:
   
-- In the EAC, go to **Mail flow** \> **Receive connectors**, select the Receive connector, select **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)), and verify the property values
+- In the EAC, go to **Mail flow** \> **Receive connectors**, select the Receive connector, select **Edit** (![Edit icon](../../media/ITPro_EAC_EditIcon.png)), and verify the property values
     
 - In the Exchange Management Shell, run this command on the server, and verify the property values:
     
@@ -237,7 +237,7 @@ For this scenario, the Receive connector listens for connections on port 25, but
   
 ### Use the EAC to create a Receive connector that only accepts messages from a specific service or device on Mailbox servers
 
-1. In the EAC, go to **Mail flow** \> **Receive connectors**, and then click **Add** ( ![Add icon](../../media/ITPro_EAC_AddIcon.png)).
+1. In the EAC, go to **Mail flow** \> **Receive connectors**, and then click **Add** (![Add icon](../../media/ITPro_EAC_AddIcon.png)).
     
 2. The **New receive connector** wizard opens. On the first page, configure these settings: 
     
@@ -255,13 +255,13 @@ For this scenario, the Receive connector listens for connections on port 25, but
     
   - If it's required for your scenario, you can restrict the Receive connector to a valid local IP address on the server:
     
-1. Select the default entry **IP addresses**: **(All available IPv4)** and **Port**: **25**, and then click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)).
+1. Select the default entry **IP addresses**: **(All available IPv4)** and **Port**: **25**, and then click **Edit** (![Edit icon](../../media/ITPro_EAC_EditIcon.png)).
     
 2. In the **Edit IP address** dialog that opens, configure these settings: 
     
   - **Address**: Select **Specify an IPv4 address or an IPv6 address**, and type in a valid local IP address to use for the connector.
     
-  - **Port**: Leave the default value **25** selected. 
+  - **Port**: Leave the default value **25** selected.
     
     When you're finished, click **Save**.
     
@@ -269,26 +269,26 @@ For this scenario, the Receive connector listens for connections on port 25, but
     
 4. On the last page of the wizard, configure these settings in the **Remote network settings** section: 
     
-1. Select the default entry **0.0.0.0-255.255.255.255**, and then click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)).
+1. Select the default entry **0.0.0.0-255.255.255.255**, and then click **Edit** (![Edit icon](../../media/ITPro_EAC_EditIcon.png)).
     
-2. In the **Edit IP address** dialog that opens, enter the IP address or IP address range of the service or device. 
+2. In the **Edit IP address** dialog that opens, enter the IP address or IP address range of the service or device.
     
     When you're finished, click **Save**.
     
     When you're finished, click **Finish**.
     
-5. Back at **Mail flow** \> **Receive connectors**, select the connector you just created, and then click **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)).
+5. Back at **Mail flow** \> **Receive connectors**, select the connector you just created, and then click **Edit** (![Edit icon](../../media/ITPro_EAC_EditIcon.png)).
     
 6. On the **Security** tab, configure the combination of authentication mechanisms and permission groups that are required for the service or device. For example: 
     
-  - Leave **Transport Layer Security (TLS)** selected, select **Basic authentication**, and then select the **Anonymous users** permission group. 
+  - Leave **Transport Layer Security (TLS)** selected, select **Basic authentication**, and then select the **Anonymous users** permission group.
     
-  - Clear **Transport Layer Security (TLS)**, select **Basic authentication** and **Exchange server authentication**, and then select the **Exchange users** and **Legacy Exchange servers** permission group. 
+  - Clear **Transport Layer Security (TLS)**, select **Basic authentication** and **Exchange server authentication**, and then select the **Exchange users** and **Legacy Exchange servers** permission group.
     
     For more information about permission groups, see [Receive connector permission groups](receive-connectors.md#PermissionGroups).
     
     > [!CAUTION]
-    > Be very careful using the authentication mechanism **Externally secured** with the permission group **Exchange servers**. This combination allows the remote IP addresses specified in the **Remote network settings** section on the **Scoping** tab to anonymously relay messages through the Exchange server. For more information, see [Allow anonymous relay on Exchange servers](allow-anonymous-relay.md). 
+    > Be very careful using the authentication mechanism **Externally secured** with the permission group **Exchange servers**. This combination allows the remote IP addresses specified in the **Remote network settings** section on the **Scoping** tab to anonymously relay messages through the Exchange server. For more information, see [Allow anonymous relay on Exchange servers](allow-anonymous-relay.md).
   
     When you're finished, click **Save**.
     
@@ -314,7 +314,7 @@ This example creates a Receive connector named Inbound From Service on a Mailbox
 New-ReceiveConnector -Name "Inbound From Service" -TransportRole Frontend -Custom -Bindings 0.0.0.0:25 -RemoteIPRanges 192.168.10.5 -AuthMechanism BasicAuth -PermissionGroups AnonymousUsers
 ```
 
- **Note**: To run this command on an Edge Transport server, omit the _TransportRole_ parameter. 
+ **Note**: To run this command on an Edge Transport server, omit the _TransportRole_ parameter.
   
 For detailed syntax and parameter information, see [New-ReceiveConnector](http://technet.microsoft.com/library/eb527447-ed68-4a55-943b-aad8c8a94d01.aspx).
   
@@ -322,7 +322,7 @@ For detailed syntax and parameter information, see [New-ReceiveConnector](http:/
 
 To verify that you've successfully created a Receive connector that only accepts messages from a specific service or device, do any of these steps:
   
-- In the EAC, go to **Mail flow** \> **Receive connectors**, select the Receive connector, select **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)), and verify the property values.
+- In the EAC, go to **Mail flow** \> **Receive connectors**, select the Receive connector, select **Edit** (![Edit icon](../../media/ITPro_EAC_EditIcon.png)), and verify the property values.
     
 - In the Exchange Management Shell, run this command on the server, and verify the property values:
     
@@ -353,7 +353,7 @@ This example creates a Receive connector named Inbound From Organization on an u
 New-ReceiveConnector -Name "Inbound From Organization" -Internal -RemoteIPRanges 10.1.2.10,10.1.2.15,10.1.2.20
 ```
 
- **Note**: If your Edge Transport server uses different network adapters for internal and external networks, be sure to use the _Bindings_ parameter on the **Set-ReceiveConnector** cmdlet after you create the connector to specify the correct local IP address for the connector. 
+ **Note**: If your Edge Transport server uses different network adapters for internal and external networks, be sure to use the _Bindings_ parameter on the **Set-ReceiveConnector** cmdlet after you create the connector to specify the correct local IP address for the connector.
   
 For detailed syntax and parameter information, see [New-ReceiveConnector](http://technet.microsoft.com/library/eb527447-ed68-4a55-943b-aad8c8a94d01.aspx).
   
@@ -361,7 +361,7 @@ For detailed syntax and parameter information, see [New-ReceiveConnector](http:/
 
 To verify that you've successfully created a Receive connector that only accepts messages from an internal Exchange server, do any of these steps:
   
-- In the EAC, go to **Mail flow** \> **Receive connectors**, select the Receive connector, select **Edit** ( ![Edit icon](../../media/ITPro_EAC_EditIcon.png)), and verify the property values.
+- In the EAC, go to **Mail flow** \> **Receive connectors**, select the Receive connector, select **Edit** (![Edit icon](../../media/ITPro_EAC_EditIcon.png)), and verify the property values.
     
 - In the Exchange Management Shell, run this command on the server, and verify the property values:
     

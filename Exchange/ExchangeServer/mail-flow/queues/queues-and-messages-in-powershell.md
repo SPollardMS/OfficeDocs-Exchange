@@ -36,9 +36,9 @@ The following table summarizes the filtering parameters that are available on th
 ### Queue identity
 <a name="QueueIdentity"> </a>
 
-The _Identity_ parameter uses the basic syntax _\<Server\>_\ _\<Queue\>_. Typically, this value uniquely identifies the queue, so you can't use other filtering parameters with the _Identity_ parameter. The exception is the **Get-Queue** cmdlet, where you can use the _Include_ and _Exclude_ parameters with the _Identity_ parameter. 
+The _Identity_ parameter uses the basic syntax _\<Server\>_\ _\<Queue\>_. Typically, this value uniquely identifies the queue, so you can't use other filtering parameters with the _Identity_ parameter. The exception is the **Get-Queue** cmdlet, where you can use the _Include_ and _Exclude_ parameters with the _Identity_ parameter.
   
-The following table explains the _Identity_ parameter syntax on the queue management cmdlets. 
+The following table explains the _Identity_ parameter syntax on the queue management cmdlets.
   
 |**Identity parameter value**|**Description**|
 |:-----|:-----|
@@ -57,7 +57,7 @@ You can use the _Filter_ parameter on all of the queue management cmdlets to ide
   
 For a complete list of queue properties you can use with the _Filter_ parameter, see [Queue properties](queues.md#QueueProperties).
   
-For a list of comparison operators you can use with the _Filter_ parameter, see the [Comparison operators to use when filtering queues or messages](queues-and-messages-in-powershell.md#ComparisonOperators) section in this topic. 
+For a list of comparison operators you can use with the _Filter_ parameter, see the [Comparison operators to use when filtering queues or messages](queues-and-messages-in-powershell.md#ComparisonOperators) section in this topic.
   
 For examples of procedures that use the _Filter_ parameter to view and manage queues, see [Procedures for queues](queue-procedures.md).
   
@@ -70,7 +70,7 @@ You can use the _Include_ and _Exclude_ parameters on the **Get-Queue** cmdlet b
     
 - Exclude queues to external destinations.
     
-- Include queues that have a specific value of **DeliveryType**. 
+- Include queues that have a specific value of **DeliveryType**.
     
 The _Include_ and _Exclude_ parameters use the following queue properties to filter queues: 
   
@@ -87,19 +87,19 @@ Note that you can duplicate the functionality of the _Include_ and _Exclude_ par
     
 - `Get-Queue -Filter {MessageCount -gt 0}`
     
-However, as you can see, the syntax of the _Include_ and _Exclude_ parameters is simpler and easier to remember. 
+However, as you can see, the syntax of the _Include_ and _Exclude_ parameters is simpler and easier to remember.
   
 ## Get-QueueDigest
 <a name="GetQueueDigest"> </a>
 
-The **Get-QueueDigest** cmdlet allows you to view information about some or all of the queues in your organization by using a single command. Specifically, the **Get-QueueDigest** cmdlet allows you to view information about queues based on their location on servers, in DAGs, in Active Directory sites, or in the whole Active Directory forest. 
+The **Get-QueueDigest** cmdlet allows you to view information about some or all of the queues in your organization by using a single command. Specifically, the **Get-QueueDigest** cmdlet allows you to view information about queues based on their location on servers, in DAGs, in Active Directory sites, or in the whole Active Directory forest.
   
-Note that queues on a subscribed Edge Transport server aren't included in the results. Also, **Get-QueueDigest** is available on an Edge Transport server, but the results are restricted to local queues on the Edge Transport server. 
+Note that queues on a subscribed Edge Transport server aren't included in the results. Also, **Get-QueueDigest** is available on an Edge Transport server, but the results are restricted to local queues on the Edge Transport server.
   
 > [!NOTE]
-> By default, the **Get-QueueDigest** cmdlet displays delivery queues that contain ten or more messages, and the results are between one and two minutes old. For instructions on how to change these default values, see **Configure Get-QueueDigest**. 
+> By default, the **Get-QueueDigest** cmdlet displays delivery queues that contain ten or more messages, and the results are between one and two minutes old. For instructions on how to change these default values, see **Configure Get-QueueDigest**.
   
-The following table describes the filtering and sorting parameters that are available on the **Get-QueueDigest** cmdlet. 
+The following table describes the filtering and sorting parameters that are available on the **Get-QueueDigest** cmdlet.
   
 |**Parameter**|**Description**|
 |:-----|:-----|
@@ -134,7 +134,7 @@ The following table summarizes the filtering parameters that are available on th
 
 The _Identity_ parameter on the message management cmdlets uniquely identifies a message in one or more queues, so you can't use any other message filtering parameters. The _Identity_ parameter uses the basic syntax `<Server>\<Queue>\<MessageInteger>`.
   
-The following table describes the syntax you can use with _Identity_ parameter on the message management cmdlets. 
+The following table describes the syntax you can use with _Identity_ parameter on the message management cmdlets.
   
 |**Identity parameter value**|**Description**|
 |:-----|:-----|
@@ -150,19 +150,19 @@ You can use the _Filter_ parameter with the **Get-Message**, **Remove-Message**,
   
 For a complete list of message properties you can use with the _Filter_ parameter, see [Message properties](queues.md#MessageProperties).
   
-For a list of comparison operators you can use with the _Filter_ parameter, see the [Comparison operators to use when filtering queues or messages](queues-and-messages-in-powershell.md#ComparisonOperators) section in this topic. 
+For a list of comparison operators you can use with the _Filter_ parameter, see the [Comparison operators to use when filtering queues or messages](queues-and-messages-in-powershell.md#ComparisonOperators) section in this topic.
   
 For examples of procedures that use the _Filter_ parameter to view and manage messages, see [Procedures for messages in queues](message-procedures.md).
   
 ### Queue parameter
 <a name="QueueParam"> </a>
 
-The _Queue_ parameter is available only on the **Get-Message** cmdlet. You can use this parameter to get all messages in a specific queue, or all messages from multiple queues by using the wildcard character (\*). When you use the _Queue_ parameter, use the queue identity format `<Server>\<Queue>` as described in the [Queue identity](queues-and-messages-in-powershell.md#QueueIdentity) section in this topic. 
+The _Queue_ parameter is available only on the **Get-Message** cmdlet. You can use this parameter to get all messages in a specific queue, or all messages from multiple queues by using the wildcard character (\*). When you use the _Queue_ parameter, use the queue identity format `<Server>\<Queue>` as described in the [Queue identity](queues-and-messages-in-powershell.md#QueueIdentity) section in this topic.
   
 ## Comparison operators to use when filtering queues or messages
 <a name="ComparisonOperators"> </a>
 
-When you create a queue or message filter expression by using the _Filter_ parameter, you need to include an comparison operator for the property value to match. The comparison operators that you can use, and how each operator functions are described in the following table. For all operators, the values compared aren't case sensitive. 
+When you create a queue or message filter expression by using the _Filter_ parameter, you need to include an comparison operator for the property value to match. The comparison operators that you can use, and how each operator functions are described in the following table. For all operators, the values compared aren't case sensitive.
   
 |**Operator**|**Function**|**Code example**|
 |:-----|:-----|:-----|
@@ -191,11 +191,11 @@ Get-Message -Filter {FromAddress -like "*Contoso.com*" -and SCL -gt 5}
 ## Advanced paging parameters
 <a name="PagingParameters"> </a>
 
-When you use the Exchange Management Shell to view queues and messages in queues, your query retrieves one page of information at a time. The advanced paging parameters control the size of the results, and the order that the results are displayed in. All advanced paging parameters are optional and can be used with or without other filtering parameters on the **Get-Queue** and **Get-Message** cmdlets. If you don't specify any advanced paging parameters, the query returns the results in ascending order of identity. 
+When you use the Exchange Management Shell to view queues and messages in queues, your query retrieves one page of information at a time. The advanced paging parameters control the size of the results, and the order that the results are displayed in. All advanced paging parameters are optional and can be used with or without other filtering parameters on the **Get-Queue** and **Get-Message** cmdlets. If you don't specify any advanced paging parameters, the query returns the results in ascending order of identity.
   
-By default, when you specify a sort order, the **Identity** property is always included and sorted in ascending order, because the other available queue or message properties aren't unique. 
+By default, when you specify a sort order, the **Identity** property is always included and sorted in ascending order, because the other available queue or message properties aren't unique.
   
-You can use the _BookmarkIndex_ and _BookmarkObject_ parameters to mark a position in the sorted results. If the bookmark object no longer exists when you retrieve the next page of results, the results start with the closest item to the bookmark, which depends on the sort order that you specify. 
+You can use the _BookmarkIndex_ and _BookmarkObject_ parameters to mark a position in the sorted results. If the bookmark object no longer exists when you retrieve the next page of results, the results start with the closest item to the bookmark, which depends on the sort order that you specify.
   
 The advanced paging parameters are described in the following table.
   

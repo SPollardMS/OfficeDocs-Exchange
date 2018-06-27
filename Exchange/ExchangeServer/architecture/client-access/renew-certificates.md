@@ -31,12 +31,12 @@ Every certificate has a built-in expiration date. In Exchange Server 2016, the d
     
 - If you renew or replace a certificate that was issued by a CA on a subscribed Edge Transport server, you need to remove the old certificate, and then delete and recreate the Edge Subscription. For more information, see [Edge Subscription process](../../architecture/edge-transport-servers/edge-subscriptions.md#Process).
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Client Access services security" entry in the [Clients and mobile devices permissions](../../permissions/feature-permissions/client-and-mobile-device-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Client Access services security" entry in the [Clients and mobile devices permissions](../../permissions/feature-permissions/client-and-mobile-device-permissions.md) topic.
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
   
 ## Renew a certificate that was issued by a certification authority
 
@@ -48,11 +48,11 @@ To renew a certificate that was issued by a CA, you create a certificate renewal
 
 1. Open the EAC and navigate to **Servers** \> **Certificates**.
     
-2. In the **Select server** list, select the Exchange server that holds the certificate that you want to renew. 
+2. In the **Select server** list, select the Exchange server that holds the certificate that you want to renew.
     
-3. All valid certificates have a **Renew** link in the details pane that's visible when you select the certificate from the list. Select the certificate that you want to renew, and then click **Renew** in the details pane. 
+3. All valid certificates have a **Renew** link in the details pane that's visible when you select the certificate from the list. Select the certificate that you want to renew, and then click **Renew** in the details pane.
     
-4. On the **Renew Exchange certificate** page that opens, in the **Save the certificate request to the following file** field, enter the UNC path and filename for the new certificate renewal request file. For example, `\\FileServer01\Data\ContosoCertRenewal.req`. When you are finished, click **OK**.
+4. On the **Renew Exchange certificate** page that opens, in the **Save the certificate request to the following file** field, enter the UNC path and filename for the new certificate renewal request file. For example, `\\FileServer01\Data\ContosoCertRenewal.req`. When you're finished, click **OK**.
     
 The certificate request appears in the list of Exchange certificates with a status value of **Pending**.
   
@@ -82,13 +82,13 @@ Get-ExchangeCertificate -Thumbprint 5DB9879E38E36BCB60B761E29794392B23D1C054 | N
 
  **Notes:**
   
-- The _RequestFile_ parameter accepts a local path or a UNC path. 
+- The _RequestFile_ parameter accepts a local path or a UNC path.
     
-- We didn't use the _BinaryEncoded_ switch, so the request is Base64 encoded. The information that's displayed onscreen is also written to the file, and the contents of the file are what we need to send to the CA. If we had used the _BinaryEncoded_ switch, the request would have been encoded by DER, and the certificate request file itself is what we would need to send to the CA. 
+- We didn't use the _BinaryEncoded_ switch, so the request is Base64 encoded. The information that's displayed onscreen is also written to the file, and the contents of the file are what we need to send to the CA. If we had used the _BinaryEncoded_ switch, the request would have been encoded by DER, and the certificate request file itself is what we would need to send to the CA.
     
-- We didn't use the _KeySize_ parameter, so the certificate request has a 2048 bit RSA public key. 
+- We didn't use the _KeySize_ parameter, so the certificate request has a 2048 bit RSA public key.
     
-- For more information, see [get-ExchangeCertificate](http://technet.microsoft.com/library/e368589a-6510-4209-9f10-171d1990cd7d.aspx) and [New-ExchangeCertificate](http://technet.microsoft.com/library/5e0b61b0-ece6-4d9b-949a-f6a032dd0fb9.aspx).
+- For more information, see [Get-ExchangeCertificate](http://technet.microsoft.com/library/e368589a-6510-4209-9f10-171d1990cd7d.aspx) and [New-ExchangeCertificate](http://technet.microsoft.com/library/5e0b61b0-ece6-4d9b-949a-f6a032dd0fb9.aspx).
     
 ### How do you know this worked?
 
@@ -110,9 +110,9 @@ When you renew an Exchange self-signed certificate, you're basically making a ne
 
 1. Open the EAC and navigate to **Servers** \> **Certificates**.
     
-2. In the **Select server** list, select the Exchange server that holds the certificate that you want to renew. 
+2. In the **Select server** list, select the Exchange server that holds the certificate that you want to renew.
     
-3. All valid certificates have a **Renew** link in the details pane that's visible when you select the certificate from the list. Select the certificate that you want to renew, and then click **Renew** in the details pane. 
+3. All valid certificates have a **Renew** link in the details pane that's visible when you select the certificate from the list. Select the certificate that you want to renew, and then click **Renew** in the details pane.
     
 4. On the **Renew Exchange certificate** page that opens, verify the read-only list of Exchange services that the existing certificate is assigned to, and then click **OK**.
     
@@ -134,7 +134,7 @@ This example renews a self-signed certificate on the local Exchange server, and 
   
 - The thumbprint value of the existing self-signed certificate to renew is `BC37CBE2E59566BFF7D01FEAC9B6517841475F2D`
     
-- The _Force_ switch replaces the original self-signed certificate without a confirmation prompt. 
+- The _Force_ switch replaces the original self-signed certificate without a confirmation prompt.
     
 - The private key is exportable. This allows you to export the certificate and import it on other servers.
     

@@ -44,7 +44,7 @@ You can use Telnet to test SMTP communication to:
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
 
 ## Step 1: Install the Telnet Client on your computer
 
@@ -55,7 +55,7 @@ On most versions of Windows, you'll need to install the Telnet client before you
 To connect to an SMTP server by using Telnet on port 25, you need to use the fully-qualified domain name (FQDN) (for example, mail.contoso.com) or the IP address of the SMTP server. If you don't know the FQDN or IP address, you can use the Nslookup command-line tool to find the MX record for the destination domain.
 
 > [!NOTE]
-> Network policies might prevent you from using the Nslookup tool to query public DNS servers on the Internet. As an alternative, you can use one of the freely-available DNS lookup or MX record lookup web sites on the Internet. 
+> Network policies might prevent you from using the Nslookup tool to query public DNS servers on the Internet. As an alternative, you can use one of the freely-available DNS lookup or MX record lookup web sites on the Internet.
 
 1. At a command prompt, type nslookup, and then press Enter. This command opens the Nslookup session.
 
@@ -64,7 +64,7 @@ To connect to an SMTP server by using Telnet on port 25, you need to use the ful
 3. Type the name of the domain for which you want to find the MX record. For example, to find the MX record for the fabrikam.com domain, type fabrikam.com., and then press Enter.
 
     > [!NOTE]
-    > When you use a trailing period ( . ), you prevent any default DNS suffixes from being unintentionally added to the domain name. 
+    > When you use a trailing period ( . ), you prevent any default DNS suffixes from being unintentionally added to the domain name.
 
     The output of the command looks like this:
 
@@ -100,15 +100,15 @@ In this example, we're going to use the following values. When you run the comma
 
 1. Open a Command Prompt window, type telnet, and then press Enter.
 
-     This command opens the Telnet session. 
+     This command opens the Telnet session.
 
 2. Type set localecho, and then press Enter.
 
-     This **optional** command lets you view the characters as you type them, and it might be required for some SMTP servers. 
+     This **optional** command lets you view the characters as you type them, and it might be required for some SMTP servers.
 
 3. Type set logfile _\<filename\>_, and then press Enter.
 
-     This **optional** command enables logging and specifies the log file for the Telnet session. If you only specify a file name, the log file is located in the current folder. If you specify a path and file name, the path needs to be on the local computer, and you might need to enter the path and file name in the Windows DOS 8.3 format (short name with no spaces). The path needs to exist, but the log file is created automatically. 
+     This **optional** command enables logging and specifies the log file for the Telnet session. If you only specify a file name, the log file is located in the current folder. If you specify a path and file name, the path needs to be on the local computer, and you might need to enter the path and file name in the Windows DOS 8.3 format (short name with no spaces). The path needs to exist, but the log file is created automatically.
 
 4. Type OPEN mail1.fabrikam.com 25, and then press Enter.
 
@@ -118,7 +118,7 @@ In this example, we're going to use the following values. When you run the comma
 
 7. Type RCPT TO:kate@fabrikam.com NOTIFY=success,failure, and then press Enter.
 
-     The optional NOTIFY command specifies the particular delivery status notification (DSN) messages (also known as bounce messages, nondelivery reports, or NDRs) that the SMTP is required to provide. In this example, you're requesting a DSN message for successful or failed message delivery. 
+     The optional NOTIFY command specifies the particular delivery status notification (DSN) messages (also known as bounce messages, nondelivery reports, or NDRs) that the SMTP is required to provide. In this example, you're requesting a DSN message for successful or failed message delivery.
 
 8. Type DATA, and then press Enter.
 
@@ -126,11 +126,11 @@ In this example, we're going to use the following values. When you run the comma
 
 10. Press Enter again.
 
-     A blank line is needed between the `Subject:` field and the message body. 
+     A blank line is needed between the `Subject:` field and the message body.
 
 11. Type This is a test message, and then press Enter.
 
-12. Type a period ( . ), and then press Enter. 
+12. Type a period ( . ), and then press Enter.
 
 13. To disconnect from the SMTP server, type QUIT, and then press Enter.
 
@@ -178,7 +178,7 @@ QUIT
 This section provides information about the success and failure responses to the commands that were used in the previous example.
 
 > [!NOTE]
-> The three-digit SMTP response codes that are defined in RFC 5321 are the same for all SMTP messaging servers, but the text descriptions in the responses might be slightly different. 
+> The three-digit SMTP response codes that are defined in RFC 5321 are the same for all SMTP messaging servers, but the text descriptions in the responses might be slightly different.
 
 ### SMTP reply codes
 
@@ -234,7 +234,7 @@ The table above is based on information provided by [RFC 5321 (Simple Mail Trans
 - Connection restrictions on the destination SMTP server.
 
 > [!NOTE]
-> EHLO is the Extended Simple Message Transfer Protocol (ESMTP) verb that's defined in RFC 5321. ESMTP servers can advertise their capabilities during the initial connection. These capabilities include the maximum accepted message size and supported authentication methods. HELO is the older SMTP verb that is defined in RFC 821. Most SMTP messaging servers support ESMTP and EHLO. If the non-Exchange server that you're trying to connect to doesn't support EHLO, you can use HELO instead. 
+> EHLO is the Extended Simple Message Transfer Protocol (ESMTP) verb that's defined in RFC 5321. ESMTP servers can advertise their capabilities during the initial connection. These capabilities include the maximum accepted message size and supported authentication methods. HELO is the older SMTP verb that is defined in RFC 821. Most SMTP messaging servers support ESMTP and EHLO. If the non-Exchange server that you're trying to connect to doesn't support EHLO, you can use HELO instead.
 
 ### MAIL FROM command
 

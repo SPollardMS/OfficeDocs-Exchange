@@ -26,23 +26,23 @@ Learn how to use retention policies to manage an email lifecycle in Exchange 201
     
 ## Step 1: Create a retention tag
 
-You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Messaging records management" entry in the [Messaging policy and compliance permissions in Exchange 2016](../../permissions/feature-permissions/policy-and-compliance-permissions.md) topic. 
+You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Messaging records management" entry in the [Messaging policy and compliance permissions in Exchange 2016](../../permissions/feature-permissions/policy-and-compliance-permissions.md) topic.
   
  **Use the Exchange admin center (EAC) to create a retention tag**
   
-1. Go to **Compliance management** \> **Retention tags**, and click **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png).
+1. Go to **Compliance management** \> **Retention tags**, and click **Add** ![Add icon](../../media/ITPro_EAC_AddIcon.png).
     
 2. Select one of the following options:
     
   - **Applied automatically to entire mailbox (default)**: Creates a default policy tag (DPT). You can use DPTs to create a default deletion policy and a default archive policy, which applies to all items in the mailbox.
     
     > [!NOTE]
-    > You can't use the EAC to create a DPT to delete voice mail items. For details about how to create a DPT to delete voice mail items, see the Exchange Management Shell example below. 
+    > You can't use the EAC to create a DPT to delete voice mail items. For details about how to create a DPT to delete voice mail items, see the Exchange Management Shell example below.
   
   - **Applied automatically to a default folder**: Creates a retention policy tag (RPT) for a default folder such as **Inbox** or **Deleted Items**.
     
     > [!NOTE]
-    > You can only create RPTs with the **Delete and allow recovery** or **Permanently delete** actions. 
+    > You can only create RPTs with the **Delete and allow recovery** or **Permanently delete** actions.
   
   - **Applied by users to items and folders (personal)**: Creates personal tags. These tags allow Outlook and Outlook on the web users to apply archive or deletion settings to a message or folders that are different from the settings applied to the parent folder or the entire mailbox.
     
@@ -54,12 +54,12 @@ You need to be assigned permissions before you can perform this procedure or pro
     
   - **Retention action**: Select one of the following actions to take after the item reaches its retention period:
     
-  - **Delete and Allow Recovery**: Deletes items but allow users to recover them using the **Recover Deleted Items** option in Outlook or Outlook on the web. Items are retained until the deleted item retention period configured for the mailbox database or the mailbox user is reached. 
+  - **Delete and Allow Recovery**: Deletes items but allow users to recover them using the **Recover Deleted Items** option in Outlook or Outlook on the web. Items are retained until the deleted item retention period configured for the mailbox database or the mailbox user is reached.
     
   - **Permanently Delete**: Permanently deletes the item from the mailbox database.
     
     > [!IMPORTANT]
-    > Mailboxes or items subject to In-Place Hold or litigation hold will be retained and returned in In-Place eDiscovery searches. To learn more, see [In-Place Hold and Litigation Hold in Exchange 2016](../../policy-and-compliance/holds/holds.md). 
+    > Mailboxes or items subject to In-Place Hold or litigation hold will be retained and returned in In-Place eDiscovery searches. To learn more, see [In-Place Hold and Litigation Hold in Exchange 2016](../../policy-and-compliance/holds/holds.md).
   
   - **Move to Archive**: Available only if you're creating a DPT or a personal tag. Select this action to move items to the user's In-Place Archive.
     
@@ -107,17 +107,17 @@ New-RetentionPolicyTag -Name "Never Delete" -Type Personal -RetentionAction Dele
 
 ## Step 2: Create a retention policy
 
-You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Messaging records management" entry in the [Messaging policy and compliance permissions in Exchange 2016](../../permissions/feature-permissions/policy-and-compliance-permissions.md) topic. 
+You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Messaging records management" entry in the [Messaging policy and compliance permissions in Exchange 2016](../../permissions/feature-permissions/policy-and-compliance-permissions.md) topic.
   
  **Use the EAC to create a retention policy**
   
-1. Go to **Compliance management** \> **Retention policies**, and click **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png).
+1. Go to **Compliance management** \> **Retention policies**, and click **Add** ![Add icon](../../media/ITPro_EAC_AddIcon.png).
     
 2. In **New Retention Policy**, complete the following fields:
     
   - **Name**: Enter a name for the retention policy.
     
-  - **Retention tags**: Click **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png) to select the tags you want to add to this retention policy. 
+  - **Retention tags**: Click **Add** ![Add icon](../../media/ITPro_EAC_AddIcon.png) to select the tags you want to add to this retention policy.
     
     A retention policy can contain the following tags:
     
@@ -132,13 +132,13 @@ You need to be assigned permissions before you can perform this procedure or pro
   - Any number of personal tags
     
     > [!NOTE]
-    > Although you can add any number of personal tags to a retention policy, having many personal tags with different retention settings can confuse users. We recommend linking no more than ten personal tags to a retention policy. 
+    > Although you can add any number of personal tags to a retention policy, having many personal tags with different retention settings can confuse users. We recommend linking no more than ten personal tags to a retention policy.
   
     You can create a retention policy without adding any retention tags to it, but items in the mailbox to which the policy is applied won't be moved or deleted. You can also add and remove retention tags from a retention policy after you create it.
     
  **Use the Exchange Management Shell to create a retention policy**
   
-This example creates the retention policy RetentionPolicy-Corp and uses the _RetentionPolicyTagLinks_ parameter to associate five tags to the policy. 
+This example creates the retention policy RetentionPolicy-Corp and uses the _RetentionPolicyTagLinks_ parameter to associate five tags to the policy.
   
 ```
 New-RetentionPolicy "RetentionPolicy-Corp"  -RetentionPolicyTagLinks "DPT-Corp-Delete","DPT-Corp-Move","DPT-Corp-Voicemail","RPT-Corp-JunkMail","Never Delete"

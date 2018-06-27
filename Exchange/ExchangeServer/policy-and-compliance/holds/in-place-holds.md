@@ -24,7 +24,7 @@ You can create In-Place holds in the Exchange admin center (EAC) or in the Excha
   
 ## Before you begin
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "In-Place Hold" entry in the [Messaging policy and compliance permissions in Exchange 2016](../../permissions/feature-permissions/policy-and-compliance-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "In-Place Hold" entry in the [Messaging policy and compliance permissions in Exchange 2016](../../permissions/feature-permissions/policy-and-compliance-permissions.md) topic.
     
 - Depending on your Active Directory topology and replication latency, it may take up to an hour for an In-Place Hold to take effect.
     
@@ -32,7 +32,7 @@ You can create In-Place holds in the Exchange admin center (EAC) or in the Excha
     
 - You can only search or place holds on all public folders in your organization. You can't specify individual public folders.
     
-- See the [More information](#moreinfo.md) section for a description of the In-Place Hold workflow process. 
+- See the [More information](#moreinfo.md) section for a description of the In-Place Hold workflow process.
     
 - To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
     
@@ -40,7 +40,7 @@ You can create In-Place holds in the Exchange admin center (EAC) or in the Excha
 
 ### Use the EAC to create an In-Place Hold
 
-1. Go to **Compliance management** \> **In-Place eDiscovery & Hold**, and then click **New**![Add icon](../../media/ITPro_EAC_AddIcon.png).
+1. Go to **Compliance management** \> **In-Place eDiscovery & Hold**, and then click **New** ![Add icon](../../media/ITPro_EAC_AddIcon.png).
     
 2. In the **New In-Place eDiscovery & Hold** window, on the **Name and description** page, type a name for the hold and an optional description, and then click **Next**.
     
@@ -56,7 +56,7 @@ You can create In-Place holds in the Exchange admin center (EAC) or in the Excha
 ![Use In-Place eDiscovery to search and place a hold on public folders](../../media/TA_MRM_SearchPublicFolders.gif)
   
     > [!IMPORTANT]
-    > You can't select the **Search all mailboxes** option when creating an In-Place Hold. To create an In-Place Hold, you must select the specific mailboxes you want to place on hold. 
+    > You can't select the **Search all mailboxes** option when creating an In-Place Hold. To create an In-Place Hold, you must select the specific mailboxes you want to place on hold.
   
 4. On the **Search query** page, complete the following fields, and then click **Next**.
     
@@ -65,22 +65,22 @@ You can create In-Place holds in the Exchange admin center (EAC) or in the Excha
   - **Filter based on criteria**: Select this option to specify search criteria, including keywords, start and end dates, sender and recipient addresses, and message types.
     
     > [!IMPORTANT]
-    > If a user is placed on multiple In-Place Holds, the search queries from any query-based hold are combined (with **OR** operators). In this case, the maximum number of keywords in all query-based holds placed on a mailbox is 500. If there are more than 500 keywords, then all content in the mailbox is placed on hold (not just that content that matches the search criteria). All content is held until the total number of keywords is reduced to 500 or less. 
+    > If a user is placed on multiple In-Place Holds, the search queries from any query-based hold are combined (with **OR** operators). In this case, the maximum number of keywords in all query-based holds placed on a mailbox is 500. If there are more than 500 keywords, then all content in the mailbox is placed on hold (not just that content that matches the search criteria). All content is held until the total number of keywords is reduced to 500 or less.
   
 5. On the **In-Place Hold settings** page, click the **Place content matching the search query in selected sources on hold** check box and then select one of the following options: 
     
-  - **Hold indefinitely** Place items returned by the search on an indefinite hold. Items on hold will be preserved until you change the hold duration, remove the mailbox (or public folders) from the search, or remove the search. 
+  - **Hold indefinitely** Place items returned by the search on an indefinite hold. Items on hold will be preserved until you change the hold duration, remove the mailbox (or public folders) from the search, or remove the search.
     
-  - **Specify number of days to hold items relative to their received date**: Hold items for a specific period. For example, you can use this option if your organization requires that all messages be retained for at least seven years. You can use a *time-based* In-Place Hold along with a retention policy to make sure items are permanently deleted in seven years. 
+  - **Specify number of days to hold items relative to their received date**: Hold items for a specific period. For example, you can use this option if your organization requires that all messages be retained for at least seven years. You can use a *time-based* In-Place Hold along with a retention policy to make sure items are permanently deleted in seven years.
     
-6. Click **Finish** to create the In-Place Hold. 
+6. Click **Finish** to create the In-Place Hold.
     
 ### Use the Exchange Management Shell to create an In-Place Hold
 
 This example creates an In-Place Hold named Hold-CaseId012 and adds the mailbox joe@contoso.com to the hold.
   
 > [!IMPORTANT]
-> If you don't specify additional search parameters for an In-Place Hold, all items in the specified source mailboxes are placed on hold. If you don't specify the _ItemHoldPeriod_ parameter, items are placed on hold indefinitely or until the mailbox is either removed from hold or the hold is deleted. 
+> If you don't specify additional search parameters for an In-Place Hold, all items in the specified source mailboxes are placed on hold. If you don't specify the _ItemHoldPeriod_ parameter, items are placed on hold indefinitely or until the mailbox is either removed from hold or the hold is deleted.
   
 ```
 New-MailboxSearch "Hold-CaseId012" -SourceMailboxes "joe@contoso.com" -InPlaceHoldEnabled $true
@@ -98,7 +98,7 @@ For detailed syntax and parameter information, see [New-MailboxSearch](http://te
 
 To verify that you have successfully created the In-Place Hold, do one of the following:
   
-- Use the EAC to verify that the In-Place Hold is listed in the list view of the **In-Place eDiscovery & Hold** page. 
+- Use the EAC to verify that the In-Place Hold is listed in the list view of the **In-Place eDiscovery & Hold** page.
     
 - Use the **Get-MailboxSearch** cmdlet to retrieve the mailbox search and check the hold properties. For example, the following command displays the hold properties for the search named Hold-CaseId012: 
     
@@ -120,19 +120,19 @@ To verify that you have successfully created the In-Place Hold, do one of the fo
 
 ## Remove an In-Place Hold
 
-In Exchange 2016, eDiscovery searches are used to hold and search for content in on content sources. You can't remove an In-Place eDiscovery search that's used to place content sources on hold. You must first remove the In-Place Hold by clearing the **Place content matching the search query in selected sources on hold** check box on the **In-Place Hold** page or by setting the _InPlaceHoldEnabled_ parameter to `$false` in the Exchange Management Shell. Alternatively, you can remove mailboxes and public folders from an In-Place Hold by changing the value of the _SourceMailboxes_ or _AllPublicFolderSources_ parameters specified in the search. 
+In Exchange 2016, eDiscovery searches are used to hold and search for content in on content sources. You can't remove an In-Place eDiscovery search that's used to place content sources on hold. You must first remove the In-Place Hold by clearing the **Place content matching the search query in selected sources on hold** check box on the **In-Place Hold** page or by setting the _InPlaceHoldEnabled_ parameter to `$false` in the Exchange Management Shell. Alternatively, you can remove mailboxes and public folders from an In-Place Hold by changing the value of the _SourceMailboxes_ or _AllPublicFolderSources_ parameters specified in the search.
   
 ### Use the EAC to remove an In-Place Hold
 
 1. Go to **Compliance management** \> **In-Place eDiscovery & Hold**.
     
-2. In the list view, select the In-Place Hold you want to remove, and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
+2. In the list view, select the In-Place Hold you want to remove, and then click **Edit** ![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
 3. In **In-Place eDiscovery & Hold** properties, on the **In-Place Hold** page, clear the **Place content matching the search query in selected sources on hold** check box, and then click **Save**.
     
-4. Select the In-Place Hold again from the list view and then click **Delete**![Delete icon](../../media/ITPro_EAC_DeleteIcon.png).
+4. Select the In-Place Hold again from the list view and then click **Delete** ![Delete icon](../../media/ITPro_EAC_DeleteIcon.png).
     
-5. In warning, click **Yes** to remove the search. 
+5. In warning, click **Yes** to remove the search.
     
 ### Use the Exchange Management Shell to remove an In-Place Hold
 
@@ -148,9 +148,9 @@ For detailed syntax and parameter information, see [Set-Mailboxsearch](http://te
 
 To verify that you have successfully removed an In-Place Hold, do one of the following:
   
-- Use the EAC to verify that the In-Place Hold doesn't appear in the list view of the **In-Place eDiscovery & Hold** tab. 
+- Use the EAC to verify that the In-Place Hold doesn't appear in the list view of the **In-Place eDiscovery & Hold** tab.
     
-- Use the **Get-MailboxSearch** cmdlet to retrieve all mailbox searches and check that the search you removed is no longer listed. 
+- Use the **Get-MailboxSearch** cmdlet to retrieve all mailbox searches and check that the search you removed is no longer listed.
     
 ## More information
 <a name="moreinfo"> </a>
@@ -164,6 +164,6 @@ The following illustration shows the subfolders in the Recoverable Items folders
 ![Recoverable Items folder](../../media/ITPro_RecoverableItems.gif)
   
 > [!NOTE]
-> If a mailbox is place on Litigation Hold, purged items are moved to the Purges subfolder and preserved for the hold duration configured for the Litigation Hold. 
+> If a mailbox is place on Litigation Hold, purged items are moved to the Purges subfolder and preserved for the hold duration configured for the Litigation Hold.
   
 

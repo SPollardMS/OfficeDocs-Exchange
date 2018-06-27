@@ -38,7 +38,7 @@ Mailbox moves in Exchange 2016 use the batch move architecture that was introduc
     
 - Periodic incremental syncs to update migration changes.
     
-You can move mailboxes in the Exchange admin center (EAC), or by using the [New-MoveRequest](http://technet.microsoft.com/library/c28ca2ce-963f-4676-81c3-cef3c290ee7b.aspx) or [New-MigrationBatch](http://technet.microsoft.com/library/4f797f11-e4ef-48f9-83ab-dda8a3f61e2b.aspx) cmdlets in the Exchange Management Shell. 
+You can move mailboxes in the Exchange admin center (EAC), or by using the [New-MoveRequest](http://technet.microsoft.com/library/c28ca2ce-963f-4676-81c3-cef3c290ee7b.aspx) or [New-MigrationBatch](http://technet.microsoft.com/library/4f797f11-e4ef-48f9-83ab-dda8a3f61e2b.aspx) cmdlets in the Exchange Management Shell.
   
 ## Scenarios for local and cross-forest mailbox moves
 
@@ -74,17 +74,17 @@ Migration endpoints specify the remote server information, source throttling set
   
 - Cross-forest mailbox moves require an ExchangeRemoteMove migration endpoint.
     
-- Onboarding mailbox move migrations in hybrid organizations (from Exchange to Office 365) require an ExchangeRemoteMove migration endpoint as the *source* of the migration batch. 
+- Onboarding mailbox move migrations in hybrid organizations (from Exchange to Office 365) require an ExchangeRemoteMove migration endpoint as the *source* of the migration batch.
     
-- Offboarding mailbox move migrations in hybrid organizations (from Office 365 to Exchange) require an ExchangeRemoteMove migration endpoint as the *target* of the migration batch. 
+- Offboarding mailbox move migrations in hybrid organizations (from Office 365 to Exchange) require an ExchangeRemoteMove migration endpoint as the *target* of the migration batch.
     
-You can create migration endpoints in the EAC or by using the [New-MigrationEndpoint](http://technet.microsoft.com/library/0383b4ea-10df-4e1d-9470-2eeb9fd1ea68.aspx) cmdlet in the Exchange Management Shell. 
+You can create migration endpoints in the EAC or by using the [New-MigrationEndpoint](http://technet.microsoft.com/library/0383b4ea-10df-4e1d-9470-2eeb9fd1ea68.aspx) cmdlet in the Exchange Management Shell.
   
 ## MRS Proxy endpoints for cross-forest and remote mailbox moves
 
 The Mailbox Replication Service Proxy (MRS Proxy) facilitates cross-forest mailbox moves and remote move migrations. By default, the Client Access services on Mailbox servers aren't configured to accept incoming move requests, so you'll need to enable the MRS Proxy endpoint.
   
--  For cross-forest moves from the target forest (pull moves), you need to enable the MRS Proxy endpoint in the Client Access services on Mailbox servers in the source forest. 
+-  For cross-forest moves from the target forest (pull moves), you need to enable the MRS Proxy endpoint in the Client Access services on Mailbox servers in the source forest.
     
 - For cross-forest moves from the source forest (push moves), you need to enable the MRS Proxy endpoint in the Client Access services on Mailbox servers in the target forest.
     

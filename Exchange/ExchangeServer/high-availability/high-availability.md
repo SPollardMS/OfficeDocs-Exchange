@@ -91,11 +91,11 @@ The following key terms are important to understand high availability or site re
 
  *\*over* (pronounced "star over") 
 
-> Short for *switchovers* and *failovers* . A switchover is a manual activation of one or more database copies. A failover is an automatic activation of one or more database copies after a failure. 
+> Short for *switchovers* and *failovers*. A switchover is a manual activation of one or more database copies. A failover is an automatic activation of one or more database copies after a failure.
 
  *Safety Net* 
 
-> Formerly known as transport dumpster, this is a feature of the transport service that stores a copy of all messages for _X_ days. The default setting is 2 days. 
+> Formerly known as transport dumpster, this is a feature of the transport service that stores a copy of all messages for _X_ days. The default setting is 2 days.
 
  *Shadow redundancy* 
 
@@ -117,7 +117,7 @@ The high availability and site resilience features used first introduced in Exch
 
 Database mobility disconnects databases from servers and adds support for up to 16 copies of a single database. It also provides a native experience for creating copies of a database.
 
-Setting a database copy as the active mailbox database is known as a *switchover* . When a failure affecting a database or access to a database occurs and a new database becomes the active copy, this process is known as a *failover* . This process also refers to a server failure in which one or more servers bring online the databases previously online on the failed server. When either a switchover or failover occurs, other Exchange 2016 servers become aware of the switchover almost immediately and redirect client and messaging traffic to the new active database. 
+Setting a database copy as the active mailbox database is known as a *switchover*. When a failure affecting a database or access to a database occurs and a new database becomes the active copy, this process is known as a *failover*. This process also refers to a server failure in which one or more servers bring online the databases previously online on the failed server. When either a switchover or failover occurs, other Exchange 2016 servers become aware of the switchover almost immediately and redirect client and messaging traffic to the new active database.
 
 For example, if an active database in a DAG fails because of an underlying storage failure, Active Manager will automatically recover by failing over to a database copy on another server in the DAG. In Exchange 2016, managed availability provides behaviors to recover from loss of protocol access to a database, including recycling application worker pools, restarting services and servers, and initiating database failovers.
 
@@ -143,7 +143,7 @@ The benefits include the following:
 
 - In Exchange 2016, if you lose the load balancer in your primary site, you simply turn it off (or maybe turn off the VIP) and repair or replace it. Clients that aren't already using the VIP in the secondary datacenter will automatically fail over to the secondary VIP without any change of namespace, and without any change in DNS. Not only does that mean you no longer have to perform a switchover, but it also means that all of the time normally associated with a datacenter switchover recovery isn't spent. In Exchange 2010, you had to handle DNS latency (hence, the recommendation to set the Time to Live (TTL) to 5 minutes, and the introduction of the failback URL). In Exchange 2016, you don't need to do that because you get fast failover (20 seconds) of the namespace between VIPs (datacenters).
 
-- Because you can fail over the namespace between datacenters, all that's needed to achieve a datacenter failover is a mechanism for failover of the Mailbox server role across datacenters. To get automatic failover for the DAG, you simply architect a solution where the DAG is evenly split between two datacenters, and then place the witness server in a third location so that it can be arbitrated by DAG members in either datacenter, regardless of the state of the network between the datacenters that contain the DAG members. If you only have two datacenters and a third physical location isn't available, you can place the witness server on a Microsoft Azure virtual machine. See [Using a Microsoft Azure VM as a DAG witness server](manage-ha/azure-vms-as-dag-witness-servers.md) for more information. 
+- Because you can fail over the namespace between datacenters, all that's needed to achieve a datacenter failover is a mechanism for failover of the Mailbox server role across datacenters. To get automatic failover for the DAG, you simply architect a solution where the DAG is evenly split between two datacenters, and then place the witness server in a third location so that it can be arbitrated by DAG members in either datacenter, regardless of the state of the network between the datacenters that contain the DAG members. If you only have two datacenters and a third physical location isn't available, you can place the witness server on a Microsoft Azure virtual machine. See [Using a Microsoft Azure VM as a DAG witness server](manage-ha/azure-vms-as-dag-witness-servers.md) for more information.
 
 - In this scenario, the administrator's efforts are geared toward simply fixing the problem, and not spent restoring service. You simply fix the thing that failed; while service has been running and data integrity has been maintained. The urgency and stress level you feel when fixing a broken device is nothing like the urgency and stress you feel when you're working to restore service. It's better for the end user, and less stressful for the administrator.
 

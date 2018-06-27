@@ -22,7 +22,7 @@ On Mailbox servers and Edge Transport servers in Exchange Server 2016, you can e
 
 - Estimated time to complete each procedure: 5 minutes
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Queues" entry in [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Queues" entry in [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic.
     
 - To export messages from a delivery queue, the Submission queue, or the Unreachable queue, the messages need to be in the Suspended state. For active, healthy queues, you first suspend the queue so you can then suspend the messages. Messages in the poison message queue are already in the Suspended state. For more information, see [Suspend queues](queue-procedures.md#Suspend) and [Suspend messages in queues](message-procedures.md#Suspend).
     
@@ -36,9 +36,9 @@ On Mailbox servers and Edge Transport servers in Exchange Server 2016, you can e
     
   - The path can be local to the Exchange server, or it can be a UNC path to a share on a remote server (\\server\share).
     
-  - Your account needs to have the **Write** permission in the target folder. 
+  - Your account needs to have the **Write** permission in the target folder.
     
-- We use the message's **InternetMessageID** property value for the exported message file names to help ensure uniqueness. The procedures include steps to remove angled brackets (\> and \<), because they aren't allowed in file names. Also, we use the .eml file name extension so you can easily open the files in Outlook or resubmit the files by using the Replay directory. 
+- We use the message's **InternetMessageID** property value for the exported message file names to help ensure uniqueness. The procedures include steps to remove angled brackets (\> and \<), because they aren't allowed in file names. Also, we use the .eml file name extension so you can easily open the files in Outlook or resubmit the files by using the Replay directory.
     
 - For more information about identity and filters for queues and messages in queues, see the following topics:
     
@@ -51,7 +51,7 @@ On Mailbox servers and Edge Transport servers in Exchange Server 2016, you can e
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
   
 ## Use the Exchange Management Shell to export a specific message from a queue
 
@@ -65,7 +65,7 @@ This example takes the following actions on the server named Mailbox01:
   
 1. Suspends the contoso.com delivery queue.
     
-2. Suspends the message in the queue that has the **InternalMessageID** value 1234. 
+2. Suspends the message in the queue that has the **InternalMessageID** value 1234.
     
 3. Exports a copy of the message to the file D:\contoso Export\export.eml.
     

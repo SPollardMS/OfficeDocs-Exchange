@@ -18,7 +18,7 @@ description: "Summary: This article describes how to manage mobile devices with 
   
 Microsoft recommends Exchange ActiveSync for managing the mobile devices that are used to access Exchange mailboxes in your on-premises environment. Exchange ActiveSync is a Microsoft Exchange synchronization protocol that lets mobile phones access an organization's information on a server that's running Microsoft Exchange.
   
-This article focuses on specific Exchange ActiveSync features and scenarios for mobile devices running Outlook for Android and iOS when authenticating with Basic authentication. Complete information about the Microsoft Exchange synchronization protocol is available in [Exchange ActiveSync](../../clients/exchange-activesync/exchange-activesync.md). In addition, there is information on [the Office Blog](https://go.microsoft.com/fwlink/p/?LinkId=623922) detailing password enforcement and other benefits of using Exchange ActiveSync with devices running Outlook for iOS and Android. 
+This article focuses on specific Exchange ActiveSync features and scenarios for mobile devices running Outlook for Android and iOS when authenticating with Basic authentication. Complete information about the Microsoft Exchange synchronization protocol is available in [Exchange ActiveSync](../../clients/exchange-activesync/exchange-activesync.md). In addition, there is information on [the Office Blog](https://go.microsoft.com/fwlink/p/?LinkId=623922) detailing password enforcement and other benefits of using Exchange ActiveSync with devices running Outlook for iOS and Android.
   
 ## PIN lock and device encryption
 
@@ -41,7 +41,7 @@ After the remote wipe command is requested by the administrator, the wipe happen
 Since Outlook for iOS and Android appears as a single mobile device association under a user's mobile devices in Exchange, a remote wipe command will remove data and delete sync relationships from all devices running Outlook (iPhone, iPad, Android) associated with that user.
   
 > [!NOTE]
-> Due to the cloud architecture behind Outlook for iOS and Android, the result of a remote device wipe is not reported back to Exchange. Even when the wipe is successful, the status will display as **Pending**. This is a known issue and a solution is being developed. 
+> Due to the cloud architecture behind Outlook for iOS and Android, the result of a remote device wipe is not reported back to Exchange. Even when the wipe is successful, the status will display as **Pending**. This is a known issue and a solution is being developed.
   
 ## Device identifiers and access control
 
@@ -61,7 +61,7 @@ If you don't want users in your Exchange on-premises organization to access data
 Every Exchange organization has different policies regarding security and device management. If an organization decides that Outlook for iOS and Android doesn't meet their needs or is not the best solution for them for any reason, administrators can block the app using Exchange ActiveSync device management policies. See [Controlling Device Access](https://go.microsoft.com/fwlink/p/?LinkId=624009) for complete information on configuring Exchange ActiveSync. In Exchange ActiveSync management screens, the Outlook app is identified as **DeviceModel: 'Outlook for iOS and Android'** or **DeviceType: 'Outook'**.
   
 > [!NOTE]
-> Because device IDs are not governed by any *physical device* ID, they can change without notice. When this happens, it can cause unintended consequences when device IDs are used for managing user devices, as existing 'allowed' devices may be unexpectedly blocked or quarantined by Exchange. Therefore, we recommend administrators only set mobile device policies that allow/block devices based on device type or device model. 
+> Because device IDs are not governed by any *physical device* ID, they can change without notice. When this happens, it can cause unintended consequences when device IDs are used for managing user devices, as existing 'allowed' devices may be unexpectedly blocked or quarantined by Exchange. Therefore, we recommend administrators only set mobile device policies that allow/block devices based on device type or device model.
   
 Exchange users in your organization can continue using Outlook on the web for iPhone/iPad/Android apps, or the built-in mail apps on iOS and Android, to access their Exchange mailboxes.
   

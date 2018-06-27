@@ -51,16 +51,16 @@ The example uses the [Get-Mailbox](http://technet.microsoft.com/library/8a5a6eb9
 You can use the EAC to select up to 500 mailboxes and place them on hold. For details, see [Create or remove an In-Place Hold](in-place-holds.md).
   
 > [!TIP]
-> To place more than 500 users on In-Place Hold, use the Exchange Management Shell. See [New-MailboxSearch](http://technet.microsoft.com/library/74303b47-bb49-407c-a43b-590356eae35c.aspx). 
+> To place more than 500 users on In-Place Hold, use the Exchange Management Shell. See [New-MailboxSearch](http://technet.microsoft.com/library/74303b47-bb49-407c-a43b-590356eae35c.aspx).
   
 ## More information
 <a name="moreinfo"> </a>
 
 - When you place all mailboxes in your organization on hold, only the mailboxes that exist at the time you run the command are placed on hold. If you create new mailboxes later, run the command again to place them on hold. If you frequently create new mailboxes, you can run the command as a scheduled task as frequently as required.
     
-- Placing mailboxes on hold preserves data by preventing items in the Recoverable Items folder from being deleted until the specified hold duration for an item expires. If a hold is configured to hold items indefinitely, items won't be purged from a mailbox. Also, when a mailbox is on hold the original version of a message is saved before it's modified. Combine Litigation Hold or In-Place Hold with a Retention Policy, which can automatically delete messages (and move them into the Recoverable Items folder) after a specified period, to meet your organization's email retention requirements. See [Retention tags and retention policies in Exchange 2016](../../policy-and-compliance/mrm/retention-tags-and-retention-policies.md) for details. 
+- Placing mailboxes on hold preserves data by preventing items in the Recoverable Items folder from being deleted until the specified hold duration for an item expires. If a hold is configured to hold items indefinitely, items won't be purged from a mailbox. Also, when a mailbox is on hold the original version of a message is saved before it's modified. Combine Litigation Hold or In-Place Hold with a Retention Policy, which can automatically delete messages (and move them into the Recoverable Items folder) after a specified period, to meet your organization's email retention requirements. See [Retention tags and retention policies in Exchange 2016](../../policy-and-compliance/mrm/retention-tags-and-retention-policies.md) for details.
     
-- The Exchange Management Shell command used in this topic to place a Litigation Hold on all mailboxes uses a recipient filter that returns all user mailboxes. You can use other recipient properties to return a list of specific mailboxes that you can then pipe to the **Set-Mailbox** cmdlet to place a Litigation Hold on those mailboxes. 
+- The Exchange Management Shell command used in this topic to place a Litigation Hold on all mailboxes uses a recipient filter that returns all user mailboxes. You can use other recipient properties to return a list of specific mailboxes that you can then pipe to the **Set-Mailbox** cmdlet to place a Litigation Hold on those mailboxes.
     
     Here are some examples of using the **Get-Mailbox** and **Get-Recipient** cmdlets to return a subset of mailboxes based on common user or mailbox properties. These examples assume that relevant mailbox properties (such as _CustomAttributeN_ or _Department_) have been populated.
     

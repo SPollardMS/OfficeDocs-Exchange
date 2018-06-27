@@ -46,9 +46,9 @@ Unformatted: 9 consecutive digits beginning with 0, 1, 2, 3, 6, 7, or 8
   
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_aba_routing` finds content that matches the pattern. 
+- The function `Func_aba_routing` finds content that matches the pattern.
     
-- A keyword from `Keyword_ABA_Routing` is found. 
+- A keyword from `Keyword_ABA_Routing` is found.
     
 ```
 <!-- ABA Routing Number -->
@@ -90,9 +90,9 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
   
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The regular expression `Regex_argentina_national_id` finds content that matches the pattern. 
+- The regular expression `Regex_argentina_national_id` finds content that matches the pattern.
     
-- A keyword from `Keyword_argentina_national_id` is found. 
+- A keyword from `Keyword_argentina_national_id` is found.
     
 ```
 <!-- Argentina National Identity (DNI) Number -->
@@ -130,17 +130,17 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
   
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The regular expression `Regex_australia_bank_account_number` finds content that matches the pattern.. 
+- The regular expression `Regex_australia_bank_account_number` finds content that matches the pattern..
     
-- A keyword from `Keyword_australia_bank_account_number` is found. 
+- A keyword from `Keyword_australia_bank_account_number` is found.
     
-- The regular expression `Regex_australia_bank_account_number_bsb` finds content that matches the pattern. 
+- The regular expression `Regex_australia_bank_account_number_bsb` finds content that matches the pattern.
     
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The regular expression `Regex_australia_bank_account_number` finds content that matches the pattern.. 
+- The regular expression `Regex_australia_bank_account_number` finds content that matches the pattern..
     
-- A keyword from `Keyword_australia_bank_account_number` is found. 
+- A keyword from `Keyword_australia_bank_account_number` is found.
     
 ```
 <!-- Australia Bank Account Number -->
@@ -193,11 +193,11 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
   
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The regular expression `Regex_australia_drivers_license_number` finds content that matches the pattern. 
+- The regular expression `Regex_australia_drivers_license_number` finds content that matches the pattern.
     
-- A keyword from `Keyword_australia_drivers_license_number` is found. 
+- A keyword from `Keyword_australia_drivers_license_number` is found.
     
-- No keyword from `Keyword_australia_drivers_license_number_exclusions` is found. 
+- No keyword from `Keyword_australia_drivers_license_number_exclusions` is found.
     
 ```
 <!-- Australia Drivers License Number -->
@@ -240,15 +240,15 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
   
 A DLP policy is 95% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_australian_medical_account_number` finds content that matches the pattern. 
+- The function `Func_australian_medical_account_number` finds content that matches the pattern.
     
-- A keyword from `Keyword_Australia_Medical_Account_Number` is found. 
+- A keyword from `Keyword_Australia_Medical_Account_Number` is found.
     
 - The checksum passes.
     
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_australian_medical_account_number` finds content that matches the pattern. 
+- The function `Func_australian_medical_account_number` finds content that matches the pattern.
     
 - The checksum passes.
     
@@ -290,9 +290,9 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
   
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The regular expression `Regex_australia_passport_number` finds content that matches the pattern. 
+- The regular expression `Regex_australia_passport_number` finds content that matches the pattern.
     
-- A keyword from `Keyword_passport` or `Keyword_australia_passport_number` is found. 
+- A keyword from `Keyword_passport` or `Keyword_australia_passport_number` is found.
     
 ```
 <!-- Australia Passport Number -->
@@ -337,19 +337,19 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
   
 A DLP policy is 95% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_australian_tax_file_number` finds content that matches the pattern. 
+- The function `Func_australian_tax_file_number` finds content that matches the pattern.
     
-- A keyword from `Keyword_Australia_Tax_File_Number` is found. 
+- A keyword from `Keyword_Australia_Tax_File_Number` is found.
     
-- No keyword from `Keyword_number_exclusions` is found. 
+- No keyword from `Keyword_number_exclusions` is found.
     
 - The checksum passes.
     
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_australian_tax_file_number` finds content that matches the pattern. 
+- The function `Func_australian_tax_file_number` finds content that matches the pattern.
     
-- No keyword from `Keyword_Australia_Tax_File_Number` or `Keyword_number_exclusions` is found. 
+- No keyword from `Keyword_Australia_Tax_File_Number` or `Keyword_number_exclusions` is found.
     
 - The checksum passes.
     
@@ -405,9 +405,9 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
   
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_belgium_national_number` finds content that matches the pattern. 
+- The function `Func_belgium_national_number` finds content that matches the pattern.
     
-- A keyword from `Keyword_belgium_national_number` is found. 
+- A keyword from `Keyword_belgium_national_number` is found.
     
 - The checksum passes.
     
@@ -459,15 +459,15 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
   
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_brazil_cnpj` finds content that matches the pattern. 
+- The function `Func_brazil_cnpj` finds content that matches the pattern.
     
-- A keyword from `Keyword_brazil_cnpj` is found. 
+- A keyword from `Keyword_brazil_cnpj` is found.
     
 - The checksum passes.
     
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_brazil_cnpj` finds content that matches the pattern. 
+- The function `Func_brazil_cnpj` finds content that matches the pattern.
     
 - The checksum passes.
     
@@ -522,15 +522,15 @@ Unformatted: 11 digits where the last two digits are check digits
   
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_brazil_cpf` finds content that matches the pattern. 
+- The function `Func_brazil_cpf` finds content that matches the pattern.
     
-- A keyword from `Keyword_brazil_cpf` is found. 
+- A keyword from `Keyword_brazil_cpf` is found.
     
 - The checksum passes.
     
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_brazil_cpf` finds content that matches the pattern. 
+- The function `Func_brazil_cpf` finds content that matches the pattern.
     
 - The checksum passes.
     
@@ -595,15 +595,15 @@ Registro de Identidade (RIC) (new format)
   
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_brazil_rg` finds content that matches the pattern. 
+- The function `Func_brazil_rg` finds content that matches the pattern.
     
-- A keyword from `Keyword_brazil_rg` is found. 
+- A keyword from `Keyword_brazil_rg` is found.
     
 - The checksum passes.
     
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_brazil_rg` finds content that matches the pattern. 
+- The function `Func_brazil_rg` finds content that matches the pattern.
     
 - The checksum passes.
     
@@ -652,17 +652,17 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
   
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The regular expression `Regex_canada_bank_account_number` finds content that matches the pattern. 
+- The regular expression `Regex_canada_bank_account_number` finds content that matches the pattern.
     
-- A keyword from `Keyword_canada_bank_account_number` is found. 
+- A keyword from `Keyword_canada_bank_account_number` is found.
     
-- The regular expression `Regex_canada_bank_account_transit_number` finds content that matches the pattern. 
+- The regular expression `Regex_canada_bank_account_transit_number` finds content that matches the pattern.
     
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The regular expression `Regex_canada_bank_account_number` finds content that matches the pattern. 
+- The regular expression `Regex_canada_bank_account_number` finds content that matches the pattern.
     
-- A keyword from `Keyword_canada_bank_account_number` is found. 
+- A keyword from `Keyword_canada_bank_account_number` is found.
     
 ```
 <!-- Canada Bank Account Number -->
@@ -699,11 +699,11 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
   
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_[province_name]_drivers_license_number` finds content that matches the pattern. 
+- The function `Func_[province_name]_drivers_license_number` finds content that matches the pattern.
     
-- A keyword from `Keyword_[province_name]_drivers_license_name` is found. 
+- A keyword from `Keyword_[province_name]_drivers_license_name` is found.
     
-- A keyword from `Keyword_canada_drivers_license` is found. 
+- A keyword from `Keyword_canada_drivers_license` is found.
     
 ```
 <!-- Canada Driver's License Number -->
@@ -781,9 +781,9 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
   
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The regular expression `Regex_canada_health_service_number` finds content that matches the pattern. 
+- The regular expression `Regex_canada_health_service_number` finds content that matches the pattern.
     
-- A keyword from `Keyword_canada_health_service_number` is found. 
+- A keyword from `Keyword_canada_health_service_number` is found.
     
 ```
 <!-- Canada Health Service Number -->
@@ -817,9 +817,9 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
   
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The regular expression `Regex_canada_passport_number` finds content that matches the pattern. 
+- The regular expression `Regex_canada_passport_number` finds content that matches the pattern.
     
-- A keyword from `Keyword_canada_passport_number` or `Keyword_passport` is found. 
+- A keyword from `Keyword_canada_passport_number` or `Keyword_passport` is found.
     
 ```
 <!-- Canada Passport Number -->
@@ -854,9 +854,9 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
   
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The regular expression `Regex_canada_phin` finds content that matches the pattern. 
+- The regular expression `Regex_canada_phin` finds content that matches the pattern.
     
-- At least two keywords from `Keyword_canada_phin` or `Keyword_canada_provinces` are found.. 
+- At least two keywords from `Keyword_canada_phin` or `Keyword_canada_provinces` are found..
     
 ```
 <!-- Canada PHIN -->
@@ -905,23 +905,23 @@ Unformatted: Nine digits
   
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_canadian_sin` finds content that matches the pattern. 
+- The function `Func_canadian_sin` finds content that matches the pattern.
     
 - At least two of any combination of the following:
     
-  - A keyword from `Keyword_sin` is found. 
+  - A keyword from `Keyword_sin` is found.
     
-  - A keyword from `Keyword_sin_collaborative` is found. 
+  - A keyword from `Keyword_sin_collaborative` is found.
     
-  - The function `Func_eu_date` finds a date in the right date format. 
+  - The function `Func_eu_date` finds a date in the right date format.
     
 - The checksum passes.
     
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_unformatted_canadian_sin` finds content that matches the pattern. 
+- The function `Func_unformatted_canadian_sin` finds content that matches the pattern.
     
-- A keyword from `Keyword_sin` is found. 
+- A keyword from `Keyword_sin` is found.
     
 - The checksum passes.
     
@@ -977,15 +977,15 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
   
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_chile_id_card` finds content that matches the pattern. 
+- The function `Func_chile_id_card` finds content that matches the pattern.
     
-- A keyword from `Keyword_chile_id_card` is found. 
+- A keyword from `Keyword_chile_id_card` is found.
     
 - The checksum passes.
     
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_chile_id_card` finds content that matches the pattern. 
+- The function `Func_chile_id_card` finds content that matches the pattern.
     
 - The checksum passes.
     
@@ -1030,15 +1030,15 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
   
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_china_resident_id` finds content that matches the pattern. 
+- The function `Func_china_resident_id` finds content that matches the pattern.
     
-- A keyword from `Keyword_china_resident_id` is found. 
+- A keyword from `Keyword_china_resident_id` is found.
     
 - The checksum passes.
     
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_china_resident_id` finds content that matches the pattern. 
+- The function `Func_china_resident_id` finds content that matches the pattern.
     
 - The checksum passes.
     
@@ -1075,21 +1075,21 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
   
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_credit_card` finds content that matches the pattern. 
+- The function `Func_credit_card` finds content that matches the pattern.
     
 - One of the following is true:
     
-  - A keyword from `Keyword_cc_verification` is found. 
+  - A keyword from `Keyword_cc_verification` is found.
     
-  - A keyword from `Keyword_cc_name` is found. 
+  - A keyword from `Keyword_cc_name` is found.
     
-  - The function `Func_expiration_date` finds a date in the right date format. 
+  - The function `Func_expiration_date` finds a date in the right date format.
     
 - The checksum passes.
     
 A DLP policy is 65% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_credit_card` finds content that matches the pattern. 
+- The function `Func_credit_card` finds content that matches the pattern.
     
 - The checksum passes.
     
@@ -1130,9 +1130,9 @@ A DLP policy is 65% confident that it's detected this type of sensitive informat
   
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_croatia_id_card` finds content that matches the pattern. 
+- The function `Func_croatia_id_card` finds content that matches the pattern.
     
-- A keyword from `Keyword_croatia_id_card` is found. 
+- A keyword from `Keyword_croatia_id_card` is found.
     
 ```
 <!--Croatia Identity Card Number-->
@@ -1168,15 +1168,15 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
   
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_croatia_oib_number` finds content that matches the pattern. 
+- The function `Func_croatia_oib_number` finds content that matches the pattern.
     
-- A keyword from `Keyword_croatia_oib_number` is found. 
+- A keyword from `Keyword_croatia_oib_number` is found.
     
 - The checksum passes.
     
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_croatia_oib_number` finds content that matches the pattern. 
+- The function `Func_croatia_oib_number` finds content that matches the pattern.
     
 - The checksum passes.
     
@@ -1219,9 +1219,9 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
   
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_czech_id_card` finds content that matches the pattern. 
+- The function `Func_czech_id_card` finds content that matches the pattern.
     
-- A keyword from `Keyword_czech_id_card` is found. 
+- A keyword from `Keyword_czech_id_card` is found.
     
 - The checksum passes.
     
@@ -1261,9 +1261,9 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
   
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The regular expression `Regex_denmark_id` finds content that matches the pattern. 
+- The regular expression `Regex_denmark_id` finds content that matches the pattern.
     
-- A keyword from `Keyword_denmark_id` is found. 
+- A keyword from `Keyword_denmark_id` is found.
     
 - The checksum passes.
     
@@ -1303,7 +1303,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
   
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_dea_number` finds content that matches the pattern. 
+- The function `Func_dea_number` finds content that matches the pattern.
     
 - The checksum passes.
     
@@ -1330,21 +1330,21 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
   
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_eu_debit_card` finds content that matches the pattern. 
+- The function `Func_eu_debit_card` finds content that matches the pattern.
     
 - At least one of the following is true:
     
-  - A keyword from `Keyword_eu_debit_card` is found. 
+  - A keyword from `Keyword_eu_debit_card` is found.
     
-  - A keyword from `Keyword_card_terms_dict` is found. 
+  - A keyword from `Keyword_card_terms_dict` is found.
     
-  - A keyword from `Keyword_card_security_terms_dict` is found. 
+  - A keyword from `Keyword_card_security_terms_dict` is found.
     
-  - A keyword from `Keyword_card_expiration_terms_dict` is found. 
+  - A keyword from `Keyword_card_expiration_terms_dict` is found.
     
-  - The function `Func_eu_date1` finds a date in the right date format. 
+  - The function `Func_eu_date1` finds a date in the right date format.
     
-  - The function `Func_eu_date2` finds a date in the right date format. 
+  - The function `Func_eu_date2` finds a date in the right date format.
     
 - The checksum passes.
     
@@ -1395,9 +1395,9 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
   
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_finnish_national_id` finds content that matches the pattern. 
+- The function `Func_finnish_national_id` finds content that matches the pattern.
     
-- A keyword from `Keyword_finnish_national_id` is found. 
+- A keyword from `Keyword_finnish_national_id` is found.
     
 - The checksum passes.
     
@@ -1435,9 +1435,9 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
   
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The regular expression `Regex_finland_passport_number` finds content that matches the pattern. 
+- The regular expression `Regex_finland_passport_number` finds content that matches the pattern.
     
-- A keyword from `Keyword_finland_passport_number` is found. 
+- A keyword from `Keyword_finland_passport_number` is found.
     
 ```
 <!-- Finland Passport Number -->
@@ -1469,13 +1469,13 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
   
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters::
   
-- The function `Func_french_drivers_license` finds content that matches the pattern. 
+- The function `Func_french_drivers_license` finds content that matches the pattern.
     
 - At least one of the following is true:
     
-  - A keyword from `Keyword_french_drivers_license` is found. 
+  - A keyword from `Keyword_french_drivers_license` is found.
     
-  - The function `Func_eu_date` finds a date in the right date format. 
+  - The function `Func_eu_date` finds a date in the right date format.
     
 ```
 <!-- France Driver's License Number -->
@@ -1508,7 +1508,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
   
  **Definition**:
   
-A DLP policy is 65% confident that it's detected this type of sensitive information if, within a proximity of 300 characters: The regular expression `Regex_france_cni` finds content that matches the pattern. 
+A DLP policy is 65% confident that it's detected this type of sensitive information if, within a proximity of 300 characters: The regular expression `Regex_france_cni` finds content that matches the pattern.
   
 ```
 <!-- France CNI -->
@@ -1539,9 +1539,9 @@ A DLP policy is 65% confident that it's detected this type of sensitive informat
   
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_fr_passport` finds content that matches the pattern. 
+- The function `Func_fr_passport` finds content that matches the pattern.
     
-- A keyword from `Keyword_passport` is found.. 
+- A keyword from `Keyword_passport` is found..
     
 ```
 <!-- France Passport Number -->
@@ -1579,17 +1579,17 @@ Must match one of two patterns:
   
 A DLP policy is 95% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_french_insee` or `Func_fr_insee` finds content that matches the pattern. 
+- The function `Func_french_insee` or `Func_fr_insee` finds content that matches the pattern.
     
-- A keyword from `Keyword_fr_insee` is found. 
+- A keyword from `Keyword_fr_insee` is found.
     
 - The checksum passes.
     
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_french_insee` or `Func_fr_insee` finds content that matches the pattern. 
+- The function `Func_french_insee` or `Func_fr_insee` finds content that matches the pattern.
     
-- No keyword from `Keyword_fr_insee` is found. 
+- No keyword from `Keyword_fr_insee` is found.
     
 - The checksum passes.
     
@@ -1643,15 +1643,15 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
   
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_german_drivers_license` finds content that matches the pattern. 
+- The function `Func_german_drivers_license` finds content that matches the pattern.
     
 - At least one of the following is true:
     
-  - A keyword from `Keyword_german_drivers_license_number` is found. 
+  - A keyword from `Keyword_german_drivers_license_number` is found.
     
-  - A keyword from `Keyword_german_drivers_license_collaborative` is found. 
+  - A keyword from `Keyword_german_drivers_license_collaborative` is found.
     
-  - A keyword from `Keyword_german_drivers_license` is found. 
+  - A keyword from `Keyword_german_drivers_license` is found.
     
 - The checksum passes.
     
@@ -1701,9 +1701,9 @@ From 1 April 1987 until 31 October 2010: 10 digits
   
 A DLP policy is 65% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The regular expression `Regex_germany_id_card` finds content that matches the pattern. 
+- The regular expression `Regex_germany_id_card` finds content that matches the pattern.
     
-- A keyword from `Keyword_germany_id_card` is found. 
+- A keyword from `Keyword_germany_id_card` is found.
     
 ```
 <!-- Germany Identity Card Number -->
@@ -1743,7 +1743,7 @@ A DLP policy is 65% confident that it's detected this type of sensitive informat
   
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_german_passport` finds content that matches the pattern. 
+- The function `Func_german_passport` finds content that matches the pattern.
     
 - A keyword from any of the five keyword lists is found.
     
@@ -1751,7 +1751,7 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
     
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_german_passport_data` finds content that matches the pattern. 
+- The function `Func_german_passport_data` finds content that matches the pattern.
     
 - A keyword from any of the five keyword lists is found.
     
@@ -1819,9 +1819,9 @@ Eight letters and numbers (new format):
   
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The regular expression `Regex_greece_id_card` finds content that matches the pattern. 
+- The regular expression `Regex_greece_id_card` finds content that matches the pattern.
     
-- A keyword from `Keyword_greece_id_card` is found. 
+- A keyword from `Keyword_greece_id_card` is found.
     
 ```
 <!-- Greece National ID Card -->
@@ -1859,15 +1859,15 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
   
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_hong_kong_id_card` finds content that matches the pattern. 
+- The function `Func_hong_kong_id_card` finds content that matches the pattern.
     
-- A keyword from `Keyword_hong_kong_id_card` is found. 
+- A keyword from `Keyword_hong_kong_id_card` is found.
     
 - The checksum passes.
     
 A DLP policy is 65% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_hong_kong_id_card` finds content that matches the pattern. 
+- The function `Func_hong_kong_id_card` finds content that matches the pattern.
     
 - The checksum passes.
     
@@ -1910,9 +1910,9 @@ A DLP policy is 65% confident that it's detected this type of sensitive informat
   
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The regular expression `Regex_india_permanent_account_number` finds content that matches the pattern. 
+- The regular expression `Regex_india_permanent_account_number` finds content that matches the pattern.
     
-- A keyword from `Keyword_india_permanent_account_number` is found. 
+- A keyword from `Keyword_india_permanent_account_number` is found.
     
 - The checksum passes.
     
@@ -1956,15 +1956,15 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
   
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_india_aadhaar` finds content that matches the pattern. 
+- The function `Func_india_aadhaar` finds content that matches the pattern.
     
-- A keyword from `Keyword_india_aadhar` is found. 
+- A keyword from `Keyword_india_aadhar` is found.
     
 - The checksum passes.
     
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_india_aadhaar` finds content that matches the pattern. 
+- The function `Func_india_aadhaar` finds content that matches the pattern.
     
 - The checksum passes.
     
@@ -2017,11 +2017,11 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
   
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The regular expression `Regex_indonesia_id_card` finds content that matches the pattern. 
+- The regular expression `Regex_indonesia_id_card` finds content that matches the pattern.
     
-- A keyword from `Keyword_indonesia_id_card` is found. 
+- A keyword from `Keyword_indonesia_id_card` is found.
     
-A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters: The regular expression `Regex_indonesia_id_card` finds content that matches the pattern. 
+A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters: The regular expression `Regex_indonesia_id_card` finds content that matches the pattern.
   
 ```
 <!-- Indonesia Identity Card (KTP) Number -->
@@ -2068,7 +2068,7 @@ The format for each country is slightly different. The IBAN sensitive informatio
   
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_iban` finds content that matches the pattern. 
+- The function `Func_iban` finds content that matches the pattern.
     
 - The checksum passes.
     
@@ -2098,27 +2098,27 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
   
 For IPv4, a DLP policy is 95% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The regular expression `Regex_ipv4_address` finds content that matches the pattern. 
+- The regular expression `Regex_ipv4_address` finds content that matches the pattern.
     
-- A keyword from `Keyword_ipaddress` is found. 
+- A keyword from `Keyword_ipaddress` is found.
     
 For IPv6, a DLP policy is 95% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The regular expression `Regex_ipv6_address` finds content that matches the pattern. 
+- The regular expression `Regex_ipv6_address` finds content that matches the pattern.
     
-- No keyword from `Keyword_ipaddress` is found. 
+- No keyword from `Keyword_ipaddress` is found.
     
 For IPv4, a DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The regular expression `Regex_ipv4_address` finds content that matches the pattern. 
+- The regular expression `Regex_ipv4_address` finds content that matches the pattern.
     
-- No keyword from `Keyword_ipaddress` is found. 
+- No keyword from `Keyword_ipaddress` is found.
     
 For IPv6, a DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The regular expression `Regex_ipv6_address` finds content that matches the pattern. 
+- The regular expression `Regex_ipv6_address` finds content that matches the pattern.
     
-- No keyword from `Keyword_ipaddress` is found. 
+- No keyword from `Keyword_ipaddress` is found.
     
 ```
 <Entity id="1daa4ad5-e2dd-4ca4-a788-54722c09efb2" patternsProximity="300" recommendedConfidence="85">
@@ -2187,19 +2187,19 @@ Old format (31 Dec 2012 and earlier)
   
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_ireland_pps` finds content that matches the pattern. 
+- The function `Func_ireland_pps` finds content that matches the pattern.
     
 - One of the following is true:
     
-  - A keyword from `Keyword_ireland_pps` is found. 
+  - A keyword from `Keyword_ireland_pps` is found.
     
-  - The function `Func_eu_date` finds a date in the right date format. 
+  - The function `Func_eu_date` finds a date in the right date format.
     
 - The checksum passes.
     
 A DLP policy is 65% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_ireland_pps` finds content that matches the pattern. 
+- The function `Func_ireland_pps` finds content that matches the pattern.
     
 - The checksum passes.
     
@@ -2253,9 +2253,9 @@ Unformatted: 13 consecutive digits
   
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The regular expression `Regex_israel_bank_account_number` finds content that matches the pattern. 
+- The regular expression `Regex_israel_bank_account_number` finds content that matches the pattern.
     
-- A keyword from `Keyword_israel_bank_account_number` is found. 
+- A keyword from `Keyword_israel_bank_account_number` is found.
     
 ```
 <!-- Israel Bank Account Number -->
@@ -2289,9 +2289,9 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
   
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_israeli_national_id_number` finds content that matches the pattern. 
+- The function `Func_israeli_national_id_number` finds content that matches the pattern.
     
-- A keyword from `Keyword_Israel_National_ID` is found. 
+- A keyword from `Keyword_Israel_National_ID` is found.
     
 - The checksum passes.
     
@@ -2335,9 +2335,9 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
   
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The regular expression `Regex_italy_drivers_license_number` finds content that matches the pattern. 
+- The regular expression `Regex_italy_drivers_license_number` finds content that matches the pattern.
     
-- A keyword from `Keyword_italy_drivers_license_number` is found. 
+- A keyword from `Keyword_italy_drivers_license_number` is found.
     
 ```
 <!-- Italy Driver's license Number -->
@@ -2381,21 +2381,21 @@ Bank account branch code:
   
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_jp_bank_account` finds content that matches the pattern. 
+- The function `Func_jp_bank_account` finds content that matches the pattern.
     
-- A keyword from `Keyword_jp_bank_account` is found. 
+- A keyword from `Keyword_jp_bank_account` is found.
     
 - One of the following is true:
     
-  - The function `Func_jp_bank_account_branch_code` finds content that matches the pattern. 
+  - The function `Func_jp_bank_account_branch_code` finds content that matches the pattern.
     
-  - A keyword from `Keyword_jp_bank_branch_code` is found. 
+  - A keyword from `Keyword_jp_bank_branch_code` is found.
     
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_jp_bank_account` finds content that matches the pattern. 
+- The function `Func_jp_bank_account` finds content that matches the pattern.
     
-- A keyword from `Keyword_jp_bank_account` is found. 
+- A keyword from `Keyword_jp_bank_account` is found.
     
 ```
 <!-- Japan Bank Account Number -->
@@ -2437,9 +2437,9 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
   
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_jp_drivers_license_number` finds content that matches the pattern. 
+- The function `Func_jp_drivers_license_number` finds content that matches the pattern.
     
-- A keyword from `Keyword_jp_drivers_license_number` is found. 
+- A keyword from `Keyword_jp_drivers_license_number` is found.
     
 ```
 <!-- Japan Driver's License Number -->
@@ -2471,9 +2471,9 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
   
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_jp_passport` finds content that matches the pattern. 
+- The function `Func_jp_passport` finds content that matches the pattern.
     
-- A keyword from `Keyword_jp_passport` is found. 
+- A keyword from `Keyword_jp_passport` is found.
     
 ```
 <!-- Japan Passport Number -->
@@ -2505,9 +2505,9 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
   
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_jp_resident_registration_number` finds content that matches the pattern. 
+- The function `Func_jp_resident_registration_number` finds content that matches the pattern.
     
-- A keyword from `Keyword_jp_resident_registration_number` is found. 
+- A keyword from `Keyword_jp_resident_registration_number` is found.
     
 ```
 <!-- Japan Resident Registration Number -->
@@ -2549,15 +2549,15 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
   
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_jp_sin` finds content that matches the pattern. 
+- The function `Func_jp_sin` finds content that matches the pattern.
     
-- A keyword from `Keyword_jp_sin` is found. 
+- A keyword from `Keyword_jp_sin` is found.
     
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_jp_sin_pre_1997` finds content that matches the pattern. 
+- The function `Func_jp_sin_pre_1997` finds content that matches the pattern.
     
-- A keyword from `Keyword_jp_sin` is found. 
+- A keyword from `Keyword_jp_sin` is found.
     
 ```
 <!-- Japan Social Insurance Number -->
@@ -2605,9 +2605,9 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
   
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The regular expression `Regex_malaysia_id_card_number` finds content that matches the pattern. 
+- The regular expression `Regex_malaysia_id_card_number` finds content that matches the pattern.
     
-- A keyword from `Keyword_malaysia_id_card_number` is found. 
+- A keyword from `Keyword_malaysia_id_card_number` is found.
     
 ```
 <!-- Malaysia ID Card Number -->
@@ -2650,17 +2650,17 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
   
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_netherlands_bsn` finds content that matches the pattern. 
+- The function `Func_netherlands_bsn` finds content that matches the pattern.
     
-- A keyword from `Keyword_netherlands_bsn` is found. 
+- A keyword from `Keyword_netherlands_bsn` is found.
     
-- The function `Func_eu_date` finds a date in the right date format. 
+- The function `Func_eu_date` finds a date in the right date format.
     
 - The checksum passes.
     
 A DLP policy is 65% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_netherlands_bsn` finds content that matches the pattern. 
+- The function `Func_netherlands_bsn` finds content that matches the pattern.
     
 - The checksum passes.
     
@@ -2698,9 +2698,9 @@ A DLP policy is 65% confident that it's detected this type of sensitive informat
   
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_new_zealand_ministry_of_health_number` finds content that matches the pattern. 
+- The function `Func_new_zealand_ministry_of_health_number` finds content that matches the pattern.
     
-- A keyword from `Keyword_nz_terms` is found. 
+- A keyword from `Keyword_nz_terms` is found.
     
 - The checksum passes.
     
@@ -2742,15 +2742,15 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
   
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_norway_id_number` finds content that matches the pattern. 
+- The function `Func_norway_id_number` finds content that matches the pattern.
     
-- A keyword from `Keyword_norway_id_number` is found. 
+- A keyword from `Keyword_norway_id_number` is found.
     
 - The checksum passes.
     
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_norway_id_numbe` finds content that matches the pattern. 
+- The function `Func_norway_id_numbe` finds content that matches the pattern.
     
 - The checksum passes.
     
@@ -2797,9 +2797,9 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
   
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The regular expression `Regex_philippines_unified_id` finds content that matches the pattern. 
+- The regular expression `Regex_philippines_unified_id` finds content that matches the pattern.
     
-- A keyword from `Keyword_philippines_id` is found. 
+- A keyword from `Keyword_philippines_id` is found.
     
 ```
 <!-- Philippines Unified Multi-Purpose ID number -->
@@ -2831,9 +2831,9 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
   
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_polish_national_id` finds content that matches the pattern. 
+- The function `Func_polish_national_id` finds content that matches the pattern.
     
-- A keyword from `Keyword_polish_national_id_passport_number` is found. 
+- A keyword from `Keyword_polish_national_id_passport_number` is found.
     
 - The checksum passes.
     
@@ -2867,9 +2867,9 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
   
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_pesel_identification_number` finds content that matches the pattern. 
+- The function `Func_pesel_identification_number` finds content that matches the pattern.
     
-- A keyword from `Keyword_pesel_identification_number` is found. 
+- A keyword from `Keyword_pesel_identification_number` is found.
     
 - The checksum passes.
     
@@ -2903,9 +2903,9 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
   
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_polish_passport_number` finds content that matches the pattern. 
+- The function `Func_polish_passport_number` finds content that matches the pattern.
     
-- A keyword from `Keyword_polish_national_id_passport_number` is found. 
+- A keyword from `Keyword_polish_national_id_passport_number` is found.
     
 - The checksum passes.
     
@@ -2940,9 +2940,9 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
   
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The regular expression `Regex_portugal_citizen_card` finds content that matches the pattern. 
+- The regular expression `Regex_portugal_citizen_card` finds content that matches the pattern.
     
-- A keyword from `Keyword_portugal_citizen_card` is found. 
+- A keyword from `Keyword_portugal_citizen_card` is found.
     
 ```
 <!-- Portugal Citizen Card Number -->
@@ -2974,9 +2974,9 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
   
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The regular expression `Regex_saudi_arabia_national_id` finds content that matches the pattern. 
+- The regular expression `Regex_saudi_arabia_national_id` finds content that matches the pattern.
     
-- A keyword from `Keyword_saudi_arabia_national_id` is found. 
+- A keyword from `Keyword_saudi_arabia_national_id` is found.
     
 ```
 <!-- Saudi Arabia National ID -->
@@ -3016,15 +3016,15 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
   
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The regular expression `Regex_singapore_nric` finds content that matches the pattern. 
+- The regular expression `Regex_singapore_nric` finds content that matches the pattern.
     
-- A keyword from `Keyword_singapore_nric` is found. 
+- A keyword from `Keyword_singapore_nric` is found.
     
 - The checksum passes.
     
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The regular expression `Regex_singapore_nric` finds content that matches the pattern. 
+- The regular expression `Regex_singapore_nric` finds content that matches the pattern.
     
 - The checksum passes.
     
@@ -3071,9 +3071,9 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
   
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_south_africa_identification_number` finds content that matches the pattern. 
+- The function `Func_south_africa_identification_number` finds content that matches the pattern.
     
-- A keyword from `Keyword_south_africa_identification_number` is found. 
+- A keyword from `Keyword_south_africa_identification_number` is found.
     
 - The checksum passes.
     
@@ -3119,15 +3119,15 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
   
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_south_korea_resident_number` finds content that matches the pattern. 
+- The function `Func_south_korea_resident_number` finds content that matches the pattern.
     
-- A keyword from `Keyword_south_korea_resident_number` is found. 
+- A keyword from `Keyword_south_korea_resident_number` is found.
     
 - The checksum passes.
     
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_south_korea_resident_number` finds content that matches the pattern. 
+- The function `Func_south_korea_resident_number` finds content that matches the pattern.
     
 - The checksum passes.
     
@@ -3174,7 +3174,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
   
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_spanish_social_security_number` finds content that matches the pattern. 
+- The function `Func_spanish_social_security_number` finds content that matches the pattern.
     
 - The checksum passes.
     
@@ -3209,7 +3209,7 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
   
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_swedish_national_identifier` finds content that matches the pattern. 
+- The function `Func_swedish_national_identifier` finds content that matches the pattern.
     
 - The checksum passes.
     
@@ -3236,13 +3236,13 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
   
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The regular expression `Regex_sweden_passport_number` finds content that matches the pattern. 
+- The regular expression `Regex_sweden_passport_number` finds content that matches the pattern.
     
 - One of the following is true:
     
-  - A keyword from `Keyword_passport` is found. 
+  - A keyword from `Keyword_passport` is found.
     
-  - A keyword from `Keyword_sweden_passport` is found. 
+  - A keyword from `Keyword_sweden_passport` is found.
     
 ```
 <!-- Sweden Passport Number -->
@@ -3287,9 +3287,9 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
   
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The regular expression `Regex_swift` finds content that matches the pattern. 
+- The regular expression `Regex_swift` finds content that matches the pattern.
     
-- A keyword from `Keyword_swift` is found. 
+- A keyword from `Keyword_swift` is found.
     
 ```
 <Entity id="cb2ab58c-9cb8-4c81-baf8-a4e106791df4" patternsProximity="300" recommendedConfidence="75">
@@ -3326,9 +3326,9 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
   
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_taiwanese_national_id` finds content that matches the pattern. 
+- The function `Func_taiwanese_national_id` finds content that matches the pattern.
     
-- A keyword from `Keyword_taiwanese_national_id` is found. 
+- A keyword from `Keyword_taiwanese_national_id` is found.
     
 - The checksum passes.
     
@@ -3374,9 +3374,9 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
   
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The regular expression `Regex_taiwan_passport` finds content that matches the pattern. 
+- The regular expression `Regex_taiwan_passport` finds content that matches the pattern.
     
-- A keyword from `Keyword_taiwan_passport` is found. 
+- A keyword from `Keyword_taiwan_passport` is found.
     
 ```
 <!-- Taiwan Passport Number -->
@@ -3412,9 +3412,9 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
   
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The regular expression `Regex_taiwan_resident_certificate` finds content that matches the pattern. 
+- The regular expression `Regex_taiwan_resident_certificate` finds content that matches the pattern.
     
-- A keyword from `Keyword_taiwan_resident_certificate` is found. 
+- A keyword from `Keyword_taiwan_resident_certificate` is found.
     
 ```
 <!-- Taiwan Resident Certificate (ARC/TARC) -->
@@ -3456,9 +3456,9 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
   
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_uk_drivers_license` finds content that matches the pattern. 
+- The function `Func_uk_drivers_license` finds content that matches the pattern.
     
-- A keyword from `Keyword_uk_drivers_license` is found. 
+- A keyword from `Keyword_uk_drivers_license` is found.
     
 - The checksum passes.
     
@@ -3492,9 +3492,9 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
   
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The regular expression `Regex_uk_electoral` finds content that matches the pattern. 
+- The regular expression `Regex_uk_electoral` finds content that matches the pattern.
     
-- A keyword from `Keyword_uk_electoral` is found. 
+- A keyword from `Keyword_uk_electoral` is found.
     
 ```
 <!-- U.K. Electoral Number -->
@@ -3538,15 +3538,15 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
   
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_uk_nhs_number` finds content that matches the pattern. 
+- The function `Func_uk_nhs_number` finds content that matches the pattern.
     
 - One of the following is true:
     
-  - A keyword from `Keyword_uk_nhs_number` is found. 
+  - A keyword from `Keyword_uk_nhs_number` is found.
     
-  - A keyword from `Keyword_uk_nhs_number1` is found. 
+  - A keyword from `Keyword_uk_nhs_number1` is found.
     
-  - A keyword from `Keyword_uk_nhs_number_dob` is found. 
+  - A keyword from `Keyword_uk_nhs_number_dob` is found.
     
 - The checksum passes.
     
@@ -3602,15 +3602,15 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
   
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_uk_nino` finds content that matches the pattern. 
+- The function `Func_uk_nino` finds content that matches the pattern.
     
-- A keyword from `Keyword_uk_nino` is found. 
+- A keyword from `Keyword_uk_nino` is found.
     
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_uk_nino` finds content that matches the pattern. 
+- The function `Func_uk_nino` finds content that matches the pattern.
     
-- No keyword from `Keyword_uk_nino` is found. 
+- No keyword from `Keyword_uk_nino` is found.
     
 ```
 <!-- U.K. NINO -->
@@ -3650,9 +3650,9 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
   
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_usa_uk_passport` finds content that matches the pattern. 
+- The function `Func_usa_uk_passport` finds content that matches the pattern.
     
-- A keyword from `Keyword_passport` is found. 
+- A keyword from `Keyword_passport` is found.
     
 ```
 <Entity id="178ec42a-18b4-47cc-85c7-d62c92fd67f8" patternsProximity="300" recommendedConfidence="75">
@@ -3683,9 +3683,9 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
   
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The regular expression `Regex_usa_bank_account_number` finds content that matches the pattern. 
+- The regular expression `Regex_usa_bank_account_number` finds content that matches the pattern.
     
-- A keyword from `Keyword_usa_Bank_Account` is found. 
+- A keyword from `Keyword_usa_Bank_Account` is found.
     
 ```
 <!-- U.S. Bank Account Number -->
@@ -3721,21 +3721,21 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
   
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_new_york_drivers_license_number` finds content that matches the pattern. 
+- The function `Func_new_york_drivers_license_number` finds content that matches the pattern.
     
-- A keyword from `Keyword_[state_name]_drivers_license_name` is found. 
+- A keyword from `Keyword_[state_name]_drivers_license_name` is found.
     
-- A keyword from `Keyword_us_drivers_license` is found. 
+- A keyword from `Keyword_us_drivers_license` is found.
     
 A DLP policy is 65% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_new_york_drivers_license_number` finds content that matches the pattern. 
+- The function `Func_new_york_drivers_license_number` finds content that matches the pattern.
     
-- A keyword from `Keyword_[state_name]_drivers_license_name` is found. 
+- A keyword from `Keyword_[state_name]_drivers_license_name` is found.
     
-- A keyword from `Keyword_us_drivers_license_abbreviations` is found. 
+- A keyword from `Keyword_us_drivers_license_abbreviations` is found.
     
-- No keyword from `Keyword_us_drivers_license` is found. 
+- No keyword from `Keyword_us_drivers_license` is found.
     
 ```
 <Pattern confidenceLevel="75">
@@ -3799,29 +3799,29 @@ Unformatted:
   
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_formatted_itin` finds content that matches the pattern. 
+- The function `Func_formatted_itin` finds content that matches the pattern.
     
 - At least one of the following is true:
     
-  - A keyword from `Keyword_itin` is found. 
+  - A keyword from `Keyword_itin` is found.
     
-  - The function `Func_us_address` finds an address in the right date format. 
+  - The function `Func_us_address` finds an address in the right date format.
     
-  - The function `Func_us_date` finds a date in the right date format. 
+  - The function `Func_us_date` finds a date in the right date format.
     
-  - A keyword from `Keyword_itin_collaborative` is found. 
+  - A keyword from `Keyword_itin_collaborative` is found.
     
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_unformatted_itin` finds content that matches the pattern. 
+- The function `Func_unformatted_itin` finds content that matches the pattern.
     
 - At least one of the following is true:
     
-  - A keyword from `Keyword_itin_collaborative` is found. 
+  - A keyword from `Keyword_itin_collaborative` is found.
     
-  - The function `Func_us_address` finds an address in the right date format. 
+  - The function `Func_us_address` finds an address in the right date format.
     
-  - The function `Func_us_date` finds a date in the right date format. 
+  - The function `Func_us_date` finds a date in the right date format.
     
 ```
 <!-- U.S. Individual Taxpayer Identification Number (ITIN) -->
@@ -3860,7 +3860,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
  **Format**: 9 digits, which may be in a formatted or unformatted pattern
   
 > [!NOTE]
-> If issued before mid-2011, an SSN has strong formatting where certain parts of the number must fall within certain ranges to be valid (but there's no checksum). 
+> If issued before mid-2011, an SSN has strong formatting where certain parts of the number must fall within certain ranges to be valid (but there's no checksum).
   
  **Pattern**: Four functions look for SSNs in four different patterns:
   
@@ -3878,55 +3878,55 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
   
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_ssn` finds content that matches the pattern. 
+- The function `Func_ssn` finds content that matches the pattern.
     
 - At least one of the following is true:
     
-  - A keyword from `Keyword_ssn` is found. 
+  - A keyword from `Keyword_ssn` is found.
     
-  - The function `Func_us_date` finds a date in the right date format. 
+  - The function `Func_us_date` finds a date in the right date format.
     
-  - The function `Func_us_address` finds an address in the right date format. 
+  - The function `Func_us_address` finds an address in the right date format.
     
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_unformatted_ssn` finds content that matches the pattern. 
+- The function `Func_unformatted_ssn` finds content that matches the pattern.
     
-- A keyword from `Keyword_ssn` is found. 
+- A keyword from `Keyword_ssn` is found.
     
 - At least one of the following is true:
     
-  - The function `Func_us_date` finds a date in the right date format. 
+  - The function `Func_us_date` finds a date in the right date format.
     
-  - The function `Func_us_address` finds an address in the right date format. 
+  - The function `Func_us_address` finds an address in the right date format.
     
 A DLP policy is 65% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_randomized_formatted_ssn` finds content that matches the pattern. 
+- The function `Func_randomized_formatted_ssn` finds content that matches the pattern.
     
-- The function `Func_ssn` does not find content that matches the pattern. 
+- The function `Func_ssn` does not find content that matches the pattern.
     
 - At least one of the following is true:
     
-  - A keyword from `Keyword_ssn` is found. 
+  - A keyword from `Keyword_ssn` is found.
     
-  - The function `Func_us_date` finds a date in the right date format. 
+  - The function `Func_us_date` finds a date in the right date format.
     
-  - The function `Func_us_address` finds an address in the right date format. 
+  - The function `Func_us_address` finds an address in the right date format.
     
 A DLP policy is 55% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
   
-- The function `Func_randomized_unformatted_ssn` finds content that matches the pattern. 
+- The function `Func_randomized_unformatted_ssn` finds content that matches the pattern.
     
-- A keyword from `Keyword_ssn` is found. 
+- A keyword from `Keyword_ssn` is found.
     
-- The function `Func_unformatted_ssn` does not find content that matches the pattern. 
+- The function `Func_unformatted_ssn` does not find content that matches the pattern.
     
 - At least one of the following is true:
     
-  - The function `Func_us_date` finds a date in the right date format. 
+  - The function `Func_us_date` finds a date in the right date format.
     
-  - The function `Func_us_address` finds an address in the right date format. 
+  - The function `Func_us_address` finds an address in the right date format.
     
 ```
 <!-- U.S. Social Security Number (SSN) -->

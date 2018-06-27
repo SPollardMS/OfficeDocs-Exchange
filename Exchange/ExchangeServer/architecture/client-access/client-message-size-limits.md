@@ -18,18 +18,18 @@ description: "Summary: Learn how to configure message size limits for Exchange A
   
 In Exchange Server 2016, there are several different message size limits that apply to messages as they travel through your organization. For more information, see [Message size limits in Exchange 2016](../../mail-flow/message-size-limits.md).
   
-However, there are client-specific message size limits you can configure for Outlook on the web (fornerly known as Outlook Web App) and email clients that use Exchange ActiveSync or Exchange Web Services (EWS). If you change the Exchange organizational, connector, or user message size limits, you likely need change the limits for Outlook on the web, ActiveSync, and EWS. These limits are described in the following tables. To change the message size limit for a specific client type, you need to change **all** the values that are described in the table. 
+However, there are client-specific message size limits you can configure for Outlook on the web (fornerly known as Outlook Web App) and email clients that use Exchange ActiveSync or Exchange Web Services (EWS). If you change the Exchange organizational, connector, or user message size limits, you likely need change the limits for Outlook on the web, ActiveSync, and EWS. These limits are described in the following tables. To change the message size limit for a specific client type, you need to change **all** the values that are described in the table.
   
 > [!NOTE]
-> For any message size limit, you need to set a value that's larger than the actual size you want enforced. This accounts for the Base64 encoding of attachments and other binary data. Base64 encoding increases the size of the message by approximately 33%, so the value you specify should be approximately 33% larger than the actual message size you want enforced. For example, if you specify a maximum message size value of 64 MB, you can expect a realistic maximum message size of approximately 48 MB. 
+> For any message size limit, you need to set a value that's larger than the actual size you want enforced. This accounts for the Base64 encoding of attachments and other binary data. Base64 encoding increases the size of the message by approximately 33%, so the value you specify should be approximately 33% larger than the actual message size you want enforced. For example, if you specify a maximum message size value of 64 MB, you can expect a realistic maximum message size of approximately 48 MB.
   
 **ActiveSync**
 
 |**Services**|**Configuration file**|**Keys and default values**|**Size**|
 |:-----|:-----|:-----|:-----|
-|Client Access (frontend)  <br/> | `%ExchangeInstallPath%FrontEnd\HttpProxy\Sync\web.config` <br/> | `maxAllowedContentLength="30000000"`: Not present by default (see comments).  <br/> |bytes  <br/> |
+|Client Access (frontend)  <br/> | `%ExchangeInstallPath%FrontEnd\HttpProxy\Sync\web.config` <br/> | `maxAllowedContentLength="30000000"` (not present by default; see comments)  <br/> |bytes  <br/> |
 |Client Access (frontend)  <br/> | `%ExchangeInstallPath%FrontEnd\HttpProxy\Sync\web.config` <br/> | `maxRequestLength="10240"` <br/> |kilobytes  <br/> |
-|Backend  <br/> | `%ExchangeInstallPath%ClientAccess\Sync\web.config` <br/> | `maxAllowedContentLength="30000000 bytes"`: Not present by default (see comments).  <br/> |bytes  <br/> |
+|Backend  <br/> | `%ExchangeInstallPath%ClientAccess\Sync\web.config` <br/> | `maxAllowedContentLength="30000000 bytes"` (not present by default; see comments)  <br/> |bytes  <br/> |
 |Backend  <br/> | `%ExchangeInstallPath%ClientAccess\Sync\web.config` <br/> | `maxRequestLength="10240"` <br/> |kilobytes  <br/> |
 |Backend  <br/> | `%ExchangeInstallPath%ClientAccess\Sync\web.config` <br/> | `<add key="MaxDocumentDataSize" value="10240000">` <br/> |bytes  <br/> |
    
@@ -43,17 +43,17 @@ By default, there is no _maxAllowedContentLength_ key in the `web.config` files 
     
   - For the backend web site, open **IIS Manager**, navigate to **Sites** \> **Exchange Back End** and select **Microsoft-Server-ActiveSync**.
     
-2. Verify the **Features View** tab is selected at the bottom, and double-click **Configuration Editor** in the **Management** section. 
+2. Verify the **Features View** tab is selected at the bottom, and double-click **Configuration Editor** in the **Management** section.
     
 3. Click the drop down arrow in the **Section** field, navigate to **system.webServer** \> **security** and select **requestFiltering**.
     
-4. In the results, expand **requestLimits**, and you'll see **maxAllowedContentLength** and the default value 30000000 (bytes). 
+4. In the results, expand **requestLimits**, and you'll see **maxAllowedContentLength** and the default value 30000000 (bytes).
     
 To change the **maxAllowedContentLength** value, enter a new value in bytes, and click **Apply**. You need to change the value on the Client Access web site and the back end web site.
   
- **Note**: You can change the same setting in IIS manager at **Sites** \> **Default Web Site** \> **Microsoft-Server-ActiveSync** or **Sites** \> **Exchange Back End** \> **Microsoft-Server-ActiveSync** and then **Request Filtering** in the **IIS** section \> **Edit Feature Settings** in the **Actions** area \> **Maximum allowed content length (Bytes)** in the **Request Limits** section. 
+ **Note**: You can change the same setting in IIS manager at **Sites** \> **Default Web Site** \> **Microsoft-Server-ActiveSync** or **Sites** \> **Exchange Back End** \> **Microsoft-Server-ActiveSync** and then **Request Filtering** in the **IIS** section \> **Edit Feature Settings** in the **Actions** area \> **Maximum allowed content length (Bytes)** in the **Request Limits** section.
   
-After you change the value in IIS Manager, a new _maxAllowedContentLength_ key is written to the corresponding Client Access or backend web.config file that's described in the table. 
+After you change the value in IIS Manager, a new _maxAllowedContentLength_ key is written to the corresponding Client Access or backend web.config file that's described in the table.
   
 **Exchange Web Services**
 
@@ -65,9 +65,9 @@ After you change the value in IIS Manager, a new _maxAllowedContentLength_ key i
    
  **Comments on EWS limits**
   
-- In the backend `web.config` file, there are two instances of the value `maxReceivedMessageSize="1048576"` for **UMLegacyMessageEncoderSoap11Element** bindings that you don't need to modify. 
+- In the backend `web.config` file, there are two instances of the value `maxReceivedMessageSize="1048576"` for **UMLegacyMessageEncoderSoap11Element** bindings that you don't need to modify.
     
-- _maxRequestLength_ is an ASP.NET setting that's present in both web.config files, but isn't used by EWS, so you don't need to modify it. 
+- _maxRequestLength_ is an ASP.NET setting that's present in both web.config files, but isn't used by EWS, so you don't need to modify it.
     
 **Outlook on the web**
 
@@ -82,7 +82,7 @@ After you change the value in IIS Manager, a new _maxAllowedContentLength_ key i
    
  **Comments on Outlook on the web limits**
   
-- In the backend `web.config` file, there's an instance of the value `maxStringContentLength="102400"` for the **MsOnlineShellService** binding that you don't need to modify. 
+- In the backend `web.config` file, there's an instance of the value `maxStringContentLength="102400"` for the **MsOnlineShellService** binding that you don't need to modify.
     
 ## What do you need to know before you begin?
 
@@ -99,7 +99,7 @@ After you change the value in IIS Manager, a new _maxAllowedContentLength_ key i
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
   
 ## Use Notepad to configure a client-specific message size limit
 
@@ -113,7 +113,7 @@ After you change the value in IIS Manager, a new _maxAllowedContentLength_ key i
   Notepad %ExchangeInstallPath%FrontEnd\HttpProxy\ews\web.config
   ```
 
-2. Find the relevant keys in the appropriate web.config files as described in the tables earlier in the topic. For example, for EWS clients, find the _maxAllowedContentLength_ key in the Client Access and backend web.config files and all 14 instances of the value `maxReceivedMessageSize="67108864"` in the backend web.config file. 
+2. Find the relevant keys in the appropriate web.config files as described in the tables earlier in the topic. For example, for EWS clients, find the _maxAllowedContentLength_ key in the Client Access and backend web.config files and all 14 instances of the value `maxReceivedMessageSize="67108864"` in the backend web.config file.
     
   ```
   <requestLimits maxAllowedContentLength="67108864" />
@@ -127,18 +127,19 @@ After you change the value in IIS Manager, a new _maxAllowedContentLength_ key i
   ...maxReceivedMessageSize="89478486"...
   ```
 
-3. When you are finished, save and close the web.config files.
+3. When you're finished, save and close the web.config files.
     
 4. Restart IIS on the Exchange server by using either of the following methods:
     
   - Open IIS Manager, select the server, and in the **Actions** pane, click **Restart**.
+
     ![In IIS Manager, select the server, and in the Actions pane, click Restart](../../media/7d37436a-b89d-4010-bef4-f4276686d5ad.png)
   
   - Run the following command from an elevated command prompt (a Command Prompt window you open by selecting **Run as administrator**):
     
-  ```
-  IISReset /noforce
-  ```
+    ```
+    IISReset /noforce
+    ```
 
 ## Configure client-specific message size limits from the command line
 

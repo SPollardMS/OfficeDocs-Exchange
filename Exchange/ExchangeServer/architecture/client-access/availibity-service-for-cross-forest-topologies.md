@@ -19,7 +19,7 @@ description: "Summary: Learn how to use and configure the Availability service i
 The Availability service improves information workers' free/busy information by providing secure, consistent, and up-to-date free/busy information to clients that are running Outlook. By default, this service is installed with Exchange 2016. In cross-forest topologies where all connecting clients are running Outlook, the Availability service is the only method of retrieving free/busy information. You can use the Exchange Management Shell to configure the Availability service for cross-forest topologies.
   
 > [!NOTE]
-> You can't use the Exchange admin center (EAC) to configure the Availability service for cross-forest topologies. 
+> You can't use the Exchange admin center (EAC) to configure the Availability service for cross-forest topologies.
   
 ## Using the Availability service in trusted and untrusted forests
 
@@ -41,12 +41,12 @@ To enable GAL synchronization, you create management agents that import mail-ena
     
 - To open the Exchange Management Shell, see [Open the Exchange Management Shell](http://technet.microsoft.com/library/63976059-25f8-4b4f-b597-633e78b803c0.aspx).
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Availability Service Permissions" entries in the [Clients and mobile devices permissions](../../permissions/feature-permissions/client-and-mobile-device-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Availability Service Permissions" entries in the [Clients and mobile devices permissions](../../permissions/feature-permissions/client-and-mobile-device-permissions.md) topic.
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).. 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351)..
   
 ## Use the Exchange Management Shell to configure per-user free/busy information in a trusted cross-forest topology
 
@@ -63,7 +63,7 @@ Add-AvailabilityAddressSpace -Forestname ContosoForest.com -AccessMethod PerUser
 ```
 
 > [!NOTE]
-> To configure bidirectional cross-forest availability, repeat these steps in the Exchange Management Shell for the target forest. 
+> To configure bidirectional cross-forest availability, repeat these steps in the Exchange Management Shell for the target forest.
   
 If you choose to configure cross-forest availability with trust, and also choose to use a service account (instead of specifying organization-wide or per-user credentials), you must extend permissions as shown in the example in the next section, "Use the Exchange Management Shell to configure trusted cross-forest availability with a service account." Performing that procedure in the target forest gives Mailbox servers in the source forest permission to serialize the original user context.
   

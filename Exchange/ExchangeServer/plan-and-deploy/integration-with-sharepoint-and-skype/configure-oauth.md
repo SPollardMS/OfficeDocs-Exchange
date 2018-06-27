@@ -31,16 +31,16 @@ Exchange 2016 supports partner applications such as SharePoint Server 2016 and S
     
 - Examples in this topic use the following default location of the `\Scripts` directory: `C:\Program Files\Microsoft\Exchange Server\V15\Scripts`.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Partner applications - configure" entry in the [Sharing and collaboration permissions](../../permissions/feature-permissions/sharing-and-collaboration-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Partner applications - configure" entry in the [Sharing and collaboration permissions](../../permissions/feature-permissions/sharing-and-collaboration-permissions.md) topic.
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
   
 ## Configure OAuth authentication with a partner application
 
-This procedure uses the `Configure-EntepriseApplication.ps1` script to configure OAuth authentication with partner applications. Access to resources depends on the permissions assigned to the partner application and/or the user it impersonates by using RBAC. After configuring OAuth authentication from Exchange, the partner application can use Exchange 2016 resources. 
+This procedure uses the `Configure-EntepriseApplication.ps1` script to configure OAuth authentication with partner applications. Access to resources depends on the permissions assigned to the partner application and/or the user it impersonates by using RBAC. After configuring OAuth authentication from Exchange, the partner application can use Exchange 2016 resources.
   
 1. This example configures OAuth authentication for SharePoint 2016.
     
@@ -58,11 +58,11 @@ This procedure uses the `Configure-EntepriseApplication.ps1` script to configure
   
   ```
 
- If Exchange 2016 also needs to access resources offered by the partner application, you must also configure OAuth authentication in the partner application. 
+ If Exchange 2016 also needs to access resources offered by the partner application, you must also configure OAuth authentication in the partner application.
   
 ## How do you know this worked?
 
-To verify that you have successfully configured an enterprise partner application to authenticate to Exchange 2016 , run the [Get-PartnerApplication](http://technet.microsoft.com/library/e6ce8128-f174-4bca-91e6-004fc94cf0f8.aspx) cmdlet in the Exchange Management Shell to retrieve the configuration. You can also run the [Test-OAuthConnectivity](http://technet.microsoft.com/library/26aa9772-aa31-4765-b2a4-d0dd78d77fc8.aspx) cmdlet to test OAuth connectivity with a partner application for a user. 
+To verify that you have successfully configured an enterprise partner application to authenticate to Exchange 2016 , run the [Get-PartnerApplication](http://technet.microsoft.com/library/e6ce8128-f174-4bca-91e6-004fc94cf0f8.aspx) cmdlet in the Exchange Management Shell to retrieve the configuration. You can also run the [Test-OAuthConnectivity](http://technet.microsoft.com/library/26aa9772-aa31-4765-b2a4-d0dd78d77fc8.aspx) cmdlet to test OAuth connectivity with a partner application for a user.
   
 ## Hybrid and on-premises deployments
 

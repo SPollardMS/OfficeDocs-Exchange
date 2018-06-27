@@ -37,7 +37,7 @@ For more information about health reporting and managed availability, see [Manag
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
   
 ## Use the Exchange Management Shell to view server health
 
@@ -71,7 +71,7 @@ For detailed syntax and parameter information, see [Get-HealthReport](http://tec
   
 ## Use the Exchange Management Shell to view a list of health sets
 
-A *health set* is a group of monitors, probes and responders for a component that determine whether the component is healthy or unhealthy. 
+A *health set* is a group of monitors, probes and responders for a component that determine whether the component is healthy or unhealthy.
   
 Run the following command to view the health sets on an Exchange server:
   

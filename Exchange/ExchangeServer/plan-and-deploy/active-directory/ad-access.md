@@ -34,9 +34,9 @@ The Active Directory database stores information in three types of logical parti
 
 The schema partition stores the following two types of information:
   
-- **Schema classes** define all the types of objects that can be created and stored in Active Directory. 
+- **Schema classes** define all the types of objects that can be created and stored in Active Directory.
     
-- **Schema attributes** define all the properties that can be used to describe the objects that are stored in Active Directory. 
+- **Schema attributes** define all the properties that can be used to describe the objects that are stored in Active Directory.
     
 When you install the first Exchange 2016 server role in the forest or run the Active Directory preparation process, the Active Directory preparation process adds many classes and attributes to the Active Directory schema. The classes that are added to the schema are used to create Exchange-specific objects, such as agents and connectors. The attributes that are added to the schema are used to configure the Exchange-specific objects and the mail-enabled users and groups. These attributes include properties, such as Office Outlook Web Access settings and Exchange Unified Messaging (UM) settings. Every domain controller and global catalog server in the forest contains a complete replica of the schema partition.
   
@@ -84,10 +84,10 @@ For more information about topology and service discovery, see [Planning to Use 
   
 Exchange 2016 is an Active Directory site-aware application that prefers to communicate with the directory servers that are located in the same site as the Exchange server to optimize network traffic. Each Exchange 2016 server must communicate with Active Directory to retrieve information about recipients and information about the other Exchange 2016 servers. The Mailbox server role stores configuration information about mailbox users and mailbox stores in Active Directory. Additionally, the Mailbox server stores information in Active Directory for the Client Access protocols, Transport service, Mailbox databases,Unified Messaging, and so on. The Mailbox server handles all activity for the active mailboxes on that server.
   
-By default, whenever an Exchange 2016 server starts, it binds to a randomly selected domain controller and global catalog server in its own site. You can view the selected directory servers by using the **Get-ExchangeServer** cmdlet in the Exchange Management Shell. You can also use the **Set-ExchangeServer** cmdlet to configure a static list of domain controllers to which an Exchange 2016 server should bind or a list of domain controllers that should be excluded. 
+By default, whenever an Exchange 2016 server starts, it binds to a randomly selected domain controller and global catalog server in its own site. You can view the selected directory servers by using the **Get-ExchangeServer** cmdlet in the Exchange Management Shell. You can also use the **Set-ExchangeServer** cmdlet to configure a static list of domain controllers to which an Exchange 2016 server should bind or a list of domain controllers that should be excluded.
   
 > [!IMPORTANT]
-> You can't deploy an Exchange 2016 server in any site that contains only read-only directory servers. 
+> You can't deploy an Exchange 2016 server in any site that contains only read-only directory servers.
   
 ## Recovery of deleted Exchange objects
 

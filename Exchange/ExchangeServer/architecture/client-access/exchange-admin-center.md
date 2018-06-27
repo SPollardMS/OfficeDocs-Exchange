@@ -82,7 +82,7 @@ The section describes the user interface elements that are common across the EAC
   
 ### 1: Cross-premises navigation
 
-The cross-premises navigation allows you to easily switch between your Exchange Online and on-premises Exchange deployments. If you don't have an Exchange Online organization, the **Office 365** link takes you to a page that compares plans and pricing for Office 365 services. 
+The cross-premises navigation allows you to easily switch between your Exchange Online and on-premises Exchange deployments. If you don't have an Exchange Online organization, the **Office 365** link takes you to a page that compares plans and pricing for Office 365 services.
   
 ### 2: Feature pane
 
@@ -186,7 +186,7 @@ The feature pane is the first level of navigation for most of the tasks that you
     
 ### 3: Tabs
 
-The tabs are your second level of navigation. Typically, each feature pane contains multiple tabs that represent complete features. However, the **Tools** and **Hybrid** panes each contain only one tab: the **Checks** tab to install and run the Office 365 Best Practices Analyzer, or the **Setup** tab that allows you to run the Hybrid Configuration Wizard, or modify the settings of your existing hybrid deployment. 
+The tabs are your second level of navigation. Typically, each feature pane contains multiple tabs that represent complete features. However, the **Tools** and **Hybrid** panes each contain only one tab: the **Checks** tab to install and run the Office 365 Best Practices Analyzer, or the **Setup** tab that allows you to run the Hybrid Configuration Wizard, or modify the settings of your existing hybrid deployment.
   
 ### 4: Toolbar
 
@@ -206,11 +206,11 @@ When you click most tabs, you'll see a toolbar. The toolbar has icons that perfo
    
 ### 5: List view
 
-Tabs that contain many objects display those objects in a list view. The viewable limit in the EAC list view is approximately 20,000 objects. Paging is included so you can skip to the results that you want to see. In the **Recipients** list view, you can also configure page size and export the data to a CSV file. 
+Tabs that contain many objects display those objects in a list view. The viewable limit in the EAC list view is approximately 20,000 objects. Paging is included so you can skip to the results that you want to see. In the **Recipients** list view, you can also configure page size and export the data to a CSV file.
   
 ### 6: Details pane
 
-When you select an object from the list view, more information about that object is displayed in the details pane. For some object types, the details pane includes quick management tasks. For example, if you navigate to **Recipients** \> **Mailboxes** and select a mailbox from the list view, the details pane (among other options) displays an option to enable or disable the archive for that mailbox. 
+When you select an object from the list view, more information about that object is displayed in the details pane. For some object types, the details pane includes quick management tasks. For example, if you navigate to **Recipients** \> **Mailboxes** and select a mailbox from the list view, the details pane (among other options) displays an option to enable or disable the archive for that mailbox.
   
 Some object types also allow you to bulk edit multiple objects in the details pane. You can select multiple objects in the list view by selecting an object, holding the Shift key, and selecting an object farther down in the list, or by holding down the CTRL key as you select each object. If bulk edit is available for the object types that you selected, you'll see the available options in the details pane. For example, at **Recipients** \> **Mailboxes**, when you select multiple mailboxes of the same type, the title of the details pane changes to **Bulk Edit**, and you can update contact and organization information, custom attributes, mailbox quotas, Outlook on the web settings, and more.
   
@@ -230,11 +230,11 @@ To show or hide the notification viewer, click the icon (![Notifications icon](.
   
 Notifications are alerts that are sent to the arbitration mailbox named `FederatedEmail.4c1f4d8b-8179-4148-93bf-00a95fa1e042`. The EAC checks this mailbox for alerts every 30 seconds. Notifications remain in the arbitration mailbox until they are removed by the component that sent them, or until they expire (they should be removed by the Managed Folder Assistant after 30 days).
   
-You can also use the **Get-Notification** cmdlet in the Exchange Management Shell to view more details about notifications, and the **Set-Notification** cmdlet to request notification emails for future alerts. 
+You can also use the **Get-Notification** cmdlet in the Exchange Management Shell to view more details about notifications, and the **Set-Notification** cmdlet to request notification emails for future alerts.
   
 ### 8: Me tile and Help
 
-The *Me tile* allows you to sign out of the EAC and sign in as a different user by clicking on the drop-down menu that's next to your account name. 
+The *Me tile* allows you to sign out of the EAC and sign in as a different user by clicking on the drop-down menu that's next to your account name.
   
 Click the help icon (![Help icon](../../media/ITPro_EAC_HelpIcon.png)) to view the help content for the tab that you're currently on. If you click on the drop-down menu that's next to the help icon, you can perform the following additional actions:
   

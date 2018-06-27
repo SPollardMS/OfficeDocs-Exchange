@@ -19,7 +19,7 @@ description: "Summary: Learn about managing mobile device mailbox policies in Ex
 In Exchange 2016, you can create mobile device mailbox policies to apply a common set of policies or security settings to a collection of users. After you deploy Exchange ActiveSync in your Exchange 2016 organization, you can create new mobile device mailbox policies or modify existing policies. When you install Exchange 2016, a default mobile device mailbox policy is created. All users are automatically assigned this default mobile device mailbox policy.
   
 > [!CAUTION]
-> The iOS fingerprint reader is not supported as a device password. If you enable the fingerprint reader to secure your iOS device, you will still need to create and enter a password if your mobile device mailbox policies require a password. 
+> The iOS fingerprint reader is not supported as a device password. If you enable the fingerprint reader to secure your iOS device, you will still need to create and enter a password if your mobile device mailbox policies require a password.
   
 ## Overview of mobile device mailbox policies
 
@@ -42,7 +42,7 @@ For more information about all the settings you can configure, see Mobile device
 Exchange ActiveSync is a client protocol that lets you synchronize a mobile device with your Exchange mailbox. Exchange ActiveSync is enabled by default when you install Exchange 2016.
   
 > [!IMPORTANT]
-> Most Windows mobile phones support a subset of all Exchange ActiveSync mailbox policy settings. For a complete list, see [Windows Phone synchronization](#WindowsPhone7.md). 
+> Most Windows mobile phones support a subset of all Exchange ActiveSync mailbox policy settings. For a complete list, see [Windows Phone synchronization](#WindowsPhone7.md).
   
 You can create mobile device mailbox policies in the Exchange admin center (EAC) or the Exchange Management Shell. If you create a policy in the EAC, you can configure only a subset of the available settings. You can configure the rest of the settings using the Exchange Management Shell.
   

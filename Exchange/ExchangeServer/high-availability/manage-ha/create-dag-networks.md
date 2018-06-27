@@ -24,7 +24,7 @@ Looking for other management tasks related to DAGs? Check out [Managing database
 
 - Estimated time to complete: 1 minute
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Database availability groups" entry in the [High availability and site resilience permissions](../../permissions/feature-permissions/ha-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Database availability groups" entry in the [High availability and site resilience permissions](../../permissions/feature-permissions/ha-permissions.md) topic.
     
 - You can create a DAG network only when automatic network configuration has been disabled for a DAG. For detailed steps about how to disable automatic network configuration for a DAG, see [Configure database availability group properties](configure-dag-properties.md).
     
@@ -33,7 +33,7 @@ Looking for other management tasks related to DAGs? Check out [Managing database
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).. 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351)..
   
 ## Use the EAC to create a database availability group network
 <a name="UseEMC"> </a>
@@ -48,9 +48,9 @@ Looking for other management tasks related to DAGs? Check out [Managing database
     
   - **Description**: Use this field to provide a text description of the DAG network.
     
-  - **Subnets**: Use this field to associate one or more subnets with the DAG network. Click ![Add icon](../../media/ITPro_EAC_AddIcon.png) to add a subnet, click ![Edit icon](../../media/ITPro_EAC_EditIcon.png) to edit a subnet, and click minus (-) to remove a subnet. 
+  - **Subnets**: Use this field to associate one or more subnets with the DAG network. Click ![Add icon](../../media/ITPro_EAC_AddIcon.png) to add a subnet, click ![Edit icon](../../media/ITPro_EAC_EditIcon.png) to edit a subnet, and click minus (-) to remove a subnet.
     
-4. Click **Save** to create the DAG network. 
+4. Click **Save** to create the DAG network.
     
 ## Use the Exchange Management Shell to create a database availability group network
 <a name="UseShell"> </a>

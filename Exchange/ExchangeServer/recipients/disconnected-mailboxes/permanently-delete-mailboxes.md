@@ -31,7 +31,7 @@ To learn more about disconnected mailboxes and perform other related management 
 - [Connect or restore a deleted mailbox](restore-deleted-mailboxes.md)
     
 > [!NOTE]
-> You can't use the Exchange admin center (EAC) to permanently delete an active mailbox or a disconnected mailbox. 
+> You can't use the Exchange admin center (EAC) to permanently delete an active mailbox or a disconnected mailbox.
   
 ## What do you need to know before you begin?
 
@@ -39,16 +39,16 @@ To learn more about disconnected mailboxes and perform other related management 
     
 - The procedures in this topic require the Exchange Management Shell. For more information, see [Open the Exchange Management Shell](http://technet.microsoft.com/library/63976059-25f8-4b4f-b597-633e78b803c0.aspx).
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" section in the [Recipients Permissions](../../permissions/feature-permissions/recipient-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" section in the [Recipients Permissions](../../permissions/feature-permissions/recipient-permissions.md) topic.
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).. 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351)..
   
 ## Use the Exchange Management Shell to permanently delete an active mailbox
 
-If you don't include the _Permanent_ parameter when you delete a mailbox, the deleted mailbox is retained in the mailbox database for 30 days (by default) before it's permanently deleted. 
+If you don't include the _Permanent_ parameter when you delete a mailbox, the deleted mailbox is retained in the mailbox database for 30 days (by default) before it's permanently deleted.
   
 Run the following command to permanently delete an active mailbox and the associated Active Directory user account:
   
@@ -95,7 +95,7 @@ Get-MailboxDatabase | Get-MailboxStatistics | where { $_.DisconnectReason -ne $n
 ## Use the Exchange Management Shell to permanently delete a disconnected mailbox
 
 > [!CAUTION]
-> When you use the **Remove-StoreMailbox** cmdlet to permanently delete a disconnected mailbox, all its contents are purged from the mailbox database and the data loss is permanent. 
+> When you use the **Remove-StoreMailbox** cmdlet to permanently delete a disconnected mailbox, all its contents are purged from the mailbox database and the data loss is permanent.
   
 This example permanently deletes the disabled mailbox with the GUID 2ab32ce3-fae1-4402-9489-c67e3ae173d3 from mailbox database named MBD01.
   

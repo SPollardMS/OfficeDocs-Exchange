@@ -16,7 +16,7 @@ description: "Summary: Learn about mail flow and the transport pipeline in Excha
 
  **Summary**: Learn about mail flow and the transport pipeline in Exchange 2016.
 
-In Exchange Server 2016, mail flow occurs through the transport pipeline. The *transport pipeline* is a collection of services, connections, components, and queues that work together to route all messages to the categorizer in the Transport service on an Exchange 2016 Mailbox server inside the organization. 
+In Exchange Server 2016, mail flow occurs through the transport pipeline. The *transport pipeline* is a collection of services, connections, components, and queues that work together to route all messages to the categorizer in the Transport service on an Exchange 2016 Mailbox server inside the organization.
 
 For information about how to configure mail flow in a new Exchange 2016 organization, see [Configure mail flow and client access](../plan-and-deploy/post-installation-tasks/configure-mail-flow-and-client-access.md).
 
@@ -42,7 +42,7 @@ The transport pipeline consists of the following services:
 The following diagram shows the relationships among the components in the Exchange 2016 transport pipeline.
 
 > [!NOTE]
-> Although the diagrams in this topic show the components on a single Exchange 2016 server, communication also occurs between those components on different Exchange 2016 servers. The only communication that always occurs on the local Exchange 2016 server is between the Mailbox Transport service and the local mailbox database. 
+> Although the diagrams in this topic show the components on a single Exchange 2016 server, communication also occurs between those components on different Exchange 2016 servers. The only communication that always occurs on the local Exchange 2016 server is between the Mailbox Transport service and the local mailbox database.
 
 **Overview of the transport pipeline in Exchange 2016**
 
@@ -134,7 +134,7 @@ If you have an Edge Transport server installed in the perimeter network, outboun
 
 5. In the Transport service on the Edge Transport server, the default Receive connector named "Default internal Receive connector _\<Edge Transport server name\>_" accepts the message.
 
-6. In the Transport service on the Edge Transport server, the default Send connector named "EdgeSync - _\<Active Directory site name\>_ to Internet" sends the message to the Internet. 
+6. In the Transport service on the Edge Transport server, the default Send connector named "EdgeSync - _\<Active Directory site name\>_ to Internet" sends the message to the Internet.
 
 ## Understanding the Transport service on Mailbox servers
 <a name="TransportService"> </a>

@@ -16,7 +16,7 @@ description: "Summary: Learn about monitoring your Exchange 2016 organization to
 
  **Summary**: Learn about monitoring your Exchange 2016 organization to quickly resolve issues for greater availability and reliability.
   
-Ensuring that users have a good email experience has always been the primary objective for messaging system administrators. In your Exchange Server 2016 organization, all aspects of the system must be actively monitored and any detected issues must be resolved quickly. To achieve this, a feature called *Managed Availability* provides built-in monitoring and recovery actions that preserve the end-user experience. 
+Ensuring that users have a good email experience has always been the primary objective for messaging system administrators. In your Exchange Server 2016 organization, all aspects of the system must be actively monitored and any detected issues must be resolved quickly. To achieve this, a feature called *Managed Availability* provides built-in monitoring and recovery actions that preserve the end-user experience.
   
 ## Managed Availability
 
@@ -60,7 +60,7 @@ As illustrated in the following drawing, managed availability includes three mai
   
  **Probes**
   
-The first component is called a *Probe* . Probes are responsible for taking measurements on the server and collecting data. 
+The first component is called a *Probe*. Probes are responsible for taking measurements on the server and collecting data.
   
 There are three primary categories of probes: recurrent probes, notifications, and checks. Recurrent probes are synthetic transactions performed by the system to test the end-to-end user experience. Checks are the infrastructure that perform the collection of performance data, including user traffic. Checks also measure the collected data against thresholds that are set to determine spikes in user failures, which enable the checks infrastructure to become aware when users are experiencing issues. Finally, the notification logic enables the system to take action immediately, based on a critical event, and without having to wait for the results of the data collected by a probe. These are typically exceptions or conditions that can be detected and recognized without a large sample set.
   
@@ -68,24 +68,24 @@ Recurrent probes run every few minutes and evaluate some aspect of service healt
   
 All probes are defined on Health Manager service startup in the Microsoft.Exchange.ActiveMonitoring\ProbeDefinition crimson channel. Each probe definitions has many properties, but the most relevant properties are:
   
-- **Name** The name of the probe, which begins with a _SampleMask_ of the probe's monitor. 
+- **Name** The name of the probe, which begins with a _SampleMask_ of the probe's monitor.
     
-- **TypeName** The code object type of the probe that contains the probe's logic. 
+- **TypeName** The code object type of the probe that contains the probe's logic.
     
-- **ServiceName** The name of the health set that contains this probe. 
+- **ServiceName** The name of the health set that contains this probe.
     
 - **TargetResource** The object the probe is validating. This is appended to the name of the probe when it is executed to become a probe result _ResultName_
     
-- **RecurrenceIntervalSeconds** How often the probe executes. 
+- **RecurrenceIntervalSeconds** How often the probe executes.
     
-- **TimeoutSeconds** How long the probe will wait before failing. 
+- **TimeoutSeconds** How long the probe will wait before failing.
     
 There are hundreds of recurrent probes. Many of these probes are per-database, so as the number of databases increases, so does the number of probes. Most probes are defined in code and are therefore not directly discoverable.
   
-The basics of a recurrent probe are as follows: start every _RecurrenceIntervalSeconds_ and check (or probe) some aspect of health. If the component is healthy, the probe passes and writes an informational event to the Microsoft.Exchange.ActiveMonitoring\ProbeResult channel with a _ResultType_ of 3. If the check fails or times out, the probe fails and writes an error event to the same channel. A _ResultType_ of 4 means the check failed and a _ResultType_ of 1 means that it timed out. Many probes will re-run if they timeout, up to the value of the _MaxRetryAttempts_ property. 
+The basics of a recurrent probe are as follows: start every _RecurrenceIntervalSeconds_ and check (or probe) some aspect of health. If the component is healthy, the probe passes and writes an informational event to the Microsoft.Exchange.ActiveMonitoring\ProbeResult channel with a _ResultType_ of 3. If the check fails or times out, the probe fails and writes an error event to the same channel. A _ResultType_ of 4 means the check failed and a _ResultType_ of 1 means that it timed out. Many probes will re-run if they timeout, up to the value of the _MaxRetryAttempts_ property.
   
 > [!NOTE]
-> The ProbeResult crimson channel can get very busy with hundreds of probes running every few minutes and logging an event, so there can be a real impact on the performance of your Exchange server if you try expensive queries against the event logs in a production environment. 
+> The ProbeResult crimson channel can get very busy with hundreds of probes running every few minutes and logging an event, so there can be a real impact on the performance of your Exchange server if you try expensive queries against the event logs in a production environment.
   
 Notifications are probes that are not run by the health manager framework, but by some other service on the server. These services perform their own monitoring, and then feed their data into the Managed Availability framework by directly writing probe results. You won't see these probes in the ProbeDefinition channel, as this channel only describes probes that will be run by the Managed Availability framework. For example, the ServerOneCopyMonitor Monitor is triggered by probe results written by the MSExchangeDAGMgmt service. This service performs its own monitoring, determines whether there is a problem, and logs a probe result. Most notification probes have the capability to log both a red event that turns the monitor unhealthy and a green event that makes the monitor healthy again.
   
@@ -95,7 +95,7 @@ To find the counter and threshold that is considered unhealthy, you can look at 
   
  **Monitor**
   
-The results of the measurements collected by probes flow into the second component, the *Monitor* . The monitor contains all of the business logic used by the system on the data collected. Similar to a pattern recognition engine, the monitor looks for the various different patterns on all the collected measurements, and then it decides whether something is considered healthy. 
+The results of the measurements collected by probes flow into the second component, the *Monitor*. The monitor contains all of the business logic used by the system on the data collected. Similar to a pattern recognition engine, the monitor looks for the various different patterns on all the collected measurements, and then it decides whether something is considered healthy.
   
 Monitors query the data to determine if action needs to be taken based on a predefined rule set. Depending on the rule or the nature of the issue, a monitor can either initiate a responder or escalate the issue to a human via an event log entry. In addition, monitors define how much time after a failure that a responder is executed, as well as the workflow of the recovery action. Monitors have various states. From a system state perspective, monitors have two states:
   
@@ -119,23 +119,23 @@ It is worth noting that a single probe failure does not necessarily indicate tha
   
  **Responders**
   
- Finally, there are *Responders*, which are responsible for recovery and escalation actions. As their name implies, responders execute some sort of response to an alert that was generated by a monitor. When something is unhealthy, the first action is to attempt to recover that component. This could include multi-stage recovery actions; for example, the first attempt may be to restart the application pool, the second may be to restart the service, the third attempt may be to restart the server, and the subsequent attempt may be to take the server offline so that it no longer accepts traffic. If the recovery actions are unsuccessful, the system escalates the issue to a human through event log notifications. 
+ Finally, there are *Responders*, which are responsible for recovery and escalation actions. As their name implies, responders execute some sort of response to an alert that was generated by a monitor. When something is unhealthy, the first action is to attempt to recover that component. This could include multi-stage recovery actions; for example, the first attempt may be to restart the application pool, the second may be to restart the service, the third attempt may be to restart the server, and the subsequent attempt may be to take the server offline so that it no longer accepts traffic. If the recovery actions are unsuccessful, the system escalates the issue to a human through event log notifications.
   
 Responders take a variety of recovery actions, such as resetting an application worker pool or restarting a server. There are several types of responders:
   
-- **Restart Responder** Terminates and restarts a service. 
+- **Restart Responder** Terminates and restarts a service.
     
-- **Reset AppPool Responder** Stops and restarts an application pool in Internet Information Services (IIS). 
+- **Reset AppPool Responder** Stops and restarts an application pool in Internet Information Services (IIS).
     
-- **Failover Responder** Initiates a database or server failover. 
+- **Failover Responder** Initiates a database or server failover.
     
-- **Bugcheck Responder** Initiates a bugcheck of the server, thereby causing a server reboot. 
+- **Bugcheck Responder** Initiates a bugcheck of the server, thereby causing a server reboot.
     
-- **Offline Responder** Takes a protocol on a server out of service (rejects client requests). 
+- **Offline Responder** Takes a protocol on a server out of service (rejects client requests).
     
-- **Online Responder** Places a protocol on a server back into production (accepts client requests). 
+- **Online Responder** Places a protocol on a server back into production (accepts client requests).
     
-- **Escalate Responder** Escalates the issue to an administrator via event logging. 
+- **Escalate Responder** Escalates the issue to an administrator via event logging.
     
 In addition to the above listed responders, some components also have specialized responders that are unique to their component.
   
@@ -145,37 +145,37 @@ All responders include throttling behavior, which provide a built-in sequencing 
 
 From a reporting perspective, managed availability has two views of health, one internal and one external.
   
-The internal view uses *health sets* . Each component in Exchange 2016 (for example, Outlook on the web, Exchange ActiveSync, the Information Store service, content indexing, transport services, etc.) is monitored by managed availability using probes, monitors, and responders. A group of probes, monitors and responders for a given component is called a *health set* . A health set is a group of probes, monitors, and responders that determine if that component is healthy. The current state of a health set (e.g., whether it is healthy or unhealthy) is determined by using the state of the health set's monitors. If all of a health set's monitors are healthy, then the health set is in a healthy state. If any monitor is not in a healthy state, then the health set state will be determined by its least healthy monitor. 
+The internal view uses *health sets*. Each component in Exchange 2016 (for example, Outlook on the web, Exchange ActiveSync, the Information Store service, content indexing, transport services, etc.) is monitored by managed availability using probes, monitors, and responders. A group of probes, monitors and responders for a given component is called a *health set*. A health set is a group of probes, monitors, and responders that determine if that component is healthy. The current state of a health set (e.g., whether it is healthy or unhealthy) is determined by using the state of the health set's monitors. If all of a health set's monitors are healthy, then the health set is in a healthy state. If any monitor is not in a healthy state, then the health set state will be determined by its least healthy monitor.
   
 For detailed steps to view server health or health sets state, see [Manage health sets and server health](health-sets.md).
   
 ## Health Groups
 
-The external view of managed availability is composed of *health groups* . Health groups are exposed to System Center Operations Manager 2012 R2. 
+The external view of managed availability is composed of *health groups*. Health groups are exposed to System Center Operations Manager 2012 R2.
   
 There are four primary health groups:
   
-- **Customer Touch Points** Components that affect real-time user interactions, such as protocols, or the Information Store. 
+- **Customer Touch Points** Components that affect real-time user interactions, such as protocols, or the Information Store.
     
-- **Service Components** Components without direct, real-time user interactions, such as the Microsoft Exchange Mailbox Replication service, or the offline address book generation process (OABGen). 
+- **Service Components** Components without direct, real-time user interactions, such as the Microsoft Exchange Mailbox Replication service, or the offline address book generation process (OABGen).
     
-- **Server Components** The physical resources of the server, such as disk space, memory and networking. 
+- **Server Components** The physical resources of the server, such as disk space, memory and networking.
     
-- **Dependency Availability** The server's ability to access necessary dependencies, such as Active Directory, DNS, etc. 
+- **Dependency Availability** The server's ability to access necessary dependencies, such as Active Directory, DNS, etc.
     
 When the Exchange Management Pack is installed, System Center Operations Manager (SCOM) acts as a health portal for viewing information related to the Exchange environment. The SCOM dashboard includes three views of Exchange server health:
   
-- **Active Alerts** Escalation Responders write events to the Windows event log that are consumed by the monitor within SCOM. These appear as alerts in the Active Alerts view. 
+- **Active Alerts** Escalation Responders write events to the Windows event log that are consumed by the monitor within SCOM. These appear as alerts in the Active Alerts view.
     
-- **Organization Health** A roll up summary of the overall health of the Exchange organization health is displayed in this view. These rollups include displaying health for individual database availability groups, and health within specific Active Directory sites. 
+- **Organization Health** A roll up summary of the overall health of the Exchange organization health is displayed in this view. These rollups include displaying health for individual database availability groups, and health within specific Active Directory sites.
     
-- **Server Health** Related health sets are combined into health groups and summarized in this view. 
+- **Server Health** Related health sets are combined into health groups and summarized in this view.
     
 ## Overrides
 
 Overrides provide an administrator with the ability to configure some aspects of the managed availability probes, monitors, and responders. Overrides can be used to fine tune some of the thresholds used by managed availability. They can also be used to enable emergency actions for unexpected events that may require configuration settings that are different from the out-of-box defaults.
   
-Overrides can be created and applied to a single server (this is known as a *server override*), or they can be applied to a group of servers (this is known as a *global override*). Server override configuration data is stored in the Windows registry on the server on which the override is applied. Global override configuration data is stored in Active Directory. 
+Overrides can be created and applied to a single server (this is known as a *server override*), or they can be applied to a group of servers (this is known as a *global override*). Server override configuration data is stored in the Windows registry on the server on which the override is applied. Global override configuration data is stored in Active Directory.
   
 Overrides can be configured to last indefinitely, or they can be configured for a specific duration. In addition, global overrides can be configured to apply to all servers, or only servers running a specific version of Exchange.
   

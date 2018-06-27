@@ -16,9 +16,9 @@ description: "Summary: Learn how to configure the Managed Folder Assistant in Ex
 
  **Summary**: Learn how to configure the Managed Folder Assistant in Exchange 2016.
   
-The *Managed Folder Assistant* (MFA) is an Exchange Mailbox Assistant that applies and processes the message retention settings that are configured in retention policies. 
+The *Managed Folder Assistant* (MFA) is an Exchange Mailbox Assistant that applies and processes the message retention settings that are configured in retention policies.
   
-As in Exchange 2013, the Managed Folder Assistant in Exchange 2016 is a throttle-based assistant that's always running. The MFA doesn't need to be scheduled, and the system resources that are consumed by the MFA can be throttled. You can configure the Managed Folder Assistant to process all mailboxes on a Mailbox server within a certain time period that's known as a *work cycle* . By default, the work cycle for the MFA is one day (all mailboxes on the server are processed by the MFA every day). 
+As in Exchange 2013, the Managed Folder Assistant in Exchange 2016 is a throttle-based assistant that's always running. The MFA doesn't need to be scheduled, and the system resources that are consumed by the MFA can be throttled. You can configure the Managed Folder Assistant to process all mailboxes on a Mailbox server within a certain time period that's known as a *work cycle*. By default, the work cycle for the MFA is one day (all mailboxes on the server are processed by the MFA every day).
   
 You can also force the MFA to immediately process a specified mailbox.
   
@@ -26,9 +26,9 @@ You can also force the MFA to immediately process a specified mailbox.
 
 - You can only use PowerShell to perform this procedure. To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
     
-- Although the _ManagedFolderAssistantSchedule_ parameter is available in Exchange 2016, it doesn't work on Exchange 2016 servers. It's only used for coexistence with previous versions of Exchange. 
+- Although the _ManagedFolderAssistantSchedule_ parameter is available in Exchange 2016, it doesn't work on Exchange 2016 servers. It's only used for coexistence with previous versions of Exchange.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Messaging records management" entry in the [Messaging policy and compliance permissions in Exchange 2016](../../permissions/feature-permissions/policy-and-compliance-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Messaging records management" entry in the [Messaging policy and compliance permissions in Exchange 2016](../../permissions/feature-permissions/policy-and-compliance-permissions.md) topic.
     
 ## Configure the Managed Folder Assistant
 
@@ -48,13 +48,13 @@ New-SettingOverride -Name "<UniqueOverrideName>" -Component TimeBasedAssistants 
 
  **Notes:**
   
-- To specify a _\<TimeSpan\>_ value, use the syntax `d.hh:mm:ss`, where _d_ = days, _hh_ = hours, _mm_ = minutes, and _ss_ = seconds. 
+- To specify a _\<TimeSpan\>_ value, use the syntax `d.hh:mm:ss`, where _d_ = days, _hh_ = hours, _mm_ = minutes, and _ss_ = seconds.
     
-- To configure the same work cycle for the MFA on all Exchange 2016 Mailbox servers in the Active Directory forest, don't use the _Server_ parameter. 
+- To configure the same work cycle for the MFA on all Exchange 2016 Mailbox servers in the Active Directory forest, don't use the _Server_ parameter.
     
-- To configure the work cycle for the MFA on a specific Exchange 2016 Mailbox server, use the _Server_ parameter and the name (not the fully qualified domain name or FQDN) of the server. This method is useful when you need to specify different work cycle values for the MFA on different Exchange servers. 
+- To configure the work cycle for the MFA on a specific Exchange 2016 Mailbox server, use the _Server_ parameter and the name (not the fully qualified domain name or FQDN) of the server. This method is useful when you need to specify different work cycle values for the MFA on different Exchange servers.
     
-This example configures the work cycle for the MFA to two days (the MFA processes mailboxes every two days). Because we aren't using the _Server_ parameter, the setting is applied to all Exchange 2016 Mailbox servers in the organization. 
+This example configures the work cycle for the MFA to two days (the MFA processes mailboxes every two days). Because we aren't using the _Server_ parameter, the setting is applied to all Exchange 2016 Mailbox servers in the organization.
   
 - **Setting override name**: "MFA WorkCycle Override" (must be unique)
     
@@ -82,9 +82,9 @@ Get-ExchangeDiagnosticInfo -Process Microsoft.Exchange.Directory.TopologyService
 
  **Notes:**
   
-- If you didn't use the _Server_ parameter in Step 1, don't use it here. If you used the _Server_ parameter in Step 1, use the same server name here. 
+- If you didn't use the _Server_ parameter in Step 1, don't use it here. If you used the _Server_ parameter in Step 1, use the same server name here.
     
-- If you delete the custom work cycle value for the MFA by using the **Remove-SettingOverride** cmdlet, you still need to run this command to change the work cycle back to the default value of one day. 
+- If you delete the custom work cycle value for the MFA by using the **Remove-SettingOverride** cmdlet, you still need to run this command to change the work cycle back to the default value of one day.
     
 This example applies the new work cycle value for the MFA on all Exchange 2016 Mailbox servers in the organization.
   

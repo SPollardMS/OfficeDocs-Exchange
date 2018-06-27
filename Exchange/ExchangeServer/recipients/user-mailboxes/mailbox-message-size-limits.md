@@ -23,7 +23,7 @@ Keep in mind that there are other settings in an Exchange organization that dete
 For additional management tasks related to user mailboxes, see [Manage user mailboxes](user-mailboxes.md).
   
 > [!NOTE]
-> You can also control the size of messages sent and received by mail users and from shared mailboxes. 
+> You can also control the size of messages sent and received by mail users and from shared mailboxes.
   
 ## What do you need to know before you begin?
 
@@ -31,28 +31,28 @@ For additional management tasks related to user mailboxes, see [Manage user mail
     
 - To open the EAC, see [Exchange admin center in Exchange 2016](../../architecture/client-access/exchange-admin-center.md). To open the Exchange Management Shell, see [Open the Exchange Management Shell](http://technet.microsoft.com/library/63976059-25f8-4b4f-b597-633e78b803c0.aspx).
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" section in the [Recipients Permissions](../../permissions/feature-permissions/recipient-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" section in the [Recipients Permissions](../../permissions/feature-permissions/recipient-permissions.md) topic.
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).. 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351)..
   
 ## Use the EAC to set message size limits
 
 1. In the EAC, navigate to **Recipients** \> **Mailboxes**.
     
-2. In the list of user mailboxes, click the mailbox that you want to change the message size limits for, and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
+2. In the list of user mailboxes, click the mailbox that you want to change the message size limits for, and then click **Edit** ![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
 3. On the mailbox properties page, click **Mailbox Features**.
     
 4. Under **Message Size Restrictions**, click **View details** to view and change the following message size limits: 
     
-  - **Sent messages**: To set a maximum size for messages sent by this user, select the **Maximum message size (KB)** check box and type a value in the box. The message size must be between 0 and 2,097,151 KB. If the user sends a message larger than the specified size, the message will be returned to the user with a descriptive error message. 
+  - **Sent messages**: To set a maximum size for messages sent by this user, select the **Maximum message size (KB)** check box and type a value in the box. The message size must be between 0 and 2,097,151 KB. If the user sends a message larger than the specified size, the message will be returned to the user with a descriptive error message.
     
-  - **Received messages**: To set a maximum size for messages received by this user, select the **Maximum message size (KB)** check box and type a value in the box. The message size must be between 0 and 2,097,151 KB. If the user receives a message larger than the specified size, the message will be returned to the sender with a descriptive error message. 
+  - **Received messages**: To set a maximum size for messages received by this user, select the **Maximum message size (KB)** check box and type a value in the box. The message size must be between 0 and 2,097,151 KB. If the user receives a message larger than the specified size, the message will be returned to the sender with a descriptive error message.
     
-5. Click **OK**, and then click **Save** to save your changes. 
+5. Click **OK**, and then click **Save** to save your changes.
     
 ## Use the Exchange Management Shell to configure message size limits
 
@@ -70,11 +70,11 @@ To verify that you've successfully set up message size limits for a mailbox, do 
   
 1. In the EAC, navigate to **Recipients** \> **Mailboxes**.
     
-2. In the list of user mailboxes, click the mailbox that you want to verify the message size limits for, and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
+2. In the list of user mailboxes, click the mailbox that you want to verify the message size limits for, and then click **Edit** ![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
 3. On the mailbox properties page, click **Mailbox Features**.
     
-4. Under **Message Size Restrictions**, click **View details** to verify the message size limits for the mailbox. 
+4. Under **Message Size Restrictions**, click **View details** to verify the message size limits for the mailbox.
     
 Or
   

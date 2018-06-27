@@ -16,7 +16,7 @@ description: "Summary: Linked mailboxes are mailboxes that users access in a sep
 
  **Summary**: Linked mailboxes are mailboxes that users access in a separate, trusted forest. Learn how to create linked mailboxes in Exchange resource forests.
 
-Linked mailboxes may be necessary for organizations that deploy Exchange in a *resource forest* . The resource forest scenario lets an organization centralize Exchange in a single forest, while allowing access to the Exchange organization with user accounts that are located in one or more trusted forests (called *account forests*). The user account that accesses the linked mailbox doesn't exist in the forest where Exchange is deployed. Therefore, a disabled user account that exists in the same forest as Exchange is created and associated with the corresponding linked mailbox. 
+Linked mailboxes may be necessary for organizations that deploy Exchange in a *resource forest*. The resource forest scenario lets an organization centralize Exchange in a single forest, while allowing access to the Exchange organization with user accounts that are located in one or more trusted forests (called *account forests*). The user account that accesses the linked mailbox doesn't exist in the forest where Exchange is deployed. Therefore, a disabled user account that exists in the same forest as Exchange is created and associated with the corresponding linked mailbox.
 
 The following figure illustrates the relationship between the linked user account used to access the linked mailbox (located in the account forest) and the disabled user account in the Exchange resource forest that's associated with the linked mailbox.
 
@@ -25,15 +25,15 @@ The following figure illustrates the relationship between the linked user accoun
 ![Trust relationship between forests with linked mailboxes](../media/66033cd3-9501-45f6-bfaa-823f7f25d687.png)
 
 > [!NOTE]
-> A trust between the Exchange forest and at least one account forest must be set up before you can create linked mailboxes. At a minimum, you must set up a one-way, outgoing trust so that the Exchange forest trusts the account forest. For more information, see [Learn more about setting up a forest trust to support linked mailboxes](https://technet.microsoft.com/library/jj156983.aspx). 
+> A trust between the Exchange forest and at least one account forest must be set up before you can create linked mailboxes. At a minimum, you must set up a one-way, outgoing trust so that the Exchange forest trusts the account forest. For more information, see [Learn more about setting up a forest trust to support linked mailboxes](https://technet.microsoft.com/library/jj156983.aspx).
 
 ## What do you need to know before you begin?
 
 - Estimated time to complete: 2 to 5 minutes.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" section in the [Recipients Permissions](../permissions/feature-permissions/recipient-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" section in the [Recipients Permissions](../permissions/feature-permissions/recipient-permissions.md) topic.
 
-- A user account (called the *linked master account*) must exist in the account forest before you can create a linked mailbox. This is because the linked mailbox is associated with a user in the account forest. 
+- A user account (called the *linked master account*) must exist in the account forest before you can create a linked mailbox. This is because the linked mailbox is associated with a user in the account forest.
 
 - If you've configured a one-way outgoing trust where the Exchange forest trusts the account forest, you'll need administrator credentials in the account forest to create a linked mailbox.
 
@@ -44,7 +44,7 @@ The following figure illustrates the relationship between the linked user accoun
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).. 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351)..
 
 ## Create a linked mailbox
 
@@ -59,15 +59,15 @@ The following figure illustrates the relationship between the linked user accoun
 4. If your organization has configured a one-way outgoing trust where the Exchange forest trusts the account forest, you're prompted for administrator credentials in the account forest so that you can gain access to a domain controller in the trusted forest. Type the user name and password for an administrator account in the account forest, and then click **Next**.
 
     > [!NOTE]
-    > You won't be prompted for administrator credentials if you've created a two-way trust or have created another one-way outgoing trust where the account forest trusts the Exchange forest. 
+    > You won't be prompted for administrator credentials if you've created a two-way trust or have created another one-way outgoing trust where the account forest trusts the Exchange forest.
 
-5. Complete the following boxes on the **Select linked master account** page. 
+5. Complete the following boxes on the **Select linked master account** page.
 
   - **Linked domain controller**: Select a domain controller in the account forest. Exchange will connect to this domain controller to retrieve the list of user accounts in the account forest so that you can select the linked master account.
 
   - **Linked master account**: Click **Browse**, select a user account in the account forest, and then click **OK**. The new linked mailbox will be associated with this account.
 
-6. Click **Next** and complete the following boxes on the **Enter general information** page. 
+6. Click **Next** and complete the following boxes on the **Enter general information** page.
 
   - **\* Name**: Use this box to type a name for the user. This is the name used as the display name in the EAC and your organization's address book, and the name that's listed in Active Directory. This name is required.
 
@@ -78,14 +78,14 @@ The following figure illustrates the relationship between the linked user accoun
   - **\* User logon name**: Use this box to type the user logon name, which is required to create a linked mailbox. Type the user name here. This name will be used in the left portion of the email address for the linked mailbox if you don't specify an alias.
 
     > [!NOTE]
-    > Because the user account that is created in the Exchange forest is disabled when you create a linked mailbox, the user doesn't use the user logon name to sign in to the linked mailbox. They sign in using their credentials from the account forest. 
+    > Because the user account that is created in the Exchange forest is disabled when you create a linked mailbox, the user doesn't use the user logon name to sign in to the linked mailbox. They sign in using their credentials from the account forest.
 
-7. Click **More options** to configure the following boxes. Otherwise, skip to Step 8 to save the new linked mailbox. 
+7. Click **More options** to configure the following boxes. Otherwise, skip to Step 8 to save the new linked mailbox.
 
   - **Alias**: Type the alias, which specifies the email alias for the linked mailbox. The user's alias is the portion of the email address on the left side of the at (@) symbol. It must be unique in the forest.
 
     > [!NOTE]
-    > If you leave this box blank, the value from the user name portion of the **User Logon Name** is used for the email alias. 
+    > If you leave this box blank, the value from the user name portion of the **User Logon Name** is used for the email alias.
 
   - **First name**, **Initials**, **Last name**
 
@@ -95,7 +95,7 @@ The following figure illustrates the relationship between the linked user accoun
 
     In the drop-down list, select the policy that you want associated with this mailbox.
 
-8. When you're finished, click **Save** to create the new linked mailbox. 
+8. When you're finished, click **Save** to create the new linked mailbox.
 
 ### Use the Exchange Management Shell to create a linked mailbox
 
@@ -123,16 +123,16 @@ To verify that you've successfully created a linked mailbox, do one of the follo
 
 After you create a linked mailbox, you can make changes and set additional properties by using the EAC or the Exchange Management Shell.
 
-You can also change properties for multiple linked mailboxes at the same time. For more information, see the section, "Bulk edit user mailboxes" section in the [Manage User Mailboxes](http://technet.microsoft.com/library/957ca61c-1fa1-42ab-a0e6-8488e4782566.aspx) topic. 
+You can also change properties for multiple linked mailboxes at the same time. For more information, see the section, "Bulk edit user mailboxes" section in the [Manage User Mailboxes](http://technet.microsoft.com/library/957ca61c-1fa1-42ab-a0e6-8488e4782566.aspx) topic.
 
 > [!IMPORTANT]
-> The estimated time to complete this task will vary based on the number of properties you want to view or change. 
+> The estimated time to complete this task will vary based on the number of properties you want to view or change.
 
 ### Use the EAC to change linked mailbox properties
 
 1. In the EAC, navigate to **Recipients** \> **Mailboxes**.
 
-2. In the list of mailboxes, click the linked mailbox that you want to change the properties for, and then click **Edit**![Edit icon](../media/ITPro_EAC_EditIcon.png).
+2. In the list of mailboxes, click the linked mailbox that you want to change the properties for, and then click **Edit** ![Edit icon](../media/ITPro_EAC_EditIcon.png).
 
 3. On the mailbox properties page, click one of the following sections to view or change properties.
 
@@ -153,13 +153,13 @@ You can also change properties for multiple linked mailboxes at the same time. F
 #### General
 <a name="General"> </a>
 
-Use the **General** section to view or change basic information about the user. 
+Use the **General** section to view or change basic information about the user.
 
 - **\* Linked mailbox name**: This is the name that's listed in Active Directory. If you change this name, it can't exceed 64 characters.
 
 - **\* Display name**: This name appears in your organization's address book, on the To: and From: lines in email, and in the Mailboxes list in the EAC. This name can't contain empty spaces before or after the display name.
 
-- **\* User logon name**: For user mailboxes, this is the name that the user uses to sign in to their mailbox and to log on to the domain. For linked mailboxes, the corresponding user account that is created in the Exchange forest when the linked mailbox was created is disabled. The user uses their credentials from the account forest to sign in to the linked mailbox. 
+- **\* User logon name**: For user mailboxes, this is the name that the user uses to sign in to their mailbox and to log on to the domain. For linked mailboxes, the corresponding user account that is created in the Exchange forest when the linked mailbox was created is disabled. The user uses their credentials from the account forest to sign in to the linked mailbox.
 
     If you change this name, it must be unique in your organization.
 
@@ -171,27 +171,27 @@ Click **More options** to view or change these additional properties:
 
 - **Organizational unit**: This read-only box displays the organizational unit (OU) that contains the user account. You have to use Active Directory Users and Computers to move the user account to a different OU.
 
-- **Mailbox database**: This read-only box displays the name of the mailbox database that hosts the mailbox. To move the mailbox to a different database, select it in the mailbox list, and then click **Move mailbox to a different database** in the Details pane. 
+- **Mailbox database**: This read-only box displays the name of the mailbox database that hosts the mailbox. To move the mailbox to a different database, select it in the mailbox list, and then click **Move mailbox to a different database** in the Details pane.
 
-- **\* Alias** This specifies the email alias for the linked mailbox. The alias is the portion of the email address on the left side of the at (@) symbol. It must be unique in the forest. 
+- **\* Alias** This specifies the email alias for the linked mailbox. The alias is the portion of the email address on the left side of the at (@) symbol. It must be unique in the forest.
 
 - **First name**, **Initials**, **Last name**
 
-- **Custom attributes**: This section displays the custom attributes defined for the linked mailbox. To specify custom attribute values, click **Edit**![Edit icon](../media/ITPro_EAC_EditIcon.png). You can specify up to 15 custom attributes for the recipient.
+- **Custom attributes**: This section displays the custom attributes defined for the linked mailbox. To specify custom attribute values, click **Edit** ![Edit icon](../media/ITPro_EAC_EditIcon.png). You can specify up to 15 custom attributes for the recipient.
 
 #### Mailbox Usage
 <a name="MailboxUsage"> </a>
 
-Use the **Mailbox Usage** section to view or change the mailbox storage quota and deleted item retention settings for the linked mailbox. These settings are configured by default when the linked mailbox is created. They use the values that are configured for the mailbox database and apply to all mailboxes in that database. You can customize these settings for each mailbox instead of using the mailbox database defaults. 
+Use the **Mailbox Usage** section to view or change the mailbox storage quota and deleted item retention settings for the linked mailbox. These settings are configured by default when the linked mailbox is created. They use the values that are configured for the mailbox database and apply to all mailboxes in that database. You can customize these settings for each mailbox instead of using the mailbox database defaults.
 
 - **Last logon**: This read-only box displays the last time that the user signed in to the mailbox.
 
 - **Mailbox usage**: This area shows the total size of the mailbox and the percentage of the total mailbox quota that has been used.
 
 > [!NOTE]
-> To obtain the information that's displayed in the previous two boxes, the EAC queries the mailbox database that hosts the mailbox. If the EAC can't communicate with the Exchange store that contains the mailbox database, these boxes will be blank. A warning message is displayed if the user hasn't signed in to the mailbox for the first time. 
+> To obtain the information that's displayed in the previous two boxes, the EAC queries the mailbox database that hosts the mailbox. If the EAC can't communicate with the Exchange store that contains the mailbox database, these boxes will be blank. A warning message is displayed if the user hasn't signed in to the mailbox for the first time.
 
-Click **More options** to view or change the mailbox storage quota and the deleted item retention settings for the mailbox. 
+Click **More options** to view or change the mailbox storage quota and the deleted item retention settings for the mailbox.
 
 - **Storage quota settings**: To customize these settings for the mailbox and not use the mailbox database defaults, click **Customize settings for this mailbox**, type a new value, and then click **Save**.
 
@@ -199,9 +199,9 @@ Click **More options** to view or change the mailbox storage quota and the delet
 
   - **Issue a warning at (GB)**: This box displays the maximum storage limit before a warning is issued to the user. If the mailbox size reaches or exceeds the value specified, Exchange sends a warning message to the user.
 
-  - **Prohibit send at (GB)**: This box displays the *prohibit send* limit for the mailbox. If the mailbox size reaches or exceeds the specified limit, Exchange prevents the user from sending new messages and displays a descriptive error message. 
+  - **Prohibit send at (GB)**: This box displays the *prohibit send* limit for the mailbox. If the mailbox size reaches or exceeds the specified limit, Exchange prevents the user from sending new messages and displays a descriptive error message.
 
-  - **Prohibit send and receive at (GB)**: This box displays the *prohibit send and receive* limit for the mailbox. If the mailbox size reaches or exceeds the specified limit, Exchange prevents the mailbox user from sending new messages and won't deliver any new messages to the mailbox. Any messages sent to the mailbox are returned to the sender with a descriptive error message. 
+  - **Prohibit send and receive at (GB)**: This box displays the *prohibit send and receive* limit for the mailbox. If the mailbox size reaches or exceeds the specified limit, Exchange prevents the mailbox user from sending new messages and won't deliver any new messages to the mailbox. Any messages sent to the mailbox are returned to the sender with a descriptive error message.
 
 - **Deleted item retention settings**: To customize these settings for the mailbox and not use the mailbox database defaults, click **Customize settings for this mailbox**, type a new value, and then click **Save**.
 
@@ -212,18 +212,18 @@ Click **More options** to view or change the mailbox storage quota and the delet
 #### Email Address
 <a name="EmailAddress"> </a>
 
-Use the **Email address** section to view or change the email addresses associated with the linked mailbox. This includes the user's primary SMTP addresses and any associated proxy addresses. The primary SMTP address (also known as the *default reply address*) is displayed in bold text in the address list, with the uppercase **SMTP** value in the **Type** column. 
+Use the **Email address** section to view or change the email addresses associated with the linked mailbox. This includes the user's primary SMTP addresses and any associated proxy addresses. The primary SMTP address (also known as the *default reply address*) is displayed in bold text in the address list, with the uppercase **SMTP** value in the **Type** column.
 
-- **Add**: Click **Add**![Add icon](../media/ITPro_EAC_AddIcon.png) to add a new email address for this mailbox. Select one of following address types: 
+- **Add**: Click **Add** ![Add icon](../media/ITPro_EAC_AddIcon.png) to add a new email address for this mailbox. Select one of following address types: 
 
-  - **SMTP**: This is the default address type. Click this radio button and then type the new SMTP address in the **\* Email address** box. 
+  - **SMTP**: This is the default address type. Click this radio button and then type the new SMTP address in the **\* Email address** box.
 
-  - **EUM**: An EUM (Exchange Unified Messaging) address is used by the Exchange Unified Messaging service to locate UM-enabled users within an Exchange organization. EUM addresses consist of the extension number and the UM dial plan for the UM-enabled user. Click this radio button and type the extension number in the **Address/Extension** box. Then click **Browse** and select a dial plan for the user. 
+  - **EUM**: An EUM (Exchange Unified Messaging) address is used by the Exchange Unified Messaging service to locate UM-enabled users within an Exchange organization. EUM addresses consist of the extension number and the UM dial plan for the UM-enabled user. Click this radio button and type the extension number in the **Address/Extension** box. Then click **Browse** and select a dial plan for the user.
 
-  - **Custom address type**: Click this button and type one of the supported non-SMTP email address types in the **\* Email address** box. 
+  - **Custom address type**: Click this button and type one of the supported non-SMTP email address types in the **\* Email address** box.
 
     > [!NOTE]
-    > With the exception of X.400 addresses, Exchange doesn't validate custom addresses for proper formatting. You must make sure that the custom address you specify complies with the format requirements for that address type. 
+    > With the exception of X.400 addresses, Exchange doesn't validate custom addresses for proper formatting. You must make sure that the custom address you specify complies with the format requirements for that address type.
 
 - **Automatically update email addresses based on the email address policy applied to this recipient**: Select this check box if you want the recipient's email addresses to be updated automatically when changes are made to email address policies in your organization. This box is selected by default.
 
@@ -243,17 +243,17 @@ Use the **Mailbox Features** section to view or change the following mailbox fea
 - **Unified Messaging**: This feature is disabled by default. When you enable Unified Messaging (UM) the user will be able to use your organization's UM features and a default set of UM properties are applied to the user. Click **Enable** to enable UM for the mailbox. For information about how to enable UM, see [Enable a User for Unified Messaging](http://technet.microsoft.com/library/ad027767-5e14-4cb1-9f8a-0791d9188db5.aspx).
 
     > [!NOTE]
-    > A UM dial plan and a UM mailbox policy must exist before you can enable UM. 
+    > A UM dial plan and a UM mailbox policy must exist before you can enable UM.
 
-- **Mobile Devices**: Use this section to view and change the settings for Exchange ActiveSync, which is enabled by default. Exchange ActiveSync enables access to an Exchange mailbox from a mobile device. Click **Disable Exchange ActiveSync** to disable this feature for the mailbox. 
+- **Mobile Devices**: Use this section to view and change the settings for Exchange ActiveSync, which is enabled by default. Exchange ActiveSync enables access to an Exchange mailbox from a mobile device. Click **Disable Exchange ActiveSync** to disable this feature for the mailbox.
 
-- **Outlook Web App**: This feature is enabled by default. Outlook on the web provides access to an Exchange mailbox via a web browser. Click **Disable** to disable Outlook on the web for the mailbox. Click **Edit details** to add or change an Outlook on the web mailbox policy for the mailbox. 
+- **Outlook Web App**: This feature is enabled by default. Outlook on the web provides access to an Exchange mailbox via a web browser. Click **Disable** to disable Outlook on the web for the mailbox. Click **Edit details** to add or change an Outlook on the web mailbox policy for the mailbox.
 
-- **IMAP**: This feature is enabled by default. Click **Disable** to disable IMAP for the mailbox. 
+- **IMAP**: This feature is enabled by default. Click **Disable** to disable IMAP for the mailbox.
 
-- **POP3**: This feature is enabled by default. Click **Disable** to disable POP3 for the mailbox. 
+- **POP3**: This feature is enabled by default. Click **Disable** to disable POP3 for the mailbox.
 
-- **MAPI**: This feature is enabled by default. MAPI enables access to an Exchange mailbox from a MAPI client such as Outlook. Click **Disable** to disable MAPI for the mailbox. 
+- **MAPI**: This feature is enabled by default. MAPI enables access to an Exchange mailbox from a MAPI client such as Outlook. Click **Disable** to disable MAPI for the mailbox.
 
 - **Litigation hold**: This feature is disabled by default. Litigation hold preserves deleted mailbox items and records changes made to mailbox items. Deleted items and all instances of changed items are returned in a discovery search. Click **Enable** to put the mailbox on litigation hold. If the mailbox is on litigation hold, click **Disable** to remove the litigation hold. If the mailbox is on litigation hold, click **Edit details** to view and change the following litigation hold settings: 
 
@@ -266,7 +266,7 @@ Use the **Mailbox Features** section to view or change the following mailbox fea
   - **URL**: Use this box to provide a URL to a website that provides information or guidance about the litigation hold on the mailbox.
 
     > [!NOTE]
-    > The text from these boxes appears in the user's mailbox only if they're using Outlook 2010 or later versions. It doesn't appear in Outlook on the web or other email clients. To view the text from the Note and URL boxes in Outlook, click the **File** tab and, on the **Info** page, under **Account Settings**, you'll see the litigation hold comment. 
+    > The text from these boxes appears in the user's mailbox only if they're using Outlook 2010 or later versions. It doesn't appear in Outlook on the web or other email clients. To view the text from the Note and URL boxes in Outlook, click the **File** tab and, on the **Info** page, under **Account Settings**, you'll see the litigation hold comment.
 
 - **Archiving**: If an archive mailbox doesn't exist for the user, this feature is disabled. To enable an archive mailbox, click **Enable**. If the user has an archive mailbox, the size of the archive mailbox and usage statistics are displayed. Click **Edit details** to view and change the following archive mailbox settings: 
 
@@ -282,26 +282,26 @@ Use the **Mailbox Features** section to view or change the following mailbox fea
 
   - **Issue warning at (GB)**: This box shows the maximum storage limit for the archive mailbox before a warning is issued to the user. If the archive mailbox size reaches or exceeds the value specified, Exchange sends a warning message to the user. To change this limit, type a new value in the box or select a value from the drop-down list.
 
-- **Delivery Options**: Use Delivery Options to forward email messages sent to the user to another recipient and to set the maximum number of recipients that the user can send a message to. Click **Edit details** to view and change these settings. 
+- **Delivery Options**: Use Delivery Options to forward email messages sent to the user to another recipient and to set the maximum number of recipients that the user can send a message to. Click **Edit details** to view and change these settings.
 
-  - **Forwarding address**: Select the **Enable forwarding** check box and then click **Browse** to display the **Select Mail User and Mailbox** page. Use this page to select a recipient to whom you want to forward all email messages that are sent to this mailbox. Messages will be delivered to both the linked mailbox and the forwarding address. 
+  - **Forwarding address**: Select the **Enable forwarding** check box and then click **Browse** to display the **Select Mail User and Mailbox** page. Use this page to select a recipient to whom you want to forward all email messages that are sent to this mailbox. Messages will be delivered to both the linked mailbox and the forwarding address.
 
-  - **Recipient limit**: This setting controls the maximum number of recipients the user can send a message to. Select the **Maximum recipients** check box to limit the number of recipients allowed on the To:, Cc:, and Bcc: lines of an email message, and then specify the maximum number of recipients. 
+  - **Recipient limit**: This setting controls the maximum number of recipients the user can send a message to. Select the **Maximum recipients** check box to limit the number of recipients allowed on the To:, Cc:, and Bcc: lines of an email message, and then specify the maximum number of recipients.
 
     > [!NOTE]
-    > For on-premises Exchange organizations, the recipient limit is unlimited. For Exchange Online organizations, the limit is 500 recipients. 
+    > For on-premises Exchange organizations, the recipient limit is unlimited. For Exchange Online organizations, the limit is 500 recipients.
 
-- **Message Size Restrictions**: These settings control the size of messages that the user can send and receive. Click **Edit details** to view and change the maximum size for sent and received messages. 
+- **Message Size Restrictions**: These settings control the size of messages that the user can send and receive. Click **Edit details** to view and change the maximum size for sent and received messages.
 
-  - **Sent messages**: To specify a maximum size for messages sent by this user, select the **Maximum message size (KB)** check box and type a value in the box. The message size must be between 0 and 2,097,151 KB. If the user sends a message larger than the specified size, the message will be returned to the user with a descriptive error message. 
+  - **Sent messages**: To specify a maximum size for messages sent by this user, select the **Maximum message size (KB)** check box and type a value in the box. The message size must be between 0 and 2,097,151 KB. If the user sends a message larger than the specified size, the message will be returned to the user with a descriptive error message.
 
-  - **Received messages**: To specify a maximum size for messages received by this user, select the **Maximum message size (KB)** check box and type a value in the box. The message size must be between 0 and 2,097,151 KB. If the user receives a message larger than the specified size, the message will be returned to the sender with a descriptive error message. 
+  - **Received messages**: To specify a maximum size for messages received by this user, select the **Maximum message size (KB)** check box and type a value in the box. The message size must be between 0 and 2,097,151 KB. If the user receives a message larger than the specified size, the message will be returned to the sender with a descriptive error message.
 
-- **Message Delivery Restrictions**: These settings control who can send email messages to this user. Click **Edit details** to view and change these restrictions. 
+- **Message Delivery Restrictions**: These settings control who can send email messages to this user. Click **Edit details** to view and change these restrictions.
 
   - **Accept messages from**: Use this section to specify who can send messages to this user.
 
-  - **All senders**: Select this option to specify that the user can accept messages from all senders. This includes both senders in your Exchange organization and external senders. This option is selected by default. This option includes external users only if you clear the **Require that all senders are authenticated** check box. If you select this check box, messages from external users will be rejected. 
+  - **All senders**: Select this option to specify that the user can accept messages from all senders. This includes both senders in your Exchange organization and external senders. This option is selected by default. This option includes external users only if you clear the **Require that all senders are authenticated** check box. If you select this check box, messages from external users will be rejected.
 
   - **Only senders in the following list**: Select this option to specify that the user can accept messages only from a specified set of senders in your Exchange organization. Click **Add** to display the **Select Recipients** page, which displays a list of all recipients in your Exchange organization. Select the recipients you want, add them to the list, and then click **OK**. You can also search for a specific recipient by typing the recipient's name in the search box and then clicking **Search**.
 
@@ -316,15 +316,15 @@ Use the **Mailbox Features** section to view or change the following mailbox fea
 #### Member Of
 <a name="MemberOf"> </a>
 
-Use the **Member Of** section to view a list of the distribution groups or security groups to which this user belongs. You can't change membership information on this page. Note that the user may match the criteria for one or more dynamic distribution groups in your organization. However, dynamic distribution groups aren't displayed on this page because their membership is calculated each time they're used. 
+Use the **Member Of** section to view a list of the distribution groups or security groups to which this user belongs. You can't change membership information on this page. Note that the user may match the criteria for one or more dynamic distribution groups in your organization. However, dynamic distribution groups aren't displayed on this page because their membership is calculated each time they're used.
 
 #### MailTip
 <a name="MailTip"> </a>
 
-Use the **MailTip** section to add a MailTip to alert users of potential issues if they send a message to this recipient. A MailTip is text that's displayed in the InfoBar when a recipient is added to the To, Cc, or Bcc lines of a new email message. 
+Use the **MailTip** section to add a MailTip to alert users of potential issues if they send a message to this recipient. A MailTip is text that's displayed in the InfoBar when a recipient is added to the To, Cc, or Bcc lines of a new email message.
 
 > [!NOTE]
->  MailTips can include HTML tags, but scripts aren't allowed. The length of a custom MailTip can't exceed 175 displayed characters. HTML tags aren't counted in the limit. 
+>  MailTips can include HTML tags, but scripts aren't allowed. The length of a custom MailTip can't exceed 175 displayed characters. HTML tags aren't counted in the limit.
 
 #### Mailbox Delegation
 <a name="MailboxDelegation"> </a>
@@ -333,7 +333,7 @@ Use the **Mailbox Delegation** section to assign permissions to other users (als
 
 - **Send As**: This permission allows users other than the mailbox owner to use the mailbox to send messages. After this permission is assigned to a delegate, any message that a delegate sends from this mailbox will appear as if it was sent by the mailbox owner. However, this permission doesn't allow a delegate to sign in to the user's mailbox.
 
-- **Send on Behalf Of**: This permission also allows a delegate to use this mailbox to send messages. However, after this permission is assigned to a delegate, the **From:** address in any message sent by the delegate indicates that the message was sent by the delegate on behalf of the mailbox owner. 
+- **Send on Behalf Of**: This permission also allows a delegate to use this mailbox to send messages. However, after this permission is assigned to a delegate, the **From:** address in any message sent by the delegate indicates that the message was sent by the delegate on behalf of the mailbox owner.
 
 - **Full Access**: This permission allows a delegate to sign in to the user's mailbox and view the contents of the mailbox. However, after this permission is assigned to a delegate, the delegate can't send messages from the mailbox. To allow a delegate to send email from the user's mailbox, you still have to assign the delegate the Send As or the Send on Behalf Of permission.
 
@@ -350,13 +350,13 @@ Use the **Get-Mailbox** and **Set-Mailbox** cmdlets to view and change propertie
 
 Here are some examples of using the Exchange Management Shell to change linked mailbox properties.
 
-This example uses the **Get-Mailbox** command to find all the linked mailboxes in the organization. 
+This example uses the **Get-Mailbox** command to find all the linked mailboxes in the organization.
 
 ```
 Get-Mailbox -ResultSize unlimited -Filter {(RecipientTypeDetails -eq 'LinkedMailbox')}
 ```
 
-This example uses the **Set-Mailbox** command to limit the number of recipients allowed on the To:, Cc:, and Bcc: lines of an email message to 500. This limit applies to all linked mailboxes in the organization. 
+This example uses the **Set-Mailbox** command to limit the number of recipients allowed on the To:, Cc:, and Bcc: lines of an email message to 500. This limit applies to all linked mailboxes in the organization.
 
 ```
 Get-Mailbox -ResultSize unlimited -Filter {(RecipientTypeDetails -eq 'LinkedMailbox')} | Set-Mailbox -RecipientLimits 500
@@ -373,9 +373,9 @@ Set-Mailbox -Identity "Ayla Kol" -LinkedDomainController DC1.fabrikam.com -Linke
 
 To verify that you have successfully changed properties for a linked mailbox, do the following:
 
-- In the EAC, select the linked mailbox and then click **Edit** to view the property or feature that you changed. Depending on the property that you changed, it might be displayed in the Details pane for the selected mailbox. 
+- In the EAC, select the linked mailbox and then click **Edit** to view the property or feature that you changed. Depending on the property that you changed, it might be displayed in the Details pane for the selected mailbox.
 
-- In the Exchange Management Shell, use the **Get-Mailbox** cmdlet to verify the changes. One advantage of using the Exchange Management Shell is that you can view multiple properties for multiple linked mailboxes. In the example above where the recipient limit was changed, running the following command will verify the new value. 
+- In the Exchange Management Shell, use the **Get-Mailbox** cmdlet to verify the changes. One advantage of using the Exchange Management Shell is that you can view multiple properties for multiple linked mailboxes. In the example above where the recipient limit was changed, running the following command will verify the new value.
 
   ```
   Get-Mailbox -ResultSize unlimited -Filter {(RecipientTypeDetails -eq 'LinkedMailbox')} | Format-List Name,RecipientLimits

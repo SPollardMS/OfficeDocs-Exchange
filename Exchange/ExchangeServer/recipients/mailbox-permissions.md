@@ -16,7 +16,7 @@ description: "Summary: Learn how to assign permissions for mailboxes and groups 
 
  **Summary**: Learn how to assign permissions for mailboxes and groups in Exchange 2016 so other users can open the mailbox, send mail from the mailbox, or send mail from the group.
 
-In Exchange Server 2016, you can use the Exchange admin center (EAC) or the Exchange Management Shell to assign permissions to a mailbox or group so that other users can access the mailbox (the Full Access permission), or send email messages that appear to come from the mailbox or group (the Send As or Send on Behalf permissions). The users that are assigned these permissions on other mailboxes or groups are called *delegates* . 
+In Exchange Server 2016, you can use the Exchange admin center (EAC) or the Exchange Management Shell to assign permissions to a mailbox or group so that other users can access the mailbox (the Full Access permission), or send email messages that appear to come from the mailbox or group (the Send As or Send on Behalf permissions). The users that are assigned these permissions on other mailboxes or groups are called *delegates*.
 
 The permissions that you can assign to delegates for mailboxes and groups in Exchange 2016 are described in the following table:
 
@@ -39,7 +39,7 @@ The permissions that you can assign to delegates for mailboxes and groups in Exc
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).. 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351)..
 
 ## Use the EAC to assign permissions to individual mailboxes
 
@@ -51,7 +51,7 @@ The permissions that you can assign to delegates for mailboxes and groups in Exc
 
   - **Shared**: Shared mailboxes.
 
-2. In the list of mailboxes, select the mailbox that you want to assign permissions for, and then click **Edit**![Edit icon](../media/ITPro_EAC_EditIcon.png).
+2. In the list of mailboxes, select the mailbox that you want to assign permissions for, and then click **Edit** ![Edit icon](../media/ITPro_EAC_EditIcon.png).
 
 3. On the mailbox properties page that opens, click **Mailbox delegation** and configure one or more of the following permissions: 
 
@@ -61,32 +61,33 @@ The permissions that you can assign to delegates for mailboxes and groups in Exc
 
   - **Full Access**: The delegate can open the mailbox and do anything except send messages.
 
-    To assign permissions to delegates, click **Add**![Add icon](../media/ITPro_EAC_AddIcon.png) under the appropriate permission. A dialog box appears that lists the users or groups that can have the permission assigned to them. Select the user or group from the list, and then click **Add**. Repeat this process as many times as necessary. You can also search for users or groups in the search box by typing all or part of the name, and then clicking **Search**![Search icon](../media/ITPro_EAC_.png). When you are finished selecting delegates, click **OK**.
+    To assign permissions to delegates, click **Add** ![Add icon](../media/ITPro_EAC_AddIcon.png) under the appropriate permission. A dialog box appears that lists the users or groups that can have the permission assigned to them. Select the user or group from the list, and then click **Add**. Repeat this process as many times as necessary. You can also search for users or groups in the search box by typing all or part of the name, and then clicking **Search** ![Search icon](../media/ITPro_EAC_.png). When you're finished selecting delegates, click **OK**.
 
-    To remove a permission from a delegate, select the delegate in the list under the appropriate permission, and then click **Remove**![Remove icon](../media/ITPro_EAC_RemoveIcon.png).
+    To remove a permission from a delegate, select the delegate in the list under the appropriate permission, and then click **Remove** ![Remove icon](../media/ITPro_EAC_RemoveIcon.png).
 
-4. When you are finished, click **Save**.
+4. When you're finished, click **Save**.
 
 ## Use the EAC to assign permissions to multiple mailboxes at the same time
 
 1. In the EAC, navigate to **Recipients** \> **Mailboxes**.
 
-2. Select the mailboxes that you want to assign permissions for. Use click + Shift key + click to select a range of mailboxes, or Ctrl key + click to select multiple individual mailboxes. The title of the details pane changes to **Bulk Edit** as shown in the following diagram. 
+2. Select the mailboxes that you want to assign permissions for. Use click + Shift key + click to select a range of mailboxes, or Ctrl key + click to select multiple individual mailboxes. The title of the details pane changes to **Bulk Edit** as shown in the following diagram.
+
     ![Bulk select mailboxes in the EAC](../media/ee6acd85-a6b8-44f4-8eb1-a6e84e4dfff1.png)
 
     Note that the mailboxes that you select need to be the same type. For example, if you select both user mailboxes and linked mailboxes, you'll get a warning in the details pane that says bulk edit won't work.
 
 3. At the bottom of the details pane, click **More options**. Under the **Mailbox Delegation** option that appears, choose **Add** or **Remove**. Depending on your selection, do one of the following steps:
 
-  - **Add**: In the **Bulk Add Delegation** dialog box that appears, click **Add**![Add icon](../media/ITPro_EAC_AddIcon.png) under the appropriate permission (**Send As**, **Send on Behalf**, or **Full Access**). When you are finished selecting users or groups to add as delegates, click **Save**.
+  - **Add**: In the **Bulk Add Delegation** dialog box that appears, click **Add** ![Add icon](../media/ITPro_EAC_AddIcon.png) under the appropriate permission (**Send As**, **Send on Behalf**, or **Full Access**). When you're finished selecting users or groups to add as delegates, click **Save**.
 
-  - **Remove**: In the **Bulk Remove Delegation** dialog box that appears, click **Add**![Add icon](../media/ITPro_EAC_AddIcon.png) under the appropriate permission (**Send As**, **Send on Behalf**, or **Full Access**). When you are finished selecting users or groups to remove from the existing delegates, click **Save**.
+  - **Remove**: In the **Bulk Remove Delegation** dialog box that appears, click **Add** ![Add icon](../media/ITPro_EAC_AddIcon.png) under the appropriate permission (**Send As**, **Send on Behalf**, or **Full Access**). When you're finished selecting users or groups to remove from the existing delegates, click **Save**.
 
 ## Use the EAC to assign permissions to groups
 
 1. In the EAC, navigate to **Recipients** \> **Groups**.
 
-2. In the list of groups, select the group that you want to assign permissions for, and then click **Edit**![Edit icon](../media/ITPro_EAC_EditIcon.png).
+2. In the list of groups, select the group that you want to assign permissions for, and then click **Edit** ![Edit icon](../media/ITPro_EAC_EditIcon.png).
 
 3. On the group properties page that opens, click **Group delegation** and configure one of the following permissions: 
 
@@ -94,11 +95,11 @@ The permissions that you can assign to delegates for mailboxes and groups in Exc
 
   - **Send on Behalf**: Messages sent by a delegate have " _\<Delegate\>_ on behalf of _\<Group\>_" in the From address.
 
-4. To assign permissions to delegates, click **Add**![Add icon](../media/ITPro_EAC_AddIcon.png) under the appropriate permission. A dialog box appears that lists the users or groups that can have the permission assigned to them. Select the user or group from the list, and then click **Add**. Repeat this process as many times as necessary. You can also search for users or groups in the search box by typing all or part of the name, and then clicking **Search**![Search icon](../media/ITPro_EAC_.png). When you are finished selecting delegates, click **OK**.
+4. To assign permissions to delegates, click **Add** ![Add icon](../media/ITPro_EAC_AddIcon.png) under the appropriate permission. A dialog box appears that lists the users or groups that can have the permission assigned to them. Select the user or group from the list, and then click **Add**. Repeat this process as many times as necessary. You can also search for users or groups in the search box by typing all or part of the name, and then clicking **Search** ![Search icon](../media/ITPro_EAC_.png). When you're finished selecting delegates, click **OK**.
 
-    To remove a permission from a delegate, select the delegate in the list under the appropriate permission, and then click **Remove**![Remove icon](../media/ITPro_EAC_RemoveIcon.png).
+    To remove a permission from a delegate, select the delegate in the list under the appropriate permission, and then click **Remove** ![Remove icon](../media/ITPro_EAC_RemoveIcon.png).
 
-5. When you are finished, click **Save**.
+5. When you're finished, click **Save**.
 
 ## Use the Exchange Management Shell to assign the Full Access permission to mailboxes
 <a name="PowerShellFullAccess"> </a>
@@ -149,7 +150,7 @@ To verify that you've assigned or removed the Full Access permission for a deleg
 
 - In the properties of the mailbox in the EAC, verify the delegate is or isn't listed in **Mailbox delegation** \> **Full Access**.
 
-- Run the following command in the Exchange Management Shell to verify the delegate is or isn't listed. Be sure to replace _\<MailboxIdentity\>_ with the identity of the mailbox. 
+- Run the following command in the Exchange Management Shell to verify the delegate is or isn't listed. Be sure to replace _\<MailboxIdentity\>_ with the identity of the mailbox.
 
   ```
   Get-MailboxPermission <MailboxIdentity> | where {$_.AccessRights -like 'Full*'} | Format-Table -Auto User,Deny,IsInherited,AccessRights
@@ -169,7 +170,7 @@ For more information, see [Add-AdPermission](http://technet.microsoft.com/librar
 
  **Notes**:
 
-- The _Identity_ parameter requires you to use the **Name** or **DistinguishedName** (DN) value of the mailbox or group. 
+- The _Identity_ parameter requires you to use the **Name** or **DistinguishedName** (DN) value of the mailbox or group.
 
   - **Name**: This value may or may not be the same as the display name. For example, `Felipe Apodaca`.
 
@@ -201,7 +202,7 @@ To verify that you've assigned or removed the Send As permission for a delegate 
 
 - In the properties of the mailbox or group in the EAC, verify the delegate is or isn't listed in **Mailbox delegation** \> **Send As** or **Group delegation** \> **Send As**.
 
-- Run the following command in the Exchange Management Shell to verify the delegate is or isn't listed. Be sure to replace _\<MailboxOrGroupNameOrDN\>_ with the name or distinguished name of the mailbox or group. 
+- Run the following command in the Exchange Management Shell to verify the delegate is or isn't listed. Be sure to replace _\<MailboxOrGroupNameOrDN\>_ with the name or distinguished name of the mailbox or group.
 
   ```
   Get-ADPermission -Identity <MailboxOrGroupNameOrDN> | where {$_.ExtendedRights -like 'Send*'} | Format-Table -Auto User,Deny,ExtendedRights
@@ -215,7 +216,7 @@ You use the **Set-** cmdlets for the various mailbox and group cmdlets to manage
 
 - **Set-Mailbox**
 
-- **Set-DistributionGroup**: Distribution groups and mail-enabled security groups. 
+- **Set-DistributionGroup**: Distribution groups and mail-enabled security groups.
 
 - **Set-DynamicDistributionGroup**
 
@@ -265,7 +266,7 @@ To verify that you've assigned or removed the Send on Behalf permission for a de
 
 - In the properties of the mailbox or group in the EAC, verify the delegate is or isn't listed in **Mailbox delegation** \> **Send As** or **Group delegation** \> **Send As**.
 
-- Run the one of the following commands in the Exchange Management Shell to verify the delegate is or isn't listed. Be sure to replace _\<MailboxIdentity\>_ or _\<GroupIdentity\>_ with the identity of the mailbox or group. 
+- Run the one of the following commands in the Exchange Management Shell to verify the delegate is or isn't listed. Be sure to replace _\<MailboxIdentity\>_ or _\<GroupIdentity\>_ with the identity of the mailbox or group.
 
   - Mailbox:
 

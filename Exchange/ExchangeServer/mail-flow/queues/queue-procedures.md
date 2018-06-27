@@ -56,21 +56,21 @@ For procedures on messages in queues, see [Procedures for messages in queues](me
     
 - For more information about using filters and identity values in the Exchange Management Shell, see [Find queues and messages in queues in the Exchange Management Shell](queues-and-messages-in-powershell.md).
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Queues" entry in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Queues" entry in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic.
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
   
 ## View queues
 <a name="View"> </a>
 
 ### Use Queue Viewer to view queues
 
-1. In the **Exchange Toolbox**, in the **Mail flow tools** section, double-click **Queue Viewer** to open the tool in a new window. 
+1. In the **Exchange Toolbox**, in the **Mail flow tools** section, double-click **Queue Viewer** to open the tool in a new window.
     
-2. In Queue Viewer, click the **Queues** tab. A list of all queues on the server to which you're connected is displayed. 
+2. In Queue Viewer, click the **Queues** tab. A list of all queues on the server to which you're connected is displayed.
     
 3. You can use the **Export List** link in the action pane to export the list of queues. For more information, see [How to Export Lists from the Exchange Management Consoles](http://technet.microsoft.com/library/dcb829cd-0ffd-4ea9-ac3e-eaac5a8d1194.aspx).
     
@@ -98,15 +98,15 @@ For more information, see [Get-Queue](http://technet.microsoft.com/library/df73c
   
 ### Use the Exchange Management Shell to view queue summary information on multiple Exchange servers
 
-The **Get-QueueDigest** cmdlet provides a high-level, aggregate view of the state of queues on all servers within a specific scope (for example, a DAG, an Active Directory site, a list of servers, or the entire Active Directory forest). 
+The **Get-QueueDigest** cmdlet provides a high-level, aggregate view of the state of queues on all servers within a specific scope (for example, a DAG, an Active Directory site, a list of servers, or the entire Active Directory forest).
   
 By default, the **Get-QueueDigest** cmdlet displays delivery queues that contain ten or more messages, and the results are between one and two minutes old. For instructions on how to change these default values, see **Configure Get-QueueDigest**.
   
  **Notes**:
   
-- Queues on a subscribed Edge Transport server aren't included in the results of **Get-QueueDigest**. 
+- Queues on a subscribed Edge Transport server aren't included in the results of **Get-QueueDigest**.
     
-- **Get-QueueDigest** is available on Edge Transport servers, but the results are restricted to local queues on the server. 
+- **Get-QueueDigest** is available on Edge Transport servers, but the results are restricted to local queues on the server.
     
 To view summary information about queues on multiple Exchange servers, run the following command:
   
@@ -120,7 +120,7 @@ This example displays summary information about the queues on all Exchange 2013 
 Get-QueueDigest -Site FirstSite -Filter {MessageCount -gt 100}
 ```
 
-This example displays summary information about the queues on all Exchange 2016 Mailbox servers in the database availability group (DAG) named DAG01 where the queue status has the value **Retry**. 
+This example displays summary information about the queues on all Exchange 2016 Mailbox servers in the database availability group (DAG) named DAG01 where the queue status has the value **Retry**.
   
 ```
 Get-QueueDigest -Dag DAG01 -Filter {Status -eq "Retry"}
@@ -137,25 +137,25 @@ When you retry a delivery queue, you force an immediate connection attempt and o
   
 - The queue must be in a status of Retry for this action to have any effect.
     
--  If the connection isn't successful, the retry interval timer is reset. 
+-  If the connection isn't successful, the retry interval timer is reset.
     
 ### Use Queue Viewer to retry a queue
 
-1. In the **Exchange Toolbox**, in the **Mail flow tools** section, double-click **Queue Viewer** to open the tool in a new window. 
+1. In the **Exchange Toolbox**, in the **Mail flow tools** section, double-click **Queue Viewer** to open the tool in a new window.
     
-2. In Queue Viewer, click the **Queues** tab. A list of all queues on the server that you're connected to is displayed. 
+2. In Queue Viewer, click the **Queues** tab. A list of all queues on the server that you're connected to is displayed.
     
 3. Click **Create Filter**, and enter your filter expression as follows:
     
-1. Select **Status** from the queue property drop-down list. 
+1. Select **Status** from the queue property drop-down list.
     
-2. Select **Equals** from the comparison operator drop-down list. 
+2. Select **Equals** from the comparison operator drop-down list.
     
-3. Select **Retry** from the value drop-down list. 
+3. Select **Retry** from the value drop-down list.
     
-4. Click **Apply Filter**. All queues that currently have a **Retry** status are displayed. 
+4. Click **Apply Filter**. All queues that currently have a **Retry** status are displayed.
     
-5. Select one or more queues from the list. Right-click, and then select **Retry Queue**. If the connection attempt is successful, the queue status changes to **Active**. If no connection can be made, the queue remains in a status of **Retry** and the next retry time is updated. 
+5. Select one or more queues from the list. Right-click, and then select **Retry Queue**. If the connection attempt is successful, the queue status changes to **Active**. If no connection can be made, the queue remains in a status of **Retry** and the next retry time is updated.
     
 ### Use the Exchange Management Shell to retry a queue
 
@@ -181,7 +181,7 @@ Retry-Queue -Identity Mailbox01\contoso.com
 
 To verify that you have successfully retried a queue, use either of the following procedures:
   
-- In Queue Viewer, verify the values of the **Status**, **Next Retry Time**, and **Last Error** properties. 
+- In Queue Viewer, verify the values of the **Status**, **Next Retry Time**, and **Last Error** properties.
     
 - In the Exchange Management Shell, replace _\<QueueIdentity\>_ with the identity of the queue, and use the following syntax to verify the property values: 
     
@@ -206,7 +206,7 @@ Resubmitting a queue sends all messages in the queue back to the Submission queu
     
     Any messages in the queue that have the status value of Suspended aren't resubmitted.
     
-- You can't resubmit the poison message queue, but you can resubmit individual messages in the queue. For more information, see the [Resubmit messages in the poison message queue](queue-procedures.md#PoisonResubmit) section later in this topic. 
+- You can't resubmit the poison message queue, but you can resubmit individual messages in the queue. For more information, see the [Resubmit messages in the poison message queue](queue-procedures.md#PoisonResubmit) section later in this topic.
     
 - Instead of resubmitting the queue, you can export the messages to .eml files and resubmit them by using the Replay directory on any Exchange server. For more information, see [Export messages from queues](export-messages.md)
     
@@ -259,9 +259,9 @@ A special case for resubmitting messages is the poison message queue. You can't 
     
 #### Use Queue Viewer to resubmit messages in the poison message queue
 
-1. In the **Exchange Toolbox**, in the **Mail flow tools** section, double-click **Queue Viewer** to open the tool in a new window. 
+1. In the **Exchange Toolbox**, in the **Mail flow tools** section, double-click **Queue Viewer** to open the tool in a new window.
     
-2. In Queue Viewer, click the **Queues** tab. A list of all queues on the server that you're connected to is displayed. 
+2. In Queue Viewer, click the **Queues** tab. A list of all queues on the server that you're connected to is displayed.
     
 3. Select the poison message queue. In the action pane, select **View Messages**.
     
@@ -325,9 +325,9 @@ You can suspend a queue to stop mail flow, and then suspend one or more messages
     
 ### Use Queue Viewer to suspend a queue
 
-1. In the **Exchange Toolbox**, in the **Mail flow tools** section, double-click **Queue Viewer** to open the tool in a new window. 
+1. In the **Exchange Toolbox**, in the **Mail flow tools** section, double-click **Queue Viewer** to open the tool in a new window.
     
-2. In Queue Viewer, click the **Queues** tab. A list of all queues on the server that you're connected to is displayed. You can create a filter to display only queues that meet specific criteria. 
+2. In Queue Viewer, click the **Queues** tab. A list of all queues on the server that you're connected to is displayed. You can create a filter to display only queues that meet specific criteria.
     
 3. Select one or more queues, right-click, and then select **Suspend**.
     
@@ -357,7 +357,7 @@ For more information, see [Suspend-Queue](http://technet.microsoft.com/library/7
 
 To verify that you have successfully suspended a queue, use either of the following procedures:
   
-- In Queue Viewer, verify the queue has the **Status** value of Retry. 
+- In Queue Viewer, verify the queue has the **Status** value of Retry.
     
 - In the Exchange Management Shell, replace _\<QueueIdentity\>_ with the identity of the queue, and run the following command to verify the **Status** property value: 
     
@@ -378,17 +378,17 @@ By resuming a queue, you restart outgoing message delivery from a queue that has
     
 ### Use Queue Viewer to resume queues
 
-1. In the **Exchange Toolbox**, in the **Mail flow tools** section, double-click **Queue Viewer** to open the tool in a new window. 
+1. In the **Exchange Toolbox**, in the **Mail flow tools** section, double-click **Queue Viewer** to open the tool in a new window.
     
-2. In Queue Viewer, click the **Queues** tab. A list of all queues on the server that you're connected to is displayed. 
+2. In Queue Viewer, click the **Queues** tab. A list of all queues on the server that you're connected to is displayed.
     
 3. Click **Create Filter**, and enter your filter expression as follows:
     
-1. Select **Status** from the queue property drop-down list. 
+1. Select **Status** from the queue property drop-down list.
     
-2. Select **Equals** from the comparison operator drop-down list. 
+2. Select **Equals** from the comparison operator drop-down list.
     
-3. Select **Suspended** from the value drop-down list. 
+3. Select **Suspended** from the value drop-down list.
     
 4. Click **Apply Filter**. All queues on the server that are currently suspended are displayed.
     
@@ -420,7 +420,7 @@ For more information, see [Resume-Queue](http://technet.microsoft.com/library/ca
 
 To verify that you have successfully resumed a queue, use either of the following procedures:
   
-- In Queue Viewer, verify the queue doesn't have the **Status** value Suspended (for example, Active, Connecting, or Ready). 
+- In Queue Viewer, verify the queue doesn't have the **Status** value Suspended (for example, Active, Connecting, or Ready).
     
 - In the Exchange Management Shell, replace _\<QueueIdentity\>_ with the identity of the queue, and run the following command to verify the **Status** property value: 
     

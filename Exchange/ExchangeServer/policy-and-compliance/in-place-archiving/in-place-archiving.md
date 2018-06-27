@@ -16,7 +16,7 @@ description: "Summary: Administrators can learn about In-Place Archiving and arc
 
  **Summary**: Administrators can learn about In-Place Archiving and archive mailboxes in Exchange 2016.
   
- *In-Place Archiving* in Exchange Server 2016 helps you regain control of your organization's messaging data by eliminating the need for personal store (.pst) files and allowing users to store messages in an *archive mailbox* . The archive mailbox is an additional mailbox that's enabled for a user's primary mailbox. The archive mailbox is accessible in Outlook and Outlook on the web. Users can view an archive mailbox and move or copy messages between their primary mailbox and their archive mailbox. 
+ *In-Place Archiving* in Exchange Server 2016 helps you regain control of your organization's messaging data by eliminating the need for personal store (.pst) files and allowing users to store messages in an *archive mailbox*. The archive mailbox is an additional mailbox that's enabled for a user's primary mailbox. The archive mailbox is accessible in Outlook and Outlook on the web. Users can view an archive mailbox and move or copy messages between their primary mailbox and their archive mailbox.
   
 You can provision a user's archive mailbox on the same mailbox database as the user's primary mailbox, a different mailbox database on the same Mailbox server, or on a mailbox database on a different Mailbox server in the same Active Directory site. In Exchange hybrid deployments, you can also provision a cloud-based archive mailbox for primary mailboxes located in your on-premises organization.
   
@@ -31,7 +31,7 @@ The following table lists the client applications that can be used to access arc
 |Exchange ActiveSync  <br/> |No  <br/> |
    
 > [!NOTE]
-> In-Place Archiving is a premium feature and requires an Exchange Enterprise client access license (CAL). For details about how to license Exchange, see [Exchange Server 2016 Licensing](https://go.microsoft.com/fwlink/p/?LinkId=237292). For details about the versions of Outlook that are required to access an archive mailbox, see [Outlook license requirements for Exchange features](https://go.microsoft.com/fwlink/p/?LinkId=237276). 
+> In-Place Archiving is a premium feature and requires an Exchange Enterprise client access license (CAL). For details about how to license Exchange, see [Exchange Server 2016 Licensing](https://go.microsoft.com/fwlink/p/?LinkId=237292). For details about the versions of Outlook that are required to access an archive mailbox, see [Outlook license requirements for Exchange features](https://go.microsoft.com/fwlink/p/?LinkId=237276).
   
 ## Moving messages to the archive mailbox
 <a name="moving"> </a>
@@ -42,14 +42,14 @@ There are several ways to move messages from a user's primary mailbox to their a
     
 - **Move or copy messages using Inbox rules**: Users can create Inbox rules in Outlook or Outlook on the web to automatically move messages to a folder in their archive mailbox.
     
-- **Move messages using retention policies**: You can use retention policies to automatically move messages to the archive mailbox. Users can also apply personal tags to move messages to their archive mailbox. For details about archive and retention policies, see [Archiving and retention policies](in-place-archiving.md#RetPolicies) later in this topic. 
+- **Move messages using retention policies**: You can use retention policies to automatically move messages to the archive mailbox. Users can also apply personal tags to move messages to their archive mailbox. For details about archive and retention policies, see [Archiving and retention policies](in-place-archiving.md#RetPolicies) later in this topic.
     
 - **Import messages from .pst files**: In Exchange 2016, you can use a mailbox import request to import messages from a .pst file to a user's archive or primary mailbox. For details, see [Mailbox imports and exports in Exchange 2016](../../recipients/mailbox-import-and-export/mailbox-import-and-export.md).
     
 ## Archiving and retention policies
 <a name="RetPolicies"> </a>
 
-In Exchange 2016, you can apply archive policies to a mailbox to automatically move messages from a user's primary mailbox to the archive mailbox after a specified period. Archive policies are implemented by creating retention tags that use the **Move to Archive** retention action. 
+In Exchange 2016, you can apply archive policies to a mailbox to automatically move messages from a user's primary mailbox to the archive mailbox after a specified period. Archive policies are implemented by creating retention tags that use the **Move to Archive** retention action.
   
 Messages are moved to a folder in the archive mailbox that has the same name as the source folder in the primary mailbox. If a folder with the same name doesn't exist in the archive mailbox, it's created when the Managed Folder Assistant moves a message. Re-creating the same folder hierarchy in the archive mailbox allows users to find messages easily.
   
@@ -58,7 +58,7 @@ To learn more about retention policies, retention tags, and the **Move to Archiv
 ## Default MRM policy
 <a name="MRMPol"> </a>
 
-Exchange 2016 Setup creates a default archive and retention policy named **Default MRM Policy**. This policy contains retention tags that have the **Move to Archive** action, as shown in the following table. 
+Exchange 2016 Setup creates a default archive and retention policy named **Default MRM Policy**. This policy contains retention tags that have the **Move to Archive** action, as shown in the following table.
   
 |**Retention tag name**|**Tag type**|**Description**|
 |:-----|:-----|:-----|
@@ -81,16 +81,16 @@ Before provisioning archive mailboxes for your users, we recommend that you info
 - How to apply personal tags (displayed in the Archive policy menu in Outlook and Outlook on the web).
     
 > [!NOTE]
-> If you apply a retention policy to users who have an archive mailbox, the retention policy replaces the default MRM policy. You can create one or more retention tags with the **Move to Archive** action, and then link the tags to the retention policy. You can also add the default **Move to Archive** tags (which are created by Setup and linked to the Default MRM Policy) to any retention policies you create. 
+> If you apply a retention policy to users who have an archive mailbox, the retention policy replaces the default MRM policy. You can create one or more retention tags with the **Move to Archive** action, and then link the tags to the retention policy. You can also add the default **Move to Archive** tags (which are created by Setup and linked to the Default MRM Policy) to any retention policies you create.
   
 ## Archive quotas
 <a name="quotas"> </a>
 
-Archive mailboxes are designed so that users can store historical messaging data outside their primary mailbox. Often, users use .pst files due to low mailbox storage quotas and the restrictions imposed when these quotas are exceeded. For example, users can be prevented from sending messages when their mailbox size exceeds the *Prohibit send quota* . Similarly, users can be prevented from sending and receiving messages when their mailbox size exceeds the *Prohibit send and receive quota* . 
+Archive mailboxes are designed so that users can store historical messaging data outside their primary mailbox. Often, users use .pst files due to low mailbox storage quotas and the restrictions imposed when these quotas are exceeded. For example, users can be prevented from sending messages when their mailbox size exceeds the *Prohibit send quota*. Similarly, users can be prevented from sending and receiving messages when their mailbox size exceeds the *Prohibit send and receive quota*.
   
 To eliminate the need for .pst files, you can provide an archive mailbox with storage limits that meet the user's requirements. However, you may still want to retain some control of the storage quotas and growth of archive mailboxes to help monitor costs and expansion.
   
-To help with this control, you can configure archive mailboxes with an *archive warning quota* and an *archive quota* . When an archive mailbox exceeds the specified archive warning quota, a warning event is logged in the Application event log. When an archive mailbox exceeds the specified archive quota, messages are no longer moved to the archive, a warning event is logged in the Application event log, and a quota message is sent to the mailbox user. By default, in Exchange 2016, the archive warning quota is set to 90 GB and the archive quota is set to 100 GB. 
+To help with this control, you can configure archive mailboxes with an *archive warning quota* and an *archive quota*. When an archive mailbox exceeds the specified archive warning quota, a warning event is logged in the Application event log. When an archive mailbox exceeds the specified archive quota, messages are no longer moved to the archive, a warning event is logged in the Application event log, and a quota message is sent to the mailbox user. By default, in Exchange 2016, the archive warning quota is set to 90 GB and the archive quota is set to 100 GB.
   
 The following table lists the events logged and warning messages sent when the archive warning quota and archive quota are met.
   
@@ -124,12 +124,12 @@ In Exchange 2016, creating and managing archive mailboxes is integrated with com
 - **Moving an archive mailbox**: You can move a user's archive mailbox to another mailbox database on the same Mailbox server or to another server, independent of the primary mailbox. To move a user's archive mailbox, you must create a mailbox move request. For details, see [Manage on-premises mailbox moves in Exchange 2016](../../architecture/mailbox-servers/manage-mailbox-moves.md).
     
     > [!IMPORTANT]
-    > Locating a user's mailbox and archive on different versions of Exchange Server isn't supported. 
+    > Locating a user's mailbox and archive on different versions of Exchange Server isn't supported.
   
 - **Disabling an archive mailbox**: You may want to disable a user's archive mailbox for troubleshooting purposes or if you're moving the primary mailbox to a version of Exchange that doesn't support In-Place Archiving. Disabling an archive is similar to disabling a primary mailbox. In on-premises deployments, a disabled archive mailbox is retained in the mailbox database until the deleted mailbox retention period for that database is reached. During this period, you can reconnect the same disabled archive mailbox to a user's primary mailbox. When the deleted mailbox retention period is reached, the disconnected archive mailbox is purged from the mailbox database.
     
-- **Retrieving mailbox statistics and folder statistics**: You can retrieve mailbox statistics and mailbox folder statistics for a user's archive mailbox by using the _Archive_ switch with the [Get-MailboxStatistics](http://technet.microsoft.com/library/cec76f70-941f-4bc9-b949-35dcc7671146.aspx) and [Get-MailboxFolderStatistics](http://technet.microsoft.com/library/212ca564-435e-4af6-8673-5564732bf118.aspx) cmdlets. 
+- **Retrieving mailbox statistics and folder statistics**: You can retrieve mailbox statistics and mailbox folder statistics for a user's archive mailbox by using the _Archive_ switch with the [Get-MailboxStatistics](http://technet.microsoft.com/library/cec76f70-941f-4bc9-b949-35dcc7671146.aspx) and [Get-MailboxFolderStatistics](http://technet.microsoft.com/library/212ca564-435e-4af6-8673-5564732bf118.aspx) cmdlets.
     
-- **Test archive connectivity**: In Exchange 2016, you can use the [Test-ArchiveConnectivity](http://technet.microsoft.com/library/0db98a12-8cbb-4e9a-add4-c1847b057a44.aspx) cmdlet to test connectivity to a specified user's on-premises or cloud-based archive mailbox. 
+- **Test archive connectivity**: In Exchange 2016, you can use the [Test-ArchiveConnectivity](http://technet.microsoft.com/library/0db98a12-8cbb-4e9a-add4-c1847b057a44.aspx) cmdlet to test connectivity to a specified user's on-premises or cloud-based archive mailbox.
     
 

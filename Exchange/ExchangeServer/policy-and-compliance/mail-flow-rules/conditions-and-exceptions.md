@@ -16,9 +16,9 @@ description: "Summary: Learn about the conditions and exceptions that define whe
 
  **Summary**: Learn about the conditions and exceptions that define when mail flow rules (transport rules) are applied to messages in Exchange 2016.
   
-Conditions and exceptions in mail flow rules (also known as transport rules) identify the messages that the rule is applied to or not applied to. For example, if the rule adds a disclaimer to messages, you can configure the rule to only apply to messages that contain specific words, messages sent by specific users, or to all messages except those sent by the members of a specific group. Collectively, the conditions and exceptions in mail flow rules are also known as *predicates*, because for every condition, there's a corresponding exception that uses the exact same settings and syntax. The only difference is conditions specify messages to include, while exceptions specify messages to exclude. 
+Conditions and exceptions in mail flow rules (also known as transport rules) identify the messages that the rule is applied to or not applied to. For example, if the rule adds a disclaimer to messages, you can configure the rule to only apply to messages that contain specific words, messages sent by specific users, or to all messages except those sent by the members of a specific group. Collectively, the conditions and exceptions in mail flow rules are also known as *predicates*, because for every condition, there's a corresponding exception that uses the exact same settings and syntax. The only difference is conditions specify messages to include, while exceptions specify messages to exclude.
   
-Most conditions and exceptions have one property that requires one or more values. For example, the **The sender is** condition requires the sender of the message. Some conditions have two properties. For example, the **A message header includes any of these words** condition requires one property to specify the message header field, and a second property to specify the text to look for in the header field. Some conditions or exceptions don't have any properties. For example, the **Any attachment has executable content** condition simply looks for attachments in messages that have executable content. 
+Most conditions and exceptions have one property that requires one or more values. For example, the **The sender is** condition requires the sender of the message. Some conditions have two properties. For example, the **A message header includes any of these words** condition requires one property to specify the message header field, and a second property to specify the text to look for in the header field. Some conditions or exceptions don't have any properties. For example, the **Any attachment has executable content** condition simply looks for attachments in messages that have executable content.
   
 For more information about mail flow rules in Exchange Server 2016, see [Mail flow rules in Exchange 2016](mail-flow-rules.md).
   
@@ -27,15 +27,15 @@ For more information about conditions and exceptions in mail flow rules in Excha
 ## Conditions and exceptions for mail flow rules on Mailbox servers
 <a name="MBConditions"> </a>
 
-The tables in the following sections describe the conditions and exceptions that are available in mail flow rules on Mailbox servers. The properties types are described in the [Property types](conditions-and-exceptions.md#PropertyTypes) section. 
+The tables in the following sections describe the conditions and exceptions that are available in mail flow rules on Mailbox servers. The properties types are described in the [Property types](conditions-and-exceptions.md#PropertyTypes) section.
   
  **Notes**:
   
-- After you select a condition or exception in the Exchange admin center (EAC), the value that's ultimately shown in the **Apply this rule if** or **Except if** field is often different (shorter) than the click path value you selected. Also, when you create new rules based on a template (a filtered list of scenarios), you can often select a short condition name instead of following the complete click path. The short names and full click path values are shown in the EAC column in the tables. 
+- After you select a condition or exception in the Exchange admin center (EAC), the value that's ultimately shown in the **Apply this rule if** or **Except if** field is often different (shorter) than the click path value you selected. Also, when you create new rules based on a template (a filtered list of scenarios), you can often select a short condition name instead of following the complete click path. The short names and full click path values are shown in the EAC column in the tables.
     
-- If you select **[Apply to all messages]** in the EAC, you can't specify any other conditions. The equivalent in the Exchange Management Shell is to create a rule without specifying any condition parameters. 
+- If you select **[Apply to all messages]** in the EAC, you can't specify any other conditions. The equivalent in the Exchange Management Shell is to create a rule without specifying any condition parameters.
     
-- The settings and properties are the same in conditions and exceptions, so the output of the **Get-TransportRulePredicate** cmdlet doesn't list exceptions separately. Also, the names of some of the predicates that are returned by this cmdlet are different than the corresponding parameter names, and a predicate might require multiple parameters. 
+- The settings and properties are the same in conditions and exceptions, so the output of the **Get-TransportRulePredicate** cmdlet doesn't list exceptions separately. Also, the names of some of the predicates that are returned by this cmdlet are different than the corresponding parameter names, and a predicate might require multiple parameters.
     
 ### Senders
 <a name="Senders"> </a>
@@ -44,7 +44,7 @@ For conditions and exceptions that examine the sender's address, you can specify
   
 In the EAC, in the **Properties of this rule** section, click **Match sender address in message**. Note that you might need to click **More options** to see this setting. In the Exchange Management Shell, the parameter is _SenderAddressLocation_. The available values are:
   
-- **Header**: Only examine senders in the message headers (for example, the **From**, **Sender**, or **Reply-To** fields). This is the default value, and is the way mail flow rules worked before Exchange 2013 Cumulative Update 1 (CU1). 
+- **Header**: Only examine senders in the message headers (for example, the **From**, **Sender**, or **Reply-To** fields). This is the default value, and is the way mail flow rules worked before Exchange 2013 Cumulative Update 1 (CU1).
     
 - **Envelope**: Only examine senders from the message envelope (the **MAIL FROM** value that was used in the SMTP transmission, which is typically stored in the **Return-Path** field). Note that message envelope searching is only available for the following conditions (and the corresponding exceptions): 
     
@@ -91,7 +91,7 @@ In the EAC, in the **Properties of this rule** section, click **Match sender add
 <a name="MessageSubjectOrBody"> </a>
 
 > [!NOTE]
-> The search for words or text patterns in the subject or other header fields in the message occurs *after* the message has been decoded from the MIME content transfer encoding method that was used to transmit the binary message between SMTP servers in ASCII text. You can't use conditions or exceptions to search for the raw (typically, Base64) encoded values of the subject or other header fields in messages. 
+> The search for words or text patterns in the subject or other header fields in the message occurs *after* the message has been decoded from the MIME content transfer encoding method that was used to transmit the binary message between SMTP servers in ASCII text. You can't use conditions or exceptions to search for the raw (typically, Base64) encoded values of the subject or other header fields in messages.
   
 |**Condition or exception in the EAC**|**Condition and exception parameters in the Exchange Management Shell**|**Property type**|**Description**|**Available in**|
 |:-----|:-----|:-----|:-----|:-----|
@@ -121,11 +121,11 @@ For more information about how mail flow rules inspect message attachments, see 
 ### Any recipients
 <a name="AnyRecipients"> </a>
 
-The conditions and exceptions in this section provide a unique capability that affects *all* recipients when the message contains at least one of the specified recipients. For example, let's say you have a rule that rejects messages. If you use a recipient condition from the [Recipients](conditions-and-exceptions.md#Recipients) section, the message is only rejected for those specified recipients. For example, if the rule finds the specified recipient in a message, but the message contains five other recipients. The message is rejected for that one recipient, and is delivered to the five other recipients. 
+The conditions and exceptions in this section provide a unique capability that affects *all* recipients when the message contains at least one of the specified recipients. For example, let's say you have a rule that rejects messages. If you use a recipient condition from the [Recipients](conditions-and-exceptions.md#Recipients) section, the message is only rejected for those specified recipients. For example, if the rule finds the specified recipient in a message, but the message contains five other recipients. The message is rejected for that one recipient, and is delivered to the five other recipients.
   
 If you add a recipient condition from this section, that same message is rejected for the detected recipient and the five other recipients.
   
-Conversely, a recipient exception from this section *prevents* the rule action from being applied to *all* recipients of the message, not just for the detected recipients. 
+Conversely, a recipient exception from this section *prevents* the rule action from being applied to *all* recipients of the message, not just for the detected recipients.
   
  **Note**: This condition or exception doesn't consider messages that are sent to recipient proxy addresses. It only matches messages that are sent to the recipient's primary email address.
   
@@ -137,7 +137,7 @@ Conversely, a recipient exception from this section *prevents* the rule action f
 ### Message sensitive information types, To and Cc values, size, and character sets
 <a name="Message"> </a>
 
-The conditions in this section that look for values in the **To** and **Cc** fields behave like the conditions in the [Any recipients](conditions-and-exceptions.md#AnyRecipients) section ( *all* recipients of the message are affected by the rule, not just the detected recipients). 
+The conditions in this section that look for values in the **To** and **Cc** fields behave like the conditions in the [Any recipients](conditions-and-exceptions.md#AnyRecipients) section ( *all* recipients of the message are affected by the rule, not just the detected recipients).
   
  **Note**: This condition or exception doesn't consider messages that are sent to recipient proxy addresses. It only matches messages that are sent to the recipient's primary email address.
   
@@ -178,7 +178,7 @@ The conditions in this section that look for values in the **To** and **Cc** fie
 <a name="MessageHeaders"> </a>
 
 > [!NOTE]
-> The search for words or text patterns in the subject or other header fields in the message occurs *after* the message has been decoded from the MIME content transfer encoding method that was used to transmit the binary message between SMTP servers in ASCII text. You can't use conditions or exceptions to search for the raw (typically, Base64) encoded values of the subject or other header fields in messages. 
+> The search for words or text patterns in the subject or other header fields in the message occurs *after* the message has been decoded from the MIME content transfer encoding method that was used to transmit the binary message between SMTP servers in ASCII text. You can't use conditions or exceptions to search for the raw (typically, Base64) encoded values of the subject or other header fields in messages.
   
 |**Condition or exception in the EAC**|**Condition and exception parameters in the Exchange Management Shell**|**Property type**|**Description**|**Available in**|
 |:-----|:-----|:-----|:-----|:-----|
@@ -188,7 +188,7 @@ The conditions in this section that look for values in the **To** and **Cc** fie
 ## Conditions and exceptions for mail flow rules on Edge Transport servers
 <a name="EdgeConditions"> </a>
 
-The conditions and exceptions that are available in mail flow rules on Edge Transport servers are a small subset of what's available on Mailbox servers. There's no EAC on Edge Transport servers, so you can only manage mail flow rules in the Exchange Management Shell on the local Edge Transport server. The conditions and exceptions are described in the following table. The properties types are described in the [Property types](conditions-and-exceptions.md#PropertyTypes) section. 
+The conditions and exceptions that are available in mail flow rules on Edge Transport servers are a small subset of what's available on Mailbox servers. There's no EAC on Edge Transport servers, so you can only manage mail flow rules in the Exchange Management Shell on the local Edge Transport server. The conditions and exceptions are described in the following table. The properties types are described in the [Property types](conditions-and-exceptions.md#PropertyTypes) section.
   
 |**Condition and exception parameters in the Exchange Management Shell**|**Property type**|**Description**|**Available in**|
 |:-----|:-----|:-----|:-----|
@@ -213,7 +213,7 @@ The conditions and exceptions that are available in mail flow rules on Edge Tran
 The property types that are used in conditions and exceptions are described in the following table.
   
 > [!NOTE]
-> If the property is a string, trailing spaces are not allowed. 
+> If the property is a string, trailing spaces are not allowed.
   
 |**Property type**|**Valid values**|**Description**|
 |:-----|:-----|:-----|
@@ -228,7 +228,7 @@ The property types that are used in conditions and exceptions are described in t
 | `IPAddressRanges` <br/> |Array of IP addresses or address ranges  <br/> |You enter the IPv4 addresses using the following syntax:  <br/> **Single IP address**: For example, `192.168.1.1`.  <br/> **IP address range**: For example, `192.168.0.1-192.168.0.254`.  <br/> **Classless InterDomain Routing (CIDR) IP address range**: For example, `192.168.0.1/25`.  <br/> In the Exchange Management Shell, you can specify multiple IP addresses or ranges separated by commas.  <br/> |
 | `ManagementRelationship` <br/> |Single value of **Manager** or **Direct report**(`DirectReport`)  <br/> |Specifies the relationship between the sender and any of the recipients. The rule checks the **Manager** attribute in Active Directory to see if the sender is the manager of a recipient, or if the sender is managed by a recipient.  <br/> |
 | `MessageClassification` <br/> |Single message classification  <br/> |In the EAC, you select from the list of message classifications that you've created.  <br/> In the Exchange Management Shell, you use the **Get-MessageClassification** cmdlet to identify the message classification. For example, use the following command to search for messages with the `Company Internal` classification and prepend the message subject with the value `CompanyInternal`.  <br/> `New-TransportRule "Rule Name" -HasClassification @(Get-MessageClassification "Company Internal").Identity -PrependSubject "CompanyInternal"` <br/> |
-| `MessageHeaderField` <br/> |Single string  <br/> |Specifies the name of the header field. The name of the header field is always paired with the value in the header field (word or text pattern match).  <br/> The *message header* is a collection of required and optional header fields in the message. Examples of header fields are **To**, **From**, **Received**, and **Content-Type**. Official header fields are defined in RFC 5322. Unofficial header fields start with **X-** and are known as *X-headers* .  <br/> |
+| `MessageHeaderField` <br/> |Single string  <br/> |Specifies the name of the header field. The name of the header field is always paired with the value in the header field (word or text pattern match).  <br/> The *message header* is a collection of required and optional header fields in the message. Examples of header fields are **To**, **From**, **Received**, and **Content-Type**. Official header fields are defined in RFC 5322. Unofficial header fields start with **X-** and are known as *X-headers*.  <br/> |
 | `MessageType` <br/> |Single message type value  <br/> |Specifies one of the following message types:  <br/> **Automatic reply** (`OOF`)  <br/> **Auto-forward** (`AutoForward`)  <br/> **Encrypted** <br/> **Calendaring** <br/> **Permission controlled** (`PermissionControlled`)  <br/> **Voicemail** <br/> **Signed** <br/> **Approval request** (`ApprovalRequest`)  <br/> **Read receipt** (`ReadReceipt`)  <br/> **Note**: When Outlook or Outlook on the web is configured to forward a message, the **ForwardingSmtpAddress** property is added to the message. The message type isn't changed to `AutoForward`.  <br/> |
 | `Patterns` <br/> |Array of regular expressions  <br/> |Specifies one or more regular expressions that are used to identify text patterns in values. For more information, see [Regular Expression Syntax](https://go.microsoft.com/fwlink/p/?LinkID=180327).  <br/> In the Exchange Management Shell, you specify multiple regular expressions separated by commas, and you enclose each regular expression in quotation marks (").  <br/> |
 | `SCLValue` <br/> | One of the following values:  <br/> **Bypass spam filtering** (`-1`)  <br/>  Integers 0 through 9  <br/> |Specifies the spam confidence level (SCL) that's assigned to a message. A higher SCL value indicates that a message is more likely to be spam.  <br/> |

@@ -34,12 +34,12 @@ Looking for other management tasks related to DAGs? Check out [Managing database
     
 - You must remove all replicated database copies from the server before you can remove it from a DAG.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Database availability groups" entry in the [High availability and site resilience permissions](../../permissions/feature-permissions/ha-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Database availability groups" entry in the [High availability and site resilience permissions](../../permissions/feature-permissions/ha-permissions.md) topic.
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).. 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351)..
   
 ## Use the EAC to manage database availability group membership
 <a name="UseEMC"> </a>
@@ -52,7 +52,7 @@ Looking for other management tasks related to DAGs? Check out [Managing database
     
   - To remove one or more Mailbox servers from the DAG, select the servers, and then click the minus (-) icon.
     
-3. Click **Save** to save the changes. 
+3. Click **Save** to save the changes.
     
 4. When the task has completed successfully, click **Close**.
     
@@ -82,7 +82,7 @@ Remove-DatabaseAvailabilityGroupServer -Identity DAG2 -MailboxServer MBX4 -Confi
 
 To verify that you've successfully managed DAG membership, do one of the following:
   
-- In the EAC, navigate to **Servers** \> **Database Availability Groups**. The current DAG membership is displayed in the **Member Servers** column. 
+- In the EAC, navigate to **Servers** \> **Database Availability Groups**. The current DAG membership is displayed in the **Member Servers** column.
     
 - In the Exchange Management Shell, run the following command to display DAG membership information.
     

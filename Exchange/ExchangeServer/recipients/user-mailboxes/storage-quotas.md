@@ -27,18 +27,18 @@ This topic shows you how to customize storage settings for a specific mailbox in
 
 - Estimated time to complete: 2 minutes.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" section in the [Recipients Permissions](../../permissions/feature-permissions/recipient-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" section in the [Recipients Permissions](../../permissions/feature-permissions/recipient-permissions.md) topic.
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).. 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351)..
   
 ## Use the EAC to set storage quotas for a mailbox
 
 1. In the EAC, navigate to **Recipients** \> **Mailboxes**.
     
-2. In the list of user mailboxes, click the mailbox that you want to change the storage quotas for, and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
+2. In the list of user mailboxes, click the mailbox that you want to change the storage quotas for, and then click **Edit** ![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
 3. On the mailbox properties page, click **Mailbox Usage**, and then click **More options**.
     
@@ -47,20 +47,20 @@ This topic shows you how to customize storage settings for a specific mailbox in
   - **Issue a warning at (GB)**: This box displays the maximum storage limit before a warning is issued to the user. If the mailbox size reaches or exceeds the value specified, Exchange sends a warning message to the user.
     
     > [!IMPORTANT]
-    > The message associated with the **Issue warning** quota won't be sent to the user unless the value of this setting is greater than 50% of the value specified in the **Prohibit send** quota. For example, if you set the **Prohibit send** quota to 8 MB, you must set the **Issue warning** quota to at least 4 MB. If you don't, the **Issue warning** quota message won't be sent. 
+    > The message associated with the **Issue warning** quota won't be sent to the user unless the value of this setting is greater than 50% of the value specified in the **Prohibit send** quota. For example, if you set the **Prohibit send** quota to 8 MB, you must set the **Issue warning** quota to at least 4 MB. If you don't, the **Issue warning** quota message won't be sent.
   
   - **Prohibit send at (GB)**: If the mailbox size reaches or exceeds the specified limit, Exchange prevents the user from sending new messages and displays a descriptive error message.
     
   - **Prohibit send and receive at (GB)**: If the mailbox size reaches or exceeds the specified limit, Exchange prevents the mailbox user from sending new messages and won't deliver any new messages to the mailbox. Any messages sent to the mailbox are returned to the sender with a descriptive error message.
     
-5. Click **Save** to save your changes. 
+5. Click **Save** to save your changes.
     
 ## Use the Exchange Management Shell to configure storage quotas for a mailbox
 
 This example sets the issue warning, prohibit send, and prohibit send and receive quotas for Joe Healy's mailbox to 24.5 GB, 24.75 GB, and 25 GB respectively.
   
 > [!NOTE]
-> To ensure that the custom settings for the mailbox are used rather than the mailbox database defaults, you must set the _UseDatabaseQuotaDefaults_ parameter to `$false`. 
+> To ensure that the custom settings for the mailbox are used rather than the mailbox database defaults, you must set the _UseDatabaseQuotaDefaults_ parameter to `$false`.
   
 ```
 Set-Mailbox -Identity "Joe Healy" -IssueWarningQuota 24.5gb -ProhibitSendQuota 24.75gb -ProhibitSendReceiveQuota 25gb -UseDatabaseQuotaDefaults $false
@@ -80,11 +80,11 @@ To verify that you've successfully set the storage quotas for a mailbox, do one 
   
 1. In the EAC, navigate to **Recipients** \> **Mailboxes**.
     
-2. In the list of user mailboxes, click the mailbox that you want to verify the storage quotas for, and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
+2. In the list of user mailboxes, click the mailbox that you want to verify the storage quotas for, and then click **Edit** ![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
 3. On the mailbox properties page, click **Mailbox Usage**, and then click **More options**.
     
-4. Verify that **Customize the settings for this mailbox** is selected. 
+4. Verify that **Customize the settings for this mailbox** is selected.
     
 5. Verify the storage quota settings.
     

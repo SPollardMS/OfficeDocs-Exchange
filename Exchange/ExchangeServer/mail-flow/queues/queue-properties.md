@@ -26,13 +26,13 @@ Filtering queues by one or more queue properties in Exchange Server 2016 allows 
     
     You can create a filter to view all the queues that have a status of Suspended, and then select all the queues in the filter results and resume the queues.
     
-You can create queue filters in Queue Viewer in the Exchange Toolbox, or by using the _Filter_ parameter on the queue management cmdlets. Note that the queue management cmdlets support more filterable properties than Queue Viewer. 
+You can create queue filters in Queue Viewer in the Exchange Toolbox, or by using the _Filter_ parameter on the queue management cmdlets. Note that the queue management cmdlets support more filterable properties than Queue Viewer.
   
 For more information about Queue Viewer, see [Queue Viewer](queue-viewer.md). For more information about the queue management cmdlets, see [Procedures for queues](queue-procedures.md) and [Find queues and messages in queues in the Exchange Management Shell](queues-and-messages-in-powershell.md).
   
 ## Queue properties to use as filters
 
- The following table describes the queue properties that you can use as filters in Queue Viewer and the Exchange Management Shell. 
+ The following table describes the queue properties that you can use as filters in Queue Viewer and the Exchange Management Shell.
   
 |**Queue Viewer**|**Exchange Management Shell**|**Comparison operators**|**Description**|
 |:-----|:-----|:-----|:-----|

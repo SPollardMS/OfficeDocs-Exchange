@@ -18,26 +18,26 @@ description: "Summary: How to migrate Exchange 2010 public folders to Exchange 2
   
 Migrate your public folders from Exchange Server 2010 SP3 RU8 to Microsoft Exchange Server 2016 within the same forest. If you're looking for the Exchange 2013 version of this article, [go here](https://technet.microsoft.com/library/dn912663%28v=exchg.150%29.aspx).
   
-We refer to the Exchange 2010 SP3 RU8 or later server as the *legacy Exchange server* . 
+We refer to the Exchange 2010 SP3 RU8 or later server as the *legacy Exchange server*.
   
 > [!NOTE]
-> The batch migration method described in this article is the only supported method for migrating legacy public folders to Exchange 2016. The old serial migration method for migrating public folders is being deprecated and is no longer supported by Microsoft. 
+> The batch migration method described in this article is the only supported method for migrating legacy public folders to Exchange 2016. The old serial migration method for migrating public folders is being deprecated and is no longer supported by Microsoft.
   
 You'll perform the migration by using the **\*MigrationBatch** cmdlets, and the **\*PublicFolderMigrationRequest** cmdlets for troubleshooting. In addition, you will use the following PowerShell scripts: 
   
-- `Export-PublicFolderStatistics.ps1` This script creates the folder name-to-folder size mapping file. 
+- `Export-PublicFolderStatistics.ps1` This script creates the folder name-to-folder size mapping file.
     
-- `Export-PublicFolderStatistics.psd1` This support file is used by the Export-PublicFolderStatistics.ps1 script and should be downloaded to the same location. 
+- `Export-PublicFolderStatistics.psd1` This support file is used by the Export-PublicFolderStatistics.ps1 script and should be downloaded to the same location.
     
-- `PublicFolderToMailboxMapGenerator.ps1` This script creates the public folder-to-mailbox mapping file. 
+- `PublicFolderToMailboxMapGenerator.ps1` This script creates the public folder-to-mailbox mapping file.
     
-- `PublicFolderToMailboxMapGenerator.strings.psd1` This support file is used by the PublicFolderToMailboxMapGenerator.ps1 script and should be downloaded to the same location. 
+- `PublicFolderToMailboxMapGenerator.strings.psd1` This support file is used by the PublicFolderToMailboxMapGenerator.ps1 script and should be downloaded to the same location.
     
 - `Create-PublicFolderMailboxesForMigration.ps1` This script creates the target public folder mailboxes for the migration. In addition, this script calculates the number of mailboxes necessary to handle the estimated user load, based on the guidelines for the number of user logons per public folder mailbox recommended in [Limits for public folders](limits.md).
     
-- `Create-PublicFolderMailboxesForMigration.strings.psd1` This support file is used by the Create-PublicFolderMailboxesForMigration.ps1 script and should be downloaded to the same location. 
+- `Create-PublicFolderMailboxesForMigration.strings.psd1` This support file is used by the Create-PublicFolderMailboxesForMigration.ps1 script and should be downloaded to the same location.
     
-[Step 1: Download the migration scripts](batch-migration-from-previous-versions.md#Scripts) provides details about where to download these scripts. Make sure all scripts are downloaded to the same location. 
+[Step 1: Download the migration scripts](batch-migration-from-previous-versions.md#Scripts) provides details about where to download these scripts. Make sure all scripts are downloaded to the same location.
   
 For additional management tasks related to public folders, see [Public folder procedures](procedures.md).
   
@@ -47,7 +47,7 @@ Exchange supports moving your public folders from the following legacy versions 
   
 - Exchange 2010 SP3 RU8 or later
     
-If you need to move your public folders to Exchange 2016 but your on-premises servers aren't running the minimum support versions of Exchange 2010, check out [Use serial migration to migrate public folders to Exchange 2013 from previous versions](http://technet.microsoft.com/library/16773895-e9c3-4013-983f-683e5d14b221.aspx) (the steps for migrating to Exchange 2013 also apply to migrating to Exchange 2016). While serial migration is an option, we strongly recommend that you upgrade your on-premises servers and use batch migration. Batch migration is significantly faster and, more important, provides greater reliability. 
+If you need to move your public folders to Exchange 2016 but your on-premises servers aren't running the minimum support versions of Exchange 2010, check out [Use serial migration to migrate public folders to Exchange 2013 from previous versions](http://technet.microsoft.com/library/16773895-e9c3-4013-983f-683e5d14b221.aspx) (the steps for migrating to Exchange 2013 also apply to migrating to Exchange 2016). While serial migration is an option, we strongly recommend that you upgrade your on-premises servers and use batch migration. Batch migration is significantly faster and, more important, provides greater reliability.
   
 You can't migrate public folders directly from Exchange 2003. If you're running Exchange 2003 in your organization, you need to move all public folder databases and replicas to Exchange 2010 SP3 RU8 or later. No public folder replicas can remain on Exchange 2003. Additionally, mail destined for an Exchange 2016 public folder can't be routed through an Exchange 2003 server.
   
@@ -76,7 +76,7 @@ You can't migrate public folders directly from Exchange 2003. If you're running 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
   
 ## Step 1: Download the migration scripts
 <a name="Scripts"> </a>
@@ -146,7 +146,7 @@ Perform the following prerequisite steps before you begin the migration.
   ```
 
     > [!CAUTION]
-    > After resetting these properties, you need to wait for Exchange to detect the new settings. This may take up to two hours to complete. 
+    > After resetting these properties, you need to wait for Exchange to detect the new settings. This may take up to two hours to complete.
   
 For detailed syntax and parameter information, see the following topics:
   
@@ -171,7 +171,7 @@ For detailed syntax and parameter information, see the following topics:
     An existing migration request can be one of two types: batch migration or serial migration. The commands for detecting requests for each type and for removing requests of each type are as follows.
     
     > [!IMPORTANT]
-    > Before removing a migration request, it is important to understand why there was an existing one. Running the following commands will determine when a previous request was made and help you diagnose any problems that may have occurred. You may need to communicate with other administrators in your organization to determine why the change was made. 
+    > Before removing a migration request, it is important to understand why there was an existing one. Running the following commands will determine when a previous request was made and help you diagnose any problems that may have occurred. You may need to communicate with other administrators in your organization to determine why the change was made.
   
     The following example will discover any existing serial migration requests.
     
@@ -214,7 +214,7 @@ For detailed syntax and parameter information, see the following topics:
 3. If you have any public folders, run the following PowerShell commands to remove them. Make sure you've saved any information that was in the public folders.
     
     > [!NOTE]
-    > All information contained in the public folders will be permanently deleted when you remove them. 
+    > All information contained in the public folders will be permanently deleted when you remove them.
   
   ```
   Get-Mailbox -PublicFolder | Where {$_.IsRootPublicFolderMailbox -eq $false} | Remove-Mailbox -PublicFolder -Force -Confirm:$false
@@ -253,24 +253,24 @@ For detailed syntax and parameter information, see the following topics:
   .\Export-PublicFolderStatistics.ps1  <Folder to size map path> <FQDN of source server>
   ```
 
-  - _FQDN of source server_ equals the fully qualified domain name of the Mailbox server where the public folder hierarchy is hosted. 
+  - _FQDN of source server_ equals the fully qualified domain name of the Mailbox server where the public folder hierarchy is hosted.
     
-  - _Folder to size map path_ equals the file name and path on a network shared folder where you want the .csv file saved. Later in this topic, you'll need to access this file from the Exchange 2016 server. If you specify only the file name, the file will be generated in the current PowerShell directory on the local computer. 
+  - _Folder to size map path_ equals the file name and path on a network shared folder where you want the .csv file saved. Later in this topic, you'll need to access this file from the Exchange 2016 server. If you specify only the file name, the file will be generated in the current PowerShell directory on the local computer.
     
-2. Run the `PublicFolderToMailboxMapGenerator.ps1` script to create the public folder-to-mailbox mapping file. This file is used to calculate the correct number of public folder mailboxes on the Exchange 2016 server. 
+2. Run the `PublicFolderToMailboxMapGenerator.ps1` script to create the public folder-to-mailbox mapping file. This file is used to calculate the correct number of public folder mailboxes on the Exchange 2016 server.
     
     > [!NOTE]
-    > If the name of a public folder contains a backslash **\**, the public folders will be created in the parent public folder. We recommend that you review the .csv file and edit any names that contain a backslash. 
+    > If the name of a public folder contains a backslash **\**, the public folders will be created in the parent public folder. We recommend that you review the .csv file and edit any names that contain a backslash.
   
   ```
   .\PublicFolderToMailboxMapGenerator.ps1 <Maximum mailbox size in bytes> <Folder to size map path> <Folder to mailbox map path>
   ```
 
-  - _Maximum mailbox size in bytes_ equals the maximum size you want to set for the new public folder mailboxes. When specifying this setting, be sure to allow for expansion so the public folder mailbox has room to grow. 
+  - _Maximum mailbox size in bytes_ equals the maximum size you want to set for the new public folder mailboxes. When specifying this setting, be sure to allow for expansion so the public folder mailbox has room to grow.
     
-  - _Folder to size map path_ equals the file path of the .csv file you created when running the `Export-PublicFolderStatistics.ps1` script. 
+  - _Folder to size map path_ equals the file path of the .csv file you created when running the `Export-PublicFolderStatistics.ps1` script.
     
-  - _Folder to mailbox map path_ equals the file name and path of the folder-to-mailbox .csv file that you'll create with this step. If you specify only the file name, the file will be generated in the current PowerShell directory on the local computer. 
+  - _Folder to mailbox map path_ equals the file name and path of the folder-to-mailbox .csv file that you'll create with this step. If you specify only the file name, the file will be generated in the current PowerShell directory on the local computer.
     
 ## Step 4: Create the public folder mailboxes in Exchange 2016
 <a name="CreatePFMbxs"> </a>
@@ -281,7 +281,7 @@ For detailed syntax and parameter information, see the following topics:
   .\Create-PublicFolderMailboxesForMigration.ps1 -FolderMappingCsv Mapping.csv -EstimatedNumberOfConcurrentUsers:<estimate>
   ```
 
-    _Mapping.csv_ is the file generated by the PublicFoldertoMailboxMapGenerator.ps1 script in Step 3. The estimated number of simultaneous user connections browsing a public folder hierarchy is usually less than the total number of users in an organization. 
+    _Mapping.csv_ is the file generated by the PublicFoldertoMailboxMapGenerator.ps1 script in Step 3. The estimated number of simultaneous user connections browsing a public folder hierarchy is usually less than the total number of users in an organization.
     
 ## Step 5: Start the migration request
 <a name="StartMigrRequest"> </a>
@@ -296,7 +296,7 @@ Once batch migration requests are created with the appropriate cmdlet, you can t
   New-MigrationBatch -Name PFMigration -SourcePublicFolderDatabase (Get-PublicFolderDatabase -Server <Source server name>) -CSVData (Get-Content <Folder to mailbox map path> -Encoding Byte) -NotificationEmails <email addresses for migration notifications> 
   ```
 
-    The `NotificationEmails` parameter is optional. 
+    The `NotificationEmails` parameter is optional.
     
 2. Start the migration using the following command:
     
@@ -323,7 +323,7 @@ The progress and completion of the migration can be viewed and managed in the EA
     
 2. Navigate to **Mailbox** \> **Migration**.
     
-3. Select the migration request that was just created and then click **View Details** in the **Details** pane. 
+3. Select the migration request that was just created and then click **View Details** in the **Details** pane.
     
 For detailed syntax and parameter information, see the following topics:
   
@@ -340,7 +340,7 @@ For detailed syntax and parameter information, see the following topics:
 
 Until this point in the migration, users have been able to access public folders. The next steps will log users off from the legacy public folders and lock the folders while the migration completes its final synchronization. Users won't be able to access public folders during this process. Also, any mail sent to mail-enabled public folders will be queued and won't be delivered until the public folder migration is complete.
   
-Before you run the `PublicFoldersLockedForMigration` command as described below, make sure that all jobs are in the **Synced** state. You can do this by running the `Get-PublicFolderMailboxMigrationRequest` command. Continue with this step only after you've verified that all jobs are in the **Synced** state. 
+Before you run the `PublicFoldersLockedForMigration` command as described below, make sure that all jobs are in the **Synced** state. You can do this by running the `Get-PublicFolderMailboxMigrationRequest` command. Continue with this step only after you've verified that all jobs are in the **Synced** state.
   
 On the legacy Exchange server, run the following command to lock the legacy public folders for finalization.
   
@@ -349,11 +349,11 @@ Set-OrganizationConfig -PublicFoldersLockedForMigration:$true
 ```
 
 > [!NOTE]
-> If for any reason the migration batch file does not finalize (**PublicFolderMigrationComplete** displays **False**), on the legacy server, restart the Information Store (IS). 
+> If for any reason the migration batch file does not finalize (**PublicFolderMigrationComplete** displays **False**), on the legacy server, restart the Information Store (IS).
   
 For detailed syntax and parameter information, see [Set-OrganizationConfig](http://technet.microsoft.com/library/3b6df0fe-27c8-415f-ad0c-8b265f234c1a.aspx).
   
-If your organization has multiple public folder databases, you'll need to wait until public folder replication is complete to confirm that all public folder databases have picked up the `PublicFoldersLockedForMigration` flag and any pending changes users recently made to folders have converged across the organization. This may take several hours. 
+If your organization has multiple public folder databases, you'll need to wait until public folder replication is complete to confirm that all public folder databases have picked up the `PublicFoldersLockedForMigration` flag and any pending changes users recently made to folders have converged across the organization. This may take several hours.
   
 ## Step 7: Finalize the public folder migration (downtime required)
 <a name="Finalize"> </a>
@@ -396,14 +396,14 @@ After you finalize the public folder migration, you should run the following tes
     
   - Post content to and delete content from a public folder.
     
-3. If you run into any issues, see [Roll back the migration](batch-migration-from-previous-versions.md#RollBack) later in this topic. If the public folder content and hierarchy is acceptable and functions as expected, run the following command to unlock the public folders for all other users. 
+3. If you run into any issues, see [Roll back the migration](batch-migration-from-previous-versions.md#RollBack) later in this topic. If the public folder content and hierarchy is acceptable and functions as expected, run the following command to unlock the public folders for all other users.
     
   ```
   Get-Mailbox -PublicFolder | Set-Mailbox -PublicFolder -IsExcludedFromServingHierarchy $false
   ```
 
     > [!IMPORTANT]
-    > Don't use the _IsExcludedFromServingHierarchy_ parameter after initial migration validation is complete as this parameter is used by the automated storage management service for Exchange Online. 
+    > Don't use the _IsExcludedFromServingHierarchy_ parameter after initial migration validation is complete as this parameter is used by the automated storage management service for Exchange Online.
   
 4. On the legacy Exchange server, run the following command to indicate that the public folder migration is complete:
     
@@ -417,7 +417,7 @@ After you finalize the public folder migration, you should run the following tes
   Set-OrganizationConfig -PublicFoldersEnabled Local
   ```
 
-6. Finally, if you want external senders to send mail to the migrated mail-enabled public folders, the **Anonymous** user needs to be granted at least the **Create Items** permission. If you don't do this, external senders will receive a delivery failure notification and the messages won't be delivered to the migrated mail-enabled public folder. 
+6. Finally, if you want external senders to send mail to the migrated mail-enabled public folders, the **Anonymous** user needs to be granted at least the **Create Items** permission. If you don't do this, external senders will receive a delivery failure notification and the messages won't be delivered to the migrated mail-enabled public folder.
     
      You can use the Exchange Management Shell or Outlook to set the permissions on the Anonymous user. To read more about how to set permissions on the Anonymous user, see [Mail-enable or mail-disable a public folder](mail-enable-or-disable.md).
     
@@ -450,7 +450,7 @@ In [Step 2: Prepare for the migration](batch-migration-from-previous-versions.md
 After the migration is complete, and you have verified that your Exchange 2016 public folders are working as expected, you should remove the public folder databases on the legacy Exchange servers.
   
 > [!IMPORTANT]
-> Since all of your mailboxes have been migrated to Office 365 prior to the public folder migration, we strongly recommend that you route the traffic through Office 365 (decentralized mail flow) instead of centralized mail flow through your on-premises environment. If you choose to keep mail flow centralized, it could cause delivery issues to your public folders, since you've removed the public folder mailbox databases from your on-premises organization. 
+> Since all of your mailboxes have been migrated to Office 365 prior to the public folder migration, we strongly recommend that you route the traffic through Office 365 (decentralized mail flow) instead of centralized mail flow through your on-premises environment. If you choose to keep mail flow centralized, it could cause delivery issues to your public folders, since you've removed the public folder mailbox databases from your on-premises organization.
   
 For details about how to remove public folder databases from Exchange 2010 servers, see [Remove Public Folder Databases](https://go.microsoft.com/fwlink/p/?linkId=81409).
   
@@ -460,7 +460,7 @@ For details about how to remove public folder databases from Exchange 2010 serve
 If you run into issues with the migration and need to reactivate your legacy Exchange public folders, perform the following steps.
   
 > [!CAUTION]
-> If you roll your migration back to the legacy Exchange servers, you will lose any email that was sent to mail-enabled public folders or content that was posted to public folders in Exchange 2016 after the migration. To save this content, you need to export the public folder content to a .pst file and then import it to the legacy public folders when the rollback is complete. 
+> If you roll your migration back to the legacy Exchange servers, you will lose any email that was sent to mail-enabled public folders or content that was posted to public folders in Exchange 2016 after the migration. To save this content, you need to export the public folder content to a .pst file and then import it to the legacy public folders when the rollback is complete.
   
 1. On the legacy Exchange server, run the following command to unlock the legacy Exchange public folders. This process may take several hours.
     

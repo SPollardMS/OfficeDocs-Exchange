@@ -47,9 +47,9 @@ By default, the message tracking log files exist in `%ExchangeInstallPath%Transp
    
 The other placeholders in the log file names represent the following information:
   
-- _yyyymmdd_ is the coordinated universal time (UTC) date when the log file was created. _yyyy_ = year, _mm_ = month, and _dd_ = day. 
+- _yyyymmdd_ is the coordinated universal time (UTC) date when the log file was created. _yyyy_ = year, _mm_ = month, and _dd_ = day.
     
-- _nnnn_ is an instance number that starts at the value 1 every day for each log. 
+- _nnnn_ is an instance number that starts at the value 1 every day for each log.
     
 Information is written to the log file until the file reaches its maximum size. Then, a new log file that has an incremented instance number is opened (the first log file is -1, the next is -2, and so on). Circular logging deletes the oldest log files for a service when either of the following conditions are true:
   
@@ -71,7 +71,7 @@ The message tracking log files are text files that contain data in the comma-sep
     
 - **#Log-Type**: The value is `Message Tracking Log`.
     
-- **#Date**: The UTC date-time when the log file was created. The UTC date-time is represented in the ISO 8601 date-time format: _yyyy-mm-dd_T _hh:mm:ss.fff_Z, where _yyyy_ = year, _mm_ = month, _dd_ = day, T indicates the beginning of the time component, _hh_ = hour, _mm_ = minute, _ss_ = second, _fff_ = fractions of a second, and Z signifies Zulu, which is another way to denote UTC. 
+- **#Date**: The UTC date-time when the log file was created. The UTC date-time is represented in the ISO 8601 date-time format: *yyyy-mm-dd*T*hh:mm:ss.fff*Z, where _yyyy_ = year, _mm_ = month, _dd_ = day, T indicates the beginning of the time component, _hh_ = hour, _mm_ = minute, _ss_ = second, _fff_ = fractions of a second, and Z signifies Zulu, which is another way to denote UTC.
     
 - **#Fields**: Comma-delimited field names that are used in the message tracking log files.
     
@@ -82,7 +82,7 @@ The message tracking log stores each message event on a single line in the log. 
   
 |**Field name**|**Description**|
 |:-----|:-----|
-|**date-time** <br/> |The UTC date-time of the message tracking event. The UTC date-time is represented in the ISO 8601 date-time format: _yyyy-mm-dd_T _hh:mm:ss.fff_Z, where _yyyy_ = year, _mm_ = month, _dd_ = day, T indicates the beginning of the time component, _hh_ = hour, _mm_ = minute, _ss_ = second, _fff_ = fractions of a second, and Z signifies Zulu, which is another way to denote UTC.  <br/> |
+|**date-time** <br/> |The UTC date-time of the message tracking event. The UTC date-time is represented in the ISO 8601 date-time format: *yyyy-mm-dd*T*hh:mm:ss.fff*Z, where _yyyy_ = year, _mm_ = month, _dd_ = day, T indicates the beginning of the time component, _hh_ = hour, _mm_ = minute, _ss_ = second, _fff_ = fractions of a second, and Z signifies Zulu, which is another way to denote UTC.  <br/> |
 |**client-ip** <br/> |The IPv4 or IPv6 address of the messaging server or messaging client that submitted the message.  <br/> |
 |**client-hostname** <br/> |The host name or FQDN of the messaging server or messaging client that submitted the message.  <br/> |
 |**server-ip** <br/> |The IPv4 or IPv6 address of the source or destination server.  <br/> |
@@ -103,7 +103,7 @@ The message tracking log stores each message event on a single line in the log. 
 |**message-subject** <br/> | The message's subject found in the **Subject:** header field. The tracking of message subjects is controlled by the _MessageTrackingLogSubjectLoggingEnabled_ parameter on the **Set-TransportService** cmdlet. By default, message subject tracking is enabled.  <br/> |
 |**sender-address** <br/> |The email address specified in the **Sender:** header field, or the **From:** header field if the **Sender:** field doesn't exist.  <br/> |
 |**return-path** <br/> |The return email address specified by the **MAIL FROM** command that sent the message. Although this field is never empty, it can have the null sender address value represented as `<>`.  <br/> |
-|**message-info** <br/> |Additional information about the message. For example:  <br/> The message origination date-time in UTC for **DELIVER** and **SEND** events. The origination date-time is the time when the message first entered the Exchange organization. The UTC date-time is represented in the ISO 8601 date-time format: _yyyy-mm-dd_T _hh:mm:ss.fff_Z, where _yyyy_ = year, _mm_ = month, _dd_ = day, T indicates the beginning of the time component, _hh_ = hour, _mm_ = minute, _ss_ = second, _fff_ = fractions of a second, and Z signifies Zulu, which is another way to denote UTC.  <br/> Authentication errors. For example, you may see the value `11a` and the type of authentication that was used when the authentication error occurred.  <br/> |
+|**message-info** <br/> |Additional information about the message. For example:  <br/> The message origination date-time in UTC for **DELIVER** and **SEND** events. The origination date-time is the time when the message first entered the Exchange organization. The UTC date-time is represented in the ISO 8601 date-time format: *yyyy-mm-dd*T*hh:mm:ss.fff*Z, where _yyyy_ = year, _mm_ = month, _dd_ = day, T indicates the beginning of the time component, _hh_ = hour, _mm_ = minute, _ss_ = second, _fff_ = fractions of a second, and Z signifies Zulu, which is another way to denote UTC.  <br/> Authentication errors. For example, you may see the value `11a` and the type of authentication that was used when the authentication error occurred.  <br/> |
 |**directionality** <br/> |The direction of the message. Example values include `Incoming`, `Undefined`, and `Originating`.  <br/> |
 |**tenant-id** <br/> |This field isn't used in on-premises Exchange organizations.  <br/> |
 |**original-client-ip** <br/> |The IPv4 or IPv6 address of the original client.  <br/> |
@@ -116,7 +116,7 @@ The message tracking log stores each message event on a single line in the log. 
 ## Event types in the message tracking log
 <a name="EventTypes"> </a>
 
-Various event types in the **event-id** field are used to classify the message events in the message tracking log. Some message events appear in only one type of message tracking log file, and some message events appear in all types of message tracking log files. The events types that are used to classify each message event are explained in the following table. 
+Various event types in the **event-id** field are used to classify the message events in the message tracking log. Some message events appear in only one type of message tracking log file, and some message events appear in all types of message tracking log files. The events types that are used to classify each message event are explained in the following table.
   
 |**Event name**|**Description**|
 |:-----|:-----|
@@ -165,7 +165,7 @@ Various event types in the **event-id** field are used to classify the message e
 ## Source values in the message tracking log
 <a name="Source"> </a>
 
-The values in the **source** field in the message tracking log indicate the transport component that's responsible for the message tracking event. The following table describes the values of the **source** field. 
+The values in the **source** field in the message tracking log indicate the transport component that's responsible for the message tracking event. The following table describes the values of the **source** field.
   
 |**Source value**|**Description**|
 |:-----|:-----|

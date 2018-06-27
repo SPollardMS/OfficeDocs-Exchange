@@ -14,15 +14,15 @@ description: "Summary: Learn how to migrate on-premises public folders from Exch
 
 # Migrate public folders from Exchange 2013 to Exchange 2016
 
- **Summary:** Learn how to migrate on-premises public folders from Exchange 2013 to Exchange 2016. 
+ **Summary:** Learn how to migrate on-premises public folders from Exchange 2013 to Exchange 2016.
   
 In order to migrate your Exchange 2013 public folders to Exchange 2016, you need to move all of your Exchange 2013 public folder mailboxes to an Exchange 2016 server.
   
 Before you move your public folder mailboxes, here are some things you should consider:
   
-- **Exchange 2016 capacity** The size of your public folder mailboxes might vary significantly depending on how many public folders and public folder mailboxes you have. Make sure the Exchange 2016 servers where you'll move your public folder mailboxes have enough storage capacity. 
+- **Exchange 2016 capacity** The size of your public folder mailboxes might vary significantly depending on how many public folders and public folder mailboxes you have. Make sure the Exchange 2016 servers where you'll move your public folder mailboxes have enough storage capacity.
     
-- **Time to move** It might take a while for your public folder mailboxes to be moved to Exchange 2016. Things that could impact how long it'll take include public folder mailbox size, the number of public folder mailboxes, available network capacity, and other factors. The good news is that your public folders will remain available during the public folder mailbox move. There will only be a brief window as the move completes where public folders may not be available. 
+- **Time to move** It might take a while for your public folder mailboxes to be moved to Exchange 2016. Things that could impact how long it'll take include public folder mailbox size, the number of public folder mailboxes, available network capacity, and other factors. The good news is that your public folders will remain available during the public folder mailbox move. There will only be a brief window as the move completes where public folders may not be available.
     
 ## How do I do this?
 
@@ -84,23 +84,23 @@ Do the following to check the status of your move requests:
 
 The command above will return each move request you created along with one of the following statuses:
   
-- **Completed** The public folder mailbox was successfully moved to the target Exchange 2016 mailbox database. 
+- **Completed** The public folder mailbox was successfully moved to the target Exchange 2016 mailbox database.
     
-- **CompletedWithWarning** The public folder mailbox was moved to the target Exchange 2016 mailbox database, but one or more issues were encountered during the move. You can find more information by viewing the move report that was delivered to the Administrator mailbox. 
+- **CompletedWithWarning** The public folder mailbox was moved to the target Exchange 2016 mailbox database, but one or more issues were encountered during the move. You can find more information by viewing the move report that was delivered to the Administrator mailbox.
     
-- **CompletionInProgress** The public folder mailbox's move to the target Exchange 2016 mailbox database is in its final stages. Public folders hosted in this mailbox may be unavailable for a brief period of time while the move is finalized. 
+- **CompletionInProgress** The public folder mailbox's move to the target Exchange 2016 mailbox database is in its final stages. Public folders hosted in this mailbox may be unavailable for a brief period of time while the move is finalized.
     
-- **InProgress** The public folder mailbox's move to the target Exchange 2016 mailbox database is underway. Public folders hosted in this mailbox are available during this portion of the move. 
+- **InProgress** The public folder mailbox's move to the target Exchange 2016 mailbox database is underway. Public folders hosted in this mailbox are available during this portion of the move.
     
-- **Failed** The public folder mailbox's move failed for one or more reasons. You can find more information by viewing the move report that was delivered to the Administrator mailbox. 
+- **Failed** The public folder mailbox's move failed for one or more reasons. You can find more information by viewing the move report that was delivered to the Administrator mailbox.
     
-- **Queued** The public folder mailbox's move has been submitted but the move hasn't started yet. 
+- **Queued** The public folder mailbox's move has been submitted but the move hasn't started yet.
     
-- **Retry** The migration service is currently having trouble proceeding with the job, but it has not given up, and will continue trying. 
+- **Retry** The migration service is currently having trouble proceeding with the job, but it has not given up, and will continue trying.
     
-- **AutoSuspended** The public folder mailbox's move is ready to enter its final stages but won't proceed further until you manually resume the move. This can be helpful if you want to choose the time a move will complete. Moves can be automatically suspended when they're created by using the _SuspendWhenReadyToComplete_ switch on the **New-MoveRequest** cmdlet. To resume the move when you're ready, use the **Resume-MoveRequest** cmdlet. 
+- **AutoSuspended** The public folder mailbox's move is ready to enter its final stages but won't proceed further until you manually resume the move. This can be helpful if you want to choose the time a move will complete. Moves can be automatically suspended when they're created by using the _SuspendWhenReadyToComplete_ switch on the **New-MoveRequest** cmdlet. To resume the move when you're ready, use the **Resume-MoveRequest** cmdlet.
     
-- **Suspended** The public folder mailbox's move has been suspended by **Suspend-MoveRequest** cmdlet and won't proceed further until you manually resume the move. To resume the move when you're ready, use the **Resume-MoveRequest** cmdlet. 
+- **Suspended** The public folder mailbox's move has been suspended by **Suspend-MoveRequest** cmdlet and won't proceed further until you manually resume the move. To resume the move when you're ready, use the **Resume-MoveRequest** cmdlet.
     
 Do the following to view the location of your public folder mailboxes after their move request has completed:
   

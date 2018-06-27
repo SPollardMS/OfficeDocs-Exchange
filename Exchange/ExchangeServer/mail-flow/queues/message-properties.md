@@ -22,7 +22,7 @@ Filtering messages in queues by one or more message properties in Exchange Serve
     
 - A user reports that mail flow is slow. You examine the queues and see that many messages with random subjects appear to be coming from a single domain. You can create a filter to view all the queued messages from that domain. If you determine that the messages are spam, you can select them all and delete them from the queues without sending an NDR.
     
-You can create message filters in Queue Viewer in the Exchange Toolbox, or by using the _Filter_ parameter on the message management cmdlets. Note that the message management cmdlets support more filterable properties than Queue Viewer. 
+You can create message filters in Queue Viewer in the Exchange Toolbox, or by using the _Filter_ parameter on the message management cmdlets. Note that the message management cmdlets support more filterable properties than Queue Viewer.
   
 For more information about Queue Viewer, see [Queue Viewer](queue-viewer.md). For more information about the message management cmdlets, see [Procedures for messages in queues](message-procedures.md) and [Find queues and messages in queues in the Exchange Management Shell](queues-and-messages-in-powershell.md).
   

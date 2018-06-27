@@ -18,7 +18,7 @@ description: "Summary: Windows operating system prerequisites for Exchange 2016 
  **Summary**: Windows operating system prerequisites for Exchange 2016 and Exchange management tools.
 
 > [!TIP]
-> Coming from the Exchange Deployment Assistant? Click [Exchange 2013 prerequisites](https://technet.microsoft.com/library/bb691354%28v=exchg.150%29.aspx). 
+> Coming from the Exchange Deployment Assistant? Click [Exchange 2013 prerequisites](https://technet.microsoft.com/library/bb691354%28v=exchg.150%29.aspx).
 
 This topic provides the steps for installing the necessary Windows Server 2012, Windows Server 2012 R2, and Windows Server 2016 operating system prerequisites for the Exchange 2016 Mailbox and Edge Transport server roles. It also provides the prerequisites required to install the Exchange 2016 management tools on Windows 8.1 and Windows 10 client computers.
 
@@ -26,7 +26,7 @@ This topic provides the steps for installing the necessary Windows Server 2012, 
 <a name="prereq"> </a>
 
 > [!TIP]
-> Have you heard about the Exchange Server Deployment Assistant? It's a free online tool that helps you quickly deploy Exchange 2016 in your organization by asking you a few questions and creating a customized deployment checklist just for you. If you want to learn more about it, go to **Exchange Server Deployment Assistant**. 
+> Have you heard about the Exchange Server Deployment Assistant? It's a free online tool that helps you quickly deploy Exchange 2016 in your organization by asking you a few questions and creating a customized deployment checklist just for you. If you want to learn more about it, go to **Exchange Server Deployment Assistant**.
 
 - Make sure that the functional level of your forest is at least Windows Server 2008 R2, and that the schema master is running Windows Server 2008 R2 or later. For more information about the Windows functional level, see [Understanding Active Directory Domain Services (AD DS) Functional Levels](https://go.microsoft.com/fwlink/p/?linkId=137037).
 
@@ -39,10 +39,10 @@ This topic provides the steps for installing the necessary Windows Server 2012, 
 - Install the latest Windows updates on your computer. For more information, see [Deployment Security Checklist](http://technet.microsoft.com/library/0cbfad59-f503-48a0-8184-6ca999d89e61.aspx).
 
     > [!NOTE]
-    > You can't upgrade Windows from one version to another, or from Standard to Datacenter, when Exchange is installed on the server. 
+    > You can't upgrade Windows from one version to another, or from Standard to Datacenter, when Exchange is installed on the server.
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
 
 The following sections describe how to prepare your environment for Exchange 2016. Once your environment is prepared, use the Exchange Deployment Assistant for next steps on your actual deployment. For information on hybrid deployments, see [Exchange Server Hybrid Deployments](https://technet.microsoft.com/library/jj200581%28v=exchg.150%29.aspx).
 
@@ -92,7 +92,7 @@ After you've installed the operating system roles and features, install the foll
 1. [.NET Framework 4.7.1 ](https://go.microsoft.com/fwlink/p/?linkid=866906)
 
     > [!IMPORTANT]
-    > Exchange 2016 CU5 and later **require**.NET Framework 4.6.2. Upgrade your servers to .NET Framework 4.6.2 before you install Exchange 2016 CU5 or you'll receive an error. If .NET Framework 4.5.2 is installed on your Exchange servers, upgrade your servers to Exchange 2016 CU4 before installing .NET Framework 4.6.2. 
+    > Exchange 2016 CU5 and later **require**.NET Framework 4.6.2. Upgrade your servers to .NET Framework 4.6.2 before you install Exchange 2016 CU5 or you'll receive an error. If .NET Framework 4.5.2 is installed on your Exchange servers, upgrade your servers to Exchange 2016 CU4 before installing .NET Framework 4.6.2.
 
 2. [Visual C++ Redistributable Packages for Visual Studio 2013](https://go.microsoft.com/fwlink/?linkid=2002913)
 
@@ -120,7 +120,7 @@ After you've installed the operating system roles and features, the following so
 - [Visual C++ Redistributable Packages for Visual Studio 2013](https://go.microsoft.com/fwlink/?linkid=2002913)
 
 > [!IMPORTANT]
-> Exchange 2016 CU5 and later **require**.NET Framework 4.6.2. Upgrade your servers to .NET Framework 4.6.2 before you install Exchange 2016 CU5 or you'll receive an error. If .NET Framework 4.5.2 is installed on your Exchange servers, upgrade your servers to Exchange 2016 CU4 before installing .NET Framework 4.6.2. 
+> Exchange 2016 CU5 and later **require**.NET Framework 4.6.2. Upgrade your servers to .NET Framework 4.6.2 before you install Exchange 2016 CU5 or you'll receive an error. If .NET Framework 4.5.2 is installed on your Exchange servers, upgrade your servers to Exchange 2016 CU4 before installing .NET Framework 4.6.2.
 
 ## Windows Server 2016 prerequisites
 <a name="WS2016"> </a>
@@ -128,7 +128,7 @@ After you've installed the operating system roles and features, the following so
 The prerequisites that are needed to install Exchange 2016 on computers running Windows Server 2016 depends on which Exchange role you want to install. Read the section below that matches the role you want to install.
 
 > [!IMPORTANT]
-> Exchange 2016 Cumulative Update 3 or later is required if you want to install Exchange on Windows Server 2016. 
+> Exchange 2016 Cumulative Update 3 or later is required if you want to install Exchange on Windows Server 2016.
 
 ### Mailbox server role
 <a name="WS2016MBX"> </a>

@@ -34,7 +34,7 @@ This topic shows you how to:
 ## What do you need to know before you begin?
 
 > [!IMPORTANT]
-> The procedures in this topic require the Mailbox Import Export role, which isn't assigned to any role groups by default. To assign the role to a role group that you belong to, see [Add a role to a role group](../../permissions/role-groups.md#AddRemoveRGRole). Note that changes in permission require you to log off and log on for the changes to take effect. 
+> The procedures in this topic require the Mailbox Import Export role, which isn't assigned to any role groups by default. To assign the role to a role group that you belong to, see [Add a role to a role group](../../permissions/role-groups.md#AddRemoveRGRole). Note that changes in permission require you to log off and log on for the changes to take effect.
   
 - Estimated time to complete each procedure: 5 minutes
     
@@ -45,37 +45,39 @@ This topic shows you how to:
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
   
 ## Create mailbox export requests
 
 ### Use the EAC to create a mailbox export request
 
-1. In the EAC, go to **Recipients** \> **Mailboxes** \> click **More options**![More Options icon](../../media/ITPro_EAC_MoreOptionsIcon.png), and select **Export to a PST file**.
+1. In the EAC, go to **Recipients** \> **Mailboxes** \> click **More options** ![More Options icon](../../media/ITPro_EAC_MoreOptionsIcon.png), and select **Export to a PST file**.
+
     ![In the EAC, select Recipients, Mailboxes, and then select More Options.](../../media/59554fa9-92e2-46c0-a171-f57927eac3c7.png)
   
 2. The **Export to a .pst file** wizard opens. On the first page, select the source mailbox, and then select one of these options: 
     
-  - **Export only the contents of this mailbox**
+    - **Export only the contents of this mailbox**
     
-  - **Export only the contents of this mailbox's archive**
+    - **Export only the contents of this mailbox's archive**
     
-![In the Export to a .pst file wizard in the EAC, specify the source mailbox (primary or archive).](../../media/79f5130f-9283-4393-9b5f-ca812fbe0645.png)
+    ![In the Export to a .pst file wizard in the EAC, specify the source mailbox (primary or archive).](../../media/79f5130f-9283-4393-9b5f-ca812fbe0645.png)
   
     When you're finished, click **Next**.
     
 3. On the next page, enter the UNC path and filename of the target .pst file.
+
     ![In the Export to a .pst file wizard in the EAC, specify the target .pst file.](../../media/2f8b5182-7615-4247-b8ad-1aa00d4d04b1.png)
   
     When you're finished, click **Next**.
     
 4. On the last page, configure one of these settings:
     
-  - Leave the **Send email to the mailbox below when the .pst file has been exported** check box selected. Click **Browse** to add or remove notification recipients. 
+    - Leave the **Send email to the mailbox below when the .pst file has been exported** check box selected. Click **Browse** to add or remove notification recipients.
     
-  - Clear the **Send email to the mailbox below when the .pst file has been exported** check box. 
+    - Clear the **Send email to the mailbox below when the .pst file has been exported** check box.
     
-![In the Export to a .pst file wizard in the EAC, select whether to receive notification messages.](../../media/61946186-5ea0-424f-8ffd-95a094a32476.png)
+    ![In the Export to a .pst file wizard in the EAC, select whether to receive notification messages.](../../media/61946186-5ea0-424f-8ffd-95a094a32476.png)
   
     When you're finished, click **Finish**.
     
@@ -89,7 +91,7 @@ New-MailboxExportRequest  [-Name <UniqueName>] -Mailbox <TargetMailboxIdentity> 
 
 This example creates a new mailbox export request with these settings:
   
-- **Mailbox export request name**: The default value `MailboxExport` is used, because we aren't using the _Name_ parameter. The unique identity of the mailbox export request is `<MailboxIdentity>\MailboxExportX` (_X_ is either not present, or has the value 0 to 9). 
+- **Mailbox export request name**: The default value `MailboxExport` is used, because we aren't using the _Name_ parameter. The unique identity of the mailbox export request is `<MailboxIdentity>\MailboxExportX` (_X_ is either not present, or has the value 0 to 9).
     
 - **Source mailbox**: Valeria Barrios
     
@@ -97,7 +99,7 @@ This example creates a new mailbox export request with these settings:
     
 - **Content and folders**: Content in all folder paths in the source mailbox is replicated in the target .pst file.
     
-- **Priority**: `Normal`, because we aren't using the _Priority_ parameter. 
+- **Priority**: `Normal`, because we aren't using the _Priority_ parameter.
     
 ```
 New-MailboxExportRequest -Mailbox "Valeria Barrios" -FilePath \\SERVER01\PSTFiles\Vbarrios.pst
@@ -125,7 +127,7 @@ For detailed syntax and parameter information, see [New-MailboxExportRequest](ht
 
 To verify that you've successfully created a mailbox export request, do any of these steps:
   
-- In the EAC, click the notification viewer ![Notifications icon](../../media/6f2591b8-d0dc-4665-ab0b-b91a549e5b37.png) to view the status of the request. 
+- In the EAC, click the notification viewer ![Notifications icon](../../media/6f2591b8-d0dc-4665-ab0b-b91a549e5b37.png) to view the status of the request.
     
 - If you created the mailbox export request in the EAC, and selected the option to send notification email messages, check the notification messages. The sender is Microsoft Exchange. The first message has the subject `Your Export PST request has been received`. If the export request completed successfully, you'll receive another message with the subject `Export PST has finished`.
     
@@ -145,17 +147,17 @@ To verify that you've successfully created a mailbox export request, do any of t
 
 By default, the **Get-MailboxExportRequest** cmdlet returns the name, source mailbox, and status of mailbox export requests. If you pipeline the command to the **Format-List** cmdlet, you'll only get a limited number of additional useful details: 
   
-- **FilePath**: The target .pst file. 
+- **FilePath**: The target .pst file.
     
-- **RequestGUID**: The unique GUID value of the mailbox export request. 
+- **RequestGUID**: The unique GUID value of the mailbox export request.
     
-- **RequestQueue**: The mailbox database that the export request is being run on. 
+- **RequestQueue**: The mailbox database that the export request is being run on.
     
-- **BatchName**: The optional batch name for the mailbox export request. 
+- **BatchName**: The optional batch name for the mailbox export request.
     
 - **Identity**: The unique identity value of the mailbox export request (_\<MailboxIdentity\>_\ _\<MailboxExportRequestName\>_).
     
-By default, the **Get-MailboxExportRequestStatistics** cmdlet returns the name, status, alias of the source mailbox, and the completion percentage of mailbox export requests. If you pipeline the command to the **Format-List** cmdlet, you'll see detailed information about the mailbox export request. 
+By default, the **Get-MailboxExportRequestStatistics** cmdlet returns the name, status, alias of the source mailbox, and the completion percentage of mailbox export requests. If you pipeline the command to the **Format-List** cmdlet, you'll see detailed information about the mailbox export request.
   
 This example returns the summary list of all mailbox export requests.
   
@@ -191,7 +193,7 @@ Get-MailboxExportRequestStatistics -Identity <MailboxExportRequestIdentity> [-In
 
 Where _\<MailboxExportRequestIdentity\>_ is the identity value of the mailbox export request (_\<MailboxIdentity\>_\ _\<MailboxExportRequestName\>_ or _\<RequestGUID\>_).
   
-This example returns detailed information for the mailbox export request named MailboxExport for Akia Al-Zuhairi's mailbox, including the log of actions in the **Report** property. 
+This example returns detailed information for the mailbox export request named MailboxExport for Akia Al-Zuhairi's mailbox, including the log of actions in the **Report** property.
   
 ```
 Get-MailboxExportRequestStatistics -Identity "aal-zuhairi\MailboxExport" -IncludeReport | Format-List
@@ -217,7 +219,7 @@ Set-MailboxExportRequest -Identity "Valeria Barrios\MailboxExport" -BadItemLimit
 
 For detailed syntax and parameter information, see [Set-MailboxExportRequest](http://technet.microsoft.com/library/5a064940-f8c1-4ee7-822a-a6cfe483081e.aspx).
   
- **Note**: After you modify a suspended or failed mailbox export request, you need to resume it by using the **Resume-MailboxExportRequest** cmdlet. 
+ **Note**: After you modify a suspended or failed mailbox export request, you need to resume it by using the **Resume-MailboxExportRequest** cmdlet.
   
 ### How do you know this worked?
 
@@ -253,9 +255,9 @@ For detailed syntax and parameter information, see [Suspend-MailboxExportRequest
   
  **Notes**:
   
-- You can also use the **New-MailboxExportRequest** cmdlet with the _Suspend_ switch to create a suspended mailbox export request. 
+- You can also use the **New-MailboxExportRequest** cmdlet with the _Suspend_ switch to create a suspended mailbox export request.
     
-- You use the **Resume-MailboxExportRequest** parameter to resume suspended mailbox export requests. 
+- You use the **Resume-MailboxExportRequest** parameter to resume suspended mailbox export requests.
     
 ### How do you know this worked?
 
@@ -313,9 +315,9 @@ You can remove fully or partially completed mailbox export requests.
     
 - By default, completed mailbox export request are removed after 30 days (you can override this value with the _CompletedRequestAgeLimit_ parameter), and failed requests aren't automatically removed. But, if you use the _RequestExpiryInterval_ parameter when you create or modify a mailbox export request, these results are available: 
     
-  - ** _RequestExpiryInterval_ with a timespan value **: Completed and failed requests are automatically removed after the specified timespan.
+  - **RequestExpiryInterval with a timespan value**: Completed and failed requests are automatically removed after the specified timespan.
     
-  - ** _RequestExpiryInterval_ with the value `unlimited`**: Completed and failed requests aren't automatically removed.
+  - **RequestExpiryInterval with the value unlimited**: Completed and failed requests aren't automatically removed.
     
 This example removes the mailbox export request named MailboxExport for Akia Al-Zuhairi's mailbox.
   

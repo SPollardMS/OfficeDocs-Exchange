@@ -47,8 +47,6 @@ The same functionality remains in Exchange 2016. If two Mailbox servers host dif
   
 Read more about the server role changes in Exchange 2016 in the topic, [Exchange 2016 architecture](../../architecture/architecture.md).
   
-|
-|
 |**Server Role**|**Services**|
 |:-----|:-----|
 |Mailbox server  <br/> |Uses EdgeSync to manage one-way replication of receipt and configuration info from Active Directory to the AD LDS instance on the Edge Transport server.  <br/> Copies only information needed to let Edge Transport perform antispam and enable end-to-end mail flow.  <br/> |
@@ -64,7 +62,7 @@ Beginning with Exchange 2016, all native Exchange clients use the HTTP protocol 
   
 HTTP makes possible the use of service or application health checks in your Exchange network. Depending on your load balancer solution, you can implement health probes to check different components of your system.
   
-The effect of HTTP-only access for clients is that load balancing is simpler, too. If you wanted, you could use DNS to load balance your Exchange traffic. You would simply provide the client with the IP address of every Mailbox server, and the HTTP client would handle the chores. If an Exchange server fails, the protocol attempts to connect to another server. However, there are drawbacks to load balancing to DNS, discussed in the following section *Load balancing options in Exchange 2016* . 
+The effect of HTTP-only access for clients is that load balancing is simpler, too. If you wanted, you could use DNS to load balance your Exchange traffic. You would simply provide the client with the IP address of every Mailbox server, and the HTTP client would handle the chores. If an Exchange server fails, the protocol attempts to connect to another server. However, there are drawbacks to load balancing to DNS, discussed in the following section *Load balancing options in Exchange 2016*.
   
 Read more about HTTP and Exchange 2016 in the topic [MAPI over HTTP in Exchange 2016](../../clients/mapi-over-http/mapi-over-http.md).
   

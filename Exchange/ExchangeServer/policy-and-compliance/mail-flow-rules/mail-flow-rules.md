@@ -47,7 +47,7 @@ A rule is made of conditions, exceptions, actions, and properties:
     
     For a complete list of mail flow rule actions available, see [Mail flow rule actions in Exchange 2016](actions.md).
     
-- **Properties**: Specify other rules settings that aren't conditions, exceptions or actions. For example, when the rule should be applied, whether to enforce or test the rule, and the time period when the rule is active. For more information, see the [Mail flow rule properties](mail-flow-rules.md#Properties) section in this topic. 
+- **Properties**: Specify other rules settings that aren't conditions, exceptions or actions. For example, when the rule should be applied, whether to enforce or test the rule, and the time period when the rule is active. For more information, see the [Mail flow rule properties](mail-flow-rules.md#Properties) section in this topic.
     
 ### Multiple conditions, exceptions, and actions
 <a name="Multiple"> </a>

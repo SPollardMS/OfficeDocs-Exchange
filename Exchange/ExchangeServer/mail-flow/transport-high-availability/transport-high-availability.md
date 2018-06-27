@@ -26,7 +26,7 @@ Key features that improve transport high availability in Exchange 2013 and Excha
     
     For more information, see [Shadow redundancy in Exchange 2016](shadow-redundancy.md).
     
-- The transport dumpster has been improved and is now named *Safety Net* . Safety Net stores messages that were successfully processed by the Transport service on Mailbox servers. Safety Net works best for Mailbox servers in a DAG, but Safety Net also works for multiple Mailbox servers in the same Active Directory site that don't belong to a DAG. 
+- The transport dumpster has been improved and is now named *Safety Net*. Safety Net stores messages that were successfully processed by the Transport service on Mailbox servers. Safety Net works best for Mailbox servers in a DAG, but Safety Net also works for multiple Mailbox servers in the same Active Directory site that don't belong to a DAG.
     
 - Safety Net itself is now made redundant on another server. This is important to avoid a single point of failure, because the Transport service and the mailbox databases are both located on the Mailbox server.
     

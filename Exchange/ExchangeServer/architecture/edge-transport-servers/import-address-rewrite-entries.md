@@ -26,14 +26,14 @@ You can bulk-create or import address rewriting information into an Edge Transpo
     
 You can use a spreadsheet application like Microsoft Excel to create the CSV file. Format the file as described in this topic and save it as a .csv file.
   
-The first row, or *header row*, of the CSV file lists the names of the parameters. Each parameter is separated by a comma. The required and optional parameters are described in the following table. 
+The first row, or *header row*, of the CSV file lists the names of the parameters. Each parameter is separated by a comma. The required and optional parameters are described in the following table.
   
 |**Parameter**|**Required or optional**|**Description**|
 |:-----|:-----|:-----|
 | _Name_ <br/> |Required  <br/> |A unique, descriptive name for the address rewrites entry.  <br/> |
 | _InternalAddress_ <br/> |Required  <br/> |The address you want to change. You can use the following values:  <br/> • A single email address (chris@contoso.com)  <br/> • A single domain or subdomain (contoso.com or sales.contoso.com)  <br/> • A domain and all subdomains (\*.contoso.com)  <br/> |
 | _ExternalAddress_ <br/> |Required  <br/> |The final email address you want. You can use the following values:  <br/> • A single email address if you specified a single email address for _InternalAddress_ <br/> • A single domain or subdomain for all other values of _InternalAddress_ <br/> |
-| _ExceptionList_ <br/> |Optional  <br/> |Available only when you are rewriting email addresses in a domain and all subdomains (\*.contoso.com). Specifies one or more subdomains you want to exclude from address rewriting. Enclose the value in double quotation marks, and separate multiple values by commas. For example, `"marketing.contoso.com"` or `"marketing.contoso.com,legal.contoso.com"`.  <br/> |
+| _ExceptionList_ <br/> |Optional  <br/> |Available only when you're rewriting email addresses in a domain and all subdomains (\*.contoso.com). Specifies one or more subdomains you want to exclude from address rewriting. Enclose the value in double quotation marks, and separate multiple values by commas. For example, `"marketing.contoso.com"` or `"marketing.contoso.com,legal.contoso.com"`.  <br/> |
 | _OutboundOnly_ <br/> |Optional  <br/> | `False` means that addresses are written on inbound and outbound mail. `True` means that addresses are rewritten on outbound mail only, and you need to manually configure the rewritten email address as a proxy address on the affected recipients.  <br/> The default value is `False`, but you need to set it to `True` if _InternalAddress_ contains the wildcard character (\*.contoso.com).  <br/> The _OutboundOnly_ parameter value in the CSV file is `True` or `False`, not `$True` or `$False`.  <br/> |
    
 Each row under the header row represents an individual address rewrite entry. The values in each row need to be in the same order as the parameter names in the header row. Each value is separated by a comma.
@@ -44,14 +44,14 @@ Each row under the header row represents an individual address rewrite entry. Th
     
 - Make sure you understand the ramifications of address rewriting. For example, the rewritten email address need to be unique in your Exchange organization, and you might need to configure proxy addresses on the affected recipients. For more information, see [Address rewriting on Edge Transport servers](address-rewriting.md) and [Address rewriting procedures on Edge Transport servers](address-rewriting-procedures.md).
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Address Rewriting agent" entry in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Address Rewriting agent" entry in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic.
     
 - If you have more than one Edge Transport server, we recommend that you use the procedures in this topic to import the address rewrite entries into a single Edge Transport server and then clone the configuration of that Edge Transport server to the other Edge Transport servers in your organization. For more information about how to clone an Edge Transport server, see [Using Edge Transport Server Cloned Configuration](http://technet.microsoft.com/library/683a6b8a-59bf-43ed-96c8-504945c2f665.aspx).
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
   
 ## Step 1: Create the CSV file
 

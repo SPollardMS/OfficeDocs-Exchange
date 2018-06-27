@@ -29,7 +29,7 @@ The following list describes the basic message formats available in Exchange and
   
 - **Plain text**: A plain text message uses only US-ASCII text as described in RFC 5322. The message can't contain different fonts or other text formatting. The following two formats can be used for a plain text message:
     
-  - The message headers and the message body are composed of US-ASCII text. Attachments must be encoded by using *Uuencode* . Uuencode represents Unix-to-Unix encoding and defines an encoding algorithm to store binary attachments in the body of an email message by using US-ASCII text characters. 
+  - The message headers and the message body are composed of US-ASCII text. Attachments must be encoded by using *Uuencode*. Uuencode represents Unix-to-Unix encoding and defines an encoding algorithm to store binary attachments in the body of an email message by using US-ASCII text characters.
     
   - The message is MIME-encoded with a **Content-Type** value of `text/plain`, and a **Content-Transfer-Encoding** value of `7bit` for the text parts of a multipart message. Any message attachments are encoded by using Quoted-printable or Base64 encoding. By default, when you compose and send a plain text message in Outlook, the message is MIME-encoded with a **Content-Type** value of `text/plain`.
     
@@ -55,7 +55,7 @@ The following list describes the basic message formats available in Exchange and
     
     Outlook and other email clients that fully understand TNEF process the Winmail.dat attachment and display the original message content without ever displaying the Winmail.dat attachment. Email clients that don't understand TNEF may present TNEF messages in any of the following ways:
     
-  - The plain text version of the message is displayed, and the message contains an attachment named Winmail.dat, Win.dat, or some other generic name such as Att _nnnnn_.dat or Att _nnnnn_.eml where the _nnnnn_ placeholder represents a random number. 
+  - The plain text version of the message is displayed, and the message contains an attachment named Winmail.dat, Win.dat, or some other generic name such as Att _nnnnn_.dat or Att _nnnnn_.eml where the _nnnnn_ placeholder represents a random number.
     
   - The plain text version of the message is displayed. The TNEF attachment is ignored or removed. The result is a plain text message.
     
@@ -65,7 +65,7 @@ The following list describes the basic message formats available in Exchange and
     
     TNEF is understood by all versions of Exchange since Exchange Server version 5.5.
     
-- **Summary Transport Neutral Encapsulation Format (STNEF)**: STNEF is equivalent to TNEF. However, STNEF messages are encoded differently than TNEF messages. Specifically, STNEF messages are always MIME-encoded, and always have the **Content-Transfer-Encoding** value `Binary`. Therefore, there's no plain text representation of the message, and there's no distinct Winmail.dat attachment contained in the body of the message. The whole message is represented by using only binary data. Messages that have a **Content-Transfer-Encoding** value of **Binary** can only be transferred between messaging servers that support and advertise the **BINARYMIME** and **CHUNKING** SMTP extensions as defined in RFC 3030. The messages are always transferred between messaging servers by using the **BDAT** command, instead of the standard **DATA** command. 
+- **Summary Transport Neutral Encapsulation Format (STNEF)**: STNEF is equivalent to TNEF. However, STNEF messages are encoded differently than TNEF messages. Specifically, STNEF messages are always MIME-encoded, and always have the **Content-Transfer-Encoding** value `Binary`. Therefore, there's no plain text representation of the message, and there's no distinct Winmail.dat attachment contained in the body of the message. The whole message is represented by using only binary data. Messages that have a **Content-Transfer-Encoding** value of **Binary** can only be transferred between messaging servers that support and advertise the **BINARYMIME** and **CHUNKING** SMTP extensions as defined in RFC 3030. The messages are always transferred between messaging servers by using the **BDAT** command, instead of the standard **DATA** command.
     
     STNEF is understood by all versions of Exchange since Exchange 2000. STNEF is automatically used for all messages transferred between Exchange servers in the organization since native mode Exchange Server 2003.
     
@@ -115,7 +115,7 @@ To better understand the content conversion options for external recipients, you
     
     A field name must be composed of printable US-ASCII text characters except the colon (:) character. Specifically, ASCII characters that have values from 33 through 57 and 59 through 126 are permitted.
     
-    A field body may be composed of any US-ASCII characters, except for the carriage return (CR) character and the line feed (LF) character. However, a field body may contain the CR/LF character combination when used in *header folding* . Header folding is the separation of a single header field body into multiple lines as described in section 2.2.3 of RFC 5322. Other field body syntax requirements are described in sections 3 and 4 of RFC 5322. 
+    A field body may be composed of any US-ASCII characters, except for the carriage return (CR) character and the line feed (LF) character. However, a field body may contain the CR/LF character combination when used in *header folding*. Header folding is the separation of a single header field body into multiple lines as described in section 2.2.3 of RFC 5322. Other field body syntax requirements are described in sections 3 and 4 of RFC 5322.
     
   - **Message body**: The message body is a collection of lines of US-ASCII text characters that appears after the message header. The message header and the message body are separated by a blank line that ends with the CR/LF character combination. The message body is optional. Any line of text in the message body must be less than 998 characters. The CR and LF characters can only appear together to indicate the end of a line.
     
@@ -139,9 +139,9 @@ This header field identifies the media type of the message content as described 
     
   - The *multipart* media type allows for multiple message parts in the same message by using sections defined by different media types. Some **Content-Type** field values include `text/plain`, `text/html`, `multipart/mixed`, and `multipart/alternative`.
     
-- **A subtype**: Subtypes that begin with `vnd.` are vendor-specific. 
+- **A subtype**: Subtypes that begin with `vnd.` are vendor-specific.
     
-- **One or more optional parameters**: For example, a `charset=` parameter that defines the MIME character encoding. 
+- **One or more optional parameters**: For example, a `charset=` parameter that defines the MIME character encoding.
     
 ### Content-Transfer-Encoding header field
 
@@ -153,7 +153,7 @@ This header field can describe the following information about a message:
     
 - An indicator that describes the current condition of the message body.
     
-There can be multiple values of the **Content-Transfer-Encoding** header field in a MIME message. When the **Content-Transfer-Encoding** header field appears in the message header, it applies to the whole body of the message. When the **Content-Transfer-Encoding** header field appears in one of the parts of a multipart message, it applies only to that part of the message. 
+There can be multiple values of the **Content-Transfer-Encoding** header field in a MIME message. When the **Content-Transfer-Encoding** header field appears in the message header, it applies to the whole body of the message. When the **Content-Transfer-Encoding** header field appears in one of the parts of a multipart message, it applies only to that part of the message.
   
 When an encoding algorithm is applied to the message body data, the message body data is transformed into plain US-ASCII text. This transformation allows the message to travel through older messaging servers that only support messages in US-ASCII text. The **Content-Transfer-Encoding** header field values that indicate an encoding algorithm was used on the message body are: 
   
@@ -189,9 +189,9 @@ When no encoding algorithm has been used on the message body, the **Content-Tran
     
     Messages that have 8-bit bodies can only travel between messaging servers that support the **8BITMIME** SMTP extension as defined in RFC 6152, such as Exchange 2000 Server or later. Specifically, this means that the following conditions must be true: 
     
-  - The **8BITMIME** keyword must be advertised in the server's EHLO response. 
+  - The **8BITMIME** keyword must be advertised in the server's EHLO response.
     
-  - Messages are still transferred by using the SMTP standard **DATA** command. However, the `BODY=8BITMIME` parameter must be added to the end of the **MAIL FROM** command. 
+  - Messages are still transferred by using the SMTP standard **DATA** command. However, the `BODY=8BITMIME` parameter must be added to the end of the **MAIL FROM** command.
     
 - `Binary`: Indicates that the message body contains non-US-ASCII text or binary data. Specifically, this means that the following conditions are true:
     
@@ -203,15 +203,15 @@ When no encoding algorithm has been used on the message body, the **Content-Tran
     
     Messages that have binary bodies can only travel between messaging servers that support the **BINARYMIME** SMTP extension as defined in RFC 3030, such as Exchange 2000 Server or later. Specifically, this means that the following conditions must be true: 
     
-  - The **BINARYMIME** keyword must be advertised in the server's EHLO response. 
+  - The **BINARYMIME** keyword must be advertised in the server's EHLO response.
     
-  - The **BINARYMIME** SMTP extension can only be used with the **CHUNKING** SMTP extension. *Chunking* enables large message bodies to be sent in multiple, smaller chunks. Chunking is also defined in RFC 3030. The **CHUNKING** keyword must also be advertised in the server's EHLO response. 
+  - The **BINARYMIME** SMTP extension can only be used with the **CHUNKING** SMTP extension. *Chunking* enables large message bodies to be sent in multiple, smaller chunks. Chunking is also defined in RFC 3030. The **CHUNKING** keyword must also be advertised in the server's EHLO response.
     
-  - Messages are transferred using the **BDAT** command instead of the standard **DATA** command. 
+  - Messages are transferred using the **BDAT** command instead of the standard **DATA** command.
     
-  - The `BODY=BINARYMIME` parameter must be added to the end of the **MAIL FROM** command when the message has a message body. 
+  - The `BODY=BINARYMIME` parameter must be added to the end of the **MAIL FROM** command when the message has a message body.
     
-The values `7bit`, `8bit`, and `Binary` never exist together in the same multipart message (the values are mutually exclusive). The `Quoted-printable` or `Base64` values may appear in a 7-bit or 8-bit multipart message body, but never in a binary message body. If a multipart message body contains different parts composed of 7-bit and 8-bit content, the whole message is classified as 8-bit. If a multipart message body contains different parts composed of 7-bit, 8-bit, and binary content, the whole message is classified as binary. 
+The values `7bit`, `8bit`, and `Binary` never exist together in the same multipart message (the values are mutually exclusive). The `Quoted-printable` or `Base64` values may appear in a 7-bit or 8-bit multipart message body, but never in a binary message body. If a multipart message body contains different parts composed of 7-bit and 8-bit content, the whole message is classified as 8-bit. If a multipart message body contains different parts composed of 7-bit, 8-bit, and binary content, the whole message is classified as binary.
   
 ### Content-Disposition header field
 

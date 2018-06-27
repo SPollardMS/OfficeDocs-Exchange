@@ -43,9 +43,9 @@ Remote domains specify settings for messages sent to domains that are external t
   
 When you configure TNEF conversion options for a remote domain, the settings are applied to all messages sent to recipients in that domain. You can use the Exchange admin center (EAC) or the Exchange Management Shell to configure these options:
   
-- In the EAC, go to **Mail flow** \> **Remote domains** \> **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png), or select an existing remote domain, and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png) \> **Use rich-text format** section. 
+- In the EAC, go to **Mail flow** \> **Remote domains** \> **Add** ![Add icon](../../media/ITPro_EAC_AddIcon.png), or select an existing remote domain, and then click **Edit** ![Edit icon](../../media/ITPro_EAC_EditIcon.png) \> **Use rich-text format** section.
     
-- In the Exchange Management Shell, use the _TnefEnabled_ parameter on the **Set-RemoteDomain** cmdlet. 
+- In the Exchange Management Shell, use the _TnefEnabled_ parameter on the **Set-RemoteDomain** cmdlet.
     
 The TNEF conversion options for remote domains are described in this table:
   
@@ -71,7 +71,7 @@ When you configure TNEF conversion options for a mail contact or a mail user, th
 ## TNEF conversion options in Outlook
 <a name="Outlook"> </a>
 
-Senders can control the default conversion options for TNEF messages sent to all external recipients. These options are called *Internet message format* options. The options only apply to external recipients, and not to recipients in the Exchange organization. 
+Senders can control the default conversion options for TNEF messages sent to all external recipients. These options are called *Internet message format* options. The options only apply to external recipients, and not to recipients in the Exchange organization.
   
  **Note**: The following options define how Outlook rich text messages are handled when sent to external recipients. If the messages are HTML or plain text, these settings don't apply.
   

@@ -26,7 +26,7 @@ For more information about queues, see [Queues and messages in queues](queues.md
 
 - Estimated time to complete: 5 minutes
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Queues" entry in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Queues" entry in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic.
     
 - To find and open the Exchange Toolbox, use one of the following procedures:
     
@@ -49,11 +49,11 @@ For more information about queues, see [Queues and messages in queues](queues.md
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
   
 ## Use Queue Viewer to view the properties of a message
 
-1. In the **Exchange Toolbox**, in the **Mail flow tools** section, double-click **Queue Viewer** to open the tool in a new window. 
+1. In the **Exchange Toolbox**, in the **Mail flow tools** section, double-click **Queue Viewer** to open the tool in a new window.
     
 2. In Queue Viewer, select the **Messages** tab to see the list of messages that are currently queued for delivery in your organization. The list of messages displays the following information: 
     
@@ -99,11 +99,11 @@ For more information about queues, see [Queues and messages in queues](queues.md
     
     For more information about SMTP error codes, see [DSNs and NDRs in Exchange 2016](../../mail-flow/non-delivery-reports-and-bounce-messages/non-delivery-reports-and-bounce-messages.md).
     
-3. When you right-click a message and select **Properties**, additional details are available on the **General** and **Recipient Information** tabs. 
+3. When you right-click a message and select **Properties**, additional details are available on the **General** and **Recipient Information** tabs.
     
   - The **General** tab displays the same **Subject**, **From** **Address**, **Status**, **Size**, **Message Source Name**, **SCL**, and **Last Error** values that are shown in the list of messages. The following additional properties are also displayed on the **General** tab: 
     
-  - **Identity**: The identity of the message. The message identity uses the syntax _\<Server\>_\ _\<Queue\>_\ _\<MessageInteger\>_, where _\<Queue\>_ is the identity of the queue as described in the **Queue ID** property, and _\<MessageInteger\>_ is the unique integer value of the message that's displayed in the **Identity** property of the **Get-Message** cmdlet. 
+  - **Identity**: The identity of the message. The message identity uses the syntax _\<Server\>_\ _\<Queue\>_\ _\<MessageInteger\>_, where _\<Queue\>_ is the identity of the queue as described in the **Queue ID** property, and _\<MessageInteger\>_ is the unique integer value of the message that's displayed in the **Identity** property of the **Get-Message** cmdlet.
     
   - **Internet Message ID**: The value of the **Message-Id:** header field in the message header. This value is constant for the lifetime of the message. For messages created in Exchange, the value is in the format `<GUID@ServerFQDN>`, including the angle brackets (\< \>). For example, `<4867a3d78a50438bad95c0f6d072fca5@mailbox01.contoso.com>`.
     
@@ -113,7 +113,7 @@ For more information about queues, see [Queues and messages in queues](queues.md
     
   - **Expiration Time**: The date-time when the message will expire and will be deleted from the queue if the message can't be delivered.
     
-  - **Recipients**: The recipients in the message, with any corresponding error messages. To see the status and error messages for each recipient, go to the **Recipient Information** tab. 
+  - **Recipients**: The recipients in the message, with any corresponding error messages. To see the status and error messages for each recipient, go to the **Recipient Information** tab.
     
   - The **Recipient Information** tab displays the **Address**, **Status**, and **Last Error** values for each recipient in the message. The **Status** value for a recipient can be **Complete**, **Ready**, or **Retry**.
     

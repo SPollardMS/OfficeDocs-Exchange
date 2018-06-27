@@ -16,7 +16,7 @@ description: "Summary: Learn how to create a custom theme for Outlook on the web
 
  **Summary**: Learn how to create a custom theme for Outlook on the web in Exchange 2016.
   
-A *theme* defines the colors, fonts, and images that are displayed to users in Outlook on the web (formerly known as Outlook Web App) in Exchange Server 2016. Each theme is a collection of files that are stored on the Exchange server. The built-in themes are described in the [Default Outlook on the web themes in Exchange 2016](themes.md#DefaultThemes) section at the end of this topic. 
+A *theme* defines the colors, fonts, and images that are displayed to users in Outlook on the web (formerly known as Outlook Web App) in Exchange Server 2016. Each theme is a collection of files that are stored on the Exchange server. The built-in themes are described in the [Default Outlook on the web themes in Exchange 2016](themes.md#DefaultThemes) section at the end of this topic.
   
 The basic steps to create a new theme for Outlook on the web are:
   
@@ -38,7 +38,7 @@ After you create a theme, you may also want to customize elements that are commo
 
 - Estimated time to complete this task: 45 minutes.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Outlook on the web virtual directories" entry in the [Clients and mobile devices permissions](../../permissions/feature-permissions/client-and-mobile-device-permissions.md) topic. The account you use also needs to be a member of the local Administrators group on the Exchange server. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Outlook on the web virtual directories" entry in the [Clients and mobile devices permissions](../../permissions/feature-permissions/client-and-mobile-device-permissions.md) topic. The account you use also needs to be a member of the local Administrators group on the Exchange server.
     
 - The light version of Outlook on the web doesn't support themes.
     
@@ -51,7 +51,7 @@ After you create a theme, you may also want to customize elements that are commo
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
   
 ## Step 1: Use File Explorer to copy the folders and files of an existing theme, and rename the copied folders and files
 
@@ -59,13 +59,13 @@ You can inspect the built-in themes by opening a mailbox in Outlook on the web, 
   
 ![Change theme menu location in Outlook on the web](../../media/a1b88a8c-2143-44c1-89dc-73b2acb944e8.png)
   
-You can use the information in the [Default Outlook on the web themes in Exchange 2016](themes.md#DefaultThemes) section at the end of this topic to match the display name of the theme in Outlook on the web to the name of the theme folder on the Exchange server. 
+You can use the information in the [Default Outlook on the web themes in Exchange 2016](themes.md#DefaultThemes) section at the end of this topic to match the display name of the theme in Outlook on the web to the name of the theme folder on the Exchange server.
   
 The theme files and folders are stored in the following locations:
   
-- `%ExchangeInstallPath%ClientAccess\OWA\prem\<ExchangeVersion>\resources\themes\` contains the theme folder that holds the header image, theme preview image, and theme description text. 
+- `%ExchangeInstallPath%ClientAccess\OWA\prem\<ExchangeVersion>\resources\themes\` contains the theme folder that holds the header image, theme preview image, and theme description text.
     
-- `%ExchangeInstallPath%ClientAccess\OWA\prem\<ExchangeVersion>\resources\styles\` contains the `_fabric.color.variables.theme.<ThemeFolderName>.less` and `fabric.color.theme.<ThemeFolderName>.css` files that define the colors that are used in the theme. 
+- `%ExchangeInstallPath%ClientAccess\OWA\prem\<ExchangeVersion>\resources\styles\` contains the `_fabric.color.variables.theme.<ThemeFolderName>.less` and `fabric.color.theme.<ThemeFolderName>.css` files that define the colors that are used in the theme.
     
     **Note**: The _\<ExchangeVersion\>_ subfolder uses the syntax 15.1. _nnn_. _nn_, and indicates the Exchange Cumulative Update (CU) that's installed.
     
@@ -89,7 +89,7 @@ After you've identified the theme that's closest to what you want (for example, 
     
 ## Step 2: Use Notepad to configure the display name and sort order of the new theme
 
-You need to configure a unique display name and sort order for the new theme, because the new theme has the same display name and sort order as the theme you copied. The theme's display name appears in the **Change theme** panel in Outlook on the web. The sort order determines where the theme appears in the list of themes. 
+You need to configure a unique display name and sort order for the new theme, because the new theme has the same display name and sort order as the theme you copied. The theme's display name appears in the **Change theme** panel in Outlook on the web. The sort order determines where the theme appears in the list of themes.
   
 1. Use Notepad to open the file named `themeinfo.xml` in the new theme folder `%ExchangeInstallPath%ClientAccess\OWA\prem\<ExchangeVersion>\resources\themes\<NewThemeFolder>` that you created in Step 1. The contents of the file look like this: 
     
@@ -97,7 +97,7 @@ You need to configure a unique display name and sort order for the new theme, be
     
 2. Change the `<theme displayname="__<CopiedThemeName>__"` value to the value you want. For example `displayname = "Fourth Coffee Corporate Theme"`.
     
-    **Note**: The theme display name value `"__<ThemeName>__"` is a code string that's localized into different languages. The text value that you specify for the new theme isn't localized into different languages. 
+    **Note**: The theme display name value `"__<ThemeName>__"` is a code string that's localized into different languages. The text value that you specify for the new theme isn't localized into different languages.
     
 3. Change the `sortorder="<CopiedThemeSortOrder>"` integer value to the unique value you want. A lower value appears earlier in the list of themes. You can use the information in the [Default Outlook on the web themes in Exchange 2016](themes.md#DefaultThemes) section at the end of this topic to find the sort order values for the built-in themes. The Default theme has `sortorder="0"`, and appears first in the list.
     
@@ -105,7 +105,7 @@ You need to configure a unique display name and sort order for the new theme, be
     
   - If you want to *replace* the position of a built-in theme in the list, set the number to the same value as built-in theme, and then change the sort order for the built-in theme. For example, if you want your new theme to appear first in the list, you need to set your new theme to `sortorder="0"`. But, you also need to open the `themeinfo.xml` file in the `\base` folder (the Default theme) to change the value `sortorder="0"` to something else (for example, `sortorder="5")`.
     
-4. When you're finished, save and close the `themeinfo.xml` file. 
+4. When you're finished, save and close the `themeinfo.xml` file.
     
 ## Step 3: Customize the new theme
 
@@ -147,7 +147,7 @@ To set the default theme and prevent users from changing their theme in Outlook 
 Set-OwaVirtualDirectory -Identity <VirtualDirectoryIdentity> -DefaultTheme <ThemeFolderName> -ThemeSelectionEnabled $false
 ```
 
-This example configures the theme folder named `fourthcoffee` as the default theme in Outlook on the web for the default website on the server named Mailbox01. 
+This example configures the theme folder named `fourthcoffee` as the default theme in Outlook on the web for the default website on the server named Mailbox01.
   
 ```
 Set-OwaVirtualDirectory -Identity "Mailbox01\owa (Default Web Site)" -DefaultTheme fourthcoffee -ThemeSelectionEnabled $false
@@ -157,23 +157,23 @@ Set-OwaVirtualDirectory -Identity "Mailbox01\owa (Default Web Site)" -DefaultThe
   
 - By default, the value of the _DefaultTheme_ parameter is blank (`$null`). This value indicates that no default theme is specified, and the theme named Default is used if the user hasn't manually selected a theme.
     
-- Exchange doesn't validate the value that you specify for the _DefaultTheme_ parameter. Make sure that the theme exists. 
+- Exchange doesn't validate the value that you specify for the _DefaultTheme_ parameter. Make sure that the theme exists.
     
-- To specify a default theme for specific users that overrides the default theme setting on the Outlook on the web virtual directory, use the _DefaultTheme_ parameter on the **Set-OwaMailboxPolicy** cmdlet. 
+- To specify a default theme for specific users that overrides the default theme setting on the Outlook on the web virtual directory, use the _DefaultTheme_ parameter on the **Set-OwaMailboxPolicy** cmdlet.
     
 ## Step 5: Restart IIS
 
 You need to restart Internet Information Services (IIS) for the changes to take effect.
   
-1. Open IIS Manager on the Exchange server. An easy way to do this in Windows Server 2012 or later is to press Windows key + Q, type inetmgr, and select **Internet Information Services (IIS) Manager** in the results. 
+1. Open IIS Manager on the Exchange server. An easy way to do this in Windows Server 2012 or later is to press Windows key + Q, type inetmgr, and select **Internet Information Services (IIS) Manager** in the results.
     
 2. In IIS Manager, select the server.
     
 3. In the **Actions** pane, click **Restart**.
     
-![In IIS Manager, select the server, and in the Actions pane, click Restart](../../media/7d37436a-b89d-4010-bef4-f4276686d5ad.png)
-  
- **Note**: To perform this procedure on the command line, open an elevated command prompt on the Exchange server (a Command Prompt window you open by selecting **Run as administrator**) and run the following command:
+    ![In IIS Manager, select the server, and in the Actions pane, click Restart](../../media/7d37436a-b89d-4010-bef4-f4276686d5ad.png)
+
+**Note**: To perform this procedure on the command line, open an elevated command prompt on the Exchange server (a Command Prompt window you open by selecting **Run as administrator**) and run the following command:
   
 ```
 iisreset /noforce
