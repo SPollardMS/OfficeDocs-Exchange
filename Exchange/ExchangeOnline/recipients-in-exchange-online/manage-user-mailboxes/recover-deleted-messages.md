@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 12/9/2016
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 9e0e34ce-efc5-454e-8d15-57b4da867f12
 description: "(This topic is intended for Exchange administrators.)"

@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 6/23/2018
 ms.audience: ITPro
 ms.topic: overview
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 5c13a07e-c21d-4502-a9f9-fb801197e1dd
 description: "Your organization may require certain types of messages be approved in order to meet legal or compliance requirements, or to implement a specific business workflow. This article discusses examples of common scenarios that you can set up by using Exchange."

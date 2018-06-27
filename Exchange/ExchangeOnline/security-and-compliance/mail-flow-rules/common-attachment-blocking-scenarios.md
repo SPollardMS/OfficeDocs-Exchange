@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 6/23/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 5c576439-d55b-4c7f-90ed-a7f72cbb16c2
 description: "Your organization might require that certain types of messages be blocked or rejected in order to meet legal or compliance requirements, or to implement specific business needs. This article discusses examples of common scenarios for blocking all attachments which you can set up using transport rules in Exchange."

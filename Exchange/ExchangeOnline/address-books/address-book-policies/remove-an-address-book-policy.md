@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 6/24/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: c20c6f82-2f75-4116-9be1-c5af10113f71
 description: "Use this procedure to remove an address book policy (ABP)."

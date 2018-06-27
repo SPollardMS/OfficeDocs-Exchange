@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 11/17/2014
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 57633cf1-9ed9-43ae-a2a8-965431b0a779
 description: "Enable a user for voice mail"

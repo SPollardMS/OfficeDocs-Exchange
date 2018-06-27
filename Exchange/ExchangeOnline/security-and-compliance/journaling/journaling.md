@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 6/23/2018
 ms.audience: End User
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 1e7df155-02a3-4daf-94f9-8ea46f041a3a
 description: "Find information about journaling in Exchange Online. Learn the difference between journaling and data archiving, how journaling helps with compliance, and more."

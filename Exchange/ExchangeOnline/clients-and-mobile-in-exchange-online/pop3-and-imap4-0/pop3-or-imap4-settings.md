@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 4/29/2016
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: bf4ca453-e79c-4b87-a9a5-3ae1b21181e2
 description: "You use the Set-CASMailbox cmdlet to configure the PO3 and IMAP4 options for each user. The configuration options are described in the following table."

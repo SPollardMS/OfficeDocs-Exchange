@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 11/17/2014
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: f69e94a7-9768-4445-9ded-e78d732bd623
 description: "You can configure Unified Messaging to answer an incoming call, and then determine whether it will apply protection to voice mail messages by using encryption. When a voice message is protected:"

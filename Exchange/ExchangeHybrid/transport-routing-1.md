@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 7/29/2016
 ms.audience: Developer
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.collection: Ent_O365_Hybrid
 ms.assetid: 36c2cea3-2e2f-40ac-88bd-7e1b6bd27828

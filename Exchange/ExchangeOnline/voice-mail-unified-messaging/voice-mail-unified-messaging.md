@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 6/25/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 7ddf1356-d4c0-41c7-a495-101633ae2f50
 description: "Unified Messaging (UM) enables users to use voice mail features, including Outlook Voice Access and Call Answering Rules. UM combines voice messaging and email messaging into one mailbox that can be accessed from many different devices. Users can read or listen to their messages from their email Inbox or by using Outlook Voice Access from any telephone. You have control over how users place outgoing calls, and the experience callers have when they call in to your organization."

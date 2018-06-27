@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 12/9/2016
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: abdd0474-db84-49b1-a915-f5710f206a58
 description: "Clutter is a feature in Office 365 designed to help users focus on the most important messages in their Inbox by moving lower priority messages into a new Clutter folder."

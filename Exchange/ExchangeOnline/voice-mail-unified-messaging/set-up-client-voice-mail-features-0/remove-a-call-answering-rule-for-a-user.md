@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 4/8/2015
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 1da3c5bc-7227-4b37-96f6-67ceefc084d5
 description: "You can use the Shell to remove one or more call answering rules for a user. You can also use the Remove-UMCallAnsweringRule cmdlet in an Exchange Management Shell script to remove one or more call answering rules for multiple users."

@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 6/23/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 15073ce1-0917-403b-8839-02a2ebc96e16
 description: "The permissions required to perform tasks to manage Microsoft Exchange Online vary depending on the procedure being performed or the cmdlet you want to run."

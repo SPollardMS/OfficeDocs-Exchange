@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 6/23/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: feb014a7-89dd-4f2d-a06d-52806ce435d4
 description: "In Microsoft Exchange, you can create DLP policies that contain rules for not only traditional message classifications and existing transport rules but also combine these with rules for sensitive information found within messages. The existing transport rules framework offers rich capabilities to define messaging policies, covering the entire spectrum of soft to hard controls. Examples include:"

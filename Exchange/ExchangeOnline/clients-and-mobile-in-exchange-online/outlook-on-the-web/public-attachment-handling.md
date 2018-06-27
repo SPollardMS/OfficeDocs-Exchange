@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 12/9/2016
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 2b5b8f6a-1bce-4872-8989-bac53ffafaa4
 description: "As an admin, you can set up both private and public attachment handling in Outlook Web App depending on how you configure your Outlook Web App mailbox policies. The settings for private (internal) and public (external) networks define how users can open, view, send, or receive attachments depending on whether a user is signed in to Outlook Web App on a computer that is part of a private or of a public network."

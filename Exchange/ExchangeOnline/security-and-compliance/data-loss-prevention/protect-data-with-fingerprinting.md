@@ -6,7 +6,7 @@ manager: nesuexws
 ms.date: 11/17/2014
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 110c839b-7693-42f6-aa5d-58ce64f4c357
 description: "If your organization uses forms to collect sensitive information, users might try emailing those forms to outside contacts, which creates a security risk. Data loss prevention (DLP) in Exchange helps you protect that information by detecting it with Document Fingerprinting. To use document fingerprinting, simply upload a blank form, such as an intellectual property document, government form, or other standard form used in your organization. Then, add the resulting document fingerprint to a DLP policy or transport rule. Here's how."

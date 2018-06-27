@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 6/23/2018
 ms.audience: End User
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 4033a30a-f506-481c-8ef0-fd9a0508ae38
 description: "If you have a hybrid environment, with mailboxes hosted both in Exchange Online and on-premises, and you have subdomains of the accepted domains that only exist in your on-premises environment, you can enable email flow to and from these on-premises subdomains. For example, if you have an accepted domain called Contoso.com, and you enable match subdomains, users can send email to, or receive email from all subdomains of Contoso.com that exist in your on-premises environment, such as marketing.contoso.com and nwregion.contoso.com. In Microsoft Forefront Online Protection for Exchange (FOPE), this feature was called catch-all domains."

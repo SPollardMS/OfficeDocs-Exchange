@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 4/29/2016
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 3f01edde-1cdc-4891-ad9d-7d01582664e9
 description: "Outlook Web App and Outlook Inbox rules are limited to 64 KB. Each rule you create will take up space in your mailbox. The actual amount of space a rule uses depends on several factors, such as how long the name is and how many conditions you've applied. When you reach the 64-KB limit, you'll be warned that you can't create any more rules or that you can't update a rule. You can, however, increase the amount of space used by Inbox rules for a user in your organization."

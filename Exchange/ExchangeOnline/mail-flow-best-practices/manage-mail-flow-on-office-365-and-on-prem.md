@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 1/6/2017
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: fb335522-11ba-48d7-956f-2d980c22ab51
 description: "Summary: How to manage mail flow with a third-party cloud service in an Exchange hybrid environment (when your Exchange mailboxes are both on premises and in Office 365)."

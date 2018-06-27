@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 11/17/2014
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 0c945886-3cfa-423e-9b46-0d6b1584a145
 description: "If a user reports problems with the audio quality of their Unified Messaging (UM) calls, you can use the User Call Logs report to help you understand what's causing the problems."

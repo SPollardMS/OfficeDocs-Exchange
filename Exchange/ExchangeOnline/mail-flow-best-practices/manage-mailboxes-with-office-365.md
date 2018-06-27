@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 1/6/2017
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 24cac303-c8de-474b-a894-e42683db30f1
 description: "Summary: How to use hosted mail flow with Office 365."

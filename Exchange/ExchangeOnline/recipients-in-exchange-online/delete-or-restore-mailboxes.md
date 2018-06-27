@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 6/24/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: be7f59a5-bbc9-4b7a-a28b-f47b26dd33a7
 description: "There are several things you should consider before you decide to delete a user mailbox. There's different kinds of deletions that you can do on a user mailbox and some of them won't allow you to restore or recover the mailbox. This article walks you through the deleted mailbox scenarios, as well as how to delete, recover or permanently remove a mailbox from Exchange Online."

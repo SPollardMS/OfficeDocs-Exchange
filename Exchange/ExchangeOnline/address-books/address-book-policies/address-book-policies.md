@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 6/24/2018
 ms.audience: ITPro
 ms.topic: overview
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: d0a916a1-e3ed-49ae-b116-a559be0dcce6
 description: "Learn how you can segment your global address list into specific groups to create customized GALs in Outlook and Outlook on the web."

@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 6/25/2018
 ms.audience: Developer
 ms.topic: article
-ms.prod: office-online-server
+ms.prod: exchange-server-itpro
 localization_priority: Normal
 ms.collection: Strat_EX_EXOBlocker
 ms.assetid: 4f884b7a-3b8a-4207-8843-65d3141731dc

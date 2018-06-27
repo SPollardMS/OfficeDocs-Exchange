@@ -8,7 +8,7 @@ ms.audience: ITPro
 ms.topic: article
 f1_keywords:
 - 'Microsoft.Exchange.Management.SnapIn.Esm.Recipients.CreateDistributionGroupWizardForm.CreateDistributionGroupIntroductionWizardPage'
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: c4c43493-55e1-46d2-bd4b-d6f6cecd747f
 description: "Use the Exchange Administration Center (EAC) or Exchange Management Shell to create a new distribution group in your Exchange organization or to mail-enable an existing group in Active Directory."

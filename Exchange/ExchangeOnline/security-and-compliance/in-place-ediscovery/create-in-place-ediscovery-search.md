@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 1/17/2017
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: feedc0c9-4a44-4bb2-8520-cc29d66d4fc3
 description: "Use In-Place eDiscovery to search across all mailbox content, including deleted items and original versions of modified items for users placed on In-Place Hold and Litigation Hold."

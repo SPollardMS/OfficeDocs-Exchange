@@ -5,7 +5,7 @@ author: msdmaguire
 ms.date: 12/9/2016
 ms.audience: ITPro
 ms.topic: overview
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.custom: A11y_Features
 ms.assetid: 0f716f4a-7213-44f1-b2d4-b7fd0a1a336b

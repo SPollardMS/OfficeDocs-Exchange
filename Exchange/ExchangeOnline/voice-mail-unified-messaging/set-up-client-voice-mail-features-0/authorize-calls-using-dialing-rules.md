@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 3/9/2015
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 4c18bc07-f55c-42b7-81c1-729878aa93aa
 description: "By default, users aren't able to place outgoing calls. To specify the kinds of calls users can make, you first create dialing rules, then authorize groups of these dialing rules on UM dial plans, UM mailbox policies, or UM auto attendants. Before you can authorize dialing rule groups, you have to define dialing rules on a UM dial plan. For details, see Create dialing rules for users."

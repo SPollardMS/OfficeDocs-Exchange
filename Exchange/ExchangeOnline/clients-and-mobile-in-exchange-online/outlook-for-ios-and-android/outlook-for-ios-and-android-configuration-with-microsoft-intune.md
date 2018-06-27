@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/1/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: e8a034f6-39b8-4dea-a3bc-9421aaa75d1d
 description: "Summary: How to use Microsoft Intune to customize the behavior of Outlook for iOS and Android in your Exchange organization."

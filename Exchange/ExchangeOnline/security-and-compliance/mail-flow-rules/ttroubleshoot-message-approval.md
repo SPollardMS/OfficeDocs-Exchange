@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 6/23/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 860df43f-a05b-4da3-83f1-68d3123a923d
 description: "You may receive the following error when you attempt to remove an arbitration mailbox:"

@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/11/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: a0e11307-3577-499f-b407-6fcfae576844
 description: "Summary: Learn how to view, create, modify, delete, and test Client Access Rules in Exchange Online."

@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 6/25/2018
 ms.audience: ITPro
 ms.topic: overview
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 747d4875-4b81-4b10-a206-fc2cbab83314
 description: "Summary: This article covers the most common questions asked by customers and administrators about using Outlook for iOS and Android with Exchange Online and Office 365."

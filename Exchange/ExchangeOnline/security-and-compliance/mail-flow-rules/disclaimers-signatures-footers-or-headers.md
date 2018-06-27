@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 6/23/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 29ac61c2-77f1-4071-b14e-8cc64e3e76ba
 description: "Summary: Learn how admins can apply an organization-wide signature (disclaimer) to all outbound messages in Office 365."

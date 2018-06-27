@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 6/23/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 58e413f0-aa27-4307-bffd-4df03090a15e
 description: "If you want to be sure that you receive particular messages, you can create an Exchange transport rule that makes sure that these messages bypass your clutter folder. Check out Use Clutter to sort low-priority messages in Outlook for more info on Clutter."

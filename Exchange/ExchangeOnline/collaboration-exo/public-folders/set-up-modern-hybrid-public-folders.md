@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 6/24/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.collection:
 - Ent_O365_Hybrid

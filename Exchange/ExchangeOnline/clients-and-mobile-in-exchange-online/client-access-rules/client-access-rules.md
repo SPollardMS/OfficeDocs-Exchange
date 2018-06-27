@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 6/11/2018
 ms.audience: ITPro
 ms.topic: overview
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 3792312e-882c-40b5-add4-a7bc17af4c58
 description: "Summary: Learn how administrators can use Client Access Rules to allow or block different types of client connections to Exchange Online."

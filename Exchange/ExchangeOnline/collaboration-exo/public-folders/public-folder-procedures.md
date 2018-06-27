@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 3/27/2017
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: c0c561cb-3d25-4a26-b94a-ba3876c49fbf
 description: "Use batch migration to migrate legacy public folders to Office 365 and Exchange Online"

@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 11/17/2014
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 608082bc-015e-45ef-8ebc-f77465080381
 description: "Allow Message Waiting Indicator (MWI) on a UM IP gateway"

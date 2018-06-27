@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 6/25/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: c30ff7b8-0f12-455b-a70e-3447634f17ce
 description: "By default, Outlook on the web, formerly known as Outlook Web App, is enabled in Office 365. Outlook on the web lets users access their Office 365 mailbox from almost any Web browser."

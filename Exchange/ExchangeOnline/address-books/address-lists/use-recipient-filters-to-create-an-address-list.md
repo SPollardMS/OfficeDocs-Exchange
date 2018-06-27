@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 12/16/2014
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 8eabea64-97c6-40af-b61c-9b6a125cbdf1
 description: "This topic explains how to create an address list by using recipient filters. To learn more about address lists, see Address lists."

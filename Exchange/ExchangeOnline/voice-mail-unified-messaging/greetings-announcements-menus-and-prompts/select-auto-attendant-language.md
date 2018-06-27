@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 6/24/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 3a1c1ec0-c726-41fb-a294-59faab205609
 description: "You can configure the default prompt language setting on a Unified Messaging (UM) auto attendant. The language setting available on a UM auto attendant enables you to configure the default prompt language on the auto attendant. When you're using the default system prompts for the auto attendant, this is the language that the caller hears when the auto attendant answers the incoming call. This language setting affects only the default system prompts that are provided after you have installed the Mailbox server that is running the Microsoft Exchange Unified Messaging service. This setting doesn't affect custom prompts that are configured on an auto attendant. The languages that are available are based on the Unified Messaging language packs that are installed on the Mailbox server."

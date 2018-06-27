@@ -8,7 +8,7 @@ ms.audience: ITPro
 ms.topic: article
 f1_keywords:
 - 'Microsoft.Exchange.Management.SnapIn.Esm.Servers.UnifiedMessaging.UMMailboxPolicyGeneralTab'
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 704b001c-3e6f-4ed5-bbe5-42a778f6ac0d
 description: "After you create a Unified Messaging (UM) mailbox policy, you can view and configure a variety of settings. For example, you can configure UM features like Voice Mail Preview or Play on Phone and other security-related options such as Protected Voice Mail and PIN policy settings."

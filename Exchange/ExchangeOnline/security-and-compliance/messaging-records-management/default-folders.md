@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 4/20/2017
 ms.audience: End User
 ms.topic: overview
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: d2e2064f-4102-4018-b688-504d09da6d39
 description: "You can use Retention tags and retention policies to manage email lifecycle. Retention Policies contain Retention Tags, which are settings you can use to specify when a message should be automatically moved to the archive or when it should be deleted."

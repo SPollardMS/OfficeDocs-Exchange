@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 10/26/2017
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 7c5b7408-bfa2-4695-a6b7-21ddc8084d52
 description: "Many third-party cloud service solutions provide add-on services for Office 365. For security reasons, we don't allow third-party email add-on services to be installed in Office 365. But, you can work with the service provider to configure the settings in your Office 365 organization so you can use the service."

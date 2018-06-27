@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 4/13/2016
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: be012ffe-8fdb-4fb7-aebd-78b3a55593fa
 description: "After you create an Outlook Web App mailbox policy, you can configure a variety of options to control the features available to users in Outlook Web App. For example, you can enable or disable Inbox rules or create a list of allowed file types for attachments."

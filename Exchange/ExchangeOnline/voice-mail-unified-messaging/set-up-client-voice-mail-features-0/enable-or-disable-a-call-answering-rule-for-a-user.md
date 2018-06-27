@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 4/8/2015
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: f9e40ac3-117f-44f6-9ab1-dc9f4c72e8ac
 description: "You can use the Shell to enable or disable one or more call answering rules for a user. You can also use the Enable-UMCallAnsweringRule or Disable-UMCallAnsweringRule cmdlets in an Exchange Management Shell script to enable or disable one or more call answering rules for multiple users."

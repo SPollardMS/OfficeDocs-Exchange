@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 6/25/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 94d2f62e-5d43-4200-b7ce-33b1f41f1d59
 description: "One of the questions we often hear isHow does Exchange Online back up my data?You may be asking this because you're concerned about how to recover your data if there is a failure. Or you may be wondering how to recover your data if it gets accidentally deleted. This topic answers these questions."

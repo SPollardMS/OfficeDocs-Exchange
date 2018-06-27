@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 11/17/2014
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 2c70e21f-2b12-414a-9e8c-65634a767c72
 description: "The OAB virtual directory is the distribution for the OAB. By default, when Microsoft Exchange Server 2013 is installed, a new virtual directory named OAB is created in the default internal website in Internet Information Services (IIS). If you have client-side users that connect to Microsoft Outlook from outside your organization's firewall, you can add an external website. Alternatively, when you run the New-OABVirtualDirectory cmdlet in the Shell, a new virtual directory named OAB is created in the default IIS website on the local Exchange server."

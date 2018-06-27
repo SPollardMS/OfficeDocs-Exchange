@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 6/24/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 7b419906-8977-47f0-8687-a87911b5ebec
 description: "Summary: How to set up public folders, including assigning permissions to them in the EAC."

@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 11/17/2014
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 1e0c579c-26e0-462a-a1b0-d7506dfe05fa
 description: "Information workers in your organization handle many kinds of sensitive information during a typical day. Document Fingerprinting makes it easier for you to protect this information by identifying standard forms that are used throughout your organization. This topic describes the concepts behind Document Fingerprinting. If you'd like to learn how to create a document fingerprint, see Protect form data with document fingerprinting."

@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 2/3/2017
 ms.audience: End User
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 112f3ef7-9943-4a1e-8a42-e08e8e9f67f4
 description: "You can install or remove add-ins for Outlook for your organization by using the EAC or the Shell."

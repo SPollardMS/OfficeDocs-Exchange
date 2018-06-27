@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 6/24/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 50d16941-5cd7-435d-8715-e2b69f8410ab
 description: "In Exchange Online, the Exchange Administration Center (EAC) has replaced the Exchange Control Panel (ECP) as the GUI-based administrative tool used to manage cloud-based recipients. The EAC also replaces the Exchange Management Console in Exchange Server. For more information, see Exchange Administration Center."

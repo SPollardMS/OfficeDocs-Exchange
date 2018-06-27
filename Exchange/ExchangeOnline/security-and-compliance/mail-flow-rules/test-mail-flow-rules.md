@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 12/9/2016
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 3d949e2a-8ba4-4261-8cfb-736fd2446ea1
 description: "Each time you create an Exchange mail flow rule, also known as a Transport rule, you should test it before turning it on. This way, if you accidentally create a condition that doesn't do exactly what you want or interacts with other rules in unexpected ways, you won't have any unintended consequences."

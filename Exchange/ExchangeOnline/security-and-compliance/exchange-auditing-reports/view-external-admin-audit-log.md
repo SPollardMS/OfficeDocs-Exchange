@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 6/23/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 31892014-c921-45fd-9775-7a1ef40e3517
 description: "In Exchange Online, actions performed by Microsoft and delegated administrators are logged in the administrator audit log. You can use the EAC or the Exchange Management Shell to search for and view audit log entries to determine if external administrators performed any actions on or changed the configuration of your Exchange Online organization. You can also use the Exchange Management Shell to export these audit log entries."

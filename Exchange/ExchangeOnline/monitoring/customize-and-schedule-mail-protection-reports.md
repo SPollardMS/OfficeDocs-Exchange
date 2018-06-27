@@ -8,7 +8,7 @@ ms.audience: Developer
 ms.topic: article
 f1_keywords:
 - 'ms.exch.eac.ScheduledReports'
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 51832055-1696-4443-8579-bc76b8db92a3
 description: "As an Exchange Online or Exchange Online Protection (EOP) admin, you probably want to keep an eye on your organization's mail flow, how much spam and malware is being detected, or how often your rules and policies are being matched. By using mail protection reports, you'll get a quick summary of the messages that Office 365 has delivered or rejected based on spam or malware characteristics, rules, or data loss prevention (DLP) policies. You can choose to either schedule mail protection reports to be sent to your inbox automatically, or you can view them any time in the Office 365 admin center. This article shows you how to schedule reports to be delivered on a weekly or monthly basis, which can be helpful if you need to send the reports to other people or if you want to monitor a specific sender's messages for a while. If your organization has multiple domains, we also show you how to edit your scheduled reports to filter to a specific domain, group, or email address."

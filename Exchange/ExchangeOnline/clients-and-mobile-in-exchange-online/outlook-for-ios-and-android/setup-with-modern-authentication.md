@@ -6,7 +6,7 @@ manager: serdars
 ms.date: 1/29/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 1efe7737-b573-4f36-a0f2-27714d2ebdb0
 description: "Summary: How users with modern authentication-enabled accounts can quickly set up their Outlook for iOS and Android accounts in Exchange Online."

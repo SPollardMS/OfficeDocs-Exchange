@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 11/17/2014
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 6997797d-4b79-4f6d-a89a-f36eea4e5ca4
 description: "Enable outgoing calls on UM IP gateways"

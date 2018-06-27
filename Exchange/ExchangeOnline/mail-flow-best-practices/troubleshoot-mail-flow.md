@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 12/9/2016
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: ccb62ce1-a822-4859-a0db-3d546c5c1f50
 description: "Can't send or receive email? Office 365 for business has several ways that can troubleshoot the issue as an admin. We recommend using the automated solutions because they are typically easier and faster than manual troubleshooting."

@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 6/24/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 7a1d2e7e-4053-40af-9ec1-ec714df12ad4
 description: "You can set the default language for a Unified Messaging (UM) dial plan. Each dial plan you create will initially use English (en-US) as the default language. The English (en-US) language pack is installed on all versions of Microsoft Exchange Server 2013 and can't be removed."

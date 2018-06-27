@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 11/17/2014
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: df8ee7ae-2486-4890-b057-cda87b4cb1ec
 description: "MailTips are informative messages displayed to users in the InfoBar in Outlook Web App and Microsoft Outlook 2010 or later when a user does any of the following while composing an e-mail message:"

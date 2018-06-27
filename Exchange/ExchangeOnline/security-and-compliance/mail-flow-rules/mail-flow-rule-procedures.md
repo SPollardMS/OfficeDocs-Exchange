@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 5/31/2017
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: ca8b52ef-0af7-4d3d-96df-13df297585e0
 description: "You can begin using transport rules by using the following procedures. To learn about concepts and objectives for transport rules, see Mail flow rules (transport rules) in Exchange Online."

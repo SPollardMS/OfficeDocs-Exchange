@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 6/24/2016
 ms.audience: ITPro
 ms.topic: troubleshooting
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 74a9fc59-7e0e-4832-baf9-2a86418b0079
 description: "As an administrator, you can find out what happened to an email message by running a message trace in the Exchange admin center (EAC). After running the message trace, you can view the results in a list, and then view the details about a specific message. Message trace data is available for the past 90 days. If a message is more than 7 days old, the results can only be viewed in a downloadable .CSV file."

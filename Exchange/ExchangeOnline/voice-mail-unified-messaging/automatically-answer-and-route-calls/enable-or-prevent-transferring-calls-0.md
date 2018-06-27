@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 11/17/2014
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: ca961cc8-cc24-4e05-b72d-79979c155cf9
 description: "You can enable callers to transfer calls to users through an auto attendant, or prevent them from doing so. By default this option is enabled, and lets callers transfer calls to UM-enabled users in the Unified Messaging (UM) dial plan that's associated with the UM auto attendant."

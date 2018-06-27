@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 6/24/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 7d433daa-c68f-4441-b2f5-1280991185c2
 description: "Office 365 and Exchange Online provides several features that can help your end users easily collaborate in email."

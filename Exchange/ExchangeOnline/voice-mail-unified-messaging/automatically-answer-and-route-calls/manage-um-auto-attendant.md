@@ -8,7 +8,7 @@ ms.audience: ITPro
 ms.topic: article
 f1_keywords:
 - 'Microsoft.Exchange.Management.SnapIn.Esm.OrganizationConfiguration.UnifiedMessaging.AutoAttendantGeneralPropertyPage'
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 4809ff56-ae34-4ce6-8e39-9193311c3f83
 description: "After you create a Unified Messaging (UM) auto attendant, you can view or configure a variety of settings. For example, you can add, remove, and edit extension numbers associated with the auto attendant. You can also enable or disable Automatic Speech Recognition (ASR) for the auto attendant and change the greetings used for business and non-business hours."

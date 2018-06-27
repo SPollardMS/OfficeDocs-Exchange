@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 6/25/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: aa49e3f9-a5b1-4410-aac2-ddbbf3f5bfb2
 description: "This topic presents messaging questions that a user may have, along with possible answers. It also describes how to use the message trace tool in order to get those answers and troubleshoot specific mail delivery issues."

@@ -5,7 +5,7 @@ author: chrisda
 ms.date: 5/5/2017
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: c93c31a4-fe5e-479b-83b6-ee114d4f236c
 description: "With the Direct to Calendar feature in Exchange Online, administrators can configure mail flow rules (also known as transport rules) that allow designated users to add meetings to calendars. The benefits of Direct to Calendar are:"

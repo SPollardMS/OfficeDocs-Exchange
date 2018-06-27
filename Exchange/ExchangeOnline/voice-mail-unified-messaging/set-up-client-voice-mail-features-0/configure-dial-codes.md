@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 11/17/2014
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: e5b5efee-b734-4f70-8357-11be07b23bd0
 description: "You can configure dial codes, number prefixes, and number formats that are used by Unified Messaging to dial incoming and outgoing calls for users who are enabled for UM. In most cases, you'll configure a dial plan with the dial codes, prefixes, and number formats currently configured on your telephony network."

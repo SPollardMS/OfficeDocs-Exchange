@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 1/6/2017
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: d0d10ab1-08c1-4ffe-aaa5-f9dbd9a118ed
 description: "Summary: A couple of different scenarios that illustrate how to configure mail flow through a third-party cloud service."

@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 11/17/2014
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 73957938-048a-4f9c-bd0f-a3c2c3dcd638
 description: "You can view or set the Unified Messaging (UM) and voice mail features and configuration settings for a user that's been enabled for UM and voice mail. For example, you can do the following:"

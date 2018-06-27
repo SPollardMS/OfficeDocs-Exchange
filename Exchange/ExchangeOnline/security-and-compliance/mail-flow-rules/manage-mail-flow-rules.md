@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 6/23/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: e7a81372-b6d7-4d1f-bc9e-a845a7facac2
 description: "You can use mail flow rules, also known as transport rules, to look for specific conditions on messages that pass through your organization and take action on them. This topic shows you how to create, copy, adjust the order, enable or disable, delete, or import or export rules, and how to monitor rule usage."

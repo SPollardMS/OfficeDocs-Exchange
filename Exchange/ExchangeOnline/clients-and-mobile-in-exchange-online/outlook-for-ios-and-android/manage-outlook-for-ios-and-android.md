@@ -6,7 +6,7 @@ manager: laurawi
 ms.date: 3/30/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 30e8c819-4d41-4458-a746-a9ba9a84a7c0
 description: "Summary: This article describes best practices for managing mobile devices with Outlook for iOS and Android in Exchange Online."

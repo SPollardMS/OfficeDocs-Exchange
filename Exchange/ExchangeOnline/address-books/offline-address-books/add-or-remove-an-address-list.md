@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 12/16/2014
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 86bd5651-ad41-4516-bf23-6579f4e4da03
 description: "You can use the Shell to add or remove an address list from an offline address book (OAB). By default, there is an OAB named the Default Offline Address Book that contains the global address list (GAL). OABs are generated based on the address lists that they contain. To create custom OABs that users can download, you can add or remove address lists from OABs."

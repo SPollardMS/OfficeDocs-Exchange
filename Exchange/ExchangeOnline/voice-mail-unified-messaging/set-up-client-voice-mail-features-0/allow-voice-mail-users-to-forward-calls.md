@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 11/17/2014
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 1f8e0a53-3d9d-4f8c-9be3-9f1e2a4347a3
 description: "The Call Answering Rules feature was first introduced in Exchange 2010. Using this feature, users who are enabled for voice mail can control how their incoming calls should be handled. Call answering rules are applied to incoming calls similar to the way Inbox rules are applied to incoming email messages."

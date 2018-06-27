@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 3/30/2016
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: ba1ca350-71c2-4c60-a612-33bfa9320b5e
 description: "After you create an address book policy (ABP), you can view or modify the name and the assigned global address list (GAL), offline address book (OAB), room list, and address lists."

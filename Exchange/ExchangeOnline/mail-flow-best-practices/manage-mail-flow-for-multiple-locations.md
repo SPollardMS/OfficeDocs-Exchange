@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 1/26/2018
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: e1da5f2f-c732-4010-85c9-878b2cef3fb3
 description: "Summary: How to manage mail flow in an Exchange hybrid environment, which is when some mailboxes are on-premises and some are in Office 365."

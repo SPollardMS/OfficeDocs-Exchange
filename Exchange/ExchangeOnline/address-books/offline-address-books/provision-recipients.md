@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 11/17/2014
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 141751ac-16d3-4e3c-b70c-004aeedcb5a0
 description: "If you use multiple offline address books (OABs) in your organization, there are several ways to specify which recipients download which OABs:"

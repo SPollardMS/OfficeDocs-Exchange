@@ -6,7 +6,7 @@ manager: scotv
 ms.date: 11/17/2014
 ms.audience: ITPro
 ms.topic: article
-ms.prod: office-online-server
+ms.service: exchange-online
 localization_priority: Normal
 ms.assetid: 3154be11-1a9d-4e51-a2d0-592ddbcca7b1
 description: "Configure Voice Mail Preview partner services for users"
