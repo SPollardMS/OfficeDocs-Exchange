@@ -51,7 +51,7 @@ The information in an NDR is separated into two sections:
     
     You can use the **New-SystemMessage** cmdlet in the Exchange Management Shell to modify the text that appears in user information section for a given enhanced status code (including different text in different languages). By creating custom explanations, you can provide specific content for your environment, such as contact information for your help desk, or links to your Intranet for self-service support. For more information, see [Procedures for DSNs and NDRs in Exchange 2016](ndr-procedures.md).
     
-  - The [Common enhanced status codes](non-delivery-reports-and-bounce-messages.md#Codes) section in this topic explains what the numbers mean, the codes that you're likely to encounter, and suggestions to fix the underlying problem that prevented the message from being delivered. 
+  - The [Common enhanced status codes](non-delivery-reports-and-bounce-messages.md#Codes) section in this topic explains what the numbers mean, the codes that you're likely to encounter, and suggestions to fix the underlying problem that prevented the message from being delivered.
     
     The following information is also available in this section:
     
@@ -69,14 +69,14 @@ The information in an NDR is separated into two sections:
     
   - **SMTP response**: The US-ASCII text string that's returned by the messaging server that rejected the original message. This is typically a short explanation of the enhanced status code. This string is not rewritten by Exchange.
     
-  - **Original message headers**: This area contains the message header of the rejected message. These header fields can provide useful diagnostic information (for example, server hops in the message routing path, or whether the **To** field matches the email address of the rejected recipient). 
+  - **Original message headers**: This area contains the message header of the rejected message. These header fields can provide useful diagnostic information (for example, server hops in the message routing path, or whether the **To** field matches the email address of the rejected recipient).
     
 ## Common enhanced status codes
 <a name="Codes"> </a>
 
 Enhanced status codes are defined in RFC 3463, and use the syntax _\<class\>_. _\<subject\>_. _\<detail\>_:
   
-- _\<class\>_: **4** indicates a temporary delivery error. **5** indicates a permanent delivery error. 
+- _\<class\>_: **4** indicates a temporary delivery error. **5** indicates a permanent delivery error.
     
 - _\<subject\>_: The RFC categorizes the values like this:
     
@@ -97,7 +97,7 @@ Enhanced status codes are defined in RFC 3463, and use the syntax _\<class\>_. _
 The following tables contain the enhanced status codes that are returned in NDRs for the most common message delivery failures.
   
 > [!NOTE]
-> For information about enhanced status codes in Office 365 and hybrid environments, see [Email non-delivery reports in Office 365](https://go.microsoft.com/fwlink/p/?LinkId=524931). 
+> For information about enhanced status codes in Office 365 and hybrid environments, see [Email non-delivery reports in Office 365](https://go.microsoft.com/fwlink/p/?LinkId=524931).
   
 **Temporary delivery failures**
 

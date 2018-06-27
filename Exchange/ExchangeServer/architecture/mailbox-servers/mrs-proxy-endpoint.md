@@ -19,7 +19,7 @@ The Mailbox Replication service (MRS) has a proxy endpoint that's required for c
   
 Where you enable the MRS Proxy endpoint depends on the type and direction of the mailbox move:
   
-- **Cross-forest enterprise moves**: For cross-forest moves that are initiated from the target forest (known as a *pull* move type), you need to enable the MRS Proxy endpoint on Mailbox servers in the source forest. For cross-forest moves that are initiated from the source forest (known as a *push* move type), you need to enable the MRS Proxy endpoint on Mailbox servers in the target forest. 
+- **Cross-forest enterprise moves**: For cross-forest moves that are initiated from the target forest (known as a *pull* move type), you need to enable the MRS Proxy endpoint on Mailbox servers in the source forest. For cross-forest moves that are initiated from the source forest (known as a *push* move type), you need to enable the MRS Proxy endpoint on Mailbox servers in the target forest.
     
 - **Remote move migrations between an on-premises Exchange organization and Office 365**. For both onboarding and offboarding remote move migrations, you need to enable the MRS Proxy endpoint on Mailbox servers in your on-premises Exchange organization.
     
@@ -29,7 +29,7 @@ Where you enable the MRS Proxy endpoint depends on the type and direction of the
 
 - Estimated time to complete: 2 minutes per server.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Exchange Web Services permissions" section in the [Clients and mobile devices permissions](../../permissions/feature-permissions/client-and-mobile-device-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Exchange Web Services permissions" section in the [Clients and mobile devices permissions](../../permissions/feature-permissions/client-and-mobile-device-permissions.md) topic.
     
 - If you've deployed multiple Mailbox servers in your Exchange organization, you should enable the MRS Proxy endpoint in the Client Access services on each Mailbox server. If you add additional Mailbox servers, be sure to enable the MRS Proxy endpoint on the new servers. Cross-forest moves and remote move migrations can fail if the MRS Proxy endpoint isn't enabled on all Mailbox servers.
     
@@ -38,7 +38,7 @@ Where you enable the MRS Proxy endpoint depends on the type and direction of the
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).. 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351)..
   
 ## Use the EAC to enable the MRS Proxy endpoint
 
@@ -46,11 +46,11 @@ Where you enable the MRS Proxy endpoint depends on the type and direction of the
     
 2. Select the EWS virtual directory that you want to configure.
     
-  - You can use the **Select server** drop down list to filter the Exchange servers by name. 
+  - You can use the **Select server** drop down list to filter the Exchange servers by name.
     
-  - To only display EWS virtual directories, select **EWS** in the **Select type** drop down list. 
+  - To only display EWS virtual directories, select **EWS** in the **Select type** drop down list.
     
-    After you've selected the EWS virtual directory that you want to configure, click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
+    After you've selected the EWS virtual directory that you want to configure, click **Edit** ![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     ![In the EAC, go to Servers \> Virtual Directories, and select the EWS virtual directory](../../media/2d65b172-eadd-49d5-ab70-9500b2e2e6f6.png)
   
 3. On the properties page that opens, on the **General** tab, select the **Enable MRS Proxy endpoint** check box, and then click **Save**.
@@ -82,7 +82,8 @@ For detailed syntax and parameter information, see [Set-WebServicesVirtualDirect
 
 To verify that you've successfully enabled the MRS Proxy endpoint, do any of these steps:
   
-- In the EAC, got to **Recipients** \> **Servers** \> **Virtual Directories** \> select the EWS virtual directory, and verify in the details pane that the MRS Proxy endpoint is enabled. 
+- In the EAC, got to **Recipients** \> **Servers** \> **Virtual Directories** \> select the EWS virtual directory, and verify in the details pane that the MRS Proxy endpoint is enabled.
+
     ![In the EAC, select the EWS virtual directory, and verify that the MRS Proxy endpoint is enabled in the details pane.](../../media/3999dc9a-44a1-442d-bda7-866c365f7846.png)
   
 - Run this command in the Exchange Management Shell, and verify that the **MRSProxyEnabled** property for the EWS virtual directory has the value `True`:
@@ -91,7 +92,7 @@ To verify that you've successfully enabled the MRS Proxy endpoint, do any of the
   Get-WebServicesVirtualDirectory | Format-Table -Auto Identity,MRSProxyEnabled
   ```
 
-- Use the **Test-MigrationServerAvailability** cmdlet in the Exchange Management Shell to test communication with the remote servers that hosts the mailboxes that you want to move (or the servers in your on-premises Exchange organization for offboarding remote move migrations from Office 365). 
+- Use the **Test-MigrationServerAvailability** cmdlet in the Exchange Management Shell to test communication with the remote servers that hosts the mailboxes that you want to move (or the servers in your on-premises Exchange organization for offboarding remote move migrations from Office 365).
     
     Replace _\<EmailAddress\>_ with the email address of one of the mailboxes that you want to move, and run this command in the Exchange Management Shell: 
     

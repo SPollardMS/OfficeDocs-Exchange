@@ -21,8 +21,6 @@ This reference topic provides a summary of the Active Directory schema changes t
   
 Exchange 2016 schema updates are cumulative. Each release includes all of the changes included in previous releases. This means that if you skip a release, you may still need to apply schema updates even if the release you're installing doesn't include its own changes. The following table gives examples of when your Active Directory will be updated, and when it's already up-to-date.
   
-|
-|
 |**Current Exchange 2016 release installed**|**New Exchange 2016 release being installed**|**Are schema updates required?**|
 |:-----|:-----|:-----|
 |Release to Manufacturing  <br/> |Cumulative Update 4  <br/> |**Yes**, updates are required. Schema updates included in CU1, CU2, and CU3 need to be applied.  <br/> |
@@ -30,7 +28,7 @@ Exchange 2016 schema updates are cumulative. Each release includes all of the ch
 |Cumulative Update 3  <br/> |Cumulative Update 4  <br/> |**No**, no updates are required. No changes were made in CU4.  <br/> |
    
 > [!NOTE]
-> The Active Directory schema changes identified in this topic may not apply to all editions of an Exchange Server version. > To verify that Active Directory has been successfully prepared, see the "How do you know this worked?" section in [Prepare Active Directory and domains](../../plan-and-deploy/prepare-ad-and-domains.md). 
+> The Active Directory schema changes identified in this topic may not apply to all editions of an Exchange Server version. > To verify that Active Directory has been successfully prepared, see the "How do you know this worked?" section in [Prepare Active Directory and domains](../../plan-and-deploy/prepare-ad-and-domains.md).
   
 ## Exchange 2016 CU9 Active Directory schema changes
 
@@ -319,7 +317,7 @@ This section summarizes the changes that are made to the Active Directory schema
 - [Extended rights added by Exchange 2016 RTM](ad-schema-changes.md#ExtendedAddRTM)
     
 > [!NOTE]
-> No changes to the Active Directory schema were made between Exchange 2016 Preview and Exchange 2016 RTM. 
+> No changes to the Active Directory schema were made between Exchange 2016 Preview and Exchange 2016 RTM.
   
 ### Classes added by Exchange 2016 RTM
 <a name="ClassesAddRTM"> </a>

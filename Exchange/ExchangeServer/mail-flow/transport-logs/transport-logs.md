@@ -88,11 +88,11 @@ Delivery reports for administrators is a targeted search of the message tracking
   
 - **Mailbox servers**: `%ExchangeInstallPath%TransportRoles\Logs\MessageTracking`:
     
-  - `MSGTRK` files for the Transport service. 
+  - `MSGTRK` files for the Transport service.
     
-  - `MSGTRMD` files for the Mailbox Transport Delivery service. 
+  - `MSGTRMD` files for the Mailbox Transport Delivery service.
     
-  - `MSGTRMS` files for the Mailbox Transport Submission service. 
+  - `MSGTRMS` files for the Mailbox Transport Submission service.
     
 - **Transport service on Edge Transport servers**: `%ExchangeInstallPath%TransportRoles\Logs\MessageTracking`
     
@@ -126,7 +126,7 @@ Protocol logging records the SMTP conversations that occur on Send connectors an
     
  **Enabled by default?**: Only on these connectors:
   
-- The default Receive connector named Default Frontend _\<ServerName\>_ in the Front End Transport service on Mailbox servers. 
+- The default Receive connector named Default Frontend _\<ServerName\>_ in the Front End Transport service on Mailbox servers.
     
 - The implicit and invisible Send connector in the Front End Transport service on Mailbox servers.
     
@@ -184,9 +184,9 @@ Routing table logging periodically records snapshots of the routing table that E
     
   - **Mailbox Transport service:**: `%ExchangeInstallPath%TransportRoles\Logs\Mailbox\Routing`:
     
-  - `MDRoutingConfig` files for the Mailbox Transport Delivery service. 
+  - `MDRoutingConfig` files for the Mailbox Transport Delivery service.
     
-  - `MSRoutingConfig` files for the Mailbox Transport Submission service. 
+  - `MSRoutingConfig` files for the Mailbox Transport Submission service.
     
 - **Transport service on Edge Transport servers**: `%ExchangeInstallPath%TransportRoles\Logs\Edge\Routing`
     

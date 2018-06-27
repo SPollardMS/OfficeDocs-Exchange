@@ -20,15 +20,15 @@ description: "Summary: Guidance for planning and deploying Exchange 2016."
 The following sections contain links to information about planning for and then deploying Microsoft Exchange Server 2016.
 
 > [!IMPORTANT]
-> Make sure you read the [Release notes for Exchange 2016](../release-notes.md) topic before you begin your deployment. The release notes contain important information on issues you might encounter during and after your deployment. 
+> Make sure you read the [Release notes for Exchange 2016](../release-notes.md) topic before you begin your deployment. The release notes contain important information on issues you might encounter during and after your deployment.
 
 ## Planning for Exchange 2016
 <a name="Planning"> </a>
 
- Use the following links to access information to help you plan the deployment of Exchange Server 2016 into your organization. 
+ Use the following links to access information to help you plan the deployment of Exchange Server 2016 into your organization.
 
 > [!IMPORTANT]
-> See [Establish a Test Environment](#test.md) later in this topic about installing Exchange 2016 in a test environment. 
+> See [Establish a Test Environment](#test.md) later in this topic about installing Exchange 2016 in a test environment.
 
 [Exchange 2016 architecture](../architecture/architecture.md)
 
@@ -69,9 +69,9 @@ The following sections contain links to information about planning for and then 
 ### Establish a test environment
 <a name="Test"> </a>
 
-Before installing Exchange 2016 for the first time, we recommend that you install it in an isolated test environment. This approach reduces the risk of end-user downtime and negative ramifications to the production environment. 
+Before installing Exchange 2016 for the first time, we recommend that you install it in an isolated test environment. This approach reduces the risk of end-user downtime and negative ramifications to the production environment.
 
-The test environment will act as your "proof of concept" for your new Exchange 2016 design and make it possible to move forward or roll back any implementations before deploying into your production environments. Having an exclusive test environment for validation and testing allows you to do pre-installation checks for your future production environments. By installing in a test environment first, we believe that your organization will have a better likelihood of success in a full production implementation. 
+The test environment will act as your "proof of concept" for your new Exchange 2016 design and make it possible to move forward or roll back any implementations before deploying into your production environments. Having an exclusive test environment for validation and testing allows you to do pre-installation checks for your future production environments. By installing in a test environment first, we believe that your organization will have a better likelihood of success in a full production implementation.
 
 For many organizations, the costs of building a test lab may be high because of the need to duplicate the production environment. To reduce the hardware costs associated with a prototype lab, we recommend the use of virtualization by using Windows Server 2012 R2 or Windows Server 2012 Hyper-V technologies. Hyper-V enables server virtualization, allowing multiple virtual operating systems to run on a single physical machine.
 
@@ -80,7 +80,7 @@ For more detailed information about Hyper-V, see [Server Virtualization](https:/
 ## Deploying Exchange 2016
 <a name="Deployment"> </a>
 
-The deployment phase is the period during which you install Exchange 2016 into your organization. Before you begin the deployment phase, you should plan your Exchange organization. For more information, see the [Planning for Exchange 2016](#Planning.md) section earlier in this topic. 
+The deployment phase is the period during which you install Exchange 2016 into your organization. Before you begin the deployment phase, you should plan your Exchange organization. For more information, see the [Planning for Exchange 2016](#Planning.md) section earlier in this topic.
 
 Use the following links to access the information you need to help you with deploying Exchange 2016.
 
@@ -125,7 +125,7 @@ Exchange 2016 is available in two server editions: Standard Edition and Enterpri
 
 You have the following options for Exchange 2016 Setup:
 
-- **Exchange Setup UI**: Running Setup.exe without any command-line switches provides an interactive experience where you are guided by the Exchange 2016 Setup wizard.
+- **Exchange Setup UI**: Running Setup.exe without any command-line switches provides an interactive experience where you're guided by the Exchange 2016 Setup wizard.
 
 - **Exchange Unattended Setup**: Running Setup.exe with command-line switches enables you to install Exchange from an interactive command line or through a script.
 
@@ -141,11 +141,11 @@ Setup for Exchange 2016 includes several installation modes:
 - **Upgrade**: Select this mode used when you have an existing installation of Exchange and you're installing a cumulative update or service pack. You can use this mode from both the Exchange Setup wizard and the unattended install.
 
   > [!NOTE]
-  > Exchange 2016 doesn't support in-place upgrades from previous versions of Exchange. This mode is used only to install cumulative updates or service packs. 
+  > Exchange 2016 doesn't support in-place upgrades from previous versions of Exchange. This mode is used only to install cumulative updates or service packs.
 
-- **RecoverServer**: Use this mode when there has been a catastrophic failure of a server, and you need to recover data. You must install a server using the same fully qualified domain name (FQDN) as the failed server, and then run Setup with the **/m:RecoverServer** switch. Don't specify the roles to restore. Setup detects the Exchange Server object in Active Directory and installs the corresponding files and configuration automatically. After you recover the server, you can restore databases and reconfigure any additional settings. To run in **RecoverServer** mode, you can't have Exchange installed on the server. The Exchange server object must exist in Active Directory. You can only use this mode during an unattended installation. 
+- **RecoverServer**: Use this mode when there has been a catastrophic failure of a server, and you need to recover data. You must install a server using the same fully qualified domain name (FQDN) as the failed server, and then run Setup with the **/m:RecoverServer** switch. Don't specify the roles to restore. Setup detects the Exchange Server object in Active Directory and installs the corresponding files and configuration automatically. After you recover the server, you can restore databases and reconfigure any additional settings. To run in **RecoverServer** mode, you can't have Exchange installed on the server. The Exchange server object must exist in Active Directory. You can only use this mode during an unattended installation.
 
   > [!NOTE]
-  > You must complete one mode of Setup before you can use another mode. 
+  > You must complete one mode of Setup before you can use another mode.
 
 

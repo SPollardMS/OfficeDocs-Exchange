@@ -15,7 +15,7 @@ description: "Summary: Learn about changing a mailbox from one type to another i
 
  **Summary**: Learn about changing a mailbox from one type to another in Exchange 2016.
   
-In Exchange 2016, converting a mailbox from one type of mailbox to another is mostly unchanged from the experience in Exchange 2010. You still need to use the **Set-Mailbox** cmdlet in the Exchange Management Shell to do the conversion. 
+In Exchange 2016, converting a mailbox from one type of mailbox to another is mostly unchanged from the experience in Exchange 2010. You still need to use the **Set-Mailbox** cmdlet in the Exchange Management Shell to do the conversion.
   
 You can convert the following mailboxes to a different type:
   
@@ -31,7 +31,7 @@ You can convert the following mailboxes to a different type:
     
 - Room or equipment mailbox to shared mailbox
     
- **Note:** If your organization uses a hybrid Exchange environment, you need to manage your mailboxes by using the on-premises Exchange management tools. To convert a mailbox in a hybrid environment, you might need to move the mailbox back to on-premises Exchange, convert the mailbox type, and then move it back to Office 365. 
+ **Note:** If your organization uses a hybrid Exchange environment, you need to manage your mailboxes by using the on-premises Exchange management tools. To convert a mailbox in a hybrid environment, you might need to move the mailbox back to on-premises Exchange, convert the mailbox type, and then move it back to Office 365.
   
 ## What do you need to know before you begin?
 
@@ -47,12 +47,12 @@ You can convert the following mailboxes to a different type:
     
 - To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" section in the [Recipients Permissions](../../permissions/feature-permissions/recipient-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" section in the [Recipients Permissions](../../permissions/feature-permissions/recipient-permissions.md) topic.
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).. 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351)..
   
 ## Use the Exchange Management Shell to convert a mailbox
 
@@ -80,7 +80,7 @@ This is the same example, but the user account for the room mailbox is enabled, 
 Set-Mailbox -Identity "Conference Room 01" -Type Room -EnableRoomMailboxAccount $true -RoomMailboxPassword (ConvertTo-SecureString -String 'P@ssw0rd25' -AsPlainText -Force)
 ```
 
- **Note**: Even when you convert a user mailbox with a known password to a room mailbox, you still need to use the _RoomMailboxPassword_ parameter to specify a password. 
+ **Note**: Even when you convert a user mailbox with a known password to a room mailbox, you still need to use the _RoomMailboxPassword_ parameter to specify a password.
   
 For detailed syntax and parameter information, see [Set-Mailbox](http://technet.microsoft.com/library/a0d413b9-d949-4df6-ba96-ac0906dedae2.aspx).
   

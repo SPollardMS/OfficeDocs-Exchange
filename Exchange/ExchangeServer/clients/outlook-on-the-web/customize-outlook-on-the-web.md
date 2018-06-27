@@ -32,14 +32,14 @@ For more information about Outlook on the web, see [Outlook on the web in Exchan
 
 - Estimated time to complete this task: 30 minutes.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Graphics editor" entry under "Outlook on the web Permissions" in the [Clients and mobile devices permissions](../../permissions/feature-permissions/client-and-mobile-device-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Graphics editor" entry under "Outlook on the web Permissions" in the [Clients and mobile devices permissions](../../permissions/feature-permissions/client-and-mobile-device-permissions.md) topic.
     
 - To replace the existing color with a new color, you need the HTML RGB value of the new color. You can find HTML RGB values in the topic [Color Table](https://go.microsoft.com/fwlink/p/?LinkId=280679). If you can't find the color there, you can use an image editing tool to sample a color and determine its HTML RGB value.
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
   
 ## Customize the color of the Outlook on the web sign-in page
 
@@ -47,21 +47,21 @@ For more information about Outlook on the web, see [Outlook on the web in Exchan
     
     **Note**: The _\<ExchangeVersion\>_ subfolder uses the syntax 15.1. _nnn_. _nn_, and changes every time you install an Exchange Cumulative Update (CU).
     
-2. In the `logon.css` file, replace the default blue color value #0072c6 with the HTML RGB value that you want to use. 
+2. In the `logon.css` file, replace the default blue color value #0072c6 with the HTML RGB value that you want to use.
     
-3. When you are finished, save and close the file.
+3. When you're finished, save and close the file.
     
-![Outlook on the Web sign-in page with element call-outs](../../media/04da354c-d1fd-43fb-9fd3-6114cdb64314.png)
+    ![Outlook on the Web sign-in page with element call-outs](../../media/04da354c-d1fd-43fb-9fd3-6114cdb64314.png)
   
 ## Customize the color of the Outlook on the web error page
 
 1. Use Notepad to open the file `%ExchangeInstallPath%FrontEnd\HttpProxy\owa\auth\<ExchangeVersion>\themes\resources\errorFE.css`.
     
-2. In the `errorFE.css` file, replace the default blue color value #0072c6 with the HTML RGB value that you want to use. 
+2. In the `errorFE.css` file, replace the default blue color value #0072c6 with the HTML RGB value that you want to use.
     
-3. When you are finished, save and close the file.
+3. When you're finished, save and close the file.
     
-![Outlook on the web error page with element call-outs](../../media/fcf95834-6c41-42f4-915d-a6593bccd9f6.png)
+    ![Outlook on the web error page with element call-outs](../../media/fcf95834-6c41-42f4-915d-a6593bccd9f6.png)
   
 ## Customize the color of the Outlook on the web language selection page
 
@@ -71,11 +71,11 @@ For more information about Outlook on the web, see [Outlook on the web in Exchan
   Notepad.exe %ExchangeInstallPath%ClientAccess\Owa\Current2\version\resources\styles\languageselection.css
   ```
 
-2. In the `languageselection.css` file, replace the default blue color value #0072c6 with the HTML RGB value that you want to use. 
+2. In the `languageselection.css` file, replace the default blue color value #0072c6 with the HTML RGB value that you want to use.
     
-3. When you are finished, save and close the file.
+3. When you're finished, save and close the file.
     
-![Outlook on the web language selection page with element call-outs](../../media/6876eb09-a53b-441c-ad76-01bfb9676c53.png)
+    ![Outlook on the web language selection page with element call-outs](../../media/6876eb09-a53b-441c-ad76-01bfb9676c53.png)
   
 ## Customize the images on the Outlook on the web sign-in, language selection, and error pages
 

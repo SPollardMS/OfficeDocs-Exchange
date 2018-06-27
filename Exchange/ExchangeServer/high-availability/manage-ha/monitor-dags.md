@@ -21,7 +21,7 @@ You can use the details in this topic for monitoring mailbox database copies for
 ## Get-MailboxDatabaseCopyStatus cmdlet
 <a name="Get"> </a>
 
-Use the [Get-MailboxDatabaseCopyStatus](http://technet.microsoft.com/library/6ad690fb-3a23-41d4-b19d-666b34e62b26.aspx) cmdlet to view status information about mailbox database copies. This cmdlet enables you to view information about all copies of a particular database, information about a specific copy of a database on a specific server, or information about all database copies on a server. The following table describes possible values for the copy status of a mailbox database copy. 
+Use the [Get-MailboxDatabaseCopyStatus](http://technet.microsoft.com/library/6ad690fb-3a23-41d4-b19d-666b34e62b26.aspx) cmdlet to view status information about mailbox database copies. This cmdlet enables you to view information about all copies of a particular database, information about a specific copy of a database on a specific server, or information about all database copies on a server. The following table describes possible values for the copy status of a mailbox database copy.
   
 **Database copy status**
 
@@ -48,7 +48,7 @@ The **Get-MailboxDatabaseCopyStatus** cmdlet also returns details about the in-u
   
 ### Get-MailboxDatabaseCopyStatus examples
 
-The following examples use the **Get-MailboxDatabaseCopyStatus** cmdlet. Each example pipes the results to the **Format-List** cmdlet to display the output in list format. 
+The following examples use the **Get-MailboxDatabaseCopyStatus** cmdlet. Each example pipes the results to the **Format-List** cmdlet to display the output in list format.
   
 This example returns status information for all copies of the database DB2.
   
@@ -73,9 +73,9 @@ For more information about using the **Get-MailboxDatabaseCopyStatus** cmdlet, s
 ## Test-ReplicationHealth cmdlet
 <a name="Test"> </a>
 
-You can use the [Test-ReplicationHealth](http://technet.microsoft.com/library/da55fa0f-e100-44b1-b9b4-bf14e55a5b4d.aspx) cmdlet to view continuous replication status information about mailbox database copies. This cmdlet can be used to check all aspects of the replication and replay status to provide a complete overview of a specific Mailbox server in a DAG. 
+You can use the [Test-ReplicationHealth](http://technet.microsoft.com/library/da55fa0f-e100-44b1-b9b4-bf14e55a5b4d.aspx) cmdlet to view continuous replication status information about mailbox database copies. This cmdlet can be used to check all aspects of the replication and replay status to provide a complete overview of a specific Mailbox server in a DAG.
   
-The **Test-ReplicationHealth** cmdlet is designed for the proactive monitoring of continuous replication and the continuous replication pipeline, the availability of Active Manager, and the health and status of the underlying cluster service, quorum, and network components. It can be run locally on or remotely against any Mailbox server in a DAG. The **Test-ReplicationHealth** cmdlet performs the tests listed in the following table. 
+The **Test-ReplicationHealth** cmdlet is designed for the proactive monitoring of continuous replication and the continuous replication pipeline, the availability of Active Manager, and the health and status of the underlying cluster service, quorum, and network components. It can be run locally on or remotely against any Mailbox server in a DAG. The **Test-ReplicationHealth** cmdlet performs the tests listed in the following table.
   
 **Test-ReplicationHealth cmdlet tests**
 
@@ -102,7 +102,7 @@ The **Test-ReplicationHealth** cmdlet is designed for the proactive monitoring o
    
 ### Test-ReplicationHealth example
 
-This example uses the **Test-ReplicationHealth** cmdlet to test the health of replication for the Mailbox server MBX1. 
+This example uses the **Test-ReplicationHealth** cmdlet to test the health of replication for the Mailbox server MBX1.
   
 ```
 Test-ReplicationHealth -Identity MBX1
@@ -123,7 +123,7 @@ Exchange 2016 logs events to crimson channels in the Applications and Services l
     
 2. In the console tree, navigate to **Applications and Services Logs** \> **Microsoft** \> **Exchange**.
     
-3. Under **Exchange**, select a crimson channel, such as **HighAvailability** or **MailboxDatabaseFailureItems** to see DAG and database copy-related events, or **ActiveMontoring** or **ManagedAvailability** to see events related to Managed Availability. 
+3. Under **Exchange**, select a crimson channel, such as **HighAvailability** or **MailboxDatabaseFailureItems** to see DAG and database copy-related events, or **ActiveMontoring** or **ManagedAvailability** to see events related to Managed Availability.
     
 The HighAvailability channel contains events related to startup and shutdown of the Microsoft Exchange Replication service, and the various components that run within the Microsoft Exchange Replication service, such as Active Manager, the third-party synchronous replication API, the tasks RPC server, TCP listener, and Volume Shadow Copy Service (VSS) writer. The HighAvailability channel is also used by Active Manager to log events related to Active Manager role monitoring and database action events, such as a database mount operation and log truncation, and to record events related to the DAG's underlying cluster.
   
@@ -165,7 +165,7 @@ Exchange 2016 includes a script called CollectOverMetrics.ps1, which can be foun
     
 The script writes this information to .csv files with one operation per row. It writes a separate .csv file for each DAG.
   
-The script supports parameters that allow you to customize the script's behavior and output. For example, the results can be restricted to a specified subset by using the _Database_ or _ReportFilter_ parameters. Only the operations that match these filters will be included in the summary HTML report. The available parameters are listed in the following table. 
+The script supports parameters that allow you to customize the script's behavior and output. For example, the results can be restricted to a specified subset by using the _Database_ or _ReportFilter_ parameters. Only the operations that match these filters will be included in the summary HTML report. The available parameters are listed in the following table.
   
 **CollectOverMetrics.ps1 script parameters**
 
@@ -194,7 +194,7 @@ The following example collects metrics for all databases that match DB\* (which 
 CollectOverMetrics.ps1 -DatabaseAvailabilityGroup DAG1 -Database:"DB*" -GenerateHTMLReport -ShowHTMLReport
 ```
 
-The following examples demonstrate ways that the summary HTML report may be filtered. The first uses the _Database_ parameter, which takes a list of database names. The summary report then contains data only about those databases. The next two examples use the _ReportFilter_ option. The last example filters out all the default databases. 
+The following examples demonstrate ways that the summary HTML report may be filtered. The first uses the _Database_ parameter, which takes a list of database names. The summary report then contains data only about those databases. The next two examples use the _ReportFilter_ option. The last example filters out all the default databases.
   
 ```
 CollectOverMetrics.ps1 -SummariseCsvFiles (dir *.csv) -Database MailboxDatabase123,MailboxDatabase456
@@ -215,7 +215,7 @@ CollectReplicationMetrics.ps1 is another health metric script included in Exchan
   
 You can either specify the servers individually, or you can specify entire DAGs. You can either run the script to first collect the data and then generate the report, or you can run it to just gather the data or to only report on data that's already been collected. You can specify the frequency at which data should be sampled and the total duration to gather data.
   
-The data collected from each server is written to a file named **CounterData.\<ServerName\>.\<TimeStamp\>.csv**. The summary report will be written to a file named **HaReplPerfReport.\<DAGName\>.\<TimeStamp\>.csv**, or **HaReplPerfReport.\<TimeStamp\>.csv** if you didn't run the script with the _DagName_ parameter. 
+The data collected from each server is written to a file named **CounterData.\<ServerName\>.\<TimeStamp\>.csv**. The summary report will be written to a file named **HaReplPerfReport.\<DAGName\>.\<TimeStamp\>.csv**, or **HaReplPerfReport.\<TimeStamp\>.csv** if you didn't run the script with the _DagName_ parameter.
   
 The script starts Windows PowerShell jobs to collect the data from each server. These jobs run for the full period in which data is being collected. If you specify a large number of servers, this process can use a considerable amount of memory. The final stage of the process, when data is processed into a summary report, can also be quite time consuming for large amounts of data. It's possible to run the collection stage on one computer, and then copy the data elsewhere for processing.
   
@@ -238,7 +238,7 @@ The CollectReplicationMetrics.ps1 script supports parameters that allow you to c
    
 ### CollectReplicationMetrics.ps1 example
 
-The following example gathers one hour's worth of data from all the servers in the DAG DAG1, sampled at one minute intervals, and then generates a summary report. In addition, the _ReportPath_ parameter is used, which causes the script to place all the files in the current directory. 
+The following example gathers one hour's worth of data from all the servers in the DAG DAG1, sampled at one minute intervals, and then generates a summary report. In addition, the _ReportPath_ parameter is used, which causes the script to place all the files in the current directory.
   
 ```
 CollectReplicationMetrics.ps1 -DagName DAG1 -Duration "01:00:00" -Frequency "00:01:00" -ReportPath

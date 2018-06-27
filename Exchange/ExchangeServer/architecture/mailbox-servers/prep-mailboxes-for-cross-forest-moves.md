@@ -16,7 +16,7 @@ description: "Summary: Learn about preparing mailboxes for cross-forest moves in
 
  **Summary**: Learn about preparing mailboxes for cross-forest moves in Exchange 2016.
   
-Mailbox moves and mailbox migrations in Exchange 2016 from one forest to another require that you prepare the destination forest, which is made easier by Exchange tools and cmdlets. Exchange 2016 supports mailbox moves and migrations using the Exchange Management Shell, specifically the **New-MoveRequest** and **New-MigrationBatch** cmdlets. You can also move the mailbox in the Exchange admin center (EAC). Note that you can move Exchange 2010 and Exchange 2013 mailboxes to an Exchange 2016 forest. 
+Mailbox moves and mailbox migrations in Exchange 2016 from one forest to another require that you prepare the destination forest, which is made easier by Exchange tools and cmdlets. Exchange 2016 supports mailbox moves and migrations using the Exchange Management Shell, specifically the **New-MoveRequest** and **New-MigrationBatch** cmdlets. You can also move the mailbox in the Exchange admin center (EAC). Note that you can move Exchange 2010 and Exchange 2013 mailboxes to an Exchange 2016 forest.
   
 To move a mailbox from an Exchange forest to an Exchange 2016 forest, the Exchange 2016 target forest needs to contain a valid mail-enabled user with a specified set of Active Directory attributes. If there is at least one Exchange 2016 Mailbox server deployed in the forest, the forest is considered an Exchange 2016 forest.
   
@@ -26,11 +26,11 @@ To prepare for the mailbox move, you have to create mail-enabled users with the 
     
     For more information, including how to download the sample code, see [Prepare Mailboxes for Cross-Forest Moves Using Sample Code](http://technet.microsoft.com/library/f35ac7a5-bb84-4653-b6d0-65906e93627b.aspx).
     
-- If you created the target mail user using an Active Directory tool other than ILM or Microsoft Identity Integration Server (MIIS), use the **Update-Recipient** cmdlet with the _Identity_ parameter to run the Address List service to generate the **LegacyExchangeDN** for the target mail user. We have created a sample PowerShell script that reads from and writes to Active Directory and calls the **Update-Recipient** cmdlet. 
+- If you created the target mail user using an Active Directory tool other than ILM or Microsoft Identity Integration Server (MIIS), use the **Update-Recipient** cmdlet with the _Identity_ parameter to run the Address List service to generate the **LegacyExchangeDN** for the target mail user. We have created a sample PowerShell script that reads from and writes to Active Directory and calls the **Update-Recipient** cmdlet.
     
     For more information about using the sample script, see [Prepare mailboxes for cross-forest moves using the Exchange Management Shell](prep-mailboxes-for-cross-forest-moves-in-powershell.md).
     
-After creating the target mail user, you can then run the **New-MoveRequest** or the **New-MigrationBatch** cmdlets to move the mailbox to the target Exchange 2016 forest. 
+After creating the target mail user, you can then run the **New-MoveRequest** or the **New-MigrationBatch** cmdlets to move the mailbox to the target Exchange 2016 forest.
   
 For more information about remote move requests, see the following topics:
   
@@ -60,7 +60,7 @@ To support a remote mailbox move, the mail user object in the target Exchange 20
     
 ### Mandatory attributes
 
-The following table lists the minimum set of attributes that need to be configured in ILM on the target mail user for the **New-MoveRequest** cmdlet to function correctly. 
+The following table lists the minimum set of attributes that need to be configured in ILM on the target mail user for the **New-MoveRequest** cmdlet to function correctly.
   
 **Mail user's attributes**
 
@@ -84,7 +84,7 @@ The following table lists the minimum set of attributes that need to be configur
    
 ### Optional attributes
 
-It isn't mandatory that the following attributes are configured for the **New-MoveRequest** cmdlet to function correctly; however, synchronizing them provides a better end-to-end user experience after moving the mailbox. Because the GAL in the target forest displays this target mail user, you should set the following GAL-related attributes. 
+It isn't mandatory that the following attributes are configured for the **New-MoveRequest** cmdlet to function correctly; however, synchronizing them provides a better end-to-end user experience after moving the mailbox. Because the GAL in the target forest displays this target mail user, you should set the following GAL-related attributes.
   
 **GAL-related attributes**
 
@@ -132,7 +132,7 @@ A linked attribute is an Active Directory attribute that references other Active
    
 ### Linked user attributes
 
-If you want to move a mailbox to an Exchange 2016 resource forest, the mailbox in the resource forest is considered a *linked mailbox* . In this scenario, you need to create a linked mail user in the (target) resource forest. To create a linked mail user, you need to set the attributes shown in the following table. 
+If you want to move a mailbox to an Exchange 2016 resource forest, the mailbox in the resource forest is considered a *linked mailbox*. In this scenario, you need to create a linked mail user in the (target) resource forest. To create a linked mail user, you need to set the attributes shown in the following table.
   
 **Linked mail user attributes**
 
@@ -143,13 +143,13 @@ If you want to move a mailbox to an Exchange 2016 resource forest, the mailbox i
 |**msExchRecipientDisplayType** <br/> |Constant:-1073741818 decimal (equivalent to `*unsigned* 0xC0000006`).  <br/> |
    
 > [!NOTE]
-> A linked mailbox can only be created if there's forest trust between the source forest and target forest. 
+> A linked mailbox can only be created if there's forest trust between the source forest and target forest.
   
-If the source object is disabled and the **msExchMasterAccountSid** attribute is set to self (resource mailbox, shared mailbox), don't stamp anything on the target user. 
+If the source object is disabled and the **msExchMasterAccountSid** attribute is set to self (resource mailbox, shared mailbox), don't stamp anything on the target user.
   
-If the source object is disabled and the **msExchMasterAccountSid** attribute isn't set, the mailbox is invalid. 
+If the source object is disabled and the **msExchMasterAccountSid** attribute isn't set, the mailbox is invalid.
   
-If the source object is enabled and the **msExchMasterAccountSid** attribute is set, the mailbox is invalid. 
+If the source object is enabled and the **msExchMasterAccountSid** attribute is set, the mailbox is invalid.
   
 ### Resource mailbox attributes
 

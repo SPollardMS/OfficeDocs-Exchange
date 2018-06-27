@@ -56,7 +56,7 @@ Here's the formatting that you can use in your disclaimer text.
 |Images  <br/> |Use the `<IMG>` tag to point to an image available on the Internet. For example, `<IMG src="http://contoso.com/images/companylogo.gif" alt="Contoso logo">`.  <br/> By default, Outlook and Outlook on the web (formerly known as Outlook Web App) block external web content, including images. Users need to acknowledge and download the blocked external content. We recommend that you test disclaimers that have `IMG` tags to verify they display the way you want.  <br/> |
 |User information for personalized signatures  <br/> |You can use tokens to add unique attributes from each user's Active Directory account, such as `DisplayName`, `FirstName`, `LastName`, `PhoneNumber`, `Email`, `FaxNumber`, and `Department`. The syntax is to enclose the attribute name in two percent signs (for example, `%%DisplayName%%`).  <br/> For a complete list of attributes that can be used in disclaimers and personalized signatures, see the description for the `ADAttribute` property in [Mail flow rule conditions and exceptions (predicates) in Exchange 2016](conditions-and-exceptions.md).  <br/> |
    
-Here's an example of an HTML disclaimer that includes a signature, an `IMG` tag, and embedded CSS. 
+Here's an example of an HTML disclaimer that includes a signature, an `IMG` tag, and embedded CSS.
   
 ```
 <div style="font-size:9pt;  font-family: 'Calibri',sans-serif;">
@@ -69,7 +69,7 @@ Here's an example of an HTML disclaimer that includes a signature, an `IMG` tag,
 <div style="background-color:#D5EAFF; border:1px dotted #003333; padding:.8em; ">
 <div><img alt="Fabrikam"  src="http://fabrikam.com/images/fabrikamlogo.png"></div>
 <span style="font-size:12pt;  font-family: 'Cambria','times new roman','garamond',serif; color:#ff0000;">HTML Disclaimer Title</span></br>
-<p style="font-size:8pt; line-height:10pt; font-family: 'Cambria','times roman',serif;">This message contains confidential information and is intended only for the individual(s) addressed in the message. If you are not the named addressee, you should not disseminate, distribute, or copy this e-mail. If you are not the intended recipient, you are notified that disclosing, distributing, or copying this e-mail is strictly prohibited.  </p>
+<p style="font-size:8pt; line-height:10pt; font-family: 'Cambria','times roman',serif;">This message contains confidential information and is intended only for the individual(s) addressed in the message. If you aren't the named addressee, you should not disseminate, distribute, or copy this e-mail. If you aren't the intended recipient, you aren'tified that disclosing, distributing, or copying this e-mail is strictly prohibited.  </p>
 <span style="padding-top:10px; font-weight:bold; color:#CC0000; font-size:10pt; font-family: 'Calibri',Arial,sans-serif; "><a href="http://www.fabrikam.com">Fabrikam, Inc. </a></span></br></br>
 </div>
 ```
@@ -89,7 +89,7 @@ Exchange can't modify the content of some messages (for example, encrypted messa
     
 - **Reject**: The message is returned to the sender in an NDR.
     
-In the EAC, you select the fallback option in the rule action. In the Exchange Management Shell, you use the _ApplyHtmlDisclaimerFallbackAction_ parameter. 
+In the EAC, you select the fallback option in the rule action. In the Exchange Management Shell, you use the _ApplyHtmlDisclaimerFallbackAction_ parameter.
   
 ## Scope your disclaimer
 <a name="Scoping"> </a>

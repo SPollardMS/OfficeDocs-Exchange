@@ -56,19 +56,19 @@ The following options are available for the protocol logs of all Send connectors
 
 - Estimated time to complete: 5 minutes
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Transport Service", "Front End Transport service", "Mailbox Transport service", "Receive connectors" and "Send connectors" entries in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Transport Service", "Front End Transport service", "Mailbox Transport service", "Receive connectors" and "Send connectors" entries in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic.
     
 - You can use the Exchange admin center (EAC) to enable or disable protocol logging for Receive connectors and Send connectors on Mailbox servers. You can also use the EAC to configure the protocol log paths for the Transport service only. For all other protocol logging options, you need to use the Exchange Management Shell. To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
     
 - You enable or disable protocol logging on each individual connector. You configure other protocol logging options for all Receive connectors or all Send connectors that affect each individual transport service on the Exchange server. All Receive connectors in a transport service share the same protocol log files and protocol log options. These files and options are separate from the Send connector protocol log files and protocol log options in the same transport service.
     
 -     > [!CAUTION]
-    > Don't perform this procedure on an Edge Transport server that has been subscribed to the Exchange organization by using EdgeSync. Instead, make the changes in the Transport service on the Mailbox server. The changes are then replicated to the Edge Transport server next time EdgeSync synchronization occurs. 
+    > Don't perform this procedure on an Edge Transport server that has been subscribed to the Exchange organization by using EdgeSync. Instead, make the changes in the Transport service on the Mailbox server. The changes are then replicated to the Edge Transport server the next time EdgeSync synchronization occurs.
   
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
   
 ## Use the EAC to configure protocol logging
 
@@ -82,7 +82,7 @@ Use this procedure to enable or disable protocol logging on a Send connector or 
     
   - **Mail flow** \> **Receive connectors**.
     
-2. Select the connector you want to configure, and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
+2. Select the connector you want to configure, and then click **Edit** ![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
 3. On the **General** tab in the **Protocol logging level** section, select one of the following options: 
     
@@ -90,7 +90,7 @@ Use this procedure to enable or disable protocol logging on a Send connector or 
     
   - **Verbose**: Protocol logging is enabled on the connector.
     
-4. When you are finished, click **Save**.
+4. When you're finished, click **Save**.
     
 ### Use the EAC to configure the location of the protocol logs on an Exchange server
 
@@ -98,7 +98,7 @@ Use this procedure to configure the location of the protocol logs for all Send c
   
 1. Open the EAC and navigate to **Servers** \> **Servers**.
     
-2. Select the Mailbox server you want to configure, and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
+2. Select the Mailbox server you want to configure, and then click **Edit** ![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
 3. On the server properties page, click **Transport logs**. In the **Protocol log** section, change the following settings: 
     
@@ -106,9 +106,9 @@ Use this procedure to configure the location of the protocol logs for all Send c
     
   - **Receive protocol log path**
     
-    Specify a location on the local Exchange server. If the folder doesn't exist, it's created when you click **Save**.
+  Specify a location on the local Exchange server. If the folder doesn't exist, it's created when you click **Save**.
     
-4. When you are finished, click **Save**.
+4. When you're finished, click **Save**.
     
 ### How do you know this worked?
 
@@ -214,13 +214,13 @@ To configure the protocol log settings in the Exchange Management Shell, use the
 
 This example sets the following protocol log settings in the Transport service on the server named Mailbox01:
   
-> Sets the location of protocol log for all Receive connectors to D:\Hub SMTP Receive Log and the location for all Send connectors to D:\Hub SMTP Send Log. If the folder doesn't exist, it's created for you.
+- Sets the location of protocol log for all Receive connectors to D:\Hub SMTP Receive Log and the location for all Send connectors to D:\Hub SMTP Send Log. If the folder doesn't exist, it's created for you.
     
-> Sets the maximum size of a connector protocol log file for Receive connectors and Send connectors to 20 MB.
+- Sets the maximum size of a connector protocol log file for Receive connectors and Send connectors to 20 MB.
     
-> Sets the maximum size of the connector protocol log folder for Receive connectors and Send connectors to 400 MB.
+- Sets the maximum size of the connector protocol log folder for Receive connectors and Send connectors to 400 MB.
     
-> Sets the maximum age of a protocol log file for Receive connectors and Send connectors to 45 days.
+- Sets the maximum age of a protocol log file for Receive connectors and Send connectors to 45 days.
     
 ```
 Set-TransportService Mailbox01 -ReceiveProtocolLogPath "D:\Hub SMTP Receive Log" -ReceiveProtocolLogMaxFileSize 20MB -ReceiveProtocolLogMaxDirectorySize 400MB -ReceiveProtocolLogMaxAge 45.00:00:00 -SendProtocolLogPath "D:\Hub SMTP Send Log" -SendProtocolLogMaxFileSize 20MB -SendProtocolLogMaxDirectorySize 400MB -SendProtocolLogMaxAge 45.00:00:00
@@ -228,9 +228,9 @@ Set-TransportService Mailbox01 -ReceiveProtocolLogPath "D:\Hub SMTP Receive Log"
 
  **Notes**:
   
-- Setting the _SendProtocolLogPath_ or _ReceiveProtocolLogPath_ parameters to the value `$null` effectively disables protocol logging for all Send connectors or Receive connectors on the server. However, setting the value to `$null` generates event log errors when protocol logging is enabled for any Send connector or Receive connector on the server, including the intra-organization Send connector or the mailbox delivery Receive connector. 
+- Setting the _SendProtocolLogPath_ or _ReceiveProtocolLogPath_ parameters to the value `$null` effectively disables protocol logging for all Send connectors or Receive connectors on the server. However, setting the value to `$null` generates event log errors when protocol logging is enabled for any Send connector or Receive connector on the server, including the intra-organization Send connector or the mailbox delivery Receive connector.
     
-- Setting the _ReceiveProtocolLogMaxAge_ or _SendProtocolLogMaxAge_ parameters to the value `00:00:00` prevents the automatic removal of protocol log files because of their age. 
+- Setting the _ReceiveProtocolLogMaxAge_ or _SendProtocolLogMaxAge_ parameters to the value `00:00:00` prevents the automatic removal of protocol log files because of their age.
     
 ### How do you know this worked?
 

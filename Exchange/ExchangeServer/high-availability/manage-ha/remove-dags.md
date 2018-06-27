@@ -24,22 +24,22 @@ Looking for other management tasks related to DAGs? Check out [Managing database
 
 - Estimated time to complete: 1 minute
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Database availability groups" entry in the [High availability and site resilience permissions](../../permissions/feature-permissions/ha-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Database availability groups" entry in the [High availability and site resilience permissions](../../permissions/feature-permissions/ha-permissions.md) topic.
     
 - Before you can remove a DAG, the DAG must be empty. If the DAG you want to remove contains any Mailbox servers, you must first remove the servers from the DAG. For detailed steps about how to remove a Mailbox server from a DAG, see [Manage database availability group membership](dag-memberships.md).
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).. 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351)..
   
 ## Use the EAC to remove a database availability group
 
 1. Navigate to **Servers** \> **Database availability groups**.
     
-2. Select the DAG you want to remove and click **Delete**![Delete icon](../../media/ITPro_EAC_DeleteIcon.png).
+2. Select the DAG you want to remove and click **Delete** ![Delete icon](../../media/ITPro_EAC_DeleteIcon.png).
     
-3. Click **Yes** to confirm the warning and remove the DAG. 
+3. Click **Yes** to confirm the warning and remove the DAG.
     
 ## Use the Exchange Management Shell to remove a database availability group
 

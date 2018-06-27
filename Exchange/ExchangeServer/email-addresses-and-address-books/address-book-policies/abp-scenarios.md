@@ -16,7 +16,7 @@ description: "Summary: Learn how to use address book polices to split single Exc
 
  **Summary**: Learn how to use address book polices to split single Exchange 2016 organizations into separate virtual organizations based on different requirements and scenarios.
   
-The scenarios in this topic describe the deployment solutions for address book policies (ABPs) in three of the most common organization types where multiple entities (companies, government agencies, school classrooms, etc.) share a common Exchange environment. In all scenarios, a recipient filter divides recipients into separate virtual organizations, which then defines the ABPs that are applied to users in those virtual organizations. For more information recipient filters and virtual organizations, see the [Considerations and best practices for address book policies](abp-scenarios.md#BKMK_bestpractices) section later in this topic. 
+The scenarios in this topic describe the deployment solutions for address book policies (ABPs) in three of the most common organization types where multiple entities (companies, government agencies, school classrooms, etc.) share a common Exchange environment. In all scenarios, a recipient filter divides recipients into separate virtual organizations, which then defines the ABPs that are applied to users in those virtual organizations. For more information recipient filters and virtual organizations, see the [Considerations and best practices for address book policies](abp-scenarios.md#BKMK_bestpractices) section later in this topic.
   
 For more information about ABPs, see [Address book policies in Exchange 2016](address-book-policies.md). For ABP procedures, see [Procedures for address book policies in Exchange 2016](abp-procedures.md).
   
@@ -66,7 +66,7 @@ The GAL, OAB, room list, and address lists that are required in the ABPs for thi
 |Room address list  <br/> |AL_FAB_Rooms  <br/> |AL_TAIL_Rooms  <br/> |All Rooms  <br/> |
 |Address lists  <br/> |AL_FAB_Users_DGs  <br/> AL_FAB_Contacts  <br/> |AL_TAIL_Users_DGs  <br/> AL_TAIL_Contacts  <br/> |AL_FAB_Users_DGs  <br/> AL_FAB_Contacts  <br/> AL_TAIL_Users_DGs  <br/> AL_TAIL_Contacts  <br/> |
    
-For a complete walkthrough of creating the required elements for this scenario, see the [Detailed deployment steps for Scenario 2: Two companies sharing a CEO in one Exchange organization](abp-scenarios.md#BKMK_generaldeploymentABP) section at the end of this topic. 
+For a complete walkthrough of creating the required elements for this scenario, see the [Detailed deployment steps for Scenario 2: Two companies sharing a CEO in one Exchange organization](abp-scenarios.md#BKMK_generaldeploymentABP) section at the end of this topic.
   
 ## Scenario 3: Education
 <a name="shareCEO"> </a>
@@ -103,13 +103,13 @@ These are the important issues to consider when you use ABPs in your organizatio
     
 - To divide recipients into virtual organizations, we recommend using the **CustomAttribute1** to **CustomAttribute15** attributes on recipients. These attributes work better than the other pre-canned conditional attributes such as **Company**, **Department**, or **StateOrProvince** because: 
     
-  - Not all recipient types support the **Company**, **Department** or **StateOrProvince** attributes (for example, distribution groups, dynamic distribution groups, and mail-enabled public folders). 
+  - Not all recipient types support the **Company**, **Department** or **StateOrProvince** attributes (for example, distribution groups, dynamic distribution groups, and mail-enabled public folders).
     
-  - The **CustomAttribute1** to **CustomAttribute15** attributes aren't configurable by users on their own mailboxes, and are entirely under the control of administrators. 
+  - The **CustomAttribute1** to **CustomAttribute15** attributes aren't configurable by users on their own mailboxes, and are entirely under the control of administrators.
     
-  - Even recipient types that support the **Company**, **Department** or **StateOrProvince** attributes require different cmdlets to configure them. 
+  - Even recipient types that support the **Company**, **Department** or **StateOrProvince** attributes require different cmdlets to configure them.
     
-     For example, to configure values for **Company**, **Department** or **StateOrProvince** on mailboxes, mail users, or mail contacts, you can't use the **Set-Mailbox**, **Set-MailUser**, or **Set-MailContact** cmdlets. Instead, you need to use the **Set-User** and **Set-Contact** cmdlets. In contrast, the _CustomAttribute1_ to _CustomAttribute15_ parameters are available on the corresponding **Set-\*** cmdlets for all recipient types. 
+     For example, to configure values for **Company**, **Department** or **StateOrProvince** on mailboxes, mail users, or mail contacts, you can't use the **Set-Mailbox**, **Set-MailUser**, or **Set-MailContact** cmdlets. Instead, you need to use the **Set-User** and **Set-Contact** cmdlets. In contrast, the _CustomAttribute1_ to _CustomAttribute15_ parameters are available on the corresponding **Set-\*** cmdlets for all recipient types.
     
     For more information about recipient filtering, see [Recipient filtering on Edge Transport servers](../../antispam-and-antimalware/antispam-protection/recipient-filtering.md).
     
@@ -123,7 +123,7 @@ These are the important issues to consider when you use ABPs in your organizatio
     
   - Encrypted messages that are sent to the distribution group can cause issues when some group members don't have valid digital IDs. For example, suppose a distribution group contains three members from Agency A, and two members from Agency B. Furthermore, one of the members from Agency A and two of the members in Agency B have invalid digital IDs. If a member from Agency A sends an encrypted messages to the distribution group, they'll receive a warning that there are three recipients without valid digital IDs. However, only the email address for the member in Agency A will appear in the warning message.
     
-  - ABPs don't apply to all users or processes that use the **Get-Group** cmdlet, so these users will see all members of any group that they have access to. 
+  - ABPs don't apply to all users or processes that use the **Get-Group** cmdlet, so these users will see all members of any group that they have access to.
     
     Because if this issue, we recommend that you prevent users from managing their own groups in Outlook or Outlook on the web. To do this, remove the MyDistributionGroupMembership RBAC role assignment from the users. For more information, see [Manage role assignment policies](../../permissions/role-assignment-policies.md).
     
@@ -268,7 +268,7 @@ This example creates the OAB named OAB_TAIL for Tailspin Toys that includes the 
 New-OfflineAddressBook -Name "OAB_TAIL" -AddressLists "GAL_TAIL"
 ```
 
- **Note:** If you want users to see all recipients in the virtual organization, make sure that you include the GAL in OAB. Otherwise, you can reduce the download size of the OAB by specifying a reduced list of address lists that are included in the OAB. 
+ **Note:** If you want users to see all recipients in the virtual organization, make sure that you include the GAL in OAB. Otherwise, you can reduce the download size of the OAB by specifying a reduced list of address lists that are included in the OAB.
   
 For more information, see [Use the Exchange Management Shell to create offline address books](../../email-addresses-and-address-books/offline-address-books/oab-procedures.md#CreateOAB).
   

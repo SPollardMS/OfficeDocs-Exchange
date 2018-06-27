@@ -28,7 +28,7 @@ Exchange 2016 uses the Microsoft Exchange Mailbox Replication service (MRS) to i
 This feature was introduced in Exchange 2010 Service Pack 1 (SP1). In Exchange 2010, the MRS runs on Client Access servers. In Exchange 2013 or later, the MRS runs in the backend services on Mailbox servers (not in the frontend Client Access services).
   
 > [!NOTE]
-> Mailbox imports and exports are available only in the Mailbox Import Export role, and by default, that role isn't assigned to a role group. To use these features, you need to add the Mailbox Import Export role to a role group that you belong to (for example, the Organization Management role group). For more information, see [Add a role to a role group](../../permissions/role-groups.md#AddRemoveRGRole). 
+> Mailbox imports and exports are available only in the Mailbox Import Export role, and by default, that role isn't assigned to a role group. To use these features, you need to add the Mailbox Import Export role to a role group that you belong to (for example, the Organization Management role group). For more information, see [Add a role to a role group](../../permissions/role-groups.md#AddRemoveRGRole).
   
 ## Reasons to import or export mailboxes
 <a name="Reasons"> </a>
@@ -65,15 +65,15 @@ Here are some things to consider when you import .pst files to mailboxes:
     
 - You can import the .pst file directly to the user's personal archive instead of their primary mailbox.
     
-- By default, associated messages are imported if they exist in the .pst file. Associated messages are special messages that contain hidden data with information about rules, views, and forms. You can change this setting in the Exchange Management Shell (the _AssociatedMessagesCopyOption_ parameter). 
+- By default, associated messages are imported if they exist in the .pst file. Associated messages are special messages that contain hidden data with information about rules, views, and forms. You can change this setting in the Exchange Management Shell (the _AssociatedMessagesCopyOption_ parameter).
     
-- By default, the Recoverable Items folder is imported if it exists in the .pst file. You can change this setting in the Exchange Management Shell (the _ExcludeDumpster_ switch). 
+- By default, the Recoverable Items folder is imported if it exists in the .pst file. You can change this setting in the Exchange Management Shell (the _ExcludeDumpster_ switch).
     
-- In the Exchange Management Shell, you can include or exclude specific folders to import (the _IncludeFolders_, _ExcludeFolders_, or _SourceRootFolder_ parameters). 
+- In the Exchange Management Shell, you can include or exclude specific folders to import (the _IncludeFolders_, _ExcludeFolders_, or _SourceRootFolder_ parameters).
     
-- In the Exchange Management Shell, you can specify the destination folder for imported items in the target mailbox (the _TargetRootFolder_ parameter). 
+- In the Exchange Management Shell, you can specify the destination folder for imported items in the target mailbox (the _TargetRootFolder_ parameter).
     
-- In the Exchange Management Shell, you can increase or decrease the priority value for mailbox import requests (the _Priority_ parameter). 
+- In the Exchange Management Shell, you can increase or decrease the priority value for mailbox import requests (the _Priority_ parameter).
     
 For mailbox import procedures, see [Procedures for mailbox imports from .pst files in Exchange 2016](import-procedures.md).
   
@@ -86,17 +86,17 @@ Here are some things to consider when you export mailboxes to .pst files:
     
 - You can export a mailbox or a user's archive mailbox to a .pst file.
     
-- By default, associated messages are exported from the mailbox. Associated messages are special messages that contain hidden data with information about rules, views, and forms. You can change this setting in the Exchange Management Shell (the _AssociatedMessagesCopyOption_ parameter). 
+- By default, associated messages are exported from the mailbox. Associated messages are special messages that contain hidden data with information about rules, views, and forms. You can change this setting in the Exchange Management Shell (the _AssociatedMessagesCopyOption_ parameter).
     
-- By default, the Recoverable Items folder is exported from the mailbox. You can change this setting in the Exchange Management Shell (the _ExcludeDumpster_ switch). 
+- By default, the Recoverable Items folder is exported from the mailbox. You can change this setting in the Exchange Management Shell (the _ExcludeDumpster_ switch).
     
-- In the Exchange Management Shell, you can filter the messages to export from the mailbox (the _ContentFilter_ parameter). You can filter by message content, attachment, senders, recipients, Inbox category, importance, message type, message size, and when the message was sent, received, or expired. 
+- In the Exchange Management Shell, you can filter the messages to export from the mailbox (the _ContentFilter_ parameter). You can filter by message content, attachment, senders, recipients, Inbox category, importance, message type, message size, and when the message was sent, received, or expired.
     
-- In the Exchange Management Shell, you can include or exclude specific folders to export (the _IncludeFolders_, _ExcludeFolders_, or _SourceRootFolder_ parameters). 
+- In the Exchange Management Shell, you can include or exclude specific folders to export (the _IncludeFolders_, _ExcludeFolders_, or _SourceRootFolder_ parameters).
     
-- In the Exchange Management Shell, you can specify the destination folder for exported items in the target .pst file (the _TargetRootFolder_ parameter). 
+- In the Exchange Management Shell, you can specify the destination folder for exported items in the target .pst file (the _TargetRootFolder_ parameter).
     
-- In the Exchange Management Shell, you can increase or decrease the priority value for mailbox export requests (the _Priority_ parameter). 
+- In the Exchange Management Shell, you can increase or decrease the priority value for mailbox export requests (the _Priority_ parameter).
     
 For mailbox export procedures, see [Procedures for mailbox exports to .pst files in Exchange 2016](export-procedures.md).
   

@@ -18,7 +18,7 @@ description: "Summary: Learn how to move or recreate the message queue database 
   
 Like previous versions of Exchange, Exchange 2016 uses an Extensible Storage Engine (ESE) database for queue message storage. All the different queues are stored in a single ESE database. Queues exist on Exchange 2016 Mailbox servers and Edge Transport servers. For more information about queues, see [Queues and messages in queues](queues.md).
   
-The location of the queue database and the queue database transaction logs is controlled by keys in the `%ExchangeInstallPath%Bin\EdgeTransport.exe.config` XML application configuration file. This file is associated with the Exchange Transport service. The following table explains each key in more detail. 
+The location of the queue database and the queue database transaction logs is controlled by keys in the `%ExchangeInstallPath%Bin\EdgeTransport.exe.config` XML application configuration file. This file is associated with the Exchange Transport service. The following table explains each key in more detail.
   
 |**Key**|**Description**|
 |:-----|:-----|
@@ -62,7 +62,7 @@ The location of the queue database and the queue database transaction logs is co
   Notepad %ExchangeInstallPath%Bin\EdgeTransport.exe.config
   ```
 
-3. Find and modify the following keys in the `<appSettings>` section. 
+3. Find and modify the following keys in the `<appSettings>` section.
     
   ```
   <add key="QueueDatabasePath" value="<LocalPath>" />

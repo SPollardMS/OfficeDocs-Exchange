@@ -26,12 +26,12 @@ For additional management tasks related to role groups, see [Permissions](permis
 
 - To open the EAC, see [Exchange admin center in Exchange 2016](../architecture/client-access/exchange-admin-center.md). To open the Exchange Management Shell, see [Open the Exchange Management Shell](http://technet.microsoft.com/library/63976059-25f8-4b4f-b597-633e78b803c0.aspx).
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Role groups" entry in the [Role management permissions](feature-permissions/rbac-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Role groups" entry in the [Role management permissions](feature-permissions/rbac-permissions.md) topic.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
 
 ## Add members to a role group
 <a name="add"> </a>
@@ -42,13 +42,13 @@ To give a user the permissions that are granted by a role group, you need to add
 
 1. In the Exchange admin center (EAC), navigate to **Permissions** \> **Admin Roles**.
 
-2. Select the role group you want to add members to, and then click **Edit**![Edit icon](../media/ITPro_EAC_EditIcon.png).
+2. Select the role group you want to add members to, and then click **Edit** ![Edit icon](../media/ITPro_EAC_EditIcon.png).
 
-3. In the **Members** section, click **Add**![Add icon](../media/ITPro_EAC_AddIcon.png).
+3. In the **Members** section, click **Add** ![Add icon](../media/ITPro_EAC_AddIcon.png).
 
 4. Select the users, USGs, or other role groups you want to add to the role group, click **Add**, and then click **OK**.
 
-5. Click **Save** to save the changes to the role group. 
+5. Click **Save** to save the changes to the role group.
 
 ### Use the Exchange Management Shell to add members to a role group
 
@@ -75,9 +75,9 @@ To remove the permissions granted by a role group from a user, you need to remov
 
 1. In the EAC, navigate to **Permissions** \> **Admin Roles**.
 
-2. Select the role group you want to remove members from, and then click **Edit**![Edit icon](../media/ITPro_EAC_EditIcon.png).
+2. Select the role group you want to remove members from, and then click **Edit** ![Edit icon](../media/ITPro_EAC_EditIcon.png).
 
-3. In the **Members** section, select the members you want to remove, click **Remove**![Remove icon](../media/ITPro_EAC_RemoveIcon.png), and then click **Save**.
+3. In the **Members** section, select the members you want to remove, click **Remove** ![Remove icon](../media/ITPro_EAC_RemoveIcon.png), and then click **Save**.
 
 ### Use the Exchange Management Shell to remove members from a role group
 

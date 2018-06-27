@@ -20,7 +20,7 @@ In-Place Archiving helps you regain control of your organization's messaging dat
   
 ## What do you need to know before you begin?
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "In-Place Archive" entry in the [Messaging policy and compliance permissions in Exchange 2016](../../permissions/feature-permissions/policy-and-compliance-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "In-Place Archive" entry in the [Messaging policy and compliance permissions in Exchange 2016](../../permissions/feature-permissions/policy-and-compliance-permissions.md) topic.
     
 - The procedures in this topic apply to on-premises archive mailboxes. For information about archive mailboxes in Exchange Online, see [Archive mailboxes in Exchange Online](https://go.microsoft.com/fwlink/p/?LinkID=404421).
     
@@ -43,7 +43,7 @@ You can use the Exchange admin center or the Exchange Management Shell to enable
     
     **Note**: You can also bulk-enable archives by selecting multiple mailboxes (use the Shift or Ctrl keys). After selecting multiple mailboxes, in the details pane, click **More options**. Then, under **Archive** click **Enable**.
     
-4. On the **Create In-Place Archive** page, click **OK** to have Exchange automatically select a mailbox database for the archive or click **Browse** to specify one. 
+4. On the **Create In-Place Archive** page, click **OK** to have Exchange automatically select a mailbox database for the archive or click **Browse** to specify one.
     
 ### Use the Exchange Management Shell to enable an archive mailbox
 
@@ -53,7 +53,7 @@ This example enables the archive mailbox for Tony Smith.
 Enable-Mailbox "Tony Smith" -Archive
 ```
 
-This example retrieves mailboxes in database DB01 that don't have an on-premises or cloud-based archive enabled and don't have a name starting with DiscoverySearchMailbox. It pipes the results to the **Enable-Mailbox** cmdlet to enable the archive for all mailboxes on mailbox database DB01. 
+This example retrieves mailboxes in database DB01 that don't have an on-premises or cloud-based archive enabled and don't have a name starting with DiscoverySearchMailbox. It pipes the results to the **Enable-Mailbox** cmdlet to enable the archive for all mailboxes on mailbox database DB01.
   
 ```
 Get-Mailbox -Database DB01 -Filter {ArchiveGuid -Eq $null -AND ArchiveDomain -eq $null -AND Name -NotLike "DiscoverySearchMailbox*"} | Enable-Mailbox -Archive
@@ -63,7 +63,7 @@ Get-Mailbox -Database DB01 -Filter {ArchiveGuid -Eq $null -AND ArchiveDomain -eq
 
 To verify that you've successfully enabled an on-premises archive for an existing mailbox, do one of the following:
   
-- In the EAC, go to **Recipients** \> **Mailboxes**, and then select the mailbox from the list. In the details pane, under **In-Place Archive**, confirm that it is set to **Enabled**. Click **View details** to view archive properties, including archive status and the mailbox database in which it is created. 
+- In the EAC, go to **Recipients** \> **Mailboxes**, and then select the mailbox from the list. In the details pane, under **In-Place Archive**, confirm that it is set to **Enabled**. Click **View details** to view archive properties, including archive status and the mailbox database in which it is created.
     
 - In the Exchange Management Shell, run the following command to display information about the new archive.
     
@@ -84,9 +84,9 @@ You can also enable an archive mailbox when you first create a new mailbox for a
     
 2. Click **New** \> **User mailbox**.
     
-3. On the **New user mailbox** page, in the **Alias** box, type an alias for the user. 
+3. On the **New user mailbox** page, in the **Alias** box, type an alias for the user.
     
-    **Note**: If you leave this box blank, the value you type in the **User logon name** box is used for the alias. 
+    **Note**: If you leave this box blank, the value you type in the **User logon name** box is used for the alias.
     
 4. Select one of the following options:
     
@@ -94,15 +94,15 @@ You can also enable an archive mailbox when you first create a new mailbox for a
     
   - **New user**: Click this button to create a new user account in Active Directory and create a mailbox for the user. If you select this option, you'll have to provide the required user account information.
     
-5. Click **More options** to configure the following settings. 
+5. Click **More options** to configure the following settings.
     
-  - **Mailbox database**: Click **Browse** to select a mailbox database in which to store the mailbox. If you don't select a database, Exchange will automatically assign one. 
+  - **Mailbox database**: Click **Browse** to select a mailbox database in which to store the mailbox. If you don't select a database, Exchange will automatically assign one.
     
   - **Archive**: Select this check box to create an archive mailbox for the mailbox. If you create an archive mailbox, mailbox items will be moved automatically from the primary mailbox to the archive, based on the default retention policy settings or those you define.
     
-    Click **Browse** to select a database to store the archive mailbox. 
+    Click **Browse** to select a database to store the archive mailbox.
     
-6. When you're finished, click **Save** to create the mailbox and its archive. 
+6. When you're finished, click **Save** to create the mailbox and its archive.
     
 ### Use the Exchange Management Shell to enable an archive mailbox when you create a new mailbox
 
@@ -120,7 +120,7 @@ New-Mailbox -UserPrincipalName cashton@contoso.com -Alias cashton -Database "DB0
 
 To verify that you've successfully created a user mailbox with an on-premises archive, do one of the following:
   
-- In the EAC, go to **Recipients** \> **Mailboxes**, and then select the new user mailbox from the list. In the details pane, under **In-Place Archive**, confirm that it is set to **Enabled**. Click **View details** to view archive properties, including archive status and the mailbox database in which it is created. 
+- In the EAC, go to **Recipients** \> **Mailboxes**, and then select the new user mailbox from the list. In the details pane, under **In-Place Archive**, confirm that it is set to **Enabled**. Click **View details** to view archive properties, including archive status and the mailbox database in which it is created.
     
 - In the Exchange Management Shell, run the following command to display information about the new user mailbox and archive.
     
@@ -189,7 +189,7 @@ When you disable an archive mailbox, it becomes disconnected. A disconnected arc
     
 4. On the **Create in-place archive** page, click **OK**.
     
-    You can have Exchange automatically select a mailbox database for the re-enabled archive mailbox or you can click **Browse** to specify one. 
+    You can have Exchange automatically select a mailbox database for the re-enabled archive mailbox or you can click **Browse** to specify one.
     
 ### Use the Exchange Management Shell to re-enable an archive mailbox
 
@@ -201,7 +201,7 @@ Enable-Mailbox "Chris Ashton" -Archive
 
 ### How do you know this worked?
 
-To verify that you have successfully connected a disabled archive mailbox to the user's primary mailbox, run the following command to retrieve the mailbox user's archive properties, and verify the values returned for the _ArchiveGuid_ and _ArchiveDatabase_ properties. 
+To verify that you have successfully connected a disabled archive mailbox to the user's primary mailbox, run the following command to retrieve the mailbox user's archive properties, and verify the values returned for the _ArchiveGuid_ and _ArchiveDatabase_ properties.
   
 ```
 Get-Mailbox "Chris Ashton" | Format-List *Archive*

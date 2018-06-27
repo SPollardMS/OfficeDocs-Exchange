@@ -31,7 +31,7 @@ For procedures related to address lists, see [Procedures for address lists in Ex
 
 ## Recipient filters for address lists
 
-Recipient filters identify the recipients that are included in address lists and GALs. There are two basic options: **precanned recipient filters** and **custom recipient filters**. These are basically the same recipient filtering options that are used by dynamic distribution groups and email address policies. The following table summarizes the differences between the two filtering methods. 
+Recipient filters identify the recipients that are included in address lists and GALs. There are two basic options: **precanned recipient filters** and **custom recipient filters**. These are basically the same recipient filtering options that are used by dynamic distribution groups and email address policies. The following table summarizes the differences between the two filtering methods.
 
 ****
 

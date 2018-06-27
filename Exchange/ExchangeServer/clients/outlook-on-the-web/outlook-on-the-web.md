@@ -19,7 +19,7 @@ The user interface in Outlook on the web (formerly known as Outlook Web App) for
   
 When you install Exchange 2016, Outlook on the web is automatically available for internal users at `https://<ServerName>/owa` (for example, `https://mailbox01.contoso.com/owa`). But, you'll likely want to configure Outlook on the web for external access (for example, `https://mail.contoso.com/owa`). For more information, see [Step 4: Configure external URLs](../../plan-and-deploy/post-installation-tasks/configure-mail-flow-and-client-access.md#ConfigExternalURL).
   
- In an Outlook 2010 or later installation that's connected to an Exchange mailbox, you can typically see the Outlook on the web URL at **File** \> **Info** \> **Account Information** in the **Account Settings** section. 
+ In an Outlook 2010 or later installation that's connected to an Exchange mailbox, you can typically see the Outlook on the web URL at **File** \> **Info** \> **Account Information** in the **Account Settings** section.
   
 ![The Account Information page in Outlook 2016](../../media/1329d53d-0627-4377-8085-9eb63dcc7f97.png)
   

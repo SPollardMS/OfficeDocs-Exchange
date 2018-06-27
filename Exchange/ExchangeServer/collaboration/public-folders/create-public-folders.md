@@ -43,14 +43,14 @@ When using the EAC to create a public folder, you'll only be able to set the nam
     
 2. If you want to create this public folder as a child of an existing public folder, click the existing public folder in the list view. If you want to create a top-level public folder, skip this step.
     
-3. Click **Add**![Add icon](../../media/ITPro_EAC_AddIcon.png).
+3. Click **Add** ![Add icon](../../media/ITPro_EAC_AddIcon.png).
     
 4. In **Public Folder**, type the name of the public folder.
     
     > [!IMPORTANT]
-    > Don't use a backslash (\) in the name when creating a public folder. 
+    > Don't use a backslash (\) in the name when creating a public folder.
   
-5. In the **Path** box, verify the path to the public folder. If this isn't the desired path, click **Cancel** and follow Step 2 of this procedure. 
+5. In the **Path** box, verify the path to the public folder. If this isn't the desired path, click **Cancel** and follow Step 2 of this procedure.
     
 6. Click **Save**.
     
@@ -64,7 +64,7 @@ New-PublicFolder -Name Reports -Path \Marketing\2016
 ```
 
 > [!IMPORTANT]
-> Don't use a backslash (\) in the name when creating a public folder. 
+> Don't use a backslash (\) in the name when creating a public folder.
   
 For detailed syntax and parameter information, see [New-PublicFolder](http://technet.microsoft.com/library/18b837bf-9ef7-4edf-8728-7f6bd346e75d.aspx).
   
@@ -73,7 +73,7 @@ For detailed syntax and parameter information, see [New-PublicFolder](http://tec
 
 To verify that you've successfully created a public folder, do the following:
   
-- In the EAC, click **Refresh** to refresh the list of public folders. Your new public folder should be displayed in the list. 
+- In the EAC, click **Refresh** to refresh the list of public folders. Your new public folder should be displayed in the list.
     
 - In the Exchange Management Shell, run any of the following commands:
     
@@ -90,6 +90,6 @@ To verify that you've successfully created a public folder, do the following:
   ```
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
   
 

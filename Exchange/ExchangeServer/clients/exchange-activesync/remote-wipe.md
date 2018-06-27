@@ -19,20 +19,20 @@ description: "Summary: Learn how to clear all data on a user's mobile phone in t
 Your users carry sensitive corporate information in their pockets every day. If one of them loses their mobile phone, your data can end up in the hands of another person. If one of your users loses their mobile phone, you can use the Exchange admin center (EAC) or the Exchange Management Shell to wipe their phone clean of all corporate and user information.
   
 > [!NOTE]
-> This topic also provides instructions for how to use Outlook on the web to perform a remote wipe on a phone. The user must be signed in to Outlook on the web to perform a remote wipe. 
+> This topic also provides instructions for how to use Outlook on the web to perform a remote wipe on a phone. The user must be signed in to Outlook on the web to perform a remote wipe.
   
 ## What do you need to know before you begin?
 
 - Estimated time to complete: 5 minutes.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Mobile devices" entry in the [Clients and mobile devices permissions](../../permissions/feature-permissions/client-and-mobile-device-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Mobile devices" entry in the [Clients and mobile devices permissions](../../permissions/feature-permissions/client-and-mobile-device-permissions.md) topic.
     
 - This procedure will clear all data on the mobile phone, including installed applications, photos, and personal information.
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
   
 ## Use the EAC to wipe a user's phone
 
@@ -48,7 +48,7 @@ You can use the EAC to wipe a user's phone or cancel a remote wipe that has not 
     
 ## Use the Exchange Management Shell to wipe a user's phone
 
-You can use the **Clear-MobileDevice** cmdlet in the Exchange Management Shell to wipe a user's phone. 
+You can use the **Clear-MobileDevice** cmdlet in the Exchange Management Shell to wipe a user's phone.
   
 The following command wipes the device named WM_TonySmith and sends a confirmation message to admin@contoso.com.
   
@@ -60,7 +60,7 @@ Clear-MobileDevice -Identity WM_TonySmith -NotificationEmailAddresses "admin@con
 
 Your users can wipe their own phone using Outlook on the web.
   
-1. In Outlook on the web, select the **Settings** icon. 
+1. In Outlook on the web, select the **Settings** icon.
     
 2. Under **Your app settings**, select **Mail**.
     
@@ -68,13 +68,13 @@ Your users can wipe their own phone using Outlook on the web.
     
 4. Select the mobile phone.
     
-5. Click or tap the **Wipe Device** icon. 
+5. Click or tap the **Wipe Device** icon.
     
 ## How do you know this worked?
 
 There are several ways to verify that the remote wipe completed.
   
-- Run the **Clear-MobileDevice** cmdlet with the _-NotificationEmailAddresses_ parameter configured. A message will be sent to the supplied email address when the remote wipe has completed. 
+- Run the **Clear-MobileDevice** cmdlet with the _-NotificationEmailAddresses_ parameter configured. A message will be sent to the supplied email address when the remote wipe has completed.
     
 - In the EAC, check the status of the mobile device. The status will change from **Wipe Pending** to **Wipe Successful**.
     

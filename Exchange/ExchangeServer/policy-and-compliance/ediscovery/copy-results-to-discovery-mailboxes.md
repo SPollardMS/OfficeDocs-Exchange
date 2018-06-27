@@ -16,11 +16,11 @@ description: "Summary: Learn how to copy the results of an In-Place eDiscovery s
 
  **Summary**: Learn how to copy the results of an In-Place eDiscovery search to a discovery mailbox in Exchange 2016.
   
-After you create an In-Place eDiscovery search in Exchange Server 2016, you can use the Exchange admin center (EAC) to copy the results to a discovery mailbox. You can also use the Exchange Management Shell to start an eDiscovery search that was created using the **New-MailboxSearch** cmdlet, which will copy the results to the discovery mailbox that was specified when you created the search. 
+After you create an In-Place eDiscovery search in Exchange Server 2016, you can use the Exchange admin center (EAC) to copy the results to a discovery mailbox. You can also use the Exchange Management Shell to start an eDiscovery search that was created using the **New-MailboxSearch** cmdlet, which will copy the results to the discovery mailbox that was specified when you created the search.
   
 ## What do you need to know before you begin?
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "In-Place eDiscovery" entry in the [Messaging policy and compliance permissions in Exchange 2016](../../permissions/feature-permissions/policy-and-compliance-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "In-Place eDiscovery" entry in the [Messaging policy and compliance permissions in Exchange 2016](../../permissions/feature-permissions/policy-and-compliance-permissions.md) topic.
     
 - An eDiscovery search has to be created, by using the EAC or the Exchange Management Shell, before you can copy the search results. For details, see [Create an In-Place eDiscovery search in Exchange 2016](create-searches.md).
     
@@ -36,7 +36,7 @@ After you create an In-Place eDiscovery search in Exchange Server 2016, you can 
     
 2. In the list view, select an eDiscovery search.
     
-3. Click **Search**![Search icon](../../media/ITPro_EAC_.png), and then click **Copy search results** from the drop-down list. 
+3. Click **Search** ![Search icon](../../media/ITPro_EAC_.png), and then click **Copy search results** from the drop-down list.
     
 4. In **Copy Search Results**, select from the following options:
     
@@ -48,14 +48,14 @@ After you create an In-Place eDiscovery search in Exchange Server 2016, you can 
     
   - **Send me mail when the copy is completed**: Select this check box to get an email notification when the search is completed.
     
-  - **Copy results to this discovery mailbox**: Click **Browse** to select the discovery mailbox where you want the search results copied to. 
+  - **Copy results to this discovery mailbox**: Click **Browse** to select the discovery mailbox where you want the search results copied to.
     ![Copy Search Results](../../media/TA_MRM_CopySearchResults.gif)
   
-5. Click **Copy** to start the process to copy the search results to the specified discovery mailbox. 
+5. Click **Copy** to start the process to copy the search results to the specified discovery mailbox.
     
-6. Click **Refresh**![Refresh icon](../../media/ITPro_EAC_RefreshIcon.png) to update the information about the copying status that is displayed in the details pane. 
+6. Click **Refresh** ![Refresh icon](../../media/ITPro_EAC_RefreshIcon.png) to update the information about the copying status that is displayed in the details pane.
     
-7. When copying is complete, click **Open** to open the discovery mailbox to view the search results. 
+7. When copying is complete, click **Open** to open the discovery mailbox to view the search results.
     
 ## Use the Exchange Management Shell to copy search results
 
@@ -65,7 +65,7 @@ After using the **New-MailboxSearch** cmdlet to create an In-Place eDiscovery se
     
 - [New-MailboxSearch](http://technet.microsoft.com/library/74303b47-bb49-407c-a43b-590356eae35c.aspx)
     
-In the following example, you would run the following command to start an eDiscovery search named *Fabrikam Investigation* to copy the search results to the discovery mailbox that was specified by the _TargetMailbox_ parameter when the search was created. 
+In the following example, you would run the following command to start an eDiscovery search named *Fabrikam Investigation* to copy the search results to the discovery mailbox that was specified by the _TargetMailbox_ parameter when the search was created.
   
 ```
 Start-MailboxSearch "Fabrikam Investigation"
@@ -100,7 +100,7 @@ For more information about these cmdlets, see the following topics:
     
 - For more information about unsearchable items, see [Unsearchable Items in Exchange eDiscovery](http://technet.microsoft.com/library/32550081-9af9-474b-ae7b-28f1e68cad41.aspx).
     
-- If you're copying all mailbox content within a specific date range (by not specifying any keywords in the search criteria), then all unsearchable items within that date range will be automatically included in the search results. Therefore, don't select the **Include unsearchable items** checkbox when copying search results. Otherwise, a duplicate copy of all unsearchable items will be copied to the discovery mailbox. 
+- If you're copying all mailbox content within a specific date range (by not specifying any keywords in the search criteria), then all unsearchable items within that date range will be automatically included in the search results. Therefore, don't select the **Include unsearchable items** checkbox when copying search results. Otherwise, a duplicate copy of all unsearchable items will be copied to the discovery mailbox.
     
 - In addition to copying the search results to a discovery mailbox, you can also estimate or preview the search results for a selected search.
     

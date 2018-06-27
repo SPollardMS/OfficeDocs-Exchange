@@ -41,11 +41,11 @@ To deploy an Edge Transport server and subscribe it to an Active Directory site,
     
   - On the Mailbox Server, configure the transport settings to be replicated to the Edge Transport server.
     
-3. On the Edge Transport server, create and export an Edge Subscription file by running the **New-EdgeSubscription** cmdlet. 
+3. On the Edge Transport server, create and export an Edge Subscription file by running the **New-EdgeSubscription** cmdlet.
     
 4. Copy the Edge Subscription file to a Mailbox server or a file share that's accessible from the Active Directory site containing your Mailbox servers.
     
-5. Import the Edge Subscription file to the Active Directory site by running the **New-EdgeSubscription** cmdlet on the Mailbox server. 
+5. Import the Edge Subscription file to the Active Directory site by running the **New-EdgeSubscription** cmdlet on the Mailbox server.
     
 ### Prepare for the Edge Subscription
 <a name="Prepare"> </a>
@@ -61,15 +61,15 @@ Before you can subscribe your Edge Transport server to your Exchange organizatio
   - **Secure LDAP**: Non-standard port 50636/TCP is used for directory synchronization from Mailbox servers to AD LDS on the Edge Transport server. This port is required for successful EdgeSync synchronization.
     
     > [!NOTE]
-    > Port 50389/TCP is used locally by LDAP to bind to the AD LDS instance. This port doesn't have to be open on the firewall; it's used locally on the Edge Transport server. 
+    > Port 50389/TCP is used locally by LDAP to bind to the AD LDS instance. This port doesn't have to be open on the firewall; it's used locally on the Edge Transport server.
   
-    If your environment requires specific ports, you can modify the ports used by AD LDS using the `ConfigureAdam.ps1` script provided with Exchange. Modify the ports before you create the Edge Subscription. If you modify the ports after you create the Edge Subscription, you need to remove the Edge Subscription and create another one. 
+    If your environment requires specific ports, you can modify the ports used by AD LDS using the `ConfigureAdam.ps1` script provided with Exchange. Modify the ports before you create the Edge Subscription. If you modify the ports after you create the Edge Subscription, you need to remove the Edge Subscription and create another one.
     
 - **Verify that DNS host name resolution is successful from the Edge Transport server to the Mailbox servers and from the Mailbox servers to the Edge Transport server**
     
 - **Configure the following transport settings for propagation to the Edge Transport server**
     
-  - **Internal SMTP servers**: Use the _InternalSMTPServers_ parameter on the **Set-TransportConfig** cmdlet to specify a list of internal SMTP server IP addresses or IP address ranges to be ignored by the Sender ID and Connection Filtering agents on the Edge Transport server. 
+  - **Internal SMTP servers**: Use the _InternalSMTPServers_ parameter on the **Set-TransportConfig** cmdlet to specify a list of internal SMTP server IP addresses or IP address ranges to be ignored by the Sender ID and Connection Filtering agents on the Edge Transport server.
     
   - **Accepted domains**: Configure all authoritative domains, internal relay domains, and external relay domains.
     
@@ -80,7 +80,7 @@ Before you can subscribe your Edge Transport server to your Exchange organizatio
 
 When you create an Edge Subscription file by running the **New-EdgeSubscription** cmdlet on the Edge Transport server, the following actions occur: 
   
-- An AD LDS account called the EdgeSync bootstrap replication account (ESBRA) is created. These ESBRA credentials are used to authenticate the first EdgeSync connection to the Edge Transport server. This account is configured to expire 24 hours after being created. Therefore, you need to complete the five-step subscription process described in the previous section within 24 hours. If the ESBRA expires before the Edge Subscription process is complete, you will need to run the **New-EdgeSubscription** cmdlet again to create a new Edge Subscription file. 
+- An AD LDS account called the EdgeSync bootstrap replication account (ESBRA) is created. These ESBRA credentials are used to authenticate the first EdgeSync connection to the Edge Transport server. This account is configured to expire 24 hours after being created. Therefore, you need to complete the five-step subscription process described in the previous section within 24 hours. If the ESBRA expires before the Edge Subscription process is complete, you will need to run the **New-EdgeSubscription** cmdlet again to create a new Edge Subscription file.
     
 - The ESBRA credentials are retrieved from AD LDS and written to the Edge Subscription file. The public key for the Edge Transport server's self-signed certificate is also exported to the Edge Subscription file. The credentials written to the Edge Subscription file are specific to the server that exported the file.
     
@@ -111,7 +111,7 @@ New-EdgeSubscription -FileName "C:\Data\EdgeSubscriptionInfo.xml"
 ```
 
 > [!NOTE]
-> When you run the **New-EdgeSubscription** cmdlet on the Edge Transport server, you receive a prompt to acknowledge the commands that will be disabled and the configuration that will be overwritten on the Edge Transport server. To bypass this confirmation, you need to use the _Force_ parameter. This parameter is useful when you script the **New-EdgeSubscription** cmdlet. You can also use the _Force_ parameter to overwrite an existing file when you resubscribe an Edge Transport server. 
+> When you run the **New-EdgeSubscription** cmdlet on the Edge Transport server, you receive a prompt to acknowledge the commands that will be disabled and the configuration that will be overwritten on the Edge Transport server. To bypass this confirmation, you need to use the _Force_ parameter. This parameter is useful when you script the **New-EdgeSubscription** cmdlet. You can also use the _Force_ parameter to overwrite an existing file when you resubscribe an Edge Transport server.
   
 ### Import the Edge Subscription file on a Mailbox server
 <a name="Import"> </a>
@@ -126,7 +126,7 @@ When you import the Edge Subscription file to the Active Directory site by runni
     
 - EdgeSync replication accounts (ESRAs) are created in Active Directory for each Edge Transport-Mailbox server pair. Each Mailbox server stores its ESRA credentials as an attribute of the Mailbox server configuration object.
     
-- Send connectors are automatically created to relay messages outbound from the Edge Transport server to the Internet, and inbound from the Edge Transport server to the Exchange organization. For more information, see the [Send connectors created automatically by the Edge Subscription](edge-subscriptions.md#SendConnectors) section in this topic. 
+- Send connectors are automatically created to relay messages outbound from the Edge Transport server to the Internet, and inbound from the Edge Transport server to the Exchange organization. For more information, see the [Send connectors created automatically by the Edge Subscription](edge-subscriptions.md#SendConnectors) section in this topic.
     
 - The Microsoft Exchange EdgeSync service that runs on Mailbox servers uses the ESBRA credentials to establish a secure LDAP connection between a Mailbox server and the Edge Transport server, and performs the initial replication of data. The following data is replicated to AD LDS:
     
@@ -142,7 +142,7 @@ When you import the Edge Subscription file to the Active Directory site by runni
     
 - The EdgeSync synchronization schedule is established.
     
-- The Microsoft Exchange EdgeSync service running on the Mailbox servers in the subscribed Active Directory site then performs one-way replication of data from Active Directory to AD LDS on a regular schedule. You can also use the **Start-EdgeSynchronization** cmdlet to override the EdgeSync synchronization schedule and immediately start synchronization. 
+- The Microsoft Exchange EdgeSync service running on the Mailbox servers in the subscribed Active Directory site then performs one-way replication of data from Active Directory to AD LDS on a regular schedule. You can also use the **Start-EdgeSynchronization** cmdlet to override the EdgeSync synchronization schedule and immediately start synchronization.
     
 This example subscribes an Edge Transport server to the specified site and automatically creates the Internet Send connector and the Send connector from the Edge Transport server to the Mailbox servers.
   
@@ -151,7 +151,7 @@ New-EdgeSubscription -FileData ([byte[]]$(Get-Content -Path "C:\Data\EdgeSubscri
 ```
 
 > [!NOTE]
-> The default values of the _CreateInternetSendConnector_ and _CreateInboundSendConnector_ parameters are both `$true`, so you don't need to use them in this command. 
+> The default values of the _CreateInternetSendConnector_ and _CreateInboundSendConnector_ parameters are both `$true`, so you don't need to use them in this command.
   
 ## Send connectors created automatically by the Edge Subscription
 <a name="SendConnectors"> </a>
@@ -182,7 +182,7 @@ When you run the **New-EdgeSubscription** cmdlet on the Mailbox server, the _Cre
 | _DNSRoutingEnabled_ <br/> |False  <br/> |
 | _SmartHosts_ <br/> | `--` <br/> The `--` value in the list of smart hosts represents all Mailbox servers in the subscribed Active Directory site. Any Mailbox servers you add to the subscribed Active Directory site after you establish the Edge Subscription don't participate in the EdgeSync synchronization process. However, they are automatically added to the list of smart hosts for the automatically created inbound Send connector. If more than one Mailbox server is located in the subscribed Active Directory site, inbound connections will be load balanced across the smart hosts.  <br/> |
    
-You can't modify the address space or list of smart hosts at creation time for the automatically created inbound Send connector. However, you can set the _CreateInboundSendConnector_ parameter to the value `$false` when you create an Edge Subscription. This allows you to manually configure a Send connector from the Edge Transport server to the Exchange organization. 
+You can't modify the address space or list of smart hosts at creation time for the automatically created inbound Send connector. However, you can set the _CreateInboundSendConnector_ parameter to the value `$false` when you create an Edge Subscription. This allows you to manually configure a Send connector from the Edge Transport server to the Exchange organization.
   
 ### Outbound Send connector to send messages to the Internet
 <a name="Outbound"> </a>
@@ -227,7 +227,7 @@ After you subscribe an Edge Transport server to an Active Directory site, EdgeSy
     
 - List of Mailbox servers in the subscribed Active Directory site
     
- EdgeSync uses a mutually authenticated and authorized secure LDAP channel to transfer data from the Mailbox server to the Edge Transport server. 
+ EdgeSync uses a mutually authenticated and authorized secure LDAP channel to transfer data from the Mailbox server to the Edge Transport server.
   
 To replicate data to AD LDS, the Mailbox server binds to a global catalog server to retrieve updated data. EdgeSync initiates a secure LDAP session between a Mailbox server and the subscribed Edge Transport server over the non-standard TCP port 50636.
   
@@ -243,7 +243,7 @@ Different types of data synchronize on different schedules. The EdgeSync synchro
     
 - Topology data: 5 minutes
     
-If you want to change these intervals, use the **Set-EdgeSyncServiceConfig** cmdlet. Using the **Start-EdgeSynchronization** cmdlet on the Mailbox server to force Edge Subscription synchronization overrides the timer for the next scheduled EdgeSync synchronization, and starts EdgeSync immediately. 
+If you want to change these intervals, use the **Set-EdgeSyncServiceConfig** cmdlet. Using the **Start-EdgeSynchronization** cmdlet on the Mailbox server to force Edge Subscription synchronization overrides the timer for the next scheduled EdgeSync synchronization, and starts EdgeSync immediately.
   
 ### Selection of Mailbox servers
 
@@ -265,7 +265,7 @@ This method of locking and leasing prevents more than one instance of EdgeSync f
     
 - When you subscribe an Edge Transport server to an Active Directory site, all Mailbox servers installed in that Active Directory site at that time can participate in the EdgeSync synchronization process. If one of those servers is removed, the EdgeSync service that's running on the remaining Mailbox servers will continue the data synchronization process. However, if you later install new Mailbox servers in the Active Directory site, they won't automatically participate in EdgeSync synchronization. If you want to enable those new Mailbox servers to participate in EdgeSync synchronization, you will need to subscribe the Edge Transport server again.
     
-The following table lists the EdgeSync properties related to locking and leasing. You can use the **Set-EdgeSyncServiceConfig** cmdlet to configure these properties. 
+The following table lists the EdgeSync properties related to locking and leasing. You can use the **Set-EdgeSyncServiceConfig** cmdlet to configure these properties.
   
 **EdgeSync lease properties**
 

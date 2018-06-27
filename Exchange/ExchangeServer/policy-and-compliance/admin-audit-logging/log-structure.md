@@ -65,7 +65,7 @@ The following is an example of a typical log entry in the admin audit log.
 
 Based on the information in this log entry, we know the following occurred:
   
-- On 10/18/2017 at 3:48 P.M. Pacific Daylight Time (UTC-7), the user `Administrator` ran the cmdlet **Set-Mailbox**. 
+- On 10/18/2017 at 3:48 P.M. Pacific Daylight Time (UTC-7), the user `Administrator` ran the cmdlet **Set-Mailbox**.
     
 - The two following parameters were provided when the **Set-Mailbox** cmdlet was run: 
     
@@ -76,7 +76,7 @@ Based on the information in this log entry, we know the following occurred:
 - The _ProhibitSendReceiveQuota_ property on the object `david` was modified with a new value of `10GB`, which replaced the old value of `35GB`.
     
     > [!NOTE]
-    > The modified properties are saved to the audit log because the _LogLevel_ parameter on the `Set-AdminAuditLogConfig` cmdlet was set to `Verbose` in this example. 
+    > The modified properties are saved to the audit log because the _LogLevel_ parameter on the `Set-AdminAuditLogConfig` cmdlet was set to `Verbose` in this example.
   
 - The operation completed successfully without any errors.
     

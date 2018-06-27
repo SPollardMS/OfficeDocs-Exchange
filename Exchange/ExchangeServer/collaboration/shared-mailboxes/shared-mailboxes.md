@@ -34,7 +34,7 @@ A shared mailbox is a type of user mailbox that doesn't have its own user name a
     
 - **RecipientTypeDetails**: SharedMailbox
     
-In previous version of Exchange, creating a shared mailbox was a multi-step process in which you had to use the Exchange Management Shell to complete some of the tasks. In Exchange 2013, you can use the Exchange admin center (EAC) to create a shared mailbox in one step. For details, see [Create shared mailboxes in the Exchange admin center](create-shared-mailboxes.md). In fact, the EAC has a feature area devoted entirely to shared mailboxes. Just navigate to **Recipients** \> **Shared mailboxes** to view all the management tasks for shared mailboxes. 
+In previous version of Exchange, creating a shared mailbox was a multi-step process in which you had to use the Exchange Management Shell to complete some of the tasks. In Exchange 2013, you can use the Exchange admin center (EAC) to create a shared mailbox in one step. For details, see [Create shared mailboxes in the Exchange admin center](create-shared-mailboxes.md). In fact, the EAC has a feature area devoted entirely to shared mailboxes. Just navigate to **Recipients** \> **Shared mailboxes** to view all the management tasks for shared mailboxes.
   
 You can use the following permissions with a shared mailbox.
   
@@ -42,7 +42,7 @@ You can use the following permissions with a shared mailbox.
     
 - **Send As**: The Send As permission lets a user impersonate the shared mailbox when sending mail. For example, if Kweku logs into the shared mailbox Marketing Department and sends an email, it will look like the Marketing Department sent the email.
     
-- **Send on Behalf**: The Send on Behalf permission lets a user send email on behalf of the shared mailbox. For example, if John logs into the shared mailbox Reception Building 32 and sends an email, it look like the mail was sent by "John on behalf of Reception Building 32". You can't use the EAC to grant Send on Behalf permissions, you must use **Set-Mailbox** cmdlet with the _GrantSendonBehalf_ parameter. 
+- **Send on Behalf**: The Send on Behalf permission lets a user send email on behalf of the shared mailbox. For example, if John logs into the shared mailbox Reception Building 32 and sends an email, it look like the mail was sent by "John on behalf of Reception Building 32". You can't use the EAC to grant Send on Behalf permissions, you must use **Set-Mailbox** cmdlet with the _GrantSendonBehalf_ parameter.
     
 ## Converting shared mailboxes
 

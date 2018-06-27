@@ -16,7 +16,7 @@ description: "Summary: Learn about queues in Exchange 2016"
 
  **Summary**: Learn about queues in Exchange 2016
   
-A *queue* is a temporary holding location for messages that are waiting to enter the next stage of processing or delivery to a destination. Each queue represents a logical set of messages that the Exchange server processes in a specific order. In Exchange 2016, queues hold messages before, during and after delivery. Queues exist in the Transport service on Mailbox servers and on Edge Transport servers. Mailbox servers and Edge Transport servers are called *transport servers* throughout this topic. 
+A *queue* is a temporary holding location for messages that are waiting to enter the next stage of processing or delivery to a destination. Each queue represents a logical set of messages that the Exchange server processes in a specific order. In Exchange 2016, queues hold messages before, during and after delivery. Queues exist in the Transport service on Mailbox servers and on Edge Transport servers. Mailbox servers and Edge Transport servers are called *transport servers* throughout this topic.
   
 Like all previous versions of Exchange, Exchange 2016 uses a single Extensible Storage Engine (ESE) database for queue storage.
   
@@ -58,22 +58,22 @@ The following table lists the files that constitute the queue database.
    
 Exchange 2016 uses *generation tables* for storage and clean-up of messages in the queue database. Instead of processing and deleting individual message records from one large table, the queue database stores messages in time-based tables, and only deletes the entire table after all the messages in the table have been successfully processed. For example, consider the following example: 
   
-- All messages queued from 1:00 PM to 2:00 PM, regardless of the queue or destination, are stored in the `1p-2p_msgs` table. 
+- All messages queued from 1:00 PM to 2:00 PM, regardless of the queue or destination, are stored in the `1p-2p_msgs` table.
     
-- At 2:00 PM, new messages are stored in the `2p-3p_msgs` table. 
+- At 2:00 PM, new messages are stored in the `2p-3p_msgs` table.
     
-- At 4:00 PM, a new table named `4p-5p_msgs` is created. The entire `1p-2p_msgs` table is deleted, but only if all messages in the table have been successfully processed. 
+- At 4:00 PM, a new table named `4p-5p_msgs` is created. The entire `1p-2p_msgs` table is deleted, but only if all messages in the table have been successfully processed.
     
 This approach of deleting entire messages tables instead of individual messages helps improves the I/O performance of the drive that holds the queue database.
   
 ### Options for configuring the queue database
 
-You configure the queue database by adding or modifying keys in the `%ExchangeInstallPath%Bin\EdgeTransport.exe.config` XML application configuration file. This file is associated with the Microsoft Exchange Transport service. Changes you make to the EdgeTransport.exe.config file take effect after you restart the Microsoft Exchange Transport service. 
+You configure the queue database by adding or modifying keys in the `%ExchangeInstallPath%Bin\EdgeTransport.exe.config` XML application configuration file. This file is associated with the Microsoft Exchange Transport service. Changes you make to the EdgeTransport.exe.config file take effect after you restart the Microsoft Exchange Transport service.
   
 > [!NOTE]
-> Any customized per-server Exchange or Internet Information Server settings you make in exExchangeNoVersion XML application configuration files (for example, web.config files or the EdgeTransport.exe.config file) will be overwritten when you install an exExchangeNoVersion Cumulative Update (CU). Make sure that you save this information so that you can easily re-configure your server after the install. You must re-configure these settings after you install an exExchangeNoVersion CU. 
+> Any customized per-server Exchange or Internet Information Server settings you make in exExchangeNoVersion XML application configuration files (for example, web.config files or the EdgeTransport.exe.config file) will be overwritten when you install an exExchangeNoVersion Cumulative Update (CU). Make sure that you save this information so that you can easily re-configure your server after the install. You must re-configure these settings after you install an exExchangeNoVersion CU.
   
-The `<appSettings>` section of the EdgeTransport.exe.config file is where you can add new keys or modify existing keys. If a specific key doesn't exist, you can add it manually to change its value. 
+The `<appSettings>` section of the EdgeTransport.exe.config file is where you can add new keys or modify existing keys. If a specific key doesn't exist, you can add it manually to change its value.
   
 The keys for the queue database that are available in the EdgeTransport.exe.config file are described in the following table.
   
@@ -101,29 +101,29 @@ A queue has many properties that describe the purpose and status of the queue. S
 ### NextHopSolutionKey
 <a name="NextHopSolutionKey"> </a>
 
-The routing component of the categorizer in the Microsoft Exchange Transport service selects the destination for a message, and this destination is used to create the delivery queue. The destination is stamped on every recipient as the **NextHopSolutionKey** property. Every unique value of the **NextHopSolutionKey** property corresponds to a separate delivery queue. 
+The routing component of the categorizer in the Microsoft Exchange Transport service selects the destination for a message, and this destination is used to create the delivery queue. The destination is stamped on every recipient as the **NextHopSolutionKey** property. Every unique value of the **NextHopSolutionKey** property corresponds to a separate delivery queue.
   
 The **NextHopSolutionKey** property contains the following fields: 
   
-- **DeliveryType**: Represents the results of the categorization of the message, and how the Transport service intends to transmit the message to the next hop, which could be the ultimate destination of the message, or an intermediate hop along the way. The Transport service uses a predefined list of values for **DeliveryType**. 
+- **DeliveryType**: Represents the results of the categorization of the message, and how the Transport service intends to transmit the message to the next hop, which could be the ultimate destination of the message, or an intermediate hop along the way. The Transport service uses a predefined list of values for **DeliveryType**.
     
-    Based on the value of **DeliveryType**, the **NextHopCategory** property is added to the queue. 
+    Based on the value of **DeliveryType**, the **NextHopCategory** property is added to the queue.
     
-  - The value `External` indicates the next hop for the queue is outside the Exchange organization. 
+  - The value `External` indicates the next hop for the queue is outside the Exchange organization.
     
-  - The value `Internal` indicates the next hop for the queue is inside the Exchange organization. 
+  - The value `Internal` indicates the next hop for the queue is inside the Exchange organization.
     
     Note that a message for an external recipient may require one or more internal hops before the message is delivered externally.
     
-- **NextHopDomain**: Uses specific values based on the value of the **DeliveryType** field. For delivery queues, the value of this field is effectively the name of the queue. 
+- **NextHopDomain**: Uses specific values based on the value of the **DeliveryType** field. For delivery queues, the value of this field is effectively the name of the queue.
     
-     The value of **NextHopDomain** isn't always a domain name. For example, the value could be the name of the target Active Directory site or database availability group (DAG). Think of this field as the *next hop name* . 
+     The value of **NextHopDomain** isn't always a domain name. For example, the value could be the name of the target Active Directory site or database availability group (DAG). Think of this field as the *next hop name*.
     
-- **NextHopConnector**: Uses specific values based on the value of the **DeliveryType** field. The value is always expressed as a GUID. If this field isn't used, the value is a GUID with all zeroes. 
+- **NextHopConnector**: Uses specific values based on the value of the **DeliveryType** field. The value is always expressed as a GUID. If this field isn't used, the value is a GUID with all zeroes.
     
-     The value of **NextHopConnector** isn't always the GUID of a connector. For example, the value could be the GUID of the target Active Directory site or DAG. Think of this field as the *next hop GUID* . 
+     The value of **NextHopConnector** isn't always the GUID of a connector. For example, the value could be the GUID of the target Active Directory site or DAG. Think of this field as the *next hop GUID*.
     
-The values of **DeliveryType**, **NextHopCategory**, **NextHopDomain** and **NextHopConnector** are described in the following table. 
+The values of **DeliveryType**, **NextHopCategory**, **NextHopDomain** and **NextHopConnector** are described in the following table.
   
 |**Delivery Type in Queue Viewer**|**DeliveryType in the Exchange Management Shell**|**Description**|**NextHopCategory**|**NextHopDomain**|**NextHopConnector**|
 |:-----|:-----|:-----|:-----|:-----|:-----|
@@ -161,7 +161,7 @@ Exchange 2016 measures the rate of messages entering and leaving a queue and sto
 |**OutgoingRate** <br/> |The rate that messages are leaving the queue. The rate is the number of messages per second averaged over the last minute.  <br/> |
 |**Velocity** <br/> | The drain rate of the queue, calculated by subtracting the value of **IncomingRate** from the value of **OutgoingRate**.  <br/>  If the value is greater than 0, messages are leaving the queue faster than they are entering the queue.  <br/>  If the value equals 0, messages are leaving the queue as fast as they are entering the queue. This is also the value you'll see when the queue is inactive.  <br/>  If the value is less than 0, messages are entering the queue faster than they are leaving the queue.  <br/>  The **Velocity** value is displayed in the results of **Get-Queue**.  <br/> |
    
-At a basic level, a positive value of **Velocity** indicates a healthy queue that's efficiently draining, and a negative value of **Velocity** indicates a queue that isn't efficiently draining. However, you also need to consider the values of **IncomingRate**, **OutgoingRate**, and **MessageCount**, as well as the magnitude of **Velocity**. 
+At a basic level, a positive value of **Velocity** indicates a healthy queue that's efficiently draining, and a negative value of **Velocity** indicates a queue that isn't efficiently draining. However, you also need to consider the values of **IncomingRate**, **OutgoingRate**, and **MessageCount**, as well as the magnitude of **Velocity**.
   
 For example, consider a queue that has the following property values.
   
@@ -173,7 +173,7 @@ For example, consider a queue that has the following property values.
     
 - **IncomingRate**: 60 
     
- Based on the property values for this queue, the negative value for **Velocity** clearly indicates that the queue isn't draining properly. 
+ Based on the property values for this queue, the negative value for **Velocity** clearly indicates that the queue isn't draining properly.
   
 Now consider a queue that has the following property values.
   
@@ -185,7 +185,7 @@ Now consider a queue that has the following property values.
     
 - **IncomingRate**: 1 
     
- Although the value for **Velocity** is negative, it's very close to zero, and the values of the other properties are also very small. Therefore, a negative **Velocity** value for this queue doesn't indicate a problem with the queue. 
+ Although the value for **Velocity** is negative, it's very close to zero, and the values of the other properties are also very small. Therefore, a negative **Velocity** value for this queue doesn't indicate a problem with the queue.
   
 ### Queue status
 <a name="QueueStatus"> </a>
@@ -205,7 +205,7 @@ The current status of a queue is stored in the **Status** property of the queue.
 
 There are other queue properties that are self-explanatory. You can use most of the queue properties as filter options. By specifying filter criteria, you can quickly locate queues and take action on them. For a complete description of the filterable queue properties, see [Queue properties](queue-properties.md).
   
-An important queue property that's also worth mentioning here is the **MessageCount** property that shows how many messages are in a queue. This property is an important indicator of queue health. For example, a delivery queue that contains a large number of messages that continues to grow and never decreases could indicate a routing or transport pipeline issue that requires your attention. 
+An important queue property that's also worth mentioning here is the **MessageCount** property that shows how many messages are in a queue. This property is an important indicator of queue health. For example, a delivery queue that contains a large number of messages that continues to grow and never decreases could indicate a routing or transport pipeline issue that requires your attention.
   
 ## Message properties
 <a name="MessageProperties"> </a>
@@ -237,10 +237,10 @@ There are other message properties that are self-explanatory. You can use most o
 
 Queue Viewer and the historical queue and message management cmdlets in the Exchange Management Shell are restricted to a single Exchange server. You can view or operate on individual queues or messages, or multiple queues or messages, but only on a specific server.
   
-Exchange 2016 use the **Get-QueueDigest** cmdlet that was introduced in Exchange 2013 to provides a high-level, aggregate view of the state of queues on all servers within a specific scope. The scope could be a DAG, an Active Directory site, a list of servers, or the entire Active Directory forest. Note that queues on a subscribed Edge Transport server in the perimeter network aren't included in the results. Also, **Get-QueueDigest** is available on Edge Transport servers, but the results are restricted to queues on the Edge Transport server. 
+Exchange 2016 use the **Get-QueueDigest** cmdlet that was introduced in Exchange 2013 to provides a high-level, aggregate view of the state of queues on all servers within a specific scope. The scope could be a DAG, an Active Directory site, a list of servers, or the entire Active Directory forest. Note that queues on a subscribed Edge Transport server in the perimeter network aren't included in the results. Also, **Get-QueueDigest** is available on Edge Transport servers, but the results are restricted to queues on the Edge Transport server.
   
 > [!NOTE]
-> By default, the **Get-QueueDigest** cmdlet displays delivery queues that contain ten or more messages, and the results are between one and two minutes old. For instructions on how to change these default values, see **Configure Get-QueueDigest**. 
+> By default, the **Get-QueueDigest** cmdlet displays delivery queues that contain ten or more messages, and the results are between one and two minutes old. For instructions on how to change these default values, see **Configure Get-QueueDigest**.
   
 The following table describes the management tasks you can perform on queues or messages in queues.
   

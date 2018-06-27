@@ -29,12 +29,12 @@ For additional management tasks related to OABs, see [Procedures for offline add
     
 - You can only use PowerShell to perform this procedure. To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Offline address books" entry in the [Email address and address book permissions](../../permissions/feature-permissions/address-book-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Offline address books" entry in the [Email address and address book permissions](../../permissions/feature-permissions/address-book-permissions.md) topic.
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
   
 ## Change the offline address book generation schedule
 
@@ -54,11 +54,11 @@ New-SettingOverride -Name "<UniqueOverrideName>" -Component TimeBasedAssistants 
 
  **Notes:**
   
-- To specify a _\<TimeSpan\>_ value, use the syntax `d.hh:mm:ss`, where _d_ = days, _hh_ = hours, _mm_ = minutes, and _ss_ = seconds. 
+- To specify a _\<TimeSpan\>_ value, use the syntax `d.hh:mm:ss`, where _d_ = days, _hh_ = hours, _mm_ = minutes, and _ss_ = seconds.
     
-- To configure the OAB generation schedule on all Exchange 2016 Mailbox servers in the Active Directory forest, don't use the _Server_ parameter. 
+- To configure the OAB generation schedule on all Exchange 2016 Mailbox servers in the Active Directory forest, don't use the _Server_ parameter.
     
-- To configure the OAB generation schedule on a specific Exchange 2016 Mailbox server, use the _Server_ parameter and the name (not the fully qualified domain name or FQDN) of the server. This method is useful when you need to specify different OAB generation schedules on different Exchange servers. 
+- To configure the OAB generation schedule on a specific Exchange 2016 Mailbox server, use the _Server_ parameter and the name (not the fully qualified domain name or FQDN) of the server. This method is useful when you need to specify different OAB generation schedules on different Exchange servers.
     
 - In Exchange 2016 Cumulative Update 3 (CU3) or earlier, the _Component_ parameter value is `MailboxAssistants`.
     
@@ -90,9 +90,9 @@ Get-ExchangeDiagnosticInfo -Process Microsoft.Exchange.Directory.TopologyService
 
  **Notes:**
   
-- If you didn't use the _Server_ parameter in Step 1, don't use it here. If you used the _Server_ parameter in Step 1, use the same server name here. 
+- If you didn't use the _Server_ parameter in Step 1, don't use it here. If you used the _Server_ parameter in Step 1, use the same server name here.
     
-- If you delete the custom OAB generation schedule by using the **Remove-SettingOverride** cmdlet, you still need to run this command to change the generation schedule back to the default value of 8 hours. 
+- If you delete the custom OAB generation schedule by using the **Remove-SettingOverride** cmdlet, you still need to run this command to change the generation schedule back to the default value of 8 hours.
     
 This example applies the new OAB generation schedule on all Exchange 2016 Mailbox servers in the organization.
   

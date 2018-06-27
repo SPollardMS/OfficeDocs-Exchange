@@ -20,7 +20,7 @@ description: "Summary: Improve the attachment experience for Outlook on the web 
 An optional prerequisite for Exchange 2016 Cumulative Update 1 (CU1) or later is the installation of Office Online Server on one or more servers in your organization. Office Online Server enables users to view supported file attachments within Outlook on the web (Outlook) without downloading them first and without having a local installation of the program. Without Office Online Server installed, Outlook users need to download attachments to their local computer and then open them in a local application.
 
 > [!NOTE]
-> Office Online Server is available for download as part of a volume licensing agreement. If you don't have a volume license agreement, you can skip the instructions in this step. However, without Office Online Server installed, Outlook users will need to download attachments to their local computer to view them; they won't be able to view them in Outlook. 
+> Office Online Server is available for download as part of a volume licensing agreement. If you don't have a volume license agreement, you can skip the instructions in this step. However, without Office Online Server installed, Outlook users will need to download attachments to their local computer to view them; they won't be able to view them in Outlook.
 
 You can configure an Office Online Server endpoint in two places in Exchange 2016: at the organization level, and at the Mailbox server level. Where you configure the endpoint depends on the size of your organization and the location of your servers and users.
 
@@ -30,7 +30,7 @@ You can configure an Office Online Server endpoint in two places in Exchange 201
 
   - **Fallback for large deployments**: You can configure endpoint at the organization level as a fallback if the endpoint configured on a Mailbox server isn't available. If an Office Web Apps server isn't available, the client will try to connect to the endpoint configured at the organization level.
 
-    **Notes**:
+  **Notes**:
 
   - If you have Exchange 2013 servers in your organization, don't configure an endpoint at the organization level. Doing so will direct Exchange 2013 servers to use the Office Online Server server. This isn't supported.
 
@@ -49,7 +49,7 @@ Office Online Server requires the following to install:
 - Exchange 2016 Cumulative Update 1 (CU1) or later
 
     > [!NOTE]
-    > If you are running Windows Server 2016, you will need Exchange 2016 CU3 or later, as detailed in [Exchange 2016 prerequisites](prerequisites.md). 
+    > If you're running Windows Server 2016, you will need Exchange 2016 CU3 or later, as detailed in [Exchange 2016 prerequisites](prerequisites.md).
 
 - [Microsoft .NET Framework 4.5.2](https://go.microsoft.com/fwlink/p/?linkId=616890)
 
@@ -99,13 +99,13 @@ To install Office Online Server, do the following on the computer where you want
 
 After you've configured the Office Online Server server, do the following on your Exchange 2016 server. This will allow Outlook to send requests to the Office Online Server server.
 
-- Open the Exchange Management Shell and run the following command. Replace the example server name and URL with your own.
+1. Open the Exchange Management Shell and run the following command. Replace the example server name and URL with your own.
 
   ```
   Set-MailboxServer MBX -WacDiscoveryEndpoint "https://oos.internal.contoso.com/hosting/discovery"
   ```
 
-- Restart the MsExchangeOwaAppPool by running the following command.
+2. Restart the MsExchangeOwaAppPool by running the following command.
 
   ```
   Restart-WebAppPool MsExchangeOwaAppPool
@@ -115,16 +115,16 @@ After you've configured the Office Online Server server, do the following on you
 
 After you've configured the Office Online Server server, do the following on your Exchange 2016 server. This will allow Outlook to send requests to the Office Online Server server.
 
-- Open the Exchange Management Shell and run the following command. Replace the example URL with your own.
+1. Open the Exchange Management Shell and run the following command. Replace the example URL with your own.
 
   ```
   Set-OrganizationConfig -WacDiscoveryEndpoint "https://oos.internal.contoso.com/hosting/discovery"
   ```
 
     > [!IMPORTANT]
-    > If you have Exchange 2013 servers in your organization, don't configure an endpoint at the organization level. Doing so will direct Exchange 2013 servers to use the Office Online Server server. This isn't supported. 
+    > If you have Exchange 2013 servers in your organization, don't configure an endpoint at the organization level. Doing so will direct Exchange 2013 servers to use the Office Online Server server. This isn't supported.
 
-- Restart the MsExchangeOwaAppPool by running the following command.
+2. Restart the MsExchangeOwaAppPool by running the following command.
 
   ```
   Restart-WebAppPool MsExchangeOwaAppPool

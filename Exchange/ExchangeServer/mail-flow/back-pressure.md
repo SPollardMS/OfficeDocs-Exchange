@@ -23,27 +23,27 @@ Back pressure is a system resource monitoring feature of the Microsoft Exchange 
 
 The following system resources are monitored by back pressure:
 
-- **DatabaseUsedSpace[%ExchangeInstallPath%TransportRoles\data\Queue]**: Hard drive utilization for the drive that holds the message queue database. 
+- **DatabaseUsedSpace[%ExchangeInstallPath%TransportRoles\data\Queue]**: Hard drive utilization for the drive that holds the message queue database.
 
-- **PrivateBytes**: The memory that's used by the EdgeTransport.exe process. 
+- **PrivateBytes**: The memory that's used by the EdgeTransport.exe process.
 
-- **QueueLength[SubmissionQueue]**: The number of messages in the Submission queue. 
+- **QueueLength[SubmissionQueue]**: The number of messages in the Submission queue.
 
-- **SystemMemory**: The memory that's used by all other processes. 
+- **SystemMemory**: The memory that's used by all other processes.
 
-- **UsedDiskSpace[%ExchangeInstallPath%TransportRoles\data\Queue]**: Hard drive utilization for the drive that holds the message queue database transaction logs. 
+- **UsedDiskSpace[%ExchangeInstallPath%TransportRoles\data\Queue]**: Hard drive utilization for the drive that holds the message queue database transaction logs.
 
-- **UsedDiskSpace[%ExchangeInstallPath%TransportRoles\data]**: Hard drive utilization for the drive that's used for content conversion. 
+- **UsedDiskSpace[%ExchangeInstallPath%TransportRoles\data]**: Hard drive utilization for the drive that's used for content conversion.
 
-- **UsedVersionBuckets[%ExchangeInstallPath%TransportRoles\data\Queue\mail.que]**: The number of uncommitted message queue database transactions that exist in memory. 
+- **UsedVersionBuckets[%ExchangeInstallPath%TransportRoles\data\Queue\mail.que]**: The number of uncommitted message queue database transactions that exist in memory.
 
 For each monitored system resource on a Mailbox server or Edge Transport server, the following levels of resource utilization or *pressure* are defined: 
 
 - **Low or Normal**: The resource isn't overused. The server accepts new connections and messages.
 
-- **Medium**: The resource is slightly overused. Back pressure is applied to the server in a limited manner. Mail from senders in the organization's authoritative domains can flow. However, depending on the specific resource under pressure, the server uses tarpitting to delay server response or rejects incoming **MAIL FROM** commands from other sources. 
+- **Medium**: The resource is slightly overused. Back pressure is applied to the server in a limited manner. Mail from senders in the organization's authoritative domains can flow. However, depending on the specific resource under pressure, the server uses tarpitting to delay server response or rejects incoming **MAIL FROM** commands from other sources.
 
-- **High**: The resource is severely overused. Full back pressure is applied. All message flow stops, and the server rejects all new incoming **MAIL FROM** commands. 
+- **High**: The resource is severely overused. Full back pressure is applied. All message flow stops, and the server rejects all new incoming **MAIL FROM** commands.
 
 Transition levels define the low, medium and high resource utilization values depending on whether the resource pressure is increasing or decreasing. Typically, a resource utilization level that's lower than the original level is required as the resource utilization decreases. In other words, there really isn't a static value for low, medium and high resource pressure. You need to know if the utilization is increasing or decreasing before you can determine the next change in resource utilization level.
 
@@ -101,7 +101,7 @@ As you can see from the formula and the rounding down behavior, the hard drive n
 
 By default, the high level of memory utilization by the EdgeTransport.exe process is 75 percent of the total physical memory or 1 terabyte, whichever is less. The results are always rounded down to the nearest integer.
 
-Exchange keeps a history of the memory utilization of the EdgeTransport.exe process. If the utilization doesn't go down to low level for a specific number of polling intervals, known as the *history depth*, Exchange rejects incoming messages until the resource utilization goes back to the low level. By default, the history depth for EdgeTransport.exe memory utilization s 30 polling intervals. 
+Exchange keeps a history of the memory utilization of the EdgeTransport.exe process. If the utilization doesn't go down to low level for a specific number of polling intervals, known as the *history depth*, Exchange rejects incoming messages until the resource utilization goes back to the low level. By default, the history depth for EdgeTransport.exe memory utilization s 30 polling intervals.
 
 ### Number of messages in the Submission queue
 
@@ -121,9 +121,9 @@ Exchange keeps a history of the memory utilization of the EdgeTransport.exe proc
 
  **Comments**:
 
-When the Submission queue is under pressure, the Exchange throttles incoming connections by delaying acknowledgement of incoming messages. Exchange reduces the rate of incoming message flow by *tarpitting*, which delays the acknowledgment of the SMTP **MAIL FROM** command to the sending server. If the pressure condition continues, Exchange gradually increases the tarpitting delay. After the Submission queue utilization returns to the low level, Exchange reduces the acknowledgment delay and eases back into normal operation. By default, Exchange delays message acknowledgments for 10 seconds when under Submission queue pressure. If the resource pressure continues, the delay is increased in 5-second increments up to 55 seconds. 
+When the Submission queue is under pressure, the Exchange throttles incoming connections by delaying acknowledgement of incoming messages. Exchange reduces the rate of incoming message flow by *tarpitting*, which delays the acknowledgment of the SMTP **MAIL FROM** command to the sending server. If the pressure condition continues, Exchange gradually increases the tarpitting delay. After the Submission queue utilization returns to the low level, Exchange reduces the acknowledgment delay and eases back into normal operation. By default, Exchange delays message acknowledgments for 10 seconds when under Submission queue pressure. If the resource pressure continues, the delay is increased in 5-second increments up to 55 seconds.
 
-Exchange keeps a history of Submission queue utilization. If the Submission queue utilization doesn't go down to the low level for a specific number of polling intervals, known as the *history depth*, Exchange stops the tarpitting delay and rejects incoming messages until the Submission utilization goes back to the low level. By default, the history depth for the Submission queue is in 300 polling intervals. 
+Exchange keeps a history of Submission queue utilization. If the Submission queue utilization doesn't go down to the low level for a specific number of polling intervals, known as the *history depth*, Exchange stops the tarpitting delay and rejects incoming messages until the Submission utilization goes back to the low level. By default, the history depth for the Submission queue is in 300 polling intervals.
 
 ### Memory used by all processes
 
@@ -143,7 +143,7 @@ Exchange keeps a history of Submission queue utilization. If the Submission queu
 
  **Comments**:
 
-When the server reaches the high level of memory utilization, *message dehydration* occurs. Message dehydration removes unnecessary elements of queued messages that are cached in memory. Typically, complete messages are cached in memory for increased performance. Removal of the MIME content from these cached messages reduces the amount of memory that's used at the expense of higher latency, because the messages are now read directly from the message queue database. By default, message dehydration is enabled. 
+When the server reaches the high level of memory utilization, *message dehydration* occurs. Message dehydration removes unnecessary elements of queued messages that are cached in memory. Typically, complete messages are cached in memory for increased performance. Removal of the MIME content from these cached messages reduces the amount of memory that's used at the expense of higher latency, because the messages are now read directly from the message queue database. By default, message dehydration is enabled.
 
 ### Hard drive utilization for the drive that holds the message queue database transaction logs
 
@@ -178,13 +178,13 @@ The `%ExchangeInstallPath%Bin\EdgeTransport.exe.config` application configuratio
 100 \* (_\<hard drive size in MB\>_ - Min(5120 MB, 3\* _DatabaseCheckPointDepthMax_)) / _\<hard drive size in MB\>_
 
 > [!NOTE]
-> The value of the _DatabaseCheckPointDepthMax_ key applies to all transport-related Extensible Storage Engine (ESE) databases that exist on the Exchange server. On Mailbox servers, this includes the message queue database, and the sender reputation database. On Edge Transport servers, this includes the message queue database, the sender reputation database, and the IP filter database that's used by the Connection Filtering agent. 
+> The value of the _DatabaseCheckPointDepthMax_ key applies to all transport-related Extensible Storage Engine (ESE) databases that exist on the Exchange server. On Mailbox servers, this includes the message queue database, and the sender reputation database. On Edge Transport servers, this includes the message queue database, the sender reputation database, and the IP filter database that's used by the Connection Filtering agent.
 
 ### Hard drive utilization for the drive that's used for content conversion
 
  **Resource**: **UsedDiskSpace[%ExchangeInstallPath%TransportRoles\data]**
 
- **Description**: Monitors the percentage of total drive space that's consumed by all files on the drive that's used for content conversion. The default location of the folder is `%ExchangeInstallPath%TransportRoles\data\Temp` and is controlled by the _TemporaryStoragePath_ key in the `%ExchangeInstallPath%Bin\EdgeTransport.exe.config` application configuration file. 
+ **Description**: Monitors the percentage of total drive space that's consumed by all files on the drive that's used for content conversion. The default location of the folder is `%ExchangeInstallPath%TransportRoles\data\Temp` and is controlled by the _TemporaryStoragePath_ key in the `%ExchangeInstallPath%Bin\EdgeTransport.exe.config` application configuration file.
 
  **Pressure transitions (%)**:
 
@@ -226,13 +226,13 @@ As you can see from the formula and the rounding down behavior, the hard drive n
 
  **Comments:**:
 
-A list of changes that are made to the message queue database is kept in memory until those changes can be committed to a transaction log. Then the list is committed to the message queue database itself. These outstanding message queue database transactions that are kept in memory are known as *version buckets* . The number of version buckets may increase to unacceptably high levels because of an unexpectedly high volume of incoming messages, spam attacks, problems with the message queue database integrity, or hard drive performance. 
+A list of changes that are made to the message queue database is kept in memory until those changes can be committed to a transaction log. Then the list is committed to the message queue database itself. These outstanding message queue database transactions that are kept in memory are known as *version buckets*. The number of version buckets may increase to unacceptably high levels because of an unexpectedly high volume of incoming messages, spam attacks, problems with the message queue database integrity, or hard drive performance.
 
-When version buckets are under pressure, the Exchange server throttles incoming connections by delaying acknowledgment of incoming messages. Exchange reduces the rate of incoming message flow by *tarpitting*, which delays the acknowledgment of the SMTP **MAIL FROM** command to the sending server. If the resource pressure condition continues, Exchange gradually increases the tarpitting delay. After the resource utilization returns to normal, Exchange gradually reduces the acknowledgement delay and eases back into normal operation. By default, Exchange delays message acknowledgments for 10 seconds when under resource pressure. If the pressure continues, the delay is increased in 5-second increments up to 55 seconds. 
+When version buckets are under pressure, the Exchange server throttles incoming connections by delaying acknowledgment of incoming messages. Exchange reduces the rate of incoming message flow by *tarpitting*, which delays the acknowledgment of the SMTP **MAIL FROM** command to the sending server. If the resource pressure condition continues, Exchange gradually increases the tarpitting delay. After the resource utilization returns to normal, Exchange gradually reduces the acknowledgement delay and eases back into normal operation. By default, Exchange delays message acknowledgments for 10 seconds when under resource pressure. If the pressure continues, the delay is increased in 5-second increments up to 55 seconds.
 
 When the version buckets are under high pressure, the Exchange server also stops processing outgoing messages.
 
-Exchange keeps a history of version bucket resource utilization. If the resource utilization doesn't go down to the low level for a specific number of polling intervals, known as the *history depth*, Exchange stops the tarpitting delay and rejects incoming messages until the resource utilization goes back to the low level. By default, the history depth for version buckets is in 10 polling intervals. 
+Exchange keeps a history of version bucket resource utilization. If the resource utilization doesn't go down to the low level for a specific number of polling intervals, known as the *history depth*, Exchange stops the tarpitting delay and rejects incoming messages until the resource utilization goes back to the low level. By default, the history depth for version buckets is in 10 polling intervals.
 
 ## Actions taken by back pressure when resources are under pressure
 <a name="Pressure"> </a>
@@ -267,15 +267,15 @@ To view the back pressure settings on an Exchange server, run the following comm
 [xml]$bp=Get-ExchangeDiagnosticInfo [-Server <ServerIdentity> ] -Process EdgeTransport -Component ResourceThrottling; $bp.Diagnostics.Components.ResourceThrottling.ResourceTracker.ResourceMeter
 ```
 
-To see the values on the local server, you can omit the _Server_ parameter. 
+To see the values on the local server, you can omit the _Server_ parameter.
 
 ## Back pressure configuration settings in the EdgeTransport.exe.config file
 <a name="File"> </a>
 
-All configuration options for back pressure are done in the `%ExchangeInstallPath%Bin\EdgeTransport.exe.config` XML application configuration file. However, few of the settings exist in the file by default. 
+All configuration options for back pressure are done in the `%ExchangeInstallPath%Bin\EdgeTransport.exe.config` XML application configuration file. However, few of the settings exist in the file by default.
 
 > [!CAUTION]
-> These settings are listed only as a reference for the default values. We strongly discourage any modifications to the back pressure settings in the EdgeTransport.exe.config file. Modifications to these settings might result in poor performance or data loss. We recommend that you investigate and correct the root cause of any back pressure events that you may encounter. 
+> These settings are listed only as a reference for the default values. We strongly discourage any modifications to the back pressure settings in the EdgeTransport.exe.config file. Modifications to these settings might result in poor performance or data loss. We recommend that you investigate and correct the root cause of any back pressure events that you may encounter.
 
 **General back pressure settings**
 
@@ -332,7 +332,7 @@ All configuration options for back pressure are done in the `%ExchangeInstallPat
 | _UsedDiskSpace[%ExchangeInstallPath%TransportRoles\data\Queue].MediumToLow_ <br/> |80  <br/> |
  
 > [!NOTE]
-> Values that contain only `UsedDiskSpace` (for example, `UsedDiskSpace.MediumToHigh`) apply to the message queue database transaction logs and to content conversion. 
+> Values that contain only `UsedDiskSpace` (for example, `UsedDiskSpace.MediumToHigh`) apply to the message queue database transaction logs and to content conversion.
 
 **UsedDiskSpace settings (content conversion)**
 

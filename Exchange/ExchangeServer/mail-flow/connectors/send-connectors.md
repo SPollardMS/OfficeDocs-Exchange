@@ -23,7 +23,7 @@ You can create Send connectors in the Transport service on Mailbox servers, and 
 > [!IMPORTANT]
 >  By default, no Send connectors exist for external mail flow when you install Exchange. To enable outbound Internet mail flow, you need to create a Send connector, or subscribe an Edge Transport server to your Exchange organization. For more information, see the following topics: > [Create a Send connector to send mail to the Internet](internet-mail-send-connectors.md)> [Edge Transport servers](../../architecture/edge-transport-servers/edge-transport-servers.md)
   
-You don't need to configure Send connectors to send mail between Exchange servers in the same Active Directory forest. Implicit and invisible Send connectors that are fully aware of the Exchange server topology are available for sending mail to internal Exchange servers. These connectors are described in the [Implicit Send connectors](send-connectors.md#ImplicitSendConnectors) section. 
+You don't need to configure Send connectors to send mail between Exchange servers in the same Active Directory forest. Implicit and invisible Send connectors that are fully aware of the Exchange server topology are available for sending mail to internal Exchange servers. These connectors are described in the [Implicit Send connectors](send-connectors.md#ImplicitSendConnectors) section.
   
 These are the important settings on Send connectors:
   
@@ -46,13 +46,13 @@ These are the notable changes to Send connectors in Exchange 2016 compared to Ex
   
 - You can configure Send connectors to redirect or *proxy* outbound mail through the Front End Transport service. For more information, see [Configure Send connectors to proxy outbound mail](proxy-outbound-mail.md).
     
-- The _IsCoexistenceConnector_ parameter is no longer available. 
+- The _IsCoexistenceConnector_ parameter is no longer available.
     
-- The _LinkedReceiveConnector_ parameter is no longer available. 
+- The _LinkedReceiveConnector_ parameter is no longer available.
     
 - The default maximum message size is increased to 35 MB (approximately 25 MB due to Base64 encoding). For more information, see [Message size limits in Exchange 2016](../../mail-flow/message-size-limits.md).
     
-- The _TlsCertificateName_ parameter allows you to specify the certificate issuer and the certificate subject. This helps minimize the risk of fraudulent certificates. 
+- The _TlsCertificateName_ parameter allows you to specify the certificate issuer and the certificate subject. This helps minimize the risk of fraudulent certificates.
     
 ## Implicit Send connectors
 <a name="ImplicitSendConnectors"> </a>
@@ -102,15 +102,15 @@ Every Send connector needs to be configured with one of these options:
 
 When you select DNS resolution to deliver mail, the source Exchange server for the Send connector must be able to resolve the MX records for the address spaces that are configured on the connector. Depending on the nature of the connector, and how many network adapters are in the server, the Send connector could require access to an internal DNS server, or an external (public) DNS server. You can configure the server to use specific DNS servers for internal and external DNS lookups:
   
-- In the EAC at **Servers** \> **Server** \> select the server and click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png) \> **DNS lookups** tab. 
+- In the EAC at **Servers** \> **Server** \> select the server and click **Edit** ![Edit icon](../../media/ITPro_EAC_EditIcon.png) \> **DNS lookups** tab.
     
-- In the Exchange Management Shell, you use the _ExternalDNS\*_ and _InternalDNS\*_ parameters on the **Set-TransportService** cmdlet. 
+- In the Exchange Management Shell, you use the _ExternalDNS\*_ and _InternalDNS\*_ parameters on the **Set-TransportService** cmdlet.
     
 If you've already configured the Exchange server with separate DNS settings to use for internal and external DNS lookups, and the Send connector routes mail to an external address space, you need to configure the Send connector to use the external DNS server:
   
-- In the EAC, select **Use the external DNS lookup setting on servers with transport roles** (in the new Send connector wizard, or on the **Delivery** tab in the properties of existing connectors). 
+- In the EAC, select **Use the external DNS lookup setting on servers with transport roles** (in the new Send connector wizard, or on the **Delivery** tab in the properties of existing connectors).
     
-- In the Exchange Management Shell, use the _UseExternalDNSServersEnabled_ parameter on the **New-SendConnector** and **Set-SendConnector** cmdlets. 
+- In the Exchange Management Shell, use the _UseExternalDNSServersEnabled_ parameter on the **New-SendConnector** and **Set-SendConnector** cmdlets.
     
 ### Use smart hosts to route mail
 
@@ -142,11 +142,11 @@ The available SMTP address space values are described in the following table.
 |Domain and subdomains (for example, `*.contoso.com`)  <br/> |The Send connector routes mail to recipients in the specified domain, and in all subdomains.  <br/> |
 | `--` <br/> | The Send connector routes mail to recipients in all accepted domains in the Exchange organization. This value is only available on Send connectors on Edge Transport servers that send mail to the internal Exchange organization.  <br/> |
    
-An address space also has **Type** and **Cost** values that you can configure. 
+An address space also has **Type** and **Cost** values that you can configure.
   
 On Edge Transport servers, the **Type** value must be `SMTP`. On Mailbox servers, you can also use non-SMTP address space types like `X400` or any other text string. X.400 addresses need to be RFC 1685 compliant (for example, `o=MySite;p=MyOrg;a=adatum;c=us`), but other **Type** values accept any text value for the address space. If you specify a non-SMTP address space type, the Send connector must use smart host routing, and SMTP is used to send messages to the smart host. Delivery Agent connectors and Foreign connectors send non-SMTP messages to non-SMTP servers without using SMTP. For more information, see [Delivery Agents and Delivery Agent Connectors](http://technet.microsoft.com/library/38c942ee-b59d-47ec-87eb-bebad441ada5.aspx) and [Foreign Connectors](http://technet.microsoft.com/library/21c6a7a9-f4d2-4359-9ac9-930701b63a4e.aspx).
   
-The **Cost** value on the address space is used for mail flow optimization and fault tolerance when you have the same address spaces configured on multiple Send connectors on different source servers. A lower priority value indicates a preferred Send connector. 
+The **Cost** value on the address space is used for mail flow optimization and fault tolerance when you have the same address spaces configured on multiple Send connectors on different source servers. A lower priority value indicates a preferred Send connector.
   
 The Send connector that's used to route messages to a recipient is selected during the routing resolution phase of message categorization. The Send connector whose address space most closely matches the recipient's email address, and whose priority value is lowest is selected.
   
@@ -157,16 +157,16 @@ For example, suppose the recipient is julia@marketing.contoso.com. If a Send con
 
 The source servers for a Send connector determine the destination Exchange server for mail that needs to be routed through the Send connector. The Send connector scope controls the visibility of the connector within the Exchange organization.
   
- By default, Send connectors are visible to all the Exchange servers in the entire Active Directory forest, and are used in routing decisions. However, you can limit the scope of a Send connector so that it's only visible to other Exchange servers in the same Active Directory site. The Send connector is invisible to Exchange servers in other Active Directory sites, and isn't used in their routing decisions. A Send connector that's restricted in this way is said to be *scoped* . 
+ By default, Send connectors are visible to all the Exchange servers in the entire Active Directory forest, and are used in routing decisions. However, you can limit the scope of a Send connector so that it's only visible to other Exchange servers in the same Active Directory site. The Send connector is invisible to Exchange servers in other Active Directory sites, and isn't used in their routing decisions. A Send connector that's restricted in this way is said to be *scoped*.
   
-To configure scoped Send connectors in the EAC, you select **Scoped send connector** in the **Address space** section of the new Send connector wizard, or on the **Scoping** tab in the properties of existing Send connectors. In the Exchange Management Shell, you use the _IsScopedConnector_ parameter on the **New-SendConnector** and **Set-SendConnector** cmdlets. 
+To configure scoped Send connectors in the EAC, you select **Scoped send connector** in the **Address space** section of the new Send connector wizard, or on the **Scoping** tab in the properties of existing Send connectors. In the Exchange Management Shell, you use the _IsScopedConnector_ parameter on the **New-SendConnector** and **Set-SendConnector** cmdlets.
   
 ## Send connector permissions
 <a name="Permissions"> </a>
 
 When the Send connector establishes a connection with the destination messaging server, the Send connector permissions determine the types of headers that can be sent in messages. If a message includes headers that aren't allowed by the permissions, those headers are removed from messages.
   
-Permissions are assigned to Send connectors by well-known security principals. Security principals include user accounts, computer accounts, and security groups (objects that are identifiable by a security identifier or SID that can have permissions assigned to them). By default, the same security principals with the same permissions are assigned on all Send connectors, regardless of the usage type that you selected when you created the connector. To modify the default permissions for a Send connector, you need to use the **Add-ADPermission** and **Remove-ADPermission** cmdlets in the Exchange Management Shell. 
+Permissions are assigned to Send connectors by well-known security principals. Security principals include user accounts, computer accounts, and security groups (objects that are identifiable by a security identifier or SID that can have permissions assigned to them). By default, the same security principals with the same permissions are assigned on all Send connectors, regardless of the usage type that you selected when you created the connector. To modify the default permissions for a Send connector, you need to use the **Add-ADPermission** and **Remove-ADPermission** cmdlets in the Exchange Management Shell.
   
 The available Send connector permissions are described in the following table.
   

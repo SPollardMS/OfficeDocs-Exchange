@@ -54,9 +54,9 @@ On Mailbox servers, you can create and manage Receive connectors in the Exchange
 
 These are the notable changes to Receive connectors in Exchange 2016 compared to Exchange 2010:
   
-- The _TlsCertificateName_ parameter allows you to specify the certificate issuer and the certificate subject. This helps minimize the risk of fraudulent certificates. 
+- The _TlsCertificateName_ parameter allows you to specify the certificate issuer and the certificate subject. This helps minimize the risk of fraudulent certificates.
     
-- The _TransportRole_ parameter allows you to distinguish between frontend (Client Access) and backend connectors on Mailbox servers. 
+- The _TransportRole_ parameter allows you to distinguish between frontend (Client Access) and backend connectors on Mailbox servers.
     
 ## Default Receive connectors created during setup
 <a name="DefaultConnectors"> </a>
@@ -65,7 +65,7 @@ Several different Receive connectors are created by default when you install Exc
   
 ### Default Receive connectors in the Front End Transport service on Mailbox servers
 
-The primary function of Receive connectors in the Front End Transport service is to accept anonymous and authenticated SMTP connections into your Exchange organization. The **TransportRole** property value for these connectors is `FrontendTransport`. The Front End Transport service relays or *proxies* these connections to the Transport service for categorization and routing to the final destination. 
+The primary function of Receive connectors in the Front End Transport service is to accept anonymous and authenticated SMTP connections into your Exchange organization. The **TransportRole** property value for these connectors is `FrontendTransport`. The Front End Transport service relays or *proxies* these connections to the Transport service for categorization and routing to the final destination.
   
 The default Receive connectors that are created in the Front End Transport service on Mailbox servers are described in the following table.
   
@@ -99,10 +99,10 @@ The default Receive connector that's created in the Transport service on Edge Tr
 ### Implicit Receive connectors in the Mailbox Transport Delivery service on Mailbox servers
 <a name="ImplicitReceiveConnectors"> </a>
 
-In addition to the Receive connectors are created during the installation of Exchange 2016 servers, there's a special *implicit Receive connector* in the Mailbox Transport Delivery service on Mailbox servers. This implicit Receive connector is automatically available, invisible, and requires no management. The primary function of this connector is to accept mail from the Transport service on the local Mailbox server or remote Mailbox servers in your organization. 
+In addition to the Receive connectors are created during the installation of Exchange 2016 servers, there's a special *implicit Receive connector* in the Mailbox Transport Delivery service on Mailbox servers. This implicit Receive connector is automatically available, invisible, and requires no management. The primary function of this connector is to accept mail from the Transport service on the local Mailbox server or remote Mailbox servers in your organization.
   
 The implicit Receive connector that exists in the Mailbox Transport Delivery service on Mailbox servers is described in the following table.
-  
+
 |**Name**|**Description**|**Protocol logging**|**TCP Port**|**Local IP address bindings**|**Remote IP address ranges**|**Authentication mechanisms**|**Permission groups**|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 |Mailbox delivery Receive connector  <br/> |Accepts authenticated connections from the Transport service on the local or remote Mailbox servers.  <br/> |None  <br/> |475  <br/> |All available IPv4 and IPv6 addresses (`0.0.0.0` and `[::]:`)  <br/> | `{::-ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff, 0.0.0.0-255.255.255.255}` (all IPv4 and IPv6 addresses)  <br/> | ` ExchangeServer ` <br/> | `ExchangeServers` <br/> |
@@ -110,21 +110,21 @@ The implicit Receive connector that exists in the Mailbox Transport Delivery ser
 ## Receive connector local address bindings
 <a name="Bindings"> </a>
 
-Local address bindings restrict the Receive connector to listen for SMTP connections on a specific local IP address (network adapter) and TCP port. Typically, the combination of local IP address and TCP port is unique for every Receive connector on a server. However, multiple Receive connectors on a server can have the same local IP addresses and TCP ports if the remote IP address ranges are different. For more information, see the [Receive connector remote addresses](receive-connectors.md#RemoteAddresses) section. 
+Local address bindings restrict the Receive connector to listen for SMTP connections on a specific local IP address (network adapter) and TCP port. Typically, the combination of local IP address and TCP port is unique for every Receive connector on a server. However, multiple Receive connectors on a server can have the same local IP addresses and TCP ports if the remote IP address ranges are different. For more information, see the [Receive connector remote addresses](receive-connectors.md#RemoteAddresses) section.
   
 By default, a Receive connector listens for connections on all available local IPv4 and IPv6 addresses (`0.0.0.0` and `[::]:`). If the server has multiple network adapters, you can configure Receive connectors to accept connections only from IP addresses that are configured for a specific network adapter. For example, on an Internet-facing Exchange server, you can have a Receive connector that's bound to the IP address of the external network adapter to listen for anonymous Internet connections. You can have a separate Receive connector that's bound to the IP address of the internal network adapter to listen for authenticated connections from internal Exchange servers.
   
 > [!NOTE]
-> If you bind a Receive connector to a specific IP address, make sure that the address is configured on a local network adapter. If you specify an invalid local IP address, the Microsoft Exchange Transport service may fail to start when the server or service is restarted. 
+> If you bind a Receive connector to a specific IP address, make sure that the address is configured on a local network adapter. If you specify an invalid local IP address, the Microsoft Exchange Transport service may fail to start when the server or service is restarted.
   
-In the EAC, you use the **Network adapter bindings** field to configure the local address bindings in the new Receive connector wizard, or on the **Scoping** tab in the properties of existing Receive connectors. In the Exchange Management Shell, you use the _Bindings_ parameter on the **New-ReceiveConnector** and **Set-ReceiveConnector** cmdlets. Depending on the usage type that you select, you might not be able to configure the local address bindings when you create the Receive connector, but you can modify them after you create the Receive connector. The affected usage types are identified in the [Receive connector usage types](receive-connectors.md#UsageTypes) section. 
+In the EAC, you use the **Network adapter bindings** field to configure the local address bindings in the new Receive connector wizard, or on the **Scoping** tab in the properties of existing Receive connectors. In the Exchange Management Shell, you use the _Bindings_ parameter on the **New-ReceiveConnector** and **Set-ReceiveConnector** cmdlets. Depending on the usage type that you select, you might not be able to configure the local address bindings when you create the Receive connector, but you can modify them after you create the Receive connector. The affected usage types are identified in the [Receive connector usage types](receive-connectors.md#UsageTypes) section.
   
 ## Receive connector remote addresses
 <a name="RemoteAddresses"> </a>
 
 Remote addresses define from where the Receive connector receives SMTP connections. By default, Receive connectors listen for connections from all IPv4 and IPv6 addresses (0.0.0.0-255.255.255.255 and ::-ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff). If you create a custom Receive connector to receive mail from a specific source, configure the connector to listen for connections only from the specific IP address or address ranges.
   
- Multiple Receive connectors on the server can have overlapping remote IP address ranges as long as one range is completely overlapped by another. When remote IP address ranges overlap, the remote IP address range that has the most specific match to the connecting server's IP address is used. 
+ Multiple Receive connectors on the server can have overlapping remote IP address ranges as long as one range is completely overlapped by another. When remote IP address ranges overlap, the remote IP address range that has the most specific match to the connecting server's IP address is used.
   
 For example, consider the following Receive connectors in the Front End Transport service on the server named Exchange01:
   
@@ -150,7 +150,7 @@ SMTP connections from 192.168.1.75 are accepted by Custom Connector B, because t
   
 SMTP connections from 192.168.1.100 are accepted by Custom Connector A, because that connector has the most specific IP address match.
   
-In the EAC, you use the **Remote network settings** field to configure the remote IP addresses in the new Receive connector wizard, or on the **Scoping** tab in the properties of existing Receive connectors. In the Exchange Management Shell, you use the _RemoteIPRanges_ parameter on the **New-ReceiveConnector** and **Set-ReceiveConnector** cmdlets. 
+In the EAC, you use the **Remote network settings** field to configure the remote IP addresses in the new Receive connector wizard, or on the **Scoping** tab in the properties of existing Receive connectors. In the Exchange Management Shell, you use the _RemoteIPRanges_ parameter on the **New-ReceiveConnector** and **Set-ReceiveConnector** cmdlets.
   
 ## Receive connector usage types
 <a name="UsageTypes"> </a>
@@ -159,7 +159,7 @@ The usage type determines the default security settings for the Receive connecto
   
 When you use the EAC to create Receive connectors, the wizard prompts you to select the **Type** value for the connector. When you use the **New-ReceiveConnector** cmdlet in the Exchange Management Shell, you use the _Usage_ parameter with one of the available values (for example, `-Usage Custom`), or the designated switch for the usage type (for example, `-Custom`).
   
-You can specify the connector usage type only when you create Receive connectors. After you create a connector, you can modify the available authentication mechanisms and permission groups in the EAC, or by using the **Set-ReceiveConnector** cmdlet in the Exchange Management Shell. 
+You can specify the connector usage type only when you create Receive connectors. After you create a connector, you can modify the available authentication mechanisms and permission groups in the EAC, or by using the **Set-ReceiveConnector** cmdlet in the Exchange Management Shell.
   
 The available usage types are described in the following table.
   
@@ -174,7 +174,7 @@ The available usage types are described in the following table.
 ## Receive connector authentication mechanisms
 <a name="AuthMechanisms"> </a>
 
-Authentication mechanisms specify the logon and encryption settings that are used for incoming SMTP connections. You can configure multiple authentication mechanisms for a Receive connector. In the EAC, authentication mechanisms are available in the **Security** tab in the properties of the Receive connector. In the Exchange Management Shell, permission groups are available in the _AuthMechanisms_ parameter on the **New-ReceiveConnector** and **Set-ReceiveConnector** cmdlets. 
+Authentication mechanisms specify the logon and encryption settings that are used for incoming SMTP connections. You can configure multiple authentication mechanisms for a Receive connector. In the EAC, authentication mechanisms are available in the **Security** tab in the properties of the Receive connector. In the Exchange Management Shell, permission groups are available in the _AuthMechanisms_ parameter on the **New-ReceiveConnector** and **Set-ReceiveConnector** cmdlets.
   
 The available authentication mechanisms are described in the following table.
   
@@ -191,9 +191,9 @@ The available authentication mechanisms are described in the following table.
 ## Receive connector permission groups
 <a name="PermissionGroups"> </a>
 
-A *permission group* is a predefined set of permissions that's granted to well-known security principals and assigned to a Receive connector. Security principals include user accounts, computer accounts, and security groups (objects that are identifiable by a security identifier or SID that can have permissions assigned to them). Permission groups define who can use the Receive connector, and the permissions that they get. You can't create permission groups, nor can you modify the permission group members or the default permissions of the permission group. 
+A *permission group* is a predefined set of permissions that's granted to well-known security principals and assigned to a Receive connector. Security principals include user accounts, computer accounts, and security groups (objects that are identifiable by a security identifier or SID that can have permissions assigned to them). Permission groups define who can use the Receive connector, and the permissions that they get. You can't create permission groups, nor can you modify the permission group members or the default permissions of the permission group.
   
-In the EAC, permission groups are available in the **Security** tab in the properties of the Receive connector. In the Exchange Management Shell, permission groups are available in the _PermissionGroups_ parameter in the **New-ReceiveConnector** and **Set-ReceiveConnector** cmdlets. 
+In the EAC, permission groups are available in the **Security** tab in the properties of the Receive connector. In the Exchange Management Shell, permission groups are available in the _PermissionGroups_ parameter in the **New-ReceiveConnector** and **Set-ReceiveConnector** cmdlets.
   
 The available permission groups are described in the following table.
   
@@ -206,12 +206,12 @@ The available permission groups are described in the following table.
 |**Legacy Exchange servers** (`ExchangeLegacyServers`)  <br/> | `<Domain>\ExchangeLegacyInterop` <br/> | `ms-Exch-Accept-Headers-Routing` <br/> `ms-Exch-Bypass-Anti-Spam` <br/> `ms-Exch-Bypass-Message-Size-Limit` <br/> `ms-Exch-SMTP-Accept-Any-Recipient` <br/> `ms-Exch-SMTP-Accept-Any-Sender` <br/> `ms-Exch-SMTP-Accept-Authentication-Flag` <br/> `ms-Exch-SMTP-Accept-Authoritative-Domain-Sender` <br/> `ms-Exch-SMTP-Accept-Exch50` <br/> `ms-Exch-SMTP-Submit` <br/> |
 |**Partners** (`Partner`)  <br/> | `MS Exchange\Partner Servers` <br/> | `ms-Exch-Accept-Headers-Routing` <br/> `ms-Exch-SMTP-Submit` <br/> |
    
-The permissions are explained in the [Receive connector permissions](receive-connectors.md#Permissions) section later in this topic. 
+The permissions are explained in the [Receive connector permissions](receive-connectors.md#Permissions) section later in this topic.
   
 ## Receive connector permissions
 <a name="Permissions"> </a>
 
-Typically, you apply permissions to Receive connectors by using permission groups. However, you can configure granular permissions on a Receive connector by using the **Add-ADPermission** and **Remove-ADPermission** cmdlets. 
+Typically, you apply permissions to Receive connectors by using permission groups. However, you can configure granular permissions on a Receive connector by using the **Add-ADPermission** and **Remove-ADPermission** cmdlets.
   
 Receive connector permissions are assigned to security principals by the permission groups for the connector. When an SMTP server or client establishes a connection to a Receive connector, the Receive connector permissions determine whether the connection is accepted, and how messages are processed.
   

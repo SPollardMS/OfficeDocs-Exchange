@@ -24,7 +24,7 @@ Administrator audit logging in Exchange Server 2016 enables you to create a log 
     
 - You can only use PowerShell to perform this procedure. To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Administrator audit logging" entry in the [Exchange infrastructure and PowerShell permissions](../../permissions/feature-permissions/infrastructure-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Administrator audit logging" entry in the [Exchange infrastructure and PowerShell permissions](../../permissions/feature-permissions/infrastructure-permissions.md) topic.
     
 - Admin audit logging relies on Active Directory replication to replicate the configuration settings you specify to the domain controllers in your organization. Depending on your replication settings, the changes you make may not be immediately applied to all Exchange 2016 servers in your organization.
     
@@ -35,7 +35,7 @@ Administrator audit logging in Exchange Server 2016 enables you to create a log 
 ## Specify the cmdlets to be audited
 <a name="cmdlets"> </a>
 
-By default, audit logging creates a log entry for every cmdlet that's run. If you're enabling audit logging for the first time and want this behavior, you don't have to change the cmdlet audit list. If you've previously specified cmdlets to audit and now want to audit all cmdlets, you can audit all cmdlets by specifying the asterisk (\*) wildcard character with the _AdminAuditLogCmdlets_ parameter on the **Set-AdminAuditLogConfig** cmdlet, as shown in the following command. 
+By default, audit logging creates a log entry for every cmdlet that's run. If you're enabling audit logging for the first time and want this behavior, you don't have to change the cmdlet audit list. If you've previously specified cmdlets to audit and now want to audit all cmdlets, you can audit all cmdlets by specifying the asterisk (\*) wildcard character with the _AdminAuditLogCmdlets_ parameter on the **Set-AdminAuditLogConfig** cmdlet, as shown in the following command.
   
 ```
 Set-AdminAuditLogConfig -AdminAuditLogCmdlets *
@@ -62,7 +62,7 @@ For detailed syntax and parameter information, see [Set-AdminAuditLogConfig](htt
 ## Specify the parameters to be audited
 <a name="parameters"> </a>
 
-By default, audit logging creates a log entry for every cmdlet that's run, regardless of the parameters specified. If you're enabling audit logging for the first time and want this behavior, you don't have to change the parameter audit list. If you've previously specified parameters to audit and now want to audit all parameters, you can do so by specifying the asterisk (\*) wildcard character with the _AdminAuditLogParameters_ parameter on the **Set-AdminAuditLogConfig** cmdlet, as shown in the following command. 
+By default, audit logging creates a log entry for every cmdlet that's run, regardless of the parameters specified. If you're enabling audit logging for the first time and want this behavior, you don't have to change the parameter audit list. If you've previously specified parameters to audit and now want to audit all parameters, you can do so by specifying the asterisk (\*) wildcard character with the _AdminAuditLogParameters_ parameter on the **Set-AdminAuditLogConfig** cmdlet, as shown in the following command.
   
 ```
 Set-AdminAuditLogConfig -AdminAuditLogParameters *
@@ -79,7 +79,7 @@ You can specify which parameters you want to audit by using the _AdminAuditLogPa
 - `*Region`
     
 > [!NOTE]
-> For an audit log entry to be created when a command is run, the command must include at least one or more parameters that exist on at least one or more cmdlets specified with the _AdminAuditLogCmdlets_ parameter. 
+> For an audit log entry to be created when a command is run, the command must include at least one or more parameters that exist on at least one or more cmdlets specified with the _AdminAuditLogCmdlets_ parameter.
   
 This example audits the parameters specified in the preceding list.
   
@@ -105,7 +105,7 @@ You can specifiy the age limit in days. Or you can specify the number of days, h
 - **ss**: Number of seconds to keep the audit log entry
     
 > [!CAUTION]
-> You can set the audit log age limit to a value that's less than the current age limit. If you do this, any audit log entry whose age exceeds the new age limit will be deleted. > If you set the age limit to 0, Exchange deletes all the entries in the audit log. > We recommend that you assign permissions to configure the audit log age limit only to highly trusted users. 
+> You can set the audit log age limit to a value that's less than the current age limit. If you do this, any audit log entry whose age exceeds the new age limit will be deleted. > If you set the age limit to 0, Exchange deletes all the entries in the audit log. > We recommend that you assign permissions to configure the audit log age limit only to highly trusted users.
   
 This example specifies an age limit of two years and six months.
   
@@ -118,15 +118,15 @@ For detailed syntax and parameter information, see [Set-AdminAuditLogConfig](htt
 ## Enable or disable logging of Test cmdlets
 <a name="testcmdlets"> </a>
 
-Cmdlets that start with the verb **Test** aren't logged by default. This is because **Test** cmdlets can generate a significant amount of data in a short time. Only enable the logging of **Test** cmdlets for short periods of time. 
+Cmdlets that start with the verb **Test** aren't logged by default. This is because **Test** cmdlets can generate a significant amount of data in a short time. Only enable the logging of **Test** cmdlets for short periods of time.
   
-This command enables the logging of **Test** cmdlets. 
+This command enables the logging of **Test** cmdlets.
   
 ```
 Set-AdminAuditLogConfig -TestCmdletLoggingEnabled $true
 ```
 
-This command disables the logging of **Test** cmdlets. 
+This command disables the logging of **Test** cmdlets.
   
 ```
 Set-AdminAuditLogConfig -TestCmdletLoggingEnabled $false

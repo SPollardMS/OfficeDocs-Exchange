@@ -45,7 +45,7 @@ Knowledge of the following terms will help you understand the content in this to
     
  **Hard delete**
   
-> Describes when an item is marked to be purged from the mailbox database. This is also known as a *store hard delete* . 
+> Describes when an item is marked to be purged from the mailbox database. This is also known as a *store hard delete*.
     
 ## Recoverable Items folder
 <a name="RIF"> </a>
@@ -97,7 +97,7 @@ Soft-deleted items are moved to the Deletions subfolder of the Recoverable Items
     
 - [Recover deleted items or email messages in Outlook on the web](https://go.microsoft.com/fwlink/p/?LinkId=524924)
     
-Items remain in the Deletions subfolder until the deleted item retention period is reached. The default deleted item retention period for a mailbox database is 14 days. You can modify this period for a mailbox database or for a specific mailbox. In addition to a deleted item retention period, the Recoverable Items folder is also subject to quotas. To learn more, see [Recoverable Items mailbox quotas](#RIQuotas.md) later in this topic. 
+Items remain in the Deletions subfolder until the deleted item retention period is reached. The default deleted item retention period for a mailbox database is 14 days. You can modify this period for a mailbox database or for a specific mailbox. In addition to a deleted item retention period, the Recoverable Items folder is also subject to quotas. To learn more, see [Recoverable Items mailbox quotas](#RIQuotas.md) later in this topic.
   
 After the deleted item retention period expires, the item is moved to the Purges folder and is no longer visible to the user. When the Managed Folder Assistant processes the mailbox, items in the Purges subfolder are purged from the mailbox database.
   
@@ -106,7 +106,7 @@ After the deleted item retention period expires, the item is moved to the Purges
 
 If an item is removed from the Deletions subfolder, either by a user purging the item by using the Recover Deleted Items feature or by an automated process such as the Managed Folder Assistant, the item can't be recovered by the user. In previous versions of Exchange, recovering these items required the administrator to restore the mailbox database or a mailbox from backup copies. This process generally delayed recovery by minutes or hours, depending on the backup mechanism used.
   
-In Exchange 2016, you can use *single item recovery* to recover items without using backup media to restore the mailbox databases. This results in considerably shorter recovery periods. When the Managed Folder Assistant processes the Recoverable Items folder for a mailbox that has single item recovery enabled, any item in the Purges subfolder isn't purged if the deleted item retention period hasn't expired for that item. 
+In Exchange 2016, you can use *single item recovery* to recover items without using backup media to restore the mailbox databases. This results in considerably shorter recovery periods. When the Managed Folder Assistant processes the Recoverable Items folder for a mailbox that has single item recovery enabled, any item in the Purges subfolder isn't purged if the deleted item retention period hasn't expired for that item.
   
 The following table lists the contents of and actions that can be performed in the Recoverable Items folder if single item recovery is enabled.
   
@@ -122,12 +122,12 @@ In Exchange 2016, single item recovery isn't enabled by default for new mailboxe
 ### In-Place Hold and Litigation Hold
 <a name="hold"> </a>
 
-In Exchange 2016 and Exchange Online, discovery managers can use In-Place eDiscovery with delegated [Discovery Management](http://technet.microsoft.com/library/b8bc5922-a8c9-4707-906d-fa38bb87da8f.aspx) role group permissions to perform eDiscovery searches of mailbox content. In Exchange 2016 and Exchange Online, you can use In-Place Hold to preserve mailbox items that match query parameters and protect the items from deletion by users or automated processes. You can also use Litigation Hold to preserve all items in user mailboxes and protect the items from deletion by users or automated processes. 
+In Exchange 2016 and Exchange Online, discovery managers can use In-Place eDiscovery with delegated [Discovery Management](http://technet.microsoft.com/library/b8bc5922-a8c9-4707-906d-fa38bb87da8f.aspx) role group permissions to perform eDiscovery searches of mailbox content. In Exchange 2016 and Exchange Online, you can use In-Place Hold to preserve mailbox items that match query parameters and protect the items from deletion by users or automated processes. You can also use Litigation Hold to preserve all items in user mailboxes and protect the items from deletion by users or automated processes.
   
 Putting a mailbox on In-Place Hold or Litigation Hold stops the Managed Folder Assistant from automatically purging messages from the DiscoveryHolds and Purges subfolders. Additionally, copy-on-write page protection is also enabled for the mailbox. Copy-on-write page protection creates a copy of the original item before any modifications are written to the Exchange store. After the mailbox is removed from hold, the Managed Folder Assistant resumes automated purging.
   
 > [!NOTE]
-> If you put a mailbox on both In-Place Hold and Litigation Hold, Litigation Hold takes preference because this puts the entire mailbox on hold. 
+> If you put a mailbox on both In-Place Hold and Litigation Hold, Litigation Hold takes preference because this puts the entire mailbox on hold.
   
 The following table lists the contents of and actions that can be performed in the Recoverable Items folder if Litigation Hold is enabled.
   
@@ -147,7 +147,7 @@ To learn more about In-Place eDiscovery, In-Place Hold, and Litigation Hold, see
 ### Copy-on-write page protection and modified items
 <a name="COW"> </a>
 
-If a user who is placed on In-Place Hold or Litigation Hold modifies specific properties of a mailbox item, a copy of the original mailbox item is created before the changed item is written. The original copy is saved in the Versions subfolder. This process is known as *copy-on-write page protection* . Copy-on-write page protection applies to items residing in any mailbox folder. The Versions subfolder isn't visible to users. 
+If a user who is placed on In-Place Hold or Litigation Hold modifies specific properties of a mailbox item, a copy of the original mailbox item is created before the changed item is written. The original copy is saved in the Versions subfolder. This process is known as *copy-on-write page protection*. Copy-on-write page protection applies to items residing in any mailbox folder. The Versions subfolder isn't visible to users.
   
 The following table lists the message properties that trigger copy-on-write page protection.
   
@@ -160,7 +160,7 @@ The following table lists the message properties that trigger copy-on-write page
 |Items in the Drafts default folder  <br/> |None. Items in the Drafts folder are exempt from copy-on-write page protection.  <br/> |
    
 > [!IMPORTANT]
-> Copy-on-write page protection doesn't save a version of the meeting when a meeting organizer receives responses from attendees and the meeting's tracking information is updated. Also, changes to RSS feeds aren't captured by copy-on-write page protection. 
+> Copy-on-write page protection doesn't save a version of the meeting when a meeting organizer receives responses from attendees and the meeting's tracking information is updated. Also, changes to RSS feeds aren't captured by copy-on-write page protection.
   
 When a mailbox is no longer on In-Place Hold or litigation hold, copies of modified items stored in the Versions folder are removed.
   
@@ -183,7 +183,7 @@ When the Recoverable Items folder for a mailbox reaches the Recoverable Items qu
     
 For mailboxes that aren't placed on In-Place Hold or Litigation Hold, the Managed Folder Assistant automatically purges items from the Recoverable Items folder when the deleted item retention period expires. If the folder reaches the Recoverable Items warning quota, the assistant automatically purges items in first-in-first-out order.
   
-When the Recoverable Items folder reaches the soft and hard limit defaults, you are notified by means of an event log and a Microsoft System Center Operations Manager alert. This alert fires when the Recoverable Items folder first reaches the soft and hard limit defaults, and then once daily afterward.
+When the Recoverable Items folder reaches the soft and hard limit defaults, you aren'tified by means of an event log and a Microsoft System Center Operations Manager alert. This alert fires when the Recoverable Items folder first reaches the soft and hard limit defaults, and then once daily afterward.
   
 The following table lists the events logged when the Recoverable Items folder reaches the soft and hard limit defaults.
   

@@ -16,7 +16,7 @@ description: "Summary: Learn how administrators can use the Exchange Management 
 
  **Summary**: Learn how administrators can use the Exchange Management Shell to clean up or delete items from the Recoverable Items folder in Exchange 2016.
   
-The Recoverable Items folder (known in earlier versions of Exchange as *the dumpster*) exists to protect from accidental or malicious deletions and to facilitate discovery efforts commonly undertaken before or during litigation or investigations. 
+The Recoverable Items folder (known in earlier versions of Exchange as *the dumpster*) exists to protect from accidental or malicious deletions and to facilitate discovery efforts commonly undertaken before or during litigation or investigations.
   
 How you clean up a user's Recoverable Items folder depends on whether the mailbox is placed on In-Place Hold or Litigation Hold, or had single item recovery enabled:
   
@@ -28,7 +28,7 @@ To learn more about In-Place Hold and Litigation Hold, see [In-Place Hold and Li
   
 ## What do you need to know before you begin?
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Delete mailbox content" entry in the [Messaging policy and compliance permissions in Exchange 2016](../../permissions/feature-permissions/policy-and-compliance-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Delete mailbox content" entry in the [Messaging policy and compliance permissions in Exchange 2016](../../permissions/feature-permissions/policy-and-compliance-permissions.md) topic.
     
 - Because incorrectly cleaning up the Recoverable Items folder can result in data loss, it's important that you're familiar with the Recoverable Items folder and the impact of removing its contents. Before performing this procedure, we recommend that you review the information in [Recoverable Items folder in Exchange 2016](recoverable-items-folder.md).
     
@@ -47,13 +47,13 @@ Search-Mailbox -Identity "Gurinder Singh" -SearchDumpsterOnly -TargetMailbox "Di
 ```
 
 > [!NOTE]
-> To delete items from the mailbox without copying them to another mailbox, use the preceding command without the _TargetMailbox_ and _TargetFolder_ parameters. 
+> To delete items from the mailbox without copying them to another mailbox, use the preceding command without the _TargetMailbox_ and _TargetFolder_ parameters.
   
 For detailed syntax and parameter information, see [Search-Mailbox](http://technet.microsoft.com/library/9ee3b02c-d343-4816-a583-a90b1fad4b26.aspx).
   
 ## Use the Exchange Management Shell to clean up the Recoverable Items folder for mailboxes that are placed on hold or have single item recovery enabled
 
-You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Delete mailbox content" entry in the [Messaging policy and compliance permissions in Exchange 2016](../../permissions/feature-permissions/policy-and-compliance-permissions.md) topic. 
+You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Delete mailbox content" entry in the [Messaging policy and compliance permissions in Exchange 2016](../../permissions/feature-permissions/policy-and-compliance-permissions.md) topic.
   
 If a mailbox reaches its Recoverable Items quota, we recommend that you raise the quota and not delete items from the folder. You can also monitor events in the Application log related to the Recoverable Items warning quota and take necessary actions such as raising the quota or investigating the growth of the Recoverable Items folder for mailboxes that reach the warning quota.
   
@@ -78,7 +78,7 @@ This procedure copies items from Gurinder Singh's Recoverable Items folder to th
   - _UseDatabaseRetentionDefaults_
     
     > [!NOTE]
-    > If the _UseDatabaseQuotaDefaults_ parameter is set to `$true`, the previous quota settings aren't applied. The corresponding quota settings configured on the mailbox database are applied, even if individual mailbox settings are populated. 
+    > If the _UseDatabaseQuotaDefaults_ parameter is set to `$true`, the previous quota settings aren't applied. The corresponding quota settings configured on the mailbox database are applied, even if individual mailbox settings are populated.
   
   ```
   Get-Mailbox "Gurinder Singh" | Format-List RecoverableItemsQuota, RecoverableItemsWarningQuota, ProhibitSendQuota, ProhibitSendReceiveQuota, UseDatabaseQuotaDefaults, RetainDeletedItemsFor, UseDatabaseRetentionDefaults
@@ -121,7 +121,7 @@ This procedure copies items from Gurinder Singh's Recoverable Items folder to th
   ```
 
     > [!IMPORTANT]
-    > If the mailbox resides on a mailbox database in a database availability group (DAG), you must disable the Managed Folder Assistant on each DAG member that hosts a copy of the database. If the database fails over to another server, this prevents the Managed Folder Assistant on that server from deleting mailbox data. 
+    > If the mailbox resides on a mailbox database in a database availability group (DAG), you must disable the Managed Folder Assistant on each DAG member that hosts a copy of the database. If the database fails over to another server, this prevents the Managed Folder Assistant on that server from deleting mailbox data.
   
 8. Disable single item recovery and remove the mailbox from Litigation Hold.
     
@@ -130,7 +130,7 @@ This procedure copies items from Gurinder Singh's Recoverable Items folder to th
   ```
 
     > [!IMPORTANT]
-    > After you run this command, it may take up to one hour to disable single item recovery or Litigation Hold. We recommend that you perform the next step only after this period has elapsed. 
+    > After you run this command, it may take up to one hour to disable single item recovery or Litigation Hold. We recommend that you perform the next step only after this period has elapsed.
   
 9. Copy items from the Recoverable Items folder to a folder in the Discovery Search Mailbox and delete the contents from the source mailbox.
     
@@ -138,14 +138,14 @@ This procedure copies items from Gurinder Singh's Recoverable Items folder to th
   Search-Mailbox -Identity "Gurinder Singh" -SearchDumpsterOnly -TargetMailbox "Discovery Search Mailbox" -TargetFolder "GurinderSingh-RecoverableItems" -DeleteContent
   ```
 
-    If you need to delete only messages that match specified conditions, use the _SearchQuery_ parameter to specify the conditions. This example deletes messages that have the string "Your bank statement" in the **Subject** field. 
+    If you need to delete only messages that match specified conditions, use the _SearchQuery_ parameter to specify the conditions. This example deletes messages that have the string "Your bank statement" in the **Subject** field.
     
   ```
   Search-Mailbox -Identity "Gurinder Singh" -SearchQuery "Subject:'Your bank statement'" -SearchDumpsterOnly -TargetMailbox "Discovery Search Mailbox" -TargetFolder "GurinderSingh-RecoverableItems" -DeleteContent
   ```
 
     > [!NOTE]
-    > It isn't required to copy items to the Discovery Search Mailbox. You can copy messages to any mailbox. However, to prevent access to potentially sensitive mailbox data, we recommend copying messages to a mailbox that has access restricted to authorized records managers. By default, access to the default Discovery Search Mailbox is restricted to members of the Discovery Management role group. For details, see [In-Place eDiscovery in Exchange 2016](../../policy-and-compliance/ediscovery/ediscovery.md). 
+    > It isn't required to copy items to the Discovery Search Mailbox. You can copy messages to any mailbox. However, to prevent access to potentially sensitive mailbox data, we recommend copying messages to a mailbox that has access restricted to authorized records managers. By default, access to the default Discovery Search Mailbox is restricted to members of the Discovery Management role group. For details, see [In-Place eDiscovery in Exchange 2016](../../policy-and-compliance/ediscovery/ediscovery.md).
   
 10. If the mailbox was placed on Litigation Hold or had single item recovery enabled earlier, enable these features again.
     
@@ -154,7 +154,7 @@ This procedure copies items from Gurinder Singh's Recoverable Items folder to th
   ```
 
     > [!IMPORTANT]
-    > After you run this command, it may take up to one hour to enable single item recovery or Litigation Hold. We recommend that you enable the Managed Folder Assistant and allow client access (Steps 11 and 12) only after this period has elapsed. 
+    > After you run this command, it may take up to one hour to enable single item recovery or Litigation Hold. We recommend that you enable the Managed Folder Assistant and allow client access (Steps 11 and 12) only after this period has elapsed.
   
 11. Revert the following quotas to the values noted in Step 1:
     
@@ -172,7 +172,7 @@ This procedure copies items from Gurinder Singh's Recoverable Items folder to th
     
   - _UseDatabaseRetentionDefaults_
     
-    In this example, the mailbox is removed from retention hold, the deleted item retention period is reset to the default value of 14 days, and the Recoverable Items quota is configured to use the same value as the mailbox database. If the values you noted in Step 1 are different, you must use the preceding parameters to specify each value and set the _UseDatabaseQuotaDefaults_ parameter to `$false`. If the _RetainDeletedItemsFor_ _and UseDatabaseRetentionDefaults_ parameters were previously set to a different value, you must also revert them to the values noted in Step 1. 
+    In this example, the mailbox is removed from retention hold, the deleted item retention period is reset to the default value of 14 days, and the Recoverable Items quota is configured to use the same value as the mailbox database. If the values you noted in Step 1 are different, you must use the preceding parameters to specify each value and set the _UseDatabaseQuotaDefaults_ parameter to `$false`. If the _RetainDeletedItemsFor_ _and UseDatabaseRetentionDefaults_ parameters were previously set to a different value, you must also revert them to the values noted in Step 1.
     
   ```
   Set-Mailbox "Gurinder Singh" -RetentionHoldEnabled $false -RetainDeletedItemsFor 14 -RecoverableItemsQuota unlimited -UseDatabaseQuotaDefaults $true
@@ -196,7 +196,7 @@ For detailed syntax and parameter information, see the following topics:
     
 - [Get-CASMailbox](http://technet.microsoft.com/library/d80a5990-9106-4eb8-bba8-b3975805c325.aspx)
     
-- [get-MailboxFolderStatistics](http://technet.microsoft.com/library/212ca564-435e-4af6-8673-5564732bf118.aspx)
+- [Get-MailboxFolderStatistics](http://technet.microsoft.com/library/212ca564-435e-4af6-8673-5564732bf118.aspx)
     
 - [Get-MailboxServer](http://technet.microsoft.com/library/838bc72a-e3bb-4583-934f-d93a7c93252c.aspx)
     
@@ -210,7 +210,7 @@ For detailed syntax and parameter information, see the following topics:
     
 ## How do you know this worked?
 
-To verify that you have successfully cleaned up the Recoverable Items folder of a mailbox, use [get-MailboxFolderStatistics](http://technet.microsoft.com/library/212ca564-435e-4af6-8673-5564732bf118.aspx) cmdlet the check the size of the Recoverable Items folder. 
+To verify that you have successfully cleaned up the Recoverable Items folder of a mailbox, use [Get-MailboxFolderStatistics](http://technet.microsoft.com/library/212ca564-435e-4af6-8673-5564732bf118.aspx) cmdlet the check the size of the Recoverable Items folder.
   
 This example retrieves the size of the Recoverable Items folder and its subfolders and an item count in the folder and each subfolder.
   

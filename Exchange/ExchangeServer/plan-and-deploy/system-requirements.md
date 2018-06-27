@@ -18,7 +18,7 @@ description: "Summary: Learn about what you need to have in your environment bef
  **Summary**: Learn about what you need to have in your environment before installing Exchange 2016.
 
 > [!TIP]
-> Coming from the Exchange Deployment Assistant? Click [Exchange 2013 system requirements](https://technet.microsoft.com/library/aa996719%28v=exchg.150%29.aspx). 
+> Coming from the Exchange Deployment Assistant? Click [Exchange 2013 system requirements](https://technet.microsoft.com/library/aa996719%28v=exchg.150%29.aspx).
 
 Before you install Exchange 2016, we recommend that you review this topic to ensure that your network, hardware, software, clients, and other elements meet the requirements for Exchange 2016. In addition, make sure you understand the coexistence scenarios that are supported for Exchange 2016 and earlier versions of Exchange.
 
@@ -57,7 +57,7 @@ The following table lists the requirements for the network and the directory ser
 The use of 64-bit Active Directory domain controllers increases directory service performance for Exchange 2016.
 
 > [!NOTE]
-> In multi-domain environments, on Windows Server 2008 domain controllers that have the Active Directory language locale set to Japanese (ja-jp), your servers may not receive some attributes that are stored on an object during inbound replication. For more information, see Microsoft Knowledge Base article 949189, [A Windows Server 2008 domain controller that is configured with the Japanese language locale may not apply updates to attributes on an object during inbound replication](https://go.microsoft.com/fwlink/p/?linkid=3052&kbid=949189). 
+> In multi-domain environments, on Windows Server 2008 domain controllers that have the Active Directory language locale set to Japanese (ja-jp), your servers may not receive some attributes that are stored on an object during inbound replication. For more information, see Microsoft Knowledge Base article 949189, [A Windows Server 2008 domain controller that is configured with the Japanese language locale may not apply updates to attributes on an object during inbound replication](https://go.microsoft.com/fwlink/p/?linkid=3052&kbid=949189).
 
 ### Installing Exchange 2016 on directory servers
 
@@ -91,7 +91,7 @@ The following table lists the supported operating systems for Exchange 2016.
   Install-WindowsFeature Server-Gui-Mgmt-Infra, Server-Gui-Shell -Restart
   ```
 
-- **Windows Server 2016**: Install Windows Server 2016 and choose the **Desktop Experience** installation option. If a computer is running Windows Server 2016 Core mode and you want to install Exchange 2016 on it, you'll need to reinstall the operating system and choose the **Desktop Experience** installation option. 
+- **Windows Server 2016**: Install Windows Server 2016 and choose the **Desktop Experience** installation option. If a computer is running Windows Server 2016 Core mode and you want to install Exchange 2016 on it, you'll need to reinstall the operating system and choose the **Desktop Experience** installation option.
 
  **Supported operating systems for Exchange 2016**
 
@@ -100,7 +100,7 @@ The following table lists the supported operating systems for Exchange 2016.
 |Mailbox and Edge Transport server roles  <br/> |Windows Server 2016 Standard or Datacenter<sup>\*</sup> <br/> Windows Server 2012 R2 Standard or Datacenter  <br/> Windows Server 2012 Standard or Datacenter  <br/> |
 |Management tools  <br/> |One of the following:  <br/> Windows Server 2016 Standard or Datacenter<sup>\*</sup> <br/> Windows Server 2012 R2 Standard or Datacenter  <br/> Windows Server 2012 Standard or Datacenter  <br/> 64-bit edition of Windows 10  <br/> 64-bit edition of Windows 8.1  <br/> |
  
-<sup>\*</sup> Requires Exchange Server 2016 Cumulative Update 3 or later. 
+<sup>\*</sup> Requires Exchange Server 2016 Cumulative Update 3 or later.
 
  **Supported Windows Management Framework versions for Exchange 2016**
 
@@ -115,7 +115,7 @@ We don't support the installation of Office client or Office server software, su
 We strongly recommend that you use the latest version of .NET Framework that's supported by the release of Exchange you're installing.
 
 > [!IMPORTANT]
-> **Releases of .NET Framework that aren't listed in the table below are not supported on any release of Exchange 2016**. This includes minor and patch-level releases of .NET Framework. 
+> **Releases of .NET Framework that aren't listed in the table below are not supported on any release of Exchange 2016**. This includes minor and patch-level releases of .NET Framework.
 
 |**Exchange version**|**.NET Framework 4.7.1**|**.NET Framework 4.6.2**|**.NET Framework 4.6.1**|**.NET Framework 4.5.2**|
 |:-----|:-----|:-----|:-----|:-----|
@@ -128,9 +128,9 @@ We strongly recommend that you use the latest version of .NET Framework that's s
  
 <sup>1</sup>.NET Framework 4.6.1 requires post-release fixes if you want to install it on a server running Exchange 2016 CU2. For more information. see [Exchange 2016 prerequisites](prerequisites.md).
 
-<sup>2</sup> If you're upgrading to Exchange 2016 CU4 from Exchange 2016 RTM, CU1, or CU2, we strongly recommend that you install Exchange 2016 CU4 before .NET Framework 4.6.2 or .NET Framework 4.6.1 and its related post-release fixes. 
+<sup>2</sup> If you're upgrading to Exchange 2016 CU4 from Exchange 2016 RTM, CU1, or CU2, we strongly recommend that you install Exchange 2016 CU4 before .NET Framework 4.6.2 or .NET Framework 4.6.1 and its related post-release fixes.
 
-<sup>3</sup> Starting with Exchange 2016 CU5, .NET Framework 4.6.1 and 4.5.2 will no longer be supported with Exchange 2016. While those versions of .NET Framework are supported by Exchange 2016 CU4, we strongly recommend that you upgrade servers running Exchange 2016 to .NET Framework 4.6.2. 
+<sup>3</sup> Starting with Exchange 2016 CU5, .NET Framework 4.6.1 and 4.5.2 will no longer be supported with Exchange 2016. While those versions of .NET Framework are supported by Exchange 2016 CU4, we strongly recommend that you upgrade servers running Exchange 2016 to .NET Framework 4.6.2.
 
 ## Supported clients
 

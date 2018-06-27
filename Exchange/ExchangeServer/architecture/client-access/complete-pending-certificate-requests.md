@@ -39,30 +39,30 @@ You might receive one or more of the following types of certificate files CA:
     
 - To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Client Access services security" entry in the [Clients and mobile devices permissions](../../permissions/feature-permissions/client-and-mobile-device-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Client Access services security" entry in the [Clients and mobile devices permissions](../../permissions/feature-permissions/client-and-mobile-device-permissions.md) topic.
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).. 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351)..
   
 ## Use the EAC to create complete a pending certificate request
 
 1. Open the EAC and navigate to **Servers** \> **Certificates**.
     
-2. In the **Select server** list, select the Exchange server that holds the pending certificate request. 
+2. In the **Select server** list, select the Exchange server that holds the pending certificate request.
     
 3. A pending certificate request has the following properties:
     
   - In the list of certificates, the value of the **Status** field is **Pending request**.
     
-  - When you select the certificate request from the list, there's a **Complete** link in the details pane. 
+  - When you select the certificate request from the list, there's a **Complete** link in the details pane.
     
-    Select the pending certificate request that you want to complete, and then click **Complete** in the details pane. 
+    Select the pending certificate request that you want to complete, and then click **Complete** in the details pane.
     
-4. On the **Complete pending request** page that opens, in the **File to import from** field, enter the UNC path and filename for the certificate file. For example, `\\FileServer01\Data\ContosoCert.cer`. When you are finished, click **OK**.
+4. On the **Complete pending request** page that opens, in the **File to import from** field, enter the UNC path and filename for the certificate file. For example, `\\FileServer01\Data\ContosoCert.cer`. When you're finished, click **OK**.
     
-The certificate request becomes a certificate in the list of Exchange certificates with a **Status** value of **Valid**. For next steps, see the [Next steps](create-ca-certificate-requests.md#NextSteps) section. 
+The certificate request becomes a certificate in the list of Exchange certificates with a **Status** value of **Valid**. For next steps, see the [Next steps](create-ca-certificate-requests.md#NextSteps) section.
   
 ## Use the Exchange Management Shell to complete a pending certificate request
 
@@ -74,7 +74,7 @@ To import a binary certificate file (PKCS #12 files that have .cer, .crt, .der, 
 Import-ExchangeCertificate -FileName "<FilePathOrUNCPath>\<FileName>" [-Password (ConvertTo-SecureString -String '<Password> ' -AsPlainText -Force)] [-PrivateKeyExportable <$true | $false>] [-Server <ServerIdentity>]
 ```
 
-This example imports the binary certificate file `\\FileServer01\Data\Contoso Cert.cer` that's protected by the password P@ssw0rd1 on the local Exchange server. 
+This example imports the binary certificate file `\\FileServer01\Data\Contoso Cert.cer` that's protected by the password P@ssw0rd1 on the local Exchange server.
   
 ```
 Import-ExchangeCertificate -FileName "Import-ExchangeCertificate -FileName "\\FileServer01\Data\Contoso Cert.cer" -Password (ConvertTo-SecureString -String 'P@ssw0rd1' -AsPlainText -Force)
@@ -86,7 +86,7 @@ To import a chain of certificates file (PKCS #7 text files that have .p7b or .p7
 Import-ExchangeCertificate -FileData ([Byte[]](Get-Content -Encoding Byte -Path "<FilePathOrUNCPath>" -ReadCount 0))]
 ```
 
-This example imports the text certificate file `\\FileServer01\Data\Chain of Certificates.p7b` on the local Exchange server. 
+This example imports the text certificate file `\\FileServer01\Data\Chain of Certificates.p7b` on the local Exchange server.
   
 ```
 Import-ExchangeCertificate -FileData "Import-ExchangeCertificate -FileData ([Byte[]](Get-Content -Encoding Byte -Path "\\FileServer01\Data\Chain of Certificates.p7b" -ReadCount 0))]
@@ -94,7 +94,7 @@ Import-ExchangeCertificate -FileData "Import-ExchangeCertificate -FileData ([Byt
 
  **Notes:**
   
-- The _FileName_ and _FileData_ parameters accept local paths if the certificate file is located on the Exchange server where you're running the command, and this is the same server where you want to import the certificate. Otherwise, use a UNC path. 
+- The _FileName_ and _FileData_ parameters accept local paths if the certificate file is located on the Exchange server where you're running the command, and this is the same server where you want to import the certificate. Otherwise, use a UNC path.
     
 - If you want to be able to export the certificate from the server where you're importing it, you need to use the _PrivateKeyExportable_ parameter with the value `$true`.
     

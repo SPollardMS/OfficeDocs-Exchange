@@ -24,10 +24,10 @@ To find out what permissions you need to perform the procedure or run the cmdlet
     
 2. Next, look at the permissions required for the feature. You must be assigned one of those role groups, an equivalent custom role group, or an equivalent management role. You can also click on a role group to see its management roles. If a feature lists more than one role group, you only need to be assigned one of the role groups to use the feature. For more information about role groups and management roles, see **Understanding Role Based Access Control**.
     
-3. Now, run the **Get-ManagementRoleAssignment** cmdlet to look at the role groups or management roles assigned to you to see if you have the permissions that are necessary to manage the feature. 
+3. Now, run the **Get-ManagementRoleAssignment** cmdlet to look at the role groups or management roles assigned to you to see if you have the permissions that are necessary to manage the feature.
     
     > [!NOTE]
-    > You must be assigned the Role Management management role to run the **Get-ManagementRoleAssignment** cmdlet. If you don't have permissions to run the **Get-ManagementRoleAssignment** cmdlet, ask your Exchange administrator to retrieve the role groups or management roles assigned to you. 
+    > You must be assigned the Role Management management role to run the **Get-ManagementRoleAssignment** cmdlet. If you don't have permissions to run the **Get-ManagementRoleAssignment** cmdlet, ask your Exchange administrator to retrieve the role groups or management roles assigned to you.
   
 If you want to delegate the ability to manage a feature to another user, see **Delegate a Management Role**.
   
@@ -58,7 +58,7 @@ Users who are assigned the View-Only Management role group can view the configur
 ## Calendar and sharing permissions
 <a name="calendar"> </a>
 
-Users who are assigned the View-Only Management role group can view the configuration of the features in the following table. For more information, see **View Only Organization Management**. 
+Users who are assigned the View-Only Management role group can view the configuration of the features in the following table. For more information, see **View Only Organization Management**.
   
 |**Feature**|**Permissions required**|
 |:-----|:-----|
@@ -72,7 +72,7 @@ Users who are assigned the View-Only Management role group can view the configur
 ## Resource mailbox configuration permissions
 <a name="calendar"> </a>
 
-Users who are assigned the View-Only Management role group can view the configuration of the features in the following table. For more information, see **View Only Organization Management**. 
+Users who are assigned the View-Only Management role group can view the configuration of the features in the following table. For more information, see **View Only Organization Management**.
   
 |**Feature**|**Permissions required**|
 |:-----|:-----|
@@ -83,7 +83,7 @@ Users who are assigned the View-Only Management role group can view the configur
 ## Mailbox database permissions
 <a name="calendar"> </a>
 
-Users who are assigned the View-Only Management role group can view the configuration of the features in the following table. For more information, see **View Only Organization Management**. 
+Users who are assigned the View-Only Management role group can view the configuration of the features in the following table. For more information, see **View Only Organization Management**.
   
 |**Feature**|**Permissions required**|
 |:-----|:-----|
@@ -94,7 +94,7 @@ Users who are assigned the View-Only Management role group can view the configur
 
 This table contains the various permissions that are required to manage recipients.
   
-Users who are assigned the View-Only Management role group can view the configuration of the features in the following table. For more information, see **View Only Organization Management**. 
+Users who are assigned the View-Only Management role group can view the configuration of the features in the following table. For more information, see **View Only Organization Management**.
   
 |**Feature**|**Permissions required**|
 |:-----|:-----|

@@ -23,7 +23,7 @@ In Exchange 2016, public folders are based on a mailbox architecture that allows
 The following table lists the limits for public folders in on-premises Exchange 2016. Unless the limits are specifically stated as recommended, the values listed in this table are the supported limits for public folders.
   
 > [!IMPORTANT]
-> Looking for Exchange Online limits for Office 365? See [Exchange Online Limits](https://go.microsoft.com/fwlink/p/?LinkID=391188). 
+> Looking for Exchange Online limits for Office 365? See [Exchange Online Limits](https://go.microsoft.com/fwlink/p/?LinkID=391188).
   
 |**Item**|**Limits**|**Notes**|
 |:-----|:-----|:-----|

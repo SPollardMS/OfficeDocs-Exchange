@@ -39,12 +39,12 @@ Use the procedures in this topic to fix these errors and configure IM integratio
     
 - You can only use PowerShell to perform this procedure. To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Client Access virtual directory settings" entry in the [Clients and mobile devices permissions](../../permissions/feature-permissions/client-and-mobile-device-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Client Access virtual directory settings" entry in the [Clients and mobile devices permissions](../../permissions/feature-permissions/client-and-mobile-device-permissions.md) topic.
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
   
 ## Use the Exchange Management Shell to configure IM integration with Outlook on the web
 
@@ -58,9 +58,9 @@ New-SettingOverride -Name "<UniqueOverrideName>" -Component OwaServer -Section I
 
  **Notes:**
   
-- To configure the same settings on all Exchange 2016 servers in the Active Directory forest, don't use the _Server_ parameter. 
+- To configure the same settings on all Exchange 2016 servers in the Active Directory forest, don't use the _Server_ parameter.
     
-- To configure the settings on a specific Exchange 2016 server, use the _Server_ parameter and the name of the server (don't use the fully qualified domain name or FQDN). This method is useful when you need to specify different settings on different Exchange servers. 
+- To configure the settings on a specific Exchange 2016 server, use the _Server_ parameter and the name of the server (don't use the fully qualified domain name or FQDN). This method is useful when you need to specify different settings on different Exchange servers.
     
 This example specifies the IM server and IM certificate thumbprint on all Exchange 2016 servers in the organization.
   

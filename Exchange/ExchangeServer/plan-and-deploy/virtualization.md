@@ -21,11 +21,11 @@ You can deploy Microsoft Exchange Server 2016 in a virtualized environment. This
 
 The following terms are used in this discussion of Exchange virtualization:
 
-- **Cold boot**: When bringing a system from a power-off state into a clean start of the operating system, the action is a *cold boot* . No operating system state has been persisted in this case. 
+- **Cold boot**: When bringing a system from a power-off state into a clean start of the operating system, the action is a *cold boot*. No operating system state has been persisted in this case.
 
-- **Saved state**: When a virtual machine is powered off, hypervisors typically have the ability to save the state of the virtual machine, so when the machine is powered back on, it returns to that *saved state* rather than going through a cold boot startup. 
+- **Saved state**: When a virtual machine is powered off, hypervisors typically have the ability to save the state of the virtual machine, so when the machine is powered back on, it returns to that *saved state* rather than going through a cold boot startup.
 
-- **Planned migration**: When a system administrator initiates the move of a virtual machine from one hypervisor host to another, the action is a *planned migration* . The action could be a single migration, or a system administrator could configure automation to move the virtual machine on a timed basis. A planned migration could also be the result of some other event that occurs in the system, other than hardware or software failure. The key point is the Exchange virtual machine is operating normally and needs to be relocated for some reason. This relocation can be done via technology, like Live Migration or vMotion. However, if the Exchange virtual machine or the hypervisor host where the virtual machine is located experiences some sort of failure condition, the outcome isn't characterized as a planned migration. 
+- **Planned migration**: When a system administrator initiates the move of a virtual machine from one hypervisor host to another, the action is a *planned migration*. The action could be a single migration, or a system administrator could configure automation to move the virtual machine on a timed basis. A planned migration could also be the result of some other event that occurs in the system, other than hardware or software failure. The key point is the Exchange virtual machine is operating normally and needs to be relocated for some reason. This relocation can be done via technology, like Live Migration or vMotion. However, if the Exchange virtual machine or the hypervisor host where the virtual machine is located experiences some sort of failure condition, the outcome isn't characterized as a planned migration.
 
 ## Requirements for hardware virtualization
 <a name="BKMK_Prereq"> </a>
@@ -39,13 +39,13 @@ Microsoft supports Exchange 2016 in production on hardware virtualization softwa
   - Any third-party hypervisor that has been validated under the [Windows Server Virtualization Validation Program](https://go.microsoft.com/fwlink/p/?LinkId=125375).
 
     > [!NOTE]
-    > Deployment of Exchange 2016 on Infrastructure-as-a-Service (IaaS) providers is supported if all supportability requirements are met. In the case of providers who are provisioning virtual machines, these requirements include ensuring that the hypervisor being used for Exchange virtual machines is fully supported, and that the infrastructure to be utilized by Exchange meets the performance requirements that were determined during the sizing process. Deployment on Microsoft Azure virtual machines is supported if all storage volumes used for Exchange databases and database transaction logs (including transport databases) are configured for Azure Premium Storage. 
+    > Deployment of Exchange 2016 on Infrastructure-as-a-Service (IaaS) providers is supported if all supportability requirements are met. In the case of providers who are provisioning virtual machines, these requirements include ensuring that the hypervisor being used for Exchange virtual machines is fully supported, and that the infrastructure to be utilized by Exchange meets the performance requirements that were determined during the sizing process. Deployment on Microsoft Azure virtual machines is supported if all storage volumes used for Exchange databases and database transaction logs (including transport databases) are configured for Azure Premium Storage.
 
 - The Exchange guest virtual machine has the following conditions:
 
   - It's running Exchange 2016.
 
-  - It's deployed on a version of Windows Server that is supported with Exchange 2016. See [Exchange 2016 prerequisites](prerequisites.md) for more details. 
+  - It's deployed on a version of Windows Server that is supported with Exchange 2016. See [Exchange 2016 prerequisites](prerequisites.md) for more details.
 
 For deployments of Exchange 2016:
 
@@ -74,7 +74,7 @@ The minimum disk space requirements for each host machine are as follows:
 
 - Some hypervisors maintain files on the host machine that are unique to each guest virtual machine. For example, in a Hyper-V environment, a temporary memory storage file (BIN file) is created and maintained for each guest machine. The size of each BIN file is equal to the amount of memory allocated to the guest machine. In addition, other files may also be created and maintained on the host machine for each guest machine.
 
-- If your host machine is running Windows Server 2012 Hyper-V or Hyper-V 2012, and you are configuring a host-based failover cluster that will host Exchange Mailbox servers in a database availability group, then we recommend following the guidance documented in Microsoft Knowledge Base article, [2872325, Guest Cluster nodes in Hyper-V may not be able to create or join](https://support.microsoft.com/kb/2872325).
+- If your host machine is running Windows Server 2012 Hyper-V or Hyper-V 2012, and you're configuring a host-based failover cluster that will host Exchange Mailbox servers in a database availability group, then we recommend following the guidance documented in Microsoft Knowledge Base article, [2872325, Guest Cluster nodes in Hyper-V may not be able to create or join](https://support.microsoft.com/kb/2872325).
 
 ## Exchange storage requirements
 <a name="BKMK_ExchangeStor"> </a>

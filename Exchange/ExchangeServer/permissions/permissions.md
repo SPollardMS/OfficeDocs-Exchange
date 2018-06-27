@@ -21,7 +21,7 @@ Microsoft Exchange Server 2016 includes a large set of predefined permissions, b
 ## Role-based permissions
 <a name="RoleBased"> </a>
 
-In Exchange 2016, the permissions that you grant to administrators and users are based on management roles. A role defines the set of tasks that an administrator or user can perform. For example, a management role called `Mail Recipients` defines the tasks that someone can perform on a set of mailboxes, contacts, and distribution groups. When a role is assigned to an administrator or user, that person is granted the permissions provided by the role. 
+In Exchange 2016, the permissions that you grant to administrators and users are based on management roles. A role defines the set of tasks that an administrator or user can perform. For example, a management role called `Mail Recipients` defines the tasks that someone can perform on a set of mailboxes, contacts, and distribution groups. When a role is assigned to an administrator or user, that person is granted the permissions provided by the role.
 
 There are two types of roles, administrative roles and end-user roles:
 
@@ -44,12 +44,12 @@ For more information about role groups and role assignment policies, see the fol
 
 ### Role groups
 
-Every administrator that manages Exchange 2016 needs to be assigned at least one or more roles. Administrators might have more than one role because they may perform job functions that span multiple areas in Exchange. For example, one administrator might manage both recipients and Exchange servers. In this case, that administrator might be assigned both the `Mail Recipients` and `Exchange Servers` roles. 
+Every administrator that manages Exchange 2016 needs to be assigned at least one or more roles. Administrators might have more than one role because they may perform job functions that span multiple areas in Exchange. For example, one administrator might manage both recipients and Exchange servers. In this case, that administrator might be assigned both the `Mail Recipients` and `Exchange Servers` roles.
 
 To make it easier to assign multiple roles to an administrator, Exchange 2016 includes role groups. Role groups are special universal security groups (USGs) used by Exchange 2016 that can contain Active Directory users, USGs, and other role groups. When a role is assigned to a role group, the permissions granted by the role are granted to all the members of the role group. This enables you to assign many roles to many role group members at once. Role groups typically encompass broader management areas, such as recipient management. They're used only with administrative roles, and not end-user roles.
 
 > [!NOTE]
-> It's possible to assign a role directly to a user or USG without using a role group. However, that method of role assignment is an advanced procedure and isn't covered in this topic. We recommend that you use role groups to manage permissions. 
+> It's possible to assign a role directly to a user or USG without using a role group. However, that method of role assignment is an advanced procedure and isn't covered in this topic. We recommend that you use role groups to manage permissions.
 
 The following figure shows the relationship between users, role groups, and roles.
 
@@ -60,7 +60,7 @@ The following figure shows the relationship between users, role groups, and role
 Exchange 2016 includes several built-in role groups, each one providing permissions to manage specific areas in Exchange 2016. Some role groups may overlap with others. The following table lists each role group with a description of its use. If you want to see the roles assigned to each role group, click the name of the role group in the "Role group" column, and then open the "Management Roles Assigned to This Role Group" section.
 
 > [!IMPORTANT]
-> If an administrator is a member of more than one role group, Exchange 2016 grants the administrator all of the permissions provided by the role groups he or she is a member of. 
+> If an administrator is a member of more than one role group, Exchange 2016 grants the administrator all of the permissions provided by the role groups he or she is a member of.
 
 **Built-in role groups**
 
@@ -81,7 +81,7 @@ Exchange 2016 includes several built-in role groups, each one providing permissi
  
 If you work in a small organization that has only a few administrators, you might only ever use the Organization Management role group, and none of the others. If you work in a larger organization, you might have administrators who perform specific tasks administering Exchange, such as recipient or server management. In those cases, you might add one administrator to the Recipient Management role group, and another administrator to the Server Management role group. Those administrators can then manage their specific areas of Exchange 2016 but won't have permissions to manage areas they're not responsible for.
 
-If you can't find a built-in role group that fits the jobs your administrators need to do, you can create role groups and add roles to them. For more information, see [Work with role groups](#CustomRoleGroup.md) later in this topic. 
+If you can't find a built-in role group that fits the jobs your administrators need to do, you can create role groups and add roles to them. For more information, see [Work with role groups](#CustomRoleGroup.md) later in this topic.
 
 ### Role assignment policies
 
@@ -91,7 +91,7 @@ Your Exchange 2016 organization can have multiple role assignment policies that 
 
 Of the role assignment policies in your organization, one is marked as default. The default role assignment policy is associated with new mailboxes that aren't explicitly assigned a specific role assignment policy when they're created. The default role assignment policy should contain the permissions that should be applied to the majority of your mailboxes.
 
-Permissions are added to role assignment policies using end-user roles. End-user roles begin with `My` and grant permissions for users to manage only their mailbox or distribution groups they own. They can't be used to manage any other mailbox. Only end-user roles can be assigned to role assignment policies. 
+Permissions are added to role assignment policies using end-user roles. End-user roles begin with `My` and grant permissions for users to manage only their mailbox or distribution groups they own. They can't be used to manage any other mailbox. Only end-user roles can be assigned to role assignment policies.
 
 When an end-user role is assigned to a role assignment policy, all of the mailboxes associated with that role assignment policy receive the permissions granted by the role. This enables you to add or remove permissions to sets of users without having to configure individual mailboxes. The following figure shows:
 
@@ -105,12 +105,12 @@ When an end-user role is assigned to a role assignment policy, all of the mailbo
 
 ![Role, role assignment policy, mailbox relationship](../media/ITPro_Security_RBAC_SimplifiedRAPRelationship.gif)
 
-The Default Role Assignment Policy role assignment policy is included with Exchange 2016. As the name implies, it's the default role assignment policy. If you want to change the permissions provided by this role assignment policy, or if you want to create role assignment policies, see [Work with role assignment policies](#CustomRAP.md) later in this topic. 
+The Default Role Assignment Policy role assignment policy is included with Exchange 2016. As the name implies, it's the default role assignment policy. If you want to change the permissions provided by this role assignment policy, or if you want to create role assignment policies, see [Work with role assignment policies](#CustomRAP.md) later in this topic.
 
 ## Work with role groups
 <a name="CustomRoleGroup"> </a>
 
-To manage your permissions using role groups in Exchange 2016, we recommend that you use the Exchange admin center (EAC). When you use the EAC to manage role groups, you can add and remove roles and members, create role groups, and copy role groups with a few clicks of your mouse. The EAC provides simple dialog boxes, such as the **new role group** dialog box, shown in the following figure, to perform these tasks. 
+To manage your permissions using role groups in Exchange 2016, we recommend that you use the Exchange admin center (EAC). When you use the EAC to manage role groups, you can add and remove roles and members, create role groups, and copy role groups with a few clicks of your mouse. The EAC provides simple dialog boxes, such as the **new role group** dialog box, shown in the following figure, to perform these tasks.
 
  **New role group dialog box in the EAC**
 
@@ -133,12 +133,12 @@ If there's an existing role group that has some, but not all, of the permissions
 Existing role groups can also be modified. You can add and remove roles from existing role groups, and add and remove members from it at the same time, using an EAC dialog box similar to the one in the preceding figure. By adding and removing roles to and from role groups, you turn on and off administrative features for members of that role group.
 
 > [!NOTE]
-> Although you can change which roles are assigned to built-in role groups, we recommend that you copy built-in role groups, modify the role group copy, and then add members to the role group copy. 
+> Although you can change which roles are assigned to built-in role groups, we recommend that you copy built-in role groups, modify the role group copy, and then add members to the role group copy.
 
 ## Work with role assignment policies
 <a name="CustomRAP"> </a>
 
-To manage the permissions that you grant end users to manage their own mailbox in Exchange 2016, we recommend that you use the EAC. When you use the EAC to manage end-user permissions, you can add roles, remove roles, and create role assignment policies with a few clicks of your mouse. The EAC provides simple dialog boxes, such as the **role assignment policy** dialog box, shown in the following figure, to perform these tasks. 
+To manage the permissions that you grant end users to manage their own mailbox in Exchange 2016, we recommend that you use the EAC. When you use the EAC to manage end-user permissions, you can add roles, remove roles, and create role assignment policies with a few clicks of your mouse. The EAC provides simple dialog boxes, such as the **role assignment policy** dialog box, shown in the following figure, to perform these tasks.
 
  **Role assignment policy dialog box in the EAC**
 

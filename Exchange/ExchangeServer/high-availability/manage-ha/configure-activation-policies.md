@@ -16,7 +16,7 @@ description: "Summary: About activation policies in Exchange 2016, and how to co
 
  **Summary**: About activation policies in Exchange 2016, and how to configure them on mailbox database copies.
   
- *Activation* is the process of changing a mailbox database copy from a passive copy to an active copy. Activation can occur automatically (by the system as part of a database or server failover operation) or it can be performed manually (by an administrator as part of a database or server switchover operation). Blocking a database for activation prevents it from becoming the active copy during a database or server failover. 
+ *Activation* is the process of changing a mailbox database copy from a passive copy to an active copy. Activation can occur automatically (by the system as part of a database or server failover operation) or it can be performed manually (by an administrator as part of a database or server switchover operation). Blocking a database for activation prevents it from becoming the active copy during a database or server failover.
   
 Looking for other management tasks related to mailbox database copies? Check out [Managing mailbox database copies](http://technet.microsoft.com/library/06df16b4-f209-4d3a-8c68-0805c745f9b2.aspx).
   
@@ -24,12 +24,12 @@ Looking for other management tasks related to mailbox database copies? Check out
 
 - Estimated time to complete this task: 1 minute
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Mailbox database copies" entry in the [High availability and site resilience permissions](../../permissions/feature-permissions/ha-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Mailbox database copies" entry in the [High availability and site resilience permissions](../../permissions/feature-permissions/ha-permissions.md) topic.
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).. 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351)..
   
 ## Use the EAC to configure the activation policy for a mailbox database copy
 <a name="UseEMC"> </a>
@@ -42,7 +42,7 @@ Looking for other management tasks related to mailbox database copies? Check out
     
 4. Optionally, add a comment, and select the check box that says **This copy can only be activated by manual intervention**.
     
-5. Click **Save** to save the configuration changes for the mailbox database copy. 
+5. Click **Save** to save the configuration changes for the mailbox database copy.
     
 ## Use the Exchange Management Shell to suspend or resume a database copy for activation
 <a name="UseEMC"> </a>

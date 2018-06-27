@@ -21,13 +21,13 @@ Other information related to Exchange documentation is in [Third-party copyright
 
 ## Where to find Exchange documentation
 
-The [Exchange Server for IT pros](https://go.microsoft.com/fwlink/p/?linkid=34165) TechCenter is your primary gateway to in-depth technical information about Microsoft Exchange. 
+The [Exchange Server for IT pros](https://go.microsoft.com/fwlink/p/?linkid=34165) TechCenter is your primary gateway to in-depth technical information about Microsoft Exchange.
 
-If you're an admin for an Exchange hybrid or Exchange Online deployment, you may also be interested in the [Office 365 for IT pros](https://go.microsoft.com/fwlink/p/?LinkId=282341) TechCenter. 
+If you're an admin for an Exchange hybrid or Exchange Online deployment, you may also be interested in the [Office 365 for IT pros](https://go.microsoft.com/fwlink/p/?LinkId=282341) TechCenter.
 
-The [Exchange Library](https://go.microsoft.com/fwlink/p/?linkid=82055) contains the most up-to-date Help documentation. This documentation is reviewed and approved by the Exchange product team and evolves as new information, issues, and troubleshooting tips becomes available. 
+The [Exchange Library](https://go.microsoft.com/fwlink/p/?linkid=82055) contains the most up-to-date Help documentation. This documentation is reviewed and approved by the Exchange product team and evolves as new information, issues, and troubleshooting tips becomes available.
 
-The [Exchange Team Blog](https://go.microsoft.com/fwlink/p/?LinkID=178595) contains technical articles written by the Exchange Team, as well as product announcements and updates. The blog is an excellent way to interact with the Exchange Team. We read and respond to your feedback and comments. 
+The [Exchange Team Blog](https://go.microsoft.com/fwlink/p/?LinkID=178595) contains technical articles written by the Exchange Team, as well as product announcements and updates. The blog is an excellent way to interact with the Exchange Team. We read and respond to your feedback and comments.
 
 ## Additional resources
 
@@ -41,6 +41,6 @@ Looking for more than just documentation? Check out these other Exchange resourc
 
 - [Support for Microsoft Exchange Server](https://go.microsoft.com/fwlink/p/?LinkId=283967): Check out this page for support resources for multiple versions of Exchange.
 
-- [Accessibility for people with disabilities](accessibility.md) : This topic provides important information about features, products, and services that help make Microsoft Exchange more accessible for people with disabilities. 
+- [Accessibility for people with disabilities](accessibility.md) : This topic provides important information about features, products, and services that help make Microsoft Exchange more accessible for people with disabilities.
 
 

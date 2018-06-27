@@ -24,12 +24,12 @@ In Exchange 2016, you can configure message retry, resubmit, and expiration inte
     
 - You can only use the Exchange admin center (EAC) on Mailbox servers. For more information about the EAC, see [Exchange admin center in Exchange 2016](../../architecture/client-access/exchange-admin-center.md). To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see **Open the Exchange Management Shell**.
     
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Transport service" and "Edge Transport severs" entries in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic. 
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Transport service" and "Edge Transport severs" entries in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic.
     
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
     
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). 
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
   
 ## Use EdgeTransport.exe.config to configure the queue glitch retry count, the queue glitch retry interval, the mailbox delivery queue retry interval, and the maximum idle time before resubmit interval
 
@@ -44,7 +44,7 @@ In Exchange 2016, you can configure message retry, resubmit, and expiration inte
 To configure these intervals, you modify keys in the %ExchangeInstallPath%Bin\EdgeTransport.exe.config XML application configuration file on Mailbox servers or Edge Transport servers. Changes you save to this file are applied after you restart the Exchange Transport service. When you restart this service, mail flow on the server is temporarily interrupted.
   
 > [!NOTE]
-> Any customized per-server Exchange or Internet Information Server settings you make in Exchange XML application configuration files (for example, web.config files or the EdgeTransport.exe.config file) will be overwritten when you install an Exchange Cumulative Update (CU). Make sure that you save this information so that you can easily re-configure your server after the install. You must re-configure these settings after you install an Exchange CU. 
+> Any customized per-server Exchange or Internet Information Server settings you make in Exchange XML application configuration files (for example, web.config files or the EdgeTransport.exe.config file) will be overwritten when you install an Exchange Cumulative Update (CU). Make sure that you save this information so that you can easily re-configure your server after the install. You must re-configure these settings after you install an Exchange CU.
   
 1. In a Command prompt window on the Mailbox server or Edge Transport server, open the EdgeTransport.exe.config file in Notepad by running this command:
     
@@ -52,7 +52,7 @@ To configure these intervals, you modify keys in the %ExchangeInstallPath%Bin\Ed
   Notepad %ExchangeInstallPath%Bin\EdgeTransport.exe.config
   ```
 
-2. Locate the following keys in the `<appSettings>` section. 
+2. Locate the following keys in the `<appSettings>` section.
     
   ```
   <add key="QueueGlitchRetryCount" value="<Integer>" />
@@ -88,7 +88,7 @@ To verify that you've configured these intervals, do these steps:
   Notepad %ExchangeInstallPath%Bin\EdgeTransport.exe.config
   ```
 
-2. Verify the values of the following keys in the `<appSettings>` section. 
+2. Verify the values of the following keys in the `<appSettings>` section.
     
   ```
   <add key="QueueGlitchRetryCount" value="<Integer>" />
@@ -99,7 +99,7 @@ To verify that you've configured these intervals, do these steps:
 
 ## Configure the transient failure retry attempts, the transient failure retry interval, and the outbound connection failure retry interval
 
-- **Transient failure retry attempts**: The number of connection attempts that are tried after the connection attempts controlled by the _QueueGlitchRetryCount_ and _QueueGlitchRetryInterval_ keys have failed. A valid value is 0 through 15, and the default value is 6. If you set the value to 0, the next connection attempt is controlled by the outbound connection failure retry interval. 
+- **Transient failure retry attempts**: The number of connection attempts that are tried after the connection attempts controlled by the _QueueGlitchRetryCount_ and _QueueGlitchRetryInterval_ keys have failed. A valid value is 0 through 15, and the default value is 6. If you set the value to 0, the next connection attempt is controlled by the outbound connection failure retry interval.
     
 - **Transient failure retry interval**: The interval between each transient failure retry attempt. On Mailbox servers, the default value is 5 minutes. On Edge Tranport Servers, the default value is 10 minutes.
     
@@ -107,7 +107,7 @@ To verify that you've configured these intervals, do these steps:
     
 ### Use the EAC to configure the transient failure retry attempts, the transient failure retry interval, or the outbound connection failure retry interval on Mailbox servers
 
-1. In the EAC, go to **Servers** \> **Servers**, select the server, and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
+1. In the EAC, go to **Servers** \> **Servers**, select the server, and then click **Edit** ![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
 2. In the server properties window that opens, click **Transport limits**.
     
@@ -151,7 +151,7 @@ Set-TransportService -Identity Mailbox01 -TransientFailureRetryCount 8 -Transien
 
 To verify that you've configured these intervals, do any of these steps:
   
-- On a Mailbox server, open the EAC and go to **Servers** \> **Servers**, select the server, and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png). In the server properties window that opens, click **Transport limits**, and verify the values in the **Retries** section. 
+- On a Mailbox server, open the EAC and go to **Servers** \> **Servers**, select the server, and then click **Edit** ![Edit icon](../../media/ITPro_EAC_EditIcon.png). In the server properties window that opens, click **Transport limits**, and verify the values in the **Retries** section.
     
 - In the Exchange Management Shell on a Mailbox server or Edge Transport server, run this command to verify the property values:
     
@@ -167,7 +167,7 @@ To verify that you've configured these intervals, do any of these steps:
 
 ## Use the Exchange Management Shell to configure the message retry interval
 
-The message retry interval specifies how long to wait between sending attempts for individual messages in queues that have a status of Retry. The default value is 15 minutes, and we recommend that you don't change the default value unless you are directed to do so by Microsoft Customer Service and Support, or specific product documentation.
+The message retry interval specifies how long to wait between sending attempts for individual messages in queues that have a status of Retry. The default value is 15 minutes, and we recommend that you don't change the default value unless you're directed to do so by Microsoft Customer Service and Support, or specific product documentation.
   
 To configure the message retry interval, use this syntax:
   
@@ -199,7 +199,7 @@ Get-TransportService | Format-List Name,MessageRetryInterval
     
 ### Use the EAC to configure the delay DSN message notification timeout interval on Mailbox servers
 
-1. In the EAC, click **Servers** \> **Servers**, select the server, and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
+1. In the EAC, click **Servers** \> **Servers**, select the server, and then click **Edit** ![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
 2. In the server properties window that opens, click **Transport limits**.
     
@@ -243,7 +243,7 @@ Set-TransportConfig -InternalDelayDSNEnabled $false
 
 To verify that you've configured the delay DSN timeout settings, do any of these steps:
   
-- On a Mailbox server, open the EAC and go to **Servers** \> **Servers**, select the server, and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png). In the server properties window that opens, click **Transport limits**, and verify the **Notify sender when message is delayed after (hours)** value in the **Notifications** section. 
+- On a Mailbox server, open the EAC and go to **Servers** \> **Servers**, select the server, and then click **Edit** ![Edit icon](../../media/ITPro_EAC_EditIcon.png). In the server properties window that opens, click **Transport limits**, and verify the **Notify sender when message is delayed after (hours)** value in the **Notifications** section.
     
 - In the Exchange Management Shell on a Mailbox server or Edge Transport server, run these commands to verify the property values:
     
@@ -261,7 +261,7 @@ The message expiration timeout interval specifies how long to wait before the me
   
 ### Use the EAC to configure the message expiration timeout interval on Mailbox servers
 
-1. In the EAC, click **Servers** \> **Servers**, select the server, and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png).
+1. In the EAC, click **Servers** \> **Servers**, select the server, and then click **Edit** ![Edit icon](../../media/ITPro_EAC_EditIcon.png).
     
 2. In the server properties window that opens, click **Transport limits**.
     
@@ -285,7 +285,7 @@ Set-TransportService -Identity Mailbox01 -MessageExpirationTimeout 4.00:00:00
 
 To verify that you've configured the message expiration timeout interval, do any of these steps:
   
-- On a Mailbox server, open the EAC and go to **Servers** \> **Servers**, select the server, and then click **Edit**![Edit icon](../../media/ITPro_EAC_EditIcon.png). In the server properties window that opens, click **Transport limits**, and verify the **Maximum time since submission (days)** value in the **Message expiration** section. 
+- On a Mailbox server, open the EAC and go to **Servers** \> **Servers**, select the server, and then click **Edit** ![Edit icon](../../media/ITPro_EAC_EditIcon.png). In the server properties window that opens, click **Transport limits**, and verify the **Maximum time since submission (days)** value in the **Message expiration** section.
     
 - In the Exchange Management Shell on a Mailbox server or Edge Transport server, run this command to verify the **MessageExpirationTimeout** property value: 
     
