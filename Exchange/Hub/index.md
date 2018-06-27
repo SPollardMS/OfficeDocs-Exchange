@@ -102,7 +102,7 @@ description: Exchange
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Exchange Online Protection</h3>
-                                                    <p>Learn how Exchange Online Protection helps protect your organization against spam &amp; malware, and use safeguard features that protect your organization from messaging-policy violations.</p>
+                                                    <p>Help protect your organization against spam &amp; malware, and use safeguard features that protect your organization from messaging-policy violations.</p>
                                                 </div>
                                             </div>
                                         </div>
