@@ -1,7 +1,7 @@
 ---
 title: "Use a screen reader to edit the mailbox display name in the Exchange admin center"
 ms.author: v-maleo
-author: v-maleo
+Maggsl
 ms.date: 5/20/2016
 ms.audience: ITPro
 ms.topic: article

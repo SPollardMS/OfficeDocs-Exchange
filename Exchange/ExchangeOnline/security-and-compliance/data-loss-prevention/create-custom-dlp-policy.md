@@ -1,7 +1,7 @@
 ---
 title: "Create a custom DLP policy"
 ms.author: stephow
-author: stephow
+stephow-msft
 manager: laurawi
 ms.date: 6/23/2018
 ms.audience: ITPro

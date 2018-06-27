@@ -1,7 +1,7 @@
 ---
 title: "Use a screen reader to open the Exchange admin center"
 ms.author: v-maleo
-author: v-maleo
+Maggsl
 ms.date: 5/24/2016
 ms.audience: ITPro
 ms.topic: article

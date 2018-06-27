@@ -1,7 +1,7 @@
 ---
 title: "Protect form data with document fingerprinting"
 ms.author: stephow
-author: stephow
+stephow-msft
 manager: nesuexws
 ms.date: 11/17/2014
 ms.audience: ITPro

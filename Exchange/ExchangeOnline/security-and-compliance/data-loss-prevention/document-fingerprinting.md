@@ -1,7 +1,7 @@
 ---
 title: "Document Fingerprinting"
 ms.author: stephow
-author: stephow
+stephow-msft
 manager: laurawi
 ms.date: 11/17/2014
 ms.audience: ITPro

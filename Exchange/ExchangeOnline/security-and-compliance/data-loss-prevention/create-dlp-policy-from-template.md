@@ -1,7 +1,7 @@
 ---
 title: "Create a DLP policy from a template"
 ms.author: stephow
-author: stephow
+stephow-msft
 manager: laurawi
 ms.date: 6/23/2018
 ms.audience: ITPro

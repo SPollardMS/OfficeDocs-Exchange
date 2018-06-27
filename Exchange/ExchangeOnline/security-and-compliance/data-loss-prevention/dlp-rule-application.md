@@ -1,7 +1,7 @@
 ---
 title: "How DLP rules are applied to evaluate messages"
 ms.author: stephow
-author: stephow
+stephow-msft
 manager: laurawi
 ms.date: 3/9/2015
 ms.audience: ITPro

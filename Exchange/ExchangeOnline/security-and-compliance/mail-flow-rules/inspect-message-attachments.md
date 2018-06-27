@@ -1,7 +1,7 @@
 ---
 title: "Use mail flow rules to inspect message attachments in Office 365"
 ms.author: stephow
-author: stephow
+stephow-msft
 manager: scotv
 ms.date: 1/26/2018
 ms.audience: ITPro
