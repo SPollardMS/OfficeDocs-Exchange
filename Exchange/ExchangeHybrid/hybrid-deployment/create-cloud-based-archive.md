@@ -11,6 +11,7 @@ localization_priority: Normal
 ms.collection:
 - Strat_EX_EXOBlocker
 - Ent_O365_Hybrid
+- Hybrid
 ms.assetid: ecc0a687-6c05-47bd-a079-a43d83cba9ea
 description: "In an Exchange hybrid deployment, you can configure an on-premises primary mailbox with a cloud-based archive mailbox in Exchange Online."
 ---

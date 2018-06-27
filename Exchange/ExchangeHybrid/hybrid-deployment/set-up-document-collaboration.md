@@ -8,7 +8,9 @@ ms.audience: Developer
 ms.topic: article
 ms.prod: exchange-server-itpro
 localization_priority: Normal
-ms.collection: Ent_O365_Hybrid
+ms.collection:
+- Hybrid
+- Ent_O365_Hybrid
 ms.assetid: 799518aa-7cfe-4708-92ee-98057ff168f5
 description: "Summary: How to allow your on-premises Exchange Server 2016 users to take advantage of using document collaboration with OneDrive for Business and SharePoint Online while in a hybrid configuration."
 ---

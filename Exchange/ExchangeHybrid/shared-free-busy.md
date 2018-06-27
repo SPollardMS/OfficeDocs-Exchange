@@ -8,7 +8,9 @@ ms.audience: Developer
 ms.topic: article
 ms.prod: exchange-server-itpro
 localization_priority: Normal
-ms.collection: Ent_O365_Hybrid
+ms.collection:
+- Hybrid
+- Ent_O365_Hybrid
 ms.assetid: bd3884de-80ee-4ff2-a8a3-eacd5aa3e51b
 description: "Sharing free/busy (calendar availability) information between users located on-premises and in the Exchange Online organization is one of the primary benefits of a hybrid deployment. Users in both organizations can view each other's calendars just as if they were located in the same physical organization. This makes scheduling meetings and resources easy and efficient."
 ---

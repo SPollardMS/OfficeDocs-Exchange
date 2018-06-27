@@ -8,7 +8,9 @@ ms.audience: ITPro
 ms.topic: article
 ms.prod: exchange-server-itpro
 localization_priority: Normal
-ms.collection: Ent_O365_Hybrid
+ms.collection:
+- Hybrid
+- Ent_O365_Hybrid
 ms.assetid: 4e4d7c19-78b8-44bb-bdff-3ea97ea59a5d
 description: "Edge Transport servers in Microsoft Exchange are deployed in an organization's on-premises perimeter network. They're non-domain-joined computers that handle Internet-facing mail flow and act as an SMTP relay and smart host for Exchange servers in your internal network."
 ---

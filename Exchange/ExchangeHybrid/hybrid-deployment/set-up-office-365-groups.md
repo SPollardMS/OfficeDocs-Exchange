@@ -8,7 +8,9 @@ ms.audience: Developer
 ms.topic: article
 ms.prod: exchange-server-itpro
 localization_priority: Normal
-ms.collection: Ent_O365_Hybrid
+ms.collection:
+- Hybrid
+- Ent_O365_Hybrid
 ms.assetid: 184dfcfe-4b8e-450a-adc6-e647213b9501
 
 description: "Learn how to enable on-premises Exchange users to use Office 365 Groups in a hybrid deployment."

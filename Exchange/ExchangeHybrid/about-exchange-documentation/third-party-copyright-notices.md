@@ -8,7 +8,9 @@ ms.audience: End User
 ms.topic: article
 ms.prod: exchange-server-itpro
 localization_priority: Normal
-ms.collection: Ent_O365_Hybrid
+ms.collection:
+- Hybrid
+- Ent_O365_Hybrid
 ms.assetid: e94f1244-acb8-4ddd-b54e-5cc37f903bbf
 description: "Outside In HTML Export © 1991, 2011 Oracle"
 ---

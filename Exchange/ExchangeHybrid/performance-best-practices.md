@@ -8,7 +8,9 @@ ms.audience: Developer
 ms.topic: article
 ms.prod: exchange-server-itpro
 localization_priority: Normal
-ms.collection: Ent_O365_Hybrid
+ms.collection:
+- Hybrid
+- Ent_O365_Hybrid
 ms.assetid: 120a7832-d2d3-47d7-b305-918360c2ef66
 description: "There are many paths to migrate data from an on-premises email organization to Office 365. When planning a migration to Office 365, a common question is about how to improve the performance of data migration and optimize migration velocity. This article discusses migration performance for Exchange hybrid deployments, For performance information about other migration methods, see Office 365 migration performance and best practices."
 ---

@@ -8,7 +8,9 @@ ms.audience: Developer
 ms.topic: article
 ms.prod: exchange-server-itpro
 localization_priority: Normal
-ms.collection: Ent_O365_Hybrid
+ms.collection:
+- Hybrid
+- Ent_O365_Hybrid
 ms.assetid: 613ad2c2-bb7a-4810-b572-71945bd103f1
 description: "When you install a server running Microsoft Exchange Server 2013 in your Exchange 2010 on-premises organization, the Exchange 2013 management tools are automatically installed on the server. You'll use the following tools to configure and manage hybrid functionality for both the on-premises Exchange and the Exchange Online organization:"
 ---

@@ -8,7 +8,9 @@ ms.audience: Developer
 ms.topic: article
 ms.prod: exchange-server-itpro
 localization_priority: Normal
-ms.collection: Ent_O365_Hybrid
+ms.collection:
+- Hybrid
+- Ent_O365_Hybrid
 ms.assetid: cbbe558d-1ae2-49ed-bd97-2013349fef35
 description: "Configuring and managing hybrid deployments are easier than ever with the latest improvements to the Hybrid Configuration wizard. Whether you want to connect your Exchange on-premises and Exchange Online organizations for long-term coexistence or as part of a cloud migration strategy, configuring a hybrid deployment is the first step for your Exchange organization."
 ---

@@ -8,6 +8,7 @@ ms.audience: Developer
 ms.topic: article
 ms.prod: exchange-server-itpro
 localization_priority: Normal
+ms.collection: Hybrid
 ms.assetid: 696bddbc-d86b-4f43-8dc5-bf3d1f10a02c
 description: "The following attributes can be copied from an on-premises Exchange organization to Exchange Online when the Organization Configuration Transfer option is selected in the Hybrid Configuration Wizard."
 ---

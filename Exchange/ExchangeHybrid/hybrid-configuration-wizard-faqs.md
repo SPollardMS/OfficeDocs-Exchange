@@ -8,7 +8,9 @@ ms.audience: Developer
 ms.topic: overview
 ms.prod: exchange-server-itpro
 localization_priority: Normal
-ms.collection: Ent_O365_Hybrid
+ms.collection:
+- Hybrid
+- Ent_O365_Hybrid
 ms.assetid: e911e6e0-e36e-4430-ac36-c745a10d6c26
 description: "Microsoft has released a new Hybrid Configuration wizard that simplifies the configuration of a hybrid deployment, allows for more flexibility with your hybrid configuration, and ensures you are always running the most up to date versions of the experience. This version of the hybrid wizard is built into Exchange 2016 and releases of Exchange 2013 starting with Cumulative Update 10, but even if you're running an older Exchange 2013 cumulative update (CU) or Exchange 2010 Service Pack 3 (SP3), you can still download the new wizard."
 ---

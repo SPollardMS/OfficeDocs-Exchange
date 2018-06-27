@@ -8,7 +8,9 @@ ms.audience: Developer
 ms.topic: article
 ms.prod: exchange-server-itpro
 localization_priority: Normal
-ms.collection: Strat_EX_EXOBlocker
+ms.collection:
+- Hybrid
+- Strat_EX_EXOBlocker
 ms.assetid: 4f884b7a-3b8a-4207-8843-65d3141731dc
 description: "Read this article if you are ready to move from an Exchange hybrid deployment to a full cloud implementation."
 ---

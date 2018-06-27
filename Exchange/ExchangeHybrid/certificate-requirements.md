@@ -8,7 +8,9 @@ ms.audience: ITPro
 ms.topic: article
 ms.prod: exchange-server-itpro
 localization_priority: Normal
-ms.collection: Ent_O365_Hybrid
+ms.collection:
+- Hybrid
+- Ent_O365_Hybrid
 ms.assetid: 48d532cc-29f9-4009-9d2d-f19a9c13c320
 description: "In a hybrid deployment, digital certificates are an important part of securing the communication between the on-premises Exchange organization and Office 365. Certificates enable each Exchange organization to trust the identity of another. Certificates also help to ensure that each Exchange organization is communicating to the right source."
 ---

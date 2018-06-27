@@ -8,7 +8,9 @@ ms.audience: ITPro
 ms.topic: article
 ms.prod: exchange-server-itpro
 localization_priority: Normal
-ms.collection: Ent_O365_Hybrid
+ms.collection:
+- Hybrid
+- Ent_O365_Hybrid
 ms.assetid: 9ba4e071-cff4-4ae4-974a-935f818c04d6
 description: "Configuring and managing Exchange 2013-based hybrid deployments with Exchange 2007 is easier than ever with the latest improvements to the Hybrid Configuration wizard and architectural changes introduced in Microsoft Exchange Server 2013. Whether you want to connect your Exchange 2007 on-premises and Exchange Online organizations for long-term coexistence or as part of a cloud migration strategy, it's important that you understand hybrid deployment concepts."
 ---

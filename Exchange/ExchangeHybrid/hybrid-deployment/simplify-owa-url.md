@@ -8,6 +8,7 @@ ms.audience: Developer
 ms.topic: article
 ms.prod: exchange-server-itpro
 localization_priority: Normal
+ms.collection: Hybrid
 ms.assetid: 19449aee-3796-4298-90c6-c7579b8d2f7a
 description: "Learn how to configure a URL for Outlook on the web (Outlook Web App) for cloud mailbox users in a hybrid environment."
 ---

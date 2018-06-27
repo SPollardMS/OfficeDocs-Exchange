@@ -8,7 +8,9 @@ ms.audience: ITPro
 ms.topic: article
 ms.prod: exchange-server-itpro
 localization_priority: Normal
-ms.collection: Ent_O365_Hybrid
+ms.collection:
+- Hybrid
+- Ent_O365_Hybrid
 ms.assetid: 233f9f34-3ff5-47e1-a9e8-3244ee868d6e
 description: "When you install an Exchange server, the Exchange management tools are automatically installed on the server. You'll use the following tools to configure and manage both the on-premises Exchange and the Exchange Online organization:"
 ---

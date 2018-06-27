@@ -8,7 +8,9 @@ ms.audience: ITPro
 ms.topic: article
 ms.prod: exchange-server-itpro
 localization_priority: Normal
-ms.collection: Ent_O365_Hybrid
+ms.collection:
+- Hybrid
+- Ent_O365_Hybrid
 ms.assetid: 7346bff7-41e0-401c-bd31-34498561f4c4
 description: "This topic discusses your routing options for inbound messages from the Internet and outbound messages to the Internet."
 ---

@@ -11,8 +11,8 @@ localization_priority: Normal
 ms.collection:
 - Strat_EX_EXOBlocker
 - Ent_O365_Hybrid
+- Hybrid
 ms.assetid: 2e6ed294-ee74-4038-8b71-b61786372ba4
-
 description: ""
 ---
 

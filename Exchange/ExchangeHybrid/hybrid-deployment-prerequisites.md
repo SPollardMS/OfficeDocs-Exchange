@@ -11,6 +11,7 @@ localization_priority: Normal
 ms.collection:
 - Ent_O365_Hybrid
 - Strat_EX_EXOBlocker
+- Hybrid
 ms.assetid: e7454db0-fed4-4662-8890-9501126b1ba2
 description: "Summary: What your Exchange environment needs before you can set up a hybrid deployment."
 ---

@@ -11,6 +11,7 @@ localization_priority: Normal
 ms.collection:
 - Strat_EX_EXOBlocker
 - Ent_O365_Hybrid
+- Hybrid
 ms.assetid: bcb0ac98-2949-486b-a8ab-8549c021651b
 description: "Summary: Use the steps in this article to synchronize public folders between Office 365 and your Exchange Server 2010 on-premises deployment."
 ---

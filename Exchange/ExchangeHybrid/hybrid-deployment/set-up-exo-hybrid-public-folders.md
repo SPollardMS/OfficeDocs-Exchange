@@ -11,6 +11,7 @@ localization_priority: Normal
 ms.collection:
 - Ent_O365_Hybrid
 - Strat_EX_EXOBlocker
+- Hybrid
 ms.assetid: d979edb3-967b-4431-8beb-0c236bf7f56d
 description: "Summary: Instructions for enabling on-premises Exchange 2013 users to access public folders in Exchange Online."
 ---
