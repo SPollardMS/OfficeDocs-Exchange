@@ -51,10 +51,7 @@ The following permissions **are** supported:
     Some changes are needed on your Azure Active Directory Connect server for Send on Behalf of permissions to sync between your on-premises Exchange servers and Exchange Online. For details, see [Enabling support for hybrid mailbox permissions in Azure Active Directory Connect](permissions.md#ConfigAADC) later in this topic. 
     
 - **Private items** When adding a delegate the option can be configured to allow a user with folder permissions to see private calendar items. 
-    
-> [!NOTE]
-> As of February 2018 the feature to support Full Access and Send on Behalf Of is being rolled out and expected to be complete by the second quarter of 2018. 
-  
+
 The following permissions or capabilities **aren't** supported: 
   
 - **Send-As** Lets a user send mail as though it appears to be coming from another user's mailbox. 
