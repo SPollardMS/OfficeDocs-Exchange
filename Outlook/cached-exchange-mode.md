@@ -76,7 +76,9 @@ The maximum size for .ost files is configurable. The default is 50 GB of data st
 When upgrading, if you do not change Cached Exchange Mode settings, the same settings are kept for Outlook 2016. 
   
 However, by default, when Outlook 2016 is installed and Cached Exchange Mode is enabled, a new compressed version of the Outlook data file (.ost) is created. The earlier version of the .ost file is kept and, if it is necessary, can be opened by Outlook 2016. If you must keep Outlook 2016 from creating a new compressed Outlook data file (.ost), use the Group Policy template for Outlook (Outlk16.admx) to enable the **Do not create new OST file on upgrade** policy setting.
-  
+
+For more information about how to configure this and other settings, see [Using Group Policy and the Office Customization Tool (OCT)](#using-group-policy-and-the-office-customization-tool-oct).
+
 > [!NOTE]
 > The Exchange Fast Access feature that was added to Outlook 2013 Exchange Cached Mode has been deprecated in Outlook 2016. 
 
@@ -93,6 +95,8 @@ By default, when Cached Exchange Mode is enabled, shared mail and nonmail folder
 You can disable caching of all shared folders for profiles that have Cached Exchange Mode enabled. To do this, configure the **Download shared non-mail folders** option in the Office Customization Tool (OCT) when you customize your Cached Exchange Mode deployment. Note that this setting applies to both mail and nonmail folders in Outlook 2016. 
   
 If you want to disable caching of shared mail folders (like a delegated Inbox) but not shared nonmail folders (like Calendar), see [By default, shared mail folders are downloaded in Cached mode in Outlook 2010 and later versions](https://support.microsoft.com/help/982697/).
+
+For more information about how to configure these settings, see [Using Group Policy and the Office Customization Tool (OCT)](#using-group-policy-and-the-office-customization-tool-oct).
   
   
 ### Site mailboxes
@@ -119,6 +123,8 @@ The **Download only headers** setting for synchronization is designed for Outloo
 For a scenario where users' actual data throughput is slow, even though their network adapters report a fast connection, you can disable automatic switching to downloading only headers by using the Group Policy option, **Disallow On Slow Connections Only Download Headers**. Similarly, there might be connections that Outlook has determined are slow but which provide high data throughput to users. In this case, you can also disable automatic switching to downloading only headers.
   
 You can configure the **On slow connections, download only headers** option in the Office Customization Tool (OCT), or configure the option by using Group Policy to set **Disallow On Slow Connections Only Download Headers**. 
+
+For more information about how to configure these settings, see [Using Group Policy and the Office Customization Tool (OCT)](#using-group-policy-and-the-office-customization-tool-oct).
   
 
 ## Configure Cached Exchange Mode for Outlook 2016
