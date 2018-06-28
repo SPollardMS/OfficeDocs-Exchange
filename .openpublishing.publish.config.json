@@ -66,11 +66,10 @@
   ],
   "branch_target_mapping": {
     "live": [
-      "Publish",
-      "Pdf"
+      "Publish"
     ]
   },
-  "need_generate_pdf_url_template": true,
+  "need_generate_pdf_url_template": false,
   "targets": {},
   "need_generate_pdf": false,
   "need_generate_intellisense": false
