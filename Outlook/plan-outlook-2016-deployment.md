@@ -1,5 +1,5 @@
 ---
-title: "Overview of Outlook 2016 for Windows planning"
+title: "Planning considerations for deploying Outlook 2016 for Windows"
 ms.author: danbrown
 author: DHB-MSFT
 manager: laurawi
@@ -12,7 +12,7 @@ ms.collection: Ent_Office_Outlook
 description: "Helps IT Pros learn about what they should consider when they deploy Outlook 2016 for Windows to users in their organization"
 ---
 
-# Overview of Outlook 2016 for Windows planning
+# Planning considerations for deploying Outlook 2016 for Windows
 
 A close review of the organization's messaging requirements will help you plan your Outlook 2016 deployment to users in your enterprise.
   

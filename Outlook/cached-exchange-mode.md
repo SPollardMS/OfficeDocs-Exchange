@@ -249,4 +249,8 @@ The following table shows some additional settings that you can configure for Ex
 |Do not allow an OST file to be created  |Enable to prevent offline folder use.   |
 |Do not create new OST file on upgrade  |Enable to force Outlook 2016 to use the existing .ost file that was created by an earlier version of Outlook. If you disable or do not configure this setting (recommended), a new .ost file is created when you upgrade to Outlook 2016.  |
 |Synchronizing data in shared folders  |Enable to control the number of days that elapses without a user accessing an Outlook folder before Outlook stops synchronizing the folder with Exchange.  |
-   
+
+
+## Related topics
+
+[Planning considerations for deploying Outlook 2016 for Windows](plan-outlook-2016-deployment.md)   
