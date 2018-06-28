@@ -16,3 +16,4 @@
 Exchange/ExchangeServer/*  @chrisda
 Exchange/ExchangeOnline/* @msdmaguire
 Exchange/ExchangeHybrid/* @dstrome
+Outlook/* @DHB-MSFT
