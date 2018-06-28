@@ -71,6 +71,15 @@ The maximum size for .ost files is configurable. The default is 50 GB of data st
     
 - For more information about how to configure .ost file size, see [How to configure the size limit for both (.pst) and (.ost) files in Outlook](https://support.microsoft.com/help/832925).
     
+### Upgrading existing Cached Exchange Mode users to Outlook 2016
+
+When upgrading, if you do not change Cached Exchange Mode settings, the same settings are kept for Outlook 2016. 
+  
+However, by default, when Outlook 2016 is installed and Cached Exchange Mode is enabled, a new compressed version of the Outlook data file (.ost) is created. The earlier version of the .ost file is kept and, if it is necessary, can be opened by Outlook 2016. If you must keep Outlook 2016 from creating a new compressed Outlook data file (.ost), use the Group Policy template for Outlook (Outlk16.admx) to enable the **Do not create new OST file on upgrade** policy setting.
+  
+> [!NOTE]
+> The Exchange Fast Access feature that was added to Outlook 2013 Exchange Cached Mode has been deprecated in Outlook 2016. 
+
 ### Managing performance issues in Outlook
 
 Most users find that Cached Exchange Mode performs faster than online mode. However, several factors can influence a user's perception of Cached Exchange Mode performance, like hard disk size and speed, CPU speed, .ost file size, and the expected level of performance. 
@@ -207,15 +216,31 @@ Use the following procedures to configure Cached Exchange Mode settings by using
 6. Click **Enabled** to enable the policy setting, and then click **OK**.
 
 
-## Upgrading current Cached Exchange Mode users to Outlook 2016
+### Additional Group Policy and OCT settings
 
-When upgrading, if you do not change Cached Exchange Mode settings, the same settings are kept for Outlook 2016. 
+The following table shows some settings that you can configure for Cached Exchange Mode. In Group Policy, you can find the settings under **User Configuration\Policies\Administrative Templates\Microsoft Outlook 2016\Account Settings\Exchange\Cached Exchange Mode**. The OCT settings are in corresponding locations on the **Modify user settings** page of the OCT. 
   
-However, by default, when Outlook 2016 is installed and Cached Exchange Mode is enabled, a new compressed version of the Outlook data file (.ost) is created. The earlier version of the .ost file is kept and, if it is necessary, can be opened by Outlook 2016. If you must keep Outlook 2016 from creating a new compressed Outlook data file (.ost), use the Group Policy template for Outlook (Outlk16.admx) to enable the **Do not create new OST file on upgrade** policy setting.
-  
-If you want to disable the caching of shared mail folders (such as a delegated Inbox) but unshared nonmail folders (such as Calendar), see [By default, shared mail folders are downloaded in Cached mode in Outlook 2010 and later versions](https://support.microsoft.com/help/982697).
-  
-To configure the number of days when cached shared data is removed from the .ost file, you can configure the **Synchronizing data in shared folders** option in the OCT or Group Policy. 
+**Cached Exchange Mode settings**
 
-> [!NOTE]
-> The Exchange Fast Access feature that was added to Outlook 2013 Exchange Cached Mode has been deprecated in Outlook 2016. 
+|**Setting name**|**Description**|
+|:-----|:-----|:-----|
+|Cached Exchange Mode Sync Settings|Enable to configure how much user email that Outlook synchronizes locally by date of message. To allow all email messages regardless of date to synchronize to users' local mailbox cache, enable and select **All** from the list. By default, if you do not configure this setting, Outlook synchronizes email messages sent or received in the last 12 months to users' local mailbox cache (.ost). |
+|Disallow Download Full Items  |Enable to turn off the **Download Full Items** option in Outlook. To find this option, choose the **Send/Receive** tab, and then choose **Download Preferences**.   |
+|Disallow Download Headers  |Enable to turn off the **Download Headers** option in Outlook. To find this option, choose the **Send/Receive** tab.   |
+|Disallow Download Headers then Full Items  |Enable to turn off the **Download Headers then Full Items** option in Outlook. To find this option, choose the **Send/Receive** tab, and then choose **Download Preferences**.  |
+|Disallow On Slow Connections Only Download Headers   |Enable to turn off the **On Slow Connections Download Only Headers** option in Outlook. To find this option, choose the **Send/Receive** tab, and then choose **Download Preferences**.   |
+|Download Public Folder Favorites  |Enable to synchronize Public Folder Favorites in Cached Exchange Mode.   |
+|Download shared non-mail folders   |Enable to synchronize shared nonmail folders in Cached Exchange Mode.   |
+|Use Cached Exchange Mode for new and existing Outlook profile   |Enable to configure new and existing Outlook profiles to use Cached Exchange Mode. Disable to configure new and existing Outlook profiles to use Online Mode. |
+   
+The following table shows some additional settings that you can configure for Exchange connectivity. In Group Policy, you can find the settings under **User Configuration\Policies\Administrative Templates\Microsoft Outlook 2016\Account Settings\Exchange**. The OCT settings are in corresponding locations on the **Modify user settings** page of the OCT. 
+  
+**Exchange connectivity settings**
+
+|**Setting name**|**Description**|
+|:-----|:-----|:-----|
+|Configure Outlook Anywhere (RPC over HTTP) user interface options  |Enable to let users view and change user interface (UI) options for Outlook Anywhere (RPC over HTTP).  |
+|Do not allow an OST file to be created  |Enable to prevent offline folder use.   |
+|Do not create new OST file on upgrade  |Enable to force Outlook 2016 to use the existing .ost file that was created by an earlier version of Outlook. If you disable or do not configure this setting (recommended), a new .ost file is created when you upgrade to Outlook 2016.  |
+|Synchronizing data in shared folders  |Enable to control the number of days that elapses without a user accessing an Outlook folder before Outlook stops synchronizing the folder with Exchange.  |
+   
