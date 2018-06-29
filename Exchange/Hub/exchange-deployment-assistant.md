@@ -1,9 +1,9 @@
 ---
-title: "Exchange Server 2016"
+title: "Exchange Deployment Assistant"
 ms.author: dstrome
 author: dstrome
 manager: serdars
-ms.date: 6/8/2018
+ms.date: 6/28/2018
 ms.audience: ITPro
 layout: LandingPage
 ms.topic: landing-page
@@ -18,170 +18,189 @@ description: "Summary:Customized step-by-step instructions to deploy Exchange Se
 
 The Exchange  Deployment Assistant is a web-based tool that asks you a few questions about your current environment and then generates a custom step-by-step checklist that will help you deploy Exchange Server in your on-premises organization and migrate your organization to Office 365.
 
+![Launch Deployment Assistant](media/ExchangeDeploymentAssistant.png)
 
 
 
-<ul class="panelContent cardsFTitle">
-    <li>
-        <a href="https://technet.microsoft.com/en-us/exdeploy2013">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="/exchange/media/ExchangeDeploymentAssistant.png" alt="Launch the Deployment Assistant" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Buy Exchange or download a trial version</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </a>
-    </li>
-    <li>
-        <a href="https://review.docs.microsoft.com/en-us/Exchange/new-features/updates">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="https://docs.microsoft.com/en-us/office/media/icons/download-blue.svg" alt="Download" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Download full versions, including updates</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </a>
-    </li>
-    <li>
-        <a href="https://go.microsoft.com/fwlink/p/?linkId=836274">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="https://docs.microsoft.com/en-us/office/media/icons/success.svg" alt="Success" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Set up Outlook</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </a>
-    </li>
-    <li>
-        <a href="/Exchange/new-features/new-features">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="https://docs.microsoft.com/en-us/office/media/icons/whats-new-megaphone-blue.svg" alt="What's new" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>What's new</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </a>
-    </li>
-    <li>
-        <a href="/Exchange/plan-and-deploy/virtualization">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="https://docs.microsoft.com/en-us/office/media/icons/deploy-blue.svg" alt="Deploy" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Deploy in a virtualized environment</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </a>
-    </li>
-    <li>
-        <a href="https://go.microsoft.com/fwlink/p/?linkId=60612">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="https://docs.microsoft.com/en-us/office/media/icons/globe-internet.svg" alt="Community" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Exchange Server forums</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </a>
-    </li>
-</ul>
-
----  
-<h2>Exchange Server Deployment Assistant</h2>
-<p>Have you heard about the Exchange Server Deployment Assistant? This free online tool helps you quickly deploy Exchange 2016 in your organization by asking you a few questions and creating a customized deployment checklist just for you. Try out the <a href="https://go.microsoft.com/fwlink/?linkid=626978">Exchange Server Deployment Assistant</a>.</p>
-
-<h2>Planning and deployment</h2>
-<ul class="panelContent cardsW">
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <p><a href="/Exchange/plan-and-deploy/system-requirements">Exchange 2016 system requirements</a>
-                        <p><a href="/Exchange/plan-and-deploy/prerequisites">Exchange 2016 prerequisites</a>
-                        <p><a href="/Exchange/plan-and-deploy/prepare-ad-and-domains">Prepare Active Directory and domains</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <p><a href="/Exchange/plan-and-deploy/deploy-new-installations/install-mailbox-role">Install the Exchange 2016 Mailbox role using the Setup wizard</a>
-                        <p><a href="/Exchange/plan-and-deploy/deploy-new-installations/unattended-installs">Install Exchange 2016 using unattended mode</a>
-                        <p><a href="/Exchange/plan-and-deploy/deploy-new-installations/install-edge-transport-role">Install the Exchange 2016 Edge Transport role using the Setup wizard</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <p><a href="/Exchange/plan-and-deploy/install-cumulative-updates">Upgrade Exchange 2016 to the latest cumulative update</a>
-                        <p><a href="/Exchange/plan-and-deploy/post-installation-tasks/post-installation-tasks">Exchange 2016 post-installation tasks</a>
-                        <p>Read <a href="/Exchange/release-notes">Release notes for Exchange 2016</a> before you begin deployment.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-</ul>  
-  
-  
-<p>Looking for information on prior versions of Exchange Server? Documentation for <a href="https://technet.microsoft.com/library/bb124558%28EXCHG.141%29.aspx">Exchange Server 2010</a> and <a href="https://technet.microsoft.com/library/bb124558%28v=exchg.150%29.aspx">Exchange Server 2013</a> is also available on TechNet. 
-  
-<p>Did you find what you're looking for? Please take a minute to <a href="mailto:ExchangeHelpFeedback@microsoft.com&subject=Exchange%202016%20help%20feedback&Body=Thanks%20for%20taking%20the%20time%20to%20send%20us%20feedback!%20We%20strive%20to%20respond%20to%20every%20message%20we%20receive,%20even%20though%20it%20might%20take%20us%20a%20while.%20Let%20us%20know%20what%20you%20think%20about%20Exchange%20content:%20What%20are%20we%20doing%20right%3F%20How%20can%20we%20make%20help%20better%3F%0APlease%20note%20that%20we're%20unable%20to%20respond%20to%20requests%20for%20support%20submitted%20via%20this%20email%20address.%20If%20you%20need%20help,%20please%20contact%20Exchange%20Server%20support%20at%20http://go.microsoft.com/fwlink/p/%3FLinkId=402506.%0AThanks!%0AThe%20Exchange%20Server%20Content%20Publishing%20team">send us feedback</a> about the information you were hoping to find. 
-  
-
+<table style="text-align: left; width: 100%;" border="0"
+ cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td>
+      <h2
+ style="border: 0px none ; margin: 4px 0px 15px; padding: 0px; font-family: &quot;Segoe UI Light&quot;,&quot;Segoe UI&quot;,&quot;Lucida Grande&quot;,Verdana,Arial,Helvetica,sans-serif; font-style: normal; font-variant: normal; font-weight: 100; font-size: 1.846em; line-height: 1.238; font-size-adjust: none; font-stretch: normal; color: rgb(232, 17, 35); height: auto; white-space: normal; overflow: visible; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px;">Exchange
+2016 scenarios</h2>
+      </td>
+      <td>
+      <h2
+ style="border: 0px none ; margin: 4px 0px 15px; padding: 0px; font-family: &quot;Segoe UI Light&quot;,&quot;Segoe UI&quot;,&quot;Lucida Grande&quot;,Verdana,Arial,Helvetica,sans-serif; font-style: normal; font-variant: normal; font-weight: 100; font-size: 1.846em; line-height: 1.238; font-size-adjust: none; font-stretch: normal; color: rgb(232, 17, 35); height: auto; white-space: normal; overflow: visible; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px;">Exchange
+2013 scenarios</h2>
+      </td>
+      <td>
+      <h2
+ style="border: 0px none ; margin: 4px 0px 15px; padding: 0px; font-family: &quot;Segoe UI Light&quot;,&quot;Segoe UI&quot;,&quot;Lucida Grande&quot;,Verdana,Arial,Helvetica,sans-serif; font-style: normal; font-variant: normal; font-weight: 100; font-size: 1.846em; line-height: 1.238; font-size-adjust: none; font-stretch: normal; color: rgb(232, 17, 35); height: auto; white-space: normal; overflow: visible; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px;">Exchange
+2010 scenarios</h2>
+      </td>
+      <td>
+      <h2
+ style="border: 0px none ; margin: 4px 0px 15px; padding: 0px; font-family: &quot;Segoe UI Light&quot;,&quot;Segoe UI&quot;,&quot;Lucida Grande&quot;,Verdana,Arial,Helvetica,sans-serif; font-style: normal; font-variant: normal; font-weight: 100; font-size: 1.846em; line-height: 1.238; font-size-adjust: none; font-stretch: normal; color: rgb(232, 17, 35); height: auto; white-space: normal; overflow: visible; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px;">Cloud-only
+scenarios</h2>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;">
+      <p
+ style="border: 0px none ; margin: 0px 0px 15px; padding: 0px; font-weight: 400; font-style: normal; font-family: &quot;Segoe UI&quot;,&quot;Lucida Grande&quot;,Verdana,Arial,Helvetica,sans-serif; color: rgb(42, 42, 42); font-size: 13.0093px; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">The
+following deployment scenarios are available for Exchange Server 2016:</p>
+      </td>
+      <td>
+      <p
+ style="border: 0px none ; margin: 0px 0px 15px; padding: 0px; font-weight: 400; font-style: normal; font-family: &quot;Segoe UI&quot;,&quot;Lucida Grande&quot;,Verdana,Arial,Helvetica,sans-serif; color: rgb(42, 42, 42); font-size: 13.0093px; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">The
+following deployment scenarios are available for Exchange Server 2013:</p>
+      </td>
+      <td>
+      <p
+ style="border: 0px none ; margin: 0px 0px 15px; padding: 0px; font-weight: 400; font-style: normal; font-family: &quot;Segoe UI&quot;,&quot;Lucida Grande&quot;,Verdana,Arial,Helvetica,sans-serif; color: rgb(42, 42, 42); font-size: 13.0093px; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">The
+following deployment scenarios are available for Exchange Server 2010:</p>
+      </td>
+      <td>
+      <p
+ style="border: 0px none ; margin: 0px 0px 15px; padding: 0px; font-weight: 400; font-style: normal; font-family: &quot;Segoe UI&quot;,&quot;Lucida Grande&quot;,Verdana,Arial,Helvetica,sans-serif; color: rgb(42, 42, 42); font-size: 13.0093px; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">Understand
+your options for migrating email to Exchange Online and Office 365:</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <h3
+ style="border: 0px none ; margin: 3px 0px; padding: 0px; font-family: &quot;Segoe UI Light&quot;,&quot;Segoe UI&quot;,&quot;Lucida Grande&quot;,Verdana,Arial,Helvetica,sans-serif; font-style: normal; font-variant: normal; font-weight: 100; font-size: 1.538em; line-height: normal; font-size-adjust: none; font-stretch: normal; color: rgb(64, 65, 66); height: auto; white-space: normal; overflow: visible; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px;">On-premises
+deployments</h3>
+      </td>
+      <td>
+      <h3
+ style="border: 0px none ; margin: 3px 0px; padding: 0px; font-family: &quot;Segoe UI Light&quot;,&quot;Segoe UI&quot;,&quot;Lucida Grande&quot;,Verdana,Arial,Helvetica,sans-serif; font-style: normal; font-variant: normal; font-weight: 100; font-size: 1.538em; line-height: normal; font-size-adjust: none; font-stretch: normal; color: rgb(64, 65, 66); height: auto; white-space: normal; overflow: visible; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px;">On-premises
+deployments</h3>
+      </td>
+      <td>
+      <h3
+ style="border: 0px none ; margin: 3px 0px; padding: 0px; font-family: &quot;Segoe UI Light&quot;,&quot;Segoe UI&quot;,&quot;Lucida Grande&quot;,Verdana,Arial,Helvetica,sans-serif; font-style: normal; font-variant: normal; font-weight: 100; font-size: 1.538em; line-height: normal; font-size-adjust: none; font-stretch: normal; color: rgb(64, 65, 66); height: auto; white-space: normal; overflow: visible; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px;">On-premises
+deployments</h3>
+      </td>
+      <td>
+      <h3
+ style="border: 0px none ; margin: 3px 0px; padding: 0px; font-family: &quot;Segoe UI Light&quot;,&quot;Segoe UI&quot;,&quot;Lucida Grande&quot;,Verdana,Arial,Helvetica,sans-serif; font-style: normal; font-variant: normal; font-weight: 100; font-size: 1.538em; line-height: normal; font-size-adjust: none; font-stretch: normal; color: rgb(64, 65, 66); height: auto; white-space: normal; overflow: visible; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px;">Exchange
+migrations</h3>
+      </td>
+    </tr>
+    <tr>
+      <td style="font-family: Segoe UI;">
+      <ul>
+        <li><small>New installation of Exchange Server 2016</small></li>
+        <li><small>Upgrade from Exchange 2010 to Exchange
+2016</small></li>
+        <li><small>Upgrade from Exchange 2013 to Exchange
+2016</small></li>
+        <li><small>Upgrade from mixed Exchange 2010 and
+Exchange 2013 to Exchange 2016</small></li>
+      </ul>
+      </td>
+      <td style="font-family: Segoe UI;">
+      <ul>
+        <li><small>New installation of Exchange Server 2013</small></li>
+        <li><small>Upgrade from Exchange 2010 to Exchange
+2013</small></li>
+        <li><small>Upgrade from Exchange 2007 to Exchange
+2013</small></li>
+        <li><small>Upgrade from mixed Exchange 2007 and
+Exchange 2010 to Exchange 2013</small></li>
+      </ul>
+      </td>
+      <td style="font-family: Segoe UI;">
+      <ul>
+        <li><small>New installation of Exchange 2010</small></li>
+        <li><small>Upgrade from Exchange 2007 to Exchange
+2010</small></li>
+        <li><small>Upgrade from Exchange 2003 to Exchange
+2010</small></li>
+        <li><small>Upgrade from mixed Exchange 2003 and
+Exchange 2007 to Exchange 2010</small></li>
+      </ul>
+      </td>
+      <td>
+      <ul style="font-family: Segoe UI;">
+        <li><small>Cut-over</small></li>
+        <li><small>Staged</small></li>
+        <li><small>IMAP</small></li>
+      </ul>
+      <h3
+ style="border: 0px none ; margin: 3px 0px; padding: 0px; font-family: &quot;Segoe UI Light&quot;,&quot;Segoe UI&quot;,&quot;Lucida Grande&quot;,Verdana,Arial,Helvetica,sans-serif; font-style: normal; font-variant: normal; font-weight: 100; font-size: 1.538em; line-height: normal; font-size-adjust: none; font-stretch: normal; color: rgb(64, 65, 66); height: auto; white-space: normal; overflow: visible; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px;">Third-party
+migrations</h3>
+      <ul style="font-family: Segoe UI;">
+        <li><small>IMAP</small></li>
+      </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <h3
+ style="border: 0px none ; margin: 3px 0px; padding: 0px; font-family: &quot;Segoe UI Light&quot;,&quot;Segoe UI&quot;,&quot;Lucida Grande&quot;,Verdana,Arial,Helvetica,sans-serif; font-style: normal; font-variant: normal; font-weight: 100; font-size: 1.538em; line-height: normal; font-size-adjust: none; font-stretch: normal; color: rgb(64, 65, 66); height: auto; white-space: normal; overflow: visible; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px;">Hybrid
+deployments</h3>
+      <p
+ style="border: 0px none ; margin: 0px 0px 15px; padding: 0px; font-weight: 400; font-style: normal; font-family: &quot;Segoe UI&quot;,&quot;Lucida Grande&quot;,Verdana,Arial,Helvetica,sans-serif; color: rgb(42, 42, 42); font-size: 13.0093px; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><em
+ style="border: 0px none ; margin: 0px; padding: 0px; font-weight: inherit; font-style: italic; font-family: inherit;">(On-premises
++ Office 365)</em></p>
+      </td>
+      <td>
+      <h3
+ style="border: 0px none ; margin: 3px 0px; padding: 0px; font-family: &quot;Segoe UI Light&quot;,&quot;Segoe UI&quot;,&quot;Lucida Grande&quot;,Verdana,Arial,Helvetica,sans-serif; font-style: normal; font-variant: normal; font-weight: 100; font-size: 1.538em; line-height: normal; font-size-adjust: none; font-stretch: normal; color: rgb(64, 65, 66); height: auto; white-space: normal; overflow: visible; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px;">Hybrid
+deployments</h3>
+      <p
+ style="border: 0px none ; margin: 0px 0px 15px; padding: 0px; font-weight: 400; font-style: normal; font-family: &quot;Segoe UI&quot;,&quot;Lucida Grande&quot;,Verdana,Arial,Helvetica,sans-serif; color: rgb(42, 42, 42); font-size: 13.0093px; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><em
+ style="border: 0px none ; margin: 0px; padding: 0px; font-weight: inherit; font-style: italic; font-family: inherit;">(On-premises
++ Office 365)</em></p>
+      </td>
+      <td>
+      <h3
+ style="border: 0px none ; margin: 3px 0px; padding: 0px; font-family: &quot;Segoe UI Light&quot;,&quot;Segoe UI&quot;,&quot;Lucida Grande&quot;,Verdana,Arial,Helvetica,sans-serif; font-style: normal; font-variant: normal; font-weight: 100; font-size: 1.538em; line-height: normal; font-size-adjust: none; font-stretch: normal; color: rgb(64, 65, 66); height: auto; white-space: normal; overflow: visible; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px;">Hybrid
+deployments</h3>
+      <p
+ style="border: 0px none ; margin: 0px 0px 15px; padding: 0px; font-weight: 400; font-style: normal; font-family: &quot;Segoe UI&quot;,&quot;Lucida Grande&quot;,Verdana,Arial,Helvetica,sans-serif; color: rgb(42, 42, 42); font-size: 13.0093px; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><em
+ style="border: 0px none ; margin: 0px; padding: 0px; font-weight: inherit; font-style: italic; font-family: inherit;">(On-premises
++ Office 365)<span>&nbsp;</span></em></p>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td style="font-family: Segoe UI;">
+      <ul>
+        <li><small>Exchange 2016 on-premises with Exchange
+Online</small></li>
+        <li><small>Exchange 2013 on-premises with Exchange
+Online</small></li>
+        <li><small>Exchange 2010 on-premises with Exchange
+Online</small></li>
+      </ul>
+      </td>
+      <td style="font-family: Segoe UI;">
+      <ul>
+        <li><small>Exchange 2013 on-premises with Exchange
+Online</small></li>
+        <li><small>Exchange 2010 on-premises with Exchange
+Online</small></li>
+        <li><small>Exchange 2007 on-premises with Exchange
+Online</small></li>
+      </ul>
+      </td>
+      <td style="font-family: Segoe UI;">
+      <ul>
+        <li><small>Exchange 2010 on-premises with Exchange
+Online</small></li>
+        <li><small>Exchange 2007 on-premises with Exchange
+Online</small></li>
+        <li><small>Exchange 2003 on-premises with Exchange
+Online</small></li>
+      </ul>
+      </td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
