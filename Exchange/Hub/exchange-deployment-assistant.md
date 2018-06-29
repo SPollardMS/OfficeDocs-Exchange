@@ -20,7 +20,6 @@ The Exchange  Deployment Assistant is a web-based tool that asks you a few quest
 
 [![Launch Deployment Assistant](media/ExchangeDeploymentAssistant.png)](https://technet.microsoft.com/en-us/exdeploy2013)
 
-
 <table style="text-align: left; width: 100%;" border="0"
  cellpadding="2" cellspacing="2">
   <tbody>
@@ -91,7 +90,7 @@ migrations</h3>
       </td>
     </tr>
     <tr>
-      <td style="font-family: Segoe UI;">
+      <td style="font-family: Segoe UI; vertical-align: top;">
       <ul>
         <li>New installation of Exchange Server 2016</li>
         <li>Upgrade from Exchange 2010 to Exchange 2016</li>
@@ -100,7 +99,7 @@ migrations</h3>
 Exchange 2016</li>
       </ul>
       </td>
-      <td style="font-family: Segoe UI;">
+      <td style="font-family: Segoe UI; vertical-align: top;">
       <ul>
         <li>New installation of Exchange Server 2013</li>
         <li>Upgrade from Exchange 2010 to Exchange 2013</li>
@@ -109,7 +108,7 @@ Exchange 2016</li>
 Exchange 2013</li>
       </ul>
       </td>
-      <td style="font-family: Segoe UI;">
+      <td style="font-family: Segoe UI; vertical-align: top;">
       <ul>
         <li>New installation of Exchange 2010</li>
         <li>Upgrade from Exchange 2007 to Exchange 2010</li>
@@ -118,18 +117,13 @@ Exchange 2013</li>
 Exchange 2010</li>
       </ul>
       </td>
-      <td>
+      <td style="vertical-align: top;">
       <ul style="font-family: Segoe UI;">
         <li>Cut-over</li>
         <li>Staged</li>
         <li>IMAP</li>
       </ul>
-      <h3
- style="border: 0px none ; margin: 3px 0px; padding: 0px; font-style: normal; font-variant: normal; font-weight: 100; font-size: 1.538em; line-height: normal; font-size-adjust: none; font-stretch: normal; color: rgb(64, 65, 66); height: auto; white-space: normal; overflow: visible; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; font-family: Segoe UI Light;">Third-party
-migrations</h3>
-      <ul style="font-family: Segoe UI;">
-        <li>IMAP</li>
-      </ul>
+      <br>
       </td>
     </tr>
     <tr>
@@ -160,31 +154,40 @@ deployments</h3>
  style="border: 0px none ; margin: 0px; padding: 0px; font-weight: inherit; font-style: italic; font-family: inherit;">(On-premises
 + Office 365)<span>&nbsp;</span></em></p>
       </td>
-      <td></td>
+      <td style="vertical-align: top;">
+      <h3
+ style="border: 0px none ; margin: 3px 0px; padding: 0px; font-style: normal; font-variant: normal; font-weight: 100; font-size: 1.538em; line-height: normal; font-size-adjust: none; font-stretch: normal; color: rgb(64, 65, 66); height: auto; white-space: normal; overflow: visible; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; font-family: Segoe UI Light;">Third-party
+migrations</h3>
+      </td>
     </tr>
     <tr>
-      <td style="font-family: Segoe UI;">
+      <td style="font-family: Segoe UI; vertical-align: top;">
       <ul>
         <li>Exchange 2016 on-premises with Exchange Online</li>
         <li>Exchange 2013 on-premises with Exchange Online</li>
         <li>Exchange 2010 on-premises with Exchange Online</li>
       </ul>
       </td>
-      <td style="font-family: Segoe UI;">
+      <td style="font-family: Segoe UI; vertical-align: top;">
       <ul>
         <li>Exchange 2013 on-premises with Exchange Online</li>
         <li>Exchange 2010 on-premises with Exchange Online</li>
         <li>Exchange 2007 on-premises with Exchange Online</li>
       </ul>
       </td>
-      <td style="font-family: Segoe UI;">
+      <td style="font-family: Segoe UI; vertical-align: top;">
       <ul>
         <li>Exchange 2010 on-premises with Exchange Online</li>
         <li>Exchange 2007 on-premises with Exchange Online</li>
         <li>Exchange 2003 on-premises with Exchange Online</li>
       </ul>
       </td>
-      <td></td>
+      <td style="vertical-align: top;">
+      <ul style="font-family: Segoe UI;">
+        <li>IMAP</li>
+      </ul>
+      </td>
     </tr>
   </tbody>
 </table>
+
